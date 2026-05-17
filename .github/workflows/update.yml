@@ -1,0 +1,45 @@
+name: Update Proxy Filters
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Force sync with remote
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          git clean -fd
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run filter script
+        run: python filter.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "FilterBot"
+          git config user.email "bot@localhost"
+          git add githubmirror/FILTER-*.txt
+          if git diff --staged --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto-update filters"
+          git push --force-with-lease origin main
