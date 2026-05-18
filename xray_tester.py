@@ -11,49 +11,28 @@ import socket
 import threading
 import atexit
 import signal
-import re
-import asyncio
-import requests
 from concurrent.futures import ThreadPoolExecutor
-from requests.adapters import HTTPAdapter
 from typing import List, Tuple, Optional, Dict
-from urllib.parse import urlparse, parse_qs, unquote
-from urllib3.util.retry import Retry
-import base64
-import multiprocessing
+from urllib.parse import urlparse, parse_qs
 
 # ------------------------------------------------------------------
-# Логгер (замена утилитному)
+# Простой логгер (без внешних зависимостей)
 # ------------------------------------------------------------------
 def log(msg):
     print(msg)
 
 # ------------------------------------------------------------------
-# Настройки по умолчанию (замена config.settings)
-# ------------------------------------------------------------------
-VALIDATION_HTTP_TIMEOUT = 8.0
-ASYNC_CONCURRENCY_WIN32 = 50
-ASYNC_CONCURRENCY_LINUX = 150
-
-# ------------------------------------------------------------------
-# Проверка наличия curl_cffi (опционально)
+# Проверка наличия curl_cffi (опционально, для ускорения)
 # ------------------------------------------------------------------
 try:
-    from curl_cffi.requests import Session as CurlSession, AsyncSession
+    from curl_cffi.requests import Session as CurlSession
     CURL_CFFI_AVAILABLE = True
 except ImportError:
     CURL_CFFI_AVAILABLE = False
     CurlSession = None
-    AsyncSession = None
-
-try:
-    import psutil
-    PSUTIL_AVAILABLE = True
-except ImportError:
-    PSUTIL_AVAILABLE = False
 
 # ------------------------------------------------------------------
-# Глобальная регистрация для очистки при выходе
+# Очистка процессов при выходе
 # ------------------------------------------------------------------
 _active_testers = []
 _cleanup_lock = threading.Lock()
@@ -79,107 +58,82 @@ except Exception:
     pass
 
 # ------------------------------------------------------------------
-# Класс XrayTester (основной)
+# Класс XrayTester (ускоренная версия)
 # ------------------------------------------------------------------
 class XrayTester:
     TEST_URLS = ["https://www.google.com/generate_204"]
-    DEFAULT_TIMEOUT = 5.0
     BASE_PORT = 20000
-    BATCH_PORT_END = 21999
-    CHAIN_PORT_START = 22000
-    CHAIN_PORT_END = 23999
-    PERSISTENT_PORT_START = 24000
-    BATCH_SIZE = 100
-    MAX_BATCH_SIZE = 150
-    MIN_BATCH_SIZE = 50
+    PORT_RANGE_END = 21000
 
     def __init__(self, xray_path: str = None):
         self.xray_path = xray_path or self._find_xray()
-        self._running_processes: List[subprocess.Popen] = []
-        self._config_files: dict = {}
+        self._running_processes = []
+        self._config_files = {}
         self._process_lock = threading.Lock()
         self._port_counter = [self.BASE_PORT]
         self._port_lock = threading.Lock()
-        self._error_stats = {}
-        self._error_samples = {}
-        self._error_stats_lock = threading.Lock()
         with _cleanup_lock:
             _active_testers.append(self)
 
     def _find_xray(self) -> str:
         xray_exe = "xray.exe" if sys.platform == "win32" else "xray"
-        possible_paths = [
+        possible = [
             os.path.join(os.path.dirname(__file__), "xray", xray_exe),
             xray_exe,
         ]
-        for path in possible_paths:
-            if os.path.exists(path):
-                return os.path.abspath(path)
+        for p in possible:
+            if os.path.exists(p):
+                return os.path.abspath(p)
         return "xray"
 
     def _get_next_port(self) -> int:
-        max_attempts = 10
-        for _ in range(max_attempts):
-            with self._port_lock:
-                port = self._port_counter[0]
-                if self.CHAIN_PORT_START <= port <= self.CHAIN_PORT_END:
-                    port = self.CHAIN_PORT_END + 1
-                    self._port_counter[0] = port
-                elif port >= self.PERSISTENT_PORT_START:
-                    port = self.BASE_PORT
-                    self._port_counter[0] = port
-                self._port_counter[0] += 1
-            try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-                sock.bind(('127.0.0.1', port))
-                sock.close()
-                return port
-            except OSError:
-                continue
-        raise RuntimeError("No available port")
+        with self._port_lock:
+            port = self._port_counter[0]
+            self._port_counter[0] = port + 1
+            if self._port_counter[0] >= self.PORT_RANGE_END:
+                self._port_counter[0] = self.BASE_PORT
+            return port
 
-    def _wait_for_port(self, port: int, timeout: float = 1.5) -> bool:
+    def _wait_for_port(self, port: int, timeout: float = 1.0) -> bool:
         start = time.time()
         while time.time() - start < timeout:
             try:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.settimeout(0.1)
-                result = sock.connect_ex(('127.0.0.1', port))
-                sock.close()
-                if result == 0:
+                if sock.connect_ex(('127.0.0.1', port)) == 0:
+                    sock.close()
                     return True
+                sock.close()
             except Exception:
                 pass
             time.sleep(0.05)
         return False
 
-    # ---------- Парсинг URL в outbound (для VLESS, Trojan, Shadowsocks, VMess) ----------
-    def _parse_vless_to_outbound(self, url: str, tag: str) -> Optional[Dict]:
+    def _parse_vless(self, url: str, tag: str) -> Optional[Dict]:
         try:
+            # vless://uuid@host:port?params#name
             url_part = url.replace('vless://', '', 1)
             if '#' in url_part:
-                url_part, _ = url_part.split('#', 1)
+                url_part = url_part.split('#', 1)[0]
             if '?' in url_part:
-                base_part, query_part = url_part.split('?', 1)
+                base, query_str = url_part.split('?', 1)
             else:
-                base_part = url_part
-                query_part = ''
-            if '@' not in base_part:
+                base, query_str = url_part, ''
+            if '@' not in base:
                 return None
-            uuid, host_port = base_part.rsplit('@', 1)
+            uuid, host_port = base.rsplit('@', 1)
             if ':' not in host_port:
                 return None
-            hostname, port_str = host_port.rsplit(':', 1)
-            port = int(port_str.strip().rstrip('/'))
-            params = parse_qs(query_part)
+            host, port_str = host_port.rsplit(':', 1)
+            port = int(port_str.split('/')[0])
+            params = parse_qs(query_str)
             security = params.get('security', ['none'])[0]
             outbound = {
                 "tag": tag,
                 "protocol": "vless",
                 "settings": {
                     "vnext": [{
-                        "address": hostname,
+                        "address": host,
                         "port": port,
                         "users": [{
                             "id": uuid,
@@ -195,7 +149,7 @@ class XrayTester:
             }
             if security == 'tls':
                 outbound["streamSettings"]["tlsSettings"] = {
-                    "serverName": params.get('sni', [hostname])[0],
+                    "serverName": params.get('sni', [host])[0],
                     "fingerprint": params.get('fp', ['chrome'])[0]
                 }
             elif security == 'reality':
@@ -209,51 +163,43 @@ class XrayTester:
         except Exception:
             return None
 
-    def _parse_trojan_to_outbound(self, url: str, tag: str) -> Optional[Dict]:
+    def _parse_trojan(self, url: str, tag: str) -> Optional[Dict]:
         try:
             url_part = url.replace('trojan://', '', 1)
             if '#' in url_part:
-                url_part, _ = url_part.split('#', 1)
+                url_part = url_part.split('#', 1)[0]
             if '?' in url_part:
-                url_part, _ = url_part.split('?', 1)
+                url_part = url_part.split('?', 1)[0]
             if '@' not in url_part:
                 return None
             password, host_port = url_part.rsplit('@', 1)
             if ':' not in host_port:
                 return None
-            hostname, port_str = host_port.rsplit(':', 1)
-            port = int(port_str.strip())
+            host, port_str = host_port.rsplit(':', 1)
+            port = int(port_str)
             return {
                 "tag": tag,
                 "protocol": "trojan",
-                "settings": {"servers": [{"address": hostname, "port": port, "password": password}]},
+                "settings": {"servers": [{"address": host, "port": port, "password": password}]},
                 "streamSettings": {
                     "network": "tcp",
                     "security": "tls",
-                    "tlsSettings": {"serverName": hostname}
+                    "tlsSettings": {"serverName": host}
                 }
             }
         except Exception:
             return None
 
-    # Для простоты добавим заглушки для VMess и Shadowsocks (можно опустить, если не нужны)
-    def _parse_vmess_to_outbound(self, url: str, tag: str) -> Optional[Dict]:
-        # VMess – можно не поддерживать, если все твои источники только VLESS/Trojan
-        return None
-
-    def _parse_shadowsocks_to_outbound(self, url: str, tag: str) -> Optional[Dict]:
-        return None
-
     def _url_to_outbound(self, url: str, tag: str) -> Optional[Dict]:
         if url.startswith('vless://'):
-            return self._parse_vless_to_outbound(url, tag)
+            return self._parse_vless(url, tag)
         if url.startswith('trojan://'):
-            return self._parse_trojan_to_outbound(url, tag)
+            return self._parse_trojan(url, tag)
         return None
 
-    def create_single_outbound_config(self, url: str, socks_port: int) -> Optional[Dict]:
-        outbound = self._url_to_outbound(url, "proxy")
-        if not outbound:
+    def create_config(self, url: str, socks_port: int) -> Optional[Dict]:
+        out = self._url_to_outbound(url, "proxy")
+        if not out:
             return None
         return {
             "log": {"loglevel": "error"},
@@ -263,98 +209,118 @@ class XrayTester:
                 "protocol": "mixed",
                 "settings": {"auth": "noauth", "udp": True}
             }],
-            "outbounds": [outbound, {"tag": "direct", "protocol": "freedom"}],
-            "routing": {
-                "rules": [{"type": "field", "inboundTag": ["mixed"], "outboundTag": "proxy"}]
-            }
+            "outbounds": [out, {"tag": "direct", "protocol": "freedom"}],
+            "routing": {"rules": [{"type": "field", "inboundTag": ["mixed"], "outboundTag": "proxy"}]}
         }
 
-    def start_xray_instance(self, config: Dict, socks_port: int, verbose: bool = False) -> Tuple[bool, Optional[subprocess.Popen], str]:
+    def start_xray(self, config: Dict, socks_port: int) -> Tuple[bool, Optional[subprocess.Popen], str]:
         try:
             config_json = json.dumps(config, separators=(',', ':'))
-            fd, config_file = tempfile.mkstemp(suffix='.json', prefix='xray_')
-            os.chmod(config_file, 0o600)
+            fd, conf_file = tempfile.mkstemp(suffix='.json', prefix='xray_')
+            os.chmod(conf_file, 0o600)
             with os.fdopen(fd, 'w') as f:
                 f.write(config_json)
-            cmd = [self.xray_path, "run", "-config", config_file]
-            process = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            time.sleep(0.5)
-            if process.poll() is not None:
-                os.unlink(config_file)
-                return False, None, "Xray exited immediately"
-            if not self._wait_for_port(socks_port, timeout=3.0):
-                process.terminate()
-                process.wait(timeout=2)
-                os.unlink(config_file)
-                return False, None, "Port not listening"
+            proc = subprocess.Popen(
+                [self.xray_path, "run", "-config", conf_file],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            time.sleep(0.3)  # сокращённое ожидание
+            if proc.poll() is not None:
+                os.unlink(conf_file)
+                return False, None, "Xray exit"
+            if not self._wait_for_port(socks_port, timeout=1.0):
+                proc.terminate()
+                proc.wait(timeout=2)
+                os.unlink(conf_file)
+                return False, None, "Port timeout"
             with self._process_lock:
-                self._running_processes.append(process)
-                self._config_files[process.pid] = config_file
-            return True, process, ""
+                self._running_processes.append(proc)
+                self._config_files[proc.pid] = conf_file
+            return True, proc, ""
         except Exception as e:
             return False, None, str(e)
 
-    def stop_xray_process(self, process: subprocess.Popen):
-        if process.poll() is None:
-            process.terminate()
+    def stop_xray(self, proc: subprocess.Popen):
+        if proc.poll() is None:
+            proc.terminate()
             try:
-                process.wait(timeout=3)
+                proc.wait(timeout=2)
             except subprocess.TimeoutExpired:
-                process.kill()
-        config_file = self._config_files.pop(process.pid, None)
-        if config_file and os.path.exists(config_file):
-            os.unlink(config_file)
+                proc.kill()
+        conf = self._config_files.pop(proc.pid, None)
+        if conf and os.path.exists(conf):
+            os.unlink(conf)
         with self._process_lock:
-            if process in self._running_processes:
-                self._running_processes.remove(process)
+            if proc in self._running_processes:
+                self._running_processes.remove(proc)
 
-    def test_through_socks(self, socks_port: int, timeout: float, verbose: bool = False) -> Tuple[bool, float]:
-        # Используем requests с socks5h
-        session = requests.Session()
-        session.trust_env = False
-        proxies = {"http": f"socks5h://127.0.0.1:{socks_port}", "https": f"socks5h://127.0.0.1:{socks_port}"}
-        for test_url in self.TEST_URLS:
+    def _http_test(self, socks_port: int, timeout: float) -> Tuple[bool, float]:
+        # Приоритет: curl_cffi если есть
+        if CURL_CFFI_AVAILABLE:
             try:
+                proxy = f"socks5://127.0.0.1:{socks_port}"
+                session = CurlSession(impersonate="chrome")
                 start = time.perf_counter()
-                resp = session.get(test_url, proxies=proxies, timeout=timeout, allow_redirects=True)
-                latency = (time.perf_counter() - start) * 1000
+                resp = session.get(self.TEST_URLS[0], proxy=proxy, timeout=timeout)
+                lat = (time.perf_counter() - start) * 1000
                 if resp.status_code == 204:
-                    return True, latency
+                    return True, lat
             except Exception:
-                continue
+                pass
+        # fallback на requests (если установлен) или простой сокет
+        try:
+            import requests
+            proxies = {"http": f"socks5h://127.0.0.1:{socks_port}", "https": f"socks5h://127.0.0.1:{socks_port}"}
+            start = time.perf_counter()
+            r = requests.get(self.TEST_URLS[0], proxies=proxies, timeout=timeout)
+            lat = (time.perf_counter() - start) * 1000
+            if r.status_code == 204:
+                return True, lat
+        except ImportError:
+            # последняя попытка: через socket напрямую (только TCP, не HTTP)
+            try:
+                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                sock.settimeout(timeout)
+                sock.connect(('127.0.0.1', socks_port))
+                sock.send(b"GET /generate_204 HTTP/1.1\r\nHost: www.google.com\r\n\r\n")
+                data = sock.recv(1024)
+                if b"204" in data:
+                    return True, 0.0
+            except Exception:
+                pass
         return False, 0.0
 
-    def test_batch(self, urls: List[str], concurrency: int = 50, timeout: float = 8.0, verbose: bool = False) -> List[Tuple[str, bool, float]]:
-        # Упрощённая версия: последовательный запуск с ограничением параллелизма через ThreadPoolExecutor
-        results = []
-        with ThreadPoolExecutor(max_workers=concurrency) as executor:
-            futures = {executor.submit(self._test_single, url, timeout): url for url in urls}
-            for future in futures:
-                try:
-                    res = future.result(timeout=timeout+5)
-                    results.append(res)
-                except Exception:
-                    results.append((futures[future], False, 0.0))
-        return results
-
-    def _test_single(self, url: str, timeout: float) -> Tuple[str, bool, float]:
-        socks_port = self._get_next_port()
-        config = self.create_single_outbound_config(url, socks_port)
+    def test_single(self, url: str, timeout: float = 5.0) -> Tuple[str, bool, float]:
+        port = self._get_next_port()
+        config = self.create_config(url, port)
         if not config:
             return (url, False, 0.0)
-        success, process, err = self.start_xray_instance(config, socks_port, verbose=False)
-        if not success:
+        ok, proc, err = self.start_xray(config, port)
+        if not ok:
             return (url, False, 0.0)
         try:
-            ok, latency = self.test_through_socks(socks_port, timeout)
-            return (url, ok, latency if ok else 0.0)
+            success, latency = self._http_test(port, timeout)
+            return (url, success, latency if success else 0.0)
         finally:
-            self.stop_xray_process(process)
+            self.stop_xray(proc)
+
+    def test_batch(self, urls: List[str], concurrency: int = 20, timeout: float = 5.0) -> List[Tuple[str, bool, float]]:
+        results = []
+        with ThreadPoolExecutor(max_workers=concurrency) as ex:
+            futures = {ex.submit(self.test_single, url, timeout): url for url in urls}
+            for fut in futures:
+                try:
+                    res = fut.result(timeout=timeout+2)
+                    results.append(res)
+                except Exception:
+                    results.append((futures[fut], False, 0.0))
+        return results
 
     def cleanup(self):
         with self._process_lock:
-            for process in self._running_processes[:]:
-                self.stop_xray_process(process)
+            for proc in self._running_processes[:]:
+                self.stop_xray(proc)
         with _cleanup_lock:
             if self in _active_testers:
                 _active_testers.remove(self)
