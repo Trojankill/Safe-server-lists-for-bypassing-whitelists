@@ -3,16 +3,10 @@
 
 import re
 import os
-import sys
-import json
-import subprocess
-import tempfile
 import urllib.request
-import time
-import socket
+import base64
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from urllib.parse import urlparse, parse_qs
-from typing import List, Tuple, Optional, Set
+from typing import Set, List, Dict, Optional
 
 # ============================================================
 # 1. НАСТРОЙКИ
@@ -20,11 +14,16 @@ from typing import List, Tuple, Optional, Set
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-MAX_PROXIES_TO_TEST = 40          # Сколько прокси проверим (остальные только в FILTER-*.txt)
-MAX_LATENCY_MS = 300               # Прокси с пингом выше этого не попадают в FAST-server.txt
-TEST_TIMEOUT = 5.0                 # Таймаут теста в секундах
-XRAY_BINARY = "./xray/xray"        # Путь к Xray (будет скачан в workflow)
+# Список поддерживаемых протоколов (для валидации строк)
+SUPPORTED_PROTOCOLS = ['vless://', 'vmess://', 'trojan://', 'ss://']
 
+# Дополнительная фильтрация по доменным именам (оставить пустым, если не нужно)
+# Пример: ALLOWED_DOMAINS = ['example.com', 'myserver.net']  # только эти домены
+# Пример: BLOCKED_DOMAINS = ['blocked.com', 'bad.org']       # исключить эти домены
+ALLOWED_DOMAINS = []   # если не пустой, то только домены из списка
+BLOCKED_DOMAINS = []   # домены, которые нужно исключить
+
+# Источники подписок
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
     {"name": "FILTER-2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
@@ -34,44 +33,59 @@ SOURCES_CONFIG = [
 ]
 
 # ============================================================
-# 2. ФИЛЬТРЫ НЕБЕЗОПАСНЫХ ПАРАМЕТРОВ
+# 2. ФУНКЦИИ ФИЛЬТРАЦИИ
 # ============================================================
-UNSAFE_PATTERNS = [
-    r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
-    r'[&?]insecure=1', r'[&?]insecure=true',
-    r'[&?]security=none',
-    r'[&?]verify=0', r'[&?]verify=false',
-    r'[&?]skip-cert-verify=0', r'[&?]skip-cert-verify=false',
-    r'[&?]encryption=none',
-    r'[&?]allowinsecurecipher=1', r'[&?]allowinsecurecipher=true',
-    r'[&?]flow=none',
-    r'[&?]tls13=0', r'[&?]tls13=false',
-]
-UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
+def is_supported_protocol(line: str) -> bool:
+    """Проверяет, начинается ли строка с одного из поддерживаемых протоколов."""
+    line = line.strip()
+    return any(line.startswith(proto) for proto in SUPPORTED_PROTOCOLS)
 
-def has_insecure_params(url: str) -> bool:
-    return bool(UNSAFE_REGEX.search(url))
+def extract_domain_from_uri(uri: str) -> Optional[str]:
+    """Извлекает домен из URI (для фильтрации по доменам)."""
+    try:
+        # Убираем протокол
+        for proto in SUPPORTED_PROTOCOLS:
+            if uri.startswith(proto):
+                uri = uri[len(proto):]
+                break
+        # Формат: uuid@host:port?params или host:port?params (для ss)
+        if '@' in uri:
+            host_part = uri.split('@')[-1]
+        else:
+            host_part = uri
+        # Отделяем порт и параметры
+        host = host_part.split(':')[0]
+        return host
+    except Exception:
+        return None
 
-def is_safe_uri(uri: str) -> bool:
-    uri = uri.strip()
-    if not uri:
-        return False
-    if not (uri.startswith('vless://') or uri.startswith('trojan://')):
-        return False
-    if has_insecure_params(uri):
-        return False
-    if uri.startswith('trojan://'):
-        return 'sni=' in uri
-    if uri.startswith('vless://'):
-        if re.search(r'security=reality|pbk=|flow=xtls-rprx-vision', uri, re.I):
-            return True
-        if 'security=tls' in uri and 'encryption=none' in uri:
-            return 'sni=' in uri or 'alpn=' in uri
-        return False
-    return False
+def domain_allowed(domain: str) -> bool:
+    """Проверяет, разрешён ли домен (если заданы ALLOWED_DOMAINS или BLOCKED_DOMAINS)."""
+    if not domain:
+        return True
+    if ALLOWED_DOMAINS:
+        return any(allowed in domain for allowed in ALLOWED_DOMAINS)  # простое вхождение
+    if BLOCKED_DOMAINS:
+        return not any(blocked in domain for blocked in BLOCKED_DOMAINS)
+    return True
+
+def decode_base64_content(content: str) -> str:
+    """Пытается декодировать base64, если вся подписка выглядит как base64."""
+    content = content.strip()
+    # Проверяем, что строка состоит из допустимых символов base64 и не содержит "://"
+    if '://' in content:
+        return content  # уже plain text
+    try:
+        decoded = base64.b64decode(content).decode('utf-8', errors='ignore')
+        # Если после декодирования появились протоколы, значит успешно
+        if any(proto in decoded for proto in SUPPORTED_PROTOCOLS):
+            return decoded
+    except Exception:
+        pass
+    return content  # не base64
 
 # ============================================================
-# 3. ЗАГРУЗКА ИСТОЧНИКОВ
+# 3. ЗАГРУЗКА И ОБРАБОТКА ПОДПИСОК
 # ============================================================
 def fetch_url(url: str) -> Optional[str]:
     try:
@@ -82,260 +96,72 @@ def fetch_url(url: str) -> Optional[str]:
         print(f"  Ошибка загрузки {url}: {e}")
         return None
 
-def load_from_source(source: dict) -> Set[str]:
+def load_and_filter_source(source: dict) -> Set[str]:
     name = source['name']
-    print(f"  [{name}] Загрузка...")
-    content = fetch_url(source['url'])
+    url = source['url']
+    print(f"  [{name}] Загрузка {url} ...")
+    content = fetch_url(url)
     if not content:
         return set()
-    uris = set()
+
+    # Пробуем декодировать base64 (если вся подписка закодирована)
+    content = decode_base64_content(content)
+
+    valid_uris = set()
     for line in content.splitlines():
-        uri = line.strip()
-        if uri and not uri.startswith('#') and is_safe_uri(uri):
-            uris.add(uri)
-    return uris
+        line = line.strip()
+        if not line or line.startswith('#'):
+            continue
+        if not is_supported_protocol(line):
+            continue
+        # Дополнительная фильтрация по домену
+        domain = extract_domain_from_uri(line)
+        if domain and not domain_allowed(domain):
+            continue
+        # Базовая проверка на наличие небезопасных параметров (оставляем только clean)
+        # Можно удалить, если не нужно – но для чистоты оставим флаг allowInsecure и т.п.
+        if 'allowInsecure=1' in line or 'insecure=1' in line or 'security=none' in line:
+            continue
+        valid_uris.add(line)
+
+    print(f"  [{name}] → {len(valid_uris)} валидных конфигов")
+    return valid_uris
 
 # ============================================================
-# 4. TCP ПИНГ ДЛЯ БЫСТРОГО ОТСЕВА
-# ============================================================
-def extract_host_port(uri: str) -> Tuple[Optional[str], Optional[int]]:
-    try:
-        # Формат: vless://uuid@host:port... или trojan://pass@host:port...
-        after_proto = uri.split('://', 1)[1]
-        host_port_part = after_proto.split('@')[-1].split('?')[0].split('#')[0]
-        if ':' in host_port_part:
-            host, port_str = host_port_part.split(':', 1)
-            return host, int(port_str)
-        return host_port_part, 443
-    except:
-        return None, None
-
-def tcp_ping(host: str, port: int, timeout: float = 1.5) -> Optional[float]:
-    try:
-        start = time.time()
-        with socket.create_connection((host, port), timeout=timeout):
-            return (time.time() - start) * 1000
-    except:
-        return None
-
-# ============================================================
-# 5. ПРОВЕРКА ЧЕРЕЗ XRAY (РЕАЛЬНЫЙ ЗАПРОС)
-# ============================================================
-def vless_to_xray_outbound(url: str, tag: str = "proxy") -> Optional[dict]:
-    """Минимальный парсер VLESS URL в outbound для Xray."""
-    try:
-        # удаляем vless://
-        rest = url.replace('vless://', '', 1)
-        # отрезаем #fragment
-        if '#' in rest:
-            rest = rest.split('#', 1)[0]
-        # разделяем базу и параметры
-        if '?' in rest:
-            base, query_str = rest.split('?', 1)
-        else:
-            base, query_str = rest, ''
-        # base = uuid@host:port
-        if '@' not in base:
-            return None
-        uuid, host_port = base.rsplit('@', 1)
-        if ':' not in host_port:
-            return None
-        host, port_str = host_port.rsplit(':', 1)
-        port = int(port_str.split('/')[0])
-        # параметры
-        params = parse_qs(query_str)
-        security = params.get('security', ['none'])[0]
-        out = {
-            "protocol": "vless",
-            "settings": {
-                "vnext": [{
-                    "address": host,
-                    "port": port,
-                    "users": [{
-                        "id": uuid,
-                        "encryption": params.get('encryption', ['none'])[0],
-                        "flow": params.get('flow', [''])[0]
-                    }]
-                }]
-            },
-            "streamSettings": {
-                "network": params.get('type', ['tcp'])[0],
-                "security": security
-            }
-        }
-        if security == 'tls':
-            out["streamSettings"]["tlsSettings"] = {
-                "serverName": params.get('sni', [host])[0],
-                "fingerprint": params.get('fp', ['chrome'])[0]
-            }
-        elif security == 'reality':
-            out["streamSettings"]["realitySettings"] = {
-                "serverName": params.get('sni', [''])[0],
-                "fingerprint": params.get('fp', ['chrome'])[0],
-                "publicKey": params.get('pbk', [''])[0],
-                "shortId": params.get('sid', [''])[0]
-            }
-        return out
-    except:
-        return None
-
-def trojan_to_xray_outbound(url: str, tag: str = "proxy") -> Optional[dict]:
-    try:
-        rest = url.replace('trojan://', '', 1)
-        if '#' in rest:
-            rest = rest.split('#', 1)[0]
-        if '?' in rest:
-            rest = rest.split('?', 1)[0]
-        if '@' not in rest:
-            return None
-        password, host_port = rest.rsplit('@', 1)
-        if ':' not in host_port:
-            return None
-        host, port_str = host_port.rsplit(':', 1)
-        port = int(port_str)
-        return {
-            "protocol": "trojan",
-            "settings": {"servers": [{"address": host, "port": port, "password": password}]},
-            "streamSettings": {
-                "network": "tcp",
-                "security": "tls",
-                "tlsSettings": {"serverName": host}
-            }
-        }
-    except:
-        return None
-
-def test_proxy_with_xray(uri: str, timeout: float = TEST_TIMEOUT) -> Tuple[bool, float, str]:
-    """Возвращает (успех, задержка_мс, новый_URI_с_пингом_в_имени)"""
-    # Извлекаем оригинальное имя
-    original_name = uri.split('#')[-1] if '#' in uri else ""
-    # Создаём outbound
-    if uri.startswith('vless://'):
-        out = vless_to_xray_outbound(uri)
-    elif uri.startswith('trojan://'):
-        out = trojan_to_xray_outbound(uri)
-    else:
-        return False, 0.0, uri
-    if not out:
-        return False, 0.0, uri
-
-    # Генерируем порт для SOCKS
-    socks_port = 30000 + (hash(uri) % 5000)  # простой deterministic порт
-    config = {
-        "log": {"loglevel": "error"},
-        "inbounds": [{
-            "listen": "127.0.0.1",
-            "port": socks_port,
-            "protocol": "socks",
-            "settings": {"auth": "noauth", "udp": False}
-        }],
-        "outbounds": [out],
-        "routing": {"rules": [{"type": "field", "inboundTag": ["socks"], "outboundTag": "proxy"}]}
-    }
-    # Создаём временный конфиг
-    fd, conf_path = tempfile.mkstemp(suffix='.json', prefix='xray_')
-    os.close(fd)
-    with open(conf_path, 'w') as f:
-        json.dump(config, f)
-    try:
-        proc = subprocess.Popen([XRAY_BINARY, "run", "-config", conf_path],
-                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        time.sleep(0.5)  # даём Xray время подняться
-        if proc.poll() is not None:
-            return False, 0.0, uri
-        # Тестовый HTTP-запрос через SOCKS5
-        test_url = "http://ip-api.com"
-        start = time.time()
-        curl_cmd = [
-            "curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
-            "-x", f"socks5h://127.0.0.1:{socks_port}",
-            "--max-time", str(timeout),
-            test_url
-        ]
-        result = subprocess.run(curl_cmd, capture_output=True, text=True, timeout=timeout+1)
-        latency = (time.time() - start) * 1000
-        if result.returncode == 0 and result.stdout.strip() == "200":
-            new_name = f"[{int(latency)}ms] {original_name}" if original_name else f"[{int(latency)}ms]"
-            new_uri = uri.split('#')[0] + f"#{new_name}"
-            return True, latency, new_uri
-        else:
-            return False, 0.0, uri
-    except Exception:
-        return False, 0.0, uri
-    finally:
-        proc.terminate()
-        proc.wait(timeout=2)
-        os.unlink(conf_path)
-
-# ============================================================
-# 6. ОСНОВНАЯ ЛОГИКА
+# 4. ОСНОВНОЙ ПРОЦЕСС
 # ============================================================
 def main():
-    print("=== Минимальный фильтр + Xray проверка (только живые, пинг < 300 мс) ===")
-    start_all = time.time()
-    
-    # 1. Сбор всех безопасных URI
-    all_safe = set()
-    with ThreadPoolExecutor(max_workers=5) as ex:
-        futures = [ex.submit(load_from_source, src) for src in SOURCES_CONFIG]
-        for f in as_completed(futures):
-            all_safe.update(f.result())
-    print(f"\nВсего безопасных URI: {len(all_safe)}")
-    if not all_safe:
-        return
+    print("=== Мультипротокольный фильтр подписок ===")
+    # Собираем конфиги из всех источников (параллельно)
+    all_configs = {}
+    with ThreadPoolExecutor(max_workers=5) as executor:
+        future_to_source = {executor.submit(load_and_filter_source, src): src for src in SOURCES_CONFIG}
+        for future in as_completed(future_to_source):
+            src = future_to_source[future]
+            try:
+                uris = future.result()
+                all_configs[src['name']] = uris
+            except Exception as e:
+                print(f"  [{src['name']}] Ошибка: {e}")
+                all_configs[src['name']] = set()
 
-    # 2. Быстрый TCP-пинг + сортировка
-    print("\n=== Быстрая TCP-проверка (отсев мёртвых) ===")
-    ping_list = []  # (latency, uri)
-    with ThreadPoolExecutor(max_workers=30) as ex:
-        def tcp_one(uri):
-            host, port = extract_host_port(uri)
-            if not host:
-                return None
-            lat = tcp_ping(host, port)
-            if lat is not None:
-                return (lat, uri)
-            return None
-        for uri in all_safe:
-            futures = [ex.submit(tcp_one, uri) for uri in all_safe]
-            for f in as_completed(futures):
-                res = f.result()
-                if res:
-                    ping_list.append(res)
-    ping_list.sort(key=lambda x: x[0])
-    print(f"  Живых по TCP: {len(ping_list)}/{len(all_safe)}")
+    # Сохраняем отдельные FILTER-*.txt
+    for name, uris in all_configs.items():
+        out_file = os.path.join(OUTPUT_DIR, f"{name}.txt")
+        with open(out_file, 'w', encoding='utf-8') as f:
+            if uris:
+                f.write('\n'.join(sorted(uris)) + '\n')
+        print(f"  Сохранён {name}.txt → {len(uris)} записей")
 
-    # 3. Отбираем лучшие для реальной проверки
-    to_test = [uri for _, uri in ping_list[:MAX_PROXIES_TO_TEST]]
-    print(f"\n=== Реальная проверка через Xray (топ {len(to_test)} прокси, таймаут {TEST_TIMEOUT}c) ===")
-    good_proxies = []  # (latency, new_uri)
-    for i, uri in enumerate(to_test):
-        print(f"  Тестируем {i+1}/{len(to_test)}...")
-        ok, lat, new_uri = test_proxy_with_xray(uri)
-        if ok and lat <= MAX_LATENCY_MS:
-            good_proxies.append((lat, new_uri))
-            print(f"    ✅ {int(lat)}ms -> имя обновлено")
-        else:
-            print(f"    ❌ не прошёл (латенси: {int(lat) if ok else 'таймаут'})")
-    good_proxies.sort(key=lambda x: x[0])
-
-    # 4. Сохраняем FILTER-*.txt (все безопасные)
-    for src in SOURCES_CONFIG:
-        uris = load_from_source(src)  # повтор, но можно кешировать
-        out = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
-        with open(out, 'w', encoding='utf-8') as f:
-            f.write('\n'.join(sorted(uris)) + ('\n' if uris else ''))
-        print(f"  Сохранён {src['name']}.txt → {len(uris)}")
-
-    # 5. FAST-server.txt (только живые, пинг < MAX_LATENCY_MS)
-    fast_path = os.path.join(OUTPUT_DIR, "FAST-server.txt")
-    with open(fast_path, 'w', encoding='utf-8') as f:
-        for _, uri in good_proxies:
-            f.write(uri + '\n')
-    print(f"\n✅ FAST-server.txt: {len(good_proxies)} живых прокси (отсортировано по пингу)")
-
-    elapsed = time.time() - start_all
-    print(f"\n⏱️  Время выполнения: {elapsed:.1f} секунд")
+    # Создаём объединённый ALL.txt (дедупликация по всем источникам)
+    all_uris = set()
+    for uris in all_configs.values():
+        all_uris.update(uris)
+    all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
+    with open(all_file, 'w', encoding='utf-8') as f:
+        if all_uris:
+            f.write('\n'.join(sorted(all_uris)) + '\n')
+    print(f"\n✅ Создан ALL.txt с {len(all_uris)} уникальными конфигами")
 
 if __name__ == "__main__":
     main()
