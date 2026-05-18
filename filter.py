@@ -7,7 +7,7 @@ import json
 import base64
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Set, Dict, Optional
+from typing import Set, Dict, Optional, List
 
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -19,7 +19,6 @@ SUPPORTED_PROTOCOLS = [
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
     {"name": "FILTER-2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
-    # ОСТАВЛЯЕМ ОРИГИНАЛЬНУЮ ССЫЛКУ, ТЕПЕРЬ ФУНКЦИЯ 'СКЛЕЙКИ' РЕШИТ ПРОБЛЕМУ
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
@@ -135,20 +134,24 @@ def is_safe_config(line: str) -> bool:
         return is_safe_ss(line)
     return True
 
-def repair_broken_lines(lines: list) -> list:
-    """Склеивает разорванные строки конфигураций в цельные валидные строки"""
-    repaired = []
+def parse_multiline_configs(lines: List[str]) -> List[str]:
+    """Собирает целые конфиги из разорванных строк (каждая строка, начинающаяся с протокола, начинает новый конфиг)."""
+    configs = []
     current = ""
     for line in lines:
-        if line.startswith('vless://'):
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if is_supported_protocol(stripped):
             if current:
-                repaired.append(current)
-            current = line
+                configs.append(current)
+            current = stripped
         else:
-            current += line
+            if current:
+                current += stripped
     if current:
-        repaired.append(current)
-    return repaired
+        configs.append(current)
+    return configs
 
 def fetch_url(url: str) -> Optional[str]:
     try:
@@ -168,20 +171,19 @@ def load_and_filter(source: Dict) -> Set[str]:
         return set()
 
     lines = content.splitlines()
-    # Очищаем строки от лишних пробелов
+    # Убираем комментарии и пустые строки
     lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('#')]
-    
-    # Склеиваем разорванные конфигурации
-    repaired_lines = repair_broken_lines(lines)
 
-    configs = set()
-    for line in repaired_lines:
-        if is_safe_config(line):
-            configs.add(line)
-    return configs
+    configs_raw = parse_multiline_configs(lines)
+
+    valid = set()
+    for cfg in configs_raw:
+        if is_safe_config(cfg):
+            valid.add(cfg)
+    return valid
 
 def main():
-    print("=== Фильтрация подписок с поддержкой 'рваных' конфигураций ===")
+    print("=== Фильтр подписок с поддержкой многострочных конфигов ===")
     all_configs = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
