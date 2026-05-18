@@ -31,10 +31,8 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install requests curl_cffi
+      - name: Install curl
+        run: sudo apt-get update && sudo apt-get install -y curl
 
       - name: Setup Xray-core
         run: |
