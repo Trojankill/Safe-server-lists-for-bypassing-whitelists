@@ -2,8 +2,8 @@ name: Auto Update Proxy Filters
 
 on:
   schedule:
-    - cron: "*/9 * * * *"       # каждые 9 минут, как у человека
-  workflow_dispatch:            # ручной запуск
+    - cron: "*/9 * * * *"
+  workflow_dispatch:
 
 jobs:
   update-files:
@@ -15,7 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
-          token: ${{ secrets.MY_TOKEN }}    # используем PAT для надёжности
           fetch-depth: 0
 
       - name: Force sync with remote (avoid non-fast-forward)
