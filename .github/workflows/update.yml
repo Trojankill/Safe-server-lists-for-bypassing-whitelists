@@ -32,13 +32,15 @@ jobs:
           python-version: "3.11"
 
       - name: Run filter script
-        run: python filter.py
+        run: |
+          mkdir -p githubmirror
+          python filter.py
 
       - name: Commit and push changes
         run: |
-          git add githubmirror/FILTER-*.txt githubmirror/ALL.txt
+          git add githubmirror/FILTER-*.txt githubmirror/ALL.txt githubmirror/UNFILTER-*.txt 2>/dev/null || true
           if git diff --staged --quiet; then
-            echo "No changes"
+            echo "No changes to commit"
             exit 0
           fi
           git commit -m "auto-update filters ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
