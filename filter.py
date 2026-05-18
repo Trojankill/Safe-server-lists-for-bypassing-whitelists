@@ -47,8 +47,10 @@ def is_safe(line: str) -> bool:
         return False
     if has_insecure_params(line):
         return False
+    # Trojan: обязательно наличие sni
     if line.startswith('trojan://'):
         return 'sni=' in line
+    # VLESS: Reality или xtls-rprx-vision, либо tls+sni
     if line.startswith('vless://'):
         if re.search(r'security=reality|pbk=|flow=xtls-rprx-vision', line, re.I):
             return True
@@ -57,17 +59,36 @@ def is_safe(line: str) -> bool:
         return False
     return False
 
+def repair_config(raw_lines):
+    """
+    Склеивает строки, разорванные посередине vless:// конфига.
+    Нужно для источника FILTER-3 (zieng2/wl), где длинные строки перенесены.
+    """
+    repaired = []
+    current = ""
+    for line in raw_lines:
+        if line.startswith('vless://'):
+            if current:
+                repaired.append(current)
+            current = line
+        else:
+            current += line
+    if current:
+        repaired.append(current)
+    return repaired
+
 def load_lines(url: str):
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
-            lines = []
+            raw_lines = []
             for raw in content.splitlines():
                 line = raw.strip()
                 if line and not line.startswith('#'):
-                    lines.append(line)
-            return lines
+                    raw_lines.append(line)
+            # Восстанавливаем разорванные конфиги (нужно только для FILTER-3, но не повредит остальным)
+            return repair_config(raw_lines)
     except Exception as e:
         print(f"Ошибка загрузки {url}: {e}")
         return []
@@ -79,6 +100,7 @@ def main():
         raw_lines = load_lines(source_url)
         if not raw_lines:
             print(f"  → Нет данных из источника")
+            # Оставляем существующий файл нетронутым (или можно удалить? Не удаляем)
             continue
         good = set()
         for line in raw_lines:
