@@ -7,7 +7,7 @@ import json
 import base64
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Set, Dict, Optional, List
+from typing import Set, Dict, Optional, List, Tuple
 
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -135,7 +135,7 @@ def is_safe_config(line: str) -> bool:
     return True
 
 def parse_multiline_configs(lines: List[str]) -> List[str]:
-    """Собирает целые конфиги из разорванных строк (каждая строка, начинающаяся с протокола, начинает новый конфиг)."""
+    """Собирает целые конфиги из разорванных строк."""
     configs = []
     current = ""
     for line in lines:
@@ -158,54 +158,78 @@ def fetch_url(url: str) -> Optional[str]:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
+            # Если содержимое похоже на base64, декодируем (для поддержки некоторых подписок)
+            if re.fullmatch(r'^[A-Za-z0-9+/=\s]+$', content.strip()):
+                try:
+                    decoded = base64.b64decode(content.strip()).decode('utf-8', errors='ignore')
+                    if any(proto in decoded for proto in SUPPORTED_PROTOCOLS):
+                        return decoded
+                except:
+                    pass
             return content
     except Exception as e:
         print(f"  Ошибка загрузки {url}: {e}")
         return None
 
-def load_and_filter(source: Dict) -> Set[str]:
+def load_and_filter(source: Dict) -> Tuple[Set[str], List[str]]:
+    """
+    Возвращает (множество отфильтрованных конфигов, список всех собранных сырых конфигов).
+    """
     name = source['name']
     print(f"  [{name}] Загрузка...")
     content = fetch_url(source['url'])
     if not content:
-        return set()
+        return set(), []
 
     lines = content.splitlines()
     # Убираем комментарии и пустые строки
     lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('#')]
 
-    configs_raw = parse_multiline_configs(lines)
+    raw_configs = parse_multiline_configs(lines)
 
     valid = set()
-    for cfg in configs_raw:
+    for cfg in raw_configs:
         if is_safe_config(cfg):
             valid.add(cfg)
-    return valid
+    return valid, raw_configs
 
 def main():
-    print("=== Фильтр подписок с поддержкой многострочных конфигов ===")
-    all_configs = set()
+    print("=== Фильтр подписок (с дополнительным UNFILTER-3 для отладки) ===")
+    all_filtered = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
         for future in as_completed(futures):
             src = futures[future]
+            name = src['name']
             try:
-                configs = future.result()
-                out = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
+                filtered, raw = future.result()
+                # Сохраняем отфильтрованные
+                out = os.path.join(OUTPUT_DIR, f"{name}.txt")
                 with open(out, 'w', encoding='utf-8', newline='\n') as f:
-                    f.write('\n'.join(sorted(configs)))
-                    if configs:
+                    f.write('\n'.join(sorted(filtered)))
+                    if filtered:
                         f.write('\n')
-                print(f"  Сохранён {src['name']}.txt → {len(configs)} конфигов")
-                all_configs.update(configs)
+                print(f"  Сохранён {name}.txt → {len(filtered)} конфигов")
+                all_filtered.update(filtered)
+
+                # Для FILTER-3 дополнительно сохраняем нефильтрованные в UNFILTER-3.txt
+                if name == "FILTER-3":
+                    unfiltered_path = os.path.join(OUTPUT_DIR, "UNFILTER-3.txt")
+                    with open(unfiltered_path, 'w', encoding='utf-8', newline='\n') as f:
+                        f.write('\n'.join(raw))
+                        if raw:
+                            f.write('\n')
+                    print(f"  Сохранён UNFILTER-3.txt → {len(raw)} сырых конфигов (без фильтрации)")
             except Exception as e:
-                print(f"  [{src['name']}] Ошибка: {e}")
+                print(f"  [{name}] Ошибка: {e}")
+
+    # Общий ALL.txt
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
     with open(all_file, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(sorted(all_configs)))
-        if all_configs:
+        f.write('\n'.join(sorted(all_filtered)))
+        if all_filtered:
             f.write('\n')
-    print(f"\n✅ Создан ALL.txt с {len(all_configs)} уникальными конфигами")
+    print(f"\n✅ Создан ALL.txt с {len(all_filtered)} уникальными конфигами")
 
 if __name__ == "__main__":
     main()
