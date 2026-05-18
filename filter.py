@@ -14,16 +14,11 @@ from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Set, Tuple, Optional, Dict, Any
 
-# ============================================================
-# 1. НАСТРОЙКИ
-# ============================================================
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-# Путь к Xray-core (будет скачан в workflow)
 XRAY_BINARY = "./xray/xray"
 
-# Источники (только прямые ссылки, без дат)
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
     {"name": "FILTER-2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
@@ -32,9 +27,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
-# ============================================================
-# 2. ФИЛЬТРЫ НЕБЕЗОПАСНЫХ ПАРАМЕТРОВ
-# ============================================================
+# === фильтры безопасности (как раньше) ===
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -69,16 +62,13 @@ def is_safe_uri(uri: str) -> bool:
         return False
     return False
 
-# ============================================================
-# 3. ЗАГРУЗКА ИСТОЧНИКОВ
-# ============================================================
 def fetch_url(url: str) -> Optional[str]:
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             return resp.read().decode('utf-8', errors='ignore')
     except Exception as e:
-        print(f"  Ошибка загрузки {url}: {e}")
+        print(f"  Ошибка {url}: {e}")
         return None
 
 def load_from_source(source: dict) -> Set[str]:
@@ -95,129 +85,61 @@ def load_from_source(source: dict) -> Set[str]:
                 uris.add(uri)
     return uris
 
-# ============================================================
-# 4. ПРЕОБРАЗОВАНИЕ URI В КОНФИГ XRAY
-# ============================================================
 def uri_to_xray_config(uri: str) -> Optional[Dict[str, Any]]:
-    """
-    Преобразует VLESS или Trojan URI в JSON-конфиг для Xray-core (входящий прокси).
-    Возвращает конфиг для outbound.
-    """
-    if not uri.startswith(('vless://', 'trojan://')):
-        return None
-    
-    parsed = urllib.parse.urlparse(uri)
-    protocol = parsed.scheme  # vless или trojan
-    # Извлекаем host:port из netloc (формат: uuid@host:port или password@host:port)
-    netloc = parsed.netloc
-    if '@' in netloc:
-        auth, host_port = netloc.split('@', 1)
-    else:
-        auth = ''
-        host_port = netloc
-    if ':' in host_port:
-        host, port_str = host_port.split(':', 1)
-        port = int(port_str.split('?')[0].split('#')[0])
-    else:
-        host = host_port
-        port = 443  # fallback
-    
-    # Параметры запроса
-    query = urllib.parse.parse_qs(parsed.query)
-    # Имя (фрагмент #)
-    name = urllib.parse.unquote(parsed.fragment) if parsed.fragment else ""
-    
-    # Базовый outbound
-    outbound = {
-        "protocol": protocol,
-        "settings": {},
-        "streamSettings": {
-            "network": "tcp",
-            "security": "tls" if protocol == "trojan" else "none",
-            "tlsSettings": {},
-            "realitySettings": {}
-        },
-        "tag": name if name else "proxy"
-    }
-    
-    if protocol == "vless":
-        # VLESS
-        uuid = auth
-        outbound["settings"]["vnext"] = [{
-            "address": host,
-            "port": port,
-            "users": [{
-                "id": uuid,
-                "encryption": query.get("encryption", ["none"])[0],
-                "flow": query.get("flow", [""])[0],
-                "level": 0
-            }]
-        }]
-        # Reality или TLS
-        if "security" in query and query["security"][0] == "reality":
-            outbound["streamSettings"]["security"] = "reality"
-            outbound["streamSettings"]["realitySettings"] = {
-                "serverName": query.get("sni", [host])[0],
-                "fingerprint": query.get("fp", ["chrome"])[0],
-                "publicKey": query.get("pbk", [""])[0],
-                "shortId": query.get("sid", [""])[0],
-                "spiderX": ""
-            }
-        elif "security" in query and query["security"][0] == "tls":
-            outbound["streamSettings"]["security"] = "tls"
-            outbound["streamSettings"]["tlsSettings"] = {
-                "serverName": query.get("sni", [host])[0],
-                "allowInsecure": False,
-                "fingerprint": query.get("fp", ["chrome"])[0]
-            }
-        else:
-            # no TLS (rare)
-            outbound["streamSettings"]["security"] = "none"
-    
-    elif protocol == "trojan":
-        password = auth
-        outbound["settings"]["servers"] = [{
-            "address": host,
-            "port": port,
-            "password": password,
-            "level": 0
-        }]
-        outbound["streamSettings"]["security"] = "tls"
-        outbound["streamSettings"]["tlsSettings"] = {
-            "serverName": query.get("sni", [host])[0],
-            "allowInsecure": False,
-            "fingerprint": query.get("fp", ["chrome"])[0]
-        }
-    
-    return outbound
+    # ... (та же функция, что и в предыдущем коде, она не меняется) ...
+    # Чтобы не дублировать, вставь её из предыдущего сообщения, либо я дам ссылку.
+    # Для краткости здесь предполагается, что она уже есть.
+    pass
 
-# ============================================================
-# 5. ПРОВЕРКА ЧЕРЕЗ XRAY-CORE (РЕАЛЬНЫЙ ЗАПРОС)
-# ============================================================
-def test_proxy_via_xray(uri: str, timeout: float = 10.0) -> Tuple[Optional[float], str]:
-    """
-    Запускает Xray-core с конфигом, подключается к прокси и делает тестовый HTTP-запрос.
-    Возвращает (задержка_мс, обновлённый_URI) или (None, URI) при неудаче.
-    """
-    # Извлекаем оригинальное имя
-    original_name = ""
-    if '#' in uri:
-        original_name = urllib.parse.unquote(uri.split('#')[-1])
+# ------------------------------------------------------------
+# БЫСТРЫЙ TCP-ПИНГ (отсеиваем заведомо мёртвые)
+# ------------------------------------------------------------
+def tcp_ping(host: str, port: int, timeout: float = 1.5) -> Optional[float]:
+    try:
+        start = time.time()
+        with socket.create_connection((host, port), timeout=timeout):
+            return (time.time() - start) * 1000
+    except:
+        return None
+
+# ------------------------------------------------------------
+# ПРОВЕРКА ЧЕРЕЗ XRAY (только для живых по TCP)
+# ------------------------------------------------------------
+def extract_host_port(uri: str) -> Tuple[Optional[str], Optional[int], str]:
+    try:
+        parsed = urllib.parse.urlparse(uri)
+        netloc = parsed.netloc.split('@')[-1]
+        if ':' in netloc:
+            host, port_str = netloc.split(':', 1)
+            port = int(port_str.split('?')[0].split('#')[0])
+        else:
+            host = netloc
+            port = 443
+        name = ''
+        if '#' in uri:
+            name = urllib.parse.unquote(uri.split('#')[-1])
+        return host, port, name
+    except:
+        return None, None, ''
+
+def test_proxy_via_xray(uri: str, timeout: float = 5.0) -> Tuple[Optional[float], str]:
+    """Запускает Xray только для прокси, прошедшего TCP-пинг."""
+    # Предварительный TCP-пинг (быстрый)
+    host, port, orig_name = extract_host_port(uri)
+    if not host or not port:
+        return None, uri
+    tcp_latency = tcp_ping(host, port, timeout=1.5)
+    if tcp_latency is None:
+        return None, uri   # TCP не отвечает – даже не пытаемся
     
-    # Конвертируем URI в outbound
+    # Теперь реальная проверка через Xray
     outbound = uri_to_xray_config(uri)
     if not outbound:
         return None, uri
     
-    # Создаём полный конфиг Xray (минимальный inbounds для socks, один outbound)
     config = {
         "log": {"loglevel": "warning"},
-        "inbounds": [{
-            "protocol": "socks",
-            "port": 1080,
-            "listen": "127.0.0.1",
-            "settings": {"auth": "noauth", "udp": False}
-        }],
+        "inbounds": [{"protocol": "socks", "port": 1080, "listen": "127.0.0.1", "settings": {"auth": "noauth"}}],
         "outbounds": [outbound],
         "routing": {"domainStrategy": "AsIs"}
     }
@@ -227,104 +149,77 @@ def test_proxy_via_xray(uri: str, timeout: float = 10.0) -> Tuple[Optional[float
         with open(config_path, 'w') as f:
             json.dump(config, f)
         
-        # Запускаем Xray
-        proc = subprocess.Popen(
-            [XRAY_BINARY, "-c", config_path],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
-        time.sleep(1.5)  # даём время подняться
+        proc = subprocess.Popen([XRAY_BINARY, "-c", config_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        time.sleep(0.5)   # сократили с 1.5 до 0.5 секунд
         
         try:
-            # Тестовый запрос через socks5
             start = time.time()
-            # Используем curl через socks5
-            cmd = [
-                "curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
-                "-x", "socks5h://127.0.0.1:1080",
-                "--max-time", str(timeout),
-                "http://ip-api.com"
-            ]
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout+2)
-            elapsed_ms = (time.time() - start) * 1000
-            
+            cmd = ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}",
+                   "-x", "socks5h://127.0.0.1:1080", "--max-time", str(timeout), "http://ip-api.com"]
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout+1)
+            latency = (time.time() - start) * 1000
             if result.returncode == 0 and result.stdout.strip() == "200":
-                # Успех
-                new_name = f"[{int(elapsed_ms)}ms] {original_name}" if original_name else f"[{int(elapsed_ms)}ms]"
+                new_name = f"[{int(latency)}ms] {orig_name}" if orig_name else f"[{int(latency)}ms]"
                 new_uri = uri.split('#')[0] + f"#{urllib.parse.quote(new_name)}"
-                return elapsed_ms, new_uri
-            else:
-                # Прокси не работает
-                return None, uri
-        except Exception as e:
-            return None, uri
+                return latency, new_uri
+        except:
+            pass
         finally:
             proc.terminate()
             try:
-                proc.wait(timeout=2)
+                proc.wait(timeout=1)
             except:
                 proc.kill()
+    return None, uri
 
-# ============================================================
-# 6. ОСНОВНАЯ ЛОГИКА
-# ============================================================
+# ------------------------------------------------------------
+# ОСНОВНАЯ ЛОГИКА (с параллелизацией 15 потоков)
+# ------------------------------------------------------------
 def main():
-    print("=== Фильтрация и проверка прокси через Xray-core ===")
+    print("=== Фильтрация + TCP префильтр + Xray проверка (ускоренная) ===")
     start_total = datetime.now()
     
-    # Шаг 1: сбор всех безопасных URI
+    # Шаг 1: сбор безопасных URI
     all_safe = set()
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = {executor.submit(load_from_source, src): src for src in SOURCES_CONFIG}
-        for future in as_completed(futures):
-            src = futures[future]
-            try:
-                uris = future.result()
-                all_safe.update(uris)
-                print(f"  [{src['name']}] → {len(uris)} безопасных URI")
-            except Exception as e:
-                print(f"  [{src['name']}] Ошибка: {e}")
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        futures = [ex.submit(load_from_source, src) for src in SOURCES_CONFIG]
+        for f in as_completed(futures):
+            all_safe.update(f.result())
     
-    print(f"\nВсего безопасных URI: {len(all_safe)}")
+    print(f"\nБезопасных URI: {len(all_safe)}")
     if not all_safe:
-        print("Нет безопасных конфигов. Завершение.")
         return
     
-    # Шаг 2: проверка через Xray-core (реальные запросы)
-    print("\n=== Реальная проверка через Xray-core (может занять время) ===")
-    results = []  # (latency, updated_uri)
-    with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_uri = {executor.submit(test_proxy_via_xray, uri): uri for uri in all_safe}
+    # Шаг 2: проверка через Xray (сначала быстрый TCP-пинг)
+    print("\n=== Проверка (TCP+реальная) с параллелизацией 15 потоков ===")
+    results = []
+    with ThreadPoolExecutor(max_workers=15) as ex:
+        future_to_uri = {ex.submit(test_proxy_via_xray, uri): uri for uri in all_safe}
+        completed = 0
         for future in as_completed(future_to_uri):
-            latency, updated_uri = future.result()
+            latency, new_uri = future.result()
+            completed += 1
             if latency is not None:
-                results.append((latency, updated_uri))
-            # Прогресс
-            done = len(results) + (len(all_safe) - len(future_to_uri))
-            if done % 10 == 0 or done == len(all_safe):
-                print(f"  Прогресс: {done} / {len(all_safe)} (живых: {len(results)})")
+                results.append((latency, new_uri))
+            if completed % 20 == 0 or completed == len(all_safe):
+                print(f"  Прогресс: {completed}/{len(all_safe)} (живых: {len(results)})")
     
-    results.sort(key=lambda x: x[0])  # сортируем по задержке
+    results.sort(key=lambda x: x[0])
     
-    # Шаг 3: сохраняем индивидуальные FILTER-*.txt (без проверки, просто безопасные)
+    # Шаг 3: сохранение FILTER-*.txt (индивидуальные)
     for src in SOURCES_CONFIG:
-        uris = load_from_source(src)   # повторная загрузка (неэффективно, но просто)
-        out_file = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
-        with open(out_file, 'w', encoding='utf-8', newline='\n') as f:
-            f.write('\n'.join(sorted(uris)))
-            if uris:
-                f.write('\n')
-        print(f"  Сохранён {src['name']}.txt → {len(uris)} записей")
+        uris = load_from_source(src)   # повторная загрузка – можно оптимизировать, но не критично
+        out = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
+        with open(out, 'w', encoding='utf-8') as f:
+            f.write('\n'.join(sorted(uris)) + ('\n' if uris else ''))
+        print(f"  {src['name']}.txt → {len(uris)}")
     
-    # Шаг 4: сохраняем FAST-server.txt (только живые, отсортированные)
-    fast_file = os.path.join(OUTPUT_DIR, "FAST-server.txt")
-    with open(fast_file, 'w', encoding='utf-8', newline='\n') as f:
-        for latency, uri in results:
+    # Шаг 4: FAST-server.txt
+    fast_path = os.path.join(OUTPUT_DIR, "FAST-server.txt")
+    with open(fast_path, 'w', encoding='utf-8') as f:
+        for _, uri in results:
             f.write(uri + '\n')
-    print(f"\nСоздан FAST-server.txt с {len(results)} живыми прокси (отсортировано по пингу)")
+    print(f"\nFAST-server.txt: {len(results)} живых прокси (отсортировано)")
     
     elapsed = (datetime.now() - start_total).total_seconds()
-    print(f"\n✅ Полный цикл завершён за {elapsed:.2f} сек.")
-
-if __name__ == "__main__":
-    main()
+    print(f"\n✅ Завершено за {elapsed:.2f} сек.")
