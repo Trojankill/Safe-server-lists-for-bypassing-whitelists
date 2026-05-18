@@ -3,14 +3,18 @@
 
 import re
 import os
+import socket
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Set, List
+from typing import Set, List, Tuple, Optional
 
 from xray_tester import XrayTester
 
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+MAX_LIVE_CHECK = 30          # Сколько прокси проверим реально (через Xray)
+TCP_TIMEOUT = 1.5            # Таймаут TCP-пинга
 
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
@@ -20,9 +24,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
-# ----------------------------------------------
-# Фильтры безопасности (как раньше)
-# ----------------------------------------------
+# ---------- безопасность ----------
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -79,9 +81,33 @@ def load_from_source(source: dict) -> Set[str]:
             uris.add(uri)
     return uris
 
+def extract_host_port(uri: str) -> Tuple[Optional[str], Optional[int]]:
+    try:
+        # Формат: vless://uuid@host:port?params#name
+        # или trojan://password@host:port?params#name
+        netloc = uri.split('://')[1].split('@')[-1]
+        host_port = netloc.split('?')[0].split('#')[0]
+        if ':' in host_port:
+            host, port_str = host_port.split(':', 1)
+            return host, int(port_str)
+        return host_port, 443
+    except:
+        return None, None
+
+def tcp_ping(host: str, port: int, timeout: float = TCP_TIMEOUT) -> Optional[float]:
+    try:
+        start = time.time()
+        with socket.create_connection((host, port), timeout=timeout):
+            return (time.time() - start) * 1000
+    except:
+        return None
+
 def main():
-    print("=== Фильтрация + XrayTester (реальная проверка прокси) ===")
-    # 1. Собираем безопасные URI из всех источников
+    import time
+    print("=== Гибридная фильтрация: TCP-пинг + Xray (только лучшие) ===")
+    start_total = time.time()
+    
+    # 1. Собираем все безопасные URI
     all_safe = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = [ex.submit(load_from_source, src) for src in SOURCES_CONFIG]
@@ -91,35 +117,62 @@ def main():
     if not all_safe:
         return
 
-    # 2. Тестируем через XrayTester
-    print("\n=== Запуск XrayTester (проверка реальной работы, может занять время) ===")
-    tester = XrayTester()
-    results = tester.test_batch(list(all_safe), concurrency=50, timeout=8.0)
+    # 2. Быстрый TCP-пинг для всех и сортировка
+    print("\n=== Быстрый TCP-пинг (отсев мёртвых) ===")
+    ping_results = []  # (latency, uri)
+    with ThreadPoolExecutor(max_workers=30) as ex:
+        def ping_one(uri):
+            host, port = extract_host_port(uri)
+            if not host:
+                return None
+            lat = tcp_ping(host, port)
+            if lat is not None:
+                return (lat, uri)
+            return None
+        futures = [ex.submit(ping_one, uri) for uri in all_safe]
+        for f in as_completed(futures):
+            res = f.result()
+            if res:
+                ping_results.append(res)
+    ping_results.sort(key=lambda x: x[0])  # по возрастанию пинга
+    print(f"  Живых по TCP: {len(ping_results)}/{len(all_safe)}")
 
-    # 3. Формируем список живых с новыми именами
-    working = []
-    for url, ok, latency in results:
-        if ok and latency > 0:
-            original_name = url.split('#')[-1] if '#' in url else ""
-            new_name = f"[{int(latency)}ms] {original_name}"
-            new_uri = url.split('#')[0] + f"#{new_name}"
-            working.append((latency, new_uri))
-    working.sort(key=lambda x: x[0])
+    # 3. Отбираем лучшие (по пингу) для реальной проверки через Xray
+    to_test = [uri for _, uri in ping_results[:MAX_LIVE_CHECK]]
+    print(f"\n=== Реальная проверка через Xray (топ {len(to_test)} прокси) ===")
+    if to_test:
+        tester = XrayTester()
+        # Уменьшаем таймауты для ускорения
+        results = tester.test_batch(to_test, concurrency=20, timeout=5.0)
+        working = []
+        for url, ok, latency in results:
+            if ok and latency > 0:
+                original_name = url.split('#')[-1] if '#' in url else ""
+                new_name = f"[{int(latency)}ms] {original_name}"
+                new_uri = url.split('#')[0] + f"#{new_name}"
+                working.append((latency, new_uri))
+        working.sort(key=lambda x: x[0])
+        print(f"  Реально рабочих: {len(working)}/{len(to_test)}")
+    else:
+        working = []
 
-    # 4. Сохраняем индивидуальные FILTER-*.txt (без проверки, просто безопасные)
+    # 4. Сохраняем FILTER-*.txt (все безопасные, даже непроверенные)
     for src in SOURCES_CONFIG:
-        uris = load_from_source(src)  # можно было сохранить из этапа 1, но для простоты повторяем
+        uris = load_from_source(src)  # повторная загрузка (можно кеш, но не критично)
         out_path = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
         with open(out_path, 'w', encoding='utf-8') as f:
             f.write('\n'.join(sorted(uris)) + ('\n' if uris else ''))
-        print(f"  Сохранён {src['name']}.txt → {len(uris)} записей")
+        print(f"  Сохранён {src['name']}.txt → {len(uris)}")
 
-    # 5. FAST-server.txt
+    # 5. FAST-server.txt (только реально проверенные рабочие)
     fast_path = os.path.join(OUTPUT_DIR, "FAST-server.txt")
     with open(fast_path, 'w', encoding='utf-8') as f:
         for _, uri in working:
             f.write(uri + '\n')
     print(f"\n✅ FAST-server.txt: {len(working)} живых прокси (отсортировано по пингу)")
+
+    elapsed = time.time() - start_total
+    print(f"\n⏱️  Время выполнения: {elapsed:.1f} секунд")
 
 if __name__ == "__main__":
     main()
