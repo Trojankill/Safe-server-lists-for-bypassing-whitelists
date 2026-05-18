@@ -7,7 +7,7 @@ import json
 import base64
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Set, Dict, Optional, List, Tuple
+from typing import Set, Dict, Optional, List
 
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -17,11 +17,11 @@ SUPPORTED_PROTOCOLS = [
 ]
 
 SOURCES_CONFIG = [
-    {"id": "1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
-    {"id": "2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
-    {"id": "3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt"},
-    {"id": "4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
-    {"id": "5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
+    {"name": "FILTER-1", "url": "https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt"},
+    {"name": "FILTER-2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
+    {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt"},
+    {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
+    {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
 UNSAFE_PATTERNS = [
@@ -121,6 +121,7 @@ def is_safe_config(line: str) -> bool:
         return False
     if has_insecure_params(line):
         return False
+
     if line.startswith('vmess://'):
         return is_safe_vmess(line)
     if line.startswith('trojan://'):
@@ -134,6 +135,7 @@ def is_safe_config(line: str) -> bool:
     return True
 
 def parse_multiline_configs(lines: List[str]) -> List[str]:
+    """Собирает целые конфиги из разорванных строк (каждая строка, начинающаяся с протокола, начинает новый конфиг)."""
     configs = []
     current = ""
     for line in lines:
@@ -151,83 +153,59 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
         configs.append(current)
     return configs
 
-def fetch_and_process(url: str) -> Tuple[List[str], List[str]]:
+def fetch_url(url: str) -> Optional[str]:
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
-            # Проверка на base64
-            if re.fullmatch(r'^[A-Za-z0-9+/=\s]+$', content.strip()):
-                try:
-                    content = base64.b64decode(content.strip()).decode('utf-8', errors='ignore')
-                except:
-                    pass
-            lines = [line.strip() for line in content.splitlines() if line.strip() and not line.strip().startswith('#')]
-            configs = parse_multiline_configs(lines)
-            return lines, configs
+            return content
     except Exception as e:
         print(f"  Ошибка загрузки {url}: {e}")
-        return [], []
+        return None
 
-def process_source(source: Dict) -> Tuple[Set[str], List[str]]:
-    idx = source['id']
-    print(f"  [FILTER-{idx}] Загрузка...")
-    raw_lines, configs = fetch_and_process(source['url'])
-    if not configs:
-        return set(), raw_lines
+def load_and_filter(source: Dict) -> Set[str]:
+    name = source['name']
+    print(f"  [{name}] Загрузка...")
+    content = fetch_url(source['url'])
+    if not content:
+        return set()
+
+    lines = content.splitlines()
+    # Убираем комментарии и пустые строки
+    lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('#')]
+
+    configs_raw = parse_multiline_configs(lines)
+
     valid = set()
-    for cfg in configs:
+    for cfg in configs_raw:
         if is_safe_config(cfg):
             valid.add(cfg)
-    return valid, raw_lines
+    return valid
 
 def main():
-    print("=== Фильтрация подписок + сырые копии (FILTER-* и UNFILTER-*) ===")
-    all_filtered = set()
-    all_raw = []
-
+    print("=== Фильтр подписок с поддержкой многострочных конфигов ===")
+    all_configs = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
-        futures = {ex.submit(process_source, src): src for src in SOURCES_CONFIG}
+        futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
         for future in as_completed(futures):
             src = futures[future]
-            idx = src['id']
             try:
-                filtered, raw_lines = future.result()
-                # FILTER-id.txt
-                filt_path = os.path.join(OUTPUT_DIR, f"FILTER-{idx}.txt")
-                with open(filt_path, 'w', encoding='utf-8', newline='\n') as f:
-                    f.write('\n'.join(sorted(filtered)))
-                    if filtered:
+                configs = future.result()
+                out = os.path.join(OUTPUT_DIR, f"{src['name']}.txt")
+                with open(out, 'w', encoding='utf-8', newline='\n') as f:
+                    f.write('\n'.join(sorted(configs)))
+                    if configs:
                         f.write('\n')
-                print(f"  Сохранён FILTER-{idx}.txt → {len(filtered)} конфигов")
-                all_filtered.update(filtered)
-
-                # UNFILTER-id.txt
-                unfilt_path = os.path.join(OUTPUT_DIR, f"UNFILTER-{idx}.txt")
-                with open(unfilt_path, 'w', encoding='utf-8', newline='\n') as f:
-                    f.write('\n'.join(raw_lines))
-                    if raw_lines:
-                        f.write('\n')
-                print(f"  Сохранён UNFILTER-{idx}.txt → {len(raw_lines)} строк (сырые)")
-                all_raw.extend(raw_lines)
+                print(f"  Сохранён {src['name']}.txt → {len(configs)} конфигов")
+                all_configs.update(configs)
             except Exception as e:
-                print(f"  [{idx}] Ошибка: {e}")
-
-    # FILTER-ALL.txt
-    all_filt_path = os.path.join(OUTPUT_DIR, "FILTER-ALL.txt")
-    with open(all_filt_path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(sorted(all_filtered)))
-        if all_filtered:
+                print(f"  [{src['name']}] Ошибка: {e}")
+    all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
+    with open(all_file, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(sorted(all_configs)))
+        if all_configs:
             f.write('\n')
-    print(f"\n✅ Создан FILTER-ALL.txt с {len(all_filtered)} уникальными конфигами")
-
-    # UNFILTER-ALL.txt
-    all_raw_path = os.path.join(OUTPUT_DIR, "UNFILTER-ALL.txt")
-    with open(all_raw_path, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(all_raw))
-        if all_raw:
-            f.write('\n')
-    print(f"✅ Создан UNFILTER-ALL.txt с {len(all_raw)} строками (сырые данные)")
+    print(f"\n✅ Создан ALL.txt с {len(all_configs)} уникальными конфигами")
 
 if __name__ == "__main__":
     main()
