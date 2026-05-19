@@ -1,7 +1,7 @@
 # Safe-server-lists-for-bypassing-whitelists
 Фильтрация небезопасных серверов в публичных подписках
 
-Список репозиториев оторые проходят фильтрацию
+Список репозиториев которые проходят фильтрацию
 
 FILTER-1 https://gist.githubusercontent.com/flaafix/c79a81037d15163360571c7a7331b153/raw/AetrisVPN.txt
 
