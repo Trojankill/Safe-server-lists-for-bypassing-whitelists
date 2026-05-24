@@ -7,7 +7,8 @@ import json
 import base64
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import Set, Dict, Optional, List
+from collections import defaultdict
+from typing import Set, Dict, Optional, List, Tuple
 
 OUTPUT_DIR = "githubmirror"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -24,7 +25,14 @@ SOURCES_CONFIG = [
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
-# Глобальные небезопасные параметры (encryption=none убран – для VLESS это норма)
+# ---------- Чёрный список подозрительных доменов в SNI ----------
+DANGEROUS_SNI_DOMAINS = [
+    'trahodrom.fun', 'persik.host', 'skysafe.online', 'alexandroff.ru',
+    'grovpn.com.alexandroff.ru', 'cdn.trahodrom.fun', 'rruu.persik.host',
+    'pol.skysafe.online'
+]
+
+# ---------- Глобальные небезопасные параметры (без encryption=none) ----------
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -46,7 +54,50 @@ def is_supported_protocol(line: str) -> bool:
 def has_insecure_params(line: str) -> bool:
     return bool(UNSAFE_REGEX.search(line))
 
-# ---------- VLESS (обновлённая логика) ----------
+# ---------- Дополнительные проверки безопасности ----------
+def is_dangerous_sni(url: str) -> bool:
+    sni_match = re.search(r'[?&]sni=([^&]+)', url, re.I)
+    if not sni_match:
+        return False
+    sni = sni_match.group(1).lower()
+    for domain in DANGEROUS_SNI_DOMAINS:
+        if domain in sni:
+            return True
+    return False
+
+def is_suspicious_host(url: str) -> bool:
+    # Проверка хоста: если он выглядит как IP.домен (например, 138.124.125.83.alexandroff.ru)
+    host_match = re.search(r'vless://[^@]+@([^:?]+)', url)
+    if not host_match:
+        return False
+    host = host_match.group(1)
+    if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
+        return True
+    return False
+
+def has_dangerous_transport_combination(url: str) -> bool:
+    # type=raw + flow=xtls-rprx-vision
+    type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
+    flow_match = re.search(r'[?&]flow=([^&]+)', url, re.I)
+    if type_match and type_match.group(1).lower() == 'raw' and flow_match and 'xtls-rprx-vision' in flow_match.group(1).lower():
+        return True
+    # type=xhttp без host (обязательный параметр для xhttp)
+    if type_match and type_match.group(1).lower() == 'xhttp':
+        if '&host=' not in url and '?host=' not in url:
+            return True
+    return False
+
+# ---------- Извлечение pbk и UUID для статистики ----------
+def extract_pbk(url: str) -> Optional[str]:
+    pbk_match = re.search(r'[?&]pbk=([^&]+)', url, re.I)
+    return pbk_match.group(1) if pbk_match else None
+
+def extract_uuid(url: str) -> Optional[str]:
+    # UUID находится после vless:// и до @
+    uuid_match = re.search(r'vless://([a-f0-9-]+)@', url, re.I)
+    return uuid_match.group(1).lower() if uuid_match else None
+
+# ---------- Протокол-специфичные проверки ----------
 def is_safe_vless(url: str) -> bool:
     if not url.startswith('vless://'):
         return False
@@ -59,17 +110,12 @@ def is_safe_vless(url: str) -> bool:
 
     has_sni = bool(re.search(r'[?&]sni=[^&]+', url, re.I))
 
-    # Без security или пустое security -> опасно
-    if not security_value:
-        return False
-    if security_value == 'none':
+    if not security_value or security_value == 'none':
         return False
 
-    # Reality – безопасно (требуем pbk)
     if security_value == 'reality' and 'pbk=' in url:
         return True
 
-    # TLS только для небезопасных транспортов (ws, grpc, http) и с sni
     if security_value == 'tls' and transport in ('ws', 'grpc', 'http') and has_sni and 'encryption=none' in url:
         return True
 
@@ -78,7 +124,6 @@ def is_safe_vless(url: str) -> bool:
 def is_safe_trojan(url: str) -> bool:
     if not url.startswith('trojan://'):
         return False
-    # Безопасный Trojan должен иметь sni
     return 'sni=' in url
 
 def is_safe_vmess(url: str) -> bool:
@@ -120,11 +165,18 @@ def is_safe_ss(url: str) -> bool:
         return False
     return True
 
-def is_safe_config(line: str) -> bool:
+def is_safe_config_base(line: str) -> bool:
+    """Базовая проверка без учёта статистики pbk/uuid (для предварительной фильтрации)."""
     line = line.strip()
     if not line or not is_supported_protocol(line):
         return False
     if has_insecure_params(line):
+        return False
+    if is_dangerous_sni(line):
+        return False
+    if is_suspicious_host(line):
+        return False
+    if has_dangerous_transport_combination(line):
         return False
 
     if line.startswith('vless://'):
@@ -139,7 +191,7 @@ def is_safe_config(line: str) -> bool:
         return is_safe_ss(line)
     return True
 
-# ---------- Склейка разорванных строк ----------
+# ---------- Парсинг многострочных конфигов ----------
 def parse_multiline_configs(lines: List[str]) -> List[str]:
     configs = []
     current = ""
@@ -163,7 +215,6 @@ def fetch_url(url: str) -> Optional[str]:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
-            # Авто-декодирование base64
             if re.fullmatch(r'^[A-Za-z0-9+/=\s]+$', content.strip()):
                 try:
                     decoded = base64.b64decode(content.strip()).decode('utf-8', errors='ignore')
@@ -185,11 +236,43 @@ def load_and_filter(source: Dict) -> Set[str]:
     lines = content.splitlines()
     lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('#')]
     raw_configs = parse_multiline_configs(lines)
-    valid = set()
+
+    # Предварительная фильтрация (базовая безопасность)
+    pre_filtered = []
     for cfg in raw_configs:
-        if is_safe_config(cfg):
-            valid.add(cfg)
-    return valid
+        if is_safe_config_base(cfg):
+            pre_filtered.append(cfg)
+
+    # Подсчёт частоты pbk и uuid среди предварительно отфильтрованных
+    pbk_count = defaultdict(int)
+    uuid_count = defaultdict(int)
+    config_pbk = {}
+    config_uuid = {}
+    for cfg in pre_filtered:
+        pbk = extract_pbk(cfg)
+        if pbk:
+            config_pbk[cfg] = pbk
+            pbk_count[pbk] += 1
+        uuid = extract_uuid(cfg)
+        if uuid:
+            config_uuid[cfg] = uuid
+            uuid_count[uuid] += 1
+
+    # Финальная фильтрация: отбрасываем конфиги с слишком частыми pbk (>3) или uuid (>2)
+    # Параметры можно вынести в константы
+    PBK_MAX_REPEAT = 3
+    UUID_MAX_REPEAT = 2
+    final_filtered = set()
+    for cfg in pre_filtered:
+        pbk = config_pbk.get(cfg)
+        uuid = config_uuid.get(cfg)
+        if pbk and pbk_count[pbk] > PBK_MAX_REPEAT:
+            continue
+        if uuid and uuid_count[uuid] > UUID_MAX_REPEAT:
+            continue
+        final_filtered.add(cfg)
+
+    return final_filtered
 
 # ---------- Сортировка по протоколам ----------
 def protocol_priority(uri: str) -> int:
@@ -206,7 +289,7 @@ def protocol_priority(uri: str) -> int:
     return 6
 
 def main():
-    print("=== Финальный фильтр прокси (без UNFILTER) ===")
+    print("=== Финальный фильтр прокси (с защитой от общих pbk/uuid и опасных доменов) ===")
     all_filtered = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
