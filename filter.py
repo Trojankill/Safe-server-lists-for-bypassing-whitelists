@@ -25,12 +25,13 @@ SOURCES_CONFIG = [
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
-# ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ (SNI и хост) ----------
+# ---------- РАСШИРЕННЫЙ ЧЁРНЫЙ СПИСОК ДОМЕНОВ (SNI и хост) ----------
 BANNED_DOMAINS = [
-    # Бесплатные/временные домены
+    # Бесплатные / временные домены
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
+    '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq',
+    # Проблемные зоны и конкретные домены
     '.alexandroff.ru', '.qzz.io', '.dynu.net', '.grovpn.com.alexandroff.ru',
-    # Ранее добавленные опасные
     'trahodrom.fun', 'persik.host', 'skysafe.online', 'cdn.trahodrom.fun',
     'rruu.persik.host', 'pol.skysafe.online', 'boot-lee.ru', 'locklance.lol',
     'xenovpn.top', 'towersflowerss.com', 'vepene.site', 'cloudconsole.ru',
@@ -74,10 +75,8 @@ def is_dangerous_sni(url: str) -> bool:
 
 def is_banned_host(url: str) -> bool:
     """Проверяет, содержит ли хост (IP или домен) запрещённый домен."""
-    # Извлекаем хост: после @ до : или до конца строки
     host_match = re.search(r'vless://[^@]+@([^:?]+)', url)
     if not host_match:
-        # Trojan и другие протоколы
         host_match = re.search(r'trojan://[^@]+@([^:?]+)', url)
     if not host_match:
         return False
@@ -354,7 +353,7 @@ def protocol_priority(uri: str) -> int:
     return 6
 
 def main():
-    print("=== Финальный фильтр прокси (расширенный чёрный список доменов) ===")
+    print("=== Финальный фильтр прокси (расширенный чёрный список: eu.org, tk, ml, cf, ga, gq) ===")
     all_filtered = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
