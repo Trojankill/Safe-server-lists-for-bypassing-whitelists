@@ -25,17 +25,21 @@ SOURCES_CONFIG = [
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"}
 ]
 
-# ---------- Чёрные списки ----------
-DANGEROUS_SNI_DOMAINS = [
-    'trahodrom.fun', 'persik.host', 'skysafe.online', 'alexandroff.ru',
-    'grovpn.com.alexandroff.ru', 'cdn.trahodrom.fun', 'rruu.persik.host',
-    'pol.skysafe.online', 'boot-lee.ru', 'locklance.lol', 'xenovpn.top',
-    'towersflowerss.com', 'vepene.site', 'cloudconsole.ru', 'moscow-neversleep.digital',
-    'amnesia.pw', 'magicvpssub.ru', 'fromblancwithlove.com', 'Koma-YT.PAGeS.Dev',
-    'ripaojiedian', 'gpt-plus.vepene.site'
+# ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ (SNI и хост) ----------
+BANNED_DOMAINS = [
+    # Бесплатные/временные домены
+    '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
+    '.alexandroff.ru', '.qzz.io', '.dynu.net', '.grovpn.com.alexandroff.ru',
+    # Ранее добавленные опасные
+    'trahodrom.fun', 'persik.host', 'skysafe.online', 'cdn.trahodrom.fun',
+    'rruu.persik.host', 'pol.skysafe.online', 'boot-lee.ru', 'locklance.lol',
+    'xenovpn.top', 'towersflowerss.com', 'vepene.site', 'cloudconsole.ru',
+    'moscow-neversleep.digital', 'amnesia.pw', 'magicvpssub.ru',
+    'fromblancwithlove.com', 'Koma-YT.PAGeS.Dev', 'ripaojiedian',
+    'gpt-plus.vepene.site'
 ]
 
-# ---------- Глобальные небезопасные параметры (encryption=none удалён) ----------
+# ---------- Глобальные небезопасные параметры ----------
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -57,23 +61,31 @@ def is_supported_protocol(line: str) -> bool:
 def has_insecure_params(line: str) -> bool:
     return bool(UNSAFE_REGEX.search(line))
 
-# ---------- Дополнительные опасные проверки ----------
+# ---------- Проверка запрещённых доменов в SNI и хосте ----------
 def is_dangerous_sni(url: str) -> bool:
     sni_match = re.search(r'[?&]sni=([^&]+)', url, re.I)
     if not sni_match:
         return False
     sni = sni_match.group(1).lower()
-    for domain in DANGEROUS_SNI_DOMAINS:
+    for domain in BANNED_DOMAINS:
         if domain in sni:
             return True
     return False
 
-def is_suspicious_host(url: str) -> bool:
-    # Хост вида IP.домен (например, 138.124.125.83.alexandroff.ru)
+def is_banned_host(url: str) -> bool:
+    """Проверяет, содержит ли хост (IP или домен) запрещённый домен."""
+    # Извлекаем хост: после @ до : или до конца строки
     host_match = re.search(r'vless://[^@]+@([^:?]+)', url)
     if not host_match:
+        # Trojan и другие протоколы
+        host_match = re.search(r'trojan://[^@]+@([^:?]+)', url)
+    if not host_match:
         return False
-    host = host_match.group(1)
+    host = host_match.group(1).lower()
+    for domain in BANNED_DOMAINS:
+        if domain in host:
+            return True
+    # Особый случай: IP.домен (например, 138.124.125.83.alexandroff.ru)
     if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
         return True
     return False
@@ -89,36 +101,29 @@ def has_dangerous_transport_combination(url: str) -> bool:
     return False
 
 def is_suspicious_encryption(url: str) -> bool:
-    # encryption=mlkem... (нестандартное)
     enc_match = re.search(r'[?&]encryption=([^&]+)', url, re.I)
     if enc_match and 'mlkem' in enc_match.group(1).lower():
         return True
     return False
 
 def is_trojan_public_pool(url: str) -> bool:
-    # Обнаружение публичных китайских прокси (одинаковый пароль, путь /trTelegram...)
     if not url.startswith('trojan://'):
         return False
-    # Пароль часто содержит спецсимволы, например 8r%3C%5B9%27l6hAO%238ZQi
-    # Проверяем наличие известных маркеров
     markers = ['Koma-YT.PAGeS.Dev', 'ripaojiedian', 't.me/ripaojiedian', 'trTelegram']
     for m in markers:
         if m in url:
             return True
-    # Также можно проверить, что пароль содержит много спецсимволов и есть path=/trTelegram...
     path_match = re.search(r'[?&]path=([^&]+)', url, re.I)
     if path_match and 'trTelegram' in path_match.group(1):
         return True
     return False
 
 def is_dangerous_uuid(url: str) -> bool:
-    # UUID = xxxxxxxxxx1@localhost – нерабочий, отбрасываем
-    uuid_match = re.search(r'vless://([^@]+)@', url, re.I)
-    if uuid_match and 'localhost' in url:
+    if 'localhost' in url:
         return True
     return False
 
-# ---------- Извлечение pbk, uuid, sid, пароля ----------
+# ---------- Извлечение идентификаторов ----------
 def extract_pbk(url: str) -> Optional[str]:
     pbk_match = re.search(r'[?&]pbk=([^&]+)', url, re.I)
     return pbk_match.group(1) if pbk_match else None
@@ -132,13 +137,12 @@ def extract_sid(url: str) -> Optional[str]:
     return sid_match.group(1) if sid_match else None
 
 def extract_trojan_password(url: str) -> Optional[str]:
-    # trojan://password@host...
     if not url.startswith('trojan://'):
         return None
     pass_match = re.search(r'trojan://([^@]+)@', url, re.I)
     return pass_match.group(1) if pass_match else None
 
-# ---------- Протокол-специфичные базовые проверки (без статистики) ----------
+# ---------- Базовые проверки протоколов ----------
 def is_safe_vless_base(url: str) -> bool:
     if not url.startswith('vless://'):
         return False
@@ -160,7 +164,6 @@ def is_safe_trojan_base(url: str) -> bool:
         return False
     if 'sni=' not in url:
         return False
-    # Отбрасываем публичные пулы
     if is_trojan_public_pool(url):
         return False
     return True
@@ -212,7 +215,7 @@ def is_safe_config_base(line: str) -> bool:
         return False
     if is_dangerous_sni(line):
         return False
-    if is_suspicious_host(line):
+    if is_banned_host(line):
         return False
     if has_dangerous_transport_combination(line):
         return False
@@ -279,13 +282,13 @@ def load_and_filter(source: Dict) -> Set[str]:
     lines = [line.strip() for line in lines if line.strip() and not line.strip().startswith('#')]
     raw_configs = parse_multiline_configs(lines)
 
-    # Предварительная фильтрация (базовая безопасность)
+    # Предварительная фильтрация
     pre_filtered = []
     for cfg in raw_configs:
         if is_safe_config_base(cfg):
             pre_filtered.append(cfg)
 
-    # Подсчёт статистики pbk, uuid, sid, trojan password
+    # Подсчёт статистики повторяющихся идентификаторов
     pbk_count = defaultdict(int)
     uuid_count = defaultdict(int)
     sid_count = defaultdict(int)
@@ -314,11 +317,10 @@ def load_and_filter(source: Dict) -> Set[str]:
                 config_trojan_pass[cfg] = pwd
                 trojan_pass_count[pwd] += 1
 
-    # Финальная фильтрация
-    PBK_MAX_REPEAT = 2      # если pbk встречается более 2 раз – отбрасываем все такие конфиги
-    UUID_MAX_REPEAT = 2     # если UUID встречается более 2 раз – отбрасываем
-    SID_MAX_REPEAT = 2      # если sid повторяется более 2 раз – отбрасываем
-    TROJAN_PASS_MAX_REPEAT = 2  # если пароль Trojan повторяется более 2 раз – отбрасываем
+    PBK_MAX_REPEAT = 2
+    UUID_MAX_REPEAT = 2
+    SID_MAX_REPEAT = 2
+    TROJAN_PASS_MAX_REPEAT = 2
 
     final_filtered = set()
     for cfg in pre_filtered:
@@ -338,7 +340,6 @@ def load_and_filter(source: Dict) -> Set[str]:
 
     return final_filtered
 
-# ---------- Сортировка по протоколам ----------
 def protocol_priority(uri: str) -> int:
     if uri.startswith('vless://'):
         return 1
@@ -353,7 +354,7 @@ def protocol_priority(uri: str) -> int:
     return 6
 
 def main():
-    print("=== Финальный фильтр прокси (максимальная защита) ===")
+    print("=== Финальный фильтр прокси (расширенный чёрный список доменов) ===")
     all_filtered = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
