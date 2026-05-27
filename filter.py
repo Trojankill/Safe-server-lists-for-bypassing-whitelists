@@ -29,7 +29,7 @@ SOURCES_CONFIG = [
 BANNED_DOMAINS = [
     # Бесплатные / временные домены
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
-    '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq',
+    '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq', '.mwscdn.ru',
     # Проблемные зоны и конкретные домены
     '.alexandroff.ru', '.qzz.io', '.dynu.net', '.grovpn.com.alexandroff.ru',
     'trahodrom.fun', 'persik.host', 'skysafe.online', 'cdn.trahodrom.fun',
@@ -40,7 +40,7 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site'
 ]
 
-# ---------- Глобальные небезопасные параметры ----------
+# ---------- Глобальные небезопасные параметры (encryption=none удалён) ----------
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -89,12 +89,21 @@ def is_banned_host(url: str) -> bool:
         return True
     return False
 
+# ---------- Опасные комбинации (исправлено: type=raw всегда блокируется) ----------
 def has_dangerous_transport_combination(url: str) -> bool:
     type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
-    flow_match = re.search(r'[?&]flow=([^&]+)', url, re.I)
-    if type_match and type_match.group(1).lower() == 'raw' and flow_match and 'xtls-rprx-vision' in flow_match.group(1).lower():
+    if not type_match:
+        return False
+    transport = type_match.group(1).lower()
+    # Блокируем type=raw всегда
+    if transport == 'raw':
         return True
-    if type_match and type_match.group(1).lower() == 'xhttp':
+    # type=raw + flow=xtls-rprx-vision (уже не нужно отдельно, но оставим для страховки)
+    flow_match = re.search(r'[?&]flow=([^&]+)', url, re.I)
+    if transport == 'raw' and flow_match and 'xtls-rprx-vision' in flow_match.group(1).lower():
+        return True
+    # type=xhttp без host
+    if transport == 'xhttp':
         if '&host=' not in url and '?host=' not in url:
             return True
     return False
@@ -316,7 +325,8 @@ def load_and_filter(source: Dict) -> Set[str]:
                 config_trojan_pass[cfg] = pwd
                 trojan_pass_count[pwd] += 1
 
-    PBK_MAX_REPEAT = 2
+    # Пороги отбраковки
+    PBK_MAX_REPEAT = 2      # >2 – отбрасываем
     UUID_MAX_REPEAT = 2
     SID_MAX_REPEAT = 2
     TROJAN_PASS_MAX_REPEAT = 2
@@ -353,7 +363,7 @@ def protocol_priority(uri: str) -> int:
     return 6
 
 def main():
-    print("=== Финальный фильтр прокси (расширенный чёрный список: eu.org, tk, ml, cf, ga, gq) ===")
+    print("=== Финальный фильтр прокси (блокировка type=raw + расширенные чёрные списки) ===")
     all_filtered = set()
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src): src for src in SOURCES_CONFIG}
