@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v3.1 + QR
-Строгая проверка. URL Health + авто-очистка. SS 2022 key validation.
-SSR. Hysteria v1. QR-коды для подписки и отдельных конфигов.
+Фильтр прокси-конфигураций v3.2 + QR
+QR-CODE в корне репо. QR только для ALL + FILTER-1..5.
 """
 
 import re
@@ -25,16 +24,16 @@ from typing import Set, Dict, Optional, List, Tuple
 OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
 REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
-QR_DIR = os.path.join(OUTPUT_DIR, "QR-CODE")
-QR_CONFIGS_DIR = os.path.join(QR_DIR, "configs")
+QR_DIR = "QR-CODE"  # ← В КОРНЕ РЕПО, не в githubmirror
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(REJECT_DIR, exist_ok=True)
+os.makedirs(QR_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
-MAX_QR_CONFIGS = 200  # максимум QR для отдельных конфигов
 
-SUBSCRIPTION_URL = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/ALL.txt"
+# ⚠️ ЗАМЕНИ на свой логин и репо!
+RAW_BASE = "https://raw.githubusercontent.com/USERNAME/REPO/main/githubmirror"
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
@@ -63,7 +62,7 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site',
 ]
 
-# ---------- ШИФРЫ SS (расширенные) ----------
+# ---------- ШИФРЫ SS ----------
 SAFE_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
     'chacha20-poly1305', 'chacha20-ietf-poly1305',
@@ -87,20 +86,17 @@ WEAK_SS_METHODS = {
     'none', '',
 }
 
-# ---------- SS 2022: ожидаемая длина ключа ----------
 _SS_2022_KEY_LENGTHS = {
     '2022-blake3-aes-128-gcm': 16,
     '2022-blake3-aes-256-gcm': 32,
     '2022-blake3-chacha20-poly1305': 32,
 }
 
-# ---------- FINGERPRINTS ----------
 SAFE_FINGERPRINTS = {
     'chrome', 'firefox', 'safari', 'ios', 'android',
     'edge', '360', 'qq', 'random', 'randomized',
 }
 
-# ---------- НЕБЕЗОПАСНЫЕ ПАРАМЕТРЫ ----------
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
@@ -118,7 +114,6 @@ UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
-    """True если ключ НЕВАЛИДНЫЙ. Multi-key (key1:key2) пропускаем."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
@@ -578,22 +573,15 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
 
 
 # =====================================================================
-#  QR-CODE ГЕНЕРАЦИЯ
+#  QR-CODE ГЕНЕРАЦИЯ (только для файлов, в корне репо)
 # =====================================================================
 
-PROTO_NAMES = {
-    'vless://': 'vless',
-    'trojan://': 'trojan',
-    'vmess://': 'vmess',
-    'hysteria2://': 'hy2',
-    'hy2://': 'hy2',
-    'hysteria://': 'hy1',
-    'ss://': 'ss',
-    'ssr://': 'ssr',
-}
-
-
-def generate_qr_codes(configs: List[str]):
+def generate_qr_codes(file_counts: Dict[str, int]):
+    """
+    Генерирует QR-коды для каждого файла подписки.
+    file_counts: {"ALL": 150, "FILTER-1": 42, ...}
+    Каждый QR содержит URL на raw.githubusercontent.com/.../githubmirror/FILE.txt
+    """
     try:
         import qrcode
         from qrcode.constants import ERROR_CORRECT_M
@@ -601,41 +589,37 @@ def generate_qr_codes(configs: List[str]):
         print("  ⚠️  qrcode не установлен. pip install qrcode[pil]")
         return
 
-    os.makedirs(QR_CONFIGS_DIR, exist_ok=True)
+    os.makedirs(QR_DIR, exist_ok=True)
 
-    # 1. QR подписки
-    sub_qr = qrcode.QRCode(version=None, error_correction=ERROR_CORRECT_M, box_size=10, border=4)
-    sub_qr.add_data(SUBSCRIPTION_URL)
-    sub_qr.make(fit=True)
-    img = sub_qr.make_image(fill_color="black", back_color="white")
-    img.save(os.path.join(QR_DIR, "subscription.png"))
-    print(f"  📱 QR подписки: {QR_DIR}/subscription.png")
+    qr_files = []
 
-    # 2. QR для отдельных конфигов (с лимитом)
-    limited = configs[:MAX_QR_CONFIGS]
-    for i, cfg in enumerate(limited, 1):
-        proto_label = 'unknown'
-        for prefix, label in PROTO_NAMES.items():
-            if cfg.startswith(prefix):
-                proto_label = label
-                break
-        cfg_hash = hashlib.md5(cfg.encode()).hexdigest()[:8]
-        filename = f"{i:04d}_{proto_label}_{cfg_hash}.png"
-        filepath = os.path.join(QR_CONFIGS_DIR, filename)
+    for name, count in file_counts.items():
+        if count == 0:
+            continue
 
-        qr = qrcode.QRCode(version=None, error_correction=ERROR_CORRECT_M, box_size=8, border=3)
-        qr.add_data(cfg)
+        file_url = f"{RAW_BASE}/{name}.txt"
+
+        qr = qrcode.QRCode(
+            version=None,
+            error_correction=ERROR_CORRECT_M,
+            box_size=10,
+            border=4,
+        )
+        qr.add_data(file_url)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
+
+        filename = f"{name}.png"
+        filepath = os.path.join(QR_DIR, filename)
         img.save(filepath)
+        qr_files.append((name, count, filename))
+        print(f"  📱 QR: {filepath} → {file_url}")
 
-    print(f"  📱 QR конфигов: {len(limited)} шт. → {QR_CONFIGS_DIR}/")
-
-    # 3. HTML-индекс
-    _generate_qr_index(limited)
+    # HTML-индекс
+    _generate_qr_index(qr_files)
 
 
-def _generate_qr_index(configs: List[str]):
+def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
     index_path = os.path.join(QR_DIR, "index.html")
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write("""<!DOCTYPE html>
@@ -643,52 +627,32 @@ def _generate_qr_index(configs: List[str]):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR-коды прокси</title>
+<title>QR-коды подписок</title>
 <style>
   body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 20px; }
   h1 { text-align: center; color: #00d4ff; }
-  .sub-qr { text-align: center; margin: 30px 0; }
-  .sub-qr img { width: 300px; height: 300px; border: 4px solid #00d4ff; border-radius: 12px; }
-  .sub-qr p { color: #aaa; font-size: 14px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 30px; }
-  .card { background: #16213e; border-radius: 10px; padding: 12px; text-align: center; }
-  .card img { width: 180px; height: 180px; border-radius: 6px; }
-  .card .label { font-size: 12px; color: #888; margin-top: 8px; word-break: break-all; }
-  .card .proto { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; margin-bottom: 6px; }
-  .proto-vless { background: #e94560; }
-  .proto-trojan { background: #0f3460; }
-  .proto-vmess { background: #533483; }
-  .proto-hy2 { background: #e94560; }
-  .proto-hy1 { background: #e94560; }
-  .proto-ss { background: #0f3460; }
-  .proto-ssr { background: #533483; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+  .card { background: #16213e; border-radius: 12px; padding: 20px; text-align: center; }
+  .card img { width: 240px; height: 240px; border-radius: 8px; }
+  .card .name { font-size: 18px; font-weight: bold; color: #00d4ff; margin-top: 12px; }
+  .card .count { font-size: 14px; color: #888; margin-top: 4px; }
+  .card .url { font-size: 11px; color: #555; margin-top: 8px; word-break: break-all; }
+  .all-card { border: 2px solid #00d4ff; }
 </style>
 </head>
 <body>
-<h1>📱 QR-коды прокси</h1>
-<div class="sub-qr">
-  <img src="subscription.png" alt="Subscription QR">
-  <p>Отсканируй для добавления <b>всех</b> конфигов как подписку</p>
-</div>
-<h2>Отдельные конфиги</h2>
+<h1>📱 QR-коды подписок</h1>
+<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (v2rayNG, Karing, Hiddify) для добавления подписки</p>
 <div class="grid">
 """)
-        for i, cfg in enumerate(configs, 1):
-            proto_label = 'unknown'
-            for prefix, label in PROTO_NAMES.items():
-                if cfg.startswith(prefix):
-                    proto_label = label
-                    break
-            cfg_hash = hashlib.md5(cfg.encode()).hexdigest()[:8]
-            filename = f"{i:04d}_{proto_label}_{cfg_hash}.png"
-            name_match = re.search(r'#([^&]+)$', cfg)
-            display_name = name_match.group(1) if name_match else f"{proto_label} #{i}"
-            if len(display_name) > 40:
-                display_name = display_name[:37] + "..."
-            f.write(f'  <div class="card">\n')
-            f.write(f'    <span class="proto proto-{proto_label}">{proto_label.upper()}</span>\n')
-            f.write(f'    <img src="configs/{filename}" alt="{display_name}">\n')
-            f.write(f'    <div class="label">{display_name}</div>\n')
+        for name, count, filename in qr_files:
+            card_class = 'card all-card' if name == 'ALL' else 'card'
+            file_url = f"{RAW_BASE}/{name}.txt"
+            f.write(f'  <div class="{card_class}">\n')
+            f.write(f'    <img src="{filename}" alt="{name}">\n')
+            f.write(f'    <div class="name">{name}</div>\n')
+            f.write(f'    <div class="count">{count} конфигов</div>\n')
+            f.write(f'    <div class="url">{file_url}</div>\n')
             f.write(f'  </div>\n')
 
         f.write("</div>\n</body>\n</html>")
@@ -802,12 +766,13 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v3.1 + QR ===")
+    print("=== Фильтр прокси v3.2 + QR ===")
 
     health = load_health()
     all_filtered = set()
     all_rejected = []
     source_stats = {}
+    file_counts = {}  # {"FILTER-1": N, "FILTER-2": N, ...}
 
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src, health): src for src in SOURCES_CONFIG}
@@ -827,8 +792,10 @@ def main():
                         f.write('\n')
                 print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
                 all_filtered.update(configs)
+                file_counts[name] = len(configs)
             except Exception as e:
                 print(f"  ❌ [{name}] Ошибка: {e}")
+                file_counts[name] = 0
 
     # ALL.txt
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
@@ -837,6 +804,7 @@ def main():
         f.write('\n'.join(sorted_all))
         if sorted_all:
             f.write('\n')
+    file_counts["ALL"] = len(all_filtered)
 
     # rejected.txt
     reject_file = os.path.join(REJECT_DIR, "rejected.txt")
@@ -849,8 +817,8 @@ def main():
     save_health(health)
     write_health_report(health, source_stats)
 
-    # QR-коды
-    generate_qr_codes(sorted_all)
+    # QR-коды (в корне репо, только для файлов)
+    generate_qr_codes(file_counts)
 
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
