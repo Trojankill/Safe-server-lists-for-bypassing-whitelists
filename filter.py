@@ -32,8 +32,8 @@ os.makedirs(QR_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
 
-# ⚠️ ЗАМЕНИ на свой логин и репо!
-RAW_BASE = "https://raw.githubusercontent.com/USERNAME/REPO/main/githubmirror"
+
+RAW_BASE = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror"
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
