@@ -1,20 +1,44 @@
-# Safe-server-lists-for-bypassing-whitelists
-Фильтрация небезопасных серверов в публичных подписках
+# 🛡️ VPN Config Security Filter
 
-Список фильтров у которых берутся сервера
+Автоматизированный инструмент для **аудита и фильтрации** публичных прокси-конфигураций (VLESS, VMess, Trojan, Hysteria2, Shadowsocks). Проект выявляет и отбраковывает небезопасные, скомпрометированные и потенциально вредоносные записи из открытых источников.
 
-FILTER-1 https://raw.githubusercontent.com/VAL41K/bypass-rkn-blocks/refs/heads/main/configs/obhod_WL
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/USERNAME/REPO/update.yml?label=auto-update&style=flat-square)
+![License](https://img.shields.io/github/license/USERNAME/REPO?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/USERNAME/REPO?style=flat-square)
+![Configs](https://img.shields.io/badge/protocol-vless%20%7C%20trojan%20%7C%20vmess%20%7C%20hy2%20%7C%20ss-blue?style=flat-square)
 
-FILTER-2 https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt
+---
 
-FILTER-3 https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt     
+## 🔍 Что делает проект
 
-FILTER-4 https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt
+Скрипт `filter.py` выполняет **статический анализ** конфигурационных строк из публичных подписок и отбраковывает записи по следующим критериям:
 
-FILTER-5 https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt
+| Категория проверки | Примеры |
+|---|---|
+| Небезопасные TLS-параметры | `allowInsecure=1`, `security=none`, `verify=false` |
+| Запрещённые / скомпрометированные домены | Бесплатные хостинги, известные пулы, подозрительные зоны |
+| Опасные транспортные комбинации | `type=raw` без шифрования, `xhttp` без `host` |
+| Слабое шифрование | `encryption=mlkem`, `method=none` (SS) |
+| Повторяющиеся идентификаторы | Один `pbk` / `uuid` / `sid` в >3 конфигах (признак публичного пула) |
+| Приватные / loopback адреса | `127.0.0.1`, `localhost`, `10.x`, `192.168.x` |
 
+Результат — очищенные списки в `githubmirror/`, обновляемые каждые 9 минут через GitHub Actions.
 
- 
+---
+
+## 📥 Источники данных
+
+Конфигурации агрегируются из **публичных открытых репозиториев**. Автор не является владельцем, разработчиком или поставщиком данных конфигураций.
+
+| ID | Источник |
+|---|---|
+| FILTER-1 | [VAL41K/bypass-rkn-blocks](https://github.com/VAL41K/bypass-rkn-blocks) |
+| FILTER-2 | [AvenCores/goida-vpn-configs](https://github.com/AvenCores/goida-vpn-configs) |
+| FILTER-3 | [zieng2/wl](https://github.com/zieng2/wl) |
+| FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) |
+| FILTER-5 | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) |
+
+```
 ДИСКЛЕЙМЕР
 Автор не является владельцем/разработчиком/поставщиком перечисленных VPN-конфигураций. Это независимый информационный обзор и результаты тестирования.
 
