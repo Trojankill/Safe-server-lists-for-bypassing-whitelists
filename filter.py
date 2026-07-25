@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v3.1
-Строгая проверка сразу. URL Health + авто-очистка. Yield stats.
-SS 2022 key validation. SSR. Расширенные шифры. lru_cache.
+Фильтр прокси-конфигураций v3.1 + QR
+Строгая проверка. URL Health + авто-очистка. SS 2022 key validation.
+SSR. Hysteria v1. QR-коды для подписки и отдельных конфигов.
 """
 
 import re
@@ -11,6 +11,7 @@ import os
 import json
 import base64
 import time
+import hashlib
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
@@ -24,10 +25,17 @@ from typing import Set, Dict, Optional, List, Tuple
 OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
 REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
+QR_DIR = os.path.join(OUTPUT_DIR, "QR-CODE")
+QR_CONFIGS_DIR = os.path.join(QR_DIR, "configs")
+
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(REJECT_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
+MAX_QR_CONFIGS = 200  # максимум QR для отдельных конфигов
+
+# ⚠️ ЗАМЕНИ на свой логин и репо!
+SUBSCRIPTION_URL = "https://raw.githubusercontent.com/USERNAME/REPO/main/githubmirror/ALL.txt"
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
@@ -56,7 +64,7 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site',
 ]
 
-# ---------- ШИФРЫ SS (расширенные из security_filter.py) ----------
+# ---------- ШИФРЫ SS (расширенные) ----------
 SAFE_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
     'chacha20-poly1305', 'chacha20-ietf-poly1305',
@@ -107,23 +115,17 @@ UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
 
 
 # =====================================================================
-#  SS 2022 KEY VALIDATION (из security_filter.py)
+#  SS 2022 KEY VALIDATION
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
-    """
-    Возвращает True если ключ НЕВАЛИДНЫЙ (сломан во всех клиентах).
-    Multi-key (key1:key2) от 3x-ui/Xray-core НЕ отбрасываем.
-    """
+    """True если ключ НЕВАЛИДНЫЙ. Multi-key (key1:key2) пропускаем."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
         return False
-
-    # Multi-key — валидно для Xray-core
     if ':' in password:
         return False
-
     try:
         rem = len(password) % 4
         padded = password + '=' * (4 - rem) if rem else password
@@ -149,7 +151,6 @@ def has_insecure_params(line: str) -> bool:
 
 
 def is_dangerous_domain_param(url: str) -> bool:
-    """Проверяет sni= и host= на banned-домены."""
     for param in ('sni', 'host'):
         match = re.search(rf'[?&]{param}=([^&]+)', url, re.I)
         if match:
@@ -161,42 +162,32 @@ def is_dangerous_domain_param(url: str) -> bool:
 
 
 def is_banned_host(url: str) -> bool:
-    """Хост в URL: banned-домены + приватные IP."""
     host_match = re.search(r'(?:vless|trojan)://[^@]+@([^:?]+)', url, re.I)
     if not host_match:
         return False
     host = host_match.group(1).lower()
-
     for domain in BANNED_DOMAINS:
         if domain in host:
             return True
-
     if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
         return True
-
     if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', host):
         return True
-
     return False
 
 
 def has_dangerous_transport_combination(url: str) -> bool:
-    """type=raw блокируется ТОЛЬКО без шифрования. Reality поверх raw — ок."""
     type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
     if not type_match:
         return False
     transport = type_match.group(1).lower()
-
     security_match = re.search(r'[?&]security=([^&]+)', url, re.I)
     security = security_match.group(1).lower() if security_match else ''
-
     if transport == 'raw' and security in ('', 'none'):
         return True
-
     if transport == 'xhttp':
         if '&host=' not in url and '?host=' not in url:
             return True
-
     return False
 
 
@@ -263,17 +254,14 @@ def extract_trojan_password(url: str) -> Optional[str]:
 def is_safe_vless_base(url: str) -> bool:
     if not url.startswith('vless://'):
         return False
-
     security_match = re.search(r'[?&]security=([^&]*)', url, re.I)
     security = security_match.group(1).lower() if security_match else ''
-
     type_match = re.search(r'[?&]type=([^&]*)', url, re.I)
     transport = type_match.group(1).lower() if type_match else ''
 
     if not security or security == 'none':
         return False
 
-    # Reality: pbk + fp обязательны
     if security == 'reality':
         if not re.search(r'[?&]pbk=[^&]+', url, re.I):
             return False
@@ -289,7 +277,6 @@ def is_safe_vless_base(url: str) -> bool:
                 return False
         return True
 
-    # TLS: sni + host (ws/http) + alpn
     if security == 'tls':
         if transport not in ('ws', 'grpc', 'http', 'tcp'):
             return False
@@ -394,12 +381,10 @@ def is_safe_ss_base(url: str) -> bool:
             after_proto = after_proto.split('#')[0]
         if '?' in after_proto:
             after_proto = after_proto.split('?')[0]
-
         if '@' not in after_proto:
             return False
         userinfo = after_proto.split('@')[0]
 
-        # base64 userinfo (method:password)
         if ':' not in userinfo:
             try:
                 missing = len(userinfo) % 4
@@ -419,8 +404,6 @@ def is_safe_ss_base(url: str) -> bool:
             return False
         if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
             return False
-
-        # SS 2022: проверка длины ключа
         if _check_ss_2022_key(method, password):
             return False
 
@@ -430,7 +413,6 @@ def is_safe_ss_base(url: str) -> bool:
 
 
 def is_safe_ssr_base(url: str) -> bool:
-    """SSR: декодируем base64, проверяем method и пароль."""
     if not url.startswith('ssr://'):
         return False
     try:
@@ -439,7 +421,6 @@ def is_safe_ssr_base(url: str) -> bool:
         if rem:
             payload += '=' * (4 - rem)
         decoded = base64.b64decode(payload).decode('utf-8', errors='ignore')
-        # Формат: host:port:proto:method:obfs:password/params
         parts = decoded.split(':')
         if len(parts) < 6:
             return False
@@ -456,7 +437,6 @@ def is_safe_ssr_base(url: str) -> bool:
 
 @lru_cache(maxsize=65536)
 def is_safe_config_base(line: str) -> bool:
-    """Единая строгая проверка для всех конфигов."""
     line = line.strip()
     if not line or not is_supported_protocol(line):
         return False
@@ -536,7 +516,6 @@ def save_health(health: Dict):
 
 
 def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
-    """Загружает URL. 3+ провала подряд → skip."""
     entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
 
     if entry["failures"] >= MAX_CONSECUTIVE_FAILURES:
@@ -553,7 +532,6 @@ def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
             entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
             health[url] = entry
 
-            # Base64 (включая двойное)
             stripped = re.sub(r'\s+', '', content.strip())
             if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped):
                 try:
@@ -585,7 +563,6 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
         f.write(f"Generated: {time.strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
         f.write("| Source | Status | Fails | Raw | Filtered | Rejected | Last Check |\n")
         f.write("|---|---|---|---|---|---|---|\n")
-
         for src in SOURCES_CONFIG:
             url = src['url']
             name = src['name']
@@ -598,8 +575,125 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
             filt = st.get("filtered", "-")
             rej = st.get("rejected", "-")
             f.write(f"| {name} | {status} | {fails} | {raw} | {filt} | {rej} | {last} |\n")
-
         f.write(f"\n**Авто-очистка:** URL с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд пропускаются.\n")
+
+
+# =====================================================================
+#  QR-CODE ГЕНЕРАЦИЯ
+# =====================================================================
+
+PROTO_NAMES = {
+    'vless://': 'vless',
+    'trojan://': 'trojan',
+    'vmess://': 'vmess',
+    'hysteria2://': 'hy2',
+    'hy2://': 'hy2',
+    'hysteria://': 'hy1',
+    'ss://': 'ss',
+    'ssr://': 'ssr',
+}
+
+
+def generate_qr_codes(configs: List[str]):
+    try:
+        import qrcode
+        from qrcode.constants import ERROR_CORRECT_M
+    except ImportError:
+        print("  ⚠️  qrcode не установлен. pip install qrcode[pil]")
+        return
+
+    os.makedirs(QR_CONFIGS_DIR, exist_ok=True)
+
+    # 1. QR подписки
+    sub_qr = qrcode.QRCode(version=None, error_correction=ERROR_CORRECT_M, box_size=10, border=4)
+    sub_qr.add_data(SUBSCRIPTION_URL)
+    sub_qr.make(fit=True)
+    img = sub_qr.make_image(fill_color="black", back_color="white")
+    img.save(os.path.join(QR_DIR, "subscription.png"))
+    print(f"  📱 QR подписки: {QR_DIR}/subscription.png")
+
+    # 2. QR для отдельных конфигов (с лимитом)
+    limited = configs[:MAX_QR_CONFIGS]
+    for i, cfg in enumerate(limited, 1):
+        proto_label = 'unknown'
+        for prefix, label in PROTO_NAMES.items():
+            if cfg.startswith(prefix):
+                proto_label = label
+                break
+        cfg_hash = hashlib.md5(cfg.encode()).hexdigest()[:8]
+        filename = f"{i:04d}_{proto_label}_{cfg_hash}.png"
+        filepath = os.path.join(QR_CONFIGS_DIR, filename)
+
+        qr = qrcode.QRCode(version=None, error_correction=ERROR_CORRECT_M, box_size=8, border=3)
+        qr.add_data(cfg)
+        qr.make(fit=True)
+        img = qr.make_image(fill_color="black", back_color="white")
+        img.save(filepath)
+
+    print(f"  📱 QR конфигов: {len(limited)} шт. → {QR_CONFIGS_DIR}/")
+
+    # 3. HTML-индекс
+    _generate_qr_index(limited)
+
+
+def _generate_qr_index(configs: List[str]):
+    index_path = os.path.join(QR_DIR, "index.html")
+    with open(index_path, 'w', encoding='utf-8') as f:
+        f.write("""<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR-коды прокси</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 20px; }
+  h1 { text-align: center; color: #00d4ff; }
+  .sub-qr { text-align: center; margin: 30px 0; }
+  .sub-qr img { width: 300px; height: 300px; border: 4px solid #00d4ff; border-radius: 12px; }
+  .sub-qr p { color: #aaa; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; margin-top: 30px; }
+  .card { background: #16213e; border-radius: 10px; padding: 12px; text-align: center; }
+  .card img { width: 180px; height: 180px; border-radius: 6px; }
+  .card .label { font-size: 12px; color: #888; margin-top: 8px; word-break: break-all; }
+  .card .proto { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: bold; margin-bottom: 6px; }
+  .proto-vless { background: #e94560; }
+  .proto-trojan { background: #0f3460; }
+  .proto-vmess { background: #533483; }
+  .proto-hy2 { background: #e94560; }
+  .proto-hy1 { background: #e94560; }
+  .proto-ss { background: #0f3460; }
+  .proto-ssr { background: #533483; }
+</style>
+</head>
+<body>
+<h1>📱 QR-коды прокси</h1>
+<div class="sub-qr">
+  <img src="subscription.png" alt="Subscription QR">
+  <p>Отсканируй для добавления <b>всех</b> конфигов как подписку</p>
+</div>
+<h2>Отдельные конфиги</h2>
+<div class="grid">
+""")
+        for i, cfg in enumerate(configs, 1):
+            proto_label = 'unknown'
+            for prefix, label in PROTO_NAMES.items():
+                if cfg.startswith(prefix):
+                    proto_label = label
+                    break
+            cfg_hash = hashlib.md5(cfg.encode()).hexdigest()[:8]
+            filename = f"{i:04d}_{proto_label}_{cfg_hash}.png"
+            name_match = re.search(r'#([^&]+)$', cfg)
+            display_name = name_match.group(1) if name_match else f"{proto_label} #{i}"
+            if len(display_name) > 40:
+                display_name = display_name[:37] + "..."
+            f.write(f'  <div class="card">\n')
+            f.write(f'    <span class="proto proto-{proto_label}">{proto_label.upper()}</span>\n')
+            f.write(f'    <img src="configs/{filename}" alt="{display_name}">\n')
+            f.write(f'    <div class="label">{display_name}</div>\n')
+            f.write(f'  </div>\n')
+
+        f.write("</div>\n</body>\n</html>")
+    print(f"  📄 HTML-индекс: {index_path}")
 
 
 # =====================================================================
@@ -628,7 +722,6 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         else:
             rejected.append(cfg)
 
-    # Подсчёт повторяющихся идентификаторов
     pbk_count = defaultdict(int)
     uuid_count = defaultdict(int)
     sid_count = defaultdict(int)
@@ -665,7 +758,6 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         uuid = config_uuid.get(cfg)
         sid = config_sid.get(cfg)
         tpass = config_tpass.get(cfg)
-
         if pbk and pbk_count[pbk] > PBK_MAX:
             rejected.append(cfg)
             continue
@@ -680,11 +772,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             continue
         final_filtered.add(cfg)
 
-    stats = {
-        "raw": raw_count,
-        "filtered": len(final_filtered),
-        "rejected": len(rejected),
-    }
+    stats = {"raw": raw_count, "filtered": len(final_filtered), "rejected": len(rejected)}
     return final_filtered, rejected, stats
 
 
@@ -715,7 +803,7 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v3.1 (строгая проверка + URL Health + SS2022) ===")
+    print("=== Фильтр прокси v3.1 + QR ===")
 
     health = load_health()
     all_filtered = set()
@@ -762,9 +850,13 @@ def main():
     save_health(health)
     write_health_report(health, source_stats)
 
+    # QR-коды
+    generate_qr_codes(sorted_all)
+
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
     print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
+    print(f"📱 QR-коды: {QR_DIR}/")
 
 
 if __name__ == "__main__":
