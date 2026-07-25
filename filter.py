@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v3.0
-Строгая проверка сразу. URL Health + авто-очистка мёртвых источников.
+Фильтр прокси-конфигураций v3.1
+Строгая проверка сразу. URL Health + авто-очистка. Yield stats.
+SS 2022 key validation. SSR. Расширенные шифры. lru_cache.
 """
 
 import re
@@ -13,7 +14,12 @@ import time
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
+from functools import lru_cache
 from typing import Set, Dict, Optional, List, Tuple
+
+# =====================================================================
+#  КОНСТАНТЫ
+# =====================================================================
 
 OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
@@ -21,11 +27,12 @@ REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(REJECT_DIR, exist_ok=True)
 
-MAX_CONSECUTIVE_FAILURES = 3  # После 3 провалов URL пропускается
+MAX_CONSECUTIVE_FAILURES = 3
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
-    "hysteria2://", "hy2://", "hysteria://", "ss://"
+    "hysteria2://", "hy2://", "hysteria://",
+    "ss://", "ssr://",
 ]
 
 SOURCES_CONFIG = [
@@ -49,19 +56,35 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site',
 ]
 
-# ---------- ШИФРЫ SS ----------
+# ---------- ШИФРЫ SS (расширенные из security_filter.py) ----------
 SAFE_SS_METHODS = {
-    'aes-128-gcm', 'aes-256-gcm', 'chacha20-poly1305',
-    'xchacha20-poly1305', '2022-blake3-aes-128-gcm',
-    '2022-blake3-aes-256-gcm', '2022-blake3-chacha20-poly1305',
+    'aes-128-gcm', 'aes-256-gcm',
+    'chacha20-poly1305', 'chacha20-ietf-poly1305',
+    'xchacha20-poly1305', 'xchacha20-ietf-poly1305',
+    '2022-blake3-aes-128-gcm', '2022-blake3-aes-256-gcm',
+    '2022-blake3-chacha20-poly1305',
 }
 
 WEAK_SS_METHODS = {
-    'rc4', 'rc4-md5', 'des-cfb', 'bf-cfb', 'cast5-cfb',
-    'salsa20', 'chacha20',
+    'rc4', 'rc4-md5', 'rc4-md5-6',
+    'des', 'des-cfb', 'bf-cfb', 'cast5-cfb',
+    'salsa20', 'xsalsa20', 'chacha20', 'xchacha20',
     'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
+    'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8',
+    'aes-128-cfb1', 'aes-192-cfb1', 'aes-256-cfb1',
+    'aes-128-cfb-fast', 'aes-192-cfb-fast', 'aes-256-cfb-fast',
+    'aes-128-cfb-simple', 'aes-192-cfb-simple', 'aes-256-cfb-simple',
+    'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
     'camellia-128-cfb', 'camellia-192-cfb', 'camellia-256-cfb',
-    'seed-cfb', 'idea-cfb', 'none', '',
+    'seed-cfb', 'idea-cfb', 'rc2-cfb',
+    'none', '',
+}
+
+# ---------- SS 2022: ожидаемая длина ключа ----------
+_SS_2022_KEY_LENGTHS = {
+    '2022-blake3-aes-128-gcm': 16,
+    '2022-blake3-aes-256-gcm': 32,
+    '2022-blake3-chacha20-poly1305': 32,
 }
 
 # ---------- FINGERPRINTS ----------
@@ -81,6 +104,35 @@ UNSAFE_PATTERNS = [
     r'[&?]tls13=0', r'[&?]tls13=false',
 ]
 UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
+
+
+# =====================================================================
+#  SS 2022 KEY VALIDATION (из security_filter.py)
+# =====================================================================
+
+def _check_ss_2022_key(method: str, password: str) -> bool:
+    """
+    Возвращает True если ключ НЕВАЛИДНЫЙ (сломан во всех клиентах).
+    Multi-key (key1:key2) от 3x-ui/Xray-core НЕ отбрасываем.
+    """
+    method_lower = method.lower().strip()
+    expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
+    if expected_len is None:
+        return False
+
+    # Multi-key — валидно для Xray-core
+    if ':' in password:
+        return False
+
+    try:
+        rem = len(password) % 4
+        padded = password + '=' * (4 - rem) if rem else password
+        decoded = base64.b64decode(padded)
+        if len(decoded) != expected_len:
+            return True
+    except (ValueError, TypeError):
+        pass
+    return False
 
 
 # =====================================================================
@@ -119,11 +171,9 @@ def is_banned_host(url: str) -> bool:
         if domain in host:
             return True
 
-    # IP.домен (138.124.125.83.alexandroff.ru)
     if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
         return True
 
-    # Приватные / loopback
     if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', host):
         return True
 
@@ -131,10 +181,7 @@ def is_banned_host(url: str) -> bool:
 
 
 def has_dangerous_transport_combination(url: str) -> bool:
-    """
-    type=raw блокируется ТОЛЬКО без шифрования.
-    Reality поверх raw/tcp — разрешён.
-    """
+    """type=raw блокируется ТОЛЬКО без шифрования. Reality поверх raw — ок."""
     type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
     if not type_match:
         return False
@@ -210,7 +257,7 @@ def extract_trojan_password(url: str) -> Optional[str]:
 
 
 # =====================================================================
-#  СТРОГИЕ ПРОВЕРКИ ПРОТОКОЛОВ (сразу, без all-secure)
+#  СТРОГИЕ ПРОВЕРКИ ПРОТОКОЛОВ
 # =====================================================================
 
 def is_safe_vless_base(url: str) -> bool:
@@ -226,7 +273,7 @@ def is_safe_vless_base(url: str) -> bool:
     if not security or security == 'none':
         return False
 
-    # --- Reality: pbk обязателен, fp обязателен (строгая) ---
+    # Reality: pbk + fp обязательны
     if security == 'reality':
         if not re.search(r'[?&]pbk=[^&]+', url, re.I):
             return False
@@ -235,7 +282,6 @@ def is_safe_vless_base(url: str) -> bool:
             return False
         if fp_match.group(1).lower() not in SAFE_FINGERPRINTS:
             return False
-        # flow: только vision / none / отсутствие
         flow_match = re.search(r'[?&]flow=([^&]+)', url, re.I)
         if flow_match:
             flow = flow_match.group(1).lower()
@@ -243,7 +289,7 @@ def is_safe_vless_base(url: str) -> bool:
                 return False
         return True
 
-    # --- TLS: sni + host (для ws/http) + alpn ---
+    # TLS: sni + host (ws/http) + alpn
     if security == 'tls':
         if transport not in ('ws', 'grpc', 'http', 'tcp'):
             return False
@@ -252,7 +298,6 @@ def is_safe_vless_base(url: str) -> bool:
         if transport in ('ws', 'http'):
             if not re.search(r'[?&]host=[^&]+', url, re.I):
                 return False
-        # alpn обязателен (строгая)
         alpn_match = re.search(r'[?&]alpn=([^&]+)', url, re.I)
         if not alpn_match:
             return False
@@ -302,14 +347,12 @@ def is_safe_vmess_base(url: str) -> bool:
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
 
-        # Banned-домены в add / sni / host
         for field in ('add', 'sni', 'host'):
             val = cfg.get(field, '').lower()
             for domain in BANNED_DOMAINS:
                 if domain in val:
                     return False
 
-        # Приватные IP в add
         add = cfg.get('add', '').lower()
         if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', add):
             return False
@@ -326,7 +369,6 @@ def is_safe_hysteria2_base(url: str) -> bool:
         return False
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
         return False
-    # Пустой пароль
     pass_match = re.search(r'(?:hysteria2|hy2)://([^@]*)@', url, re.I)
     if pass_match and not pass_match.group(1).strip():
         return False
@@ -348,6 +390,11 @@ def is_safe_ss_base(url: str) -> bool:
         return False
     try:
         after_proto = url.replace('ss://', '', 1)
+        if '#' in after_proto:
+            after_proto = after_proto.split('#')[0]
+        if '?' in after_proto:
+            after_proto = after_proto.split('?')[0]
+
         if '@' not in after_proto:
             return False
         userinfo = after_proto.split('@')[0]
@@ -373,11 +420,41 @@ def is_safe_ss_base(url: str) -> bool:
         if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
             return False
 
+        # SS 2022: проверка длины ключа
+        if _check_ss_2022_key(method, password):
+            return False
+
     except Exception:
         return False
     return True
 
 
+def is_safe_ssr_base(url: str) -> bool:
+    """SSR: декодируем base64, проверяем method и пароль."""
+    if not url.startswith('ssr://'):
+        return False
+    try:
+        payload = url[6:]
+        rem = len(payload) % 4
+        if rem:
+            payload += '=' * (4 - rem)
+        decoded = base64.b64decode(payload).decode('utf-8', errors='ignore')
+        # Формат: host:port:proto:method:obfs:password/params
+        parts = decoded.split(':')
+        if len(parts) < 6:
+            return False
+        method = parts[3].lower()
+        if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
+            return False
+        password_part = parts[5].split('/')[0].strip()
+        if not password_part:
+            return False
+        return True
+    except Exception:
+        return False
+
+
+@lru_cache(maxsize=65536)
 def is_safe_config_base(line: str) -> bool:
     """Единая строгая проверка для всех конфигов."""
     line = line.strip()
@@ -408,6 +485,8 @@ def is_safe_config_base(line: str) -> bool:
         return is_safe_hysteria1_base(line)
     if line.startswith('ss://'):
         return is_safe_ss_base(line)
+    if line.startswith('ssr://'):
+        return is_safe_ssr_base(line)
     return False
 
 
@@ -438,7 +517,7 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
 
 
 # =====================================================================
-#  URL HEALTH: загрузка + подсчёт провалов + авто-очистка
+#  URL HEALTH
 # =====================================================================
 
 def load_health() -> Dict:
@@ -457,11 +536,7 @@ def save_health(health: Dict):
 
 
 def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
-    """
-    Загружает URL. Считает последовательные провалы.
-    3+ провала подряд → URL пропускается (авто-очистка).
-    Живость = HTTP-ответ. Xray-core не нужен.
-    """
+    """Загружает URL. 3+ провала подряд → skip."""
     entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
 
     if entry["failures"] >= MAX_CONSECUTIVE_FAILURES:
@@ -473,7 +548,6 @@ def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
 
-            # Успех → сбрасываем счётчик
             entry["failures"] = 0
             entry["last_status"] = "ok"
             entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
@@ -504,19 +578,27 @@ def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
         return None
 
 
-def write_health_report(health: Dict):
-    """Markdown-отчёт по каждому URL."""
+def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
     report_path = os.path.join(OUTPUT_DIR, "URL_HEALTH_REPORT.md")
     with open(report_path, 'w', encoding='utf-8') as f:
         f.write("# URL Health Report\n\n")
         f.write(f"Generated: {time.strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
-        f.write("| # | URL | Status | Failures | Last Check |\n")
-        f.write("|---|---|---|---|---|\n")
-        for i, (url, entry) in enumerate(health.items(), 1):
-            status = "✅ OK" if entry.get("last_status") == "ok" else f"❌ {entry.get('last_status', '?')}"
-            failures = entry.get("failures", 0)
+        f.write("| Source | Status | Fails | Raw | Filtered | Rejected | Last Check |\n")
+        f.write("|---|---|---|---|---|---|---|\n")
+
+        for src in SOURCES_CONFIG:
+            url = src['url']
+            name = src['name']
+            entry = health.get(url, {})
+            status = "✅" if entry.get("last_status") == "ok" else "❌"
+            fails = entry.get("failures", 0)
             last = entry.get("last_check", "N/A")
-            f.write(f"| {i} | `{url}` | {status} | {failures} | {last} |\n")
+            st = source_stats.get(url, {})
+            raw = st.get("raw", "-")
+            filt = st.get("filtered", "-")
+            rej = st.get("rejected", "-")
+            f.write(f"| {name} | {status} | {fails} | {raw} | {filt} | {rej} | {last} |\n")
+
         f.write(f"\n**Авто-очистка:** URL с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд пропускаются.\n")
 
 
@@ -524,18 +606,19 @@ def write_health_report(health: Dict):
 #  ЗАГРУЗКА + ФИЛЬТРАЦИЯ
 # =====================================================================
 
-def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str]]:
+def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Dict]:
     name = source['name']
     url = source['url']
     print(f"  [{name}] Загрузка...")
 
     content = fetch_url_with_health(url, health)
     if not content:
-        return set(), []
+        return set(), [], {"raw": 0, "filtered": 0, "rejected": 0}
 
     lines = content.splitlines()
     lines = [l.strip() for l in lines if l.strip() and not l.strip().startswith('#')]
     raw_configs = parse_multiline_configs(lines)
+    raw_count = len(raw_configs)
 
     pre_filtered = []
     rejected = []
@@ -597,7 +680,12 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str]]:
             continue
         final_filtered.add(cfg)
 
-    return final_filtered, rejected
+    stats = {
+        "raw": raw_count,
+        "filtered": len(final_filtered),
+        "rejected": len(rejected),
+    }
+    return final_filtered, rejected, stats
 
 
 # =====================================================================
@@ -617,7 +705,9 @@ def protocol_priority(uri: str) -> int:
         return 5
     if uri.startswith('ss://'):
         return 6
-    return 7
+    if uri.startswith('ssr://'):
+        return 7
+    return 8
 
 
 # =====================================================================
@@ -625,11 +715,12 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v3.0 (строгая проверка + URL Health) ===")
+    print("=== Фильтр прокси v3.1 (строгая проверка + URL Health + SS2022) ===")
 
     health = load_health()
     all_filtered = set()
     all_rejected = []
+    source_stats = {}
 
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src, health): src for src in SOURCES_CONFIG}
@@ -637,8 +728,9 @@ def main():
             src = futures[future]
             name = src['name']
             try:
-                configs, rejected = future.result()
+                configs, rejected, stats = future.result()
                 all_rejected.extend(rejected)
+                source_stats[src['url']] = stats
 
                 out = os.path.join(OUTPUT_DIR, f"{name}.txt")
                 sorted_cfg = sorted(configs, key=lambda u: (protocol_priority(u), u))
@@ -646,7 +738,7 @@ def main():
                     f.write('\n'.join(sorted_cfg))
                     if sorted_cfg:
                         f.write('\n')
-                print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {len(rejected)})")
+                print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
                 all_filtered.update(configs)
             except Exception as e:
                 print(f"  ❌ [{name}] Ошибка: {e}")
@@ -668,7 +760,7 @@ def main():
 
     # URL Health
     save_health(health)
-    write_health_report(health)
+    write_health_report(health, source_stats)
 
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
