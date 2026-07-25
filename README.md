@@ -2,11 +2,6 @@
 
 Автоматизированный инструмент для **аудита и фильтрации** публичных прокси-конфигураций (VLESS, VMess, Trojan, Hysteria2, Shadowsocks). Проект выявляет и отбраковывает небезопасные, скомпрометированные и потенциально вредоносные записи из открытых источников.
 
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/USERNAME/REPO/update.yml?label=auto-update&style=flat-square)
-![License](https://img.shields.io/github/license/USERNAME/REPO?style=flat-square)
-![Last commit](https://img.shields.io/github/last-commit/USERNAME/REPO?style=flat-square)
-![Configs](https://img.shields.io/badge/protocol-vless%20%7C%20trojan%20%7C%20vmess%20%7C%20hy2%20%7C%20ss-blue?style=flat-square)
-
 ---
 
 ## 🔍 Что делает проект
