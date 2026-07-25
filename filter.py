@@ -34,8 +34,7 @@ os.makedirs(REJECT_DIR, exist_ok=True)
 MAX_CONSECUTIVE_FAILURES = 3
 MAX_QR_CONFIGS = 200  # максимум QR для отдельных конфигов
 
-# ⚠️ ЗАМЕНИ на свой логин и репо!
-SUBSCRIPTION_URL = "https://raw.githubusercontent.com/USERNAME/REPO/main/githubmirror/ALL.txt"
+SUBSCRIPTION_URL = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/ALL.txt"
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
