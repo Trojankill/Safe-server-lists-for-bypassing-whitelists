@@ -45,6 +45,7 @@
 | FILTER-3 | [zieng2/wl](https://github.com/zieng2/wl) |
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) |
 | FILTER-5 | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) |
+|FILTER-6  | [AetrisVPN](https://gitverse.ru/flaafix/AetrisVPN) |
 
 
 # 📱 QR-коды
