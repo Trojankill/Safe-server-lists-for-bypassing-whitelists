@@ -27,7 +27,7 @@
 
 | ID | Источник |
 |---|---|
-| FILTER-1 | [VAL41K/bypass-rkn-blocks](https://github.com/VAL41K/bypass-rkn-blocks) |
+| FILTER-1 | [VAL41K/bypass-rkn-blocks](https://codeberg.org/VALCHIK/bypass-rkn-blocks) |
 | FILTER-2 | [AvenCores/goida-vpn-configs](https://github.com/AvenCores/goida-vpn-configs) |
 | FILTER-3 | [zieng2/wl](https://github.com/zieng2/wl) |
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) |
