@@ -2,6 +2,11 @@
 
 Автоматизированный инструмент для **аудита и фильтрации** публичных прокси-конфигураций (VLESS, VMess, Trojan, Hysteria2, Shadowsocks). Проект выявляет и отбраковывает небезопасные, скомпрометированные и потенциально вредоносные записи из открытых источников.
 
+
+![GitHub Actions](https://img.shields.io/github/actions/workflow/status/Trojankill/Safe-server-lists-for-bypassing-whitelists/update.yml?label=auto-update&style=flat-square)
+![License](https://img.shields.io/github/license/Trojankill/Safe-server-lists-for-bypassing-whitelists?style=flat-square)
+![Last commit](https://img.shields.io/github/last-commit/Trojankill/Safe-server-lists-for-bypassing-whitelists?style=flat-square)
+
 ---
 
 
