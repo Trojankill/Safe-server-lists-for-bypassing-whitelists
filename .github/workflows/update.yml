@@ -12,7 +12,7 @@ concurrency:
 jobs:
   update-files:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     permissions:
       contents: write
 
@@ -32,6 +32,9 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install dependencies
+        run: pip install qrcode[pil]
+
       - name: Run filter script
         id: filter
         run: |
@@ -44,12 +47,13 @@ jobs:
           git add githubmirror/FILTER-*.txt \
                   githubmirror/ALL.txt \
                   githubmirror/url_health.json \
-                  githubmirror/URL_HEALTH_REPORT.md
+                  githubmirror/URL_HEALTH_REPORT.md \
+                  githubmirror/QR-CODE/
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
 
-          git commit -m "auto-update filters ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
+          git commit -m "auto-update filters + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
           git push origin main
