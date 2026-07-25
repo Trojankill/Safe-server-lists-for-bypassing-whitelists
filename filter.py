@@ -25,7 +25,7 @@ SUPPORTED_PROTOCOLS = [
 ]
 
 SOURCES_CONFIG = [
-    {"name": "FILTER-1", "url": "https://raw.githubusercontent.com/VAL41K/bypass-rkn-blocks/refs/heads/main/configs/obhod_WL"},
+    {"name": "FILTER-1", "url": "https://codeberg.org/VALCHIK/bypass-rkn-blocks/raw/branch/main/configs/obhod_WL"},
     {"name": "FILTER-2", "url": "https://github.com/AvenCores/goida-vpn-configs/raw/refs/heads/main/githubmirror/26.txt"},
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
