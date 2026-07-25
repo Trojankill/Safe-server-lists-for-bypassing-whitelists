@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v3.2 + QR
-QR-CODE в корне репо. QR только для ALL + FILTER-1..5.
+Фильтр прокси-конфигураций v4.0
+Универсальная защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
+QR-CODE в корне репо. URL Health + авто-очистка.
 """
 
 import re
@@ -24,7 +25,7 @@ from typing import Set, Dict, Optional, List, Tuple
 OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
 REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
-QR_DIR = "QR-CODE"  # ← В КОРНЕ РЕПО, не в githubmirror
+QR_DIR = "QR-CODE"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(REJECT_DIR, exist_ok=True)
@@ -32,8 +33,8 @@ os.makedirs(QR_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
 
-
-RAW_BASE = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror"
+# ⚠️ ЗАМЕНИ на свой логин и репо!
+RAW_BASE = "https://raw.githubusercontent.com/USERNAME/REPO/main/githubmirror"
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
@@ -47,7 +48,6 @@ SOURCES_CONFIG = [
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_universal.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"},
-    {"name": "FILTER-6", "url": "https://gitverse.ru/api/repos/flaafix/AetrisVPN/raw/branch/master/AetrisVPN.txt"},
 ]
 
 # ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ ----------
@@ -166,7 +166,7 @@ def is_banned_host(url: str) -> bool:
             return True
     if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
         return True
-    if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', host):
+    if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost|fe80::|fc00::|fd)', host):
         return True
     return False
 
@@ -213,6 +213,9 @@ def is_dangerous_uuid(url: str) -> bool:
         return True
     if re.search(r'@(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1)', lower):
         return True
+    # Мёртвые UUID (все нули)
+    if re.search(r'vless://0{8}-0{4}-0{4}-0{4}-0{12}@', url, re.I):
+        return True
     return False
 
 
@@ -240,6 +243,70 @@ def extract_trojan_password(url: str) -> Optional[str]:
         return None
     m = re.search(r'trojan://([^@]+)@', url, re.I)
     return m.group(1) if m else None
+
+
+# =====================================================================
+#  УНИВЕРСАЛЬНАЯ ЗАЩИТА (Karing + V2RayNG + Xray-core)
+# =====================================================================
+
+def has_custom_ca_mitm(url: str) -> bool:
+    """Блокирует кастомные сертификаты (MITM через ca=)."""
+    ca_match = re.search(r'[?&]ca=([^&]+)', url, re.I)
+    if ca_match:
+        ca_val = ca_match.group(1)
+        if ca_val.startswith('http') or len(ca_val) > 50:
+            return True
+    return False
+
+
+def has_malicious_dns_override(url: str) -> bool:
+    """Блокирует подмену DNS на серверы злоумышленников."""
+    dns_match = re.search(r'[?&](?:dns|doh|dns-server)=([^&]+)', url, re.I)
+    if dns_match:
+        dns_val = dns_match.group(1).lower()
+        trusted_dns = [
+            '1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
+            'cloudflare-dns.com', 'dns.google', 'dns.adguard.com'
+        ]
+        if not any(trust in dns_val for trust in trusted_dns):
+            return True
+    return False
+
+
+def has_sniffing_exfiltration(url: str) -> bool:
+    """Блокирует sniffing, ведущий на внешние домены."""
+    sniff_match = re.search(r'[?&](?:sniffing|destoverride)=([^&]+)', url, re.I)
+    if sniff_match:
+        val = sniff_match.group(1).lower()
+        if 'localhost' not in val and re.search(r'[a-zA-Z0-9-]+\.[a-zA-Z]{2,}', val):
+            return True
+    return False
+
+
+def has_invalid_reality_pbk(url: str) -> bool:
+    """Reality с невалидным pbk (короткая заглушка) → сломан."""
+    if 'security=reality' not in url.lower():
+        return False
+    pbk_match = re.search(r'[?&]pbk=([^&]+)', url, re.I)
+    if not pbk_match:
+        return True
+    pbk = pbk_match.group(1)
+    if len(pbk) < 30:
+        return True
+    return False
+
+
+def has_invalid_reality_sid(url: str) -> bool:
+    """Reality с невалидным sid (не 16 hex символов) → сломан."""
+    if 'security=reality' not in url.lower():
+        return False
+    sid_match = re.search(r'[?&]sid=([^&]+)', url, re.I)
+    if not sid_match:
+        return False
+    sid = sid_match.group(1)
+    if len(sid) != 16 or not re.match(r'^[0-9a-fA-F]+$', sid):
+        return True
+    return False
 
 
 # =====================================================================
@@ -435,6 +502,20 @@ def is_safe_config_base(line: str) -> bool:
     line = line.strip()
     if not line or not is_supported_protocol(line):
         return False
+    
+    # 🛡️ УНИВЕРСАЛЬНАЯ ЗАЩИТА (Karing + V2RayNG + Xray)
+    if has_custom_ca_mitm(line):
+        return False
+    if has_malicious_dns_override(line):
+        return False
+    if has_sniffing_exfiltration(line):
+        return False
+    if has_invalid_reality_pbk(line):
+        return False
+    if has_invalid_reality_sid(line):
+        return False
+    
+    # СТАРЫЕ ПРОВЕРКИ
     if has_insecure_params(line):
         return False
     if is_dangerous_domain_param(line):
@@ -574,15 +655,10 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
 
 
 # =====================================================================
-#  QR-CODE ГЕНЕРАЦИЯ (только для файлов, в корне репо)
+#  QR-CODE ГЕНЕРАЦИЯ
 # =====================================================================
 
 def generate_qr_codes(file_counts: Dict[str, int]):
-    """
-    Генерирует QR-коды для каждого файла подписки.
-    file_counts: {"ALL": 150, "FILTER-1": 42, ...}
-    Каждый QR содержит URL на raw.githubusercontent.com/.../githubmirror/FILE.txt
-    """
     try:
         import qrcode
         from qrcode.constants import ERROR_CORRECT_M
@@ -616,7 +692,6 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         qr_files.append((name, count, filename))
         print(f"  📱 QR: {filepath} → {file_url}")
 
-    # HTML-индекс
     _generate_qr_index(qr_files)
 
 
@@ -767,13 +842,13 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v3.2 + QR ===")
+    print("=== Фильтр прокси v4.0 (универсальная защита) ===")
 
     health = load_health()
     all_filtered = set()
     all_rejected = []
     source_stats = {}
-    file_counts = {}  # {"FILTER-1": N, "FILTER-2": N, ...}
+    file_counts = {}
 
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src, health): src for src in SOURCES_CONFIG}
@@ -818,7 +893,7 @@ def main():
     save_health(health)
     write_health_report(health, source_stats)
 
-    # QR-коды (в корне репо, только для файлов)
+    # QR-коды
     generate_qr_codes(file_counts)
 
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
