@@ -46,6 +46,20 @@
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) |
 | FILTER-5 | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) |
 
+
+# 📱 QR-коды
+
+После каждой фильтрации генерируются QR-коды:
+
+- `githubmirror/QR-CODE/subscription.png` — QR подписки (все конфигы разом)
+- `githubmirror/QR-CODE/configs/` — QR для каждого конфига отдельно
+- `githubmirror/QR-CODE/index.html` — красивая страница со всеми QR
+
+### Как сканировать
+
+**v2rayNG:** `+` → Import config from QR code
+**Karing:** `+` → Scan QR Code
+**Hiddify:** `+` → Import from QR
 ```
 ДИСКЛЕЙМЕР
 RU Русский: Автор не является владельцем/разработчиком/поставщиком перечисленных VPN-конфигураций. Это независимый информационный обзор и результаты тестирования.
