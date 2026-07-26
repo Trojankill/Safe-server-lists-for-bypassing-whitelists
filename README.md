@@ -43,7 +43,7 @@
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) |
 | FILTER-5 | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) |
 | FILTER-6 | [AetrisVPN](https://gitverse.ru/flaafix/AetrisVPN) |
-
+| FILTER-7-BASE64 | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) |
 ---
 
 ## 📱 Подписки и QR-коды
