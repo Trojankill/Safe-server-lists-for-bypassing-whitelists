@@ -50,7 +50,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt"},
     {"name": "FILTER-6", "url": "https://gitverse.ru/api/repos/flaafix/AetrisVPN/raw/branch/master/AetrisVPN.txt"},
-    {"name": "FILTER-7", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
+    {"name": "FILTER-7-BASE64", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
 ]
 
 # ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ ----------
