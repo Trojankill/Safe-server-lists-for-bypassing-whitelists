@@ -239,7 +239,3 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 > - This is a free, non-commercial project; all "payment" information presented here was found randomly online, copied "as is" to demonstrate a potential example, and does not belong to the author.
 
 ---
-
-<p align="center">
-  <sub>Made with 🖤 and cold coffee · Auto-updated every 9 minutes</sub>
-</p>
