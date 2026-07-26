@@ -2,6 +2,10 @@
 
 Автоматизированный инструмент для **аудита и фильтрации** публичных прокси-конфигураций (VLESS, VMess, Trojan, Hysteria2, Shadowsocks). Проект выявляет и отбраковывает небезопасные, скомпрометированные и потенциально вредоносные записи из открытых источников.
 
+Все подписки преднозначены для обхода белых списков. Прошу вас не использовать их с включенным WIFI ( работать они будут даже на WIFI) дай те людям пользоваться серверами у кого действительно включены белые списки, мощность серверов и проиводительность сильно падает иза наплыв пользователей 
+
+ВАЖНО: **НАСТОЯТЕЛЬНО РЕКОМЕНДУЮ НЕ ИСПОЛЬЗОВАТЬ ЭТИ ВПН СЕРВЕРА ДЛЯ БАНКОВСКИХ ПЕРЕВОД ХОТЬ И РЕПОЗИТОРИЙ БЛОКИРУЕТ БОЛЬШИНСТВО НЕБЕЗОПАСНЫХ СЕРВЕРОВ НО ВСЕГДА ЕСТЬ СВОИ РИСКИ А ТАК ЖЕ ИСПОЛЬЗОАНИЕ ГОСУДАРТСВЕННЫХ ПРИЛОЖЕНИЙ БЕЗ ХОРОШЕГО SPLIT МАРШРУТИЗАЦИИ КОТОРЫЙ ПОЗВОЛЯЕТ ВПН ТРАФИКУ ИДТИ НА ПРЯМУЮ ЧЕРЕЗ ПРИЛОЖЕНИЯ НАПРИМЕР:** Yandex VK MAX Госуслуги и так далее для снижения риска блокировок серверов иза росскомнадзора. 
+
 ![GitHub Actions](https://img.shields.io/github/actions/workflow/status/Trojankill/Safe-server-lists-for-bypassing-whitelists/update.yml?label=auto-update&style=flat-square)
 ![License](https://img.shields.io/github/license/Trojankill/Safe-server-lists-for-bypassing-whitelists?style=flat-square)
 ![Last commit](https://img.shields.io/github/last-commit/Trojankill/Safe-server-lists-for-bypassing-whitelists?style=flat-square)
