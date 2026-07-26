@@ -155,6 +155,20 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 
 </details>
 
+</details>
+
+<details>
+<summary><b>📡 FILTER-7-BASE64</b> — VAL41K/bypass-rkn-blocks</summary>
+
+<p align="center">
+  <img src="QR-CODE/FILTER-7-BASE64.png" width="300" alt="FILTER-1 QR">
+</p>
+
+<p><b>URL подписки:</b></p>
+
+<pre>
+https://solovyov-jenya2004.vercel.app/final_sorted_base64
+</pre>
 ---
 
 ### Как сканировать
