@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v4.0
+Фильтр прокси-конфигураций v4.1
 Универсальная защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
 QR-CODE в корне репо. URL Health + авто-очистка.
+Base64 подписки: decode → filter → encode обратно.
 """
 
 import re
@@ -53,6 +54,7 @@ SOURCES_CONFIG = [
 ]
 
 # ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ ----------
+
 BANNED_DOMAINS = [
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
     '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq', '.mwscdn.ru',
@@ -66,6 +68,7 @@ BANNED_DOMAINS = [
 ]
 
 # ---------- ШИФРЫ SS ----------
+
 SAFE_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
     'chacha20-poly1305', 'chacha20-ietf-poly1305',
@@ -109,6 +112,7 @@ UNSAFE_PATTERNS = [
     r'[&?]allowinsecurecipher=1', r'[&?]allowinsecurecipher=true',
     r'[&?]tls13=0', r'[&?]tls13=false',
 ]
+
 UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
 
 
@@ -215,7 +219,6 @@ def is_dangerous_uuid(url: str) -> bool:
         return True
     if re.search(r'@(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1)', lower):
         return True
-    # Мёртвые UUID (все нули)
     if re.search(r'vless://0{8}-0{4}-0{4}-0{4}-0{12}@', url, re.I):
         return True
     return False
@@ -382,7 +385,6 @@ def is_safe_vmess_base(url: str) -> bool:
             b64 += '=' * (4 - missing)
         decoded = base64.b64decode(b64).decode('utf-8')
         cfg = json.loads(decoded)
-
         if cfg.get('aid', cfg.get('alterId', 0)) != 0:
             return False
         if not cfg.get('tls', False):
@@ -391,23 +393,19 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         if str(cfg.get('v', '2')) != '2':
             return False
-
         net = cfg.get('net', 'tcp').lower()
         if net not in ('ws', 'grpc', 'http', 'tcp'):
             return False
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
-
         for field in ('add', 'sni', 'host'):
             val = cfg.get(field, '').lower()
             for domain in BANNED_DOMAINS:
                 if domain in val:
                     return False
-
         add = cfg.get('add', '').lower()
         if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', add):
             return False
-
         return True
     except Exception:
         return False
@@ -448,7 +446,6 @@ def is_safe_ss_base(url: str) -> bool:
         if '@' not in after_proto:
             return False
         userinfo = after_proto.split('@')[0]
-
         if ':' not in userinfo:
             try:
                 missing = len(userinfo) % 4
@@ -457,20 +454,17 @@ def is_safe_ss_base(url: str) -> bool:
                 userinfo = base64.b64decode(userinfo).decode('utf-8', errors='ignore')
             except Exception:
                 return False
-
         if ':' not in userinfo:
             return False
         method, password = userinfo.split(':', 1)
         method = method.lower().strip()
         password = password.strip()
-
         if not password:
             return False
         if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
             return False
         if _check_ss_2022_key(method, password):
             return False
-
     except Exception:
         return False
     return True
@@ -504,7 +498,7 @@ def is_safe_config_base(line: str) -> bool:
     line = line.strip()
     if not line or not is_supported_protocol(line):
         return False
-    
+
     # 🛡️ УНИВЕРСАЛЬНАЯ ЗАЩИТА (Karing + V2RayNG + Xray)
     if has_custom_ca_mitm(line):
         return False
@@ -516,7 +510,7 @@ def is_safe_config_base(line: str) -> bool:
         return False
     if has_invalid_reality_sid(line):
         return False
-    
+
     # СТАРЫЕ ПРОВЕРКИ
     if has_insecure_params(line):
         return False
@@ -593,37 +587,42 @@ def save_health(health: Dict):
         json.dump(health, f, indent=2, ensure_ascii=False)
 
 
-def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
+def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
+    """Загружает URL. Возвращает (контент, был_base64)."""
     entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
 
     if entry["failures"] >= MAX_CONSECUTIVE_FAILURES:
         print(f"  ⚠️  {url} — {entry['failures']} провалов подряд, пропускаем")
-        return None
+        return None, False
 
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
 
-            entry["failures"] = 0
-            entry["last_status"] = "ok"
-            entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
-            health[url] = entry
+        entry["failures"] = 0
+        entry["last_status"] = "ok"
+        entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
+        health[url] = entry
 
-            stripped = re.sub(r'\s+', '', content.strip())
-            if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped):
-                try:
-                    decoded = base64.b64decode(stripped).decode('utf-8', errors='ignore')
-                    if any(p in decoded for p in SUPPORTED_PROTOCOLS):
-                        return decoded
-                    stripped2 = re.sub(r'\s+', '', decoded.strip())
-                    if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped2):
-                        decoded2 = base64.b64decode(stripped2).decode('utf-8', errors='ignore')
-                        if any(p in decoded2 for p in SUPPORTED_PROTOCOLS):
-                            return decoded2
-                except Exception:
-                    pass
-            return content
+        # --- Детект и декод base64 ---
+        stripped = re.sub(r'\s+', '', content.strip())
+        if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped):
+            try:
+                decoded = base64.b64decode(stripped).decode('utf-8', errors='ignore')
+                if any(p in decoded for p in SUPPORTED_PROTOCOLS):
+                    return decoded, True  # ← base64 подписка
+
+                # Двойная обёртка (base64 в base64)
+                stripped2 = re.sub(r'\s+', '', decoded.strip())
+                if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped2):
+                    decoded2 = base64.b64decode(stripped2).decode('utf-8', errors='ignore')
+                    if any(p in decoded2 for p in SUPPORTED_PROTOCOLS):
+                        return decoded2, True  # ← двойной base64
+            except Exception:
+                pass
+
+        return content, False  # ← обычный текст
 
     except Exception as e:
         entry["failures"] = entry.get("failures", 0) + 1
@@ -631,14 +630,14 @@ def fetch_url_with_health(url: str, health: Dict) -> Optional[str]:
         entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
         health[url] = entry
         print(f"  ❌ {url}: {e} (провал #{entry['failures']})")
-        return None
+        return None, False
 
 
 def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
     report_path = os.path.join(OUTPUT_DIR, "URL_HEALTH_REPORT.md")
     with open(report_path, 'w', encoding='utf-8') as f:
-        f.write("# URL Health Report\n\n")
-        f.write(f"Generated: {time.strftime('%Y-%m-%d %H:%M:%S UTC')}\n\n")
+        f.write("# URL Health Report\n")
+        f.write(f"Generated: {time.strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
         f.write("| Source | Status | Fails | Raw | Filtered | Rejected | Last Check |\n")
         f.write("|---|---|---|---|---|---|---|\n")
         for src in SOURCES_CONFIG:
@@ -669,15 +668,12 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         return
 
     os.makedirs(QR_DIR, exist_ok=True)
-
     qr_files = []
 
     for name, count in file_counts.items():
         if count == 0:
             continue
-
         file_url = f"{RAW_BASE}/{name}.txt"
-
         qr = qrcode.QRCode(
             version=None,
             error_correction=ERROR_CORRECT_M,
@@ -687,7 +683,6 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         qr.add_data(file_url)
         qr.make(fit=True)
         img = qr.make_image(fill_color="black", back_color="white")
-
         filename = f"{name}.png"
         filepath = os.path.join(QR_DIR, filename)
         img.save(filepath)
@@ -707,15 +702,15 @@ def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>QR-коды подписок</title>
 <style>
-  body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 20px; }
-  h1 { text-align: center; color: #00d4ff; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
-  .card { background: #16213e; border-radius: 12px; padding: 20px; text-align: center; }
-  .card img { width: 240px; height: 240px; border-radius: 8px; }
-  .card .name { font-size: 18px; font-weight: bold; color: #00d4ff; margin-top: 12px; }
-  .card .count { font-size: 14px; color: #888; margin-top: 4px; }
-  .card .url { font-size: 11px; color: #555; margin-top: 8px; word-break: break-all; }
-  .all-card { border: 2px solid #00d4ff; }
+body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 20px; }
+h1 { text-align: center; color: #00d4ff; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; margin-top: 30px; }
+.card { background: #16213e; border-radius: 12px; padding: 20px; text-align: center; }
+.card img { width: 240px; height: 240px; border-radius: 8px; }
+.card .name { font-size: 18px; font-weight: bold; color: #00d4ff; margin-top: 12px; }
+.card .count { font-size: 14px; color: #888; margin-top: 4px; }
+.card .url { font-size: 11px; color: #555; margin-top: 8px; word-break: break-all; }
+.all-card { border: 2px solid #00d4ff; }
 </style>
 </head>
 <body>
@@ -732,7 +727,6 @@ def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
             f.write(f'    <div class="count">{count} конфигов</div>\n')
             f.write(f'    <div class="url">{file_url}</div>\n')
             f.write(f'  </div>\n')
-
         f.write("</div>\n</body>\n</html>")
     print(f"  📄 HTML-индекс: {index_path}")
 
@@ -741,14 +735,16 @@ def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
 #  ЗАГРУЗКА + ФИЛЬТРАЦИЯ
 # =====================================================================
 
-def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Dict]:
+def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Dict, bool]:
+    """Возвращает (конфиги, отброшенные, статистика, был_base64)."""
     name = source['name']
     url = source['url']
     print(f"  [{name}] Загрузка...")
 
-    content = fetch_url_with_health(url, health)
+    content, was_base64 = fetch_url_with_health(url, health)
+
     if not content:
-        return set(), [], {"raw": 0, "filtered": 0, "rejected": 0}
+        return set(), [], {"raw": 0, "filtered": 0, "rejected": 0}, False
 
     lines = content.splitlines()
     lines = [l.strip() for l in lines if l.strip() and not l.strip().startswith('#')]
@@ -763,6 +759,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         else:
             rejected.append(cfg)
 
+    # --- Дедупликация ---
     pbk_count = defaultdict(int)
     uuid_count = defaultdict(int)
     sid_count = defaultdict(int)
@@ -799,6 +796,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         uuid = config_uuid.get(cfg)
         sid = config_sid.get(cfg)
         tpass = config_tpass.get(cfg)
+
         if pbk and pbk_count[pbk] > PBK_MAX:
             rejected.append(cfg)
             continue
@@ -811,10 +809,11 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         if tpass and trojan_pass_count[tpass] > TROJAN_PASS_MAX:
             rejected.append(cfg)
             continue
+
         final_filtered.add(cfg)
 
     stats = {"raw": raw_count, "filtered": len(final_filtered), "rejected": len(rejected)}
-    return final_filtered, rejected, stats
+    return final_filtered, rejected, stats, was_base64
 
 
 # =====================================================================
@@ -844,8 +843,7 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v4.0 (универсальная защита) ===")
-
+    print("=== Фильтр прокси v4.1 (base64 round-trip) ===")
     health = load_health()
     all_filtered = set()
     all_rejected = []
@@ -858,24 +856,36 @@ def main():
             src = futures[future]
             name = src['name']
             try:
-                configs, rejected, stats = future.result()
+                configs, rejected, stats, was_base64 = future.result()
                 all_rejected.extend(rejected)
                 source_stats[src['url']] = stats
 
                 out = os.path.join(OUTPUT_DIR, f"{name}.txt")
                 sorted_cfg = sorted(configs, key=lambda u: (protocol_priority(u), u))
-                with open(out, 'w', encoding='utf-8', newline='\n') as f:
-                    f.write('\n'.join(sorted_cfg))
-                    if sorted_cfg:
-                        f.write('\n')
-                print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
+
+                if was_base64 and sorted_cfg:
+                    # ← Кодируем обратно в base64
+                    plaintext = '\n'.join(sorted_cfg) + '\n'
+                    encoded = base64.b64encode(plaintext.encode('utf-8')).decode('ascii')
+                    with open(out, 'w', encoding='utf-8', newline='\n') as f:
+                        f.write(encoded)
+                    print(f"  ✅ {name}.txt → {len(configs)} конфигов [base64] (отброшено: {stats['rejected']})")
+                else:
+                    # ← Обычный plaintext
+                    with open(out, 'w', encoding='utf-8', newline='\n') as f:
+                        f.write('\n'.join(sorted_cfg))
+                        if sorted_cfg:
+                            f.write('\n')
+                    print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
+
                 all_filtered.update(configs)
                 file_counts[name] = len(configs)
+
             except Exception as e:
                 print(f"  ❌ [{name}] Ошибка: {e}")
                 file_counts[name] = 0
 
-    # ALL.txt
+    # ALL.txt — всегда plaintext (агрегат всех источников)
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
     sorted_all = sorted(all_filtered, key=lambda u: (protocol_priority(u), u))
     with open(all_file, 'w', encoding='utf-8', newline='\n') as f:
