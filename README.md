@@ -72,6 +72,13 @@
 | FILTER-7-BASE64 | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** |
 
 ---
+## 🔰 Зеркала
+
+| Bitbucket | https://bitbucket.org/trojankill/safe-server-lists/src/main
+
+| Яндекс переводчик + Bitbucket | https://translate.yandex.ru/translate?url=ПОДПИСКА&lang=de-de
+
+---
 
 ## 📱 Подписки и QR-коды
 
