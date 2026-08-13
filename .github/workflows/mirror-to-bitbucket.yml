@@ -34,7 +34,7 @@ jobs:
           set -euo pipefail
 
           git remote remove bitbucket 2>/dev/null || true
-          git remote add bitbucket "https://x-token-auth:${BITBUCKET_TOKEN}@bitbucket.org/safe-sever/safe-server-lists.git"
+          git remote add bitbucket "https://x-token-auth:${BITBUCKET_TOKEN}@bitbucket.org/Trojankill/safe-server-lists.git"
 
           for attempt in 1 2 3 4 5; do
             echo "Bitbucket push attempt $attempt/5"
