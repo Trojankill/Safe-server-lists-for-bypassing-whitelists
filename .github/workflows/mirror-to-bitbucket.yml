@@ -52,17 +52,28 @@ jobs:
           BB_USER="${BITBUCKET_USER:-x-token-auth}"
           STAGE_DIR="/tmp/mirror-stage"
           MIRROR_DIR="/tmp/bitbucket-mirror"
-          REPO_URL="https://${BB_USER}:${BITBUCKET_TOKEN}@bitbucket.org/${BITBUCKET_REPO}.git"
+
+          # URL-encode логина и токена, чтобы @ и спецсимволы не ломали URL
+          BB_USER_ENC=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BB_USER")
+          BB_TOKEN_ENC=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BITBUCKET_TOKEN")
+          REPO_URL="https://${BB_USER_ENC}:${BB_TOKEN_ENC}@bitbucket.org/${BITBUCKET_REPO}.git"
 
           rm -rf "$STAGE_DIR" "$MIRROR_DIR"
           mkdir -p "$STAGE_DIR" "$MIRROR_DIR"
 
+          # Копируем только нужные txt файлы (без QR-кодов и health)
           cp "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$STAGE_DIR"/ 2>/dev/null || true
           cp "$GITHUB_WORKSPACE"/githubmirror/ALL.txt "$STAGE_DIR"/ 2>/dev/null || true
 
           if ! find "$STAGE_DIR" -type f -name "*.txt" -size +0c | grep -q .; then
             echo "⚠️ No non-empty subscription files found"
             exit 0
+          fi
+
+          # Защита от случайного попадания картинок
+          if find "$STAGE_DIR" -type f -name "*.png" | grep -q .; then
+            echo "❌ PNG files found in mirror stage."
+            exit 1
           fi
 
           cd "$MIRROR_DIR"
