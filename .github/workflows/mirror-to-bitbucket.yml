@@ -1,4 +1,38 @@
-      - name: Replace Bitbucket files with fresh filtered subscriptions
+name: Mirror to Bitbucket
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-to-bitbucket
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  GIT_TERMINAL_PROMPT: "0"
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      BITBUCKET_REPO: ${{ vars.BITBUCKET_REPO }}
+      BITBUCKET_BRANCH: ${{ vars.BITBUCKET_BRANCH }}
+      BITBUCKET_USER: ${{ vars.BITBUCKET_USER }}
+
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Replace Bitbucket files
         env:
           BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
         run: |
@@ -27,7 +61,7 @@
           cp "$GITHUB_WORKSPACE"/githubmirror/ALL.txt "$STAGE_DIR"/ 2>/dev/null || true
 
           if ! find "$STAGE_DIR" -type f -name "*.txt" -size +0c | grep -q .; then
-            echo "⚠️ No non-empty subscription files found. Bitbucket will not be updated."
+            echo "⚠️ No non-empty subscription files found"
             exit 0
           fi
 
