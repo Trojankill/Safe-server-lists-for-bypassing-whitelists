@@ -63,7 +63,7 @@
 
 | ID | Источник | Формат |
 |---|---|---|
-| FILTER-1 | [VAL41K/bypass-rkn-blocks](https://codeberg.org/VALCHIK/bypass-rkn-blocks) | plaintext |
+| FILTER-1 | [RKPchannel](https://github.com/RKPchannel/RKP_bypass_configs) | plaintext |
 | FILTER-2 | [AvenCores/goida-vpn-configs](https://github.com/AvenCores/goida-vpn-configs) | plaintext |
 | FILTER-3 | [zieng2/wl](https://github.com/zieng2/wl) | plaintext |
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) | plaintext |
