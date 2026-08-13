@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  schedule:
+    # каждый час, автоматически
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -16,67 +19,35 @@ permissions:
 jobs:
   mirror:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
-
-    env:
-      BITBUCKET_REPO: ${{ vars.BITBUCKET_REPO }}
-      BITBUCKET_BRANCH: ${{ vars.BITBUCKET_BRANCH }}
-      BITBUCKET_EMAIL: ${{ vars.BITBUCKET_EMAIL }}
-      BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
+    timeout-minutes: 20
 
     steps:
       - name: Checkout GitHub repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
 
-      - name: Upload files via Bitbucket REST API
+      - name: Push main branch to Bitbucket
+        env:
+          BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
         run: |
           set -euo pipefail
 
-          MISSING=""
-          [ -z "${BITBUCKET_REPO:-}" ] && MISSING="$MISSING BITBUCKET_REPO"
-          [ -z "${BITBUCKET_EMAIL:-}" ] && MISSING="$MISSING BITBUCKET_EMAIL"
-          [ -z "${BITBUCKET_TOKEN:-}" ] && MISSING="$MISSING BITBUCKET_TOKEN"
+          git remote remove bitbucket 2>/dev/null || true
+          git remote add bitbucket "https://x-token-auth:${BITBUCKET_TOKEN}@bitbucket.org/safe-sever/safe-server-lists.git"
 
-          if [ -n "$MISSING" ]; then
-            echo "❌ Missing variables:$MISSING"
-            echo "🔍 Debug info:"
-            echo "   REPO: [${BITBUCKET_REPO:-empty}]"
-            echo "   EMAIL: [${BITBUCKET_EMAIL:-empty}]"
-            echo "   TOKEN: [${BITBUCKET_TOKEN:+present}${BITBUCKET_TOKEN:-empty}]"
-            exit 1
-          fi
+          for attempt in 1 2 3 4 5; do
+            echo "Bitbucket push attempt $attempt/5"
 
-          BB_BRANCH="${BITBUCKET_BRANCH:-main}"
-
-          CURL_ARGS=(
-            -s -w "\nHTTP_STATUS:%{http_code}\n" -X POST "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO}/src"
-            -u "${BITBUCKET_EMAIL}:${BITBUCKET_TOKEN}"
-            -F "branch=${BB_BRANCH}"
-            -F "message=mirror update $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-          )
-
-          for file in "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$GITHUB_WORKSPACE"/githubmirror/ALL.txt; do
-            if [ -f "$file" ] && [ -s "$file" ]; then
-              filename=$(basename "$file")
-              CURL_ARGS+=(-F "${filename}=@${file}")
+            if git push bitbucket HEAD:main --force; then
+              echo "✅ Bitbucket push successful"
+              exit 0
             fi
+
+            sleep_time=$((attempt * 45))
+            echo "❌ Push failed. Sleeping ${sleep_time}s..."
+            sleep "$sleep_time"
           done
 
-          if [ ${#CURL_ARGS[@]} -eq 4 ]; then
-            echo "⚠️ No non-empty txt files found to upload."
-            exit 0
-          fi
-
-          echo "🚀 Uploading files to Bitbucket via REST API..."
-          RESPONSE=$(curl "${CURL_ARGS[@]}")
-          HTTP_STATUS=$(echo "$RESPONSE" | grep "HTTP_STATUS" | cut -d':' -f2)
-
-          if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "201" ]; then
-            echo "✅ Bitbucket files replaced successfully via API!"
-          else
-            echo "❌ API upload failed with status $HTTP_STATUS"
-            echo "Response: $RESPONSE"
-            exit 1
-          fi
+          echo "💀 Bitbucket push failed after all retries"
+          exit 1
