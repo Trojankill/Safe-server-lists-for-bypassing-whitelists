@@ -2,7 +2,7 @@ name: Auto Update Proxy Filters
 
 on:
   schedule:
-    - cron: "*/9 * * * *"
+    - cron: "25 * * * *"
   workflow_dispatch:
 
 concurrency:
@@ -49,11 +49,9 @@ jobs:
                   githubmirror/url_health.json \
                   githubmirror/URL_HEALTH_REPORT.md \
                   QR-CODE/
-
           if git diff --staged --quiet; then
             echo "No changes to commit"
             exit 0
           fi
-
           git commit -m "auto-update filters + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
           git push origin main
