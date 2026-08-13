@@ -13,9 +13,6 @@ concurrency:
 permissions:
   contents: read
 
-env:
-  GIT_TERMINAL_PROMPT: "0"
-
 jobs:
   mirror:
     runs-on: ubuntu-latest
@@ -24,7 +21,8 @@ jobs:
     env:
       BITBUCKET_REPO: ${{ vars.BITBUCKET_REPO }}
       BITBUCKET_BRANCH: ${{ vars.BITBUCKET_BRANCH }}
-      BITBUCKET_USER: ${{ vars.BITBUCKET_USER }}
+      BITBUCKET_EMAIL: ${{ vars.BITBUCKET_EMAIL }}
+      BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
 
     steps:
       - name: Checkout GitHub repository
@@ -32,70 +30,46 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Replace Bitbucket files
-        env:
-          BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
+      - name: Upload files via Bitbucket REST API
         run: |
           set -euo pipefail
 
-          if [ -z "${BITBUCKET_REPO:-}" ]; then
-            echo "❌ Add repository variable BITBUCKET_REPO"
-            exit 1
-          fi
-
-          if [ -z "${BITBUCKET_TOKEN:-}" ]; then
-            echo "❌ Add repository secret BITBUCKET_MIRROR_TOKEN"
+          if [ -z "${BITBUCKET_REPO:-}" ] || [ -z "${BITBUCKET_EMAIL:-}" ] || [ -z "${BITBUCKET_TOKEN:-}" ]; then
+            echo "❌ Missing Variables/Secrets. Need BITBUCKET_REPO, BITBUCKET_EMAIL, BITBUCKET_MIRROR_TOKEN."
             exit 1
           fi
 
           BB_BRANCH="${BITBUCKET_BRANCH:-main}"
-          BB_USER="${BITBUCKET_USER:-x-token-auth}"
-          STAGE_DIR="/tmp/mirror-stage"
-          MIRROR_DIR="/tmp/bitbucket-mirror"
 
-          # URL-encode логина и токена, чтобы @ и спецсимволы не ломали URL
-          BB_USER_ENC=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BB_USER")
-          BB_TOKEN_ENC=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1], safe=''))" "$BITBUCKET_TOKEN")
-          REPO_URL="https://${BB_USER_ENC}:${BB_TOKEN_ENC}@bitbucket.org/${BITBUCKET_REPO}.git"
+          # Собираем аргументы для curl
+          CURL_ARGS=(
+            -s -w "\nHTTP_STATUS:%{http_code}\n" -X POST "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO}/src"
+            -u "${BITBUCKET_EMAIL}:${BITBUCKET_TOKEN}"
+            -F "branch=${BB_BRANCH}"
+            -F "message=mirror update $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+          )
 
-          rm -rf "$STAGE_DIR" "$MIRROR_DIR"
-          mkdir -p "$STAGE_DIR" "$MIRROR_DIR"
+          # Добавляем каждый существующий txt файл
+          for file in "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$GITHUB_WORKSPACE"/githubmirror/ALL.txt; do
+            if [ -f "$file" ] && [ -s "$file" ]; then
+              filename=$(basename "$file")
+              CURL_ARGS+=(-F "${filename}=@${file}")
+            fi
+          done
 
-          # Копируем только нужные txt файлы (без QR-кодов и health)
-          cp "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$STAGE_DIR"/ 2>/dev/null || true
-          cp "$GITHUB_WORKSPACE"/githubmirror/ALL.txt "$STAGE_DIR"/ 2>/dev/null || true
-
-          if ! find "$STAGE_DIR" -type f -name "*.txt" -size +0c | grep -q .; then
-            echo "⚠️ No non-empty subscription files found"
+          if [ ${#CURL_ARGS[@]} -eq 4 ]; then
+            echo "⚠️ No non-empty txt files found to upload."
             exit 0
           fi
 
-          # Защита от случайного попадания картинок
-          if find "$STAGE_DIR" -type f -name "*.png" | grep -q .; then
-            echo "❌ PNG files found in mirror stage."
+          echo "🚀 Uploading files to Bitbucket via REST API..."
+          RESPONSE=$(curl "${CURL_ARGS[@]}")
+          HTTP_STATUS=$(echo "$RESPONSE" | grep "HTTP_STATUS" | cut -d':' -f2)
+
+          if [ "$HTTP_STATUS" = "200" ] || [ "$HTTP_STATUS" = "201" ]; then
+            echo "✅ Bitbucket files replaced successfully via API!"
+          else
+            echo "❌ API upload failed with status $HTTP_STATUS"
+            echo "Response: $RESPONSE"
             exit 1
           fi
-
-          cd "$MIRROR_DIR"
-          git init -q -b "$BB_BRANCH"
-          git config user.name "bitbucket-mirror"
-          git config user.email "bitbucket-mirror@local"
-
-          cp "$STAGE_DIR"/* .
-
-          git add -A
-          git commit -q -m "mirror: replace subscription files $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-
-          for attempt in 1 2 3; do
-            echo "Bitbucket push attempt $attempt/3"
-            if git push --force -q "$REPO_URL" "HEAD:refs/heads/${BB_BRANCH}"; then
-              echo "✅ Bitbucket files replaced"
-              exit 0
-            fi
-            sleep_time=$((attempt * 30))
-            echo "Bitbucket push failed. Sleeping ${sleep_time}s..."
-            sleep "$sleep_time"
-          done
-
-          echo "❌ Bitbucket push failed after all retries"
-          exit 1
