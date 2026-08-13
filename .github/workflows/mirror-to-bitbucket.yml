@@ -34,14 +34,22 @@ jobs:
         run: |
           set -euo pipefail
 
-          if [ -z "${BITBUCKET_REPO:-}" ] || [ -z "${BITBUCKET_EMAIL:-}" ] || [ -z "${BITBUCKET_TOKEN:-}" ]; then
-            echo "❌ Missing Variables/Secrets. Need BITBUCKET_REPO, BITBUCKET_EMAIL, BITBUCKET_MIRROR_TOKEN."
+          MISSING=""
+          [ -z "${BITBUCKET_REPO:-}" ] && MISSING="$MISSING BITBUCKET_REPO"
+          [ -z "${BITBUCKET_EMAIL:-}" ] && MISSING="$MISSING BITBUCKET_EMAIL"
+          [ -z "${BITBUCKET_TOKEN:-}" ] && MISSING="$MISSING BITBUCKET_TOKEN"
+
+          if [ -n "$MISSING" ]; then
+            echo "❌ Missing variables:$MISSING"
+            echo "🔍 Debug info:"
+            echo "   REPO: [${BITBUCKET_REPO:-empty}]"
+            echo "   EMAIL: [${BITBUCKET_EMAIL:-empty}]"
+            echo "   TOKEN: [${BITBUCKET_TOKEN:+present}${BITBUCKET_TOKEN:-empty}]"
             exit 1
           fi
 
           BB_BRANCH="${BITBUCKET_BRANCH:-main}"
 
-          # Собираем аргументы для curl
           CURL_ARGS=(
             -s -w "\nHTTP_STATUS:%{http_code}\n" -X POST "https://api.bitbucket.org/2.0/repositories/${BITBUCKET_REPO}/src"
             -u "${BITBUCKET_EMAIL}:${BITBUCKET_TOKEN}"
@@ -49,7 +57,6 @@ jobs:
             -F "message=mirror update $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
           )
 
-          # Добавляем каждый существующий txt файл
           for file in "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$GITHUB_WORKSPACE"/githubmirror/ALL.txt; do
             if [ -f "$file" ] && [ -s "$file" ]; then
               filename=$(basename "$file")
