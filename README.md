@@ -68,7 +68,7 @@
 | FILTER-3 | [zieng2/wl](https://github.com/zieng2/wl) | plaintext |
 | FILTER-4 | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) | plaintext |
 | FILTER-5 | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) | plaintext |
-| FILTER-6 | [AetrisVPN](https://gitverse.ru/flaafix/AetrisVPN) | plaintext |
+| FILTER-6 | [kort0881](https://github.com/kort0881/vpn-vless-configs-russia) | plaintext |
 | FILTER-7-BASE64 | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** |
 
 ---
