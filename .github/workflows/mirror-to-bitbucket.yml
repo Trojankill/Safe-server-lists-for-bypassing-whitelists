@@ -1,1 +1,114 @@
+name: Mirror to Bitbucket
 
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: mirror-to-bitbucket
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  GIT_TERMINAL_PROMPT: "0"
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    env:
+      BITBUCKET_REPO: ${{ vars.BITBUCKET_REPO }}
+      BITBUCKET_BRANCH: ${{ vars.BITBUCKET_BRANCH }}
+      BITBUCKET_USER: ${{ vars.BITBUCKET_USER }}
+
+    steps:
+      - name: Checkout GitHub repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 1
+
+      - name: Replace Bitbucket files with fresh filtered subscriptions
+        env:
+          BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          if [ -z "${BITBUCKET_REPO:-}" ]; then
+            echo "❌ Add repository variable BITBUCKET_REPO (Settings → Variables), e.g. safe-sever/safe-server-lists"
+            exit 1
+          fi
+
+          if [ -z "${BITBUCKET_TOKEN:-}" ]; then
+            echo "❌ Add repository secret BITBUCKET_MIRROR_TOKEN"
+            exit 1
+          fi
+
+          BB_BRANCH="${BITBUCKET_BRANCH:-main}"
+          BB_USER="${BITBUCKET_USER:-x-token-auth}"
+          STAGE_DIR="/tmp/mirror-stage"
+          MIRROR_DIR="/tmp/bitbucket-mirror"
+
+          rm -rf "$STAGE_DIR" "$MIRROR_DIR"
+          mkdir -p "$STAGE_DIR"
+
+          cp "$GITHUB_WORKSPACE"/githubmirror/FILTER-*.txt "$STAGE_DIR"/ 2>/dev/null || true
+          cp "$GITHUB_WORKSPACE"/githubmirror/ALL.txt "$STAGE_DIR"/ 2>/dev/null || true
+
+          if ! find "$STAGE_DIR" -type f -name "*.txt" -size +0c | grep -q .; then
+            echo "⚠️ No non-empty subscription files found. Bitbucket will not be updated."
+            exit 0
+          fi
+
+          if find "$STAGE_DIR" -type f -name "*.png" | grep -q .; then
+            echo "❌ PNG files found in mirror stage."
+            exit 1
+          fi
+
+          if ! git clone --depth 1 --branch "$BB_BRANCH" "https://${BB_USER}:${BITBUCKET_TOKEN}@bitbucket.org/${BITBUCKET_REPO}.git" "$MIRROR_DIR" 2>/dev/null; then
+            mkdir -p "$MIRROR_DIR"
+            cd "$MIRROR_DIR"
+            git init -q -b "$BB_BRANCH"
+          fi
+
+          cd "$MIRROR_DIR"
+
+          git config user.name "bitbucket-mirror"
+          git config user.email "bitbucket-mirror@local"
+
+          if git rev-parse --verify HEAD >/dev/null 2>&1; then
+            git checkout -q "$BB_BRANCH" 2>/dev/null || git checkout -q -b "$BB_BRANCH"
+          else
+            git checkout -q -b "$BB_BRANCH"
+          fi
+
+          find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} +
+
+          cp "$STAGE_DIR"/* .
+
+          git add -A
+
+          if git diff --cached --quiet; then
+            echo "✅ Bitbucket already contains the same files. Nothing to push."
+            exit 0
+          fi
+
+          git commit -q -m "mirror: replace subscription files $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+
+          for attempt in 1 2 3; do
+            echo "Bitbucket push attempt $attempt/3"
+            if git push --force -q origin "HEAD:refs/heads/${BB_BRANCH}"; then
+              echo "✅ Bitbucket files replaced"
+              exit 0
+            fi
+            sleep_time=$((attempt * 30))
+            echo "Bitbucket push failed. Sleeping ${sleep_time}s..."
+            sleep "$sleep_time"
+          done
+
+          echo "❌ Bitbucket push failed after all retries"
+          exit 1
