@@ -126,27 +126,7 @@
 
 ---
 
-## 🏗️ Архитектура фильтрации
 
-```mermaid
-graph TD
-    A[Публичные источники] -->|Загрузка| B[URL Health Check]
-    B -->|Провал 3+ раз| X[Пропуск]
-    B -->|Успех| C{Base64?}
-    C -->|Да| D[Декодирование]
-    C -->|Нет| E[Plaintext]
-    D --> F[Парсинг конфигов]
-    E --> F
-    F --> G[Статический анализ]
-    G -->|Провал| H[rejected/]
-    G -->|Успех| I[Дедупликация]
-    I --> J[Сортировка]
-    J --> K[githubmirror/]
-    K --> L[QR-коды]
-    L --> M[HTML-индекс]
-```
-
----
 
 ## 📥 Источники данных
 
@@ -331,7 +311,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 | **Nekobox** | `+` → Scan QR code |
 
 > [!TIP]
-> Для автоматического обновления используйте URL подписки напрямую — клиент будет обновлять список каждые 9 минут.
+> Для автоматического обновления используйте URL подписки напрямую — клиент будет обновлять список каждый час.
 
 ---
 
@@ -369,7 +349,3 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 ---
-
-<p align="center">
-  <sub>Made with ❤️ for the community</sub>
-</p>
