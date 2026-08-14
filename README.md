@@ -334,7 +334,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary>🇬 <b>English</b></summary>
+<summary>en🇬 <b>English</b></summary>
 
 - The author is not the owner, developer, or provider of the listed VPN configurations. This is an independent informational review presenting test results.
 - This post is not an advertisement for VPNs. All material is intended solely for informational purposes and is directed only at citizens of countries where accessing this information is legal — at the very least, for research purposes. If you are prohibited from reading this content, close this page immediately!
