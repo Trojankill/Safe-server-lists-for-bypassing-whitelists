@@ -10,7 +10,7 @@
   <a href="https://github.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/Trojankill/Safe-server-lists-for-bypassing-whitelists?style=for-the-badge&color=green" alt="License">
   </a>
-  <img src="https://img.shields.io/badge/refresh-every_9_min-blue?style=for-the-badge&logo=clockify&logoColor=white" alt="Refresh">
+  <img src="https://img.shields.io/badge/refresh-every_1_hour-blue?style=for-the-badge&logo=clockify&logoColor=white" alt="Refresh">
   <img src="https://img.shields.io/badge/python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python">
 </p>
 
