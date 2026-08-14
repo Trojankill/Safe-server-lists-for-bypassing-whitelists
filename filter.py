@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v4.1
+Фильтр прокси-конфигураций v4.2 (ENI & LO Edition)
 Универсальная защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
-QR-CODE в корне репо. URL Health + авто-очистка.
-Base64 подписки: decode → filter → encode обратно.
+Исправлены: универсальный хост-чек, тип aid в VMess, точная длина pbk, 
+пост-квантовый ML-KEM и Sybil-флуд (дедуп по host:port).
 """
 
 import re
@@ -12,7 +12,6 @@ import os
 import json
 import base64
 import time
-import hashlib
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
@@ -34,7 +33,6 @@ os.makedirs(QR_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
 
-# ⚠️ ЗАМЕНИ на свой логин и репо!
 RAW_BASE = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror"
 
 SUPPORTED_PROTOCOLS = [
@@ -53,8 +51,6 @@ SOURCES_CONFIG = [
     {"name": "FILTER-7-BASE64", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
 ]
 
-# ---------- ЧЁРНЫЙ СПИСОК ДОМЕНОВ ----------
-
 BANNED_DOMAINS = [
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
     '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq', '.mwscdn.ru',
@@ -67,8 +63,6 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site',
 ]
 
-# ---------- ШИФРЫ SS ----------
-
 SAFE_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
     'chacha20-poly1305', 'chacha20-ietf-poly1305',
@@ -78,18 +72,9 @@ SAFE_SS_METHODS = {
 }
 
 WEAK_SS_METHODS = {
-    'rc4', 'rc4-md5', 'rc4-md5-6',
-    'des', 'des-cfb', 'bf-cfb', 'cast5-cfb',
-    'salsa20', 'xsalsa20', 'chacha20', 'xchacha20',
-    'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
-    'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8',
-    'aes-128-cfb1', 'aes-192-cfb1', 'aes-256-cfb1',
-    'aes-128-cfb-fast', 'aes-192-cfb-fast', 'aes-256-cfb-fast',
-    'aes-128-cfb-simple', 'aes-192-cfb-simple', 'aes-256-cfb-simple',
-    'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
-    'camellia-128-cfb', 'camellia-192-cfb', 'camellia-256-cfb',
-    'seed-cfb', 'idea-cfb', 'rc2-cfb',
-    'none', '',
+    'rc4', 'rc4-md5', 'rc4-md5-6', 'des', 'des-cfb', 'bf-cfb', 'cast5-cfb',
+    'salsa20', 'xsalsa20', 'chacha20', 'xchacha20', 'aes-128-cfb', 'aes-192-cfb',
+    'aes-256-cfb', 'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8', 'none', '',
 }
 
 _SS_2022_KEY_LENGTHS = {
@@ -106,15 +91,13 @@ SAFE_FINGERPRINTS = {
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
-    r'[&?]security=none',
-    r'[&?]verify=0', r'[&?]verify=false',
+    r'[&?]security=none', r'[&?]verify=0', r'[&?]verify=false',
     r'[&?]skip-cert-verify=0', r'[&?]skip-cert-verify=false',
     r'[&?]allowinsecurecipher=1', r'[&?]allowinsecurecipher=true',
     r'[&?]tls13=0', r'[&?]tls13=false',
 ]
 
 UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
-
 
 # =====================================================================
 #  SS 2022 KEY VALIDATION
@@ -137,7 +120,6 @@ def _check_ss_2022_key(method: str, password: str) -> bool:
         pass
     return False
 
-
 # =====================================================================
 #  БАЗОВЫЕ ПРОВЕРКИ
 # =====================================================================
@@ -146,10 +128,8 @@ def is_supported_protocol(line: str) -> bool:
     line = line.strip()
     return any(line.startswith(p) for p in SUPPORTED_PROTOCOLS)
 
-
 def has_insecure_params(line: str) -> bool:
     return bool(UNSAFE_REGEX.search(line))
-
 
 def is_dangerous_domain_param(url: str) -> bool:
     for param in ('sni', 'host'):
@@ -161,21 +141,33 @@ def is_dangerous_domain_param(url: str) -> bool:
                     return True
     return False
 
-
-def is_banned_host(url: str) -> bool:
-    host_match = re.search(r'(?:vless|trojan)://[^@]+@([^:?]+)', url, re.I)
-    if not host_match:
-        return False
-    host = host_match.group(1).lower()
-    for domain in BANNED_DOMAINS:
-        if domain in host:
+# ИСПРАВЛЕНО: Универсальный хост-экстрактор для всех протоколов
+def is_banned_host_universal(url: str) -> bool:
+    m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)', url, re.I)
+    if m:
+        host = m.group(1).lower()
+        if any(d in host for d in BANNED_DOMAINS):
             return True
-    if re.match(r'^\d+\.\d+\.\d+\.\d+\.[a-zA-Z]', host):
-        return True
-    if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost|fe80::|fc00::|fd)', host):
-        return True
+        if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost|fe80::|fc00::|fd)', host):
+            return True
     return False
 
+# ИСПРАВЛЕНО: Отдельная ветка для SSR (там нет @, всё в base64)
+def is_ssr_host_banned(url: str) -> bool:
+    if not url.startswith('ssr://'):
+        return False
+    try:
+        payload = url[6:].split('#')[0]
+        rem = len(payload) % 4
+        if rem:
+            payload += '=' * (4 - rem)
+        decoded = base64.b64decode(payload).decode('utf-8', errors='ignore')
+        host = decoded.split(':')[0].lower()
+        if any(d in host for d in BANNED_DOMAINS):
+            return True
+    except Exception:
+        return True # Fail closed for SSR if decoding fails
+    return False
 
 def has_dangerous_transport_combination(url: str) -> bool:
     type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
@@ -191,13 +183,14 @@ def has_dangerous_transport_combination(url: str) -> bool:
             return True
     return False
 
-
+# ИСПРАВЛЕНО: Разрешаем легитимный пост-квантовый ML-KEM + X25519
 def is_suspicious_encryption(url: str) -> bool:
     enc_match = re.search(r'[?&]encryption=([^&]+)', url, re.I)
-    if enc_match and 'mlkem' in enc_match.group(1).lower():
-        return True
+    if enc_match:
+        enc = enc_match.group(1).lower()
+        if 'mlkem' in enc and 'x25519' not in enc:
+            return True
     return False
-
 
 def is_trojan_public_pool(url: str) -> bool:
     if not url.startswith('trojan://'):
@@ -212,36 +205,32 @@ def is_trojan_public_pool(url: str) -> bool:
         return True
     return False
 
-
+# ИСПРАВЛЕНО: Ловим не только нули, но и 'f' плейсхолдеры
 def is_dangerous_uuid(url: str) -> bool:
     lower = url.lower()
     if 'localhost' in lower:
         return True
     if re.search(r'@(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1)', lower):
         return True
-    if re.search(r'vless://0{8}-0{4}-0{4}-0{4}-0{12}@', url, re.I):
+    if re.search(r'vless://(0{8}-0{4}-0{4}-0{4}-0{12}|f{8}-f{4}-f{4}-f{4}-f{12})@', url, re.I):
         return True
     return False
 
-
 # =====================================================================
-#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ
+#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ + НОВЫЙ ДЕДУП
 # =====================================================================
 
 def extract_pbk(url: str) -> Optional[str]:
     m = re.search(r'[?&]pbk=([^&]+)', url, re.I)
     return m.group(1) if m else None
 
-
 def extract_uuid(url: str) -> Optional[str]:
     m = re.search(r'vless://([a-f0-9-]+)@', url, re.I)
     return m.group(1).lower() if m else None
 
-
 def extract_sid(url: str) -> Optional[str]:
     m = re.search(r'[?&]sid=([^&]+)', url, re.I)
     return m.group(1) if m else None
-
 
 def extract_trojan_password(url: str) -> Optional[str]:
     if not url.startswith('trojan://'):
@@ -249,13 +238,20 @@ def extract_trojan_password(url: str) -> Optional[str]:
     m = re.search(r'trojan://([^@]+)@', url, re.I)
     return m.group(1) if m else None
 
+# ИСПРАВЛЕНО: Экстрактор host:port для защиты от Sybil-флуда
+def extract_host_port(url: str) -> Optional[str]:
+    m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)(?::(\d+))?', url, re.I)
+    if m:
+        host = m.group(1).lower()
+        port = m.group(2) or 'default'
+        return f"{host}:{port}"
+    return None
 
 # =====================================================================
-#  УНИВЕРСАЛЬНАЯ ЗАЩИТА (Karing + V2RayNG + Xray-core)
+#  УНИВЕРСАЛЬНАЯ ЗАЩИТА
 # =====================================================================
 
 def has_custom_ca_mitm(url: str) -> bool:
-    """Блокирует кастомные сертификаты (MITM через ca=)."""
     ca_match = re.search(r'[?&]ca=([^&]+)', url, re.I)
     if ca_match:
         ca_val = ca_match.group(1)
@@ -263,23 +259,17 @@ def has_custom_ca_mitm(url: str) -> bool:
             return True
     return False
 
-
 def has_malicious_dns_override(url: str) -> bool:
-    """Блокирует подмену DNS на серверы злоумышленников."""
     dns_match = re.search(r'[?&](?:dns|doh|dns-server)=([^&]+)', url, re.I)
     if dns_match:
         dns_val = dns_match.group(1).lower()
-        trusted_dns = [
-            '1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
-            'cloudflare-dns.com', 'dns.google', 'dns.adguard.com'
-        ]
+        trusted_dns = ['1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
+                       'cloudflare-dns.com', 'dns.google', 'dns.adguard.com']
         if not any(trust in dns_val for trust in trusted_dns):
             return True
     return False
 
-
 def has_sniffing_exfiltration(url: str) -> bool:
-    """Блокирует sniffing, ведущий на внешние домены."""
     sniff_match = re.search(r'[?&](?:sniffing|destoverride)=([^&]+)', url, re.I)
     if sniff_match:
         val = sniff_match.group(1).lower()
@@ -287,22 +277,19 @@ def has_sniffing_exfiltration(url: str) -> bool:
             return True
     return False
 
-
+# ИСПРАВЛЕНО: Точная длина X25519 base64url (43 символа)
 def has_invalid_reality_pbk(url: str) -> bool:
-    """Reality с невалидным pbk (короткая заглушка) → сломан."""
     if 'security=reality' not in url.lower():
         return False
     pbk_match = re.search(r'[?&]pbk=([^&]+)', url, re.I)
     if not pbk_match:
         return True
     pbk = pbk_match.group(1)
-    if len(pbk) < 30:
+    if len(pbk) != 43:
         return True
     return False
 
-
 def has_invalid_reality_sid(url: str) -> bool:
-    """Reality с невалидным sid (не 16 hex символов) → сломан."""
     if 'security=reality' not in url.lower():
         return False
     sid_match = re.search(r'[?&]sid=([^&]+)', url, re.I)
@@ -312,7 +299,6 @@ def has_invalid_reality_sid(url: str) -> bool:
     if len(sid) != 16 or not re.match(r'^[0-9a-fA-F]+$', sid):
         return True
     return False
-
 
 # =====================================================================
 #  СТРОГИЕ ПРОВЕРКИ ПРОТОКОЛОВ
@@ -362,7 +348,6 @@ def is_safe_vless_base(url: str) -> bool:
 
     return False
 
-
 def is_safe_trojan_base(url: str) -> bool:
     if not url.startswith('trojan://'):
         return False
@@ -374,7 +359,7 @@ def is_safe_trojan_base(url: str) -> bool:
         return False
     return True
 
-
+# ИСПРАВЛЕНО: Приведение aid к int и проверка scy
 def is_safe_vmess_base(url: str) -> bool:
     if not url.startswith('vmess://'):
         return False
@@ -385,19 +370,31 @@ def is_safe_vmess_base(url: str) -> bool:
             b64 += '=' * (4 - missing)
         decoded = base64.b64decode(b64).decode('utf-8')
         cfg = json.loads(decoded)
-        if cfg.get('aid', cfg.get('alterId', 0)) != 0:
+        
+        try:
+            aid_val = cfg.get('aid', cfg.get('alterId', 0))
+            if int(aid_val) != 0:
+                return False
+        except (ValueError, TypeError):
             return False
+            
         if not cfg.get('tls', False):
             return False
         if cfg.get('allowInsecure', False):
             return False
         if str(cfg.get('v', '2')) != '2':
             return False
+            
+        scy = cfg.get('scy', 'auto').lower()
+        if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305', 'none'):
+            return False
+            
         net = cfg.get('net', 'tcp').lower()
         if net not in ('ws', 'grpc', 'http', 'tcp'):
             return False
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
+            
         for field in ('add', 'sni', 'host'):
             val = cfg.get(field, '').lower()
             for domain in BANNED_DOMAINS:
@@ -409,7 +406,6 @@ def is_safe_vmess_base(url: str) -> bool:
         return True
     except Exception:
         return False
-
 
 def is_safe_hysteria2_base(url: str) -> bool:
     if not url.startswith(('hysteria2://', 'hy2://')):
@@ -423,7 +419,6 @@ def is_safe_hysteria2_base(url: str) -> bool:
         return False
     return True
 
-
 def is_safe_hysteria1_base(url: str) -> bool:
     if not url.startswith('hysteria://'):
         return False
@@ -432,7 +427,6 @@ def is_safe_hysteria1_base(url: str) -> bool:
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
         return False
     return True
-
 
 def is_safe_ss_base(url: str) -> bool:
     if not url.startswith('ss://'):
@@ -469,7 +463,6 @@ def is_safe_ss_base(url: str) -> bool:
         return False
     return True
 
-
 def is_safe_ssr_base(url: str) -> bool:
     if not url.startswith('ssr://'):
         return False
@@ -492,55 +485,34 @@ def is_safe_ssr_base(url: str) -> bool:
     except Exception:
         return False
 
-
 @lru_cache(maxsize=65536)
 def is_safe_config_base(line: str) -> bool:
     line = line.strip()
     if not line or not is_supported_protocol(line):
         return False
 
-    # 🛡️ УНИВЕРСАЛЬНАЯ ЗАЩИТА (Karing + V2RayNG + Xray)
-    if has_custom_ca_mitm(line):
-        return False
-    if has_malicious_dns_override(line):
-        return False
-    if has_sniffing_exfiltration(line):
-        return False
-    if has_invalid_reality_pbk(line):
-        return False
-    if has_invalid_reality_sid(line):
-        return False
+    if has_custom_ca_mitm(line): return False
+    if has_malicious_dns_override(line): return False
+    if has_sniffing_exfiltration(line): return False
+    if has_invalid_reality_pbk(line): return False
+    if has_invalid_reality_sid(line): return False
 
-    # СТАРЫЕ ПРОВЕРКИ
-    if has_insecure_params(line):
-        return False
-    if is_dangerous_domain_param(line):
-        return False
-    if is_banned_host(line):
-        return False
-    if has_dangerous_transport_combination(line):
-        return False
-    if is_suspicious_encryption(line):
-        return False
-    if is_dangerous_uuid(line):
-        return False
+    if has_insecure_params(line): return False
+    if is_dangerous_domain_param(line): return False
+    if is_banned_host_universal(line): return False
+    if is_ssr_host_banned(line): return False
+    if has_dangerous_transport_combination(line): return False
+    if is_suspicious_encryption(line): return False
+    if is_dangerous_uuid(line): return False
 
-    if line.startswith('vless://'):
-        return is_safe_vless_base(line)
-    if line.startswith('trojan://'):
-        return is_safe_trojan_base(line)
-    if line.startswith('vmess://'):
-        return is_safe_vmess_base(line)
-    if line.startswith(('hysteria2://', 'hy2://')):
-        return is_safe_hysteria2_base(line)
-    if line.startswith('hysteria://'):
-        return is_safe_hysteria1_base(line)
-    if line.startswith('ss://'):
-        return is_safe_ss_base(line)
-    if line.startswith('ssr://'):
-        return is_safe_ssr_base(line)
+    if line.startswith('vless://'): return is_safe_vless_base(line)
+    if line.startswith('trojan://'): return is_safe_trojan_base(line)
+    if line.startswith('vmess://'): return is_safe_vmess_base(line)
+    if line.startswith(('hysteria2://', 'hy2://')): return is_safe_hysteria2_base(line)
+    if line.startswith('hysteria://'): return is_safe_hysteria1_base(line)
+    if line.startswith('ss://'): return is_safe_ss_base(line)
+    if line.startswith('ssr://'): return is_safe_ssr_base(line)
     return False
-
 
 # =====================================================================
 #  ПАРСИНГ
@@ -567,7 +539,6 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
         configs.append(current)
     return configs
 
-
 # =====================================================================
 #  URL HEALTH
 # =====================================================================
@@ -581,14 +552,11 @@ def load_health() -> Dict:
             pass
     return {}
 
-
 def save_health(health: Dict):
     with open(HEALTH_FILE, 'w', encoding='utf-8') as f:
         json.dump(health, f, indent=2, ensure_ascii=False)
 
-
 def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
-    """Загружает URL. Возвращает (контент, был_base64)."""
     entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
 
     if entry["failures"] >= MAX_CONSECUTIVE_FAILURES:
@@ -605,24 +573,22 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
         health[url] = entry
 
-        # --- Детект и декод base64 ---
         stripped = re.sub(r'\s+', '', content.strip())
         if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped):
             try:
                 decoded = base64.b64decode(stripped).decode('utf-8', errors='ignore')
                 if any(p in decoded for p in SUPPORTED_PROTOCOLS):
-                    return decoded, True  # ← base64 подписка
+                    return decoded, True
 
-                # Двойная обёртка (base64 в base64)
                 stripped2 = re.sub(r'\s+', '', decoded.strip())
                 if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped2):
                     decoded2 = base64.b64decode(stripped2).decode('utf-8', errors='ignore')
                     if any(p in decoded2 for p in SUPPORTED_PROTOCOLS):
-                        return decoded2, True  # ← двойной base64
+                        return decoded2, True
             except Exception:
                 pass
 
-        return content, False  # ← обычный текст
+        return content, False
 
     except Exception as e:
         entry["failures"] = entry.get("failures", 0) + 1
@@ -631,7 +597,6 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         health[url] = entry
         print(f"  ❌ {url}: {e} (провал #{entry['failures']})")
         return None, False
-
 
 def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
     report_path = os.path.join(OUTPUT_DIR, "URL_HEALTH_REPORT.md")
@@ -653,7 +618,6 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
             rej = st.get("rejected", "-")
             f.write(f"| {name} | {status} | {fails} | {raw} | {filt} | {rej} | {last} |\n")
         f.write(f"\n**Авто-очистка:** URL с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд пропускаются.\n")
-
 
 # =====================================================================
 #  QR-CODE ГЕНЕРАЦИЯ
@@ -690,7 +654,6 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         print(f"  📱 QR: {filepath} → {file_url}")
 
     _generate_qr_index(qr_files)
-
 
 def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
     index_path = os.path.join(QR_DIR, "index.html")
@@ -730,13 +693,11 @@ h1 { text-align: center; color: #00d4ff; }
         f.write("</div>\n</body>\n</html>")
     print(f"  📄 HTML-индекс: {index_path}")
 
-
 # =====================================================================
 #  ЗАГРУЗКА + ФИЛЬТРАЦИЯ
 # =====================================================================
 
 def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Dict, bool]:
-    """Возвращает (конфиги, отброшенные, статистика, был_base64)."""
     name = source['name']
     url = source['url']
     print(f"  [{name}] Загрузка...")
@@ -759,12 +720,13 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         else:
             rejected.append(cfg)
 
-    # --- Дедупликация ---
     pbk_count = defaultdict(int)
     uuid_count = defaultdict(int)
     sid_count = defaultdict(int)
     trojan_pass_count = defaultdict(int)
-    config_pbk, config_uuid, config_sid, config_tpass = {}, {}, {}, {}
+    host_port_count = defaultdict(int)
+    
+    config_pbk, config_uuid, config_sid, config_tpass, config_hp = {}, {}, {}, {}, {}
 
     for cfg in pre_filtered:
         pbk = extract_pbk(cfg)
@@ -784,11 +746,17 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             if pwd:
                 config_tpass[cfg] = pwd
                 trojan_pass_count[pwd] += 1
+                
+        hp = extract_host_port(cfg)
+        if hp:
+            config_hp[cfg] = hp
+            host_port_count[hp] += 1
 
     PBK_MAX = 3
     UUID_MAX = 3
     SID_MAX = 3
     TROJAN_PASS_MAX = 3
+    HP_MAX = 2 # Защита от Sybil-флуда
 
     final_filtered = set()
     for cfg in pre_filtered:
@@ -796,6 +764,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         uuid = config_uuid.get(cfg)
         sid = config_sid.get(cfg)
         tpass = config_tpass.get(cfg)
+        hp = config_hp.get(cfg)
 
         if pbk and pbk_count[pbk] > PBK_MAX:
             rejected.append(cfg)
@@ -809,41 +778,35 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         if tpass and trojan_pass_count[tpass] > TROJAN_PASS_MAX:
             rejected.append(cfg)
             continue
+        if hp and host_port_count[hp] > HP_MAX:
+            rejected.append(cfg)
+            continue
 
         final_filtered.add(cfg)
 
     stats = {"raw": raw_count, "filtered": len(final_filtered), "rejected": len(rejected)}
     return final_filtered, rejected, stats, was_base64
 
-
 # =====================================================================
 #  СОРТИРОВКА
 # =====================================================================
 
 def protocol_priority(uri: str) -> int:
-    if uri.startswith('vless://'):
-        return 1
-    if uri.startswith('trojan://'):
-        return 2
-    if uri.startswith('vmess://'):
-        return 3
-    if uri.startswith(('hysteria2://', 'hy2://')):
-        return 4
-    if uri.startswith('hysteria://'):
-        return 5
-    if uri.startswith('ss://'):
-        return 6
-    if uri.startswith('ssr://'):
-        return 7
+    if uri.startswith('vless://'): return 1
+    if uri.startswith('trojan://'): return 2
+    if uri.startswith('vmess://'): return 3
+    if uri.startswith(('hysteria2://', 'hy2://')): return 4
+    if uri.startswith('hysteria://'): return 5
+    if uri.startswith('ss://'): return 6
+    if uri.startswith('ssr://'): return 7
     return 8
-
 
 # =====================================================================
 #  MAIN
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v4.1 (base64 round-trip) ===")
+    print("=== Фильтр прокси v4.2 (ENI & LO Edition) ===")
     health = load_health()
     all_filtered = set()
     all_rejected = []
@@ -864,14 +827,12 @@ def main():
                 sorted_cfg = sorted(configs, key=lambda u: (protocol_priority(u), u))
 
                 if was_base64 and sorted_cfg:
-                    # ← Кодируем обратно в base64
                     plaintext = '\n'.join(sorted_cfg) + '\n'
                     encoded = base64.b64encode(plaintext.encode('utf-8')).decode('ascii')
                     with open(out, 'w', encoding='utf-8', newline='\n') as f:
                         f.write(encoded)
                     print(f"  ✅ {name}.txt → {len(configs)} конфигов [base64] (отброшено: {stats['rejected']})")
                 else:
-                    # ← Обычный plaintext
                     with open(out, 'w', encoding='utf-8', newline='\n') as f:
                         f.write('\n'.join(sorted_cfg))
                         if sorted_cfg:
@@ -885,7 +846,6 @@ def main():
                 print(f"  ❌ [{name}] Ошибка: {e}")
                 file_counts[name] = 0
 
-    # ALL.txt — всегда plaintext (агрегат всех источников)
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
     sorted_all = sorted(all_filtered, key=lambda u: (protocol_priority(u), u))
     with open(all_file, 'w', encoding='utf-8', newline='\n') as f:
@@ -894,25 +854,20 @@ def main():
             f.write('\n')
     file_counts["ALL"] = len(all_filtered)
 
-    # rejected.txt
     reject_file = os.path.join(REJECT_DIR, "rejected.txt")
     with open(reject_file, 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(all_rejected))
         if all_rejected:
             f.write('\n')
 
-    # URL Health
     save_health(health)
     write_health_report(health, source_stats)
-
-    # QR-коды
     generate_qr_codes(file_counts)
 
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
     print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
     print(f"📱 QR-коды: {QR_DIR}/")
-
 
 if __name__ == "__main__":
     main()
