@@ -147,13 +147,13 @@
 
 ---
 
-## 🪞 Зеркала
+## 💫 Зеркала
 
 <table>
 <tr>
 <td width="50%">
 
-### 🪣 Bitbucket
+### 💠 Bitbucket
 
 ```
 https://bitbucket.org/trojankill/safe-server-lists/src/main
