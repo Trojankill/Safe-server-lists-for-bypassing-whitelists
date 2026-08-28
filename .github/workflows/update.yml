@@ -2,11 +2,11 @@ name: Auto Update Proxy Filters
 
 on:
   workflow_dispatch:
-  # schedule убран. cron-job.org будет триггерить этот workflow через API.
+  # schedule убран — cron-job.org дергает workflow_dispatch каждую минуту через API
 
 concurrency:
   group: proxy-filter-update
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update-files:
