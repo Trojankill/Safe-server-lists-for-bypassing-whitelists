@@ -2,7 +2,6 @@ name: Auto Update Proxy Filters
 
 on:
   workflow_dispatch:
-  # schedule убран. cron-job.org триггерит workflow_dispatch каждые 15 минут.
 
 concurrency:
   group: proxy-filter-update
@@ -68,7 +67,14 @@ jobs:
       - name: Checkout GitHub repository
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+
+      - name: Force sync to latest main
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          git log -1 --format="Mirroring commit: %h %ci %s"
 
       - name: Push main branch to Bitbucket
         env:
