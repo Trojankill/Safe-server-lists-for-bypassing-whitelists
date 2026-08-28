@@ -2,7 +2,7 @@ name: Auto Update Proxy Filters
 
 on:
   workflow_dispatch:
-  # schedule убран — cron-job.org дергает workflow_dispatch каждую минуту через API
+  # schedule убран. cron-job.org триггерит workflow_dispatch каждые 15 минут.
 
 concurrency:
   group: proxy-filter-update
@@ -14,6 +14,8 @@ jobs:
     timeout-minutes: 10
     permissions:
       contents: write
+    outputs:
+      has_changes: ${{ steps.commit.outputs.has_changes }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
@@ -40,6 +42,7 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Commit and push changes
+        id: commit
         if: steps.filter.outputs.status == 'success'
         run: |
           git add githubmirror/FILTER-*.txt \
@@ -49,13 +52,16 @@ jobs:
                   QR-CODE/
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
             exit 0
           fi
           git commit -m "auto-update filters + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
           git push origin main
+          echo "has_changes=true" >> $GITHUB_OUTPUT
 
   mirror-to-bitbucket:
     needs: update-files
+    if: needs.update-files.outputs.has_changes == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
