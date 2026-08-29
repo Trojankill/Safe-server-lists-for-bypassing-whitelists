@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v4.2 (ENI & LO Edition)
-Универсальная защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
-Исправлены: универсальный хост-чек, тип aid в VMess, точная длина pbk, 
-пост-квантовый ML-KEM и Sybil-флуд (дедуп по host:port).
+Фильтр прокси-конфигураций v5.0 (Karing Edition)
+Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
+v5.0: TUIC, vmess формат-2, fail-closed SS2022, точный DNS-матч,
+      октетные IP-чеки, смягчение sid/pbk/raw/h3, proto-тройка дедупа,
+      base64url-подписки, hysteria v1 удалена.
 """
 
 import re
@@ -37,8 +38,8 @@ RAW_BASE = "https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-b
 
 SUPPORTED_PROTOCOLS = [
     "vless://", "vmess://", "trojan://",
-    "hysteria2://", "hy2://", "hysteria://",
-    "ss://", "ssr://",
+    "hysteria2://", "hy2://",
+    "ss://", "ssr://", "tuic://",
 ]
 
 SOURCES_CONFIG = [
@@ -88,8 +89,11 @@ SAFE_FINGERPRINTS = {
     'edge', '360', 'qq', 'random', 'randomized',
 }
 
+# v5.0: allow_insecure (TUIC-генераторы), disable_sni — ломает валидацию сертификата
 UNSAFE_PATTERNS = [
     r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
+    r'[&?]allow_insecure=1', r'[&?]allow_insecure=true',
+    r'[&?]disable_sni=1', r'[&?]disable_sni=true',
     r'[&?]insecure=1', r'[&?]insecure=true',
     r'[&?]security=none', r'[&?]verify=0', r'[&?]verify=false',
     r'[&?]skip-cert-verify=0', r'[&?]skip-cert-verify=false',
@@ -99,26 +103,36 @@ UNSAFE_PATTERNS = [
 
 UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
 
+TRUSTED_DNS = {
+    '1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
+    'cloudflare-dns.com', 'dns.google', 'dns.adguard.com',
+}
+
+TUIC_CC_WHITELIST = {'bbr', 'cubic', 'new_reno'}
+TUIC_UDP_MODES = {'native', 'quic'}
+
+# v5.0: октетный матч приватных IPv4 вместо подстрочного @10\.
+_IPv4_AFTER_AT = re.compile(r'@(\d{1,3}\.){3}\d{1,3}', re.I)
+
 # =====================================================================
 #  SS 2022 KEY VALIDATION
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
+    """True = КЛЮЧ ПЛОХОЙ. v5.0: fail-closed — невалидный base64 = reject."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
         return False
     if ':' in password:
         return False
+    rem = len(password) % 4
+    padded = password + '=' * (4 - rem) if rem else password
     try:
-        rem = len(password) % 4
-        padded = password + '=' * (4 - rem) if rem else password
-        decoded = base64.b64decode(padded)
-        if len(decoded) != expected_len:
-            return True
-    except (ValueError, TypeError):
-        pass
-    return False
+        decoded = base64.b64decode(padded, validate=True)
+        return len(decoded) != expected_len
+    except Exception:
+        return True  # невалидный base64 для 2022-метода = плохой ключ
 
 # =====================================================================
 #  БАЗОВЫЕ ПРОВЕРКИ
@@ -141,7 +155,6 @@ def is_dangerous_domain_param(url: str) -> bool:
                     return True
     return False
 
-# ИСПРАВЛЕНО: Универсальный хост-экстрактор для всех протоколов
 def is_banned_host_universal(url: str) -> bool:
     m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)', url, re.I)
     if m:
@@ -152,7 +165,6 @@ def is_banned_host_universal(url: str) -> bool:
             return True
     return False
 
-# ИСПРАВЛЕНО: Отдельная ветка для SSR (там нет @, всё в base64)
 def is_ssr_host_banned(url: str) -> bool:
     if not url.startswith('ssr://'):
         return False
@@ -166,7 +178,7 @@ def is_ssr_host_banned(url: str) -> bool:
         if any(d in host for d in BANNED_DOMAINS):
             return True
     except Exception:
-        return True # Fail closed for SSR if decoding fails
+        return True  # fail closed for SSR
     return False
 
 def has_dangerous_transport_combination(url: str) -> bool:
@@ -183,7 +195,6 @@ def has_dangerous_transport_combination(url: str) -> bool:
             return True
     return False
 
-# ИСПРАВЛЕНО: Разрешаем легитимный пост-квантовый ML-KEM + X25519
 def is_suspicious_encryption(url: str) -> bool:
     enc_match = re.search(r'[?&]encryption=([^&]+)', url, re.I)
     if enc_match:
@@ -205,19 +216,37 @@ def is_trojan_public_pool(url: str) -> bool:
         return True
     return False
 
-# ИСПРАВЛЕНО: Ловим не только нули, но и 'f' плейсхолдеры
+def _is_private_ipv4(ip: str) -> bool:
+    o = ip.split('.')
+    if len(o) != 4:
+        return False
+    try:
+        a, b = int(o[0]), int(o[1])
+        if a > 255 or int(o[2]) > 255 or int(o[3]) > 255:
+            return False
+    except ValueError:
+        return False
+    return (a == 127 or a == 10
+            or (a == 192 and b == 168)
+            or (a == 172 and 16 <= b <= 31)
+            or ip == '0.0.0.0')
+
 def is_dangerous_uuid(url: str) -> bool:
     lower = url.lower()
     if 'localhost' in lower:
         return True
-    if re.search(r'@(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1)', lower):
+    # v5.0: октетная структура — @110.5.5.5 больше не матчится как @10.x
+    m = _IPv4_AFTER_AT.search(url)
+    if m and _is_private_ipv4(m.group(0)[1:]):
+        return True
+    if '::1' in lower or 'fe80:' in lower:
         return True
     if re.search(r'vless://(0{8}-0{4}-0{4}-0{4}-0{12}|f{8}-f{4}-f{4}-f{4}-f{12})@', url, re.I):
         return True
     return False
 
 # =====================================================================
-#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ + НОВЫЙ ДЕДУП
+#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ
 # =====================================================================
 
 def extract_pbk(url: str) -> Optional[str]:
@@ -238,13 +267,26 @@ def extract_trojan_password(url: str) -> Optional[str]:
     m = re.search(r'trojan://([^@]+)@', url, re.I)
     return m.group(1) if m else None
 
-# ИСПРАВЛЕНО: Экстрактор host:port для защиты от Sybil-флуда
+def extract_tuic_creds(url: str) -> Optional[str]:
+    if not url.startswith('tuic://'):
+        return None
+    m = re.search(r'tuic://([^@]+)@', url, re.I)
+    return m.group(1).lower() if m else None
+
 def extract_host_port(url: str) -> Optional[str]:
+    # v5.0: тройка host:port:proto — мультипротокол на одном endpoint не режется
+    proto = url.split('://')[0]
     m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)(?::(\d+))?', url, re.I)
     if m:
         host = m.group(1).lower()
         port = m.group(2) or 'default'
-        return f"{host}:{port}"
+        if port != 'default':
+            try:
+                if not (1 <= int(port) <= 65535):
+                    return None
+            except ValueError:
+                return None
+        return f"{host}:{port}:{proto}"
     return None
 
 # =====================================================================
@@ -260,12 +302,13 @@ def has_custom_ca_mitm(url: str) -> bool:
     return False
 
 def has_malicious_dns_override(url: str) -> bool:
+    """v5.0: точное сравнение хоста — 1.1.1.1.evil-logger.com больше не проходит."""
     dns_match = re.search(r'[?&](?:dns|doh|dns-server)=([^&]+)', url, re.I)
     if dns_match:
         dns_val = dns_match.group(1).lower()
-        trusted_dns = ['1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
-                       'cloudflare-dns.com', 'dns.google', 'dns.adguard.com']
-        if not any(trust in dns_val for trust in trusted_dns):
+        host = re.sub(r'^https?://', '', dns_val)
+        host = host.split('/')[0].split('#')[0].split(':')[0].strip('.')
+        if host and host not in TRUSTED_DNS:
             return True
     return False
 
@@ -277,26 +320,29 @@ def has_sniffing_exfiltration(url: str) -> bool:
             return True
     return False
 
-# ИСПРАВЛЕНО: Точная длина X25519 base64url (43 символа)
 def has_invalid_reality_pbk(url: str) -> bool:
     if 'security=reality' not in url.lower():
         return False
     pbk_match = re.search(r'[?&]pbk=([^&]+)', url, re.I)
     if not pbk_match:
         return True
-    pbk = pbk_match.group(1)
+    # v5.0: паддинг = на конце — валидный base64url от генераторов
+    pbk = pbk_match.group(1).rstrip('=')
     if len(pbk) != 43:
         return True
     return False
 
 def has_invalid_reality_sid(url: str) -> bool:
+    """v5.0: чётная hex-длина 0–16, пустой и отсутствующий sid — валидны."""
     if 'security=reality' not in url.lower():
         return False
-    sid_match = re.search(r'[?&]sid=([^&]+)', url, re.I)
+    sid_match = re.search(r'[?&]sid=([^&]*)', url, re.I)
     if not sid_match:
         return False
     sid = sid_match.group(1)
-    if len(sid) != 16 or not re.match(r'^[0-9a-fA-F]+$', sid):
+    if len(sid) == 0:
+        return False
+    if len(sid) > 16 or len(sid) % 2 != 0 or not re.match(r'^[0-9a-fA-F]+$', sid):
         return True
     return False
 
@@ -331,7 +377,8 @@ def is_safe_vless_base(url: str) -> bool:
         return True
 
     if security == 'tls':
-        if transport not in ('ws', 'grpc', 'http', 'tcp'):
+        # v5.0: raw — переименование tcp в новых Xray, Karing ест оба
+        if transport not in ('ws', 'grpc', 'http', 'tcp', 'raw'):
             return False
         if not re.search(r'[?&]sni=[^&]+', url, re.I):
             return False
@@ -342,7 +389,8 @@ def is_safe_vless_base(url: str) -> bool:
         if not alpn_match:
             return False
         alpn = alpn_match.group(1).lower()
-        if 'h2' not in alpn and 'http/1.1' not in alpn:
+        # v5.0: h3 — валиден для QUIC-транспорта sing-box
+        if 'h2' not in alpn and 'http/1.1' not in alpn and 'h3' not in alpn:
             return False
         return True
 
@@ -350,6 +398,10 @@ def is_safe_vless_base(url: str) -> bool:
 
 def is_safe_trojan_base(url: str) -> bool:
     if not url.startswith('trojan://'):
+        return False
+    # v5.0: пустой пароль — reject (как в hysteria2)
+    pass_match = re.search(r'trojan://([^@]*)@', url, re.I)
+    if not pass_match or not pass_match.group(1).strip():
         return False
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
         return False
@@ -359,10 +411,25 @@ def is_safe_trojan_base(url: str) -> bool:
         return False
     return True
 
-# ИСПРАВЛЕНО: Приведение aid к int и проверка scy
 def is_safe_vmess_base(url: str) -> bool:
     if not url.startswith('vmess://'):
         return False
+
+    # v5.0 Формат 2: vmess://uuid@host:port?params — Karing/Xray-link парсят
+    if '@' in url.split('?')[0]:
+        if is_dangerous_uuid(url):
+            return False
+        security_match = re.search(r'[?&]security=([^&]*)', url, re.I)
+        security = security_match.group(1).lower() if security_match else ''
+        if not security or security == 'none':
+            return False
+        if security == 'reality' and not re.search(r'[?&]pbk=[^&]+', url, re.I):
+            return False
+        if security in ('tls', 'reality') and not re.search(r'[?&]sni=[^&]+', url, re.I):
+            return False
+        return True
+
+    # Формат 1: legacy base64 JSON
     b64 = url.replace('vmess://', '').split('#')[0].split('?')[0]
     try:
         missing = len(b64) % 4
@@ -370,31 +437,32 @@ def is_safe_vmess_base(url: str) -> bool:
             b64 += '=' * (4 - missing)
         decoded = base64.b64decode(b64).decode('utf-8')
         cfg = json.loads(decoded)
-        
+
         try:
             aid_val = cfg.get('aid', cfg.get('alterId', 0))
             if int(aid_val) != 0:
                 return False
         except (ValueError, TypeError):
             return False
-            
+
         if not cfg.get('tls', False):
             return False
         if cfg.get('allowInsecure', False):
             return False
         if str(cfg.get('v', '2')) != '2':
             return False
-            
+
+        # v5.0: scy=none вырезан — трафик без шифрования не пропускаем
         scy = cfg.get('scy', 'auto').lower()
-        if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305', 'none'):
+        if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305'):
             return False
-            
+
         net = cfg.get('net', 'tcp').lower()
-        if net not in ('ws', 'grpc', 'http', 'tcp'):
+        if net not in ('ws', 'grpc', 'http', 'tcp', 'raw'):
             return False
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
-            
+
         for field in ('add', 'sni', 'host'):
             val = cfg.get(field, '').lower()
             for domain in BANNED_DOMAINS:
@@ -410,7 +478,7 @@ def is_safe_vmess_base(url: str) -> bool:
 def is_safe_hysteria2_base(url: str) -> bool:
     if not url.startswith(('hysteria2://', 'hy2://')):
         return False
-    if re.search(r'[?&]insecure=1', url, re.I):
+    if re.search(r'[&?]insecure=1', url, re.I):
         return False
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
         return False
@@ -419,12 +487,30 @@ def is_safe_hysteria2_base(url: str) -> bool:
         return False
     return True
 
-def is_safe_hysteria1_base(url: str) -> bool:
-    if not url.startswith('hysteria://'):
+def is_safe_tuic_base(url: str) -> bool:
+    """v5.0: TUIC v4/v5 — QUIC+TLS, креды обязательны."""
+    if not url.startswith('tuic://'):
         return False
-    if re.search(r'[?&]insecure=1', url, re.I):
+    cred_match = re.search(r'tuic://([^@]+)@', url, re.I)
+    if not cred_match:
+        return False
+    cred = cred_match.group(1)
+    if ':' in cred:
+        token, _, password = cred.partition(':')
+        if not token.strip() or not password.strip():
+            return False
+    elif not cred.strip():
         return False
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
+        return False
+    cc_match = re.search(r'[?&]congestion_control=([^&]+)', url, re.I)
+    if cc_match and cc_match.group(1).lower() not in TUIC_CC_WHITELIST:
+        return False
+    udp_match = re.search(r'[?&]udp_relay_mode=([^&]+)', url, re.I)
+    if udp_match and udp_match.group(1).lower() not in TUIC_UDP_MODES:
+        return False
+    alpn_match = re.search(r'[?&]alpn=([^&]+)', url, re.I)
+    if alpn_match and 'h3' not in alpn_match.group(1).lower():
         return False
     return True
 
@@ -509,7 +595,7 @@ def is_safe_config_base(line: str) -> bool:
     if line.startswith('trojan://'): return is_safe_trojan_base(line)
     if line.startswith('vmess://'): return is_safe_vmess_base(line)
     if line.startswith(('hysteria2://', 'hy2://')): return is_safe_hysteria2_base(line)
-    if line.startswith('hysteria://'): return is_safe_hysteria1_base(line)
+    if line.startswith('tuic://'): return is_safe_tuic_base(line)
     if line.startswith('ss://'): return is_safe_ss_base(line)
     if line.startswith('ssr://'): return is_safe_ssr_base(line)
     return False
@@ -556,6 +642,28 @@ def save_health(health: Dict):
     with open(HEALTH_FILE, 'w', encoding='utf-8') as f:
         json.dump(health, f, indent=2, ensure_ascii=False)
 
+def _try_b64_decode(s: str) -> Optional[str]:
+    """v5.0: обычный и urlsafe base64, с двойной вложенностью."""
+    def single(x: str) -> Optional[str]:
+        try:
+            return base64.b64decode(x + '=' * (-len(x) % 4)).decode('utf-8', errors='ignore')
+        except Exception:
+            try:
+                return base64.urlsafe_b64decode(x + '=' * (-len(x) % 4)).decode('utf-8', errors='ignore')
+            except Exception:
+                return None
+    first = single(s)
+    if first is None:
+        return None
+    if any(p in first for p in SUPPORTED_PROTOCOLS):
+        return first
+    stripped2 = re.sub(r'\s+', '', first)
+    if re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped2):
+        second = single(stripped2)
+        if second and any(p in second for p in SUPPORTED_PROTOCOLS):
+            return second
+    return None
+
 def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
     entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
 
@@ -573,20 +681,12 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
         health[url] = entry
 
+        # v5.0: класс расширен urlsafe-символами -_ для Karing-агрегаторов
         stripped = re.sub(r'\s+', '', content.strip())
-        if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped):
-            try:
-                decoded = base64.b64decode(stripped).decode('utf-8', errors='ignore')
-                if any(p in decoded for p in SUPPORTED_PROTOCOLS):
-                    return decoded, True
-
-                stripped2 = re.sub(r'\s+', '', decoded.strip())
-                if re.fullmatch(r'[A-Za-z0-9+/=]+', stripped2):
-                    decoded2 = base64.b64decode(stripped2).decode('utf-8', errors='ignore')
-                    if any(p in decoded2 for p in SUPPORTED_PROTOCOLS):
-                        return decoded2, True
-            except Exception:
-                pass
+        if re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped):
+            decoded = _try_b64_decode(stripped)
+            if decoded is not None:
+                return decoded, True
 
         return content, False
 
@@ -725,8 +825,10 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     sid_count = defaultdict(int)
     trojan_pass_count = defaultdict(int)
     host_port_count = defaultdict(int)
-    
+    tuic_cred_count = defaultdict(int)  # v5.0: расшаренные TUIC-пулы
+
     config_pbk, config_uuid, config_sid, config_tpass, config_hp = {}, {}, {}, {}, {}
+    config_tuic = {}
 
     for cfg in pre_filtered:
         pbk = extract_pbk(cfg)
@@ -746,7 +848,11 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             if pwd:
                 config_tpass[cfg] = pwd
                 trojan_pass_count[pwd] += 1
-                
+        if cfg.startswith('tuic://'):
+            tcred = extract_tuic_creds(cfg)
+            if tcred:
+                config_tuic[cfg] = tcred
+                tuic_cred_count[tcred] += 1
         hp = extract_host_port(cfg)
         if hp:
             config_hp[cfg] = hp
@@ -756,7 +862,8 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     UUID_MAX = 3
     SID_MAX = 3
     TROJAN_PASS_MAX = 3
-    HP_MAX = 2 # Защита от Sybil-флуда
+    TUIC_CRED_MAX = 3
+    HP_MAX = 2  # на тройке host:port:proto — Sybil одного протокола
 
     final_filtered = set()
     for cfg in pre_filtered:
@@ -764,6 +871,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
         uuid = config_uuid.get(cfg)
         sid = config_sid.get(cfg)
         tpass = config_tpass.get(cfg)
+        tcred = config_tuic.get(cfg)
         hp = config_hp.get(cfg)
 
         if pbk and pbk_count[pbk] > PBK_MAX:
@@ -776,6 +884,9 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             rejected.append(cfg)
             continue
         if tpass and trojan_pass_count[tpass] > TROJAN_PASS_MAX:
+            rejected.append(cfg)
+            continue
+        if tcred and tuic_cred_count[tcred] > TUIC_CRED_MAX:
             rejected.append(cfg)
             continue
         if hp and host_port_count[hp] > HP_MAX:
@@ -796,7 +907,7 @@ def protocol_priority(uri: str) -> int:
     if uri.startswith('trojan://'): return 2
     if uri.startswith('vmess://'): return 3
     if uri.startswith(('hysteria2://', 'hy2://')): return 4
-    if uri.startswith('hysteria://'): return 5
+    if uri.startswith('tuic://'): return 5
     if uri.startswith('ss://'): return 6
     if uri.startswith('ssr://'): return 7
     return 8
@@ -806,7 +917,7 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v4.2 (ENI & LO Edition) ===")
+    print("=== Фильтр прокси v5.0 (Karing Edition) ===")
     health = load_health()
     all_filtered = set()
     all_rejected = []
