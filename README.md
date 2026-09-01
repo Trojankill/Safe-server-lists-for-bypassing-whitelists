@@ -141,7 +141,7 @@
 | `FILTER-5` | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) | plaintext | ✅ |
 | `FILTER-6` | [kort0881/vpn-vless-configs-russia](https://github.com/kort0881/vpn-vless-configs-russia) | plaintext | ✅ |
 | `FILTER-7-BASE64` | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** | ✅ |
-
+| `FILTER-8-BASE64` | [Diversan313](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 > [!TIP]
 > Все источники проверяются на доступность через `URL Health Report`. Источники с повторяющимися ошибками автоматически пропускаются.
 
