@@ -19,17 +19,18 @@
   <img src="https://img.shields.io/badge/VMess-FF6B6B?style=flat-square" alt="VMess">
   <img src="https://img.shields.io/badge/Trojan-4ECDC4?style=flat-square" alt="Trojan">
   <img src="https://img.shields.io/badge/Hysteria2-FFE66D?style=flat-square" alt="Hysteria2">
+  <img src="https://img.shields.io/badge/TUIC-1DD3B0?style=flat-square" alt="TUIC">
   <img src="https://img.shields.io/badge/Shadowsocks-95E1D3?style=flat-square" alt="Shadowsocks">
 </p>
 
 <p align="center">
   <b>🔒 Автоматизированный аудит и фильтрация публичных прокси-конфигураций</b><br>
-  <sub>Статический анализ · Защита от MITM · Sybil-детекция · Пост-квантовая криптография</sub>
+  <sub>Статический анализ · Защита от MITM · Sybil-детекция · Fail-closed валидация · Потокобезопасность</sub>
 </p>
 
 ---
 
-## 🚀 Что нового в v4.2
+## 🚀 Что нового в v5.1
 
 <table>
 <tr>
@@ -37,27 +38,34 @@
 
 ### 🛡️ Улучшения безопасности
 
-- ✅ **Универсальный host-чек** — теперь защищает все протоколы (SS/SSR/Hysteria), а не только VLESS/Trojan
-- ✅ **Sybil-флуд защита** — дедупликация по `host:port`, блокирует фермы серверов
-- ✅ **Точная валидация X25519** — проверка длины `pbk` (ровно 43 символа)
-- ✅ **Поддержка ML-KEM** — пост-квантовая криптография X25519 + Kyber768
-- ✅ **VMess `aid` фикс** — корректная обработка строковых значений
-- ✅ **Защита от placeholder UUID** — блокировка нулевых и `ffffffff` UUID
+- ✅ **Потокобезопасность** — `threading.Lock` на health-tracking, корректная работа с 5 параллельными воркерами
+- ✅ **Порт-валидация** — порты 1–65535 проверяются на всех протоколах
+- ✅ **Точный домен-матч** — `.cf` больше не матчит `cfire.ru`, только TLD `*.cf`
+- ✅ **Fail-closed SSR** — битая кодировка = reject, а не тихий пропуск
+- ✅ **VMess формат-2 `alterId`** — replay-атака защита для нового формата
+- ✅ **Валидация `pbk`** — длина ровно 43 символа (X25519 public key)
+- ✅ **SS 2022 fail-closed** — невалидный base64-ключ = reject
+- ✅ **Пост-квантовая криптография** — валидация ML-KEM-768 + X25519 гибридов
 
 </td>
 <td width="50%">
 
-### ⚡ Производительность
+### ⚡ Производительность и UX
 
 - ✅ **LRU-кэширование** — `@lru_cache` для часто используемых проверок
 - ✅ **Параллельная загрузка** — `ThreadPoolExecutor` для источников
-- ✅ **URL Health tracking** — автопропуск источников с повторяющимися ошибками
-- ✅ **Base64 round-trip** — корректная обработка закодированных подписок
-- ✅ **QR-коды с HTML-индексом** — удобное сканирование на мобильных устройствах
+- ✅ **URL Health tracking** — автопропуск мёртвых источников (3+ провала подряд)
+- ✅ **Base64 round-trip** — декодирование → фильтрация → кодирование
+- ✅ **QR-коды с HTML-индексом** — удобно на мобильных
+- ✅ **Мультипротокол на endpoint** — `host:port:proto` тройка, не режет валидные комбинации
+- ✅ **`RAW_BASE` через env** — форки не захардкожены на чужой репозиторий
+- ✅ **Точный DNS-матч** — `1.1.1.1.evil-logger.com` больше не проходит
 
 </td>
 </tr>
 </table>
+
+</details>
 
 ---
 
@@ -67,7 +75,7 @@
 > Все подписки предназначены для обхода **белых списков**. Прошу вас **не использовать** их с включённым Wi-Fi (работать они будут даже на Wi-Fi). Дайте людям пользоваться серверами, у кого действительно включены белые списки — мощность серверов и производительность сильно падают из-за наплыва пользователей.
 
 > [!CAUTION]
-> **НАСТОЯТЕЛЬНО РЕКОМЕНДУЮ НЕ ИСПОЛЬЗОВАТЬ ЭТИ VPN-СЕРВЕРЫ ДЛЯ БАНКОВСКИХ ПЕРЕВОДОВ.** Хоть репозиторий и блокирует большинство небезопасных серверов, всегда есть свои риски. Также не рекомендуется использование государственных приложений без хорошей split-маршрутизации, которая позволяет VPN-трафику идти напрямую через приложения. Например: **Yandex, VK, MAX, Госуслуги** и так далее — для снижения риска блокировок серверов из-за Роскомнадзора.
+> **НАСТОЯТЕЛЬНО РЕКОМЕНДУЮ НЕ ИСПОЛЬЗОВАТЬ ЭТИ VPN-СЕРВЕРЫ ДЛЯ БАНКОВСКИХ ПЕРЕВОДОВ.** Хоть репозиторий и блокирует большинство небезопасных серверов, всегда есть свои риски. Также не рекомендуется использование государственных приложений без хорошей split-маршрутизации. Например: **Yandex, VK, MAX, Госуслуги** и так далее — для снижения риска блокировок серверов из-за Роскомнадзора.
 
 > [!IMPORTANT]
 > **"Прошёл фильтр" ≠ "оператору можно доверять"** — этот скрипт проверяет только техническую корректность конфигурации, а не репутацию оператора сервера. Оператор видит ваш SNI (без ECH), весь plaintext HTTP и DNS, если тот не резолвится локально.
@@ -77,7 +85,6 @@
 ## 📑 Содержание
 
 - [Что делает проект](#-что-делает-проект)
-- [Архитектура фильтрации](#️-архитектура-фильтрации)
 - [Источники данных](#-источники-данных)
 - [Подписки и QR-коды](#-подписки-и-qr-коды)
 - [Как сканировать](#-как-сканировать)
@@ -93,40 +100,44 @@
 
 | Категория | Примеры | Статус |
 |---|---|:---:|
-| 🔓 Небезопасные TLS-параметры | `allowInsecure=1`, `security=none`, `verify=false` | ✅ |
+| 🔓 Небезопасные TLS-параметры | `allowInsecure=1`, `security=none`, `verify=false`, `disable_sni` | ✅ |
 | 🚫 Запрещённые / скомпрометированные домены | Бесплатные хостинги, известные пулы, подозрительные зоны | ✅ |
 | ⚡ Опасные транспортные комбинации | `type=raw` без шифрования, `xhttp` без `host` | ✅ |
-| 🏠 Приватные / loopback адреса | `127.0.0.1`, `localhost`, `10.x`, `192.168.x` | ✅ |
+| 🏠 Приватные / loopback адреса | `127.0.0.1`, `localhost`, `10.x`, `192.168.x`, `172.16-31.x`, IPv6 ULA | ✅ |
+| 🔢 Некорректные порты | порт 0, порт > 65535, нечисловой порт | ✅ |
 | 🕵️ MITM / DNS-подмена | Кастомные CA, нестандартные DNS, sniffing на внешние домены | ✅ |
-| 🔑 Слабое шифрование SS | RC4, DES, CFB, CTR, Salsa20, Chacha20 non-IETF | ✅ |
+| 🔑 Слабое шифрование SS | RC4, DES, CFB, CTR, Salsa20, Chacha20 non-IETF, `none` | ✅ |
 | 🧮 SS 2022 key validation | Неверная длина base64-ключа для `2022-blake3-*` | ✅ |
 
 ### 📦 Протокол-специфичные проверки
 
 | Протокол | Проверки | Статус |
 |---|---|:---:|
-| **VMess** | `alterId > 0`, `allowInsecure`, отсутствие TLS, `scy=none` | ✅ |
-| **VLESS Reality** | Отсутствие `pbk` / `fp`, невалидный `flow`, длина pbk ≠ 43 | ✅ |
-| **VLESS TLS** | Отсутствие `sni` / `host` / `alpn` | ✅ |
-| **Hysteria2 / v1** | `insecure=1`, отсутствие SNI, пустой пароль | ✅ |
-| **ShadowsocksR** | Слабые методы шифрования, пустой пароль | ✅ |
+| **VMess** (fmt-1) | `alterId > 0`, `allowInsecure`, отсутствие TLS, `scy=none`, `v` не 1/2 | ✅ |
+| **VMess** (fmt-2) | `alterId > 0`, `security=none`, отсутствие `sni` при TLS/Reality | 🆕 |
+| **VLESS Reality** | Отсутствие `pbk` / `fp`, невалидный `flow`, длина pbk ≠ 43, невалидный `sid` | ✅ |
+| **VLESS TLS** | Отсутствие `sni` / `host` / `alpn`, невалидный transport | ✅ |
+| **Trojan** | Пустой пароль, отсутствие SNI, публичные пулы | ✅ |
+| **Hysteria2** | `insecure=1`, отсутствие SNI, пустой пароль | ✅ |
+| **TUIC** | Отсутствие кредов/SNI, невалидный congestion_control, невалидный udp_relay_mode | 🆕 |
+| **Shadowsocks** | Слабые методы, пустой пароль, невалидный 2022-ключ | ✅ |
+| **ShadowsocksR** | Слабые методы, пустой пароль, битый base64 (fail-closed) | ✅ |
 
-### 🔒 Продвинутая защита (v4.2+)
+### 🔒 Продвинутая защита
 
 | Категория | Описание | Статус |
 |---|---|:---:|
-| 🐝 **Sybil-детекция** | Дедуп по `host:port` (лимит 2 на сокет) | 🆕 |
-| 🛡️ **Универсальный host-чек** | Защита всех протоколов, а не только VLESS/Trojan | 🆕 |
-| 🔐 **Пост-квантовая криптография** | Валидация ML-KEM-768 + X25519 гибридов | 🆕 |
-| 🎯 **Placeholder UUID** | Блокировка `0000...` и `ffff...` UUID | 🆕 |
-| 📡 **Base64 round-trip** | Подписки в base64 декодируются → фильтруются → кодируются обратно | ✅ |
-| 🔁 **Повторяющиеся идентификаторы** | Один `pbk` / `uuid` / `sid` в >3 конфигах | ✅ |
+| 🐝 **Sybil-детекция** | Дедуп по `pbk` / `uuid` / `sid` / trojan-password / TUIC-кредам (лимит 3) и `host:port:proto` (лимит 5) | ✅ |
+| 🧵 **Потокобезопасность** | `threading.Lock` на health-tracking при параллельной загрузке | 🆕 |
+| 🎯 **Точный домен-матч** | `.cf` матчит только TLD, `boot-lee.ru` только exact/subdomain | 🆕 |
+| 🛡️ **Fail-closed SSR** | Битая кодировка = reject, не тихий пропуск | 🆕 |
+| 🔐 **Пост-квантовая криптография** | Валидация ML-KEM-768 + X25519 гибридов | ✅ |
+| 🎭 **Placeholder UUID** | Блокировка `0000...` и `ffff...` UUID | ✅ |
+| 📡 **Base64 round-trip** | Подписки декодируются → фильтруются → кодируются обратно | ✅ |
+| 🔁 **Повторяющиеся идентификаторы** | Один `pbk` / `uuid` / `sid` / пароль в >3 конфигах | ✅ |
+| 🌐 **Точный DNS-матч** | `dns=` параметр проверяется как точный host против whitelist | ✅ |
 
 Результат — очищенные списки в `githubmirror/`, обновляемые каждый **1 час** через GitHub Actions.
-
----
-
-
 
 ## 📥 Источники данных
 
@@ -141,9 +152,10 @@
 | `FILTER-5` | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) | plaintext | ✅ |
 | `FILTER-6` | [kort0881/vpn-vless-configs-russia](https://github.com/kort0881/vpn-vless-configs-russia) | plaintext | ✅ |
 | `FILTER-7-BASE64` | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** | ✅ |
-| `FILTER-8-BASE64` | [Diversan313](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
+| `FILTER-8-BASE64` | [Diversan313/apex-parser](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
+
 > [!TIP]
-> Все источники проверяются на доступность через `URL Health Report`. Источники с повторяющимися ошибками автоматически пропускаются.
+> Все источники проверяются на доступность через `URL Health Report`. Источники с 3+ провалами подряд автоматически пропускаются до следующего успешного цикла.
 
 ---
 
@@ -299,6 +311,24 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 
 </details>
 
+<details>
+<summary><b>📡 FILTER-8-BASE64</b> — Diversan313/apex-parser</summary>
+
+<p align="center">
+  <img src="QR-CODE/FILTER-8-BASE64.png" width="300" alt="FILTER-8-BASE64 QR">
+</p>
+
+**URL подписки (base64):**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-8-BASE64.txt
+```
+
+> [!NOTE]
+> Файл закодирован в base64. Клиенты v2rayNG / Karing / Hiddify декодируют автоматически.
+
+</details>
+
 ---
 
 ## 🔎 Как сканировать
@@ -310,8 +340,27 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 | **Hiddify** | `+` → Import from QR |
 | **Nekobox** | `+` → Scan QR code |
 
-> [!TIP]
-> Для автоматического обновления используйте URL подписки напрямую — клиент будет обновлять список каждый 1 час.
+---
+
+## 🧪 Локальный запуск
+
+```bash
+# клонировать
+git clone https://github.com/Trojankill/Safe-server-lists-for-bypassing-whitelists.git
+cd Safe-server-lists-for-bypassing-whitelists
+
+# установить зависимости (опционально для QR)
+pip install qrcode[pil]
+
+# запустить (RAW_BASE по умолчанию → этот репозиторий)
+python filter.py
+
+# или с кастомным base для форка
+RAW_BASE=https://your-repo.com/path python filter.py
+```
+
+> [!NOTE]
+> Результат: `githubmirror/` — очищенные списки, `rejected/` — отбракованные, `QR-CODE/` — QR-коды + HTML-индекс.
 
 ---
 
@@ -334,7 +383,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary>en🇬 <b>English</b></summary>
+<summary>🇬🇧 <b>English</b></summary>
 
 - The author is not the owner, developer, or provider of the listed VPN configurations. This is an independent informational review presenting test results.
 - This post is not an advertisement for VPNs. All material is intended solely for informational purposes and is directed only at citizens of countries where accessing this information is legal — at the very least, for research purposes. If you are prohibited from reading this content, close this page immediately!
