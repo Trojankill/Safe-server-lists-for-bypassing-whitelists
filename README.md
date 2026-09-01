@@ -153,7 +153,7 @@
 | `FILTER-6` | [kort0881/vpn-vless-configs-russia](https://github.com/kort0881/vpn-vless-configs-russia) | plaintext | ✅ |
 | `FILTER-7-BASE64` | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** | ✅ |
 | `FILTER-8-BASE64` | [Diversan313/apex-parser](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
-
+| `FILTER-9` | [VOID-Anonymity](https://github.com/VOID-Anonymity/V.O.I.D-VPN_Bypass) | plaintext | ✅ |
 > [!TIP]
 > Все источники проверяются на доступность через `URL Health Report`. Источники с 3+ провалами подряд автоматически пропускаются до следующего успешного цикла.
 
