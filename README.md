@@ -154,6 +154,7 @@
 | `FILTER-7-BASE64` | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** | ✅ |
 | `FILTER-8-BASE64` | [Diversan313 WHITELIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 | `FILTER-9-BASE64` | [Diversan313 BLACKLIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
+| `FILTER-10` | [igareck/vpn-configs-for-russia](https://github.com/igareck/vpn-configs-for-russia) | plaintext | ✅ |
 > [!TIP]
 > Все источники проверяются на доступность через `URL Health Report`. Источники с 3+ провалами подряд автоматически пропускаются до следующего успешного цикла.
 
