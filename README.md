@@ -149,7 +149,7 @@
 | `FILTER-2` | [t7954395](https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt) | plaintext | ✅ |
 | `FILTER-3` | [zieng2/wl](https://github.com/zieng2/wl) | plaintext | ✅ |
 | `FILTER-4` | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) | plaintext | ✅ |
-| `FILTER-5` | [prominbro](https://github.com/prominbro/sub) | plaintext | ✅ |
+| `FILTER-5` | [Bazz1024](https://gitverse.ru/Bazz1024/vpn-configs-mirror) | plaintext | ✅ |
 | `FILTER-6` | [kort0881/vpn-vless-configs-russia](https://github.com/kort0881/vpn-vless-configs-russia) | plaintext | ✅ |
 | `FILTER-7-BASE64` | [solovyov-jenya2004](https://solovyov-jenya2004.vercel.app/final_sorted_base64) | **base64** | ✅ |
 | `FILTER-8-BASE64` | [Diversan313 WHITELIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
