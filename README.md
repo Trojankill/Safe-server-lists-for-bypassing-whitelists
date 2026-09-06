@@ -146,7 +146,7 @@
 | ID | Источник | Формат | Статус |
 |:---:|---|:---:|:---:|
 | `FILTER-1` | [RKPchannel/RKP_bypass_configs](https://github.com/RKPchannel/RKP_bypass_configs) | plaintext | ✅ |
-| `FILTER-2` | [PizdukVPN](https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt) | plaintext | ✅ |
+| `FILTER-2` | [t7954395](https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt) | plaintext | ✅ |
 | `FILTER-3` | [zieng2/wl](https://github.com/zieng2/wl) | plaintext | ✅ |
 | `FILTER-4` | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) | plaintext | ✅ |
 | `FILTER-5` | [prominbro](https://github.com/prominbro/sub) | plaintext | ✅ |
