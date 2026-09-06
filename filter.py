@@ -50,7 +50,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-2", "url": "https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt"},
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
-    {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/prominbro/sub/refs/heads/main/212.txt"},
+    {"name": "FILTER-5", "url": "https://gitverse.ru/api/repos/Bazz1024/vpn-configs-mirror/raw/branch/main/rkn_white_list"},
     {"name": "FILTER-6", "url": "https://raw.githubusercontent.com/kort0881/vpn-vless-configs-russia/refs/heads/main/output/vless.txt"},
     {"name": "FILTER-7-BASE64", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
     {"name": "FILTER-8-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/refs/heads/main/subs/main/alive_bs.txt"},
