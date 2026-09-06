@@ -47,7 +47,7 @@ SUPPORTED_PROTOCOLS = [
 
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/refs/heads/main/whitelist.txt"},
-    {"name": "FILTER-2", "url": "https://gitverse.ru/api/repos/Pizduk/PizdukVPN/raw/branch/master/WlSubPiz.txt"},
+    {"name": "FILTER-2", "url": "https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt"},
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://raw.githubusercontent.com/prominbro/sub/refs/heads/main/212.txt"},
