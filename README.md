@@ -220,7 +220,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-2</b> — AvenCores/goida-vpn-configs</summary>
+<summary><b>📡 FILTER-2</b> — t7954395</summary>
 
 <p align="center">
   <img src="QR-CODE/FILTER-2.png" width="300" alt="FILTER-2 QR">
@@ -265,7 +265,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-5</b> — igareck/vpn-configs-for-russia</summary>
+<summary><b>📡 FILTER-5</b> — Bazz1024</summary>
 
 <p align="center">
   <img src="QR-CODE/FILTER-5.png" width="300" alt="FILTER-5 QR">
@@ -313,7 +313,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-8-BASE64</b> — Diversan313/apex-parser</summary>
+<summary><b>📡 FILTER-8-BASE64</b> — Diversan313 WHITELIST/apex-parser</summary>
 
 <p align="center">
   <img src="QR-CODE/FILTER-8-BASE64.png" width="300" alt="FILTER-8-BASE64 QR">
