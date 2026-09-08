@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Р¤РёР»СЊС‚СЂ РїСЂРѕРєСЃРё-РєРѕРЅС„РёРіСѓСЂР°С†РёР№ v5.1 (Karing Edition)
-Р—Р°С‰РёС‚Р°: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
-v5.1: РїРѕС‚РѕРєРѕР±РµР·РѕРїР°СЃРЅРѕСЃС‚СЊ, РїРѕСЂС‚-РІР°Р»РёРґР°С†РёСЏ, С‚РѕС‡РЅС‹Р№ РґРѕРјРµРЅ-РјР°С‚С‡,
+Фильтр прокси-конфигураций v5.1 (Karing Edition)
+Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
+v5.1: потокобезопасность, порт-валидация, точный домен-матч,
       fail-closed SSR decode, vmess-2 alterId, env RAW_BASE.
 """
 
@@ -20,7 +20,7 @@ from functools import lru_cache
 from typing import Set, Dict, Optional, List, Tuple
 
 # =====================================================================
-#  РљРћРќРЎРўРђРќРўР«
+#  КОНСТАНТЫ
 # =====================================================================
 
 OUTPUT_DIR = "githubmirror"
@@ -57,7 +57,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-9-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"},
 ]
 
-# РўРѕС‡РЅС‹Р№ РґРѕРјРµРЅ-РјР°С‚С‡: '.cf' РјР°С‚С‡РёС‚ С‚РѕР»СЊРєРѕ TLD, 'boot-lee.ru' С‚РѕР»СЊРєРѕ host
+# Точный домен-матч: '.cf' матчит только TLD, 'boot-lee.ru' только host
 BANNED_DOMAINS = [
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
     '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq', '.mwscdn.ru',
@@ -119,27 +119,27 @@ TUIC_UDP_MODES = {'native', 'quic'}
 _IPv4_AFTER_AT = re.compile(r'@(\d{1,3}\.){3}\d{1,3}', re.I)
 
 # =====================================================================
-#  РџРћРўРћРљРћР‘Р•Р—РћРџРђРЎРќРћРЎРўР¬
+#  ПОТОКОБЕЗОПАСНОСТЬ
 # =====================================================================
 
 _health_lock = threading.Lock()
 
 # =====================================================================
-#  Р”РћРњР•Рќ-РњРђРўР§РРќР“ (v5.1: С‚РѕС‡РЅС‹Р№ РІРјРµСЃС‚Рѕ substring)
+#  ДОМЕН-МАТЧИНГ (v5.1: точный вместо substring)
 # =====================================================================
 
 def _domain_matches(host: str, domain: str) -> bool:
     """
-    РўРѕС‡РЅРѕРµ СЃРѕРІРїР°РґРµРЅРёРµ РґРѕРјРµРЅР° РёР»Рё РїРѕРґРґРѕРјРµРЅР°.
-    '.cf' в†’ matС‡РёС‚ С‚РѕР»СЊРєРѕ 'cf' TLD (host == 'cf' РёР»Рё endswith('.cf'))
-    'boot-lee.ru' в†’ matС‡РёС‚ host == 'boot-lee.ru' РёР»Рё *.boot-lee.ru
+    Точное совпадение домена или поддомена.
+    '.cf' → matчит только 'cf' TLD (host == 'cf' или endswith('.cf'))
+    'boot-lee.ru' → matчит host == 'boot-lee.ru' или *.boot-lee.ru
     """
     if domain.startswith('.'):
         return host == domain[1:] or host.endswith(domain)
     return host == domain or host.endswith('.' + domain)
 
 def _is_host_banned(host: str) -> bool:
-    """РџСЂРѕРІРµСЂРєР° host РїСЂРѕС‚РёРІ BANNED_DOMAINS СЃ С‚РѕС‡РЅС‹Рј РјР°С‚С‡РµРј."""
+    """Проверка host против BANNED_DOMAINS с точным матчем."""
     return any(_domain_matches(host, d) for d in BANNED_DOMAINS)
 
 # =====================================================================
@@ -147,7 +147,7 @@ def _is_host_banned(host: str) -> bool:
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
-    """True = РљР›Р®Р§ РџР›РћРҐРћР™. fail-closed вЂ” РЅРµРІР°Р»РёРґРЅС‹Р№ base64 = reject."""
+    """True = КЛЮЧ ПЛОХОЙ. fail-closed — невалидный base64 = reject."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
@@ -163,7 +163,7 @@ def _check_ss_2022_key(method: str, password: str) -> bool:
         return True
 
 # =====================================================================
-#  Р‘РђР—РћР’Р«Р• РџР РћР’Р•Р РљР
+#  БАЗОВЫЕ ПРОВЕРКИ
 # =====================================================================
 
 def is_supported_protocol(line: str) -> bool:
@@ -178,10 +178,10 @@ def is_dangerous_domain_param(url: str) -> bool:
         match = re.search(rf'[?&]{param}=([^&]+)', url, re.I)
         if match:
             value = match.group(1).lower().strip('.')
-            # РїСЂРѕРІРµСЂСЏРµРј value РєР°Рє host вЂ” С‚РѕС‡РЅС‹Р№ РјР°С‚С‡
+            # проверяем value как host — точный матч
             if _is_host_banned(value):
                 return True
-            # РїСЂРѕРІРµСЂСЏРµРј РІР»РѕР¶СЂРµРЅРЅС‹Рµ РїРѕРґРґРѕРјРµРЅС‹: 'evil.boot-lee.ru'
+            # проверяем вложренные поддомены: 'evil.boot-lee.ru'
             for domain in BANNED_DOMAINS:
                 if _domain_matches(value, domain):
                     return True
@@ -194,7 +194,7 @@ def is_banned_host_universal(url: str) -> bool:
     host = m.group(1).lower()
     port = m.group(2)
 
-    # v5.1: РїРѕСЂС‚-РІР°Р»РёРґР°С†РёСЏ вЂ” 1..65535
+    # v5.1: порт-валидация — 1..65535
     if port:
         try:
             if not (1 <= int(port) <= 65535):
@@ -216,7 +216,7 @@ def is_ssr_host_banned(url: str) -> bool:
         rem = len(payload) % 4
         if rem:
             payload += '=' * (4 - rem)
-        # v5.1: fail-closed вЂ” Р±РёС‚Р°СЏ РєРѕРґРёСЂРѕРІРєР° = reject
+        # v5.1: fail-closed — битая кодировка = reject
         decoded = base64.b64decode(payload).decode('utf-8')
         host = decoded.split(':')[0].lower().strip('.')
         if _is_host_banned(host):
@@ -289,7 +289,7 @@ def is_dangerous_uuid(url: str) -> bool:
     return False
 
 # =====================================================================
-#  РР—Р’Р›Р•Р§Р•РќРР• РР”Р•РќРўРР¤РРљРђРўРћР РћР’
+#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ
 # =====================================================================
 
 def extract_pbk(url: str) -> Optional[str]:
@@ -332,7 +332,7 @@ def extract_host_port(url: str) -> Optional[str]:
     return None
 
 # =====================================================================
-#  РЈРќРР’Р•Р РЎРђР›Р¬РќРђРЇ Р—РђР©РРўРђ
+#  УНИВЕРСАЛЬНАЯ ЗАЩИТА
 # =====================================================================
 
 def has_custom_ca_mitm(url: str) -> bool:
@@ -386,7 +386,7 @@ def has_invalid_reality_sid(url: str) -> bool:
     return False
 
 # =====================================================================
-#  РЎРўР РћР“РР• РџР РћР’Р•Р РљР РџР РћРўРћРљРћР›РћР’
+#  СТРОГИЕ ПРОВЕРКИ ПРОТОКОЛОВ
 # =====================================================================
 
 def is_safe_vless_base(url: str) -> bool:
@@ -451,11 +451,11 @@ def is_safe_vmess_base(url: str) -> bool:
     if not url.startswith('vmess://'):
         return False
 
-    # Р¤РѕСЂРјР°С‚ 2: vmess://uuid@host:port?params
+    # Формат 2: vmess://uuid@host:port?params
     if '@' in url.split('?')[0]:
         if is_dangerous_uuid(url):
             return False
-        # v5.1: alterId РїСЂРѕРІРµСЂРєР° вЂ” replay-Р°С‚Р°РєР° Р·Р°С‰РёС‚Р°
+        # v5.1: alterId проверка — replay-атака защита
         aid_match = re.search(r'[?&]alterId=(\d+)', url, re.I)
         if aid_match and int(aid_match.group(1)) != 0:
             return False
@@ -469,7 +469,7 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         return True
 
-    # Р¤РѕСЂРјР°С‚ 1: legacy base64 JSON
+    # Формат 1: legacy base64 JSON
     b64 = url.replace('vmess://', '').split('#')[0].split('?')[0]
     try:
         missing = len(b64) % 4
@@ -489,7 +489,7 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         if cfg.get('allowInsecure', False):
             return False
-        # v5.1: v=1 С‚РѕР¶Рµ РІР°Р»РёРґРµРЅ вЂ” СЃС‚Р°СЂС‹Р№ С„РѕСЂРјР°С‚, Karing РїР°СЂСЃРёС‚
+        # v5.1: v=1 тоже валиден — старый формат, Karing парсит
         if str(cfg.get('v', '2')) not in ('1', '2'):
             return False
 
@@ -503,7 +503,7 @@ def is_safe_vmess_base(url: str) -> bool:
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
 
-        # v5.1: С‚РѕС‡РЅС‹Р№ РґРѕРјРµРЅ-РјР°С‚С‡
+        # v5.1: точный домен-матч
         for field in ('add', 'sni', 'host'):
             val = str(cfg.get(field, '')).lower().strip('.')
             if val and _is_host_banned(val):
@@ -640,7 +640,7 @@ def is_safe_config_base(line: str) -> bool:
     return False
 
 # =====================================================================
-#  РџРђР РЎРРќР“
+#  ПАРСИНГ
 # =====================================================================
 
 def parse_multiline_configs(lines: List[str]) -> List[str]:
@@ -656,7 +656,7 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
             current = stripped
         else:
             if current and ('?' in stripped or '&' in stripped or '=' in stripped):
-                # v5.1: РёР·Р±РµРіР°РµРј РґРІРѕР№РЅРѕРіРѕ ? РёР»Рё &
+                # v5.1: избегаем двойного ? или &
                 if '?' in current and stripped.startswith('?'):
                     current += stripped[1:]
                 elif '&' in current and stripped.startswith('&'):
@@ -711,13 +711,13 @@ def _try_b64_decode(s: str) -> Optional[str]:
     return None
 
 def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
-    # v5.1: lock РЅР° С‡С‚РµРЅРёРµ health
+    # v5.1: lock на чтение health
     with _health_lock:
         entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
         failure_count = entry["failures"]
 
     if failure_count >= MAX_CONSECUTIVE_FAILURES:
-        print(f"  вљ пёЏ  {url} вЂ” {failure_count} РїСЂРѕРІР°Р»РѕРІ РїРѕРґСЂСЏРґ, РїСЂРѕРїСѓСЃРєР°РµРј")
+        print(f"  ⚠️  {url} — {failure_count} провалов подряд, пропускаем")
         return None, False
 
     try:
@@ -725,7 +725,7 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
 
-        # v5.1: lock РЅР° Р·Р°РїРёСЃСЊ health
+        # v5.1: lock на запись health
         with _health_lock:
             entry["failures"] = 0
             entry["last_status"] = "ok"
@@ -741,14 +741,14 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         return content, False
 
     except Exception as e:
-        # v5.1: lock РЅР° Р·Р°РїРёСЃСЊ РїСЂРё РѕС€РёР±РєРµ
+        # v5.1: lock на запись при ошибке
         with _health_lock:
             entry["failures"] = entry.get("failures", 0) + 1
             entry["last_status"] = str(e)
             entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
             health[url] = entry
             fail_num = entry["failures"]
-        print(f"  вќЊ {url}: {e} (РїСЂРѕРІР°Р» #{fail_num})")
+        print(f"  ❌ {url}: {e} (провал #{fail_num})")
         return None, False
 
 def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
@@ -762,7 +762,7 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
             url = src['url']
             name = src['name']
             entry = health.get(url, {})
-            status = "вњ…" if entry.get("last_status") == "ok" else "вќЊ"
+            status = "✅" if entry.get("last_status") == "ok" else "❌"
             fails = entry.get("failures", 0)
             last = entry.get("last_check", "N/A")
             st = source_stats.get(url, {})
@@ -770,10 +770,10 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
             filt = st.get("filtered", "-")
             rej = st.get("rejected", "-")
             f.write(f"| {name} | {status} | {fails} | {raw} | {filt} | {rej} | {last} |\n")
-        f.write(f"\n**РђРІС‚Рѕ-РѕС‡РёСЃС‚РєР°:** URL СЃ {MAX_CONSECUTIVE_FAILURES}+ РїСЂРѕРІР°Р»Р°РјРё РїРѕРґСЂСЏРґ РїСЂРѕРїСѓСЃРєР°СЋС‚СЃСЏ.\n")
+        f.write(f"\n**Авто-очистка:** URL с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд пропускаются.\n")
 
 # =====================================================================
-#  QR-CODE Р“Р•РќР•Р РђР¦РРЇ
+#  QR-CODE ГЕНЕРАЦИЯ
 # =====================================================================
 
 def generate_qr_codes(file_counts: Dict[str, int]):
@@ -781,7 +781,7 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         import qrcode
         from qrcode.constants import ERROR_CORRECT_M
     except ImportError:
-        print("  вљ пёЏ  qrcode РЅРµ СѓСЃС‚Р°РЅРѕРІР»РµРЅ. pip install qrcode[pil]")
+        print("  ⚠️  qrcode не установлен. pip install qrcode[pil]")
         return
 
     os.makedirs(QR_DIR, exist_ok=True)
@@ -804,7 +804,7 @@ def generate_qr_codes(file_counts: Dict[str, int]):
         filepath = os.path.join(QR_DIR, filename)
         img.save(filepath)
         qr_files.append((name, count, filename))
-        print(f"  рџ“± QR: {filepath} в†’ {file_url}")
+        print(f"  📱 QR: {filepath} → {file_url}")
 
     _generate_qr_index(qr_files)
 
@@ -816,7 +816,7 @@ def _generate_qr_index(qr_files: List[Tuple[str, int]]):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR-РєРѕРґС‹ РїРѕРґРїРёСЃРѕРє</title>
+<title>QR-коды подписок</title>
 <style>
 body { font-family: system-ui, sans-serif; background: #1a1a2e; color: #eee; margin: 20px; }
 h1 { text-align: center; color: #00d4ff; }
@@ -830,8 +830,8 @@ h1 { text-align: center; color: #00d4ff; }
 </style>
 </head>
 <body>
-<h1>рџ“± QR-РєРѕРґС‹ РїРѕРґРїРёСЃРѕРє</h1>
-<p style="text-align:center;color:#aaa;">РћС‚СЃРєР°РЅРёСЂСѓР№ QR-РєРѕРґ РІ РєР»РёРµРЅС‚Рµ (v2rayNG, Karing, Hiddify) РґР»СЏ РґРѕР±Р°РІР»РµРЅРёСЏ РїРѕРґРїРёСЃРєРё</p>
+<h1>📱 QR-коды подписок</h1>
+<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (v2rayNG, Karing, Hiddify) для добавления подписки</p>
 <div class="grid">
 """)
         for name, count, filename in qr_files:
@@ -840,20 +840,20 @@ h1 { text-align: center; color: #00d4ff; }
             f.write(f'  <div class="{card_class}">\n')
             f.write(f'    <img src="{filename}" alt="{name}">\n')
             f.write(f'    <div class="name">{name}</div>\n')
-            f.write(f'    <div class="count">{count} РєРѕРЅС„РёРіРѕРІ</div>\n')
+            f.write(f'    <div class="count">{count} конфигов</div>\n')
             f.write(f'    <div class="url">{file_url}</div>\n')
             f.write(f'  </div>\n')
         f.write("</div>\n</body>\n</html>")
-    print(f"  рџ“„ HTML-РёРЅРґРµРєСЃ: {index_path}")
+    print(f"  📄 HTML-индекс: {index_path}")
 
 # =====================================================================
-#  Р—РђР“Р РЈР—РљРђ + Р¤РР›Р¬РўР РђР¦РРЇ
+#  ЗАГРУЗКА + ФИЛЬТРАЦИЯ
 # =====================================================================
 
 def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Dict, bool]:
     name = source['name']
     url = source['url']
-    print(f"  [{name}] Р—Р°РіСЂСѓР·РєР°...")
+    print(f"  [{name}] Загрузка...")
 
     content, was_base64 = fetch_url_with_health(url, health)
 
@@ -916,7 +916,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     SID_MAX = 3
     TROJAN_PASS_MAX = 3
     TUIC_CRED_MAX = 3
-    HP_MAX = 5  # v5.1: 5 вЂ” РѕРґРёРЅ CDN/IP Р·Р° СЂР°Р·РЅС‹РјРё СЃРµСЂРІРµСЂР°РјРё СЌС‚Рѕ РЅРѕСЂРј
+    HP_MAX = 5  # v5.1: 5 — один CDN/IP за разными серверами это норм
 
     final_filtered = set()
     for cfg in pre_filtered:
@@ -952,7 +952,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     return final_filtered, rejected, stats, was_base64
 
 # =====================================================================
-#  РЎРћР РўРР РћР’РљРђ
+#  СОРТИРОВКА
 # =====================================================================
 
 def protocol_priority(uri: str) -> int:
@@ -970,7 +970,7 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Р¤РёР»СЊС‚СЂ РїСЂРѕРєСЃРё v5.1 (Karing Edition) ===")
+    print("=== Фильтр прокси v5.1 (Karing Edition) ===")
     health = load_health()
     all_filtered = set()
     all_rejected = []
@@ -995,19 +995,19 @@ def main():
                     encoded = base64.b64encode(plaintext.encode('utf-8')).decode('ascii')
                     with open(out, 'w', encoding='utf-8', newline='\n') as f:
                         f.write(encoded)
-                    print(f"  вњ… {name}.txt в†’ {len(configs)} РєРѕРЅС„РёРіРѕРІ [base64] (РѕС‚Р±СЂРѕС€РµРЅРѕ: {stats['rejected']})")
+                    print(f"  ✅ {name}.txt → {len(configs)} конфигов [base64] (отброшено: {stats['rejected']})")
                 else:
                     with open(out, 'w', encoding='utf-8', newline='\n') as f:
                         f.write('\n'.join(sorted_cfg))
                         if sorted_cfg:
                             f.write('\n')
-                    print(f"  вњ… {name}.txt в†’ {len(configs)} РєРѕРЅС„РёРіРѕРІ (РѕС‚Р±СЂРѕС€РµРЅРѕ: {stats['rejected']})")
+                    print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
 
                 all_filtered.update(configs)
                 file_counts[name] = len(configs)
 
             except Exception as e:
-                print(f"  вќЊ [{name}] РћС€РёР±РєР°: {e}")
+                print(f"  ❌ [{name}] Ошибка: {e}")
                 file_counts[name] = 0
 
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
@@ -1028,10 +1028,10 @@ def main():
     write_health_report(health, source_stats)
     generate_qr_codes(file_counts)
 
-    print(f"\nвњ… ALL.txt: {len(all_filtered)} СѓРЅРёРєР°Р»СЊРЅС‹С… РєРѕРЅС„РёРіРѕРІ")
-    print(f"вљ пёЏ  РћС‚Р±СЂРѕС€РµРЅРѕ: {len(all_rejected)} (rejected/rejected.txt)")
-    print(f"рџ“Љ URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
-    print(f"рџ“± QR-РєРѕРґС‹: {QR_DIR}/")
+    print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
+    print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
+    print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
+    print(f"📱 QR-коды: {QR_DIR}/")
 
 if __name__ == "__main__":
     main()
