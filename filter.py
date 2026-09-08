@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v5.2 (Karing + Clash Meta Edition)
+Фильтр прокси-конфигураций v5.3 (Karing + Clash Meta Edition)
 Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core) + Clash Verge (Meta)
-v5.2: добавлена нативная конвертация в Clash YAML (Meta/Mihomo) без внешних зависимостей.
+v5.3: Мгновенное создание папки Clash, генерация YAML для каждого источника отдельно + ALL.
 """
 import re
 import os
@@ -22,12 +22,19 @@ from typing import Set, Dict, Optional, List, Tuple
 #  КОНСТАНТЫ
 # =====================================================================
 OUTPUT_DIR = "githubmirror"
+CLASH_DIR = os.path.join(OUTPUT_DIR, "Clash")
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
 REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
 QR_DIR = "QR-CODE"
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-os.makedirs(REJECT_DIR, exist_ok=True)
-os.makedirs(QR_DIR, exist_ok=True)
+
+try:
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    os.makedirs(CLASH_DIR, exist_ok=True)
+    os.makedirs(REJECT_DIR, exist_ok=True)
+    os.makedirs(QR_DIR, exist_ok=True)
+except Exception as e:
+    print(f"❌ КРИТИЧЕСКАЯ ОШИБКА: Не удалось создать папки: {e}")
+    exit(1)
 
 MAX_CONSECUTIVE_FAILURES = 3
 RAW_BASE = os.environ.get(
@@ -1183,7 +1190,9 @@ def protocol_priority(uri: str) -> int:
 #  MAIN
 # =====================================================================
 def main():
-    print("=== Фильтр прокси v5.2 (Karing + Clash Meta Edition) ===")
+    print("=== Фильтр прокси v5.3 (Karing + Clash Meta Edition) ===")
+    print(f"📁 Папка для Clash создана по пути: {os.path.abspath(CLASH_DIR)}")
+    
     health = load_health()
     all_filtered = set()
     all_rejected = []
@@ -1215,10 +1224,20 @@ def main():
                         if sorted_cfg: f.write('\n')
                     print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
                 
+                # Генерируем отдельный YAML для этого источника
+                try:
+                    clash_yaml = generate_clash_config(sorted_cfg)
+                    clash_out = os.path.join(CLASH_DIR, f"{name}.yaml")
+                    with open(clash_out, 'w', encoding='utf-8', newline='\n') as f:
+                        f.write(clash_yaml)
+                    print(f"  ⚔️  {name}.yaml создан в Clash/")
+                except Exception as e:
+                    print(f"  ❌ Ошибка конвертации в Clash для {name}: {e}")
+
                 all_filtered.update(configs)
                 file_counts[name] = len(configs)
             except Exception as e:
-                print(f"  ❌ [{name}] Ошибка: {e}")
+                print(f"  ❌ [{name}] Ошибка потока: {e}")
                 file_counts[name] = 0
 
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
@@ -1227,16 +1246,15 @@ def main():
         f.write('\n'.join(sorted_all))
         if sorted_all: f.write('\n')
 
-    # === CLASH CONVERSION ===
-    CLASH_DIR = os.path.join(OUTPUT_DIR, "Clash")
-    os.makedirs(CLASH_DIR, exist_ok=True)
-    
-    print(f"\n⚙️  Конвертация в Clash (Meta/Mihomo)...")
-    clash_yaml = generate_clash_config(sorted_all)
-    clash_file = os.path.join(CLASH_DIR, "config.yaml")
-    with open(clash_file, 'w', encoding='utf-8', newline='\n') as f:
-        f.write(clash_yaml)
-    print(f"  ✅ Clash config saved to: {clash_file}")
+    print(f"\n⚙️  Конвертация общего списка в Clash (Meta/Mihomo)...")
+    try:
+        clash_yaml = generate_clash_config(sorted_all)
+        clash_file = os.path.join(CLASH_DIR, "ALL.yaml")
+        with open(clash_file, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(clash_yaml)
+        print(f"  ✅ Clash ALL.yaml сохранен: {os.path.abspath(clash_file)}")
+    except Exception as e:
+        print(f"  ❌ Ошибка конвертации ALL.yaml: {e}")
 
     file_counts["ALL"] = len(all_filtered)
     
@@ -1253,7 +1271,7 @@ def main():
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
     print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
     print(f"📱 QR-коды: {QR_DIR}/")
-    print(f"⚔️  Clash Config: {clash_file}")
+    print(f"⚔️  Clash конфиги: {CLASH_DIR}/")
 
 if __name__ == "__main__":
     main()
