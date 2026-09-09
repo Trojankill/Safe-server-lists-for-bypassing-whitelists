@@ -4,15 +4,17 @@
 Фильтр прокси-конфигураций v5.2 (Karing + Clash/Mihomo Edition)
 Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core) + Clash (Mihomo)
 v5.2: поддержка Clash подписок (парсинг YAML), конвертация в Clash формат,
-      вывод в githubmirror/Clash/
+      вывод в githubmirror/Clash/, авто-установка pyyaml
 """
 
 import re
 import os
+import sys
 import json
-import base64
 import time
+import base64
 import threading
+import subprocess
 import urllib.request
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -24,7 +26,16 @@ try:
     import yaml
     HAS_YAML = True
 except ImportError:
-    HAS_YAML = False
+    try:
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyyaml', '--quiet'])
+        import yaml
+        HAS_YAML = True
+    except Exception:
+        yaml = None
+        HAS_YAML = False
+
+if not HAS_YAML:
+    print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
 
 # =====================================================================
 #  КОНСТАНТЫ
@@ -1606,7 +1617,7 @@ def protocol_priority(uri: str) -> int:
 def main():
     print("=== Фильтр прокси v5.2 (Karing + Clash/Mihomo Edition) ===")
     if not HAS_YAML:
-        print("  ⚠️  pyyaml не установлен — Clash подписки не парсятся. pip install pyyaml")
+        print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
     health = load_health()
     all_filtered = set()
     all_rejected = []
