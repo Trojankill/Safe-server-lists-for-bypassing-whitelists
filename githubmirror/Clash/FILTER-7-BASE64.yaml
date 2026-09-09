@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-09 22:15:35 UTC
+# 2026-09-09 22:30:49 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -223,6 +223,20 @@ proxies:
       short-id: 66371c8d7a
     network: grpc
     grpc-opts:
+  - name: '12 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
+    type: vless
+    server: 193.238.154.18
+    port: 443
+    uuid: 2297ea1f-2415-4a2c-be20-4a3a978283a2
+    udp: true
+    tls: true
+    servername: es1.hat.onl
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc
+      short-id: 76132b3b39704c44
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇫🇮 LTE 71 | тгк: @rostunnel'
     type: vless
     server: 31.58.50.200
@@ -431,20 +445,6 @@ proxies:
       short-id: c992a34f288be189
     flow: xtls-rprx-vision
     network: tcp
-  - name: '! 13 | GRPC+REALITY | SNI: www.cloudflare.com | IN: GR OUT: EE | RATING: 3/10'
-    type: vless
-    server: 83.147.245.109
-    port: 24443
-    uuid: 7ab9fe4f-6699-427f-a828-9fcf2496d714
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg
-      short-id: 72ccd4a7563c2953
-    network: grpc
-    grpc-opts:
   - name: '🇪🇪 Эстония 1 ETERNITY INTERNATIONAL LIMITED'
     type: vless
     server: 83.147.245.109
@@ -769,6 +769,20 @@ proxies:
       public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
     flow: xtls-rprx-vision
     network: raw
+  - name: '! 11 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 3/10'
+    type: vless
+    server: 5.129.210.63
+    port: 8443
+    uuid: c80a96e8-d4a6-4785-b53b-a475b252c4ed
+    udp: true
+    tls: true
+    servername: sun6-21.userapi.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Z5WItgtmxxL_umUUIPO72kSTBGjlGg3sUPigtTG6wlI
+      short-id: ac
+    network: grpc
+    grpc-opts:
   - name: '🇩🇪 LTE 94 | тгк: @rostunnel'
     type: vless
     server: 51.81.203.63
@@ -812,6 +826,20 @@ proxies:
       public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
     network: grpc
     grpc-opts:
+  - name: '6 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
+    type: vless
+    server: 46.28.67.55
+    port: 443
+    uuid: d1a6a033-fdbd-46a6-a177-3370ba042b9f
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
+      short-id: d06d78e974491b6e
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '73.🇭🇰Гонконг | @LimeVPNFREE'
     type: vless
     server: 212.192.13.233
@@ -1137,6 +1165,7 @@ proxy-groups:
       - '🇩🇪 LTE 78 | тгк: @rostunnel'
       - '🇵🇱 LTE 38 | тгк: @rostunnel'
       - '🇸🇪 Sweden — #99'
+      - '12 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
       - '🇫🇮 LTE 71 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '🇯🇵 LTE 85 | тгк: @rostunnel'
@@ -1152,7 +1181,6 @@ proxy-groups:
       - '🇩🇪 Germany — #57'
       - '81.🇯🇵Япония | @LimeVPNFREE'
       - '77.🇯🇵Япония | @LimeVPNFREE'
-      - '! 13 | GRPC+REALITY | SNI: www.cloudflare.com | IN: GR OUT: EE | RATING: 3/10'
       - '🇪🇪 Эстония 1 ETERNITY INTERNATIONAL LIMITED'
       - '0242 | 🇩🇪 Germany | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '70.🇯🇵Япония | @LimeVPNFREE'
@@ -1177,9 +1205,11 @@ proxy-groups:
       - '5375 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇳🇱 Нидерланды 4 UAB Cherry Servers'
       - '🇩🇪 LTE 133 | тгк: @rostunnel'
+      - '! 11 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 3/10'
       - '🇩🇪 LTE 94 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: founders-blog.online ┃ 🇷🇺 Россия'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
+      - '6 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
       - '73.🇭🇰Гонконг | @LimeVPNFREE'
       - '83.🇭🇰Гонконг | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
