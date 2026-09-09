@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v5.1 (Karing Edition)
-Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core)
-v5.1: потокобезопасность, порт-валидация, точный домен-матч,
-      fail-closed SSR decode, vmess-2 alterId, env RAW_BASE.
+Фильтр прокси-конфигураций v5.2 (Karing + Clash/Mihomo Edition)
+Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core) + Clash (Mihomo)
+v5.2: поддержка Clash подписок (парсинг YAML), конвертация в Clash формат,
+      вывод в githubmirror/Clash/
 """
 
 import re
@@ -14,10 +14,17 @@ import base64
 import time
 import threading
 import urllib.request
+import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from collections import defaultdict
 from functools import lru_cache
 from typing import Set, Dict, Optional, List, Tuple
+
+try:
+    import yaml
+    HAS_YAML = True
+except ImportError:
+    HAS_YAML = False
 
 # =====================================================================
 #  КОНСТАНТЫ
@@ -27,10 +34,12 @@ OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
 REJECT_DIR = os.path.join(OUTPUT_DIR, "rejected")
 QR_DIR = "QR-CODE"
+CLASH_DIR = os.path.join(OUTPUT_DIR, "Clash")
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 os.makedirs(REJECT_DIR, exist_ok=True)
 os.makedirs(QR_DIR, exist_ok=True)
+os.makedirs(CLASH_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
 
@@ -55,10 +64,8 @@ SOURCES_CONFIG = [
     {"name": "FILTER-7-BASE64", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
     {"name": "FILTER-8-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/refs/heads/main/subs/main/alive_bs.txt"},
     {"name": "FILTER-9-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"},
-    {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
 ]
 
-# Точный домен-матч: '.cf' матчит только TLD, 'boot-lee.ru' только host
 BANNED_DOMAINS = [
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
     '.eu.org', '.tk', '.ml', '.cf', '.ga', '.gq', '.mwscdn.ru',
@@ -126,21 +133,15 @@ _IPv4_AFTER_AT = re.compile(r'@(\d{1,3}\.){3}\d{1,3}', re.I)
 _health_lock = threading.Lock()
 
 # =====================================================================
-#  ДОМЕН-МАТЧИНГ (v5.1: точный вместо substring)
+#  ДОМЕН-МАТЧИНГ
 # =====================================================================
 
 def _domain_matches(host: str, domain: str) -> bool:
-    """
-    Точное совпадение домена или поддомена.
-    '.cf' → matчит только 'cf' TLD (host == 'cf' или endswith('.cf'))
-    'boot-lee.ru' → matчит host == 'boot-lee.ru' или *.boot-lee.ru
-    """
     if domain.startswith('.'):
         return host == domain[1:] or host.endswith(domain)
     return host == domain or host.endswith('.' + domain)
 
 def _is_host_banned(host: str) -> bool:
-    """Проверка host против BANNED_DOMAINS с точным матчем."""
     return any(_domain_matches(host, d) for d in BANNED_DOMAINS)
 
 # =====================================================================
@@ -148,7 +149,6 @@ def _is_host_banned(host: str) -> bool:
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
-    """True = КЛЮЧ ПЛОХОЙ. fail-closed — невалидный base64 = reject."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
@@ -179,10 +179,8 @@ def is_dangerous_domain_param(url: str) -> bool:
         match = re.search(rf'[?&]{param}=([^&]+)', url, re.I)
         if match:
             value = match.group(1).lower().strip('.')
-            # проверяем value как host — точный матч
             if _is_host_banned(value):
                 return True
-            # проверяем вложренные поддомены: 'evil.boot-lee.ru'
             for domain in BANNED_DOMAINS:
                 if _domain_matches(value, domain):
                     return True
@@ -195,7 +193,6 @@ def is_banned_host_universal(url: str) -> bool:
     host = m.group(1).lower()
     port = m.group(2)
 
-    # v5.1: порт-валидация — 1..65535
     if port:
         try:
             if not (1 <= int(port) <= 65535):
@@ -217,7 +214,6 @@ def is_ssr_host_banned(url: str) -> bool:
         rem = len(payload) % 4
         if rem:
             payload += '=' * (4 - rem)
-        # v5.1: fail-closed — битая кодировка = reject
         decoded = base64.b64decode(payload).decode('utf-8')
         host = decoded.split(':')[0].lower().strip('.')
         if _is_host_banned(host):
@@ -452,11 +448,9 @@ def is_safe_vmess_base(url: str) -> bool:
     if not url.startswith('vmess://'):
         return False
 
-    # Формат 2: vmess://uuid@host:port?params
     if '@' in url.split('?')[0]:
         if is_dangerous_uuid(url):
             return False
-        # v5.1: alterId проверка — replay-атака защита
         aid_match = re.search(r'[?&]alterId=(\d+)', url, re.I)
         if aid_match and int(aid_match.group(1)) != 0:
             return False
@@ -470,7 +464,6 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         return True
 
-    # Формат 1: legacy base64 JSON
     b64 = url.replace('vmess://', '').split('#')[0].split('?')[0]
     try:
         missing = len(b64) % 4
@@ -490,7 +483,6 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         if cfg.get('allowInsecure', False):
             return False
-        # v5.1: v=1 тоже валиден — старый формат, Karing парсит
         if str(cfg.get('v', '2')) not in ('1', '2'):
             return False
 
@@ -504,7 +496,6 @@ def is_safe_vmess_base(url: str) -> bool:
         if net in ('ws', 'http') and not cfg.get('host'):
             return False
 
-        # v5.1: точный домен-матч
         for field in ('add', 'sni', 'host'):
             val = str(cfg.get(field, '')).lower().strip('.')
             if val and _is_host_banned(val):
@@ -657,7 +648,6 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
             current = stripped
         else:
             if current and ('?' in stripped or '&' in stripped or '=' in stripped):
-                # v5.1: избегаем двойного ? или &
                 if '?' in current and stripped.startswith('?'):
                     current += stripped[1:]
                 elif '&' in current and stripped.startswith('&'):
@@ -672,6 +662,647 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
     if current:
         configs.append(current)
     return configs
+
+# =====================================================================
+#  CLASH PARSING
+# =====================================================================
+
+def is_clash_content(content: str) -> bool:
+    stripped = content.strip()
+    if stripped.startswith('proxies:'):
+        return True
+    if stripped.startswith('port:') or stripped.startswith('mixed-port:'):
+        return True
+    lines = stripped.splitlines()
+    for line in lines[:50]:
+        ls = line.strip()
+        if ls.startswith('proxies:'):
+            return True
+        if re.match(r'^-\s+name:', ls) and 'type:' in content:
+            return True
+        if re.match(r'^\{.*name.*type.*\}', ls):
+            return True
+    if 'proxy-groups:' in stripped and 'proxies:' in stripped:
+        return True
+    return False
+
+def clash_to_uris(content: str) -> List[str]:
+    if not HAS_YAML:
+        return []
+    try:
+        data = yaml.safe_load(content)
+        if not isinstance(data, dict) or 'proxies' not in data:
+            return []
+        uris = []
+        for p in data.get('proxies', []):
+            if not isinstance(p, dict):
+                continue
+            u = _clash_proxy_to_uri(p)
+            if u:
+                uris.append(u)
+        return uris
+    except Exception:
+        return []
+
+def _clash_proxy_to_uri(p: dict) -> Optional[str]:
+    t = str(p.get('type', '')).lower()
+    name = str(p.get('name', ''))
+    host = str(p.get('server', ''))
+    try:
+        port = int(p.get('port', 0))
+    except (ValueError, TypeError):
+        return None
+    frag = urllib.parse.quote(name)
+    if t == 'vless':
+        params = {}
+        if p.get('reality-opts'):
+            params['security'] = 'reality'
+            ro = p['reality-opts']
+            if ro.get('public-key'):
+                params['pbk'] = ro['public-key']
+            if ro.get('short-id'):
+                params['sid'] = ro['short-id']
+        elif p.get('tls'):
+            params['security'] = 'tls'
+        else:
+            params['security'] = 'none'
+        if p.get('servername'):
+            params['sni'] = str(p['servername'])
+        if p.get('client-fingerprint'):
+            params['fp'] = str(p['client-fingerprint'])
+        if p.get('flow'):
+            params['flow'] = str(p['flow'])
+        if p.get('alpn'):
+            al = p['alpn']
+            if isinstance(al, list):
+                params['alpn'] = ','.join(str(x) for x in al)
+            else:
+                params['alpn'] = str(al)
+        net = str(p.get('network', 'tcp'))
+        params['type'] = net
+        if net == 'ws' and p.get('ws-opts'):
+            wo = p['ws-opts']
+            if wo.get('path'):
+                params['path'] = str(wo['path'])
+            wh = wo.get('headers', {})
+            if isinstance(wh, dict) and wh.get('Host'):
+                params['host'] = str(wh['Host'])
+        elif net == 'grpc' and p.get('grpc-opts'):
+            if p['grpc-opts'].get('grpc-service-name'):
+                params['serviceName'] = str(p['grpc-opts']['grpc-service-name'])
+        qs = '&'.join(f'{k}={urllib.parse.quote(str(v), safe="")}' for k, v in params.items())
+        return f"vless://{p.get('uuid', '')}@{host}:{port}?{qs}#{frag}"
+    if t == 'vmess':
+        return _clash_vmess_to_uri(p, name, host, port)
+    if t == 'trojan':
+        params = {}
+        if p.get('sni'):
+            params['sni'] = str(p['sni'])
+        if p.get('alpn'):
+            al = p['alpn']
+            if isinstance(al, list):
+                params['alpn'] = ','.join(str(x) for x in al)
+            else:
+                params['alpn'] = str(al)
+        net = str(p.get('network', 'tcp'))
+        if net != 'tcp':
+            params['type'] = net
+            if net == 'ws' and p.get('ws-opts'):
+                wo = p['ws-opts']
+                if wo.get('path'):
+                    params['path'] = str(wo['path'])
+                wh = wo.get('headers', {})
+                if isinstance(wh, dict) and wh.get('Host'):
+                    params['host'] = str(wh['Host'])
+            elif net == 'grpc' and p.get('grpc-opts'):
+                if p['grpc-opts'].get('grpc-service-name'):
+                    params['serviceName'] = str(p['grpc-opts']['grpc-service-name'])
+        qs = '&'.join(f'{k}={urllib.parse.quote(str(v), safe="")}' for k, v in params.items())
+        return f"trojan://{p.get('password', '')}@{host}:{port}?{qs}#{frag}"
+    if t == 'hysteria2':
+        params = {}
+        if p.get('sni'):
+            params['sni'] = str(p['sni'])
+        qs = '&'.join(f'{k}={v}' for k, v in params.items())
+        if qs:
+            return f"hysteria2://{p.get('password', '')}@{host}:{port}?{qs}#{frag}"
+        return f"hysteria2://{p.get('password', '')}@{host}:{port}#{frag}"
+    if t == 'tuic':
+        tok = str(p.get('token', ''))
+        pwd = str(p.get('password', ''))
+        cred = f"{tok}:{pwd}" if pwd else tok
+        params = {}
+        if p.get('sni'):
+            params['sni'] = str(p['sni'])
+        if p.get('alpn'):
+            al = p['alpn']
+            if isinstance(al, list):
+                params['alpn'] = ','.join(str(x) for x in al)
+            else:
+                params['alpn'] = str(al)
+        qs = '&'.join(f'{k}={v}' for k, v in params.items())
+        if qs:
+            return f"tuic://{cred}@{host}:{port}?{qs}#{frag}"
+        return f"tuic://{cred}@{host}:{port}#{frag}"
+    if t == 'ss':
+        try:
+            userinfo = f"{p.get('cipher', '')}:{p.get('password', '')}"
+            ub = base64.b64encode(userinfo.encode()).decode().rstrip('=')
+        except Exception:
+            return None
+        qs = ''
+        if p.get('plugin'):
+            popts = p.get('plugin-opts', {})
+            if not isinstance(popts, dict):
+                popts = {}
+            plug = f"v2ray-plugin;{'tls;' if popts.get('tls') else ''}"
+            if popts.get('host'):
+                plug += f"host={popts['host']};"
+            if popts.get('path'):
+                plug += f"path={popts['path']};"
+            qs = '?plugin=' + urllib.parse.quote(plug.rstrip(';'), safe='')
+        return f"ss://{ub}@{host}:{port}{qs}#{frag}"
+    if t == 'ssr':
+        try:
+            pwd_b64 = base64.b64encode(str(p.get('password', '')).encode()).decode().rstrip('=')
+            proto = str(p.get('protocol', 'origin'))
+            obfs = str(p.get('obfs', 'plain'))
+            base = f"{host}:{port}:{proto}:{p.get('cipher', 'aes-256-cfb')}:{obfs}:{pwd_b64}"
+            extras = []
+            if p.get('obfs-param'):
+                extras.append('obfs_param=' + urllib.parse.quote(str(p['obfs-param'])))
+            if p.get('protocol-param'):
+                extras.append('proto_param=' + urllib.parse.quote(str(p['protocol-param'])))
+            if extras:
+                base += '/?' + '&'.join(extras)
+            full = base64.b64encode(base.encode()).decode().rstrip('=')
+            return f"ssr://{full}#{frag}"
+        except Exception:
+            return None
+    return None
+
+def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[str]:
+    cfg = {
+        'v': '2',
+        'ps': name,
+        'add': host,
+        'port': str(port),
+        'id': str(p.get('uuid', '')),
+        'aid': str(p.get('alterId', 0)),
+        'scy': str(p.get('cipher', 'auto')),
+        'net': str(p.get('network', 'tcp')),
+        'tls': 'tls' if p.get('tls') else '',
+        'type': 'none',
+    }
+    if p.get('servername'):
+        cfg['sni'] = str(p['servername'])
+    wo = p.get('ws-opts')
+    if wo and isinstance(wo, dict):
+        if wo.get('path'):
+            cfg['path'] = str(wo['path'])
+        wh = wo.get('headers', {})
+        if isinstance(wh, dict) and wh.get('Host'):
+            cfg['host'] = str(wh['Host'])
+    go = p.get('grpc-opts')
+    if go and isinstance(go, dict):
+        if go.get('grpc-service-name'):
+            cfg['path'] = str(go['grpc-service-name'])
+    j = json.dumps(cfg, separators=(',', ':'), ensure_ascii=False)
+    return 'vmess://' + base64.b64encode(j.encode()).decode()
+
+# =====================================================================
+#  CLASH OUTPUT (URI -> YAML)
+# =====================================================================
+
+def _q(s) -> str:
+    s = str(s)
+    if re.match(r'^[A-Za-z0-9._@:-]+$', s):
+        return s
+    if "'" in s:
+        return '"' + s.replace('"', '\\"') + '"'
+    return "'" + s.replace("'", "\\'") + "'"
+
+def uri_to_clash(uri: str) -> Optional[dict]:
+    name = ''
+    if '#' in uri:
+        uri, _, frag = uri.partition('#')
+        try:
+            name = urllib.parse.unquote(frag)
+        except Exception:
+            name = frag
+    proto = uri.split('://')[0].lower()
+    if proto == 'vless':
+        return _vless_to_clash(uri, name)
+    if proto == 'vmess':
+        return _vmess_to_clash(uri, name)
+    if proto == 'trojan':
+        return _trojan_to_clash(uri, name)
+    if proto in ('hysteria2', 'hy2'):
+        return _hy2_to_clash(uri, name)
+    if proto == 'tuic':
+        return _tuic_to_clash(uri, name)
+    if proto == 'ss':
+        return _ss_to_clash(uri, name)
+    if proto == 'ssr':
+        return _ssr_to_clash(uri, name)
+    return None
+
+def _getparams(uri: str) -> dict:
+    params = {}
+    if '?' in uri:
+        qs = uri.split('?', 1)[1]
+        for kv in qs.split('&'):
+            if '=' in kv:
+                k, _, v = kv.partition('=')
+                params[k.lower()] = v
+    return params
+
+def _vless_to_clash(uri: str, name: str) -> Optional[dict]:
+    m = re.search(r'vless://([^@]+)@([^:/?#]+):(\d+)', uri)
+    if not m:
+        return None
+    uuid, host, port = m.group(1), m.group(2), int(m.group(3))
+    p = _getparams(uri)
+    out = {
+        'name': name or f"{host}:{port}",
+        'type': 'vless',
+        'server': host,
+        'port': port,
+        'uuid': uuid,
+        'udp': True,
+    }
+    sec = p.get('security', '')
+    if sec in ('tls', 'reality'):
+        out['tls'] = True
+        if p.get('sni'):
+            out['servername'] = p['sni']
+        if p.get('alpn'):
+            out['alpn'] = p['alpn'].split(',')
+        if p.get('fp'):
+            out['client-fingerprint'] = p['fp']
+        if sec == 'reality':
+            ro = {}
+            if p.get('pbk'):
+                ro['public-key'] = p['pbk']
+            if p.get('sid'):
+                ro['short-id'] = p['sid']
+            out['reality-opts'] = ro
+        if p.get('flow'):
+            out['flow'] = p['flow']
+    net = p.get('type', 'tcp')
+    out['network'] = net
+    if net == 'ws':
+        wo = {}
+        if p.get('path'):
+            wo['path'] = urllib.parse.unquote(p['path'])
+        if p.get('host'):
+            wo['headers'] = {'Host': p['host']}
+        out['ws-opts'] = wo
+    elif net == 'grpc':
+        go = {}
+        if p.get('serviceName'):
+            go['grpc-service-name'] = p['serviceName']
+        out['grpc-opts'] = go
+    elif net in ('http', 'h2'):
+        ho = {}
+        if p.get('path'):
+            ho['path'] = [urllib.parse.unquote(p['path'])]
+        if p.get('host'):
+            ho['host'] = [p['host']]
+        out['h2-opts'] = ho
+        out['network'] = 'h2'
+    return out
+
+def _vmess_to_clash(uri: str, name: str) -> Optional[dict]:
+    body = uri.replace('vmess://', '', 1)
+    if '@' in body.split('?')[0]:
+        m = re.search(r'vmess://([^@]+)@([^:/?#]+):(\d+)', uri)
+        if not m:
+            return None
+        uuid, host, port = m.group(1), m.group(2), int(m.group(3))
+        p = _getparams(uri)
+        try:
+            aid = int(p.get('alterId', '0'))
+        except ValueError:
+            aid = 0
+        out = {
+            'name': name or f"{host}:{port}",
+            'type': 'vmess',
+            'server': host,
+            'port': port,
+            'uuid': uuid,
+            'alterId': aid,
+            'cipher': p.get('encryption', 'auto'),
+            'udp': True,
+        }
+        sec = p.get('security', '')
+        if sec in ('tls', 'reality'):
+            out['tls'] = True
+            if p.get('sni'):
+                out['servername'] = p['sni']
+            if p.get('alpn'):
+                out['alpn'] = p['alpn'].split(',')
+        net = p.get('type', 'tcp')
+        out['network'] = net if net != 'h2' else 'h2'
+        if net == 'ws':
+            wo = {}
+            if p.get('path'):
+                wo['path'] = urllib.parse.unquote(p['path'])
+            if p.get('host'):
+                wo['headers'] = {'Host': p['host']}
+            out['ws-opts'] = wo
+        elif net == 'grpc':
+            go = {}
+            if p.get('serviceName'):
+                go['grpc-service-name'] = p['serviceName']
+            out['grpc-opts'] = go
+        return out
+    else:
+        b64 = body.split('#')[0].split('?')[0]
+        try:
+            missing = len(b64) % 4
+            if missing:
+                b64 += '=' * (4 - missing)
+            decoded = base64.b64decode(b64).decode('utf-8')
+            cfg = json.loads(decoded)
+            try:
+                aid = int(cfg.get('aid', 0))
+            except (ValueError, TypeError):
+                aid = 0
+            out = {
+                'name': name or cfg.get('ps', f"{cfg.get('add')}:{cfg.get('port')}"),
+                'type': 'vmess',
+                'server': str(cfg.get('add', '')),
+                'port': int(cfg.get('port', 443)),
+                'uuid': str(cfg.get('id', '')),
+                'alterId': aid,
+                'cipher': str(cfg.get('scy', 'auto')),
+                'udp': True,
+            }
+            if cfg.get('tls') in ('tls', True, 'true'):
+                out['tls'] = True
+            if cfg.get('sni'):
+                out['servername'] = str(cfg['sni'])
+            net = str(cfg.get('net', 'tcp')).lower()
+            out['network'] = net
+            if net == 'ws':
+                wo = {}
+                if cfg.get('path'):
+                    wo['path'] = str(cfg['path'])
+                if cfg.get('host'):
+                    wo['headers'] = {'Host': str(cfg['host'])}
+                out['ws-opts'] = wo
+            elif net == 'grpc':
+                go = {}
+                if cfg.get('path'):
+                    go['grpc-service-name'] = str(cfg['path'])
+                out['grpc-opts'] = go
+            return out
+        except Exception:
+            return None
+
+def _trojan_to_clash(uri: str, name: str) -> Optional[dict]:
+    m = re.search(r'trojan://([^@]+)@([^:/?#]+):(\d+)', uri)
+    if not m:
+        return None
+    pwd, host, port = m.group(1), m.group(2), int(m.group(3))
+    p = _getparams(uri)
+    out = {
+        'name': name or f"{host}:{port}",
+        'type': 'trojan',
+        'server': host,
+        'port': port,
+        'password': pwd,
+        'udp': True,
+    }
+    if p.get('sni'):
+        out['sni'] = p['sni']
+    if p.get('alpn'):
+        out['alpn'] = p['alpn'].split(',')
+    net = p.get('type', 'tcp')
+    if net == 'ws':
+        out['network'] = 'ws'
+        wo = {}
+        if p.get('path'):
+            wo['path'] = urllib.parse.unquote(p['path'])
+        if p.get('host'):
+            wo['headers'] = {'Host': p['host']}
+        out['ws-opts'] = wo
+    elif net == 'grpc':
+        out['network'] = 'grpc'
+        go = {}
+        if p.get('serviceName'):
+            go['grpc-service-name'] = p['serviceName']
+        out['grpc-opts'] = go
+    return out
+
+def _hy2_to_clash(uri: str, name: str) -> Optional[dict]:
+    m = re.search(r'(?:hysteria2|hy2)://([^@]*)@([^:/?#]+):(\d+)', uri)
+    if not m:
+        return None
+    pwd, host, port = m.group(1), m.group(2), int(m.group(3))
+    p = _getparams(uri)
+    out = {
+        'name': name or f"{host}:{port}",
+        'type': 'hysteria2',
+        'server': host,
+        'port': port,
+        'password': pwd,
+    }
+    if p.get('sni'):
+        out['sni'] = p['sni']
+    if p.get('insecure'):
+        out['skip-cert-verify'] = p['insecure'] in ('1', 'true', 'True')
+    if p.get('obfs'):
+        out['obfs'] = p['obfs']
+    if p.get('obfs-password'):
+        out['obfs-password'] = p['obfs-password']
+    return out
+
+def _tuic_to_clash(uri: str, name: str) -> Optional[dict]:
+    m = re.search(r'tuic://([^@]+)@([^:/?#]+):(\d+)', uri)
+    if not m:
+        return None
+    cred, host, port = m.group(1), m.group(2), int(m.group(3))
+    p = _getparams(uri)
+    out = {
+        'name': name or f"{host}:{port}",
+        'type': 'tuic',
+        'server': host,
+        'port': port,
+    }
+    if ':' in cred:
+        tok, _, pwd = cred.partition(':')
+        out['token'] = tok
+        out['password'] = pwd
+    else:
+        out['token'] = cred
+    if p.get('sni'):
+        out['sni'] = p['sni']
+    if p.get('congestion_control'):
+        out['congestion-controller'] = p['congestion_control']
+    if p.get('udp_relay_mode'):
+        out['udp-relay-mode'] = p['udp_relay_mode']
+    if p.get('alpn'):
+        out['alpn'] = p['alpn'].split(',')
+    return out
+
+def _ss_to_clash(uri: str, name: str) -> Optional[dict]:
+    try:
+        after = uri.replace('ss://', '', 1)
+        if '#' in after:
+            after = after.split('#')[0]
+        if '?' in after:
+            after = after.split('?')[0]
+        if '@' not in after:
+            return None
+        userinfo, hostport = after.rsplit('@', 1)
+        if ':' not in userinfo:
+            missing = len(userinfo) % 4
+            if missing:
+                userinfo += '=' * (4 - missing)
+            userinfo = base64.b64decode(userinfo).decode('utf-8', errors='ignore')
+        if ':' not in userinfo:
+            return None
+        method, password = userinfo.split(':', 1)
+        if ':' not in hostport:
+            return None
+        host, port = hostport.rsplit(':', 1)
+        out = {
+            'name': name or f"{host}:{port}",
+            'type': 'ss',
+            'server': host,
+            'port': int(port),
+            'cipher': method,
+            'password': password,
+            'udp': True,
+        }
+        p = _getparams(uri)
+        if p.get('plugin'):
+            plugin = p['plugin'].split(';')
+            if plugin[0] == 'v2ray-plugin':
+                out['plugin'] = 'v2ray-plugin'
+                po = {}
+                for opt in plugin[1:]:
+                    if opt == 'tls':
+                        po['tls'] = True
+                    elif opt.startswith('host='):
+                        po['host'] = opt[5:]
+                    elif opt.startswith('path='):
+                        po['path'] = opt[5:]
+                    elif opt == 'ws':
+                        po['mode'] = 'websocket'
+                out['plugin-opts'] = po
+        return out
+    except Exception:
+        return None
+
+def _ssr_to_clash(uri: str, name: str) -> Optional[dict]:
+    try:
+        payload = uri[6:].split('#')[0]
+        rem = len(payload) % 4
+        if rem:
+            payload += '=' * (4 - rem)
+        decoded = base64.b64decode(payload).decode('utf-8')
+        parts = decoded.split(':')
+        if len(parts) < 6:
+            return None
+        host = parts[0]
+        port = int(parts[1])
+        proto = parts[2]
+        method = parts[3]
+        obfs = parts[4]
+        pwd_b64 = parts[5].split('/')[0]
+        rem2 = len(pwd_b64) % 4
+        if rem2:
+            pwd_b64 += '=' * (4 - rem2)
+        password = base64.b64decode(pwd_b64).decode('utf-8', errors='ignore')
+        out = {
+            'name': name or f"{host}:{port}",
+            'type': 'ssr',
+            'server': host,
+            'port': port,
+            'cipher': method,
+            'password': password,
+            'protocol': proto,
+            'obfs': obfs,
+        }
+        if '/?' in decoded:
+            extra = decoded.split('/?', 1)[1]
+            for kv in extra.split('&'):
+                if '=' in kv:
+                    k, _, v = kv.partition('=')
+                    if k == 'obfs_param':
+                        out['obfs-param'] = v
+                    elif k == 'proto_param':
+                        out['protocol-param'] = v
+        return out
+    except Exception:
+        return None
+
+def _dump_clash_yaml(proxies: List[dict], filepath: str, title: str = 'clash'):
+    lines = ['# clash/mihomo subscription']
+    lines.append(f'# {time.strftime("%Y-%m-%d %H:%M:%S UTC")}')
+    lines.append('proxies:')
+    for p in proxies:
+        lines.append(f'  - name: {_q(p["name"])}')
+        lines.append(f'    type: {_q(p["type"])}')
+        lines.append(f'    server: {_q(p["server"])}')
+        lines.append(f'    port: {p["port"]}')
+        for k, v in p.items():
+            if k in ('name', 'type', 'server', 'port'):
+                continue
+            if isinstance(v, dict):
+                lines.append(f'    {k}:')
+                _dump_nested(v, lines, '      ')
+            elif isinstance(v, list):
+                lines.append(f'    {k}:')
+                for item in v:
+                    lines.append(f'      - {_q(item)}')
+            elif isinstance(v, bool):
+                lines.append(f'    {k}: {str(v).lower()}')
+            elif isinstance(v, int):
+                lines.append(f'    {k}: {v}')
+            else:
+                lines.append(f'    {k}: {_q(v)}')
+    lines.append('proxy-groups:')
+    lines.append('  - name: PROXY')
+    lines.append('    type: select')
+    lines.append('    proxies:')
+    for p in proxies:
+        lines.append(f'      - {_q(p["name"])}')
+    lines.append('rules:')
+    lines.append('  - MATCH,PROXY')
+    with open(filepath, 'w', encoding='utf-8', newline='\n') as f:
+        f.write('\n'.join(lines) + '\n')
+
+def _dump_nested(d: dict, lines: List[str], indent: str):
+    for k, v in d.items():
+        if isinstance(v, dict):
+            lines.append(f'{indent}{k}:')
+            _dump_nested(v, lines, indent + '  ')
+        elif isinstance(v, list):
+            lines.append(f'{indent}{k}:')
+            for item in v:
+                lines.append(f'{indent}  - {_q(item)}')
+        elif isinstance(v, bool):
+            lines.append(f'{indent}{k}: {str(v).lower()}')
+        else:
+            lines.append(f'{indent}{k}: {_q(v)}')
+
+def convert_to_clash_and_save(configs: List[str], filename: str) -> int:
+    clash_proxies = []
+    seen_names = set()
+    for uri in configs:
+        cp = uri_to_clash(uri)
+        if cp and cp['name'] not in seen_names:
+            seen_names.add(cp['name'])
+            clash_proxies.append(cp)
+    if not clash_proxies:
+        return 0
+    outpath = os.path.join(CLASH_DIR, f"{filename}.yaml")
+    _dump_clash_yaml(clash_proxies, outpath, filename)
+    return len(clash_proxies)
 
 # =====================================================================
 #  URL HEALTH
@@ -712,7 +1343,6 @@ def _try_b64_decode(s: str) -> Optional[str]:
     return None
 
 def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
-    # v5.1: lock на чтение health
     with _health_lock:
         entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
         failure_count = entry["failures"]
@@ -726,12 +1356,16 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         with urllib.request.urlopen(req, timeout=15) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
 
-        # v5.1: lock на запись health
         with _health_lock:
             entry["failures"] = 0
             entry["last_status"] = "ok"
             entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC')
             health[url] = entry
+
+        if is_clash_content(content):
+            clash_uris = clash_to_uris(content)
+            if clash_uris:
+                return '\n'.join(clash_uris), False
 
         stripped = re.sub(r'\s+', '', content.strip())
         if re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped):
@@ -742,7 +1376,6 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
         return content, False
 
     except Exception as e:
-        # v5.1: lock на запись при ошибке
         with _health_lock:
             entry["failures"] = entry.get("failures", 0) + 1
             entry["last_status"] = str(e)
@@ -809,7 +1442,7 @@ def generate_qr_codes(file_counts: Dict[str, int]):
 
     _generate_qr_index(qr_files)
 
-def _generate_qr_index(qr_files: List[Tuple[str, int]]):
+def _generate_qr_index(qr_files: List[Tuple[str, int, str]]):
     index_path = os.path.join(QR_DIR, "index.html")
     with open(index_path, 'w', encoding='utf-8') as f:
         f.write("""<!DOCTYPE html>
@@ -832,7 +1465,7 @@ h1 { text-align: center; color: #00d4ff; }
 </head>
 <body>
 <h1>📱 QR-коды подписок</h1>
-<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (v2rayNG, Karing, Hiddify) для добавления подписки</p>
+<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (v2rayNG, Karing, Hiddify, Clash) для добавления подписки</p>
 <div class="grid">
 """)
         for name, count, filename in qr_files:
@@ -917,7 +1550,7 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     SID_MAX = 3
     TROJAN_PASS_MAX = 3
     TUIC_CRED_MAX = 3
-    HP_MAX = 5  # v5.1: 5 — один CDN/IP за разными серверами это норм
+    HP_MAX = 5
 
     final_filtered = set()
     for cfg in pre_filtered:
@@ -971,12 +1604,15 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v5.1 (Karing Edition) ===")
+    print("=== Фильтр прокси v5.2 (Karing + Clash/Mihomo Edition) ===")
+    if not HAS_YAML:
+        print("  ⚠️  pyyaml не установлен — Clash подписки не парсятся. pip install pyyaml")
     health = load_health()
     all_filtered = set()
     all_rejected = []
     source_stats = {}
     file_counts = {}
+    clash_counts = {}
 
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src, health): src for src in SOURCES_CONFIG}
@@ -1004,12 +1640,21 @@ def main():
                             f.write('\n')
                     print(f"  ✅ {name}.txt → {len(configs)} конфигов (отброшено: {stats['rejected']})")
 
+                if sorted_cfg:
+                    clash_n = convert_to_clash_and_save(sorted_cfg, name)
+                    clash_counts[name] = clash_n
+                    if clash_n > 0:
+                        print(f"  🔄 Clash: {os.path.join(CLASH_DIR, name + '.yaml')} → {clash_n} прокси")
+                else:
+                    clash_counts[name] = 0
+
                 all_filtered.update(configs)
                 file_counts[name] = len(configs)
 
             except Exception as e:
                 print(f"  ❌ [{name}] Ошибка: {e}")
                 file_counts[name] = 0
+                clash_counts[name] = 0
 
     all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
     sorted_all = sorted(all_filtered, key=lambda u: (protocol_priority(u), u))
@@ -1018,6 +1663,12 @@ def main():
         if sorted_all:
             f.write('\n')
     file_counts["ALL"] = len(all_filtered)
+
+    if sorted_all:
+        clash_all_n = convert_to_clash_and_save(sorted_all, "ALL")
+        clash_counts["ALL"] = clash_all_n
+        if clash_all_n > 0:
+            print(f"  🔄 Clash ALL: {os.path.join(CLASH_DIR, 'ALL.yaml')} → {clash_all_n} прокси")
 
     reject_file = os.path.join(REJECT_DIR, "rejected.txt")
     with open(reject_file, 'w', encoding='utf-8', newline='\n') as f:
@@ -1030,9 +1681,12 @@ def main():
     generate_qr_codes(file_counts)
 
     print(f"\n✅ ALL.txt: {len(all_filtered)} уникальных конфигов")
+    if clash_counts.get("ALL"):
+        print(f"🔄 Clash ALL.yaml: {clash_counts['ALL']} прокси → {CLASH_DIR}/")
     print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt)")
     print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
     print(f"📱 QR-коды: {QR_DIR}/")
+    print(f"🔄 Clash подписки: {CLASH_DIR}/")
 
 if __name__ == "__main__":
     main()
