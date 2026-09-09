@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-09 17:45:32 UTC
+# 2026-09-09 18:00:57 UTC
 proxies:
   - name: '🌍 Рандом | БС¹'
     type: vless
@@ -153,7 +153,7 @@ proxies:
       short-id: e3daad69
     flow: xtls-rprx-vision
     network: tcp
-  - name: '8 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
+  - name: '11 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 4/10'
     type: vless
     server: 193.238.154.18
     port: 443
@@ -342,6 +342,22 @@ proxies:
     tls: true
     servername: deepl.com
     client-fingerprint: qq
+    reality-opts:
+      public-key: D_ks4Yyk4-osnWBxCFvd0_UEgohUXvR2zJoWQg1CACU
+      short-id: c84f
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '2 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 8/10'
+    type: vless
+    server: cdn.netraidly.ru
+    port: 40443
+    uuid: 4bf5a71c-d726-4585-b095-7396675706d5
+    udp: true
+    tls: true
+    servername: deepl.com
+    alpn:
+      - 'http%2F1.1'
+    client-fingerprint: chrome
     reality-opts:
       public-key: D_ks4Yyk4-osnWBxCFvd0_UEgohUXvR2zJoWQg1CACU
       short-id: c84f
@@ -770,20 +786,6 @@ proxies:
       short-id: 7b94b8365e124d83
     flow: xtls-rprx-vision
     network: tcp
-  - name: '! 3 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 8/10'
-    type: vless
-    server: 5.129.210.63
-    port: 8443
-    uuid: c80a96e8-d4a6-4785-b53b-a475b252c4ed
-    udp: true
-    tls: true
-    servername: sun6-21.userapi.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Z5WItgtmxxL_umUUIPO72kSTBGjlGg3sUPigtTG6wlI
-      short-id: ac
-    network: grpc
-    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.icloud.com ┃ 🇩🇪 Германия'
     type: vless
     server: 51.81.203.63
@@ -910,6 +912,20 @@ proxies:
       public-key: 54p7hD_YYV5f2ATL7rTBk4NG_KhStO76-1_tSKmXah8
       short-id: d45603
     network: xhttp
+  - name: '10 | REALITY | SNI: gr.freeinternat.com | IN: GR OUT: GR | RATING: 4/10'
+    type: vless
+    server: gr.freeinternat.com
+    port: 443
+    uuid: dabb9a19-03ab-4cdf-8963-d3c45eb0f80d
+    udp: true
+    tls: true
+    servername: gr.freeinternat.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
+      short-id: ff776ff77be48b88
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇳🇱 Нидерланды'
     type: vless
     server: 31.76.76.28
@@ -1180,7 +1196,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '88.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇵🇱 Польша'
-      - '8 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
+      - '11 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 4/10'
       - '🇫🇮 LTE 81 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
@@ -1194,6 +1210,7 @@ proxy-groups:
       - '🇫🇮 LTE 99 | тгк: @rostunnel'
       - '🇵🇱 LTE 110 | тгк: @rostunnel'
       - '29.🇳🇱Нидерланды | @LimeVPNFREE'
+      - '2 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 8/10'
       - '🇬🇧 LTE 73 | тгк: @rostunnel'
       - '2.🇷🇺Россия | @LimeVPNFREE'
       - '11.🇷🇺Россия | @LimeVPNFREE'
@@ -1225,7 +1242,6 @@ proxy-groups:
       - '4612 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '3680 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇸🇬 Сингапур'
-      - '! 3 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 8/10'
       - 'AetrisVPN White list ┃ ✅ SNI: www.icloud.com ┃ 🇩🇪 Германия'
       - '🇪🇸 LTE 107 | тгк: @rostunnel'
       - '🇸🇪 Sweden — #101'
@@ -1235,6 +1251,7 @@ proxy-groups:
       - '85.🇭🇰Гонконг | @LimeVPNFREE'
       - '81.🇭🇰Гонконг | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
+      - '10 | REALITY | SNI: gr.freeinternat.com | IN: GR OUT: GR | RATING: 4/10'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
