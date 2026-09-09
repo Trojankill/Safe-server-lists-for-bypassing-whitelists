@@ -32,7 +32,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install qrcode[pil]
+        run: pip install qrcode[pil] pyyaml
 
       - name: Run filter script
         id: filter
@@ -48,13 +48,14 @@ jobs:
                   githubmirror/ALL.txt \
                   githubmirror/url_health.json \
                   githubmirror/URL_HEALTH_REPORT.md \
+                  githubmirror/Clash/ \
                   QR-CODE/
           if git diff --staged --quiet; then
             echo "No changes to commit"
             echo "has_changes=false" >> $GITHUB_OUTPUT
             exit 0
           fi
-          git commit -m "auto-update filters + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
+          git commit -m "auto-update filters + Clash + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
           git push origin main
           echo "has_changes=true" >> $GITHUB_OUTPUT
 
