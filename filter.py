@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v5.2 (Karing + Clash/Mihomo Edition)
+Фильтр прокси-конфигураций v5.3 (Karing + Clash/Mihomo Edition)
 Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core) + Clash (Mihomo)
-v5.2: поддержка Clash подписок (парсинг YAML), конвертация в Clash формат,
-      вывод в githubmirror/Clash/, авто-установка pyyaml
+v5.3: IPv6 host extraction, SSR obfs/protocol param validation,
+      Clash name sanitization + host:port dedup, timeout 30s,
+      explicit SS 2022 rem=1 rejection
 """
 
 import re
@@ -53,6 +54,7 @@ os.makedirs(QR_DIR, exist_ok=True)
 os.makedirs(CLASH_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
+FETCH_TIMEOUT = 30
 
 RAW_BASE = os.environ.get(
     'RAW_BASE',
@@ -67,7 +69,7 @@ SUPPORTED_PROTOCOLS = [
 
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/refs/heads/main/whitelist.txt"},
-    {"name": "FILTER-2", "url": "https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt"},
+    {"name": "FILTER-2", "url": "https://gist.githubusercontent.com/t7954395-dotcom/dd6fb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt"},
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://gitverse.ru/api/repos/Bazz1024/vpn-configs-mirror/raw/branch/main/rkn_white_list"},
@@ -135,7 +137,9 @@ TRUSTED_DNS = {
 TUIC_CC_WHITELIST = {'bbr', 'cubic', 'new_reno'}
 TUIC_UDP_MODES = {'native', 'quic'}
 
+# IPv6: [2001:db8::1]:443 — bracket notation
 _IPv4_AFTER_AT = re.compile(r'@(\d{1,3}\.){3}\d{1,3}', re.I)
+_IPv6_BRACKET = re.compile(r'@\[([0-9a-fA-F:]+)\](?::(\d+))?')
 
 # =====================================================================
 #  ПОТОКОБЕЗОПАСНОСТЬ
@@ -156,17 +160,43 @@ def _is_host_banned(host: str) -> bool:
     return any(_domain_matches(host, d) for d in BANNED_DOMAINS)
 
 # =====================================================================
+#  ИЗВЛЕЧЕНИЕ HOST:PORT (IPv4 + IPv6)
+# =====================================================================
+
+def _extract_host_port_from_uri(url: str) -> Tuple[Optional[str], Optional[int]]:
+    """Извлекает host и port из proxy URI. Поддерживает IPv4 и IPv6 [bracket]."""
+    # IPv6: [2001:db8::1]:443
+    m6 = _IPv6_BRACKET.search(url)
+    if m6:
+        host = f'[{m6.group(1)}]'
+        port = int(m6.group(2)) if m6.group(2) else None
+        return host, port
+
+    # IPv4 или домен
+    m = re.search(r'^(?:[^@/]+@)?([^:/?#]+)(?::(\d+))?', url.split('://', 1)[-1] if '://' in url else url)
+    if not m:
+        return None, None
+    host = m.group(1)
+    port = int(m.group(2)) if m.group(2) else None
+    return host, port
+
+# =====================================================================
 #  SS 2022 KEY VALIDATION
 # =====================================================================
 
 def _check_ss_2022_key(method: str, password: str) -> bool:
+    """True = reject. Проверяет длину ключа после base64 decode."""
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
     if expected_len is None:
         return False
     if ':' in password:
         return False
+
     rem = len(password) % 4
+    if rem == 1:
+        # base64 не может иметь остаток 1 — явно отклоняем
+        return True
     padded = password + '=' * (4 - rem) if rem else password
     try:
         decoded = base64.b64decode(padded, validate=True)
@@ -198,6 +228,24 @@ def is_dangerous_domain_param(url: str) -> bool:
     return False
 
 def is_banned_host_universal(url: str) -> bool:
+    # IPv6 в bracket notation
+    m6 = _IPv6_BRACKET.search(url)
+    if m6:
+        host = m6.group(1).lower()
+        port = m6.group(2)
+        if port:
+            try:
+                if not (1 <= int(port) <= 65535):
+                    return True
+            except ValueError:
+                return True
+        if host in ('::1', 'fe80::', 'fc00::', 'fd00::', ''):
+            return True
+        # IPv6 loopback/link-local/private
+        if host.startswith(('fe80:', 'fc', 'fd', '::1', '::')):
+            return True
+        return False
+
     m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)(?::(\d+))?', url, re.I)
     if not m:
         return False
@@ -290,6 +338,10 @@ def is_dangerous_uuid(url: str) -> bool:
     m = _IPv4_AFTER_AT.search(url)
     if m and _is_private_ipv4(m.group(0)[1:]):
         return True
+    # IPv6 private
+    m6 = _IPv6_BRACKET.search(url)
+    if m6 and m6.group(1).lower().startswith(('fe80:', 'fc', 'fd', '::1', '::')):
+        return True
     if '::1' in lower or 'fe80:' in lower:
         return True
     if re.search(r'vless://(0{8}-0{4}-0{4}-0{4}-0{12}|f{8}-f{4}-f{4}-f{4}-f{12})@', url, re.I):
@@ -326,18 +378,15 @@ def extract_tuic_creds(url: str) -> Optional[str]:
 
 def extract_host_port(url: str) -> Optional[str]:
     proto = url.split('://')[0]
-    m = re.search(r'^[a-z0-9]+://(?:[^@/]+@)?([^:/?#]+)(?::(\d+))?', url, re.I)
-    if m:
-        host = m.group(1).lower()
-        port = m.group(2) or 'default'
-        if port != 'default':
-            try:
-                if not (1 <= int(port) <= 65535):
-                    return None
-            except ValueError:
-                return None
-        return f"{host}:{port}:{proto}"
-    return None
+    host, port = _extract_host_port_from_uri(url)
+    if host is None:
+        return None
+    host_lower = host.lower()
+    port_str = str(port) if port else 'default'
+    if port is not None:
+        if not (1 <= port <= 65535):
+            return None
+    return f"{host_lower}:{port_str}:{proto}"
 
 # =====================================================================
 #  УНИВЕРСАЛЬНАЯ ЗАЩИТА
@@ -391,6 +440,38 @@ def has_invalid_reality_sid(url: str) -> bool:
         return False
     if len(sid) > 16 or len(sid) % 2 != 0 or not re.match(r'^[0-9a-fA-F]+$', sid):
         return True
+    return False
+
+# =====================================================================
+#  SSR ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА — obfs_param / protocol_param
+# =====================================================================
+
+def has_ssr_dangerous_params(url: str) -> bool:
+    """Проверяет obfs_param и protocol_param в SSR на запрещённые домены."""
+    if not url.startswith('ssr://'):
+        return False
+    try:
+        payload = url[6:].split('#')[0]
+        rem = len(payload) % 4
+        if rem:
+            payload += '=' * (4 - rem)
+        decoded = base64.b64decode(payload).decode('utf-8')
+        # obfs_param и protocol_param в query части после /?
+        if '/?' in decoded:
+            extra = decoded.split('/?', 1)[1]
+            for kv in extra.split('&'):
+                if '=' in kv:
+                    k, _, v = kv.partition('=')
+                    if k in ('obfs_param', 'protocol_param', 'obfs-param', 'protocol-param'):
+                        val = v.lower().strip('.')
+                        # Если значение содержит домен — проверяем
+                        if val and _is_host_banned(val):
+                            return True
+                        # Проверяем что значение не указывает на приватный IP
+                        if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.)', val):
+                            return True
+    except Exception:
+        pass  # не отклоняем за ошибку парсинга extras — основной парсинг уже проверен
     return False
 
 # =====================================================================
@@ -608,6 +689,9 @@ def is_safe_ssr_base(url: str) -> bool:
             return False
         password_part = parts[5].split('/')[0].strip()
         if not password_part:
+            return False
+        # Дополнительная проверка obfs_param / protocol_param
+        if has_ssr_dangerous_params(url):
             return False
         return True
     except Exception:
@@ -885,8 +969,18 @@ def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[st
 #  CLASH OUTPUT (URI -> YAML)
 # =====================================================================
 
-def _q(s) -> str:
+def _sanitize_name(s) -> str:
+    """Убирает переносы строк, табы, control characters из имени прокси."""
     s = str(s)
+    # Убираем newline, carriage return, tab и control characters
+    s = re.sub(r'[\x00-\x1f\x7f\n\r\t]', ' ', s)
+    # Убираем множественные пробелы
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s
+
+def _q(s) -> str:
+    """Санитизированное кавычки для YAML вывода."""
+    s = _sanitize_name(s)
     if re.match(r'^[A-Za-z0-9._@:-]+$', s):
         return s
     if "'" in s:
@@ -901,6 +995,7 @@ def uri_to_clash(uri: str) -> Optional[dict]:
             name = urllib.parse.unquote(frag)
         except Exception:
             name = frag
+    name = _sanitize_name(name)
     proto = uri.split('://')[0].lower()
     if proto == 'vless':
         return _vless_to_clash(uri, name)
@@ -929,10 +1024,15 @@ def _getparams(uri: str) -> dict:
     return params
 
 def _vless_to_clash(uri: str, name: str) -> Optional[dict]:
-    m = re.search(r'vless://([^@]+)@([^:/?#]+):(\d+)', uri)
-    if not m:
-        return None
-    uuid, host, port = m.group(1), m.group(2), int(m.group(3))
+    # IPv6 bracket
+    m6 = re.search(r'vless://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
+    if m6:
+        uuid, host, port = m6.group(1), f'[{m6.group(2)}]', int(m6.group(3))
+    else:
+        m = re.search(r'vless://([^@]+)@([^:/?#]+):(\d+)', uri)
+        if not m:
+            return None
+        uuid, host, port = m.group(1), m.group(2), int(m.group(3))
     p = _getparams(uri)
     out = {
         'name': name or f"{host}:{port}",
@@ -987,10 +1087,15 @@ def _vless_to_clash(uri: str, name: str) -> Optional[dict]:
 def _vmess_to_clash(uri: str, name: str) -> Optional[dict]:
     body = uri.replace('vmess://', '', 1)
     if '@' in body.split('?')[0]:
-        m = re.search(r'vmess://([^@]+)@([^:/?#]+):(\d+)', uri)
-        if not m:
-            return None
-        uuid, host, port = m.group(1), m.group(2), int(m.group(3))
+        # IPv6 bracket
+        m6 = re.search(r'vmess://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
+        if m6:
+            uuid, host, port = m6.group(1), f'[{m6.group(2)}]', int(m6.group(3))
+        else:
+            m = re.search(r'vmess://([^@]+)@([^:/?#]+):(\d+)', uri)
+            if not m:
+                return None
+            uuid, host, port = m.group(1), m.group(2), int(m.group(3))
         p = _getparams(uri)
         try:
             aid = int(p.get('alterId', '0'))
@@ -1040,8 +1145,9 @@ def _vmess_to_clash(uri: str, name: str) -> Optional[dict]:
                 aid = int(cfg.get('aid', 0))
             except (ValueError, TypeError):
                 aid = 0
+            name_val = name or cfg.get('ps', f"{cfg.get('add')}:{cfg.get('port')}")
             out = {
-                'name': name or cfg.get('ps', f"{cfg.get('add')}:{cfg.get('port')}"),
+                'name': _sanitize_name(name_val),
                 'type': 'vmess',
                 'server': str(cfg.get('add', '')),
                 'port': int(cfg.get('port', 443)),
@@ -1073,10 +1179,14 @@ def _vmess_to_clash(uri: str, name: str) -> Optional[dict]:
             return None
 
 def _trojan_to_clash(uri: str, name: str) -> Optional[dict]:
-    m = re.search(r'trojan://([^@]+)@([^:/?#]+):(\d+)', uri)
-    if not m:
-        return None
-    pwd, host, port = m.group(1), m.group(2), int(m.group(3))
+    m6 = re.search(r'trojan://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
+    if m6:
+        pwd, host, port = m6.group(1), f'[{m6.group(2)}]', int(m6.group(3))
+    else:
+        m = re.search(r'trojan://([^@]+)@([^:/?#]+):(\d+)', uri)
+        if not m:
+            return None
+        pwd, host, port = m.group(1), m.group(2), int(m.group(3))
     p = _getparams(uri)
     out = {
         'name': name or f"{host}:{port}",
@@ -1108,10 +1218,14 @@ def _trojan_to_clash(uri: str, name: str) -> Optional[dict]:
     return out
 
 def _hy2_to_clash(uri: str, name: str) -> Optional[dict]:
-    m = re.search(r'(?:hysteria2|hy2)://([^@]*)@([^:/?#]+):(\d+)', uri)
-    if not m:
-        return None
-    pwd, host, port = m.group(1), m.group(2), int(m.group(3))
+    m6 = re.search(r'(?:hysteria2|hy2)://([^@]*)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
+    if m6:
+        pwd, host, port = m6.group(1), f'[{m6.group(2)}]', int(m6.group(3))
+    else:
+        m = re.search(r'(?:hysteria2|hy2)://([^@]*)@([^:/?#]+):(\d+)', uri)
+        if not m:
+            return None
+        pwd, host, port = m.group(1), m.group(2), int(m.group(3))
     p = _getparams(uri)
     out = {
         'name': name or f"{host}:{port}",
@@ -1131,10 +1245,14 @@ def _hy2_to_clash(uri: str, name: str) -> Optional[dict]:
     return out
 
 def _tuic_to_clash(uri: str, name: str) -> Optional[dict]:
-    m = re.search(r'tuic://([^@]+)@([^:/?#]+):(\d+)', uri)
-    if not m:
-        return None
-    cred, host, port = m.group(1), m.group(2), int(m.group(3))
+    m6 = re.search(r'tuic://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
+    if m6:
+        cred, host, port = m6.group(1), f'[{m6.group(2)}]', int(m6.group(3))
+    else:
+        m = re.search(r'tuic://([^@]+)@([^:/?#]+):(\d+)', uri)
+        if not m:
+            return None
+        cred, host, port = m.group(1), m.group(2), int(m.group(3))
     p = _getparams(uri)
     out = {
         'name': name or f"{host}:{port}",
@@ -1176,9 +1294,17 @@ def _ss_to_clash(uri: str, name: str) -> Optional[dict]:
         if ':' not in userinfo:
             return None
         method, password = userinfo.split(':', 1)
-        if ':' not in hostport:
-            return None
-        host, port = hostport.rsplit(':', 1)
+        # IPv6 bracket
+        if hostport.startswith('['):
+            m6 = re.match(r'\[([0-9a-fA-F:]+)\]:(\d+)', hostport)
+            if m6:
+                host, port = f'[{m6.group(1)}]', m6.group(2)
+            else:
+                return None
+        else:
+            if ':' not in hostport:
+                return None
+            host, port = hostport.rsplit(':', 1)
         out = {
             'name': name or f"{host}:{port}",
             'type': 'ss',
@@ -1243,10 +1369,10 @@ def _ssr_to_clash(uri: str, name: str) -> Optional[dict]:
             for kv in extra.split('&'):
                 if '=' in kv:
                     k, _, v = kv.partition('=')
-                    if k == 'obfs_param':
-                        out['obfs-param'] = v
-                    elif k == 'proto_param':
-                        out['protocol-param'] = v
+                    if k in ('obfs_param', 'obfs-param'):
+                        out['obfs-param'] = _sanitize_name(v)
+                    elif k in ('proto_param', 'protocol-param'):
+                        out['protocol-param'] = _sanitize_name(v)
         return out
     except Exception:
         return None
@@ -1303,12 +1429,15 @@ def _dump_nested(d: dict, lines: List[str], indent: str):
 
 def convert_to_clash_and_save(configs: List[str], filename: str) -> int:
     clash_proxies = []
-    seen_names = set()
+    seen_servers = set()
     for uri in configs:
         cp = uri_to_clash(uri)
-        if cp and cp['name'] not in seen_names:
-            seen_names.add(cp['name'])
-            clash_proxies.append(cp)
+        if cp:
+            # Дедупликация по server:port вместо name
+            server_key = f"{cp['server']}:{cp['port']}"
+            if server_key not in seen_servers:
+                seen_servers.add(server_key)
+                clash_proxies.append(cp)
     if not clash_proxies:
         return 0
     outpath = os.path.join(CLASH_DIR, f"{filename}.yaml")
@@ -1364,7 +1493,7 @@ def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
 
     try:
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=15) as resp:
+        with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT) as resp:
             content = resp.read().decode('utf-8', errors='ignore')
 
         with _health_lock:
@@ -1480,11 +1609,12 @@ h1 { text-align: center; color: #00d4ff; }
 <div class="grid">
 """)
         for name, count, filename in qr_files:
+            safe_name = _sanitize_name(name)
             card_class = 'card all-card' if name == 'ALL' else 'card'
             file_url = f"{RAW_BASE}/{name}.txt"
             f.write(f'  <div class="{card_class}">\n')
-            f.write(f'    <img src="{filename}" alt="{name}">\n')
-            f.write(f'    <div class="name">{name}</div>\n')
+            f.write(f'    <img src="{filename}" alt="{safe_name}">\n')
+            f.write(f'    <div class="name">{safe_name}</div>\n')
             f.write(f'    <div class="count">{count} конфигов</div>\n')
             f.write(f'    <div class="url">{file_url}</div>\n')
             f.write(f'  </div>\n')
@@ -1615,7 +1745,7 @@ def protocol_priority(uri: str) -> int:
 # =====================================================================
 
 def main():
-    print("=== Фильтр прокси v5.2 (Karing + Clash/Mihomo Edition) ===")
+    print("=== Фильтр прокси v5.3 (Karing + Clash/Mihomo Edition, hardened) ===")
     if not HAS_YAML:
         print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
     health = load_health()
