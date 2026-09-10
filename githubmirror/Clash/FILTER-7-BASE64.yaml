@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-09 23:45:31 UTC
+# 2026-09-10 00:00:57 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -209,7 +209,7 @@ proxies:
       short-id: e3daad69
     flow: xtls-rprx-vision
     network: tcp
-  - name: '12 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
+  - name: '10 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 4/10'
     type: vless
     server: 193.238.154.18
     port: 443
@@ -217,7 +217,7 @@ proxies:
     udp: true
     tls: true
     servername: es1.hat.onl
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc
       short-id: 76132b3b39704c44
@@ -768,20 +768,6 @@ proxies:
       public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
     flow: xtls-rprx-vision
     network: raw
-  - name: '! 11 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 3/10'
-    type: vless
-    server: 5.129.210.63
-    port: 8443
-    uuid: c80a96e8-d4a6-4785-b53b-a475b252c4ed
-    udp: true
-    tls: true
-    servername: sun6-21.userapi.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Z5WItgtmxxL_umUUIPO72kSTBGjlGg3sUPigtTG6wlI
-      short-id: ac
-    network: grpc
-    grpc-opts:
   - name: '🇩🇪 LTE 94 | тгк: @rostunnel'
     type: vless
     server: 51.81.203.63
@@ -812,20 +798,6 @@ proxies:
       path: '/stream/615428/socket'
       headers:
         Host: founders-blog.online
-  - name: '6 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
-    type: vless
-    server: 46.28.67.55
-    port: 443
-    uuid: d1a6a033-fdbd-46a6-a177-3370ba042b9f
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
-      short-id: d06d78e974491b6e
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '120.🇭🇰Гонконг | @LimeVPNFREE'
     type: vless
     server: 212.192.13.233
@@ -1047,6 +1019,36 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС¹⁰'
+    type: vmess
+    server: 195.19.20.80
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС¹⁸'
+    type: vmess
+    server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
   - name: '6162 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 163.192.14.135
@@ -1169,7 +1171,7 @@ proxy-groups:
       - '🇩🇪 LTE 25 | тгк: @rostunnel'
       - '🇩🇪 LTE 78 | тгк: @rostunnel'
       - '🇵🇱 LTE 38 | тгк: @rostunnel'
-      - '12 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 3/10'
+      - '10 | REALITY | SNI: es1.hat.onl | IN: UA OUT: ES | RATING: 4/10'
       - '🇫🇮 LTE 71 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '🇯🇵 LTE 85 | тгк: @rostunnel'
@@ -1210,10 +1212,8 @@ proxy-groups:
       - '6055 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '5375 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇩🇪 LTE 133 | тгк: @rostunnel'
-      - '! 11 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 3/10'
       - '🇩🇪 LTE 94 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: founders-blog.online ┃ 🇷🇺 Россия'
-      - '6 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
       - '120.🇭🇰Гонконг | @LimeVPNFREE'
       - '119.🇭🇰Гонконг | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
@@ -1230,6 +1230,8 @@ proxy-groups:
       - '🇷🇺 LTE 14 | тгк: @rostunnel'
       - '🇷🇺 AetrisVPN'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС¹⁰'
+      - '🌍 Рандом | БС¹⁸'
       - '6162 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2388 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '6846 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
