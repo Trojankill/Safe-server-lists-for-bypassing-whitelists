@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-10 07:45:43 UTC
+# 2026-09-10 08:00:55 UTC
 proxies:
   - name: '7 | RAW+REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
     type: vless
@@ -795,7 +795,7 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС⁴'
     type: vmess
     server: 5.188.26.85
     port: 443
@@ -824,9 +824,38 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '.𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]'
+  - name: '🌍 Рандом | БС²'
     type: vmess
     server: 80.240.252.241
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС³'
+    type: vmess
+    server: 194.226.142.120
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС⁸'
+    type: vmess
+    server: renderer-stream-2-62.mirra.now
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -905,7 +934,14 @@ proxies:
     port: 12765
     password: STYyftThFn
     sni: vk.com
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Россия | БС#23'
+    type: hysteria2
+    server: cdncache.pleiades.codes
+    port: 8443
+    password: e0b9fb0f-1bbd-478b-9580-c2294778338b
+    sni: cdncache.pleiades.codes
+    skip-cert-verify: false
+  - name: '🇷🇺 Россия | БС#25'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1011,9 +1047,11 @@ proxy-groups:
       - '🇰🇷 LTE 132 | тгк: @rostunnel'
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '🇷🇺 LTE 5 | тгк: @rostunnel'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС⁴'
       - '🌍 Рандом | БС⁵'
-      - '.𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]'
+      - '🌍 Рандом | БС²'
+      - '🌍 Рандом | БС³'
+      - '🌍 Рандом | БС⁸'
       - '2940 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3254 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3026 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1025,7 +1063,8 @@ proxy-groups:
       - '4384 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '4780 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1514 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Россия | БС#23'
+      - '🇷🇺 Россия | БС#25'
       - '5362 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4624 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3494 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
