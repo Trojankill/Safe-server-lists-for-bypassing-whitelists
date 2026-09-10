@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-10 14:15:34 UTC
+# 2026-09-10 14:30:46 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -277,7 +277,7 @@ proxies:
       short-id: 3c7bbb22bff1d4fd
     flow: xtls-rprx-vision
     network: raw
-  - name: '4 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
+  - name: '11 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 5/10'
     type: vless
     server: 45.90.59.15
     port: 443
@@ -317,6 +317,20 @@ proxies:
     reality-opts:
       public-key: I_9XlI6n-7ZTND49cztVVeQMPjstFEY6IzwhxOj8HH8
       short-id: 1c86e9
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '4 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 7/10'
+    type: vless
+    server: 72.56.81.165
+    port: 40443
+    uuid: 4bf5a71c-d726-4585-b095-7396675706d5
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: D_ks4Yyk4-osnWBxCFvd0_UEgohUXvR2zJoWQg1CACU
+      short-id: c84f
     flow: xtls-rprx-vision
     network: tcp
   - name: '9.🇳🇱Нидерланды | @LimeVPNFREE'
@@ -405,7 +419,7 @@ proxies:
       short-id: 33acba1b
     flow: xtls-rprx-vision
     network: tcp
-  - name: '3 | RAW+REALITY | SNI: yahoo.com | IN: NL OUT: NL | RATING: 8/10'
+  - name: '2 | REALITY | SNI: yahoo.com | IN: NL OUT: NL | RATING: 8/10'
     type: vless
     server: 147.45.145.127
     port: 443
@@ -417,7 +431,7 @@ proxies:
     reality-opts:
       public-key: tWRR3W8jBAQKBUujLzL7Xri3WXy3F08OxHYrkSOnlAc
       short-id: 52a6
-    network: raw
+    network: tcp
   - name: '🇺🇦 LTE 33 | тгк: @rostunnel'
     type: vless
     server: 107.181.151.241
@@ -495,6 +509,20 @@ proxies:
     tls: true
     servername: deepl.com
     client-fingerprint: chrome
+    reality-opts:
+      public-key: mM33xyzf1GPaU2CQXAGYoGkTuYzEZRYT6S-NngyqfHQ
+      short-id: beb4
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '! 3 | REALITY | SNI: deepl.com | IN: GR OUT: NL | RATING: 7/10'
+    type: vless
+    server: 94.241.174.157
+    port: 40443
+    uuid: 8ac637bf-554e-4902-94d7-baf01780a83c
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: firefox
     reality-opts:
       public-key: mM33xyzf1GPaU2CQXAGYoGkTuYzEZRYT6S-NngyqfHQ
       short-id: beb4
@@ -813,6 +841,20 @@ proxies:
       public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
     network: grpc
     grpc-opts:
+  - name: '7 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
+    type: vless
+    server: 46.28.67.55
+    port: 443
+    uuid: d1a6a033-fdbd-46a6-a177-3370ba042b9f
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
+      short-id: d06d78e974491b6e
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇮🇳 LTE 150 | тгк: @rostunnel'
     type: vless
     server: 47.89.186.170
@@ -1126,22 +1168,24 @@ proxy-groups:
       - '🇫🇷 LTE 54 | тгк: @rostunnel'
       - '4094 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
-      - '4 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
+      - '11 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 5/10'
       - '🇫🇮 LTE 117 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: amp-api-edge.apps.apple.com ┃ 🇩🇪 Германия'
+      - '4 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 7/10'
       - '9.🇳🇱Нидерланды | @LimeVPNFREE'
       - '7.🇳🇱Нидерланды | @LimeVPNFREE'
       - '🇳🇱 Нидерланды 1 Timeweb, LLP'
       - '0107 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '4047 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇬🇧 LTE 38 | тгк: @rostunnel'
-      - '3 | RAW+REALITY | SNI: yahoo.com | IN: NL OUT: NL | RATING: 8/10'
+      - '2 | REALITY | SNI: yahoo.com | IN: NL OUT: NL | RATING: 8/10'
       - '🇺🇦 LTE 33 | тгк: @rostunnel'
       - '🇫🇮 LTE 135 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия'
       - '🇩🇪 LTE 133 | тгк: @rostunnel'
       - '59.🇯🇵Япония | @LimeVPNFREE'
       - '89.🇳🇱Нидерланды | @LimeVPNFREE'
+      - '! 3 | REALITY | SNI: deepl.com | IN: GR OUT: NL | RATING: 7/10'
       - '4.🇳🇱Нидерланды | @LimeVPNFREE'
       - '🇺🇸 AetrisVPN'
       - '🇦🇹 LTE 211 | тгк: @rostunnel'
@@ -1165,6 +1209,7 @@ proxy-groups:
       - '🇷🇺 Россия 2 JSC TIMEWEB'
       - 'AetrisVPN White list ┃ ✅ SNI: founders-blog.online ┃ 🇷🇺 Россия'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
+      - '7 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 5/10'
       - '🇮🇳 LTE 150 | тгк: @rostunnel'
       - '101.🇭🇰Гонконг | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
