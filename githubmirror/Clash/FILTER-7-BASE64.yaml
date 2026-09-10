@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-10 20:45:36 UTC
+# 2026-09-10 21:01:01 UTC
 proxies:
   - name: '10 | RAW+REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
     type: vless
@@ -408,6 +408,19 @@ proxies:
       public-key: QOmBHIllrJ3GBWZ9Ik__p6FiuZeUAdJ3nyc4OJvMczI
     network: grpc
     grpc-opts:
+  - name: 'AetrisVPN White list ┃ ✅ SNI: k7vqz.nodes.ac ┃ 🇨🇭 Швейцария'
+    type: vless
+    server: 46.243.142.184
+    port: 4443
+    uuid: b0ce61f4-2787-4e8d-84e5-7545ec90456d
+    udp: true
+    tls: true
+    servername: k7vqz.nodes.ac
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: h4ykk3TnjOoph-89y4vL9A_V9nQB1yp1WMN344yhU3I
+      short-id: 791176388131b7e2
+    network: xhttp
   - name: '14.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 158.160.17.175
@@ -586,6 +599,13 @@ proxies:
       short-id: 11d27eb4
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇺🇸 United States | [SNI-RU] eh.vk.ru'
+    type: trojan
+    server: 108.59.244.158
+    port: 8443
+    password: c3c830d158b46d3af1f290e5f4e3a5eb
+    udp: true
+    sni: eh.vk.ru
   - name: '🇷🇺 LTE 7 | тгк: @rostunnel'
     type: trojan
     server: 104.18.42.98
@@ -616,7 +636,36 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
     server: 194.226.142.120
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 2.27.54.132
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -788,6 +837,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '🇳🇱 LTE 13 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇬🇧 Великобритания'
+      - 'AetrisVPN White list ┃ ✅ SNI: k7vqz.nodes.ac ┃ 🇨🇭 Швейцария'
       - '14.🇷🇺Россия | @LimeVPNFREE'
       - '🇩🇪 LTE 10 | тгк: @rostunnel'
       - '6334 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -801,8 +851,11 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
       - '1966 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇰🇷 AetrisVPN'
+      - '🇺🇸 United States | [SNI-RU] eh.vk.ru'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇷🇺 AetrisVPN'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '3359 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
