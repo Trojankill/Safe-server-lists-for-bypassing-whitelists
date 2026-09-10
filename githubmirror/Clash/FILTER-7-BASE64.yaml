@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-10 14:45:31 UTC
+# 2026-09-10 15:01:03 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -1033,9 +1033,23 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС³'
     type: vmess
     server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 2.27.54.132
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -1078,7 +1092,7 @@ proxies:
         Host: renderer-stream-2-62.mirra.now
   - name: '.𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]'
     type: vmess
-    server: renderer-stream-2-62.mirra.now
+    server: 194.226.142.120
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -1123,7 +1137,7 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Россия | БС⁶'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
@@ -1294,6 +1308,7 @@ proxy-groups:
       - '🇰🇷 AetrisVPN'
       - '🇷🇺 LTE 3 | тгк: @rostunnel'
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
+      - '🌍 Рандом | БС³'
       - '🇩🇪 Germany | [*CIDR]'
       - '🌍 Рандом | БС⁷'
       - '🌍 Рандом | БС²'
@@ -1302,7 +1317,7 @@ proxy-groups:
       - '3273 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3610 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3362 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Россия | БС⁶'
       - '🇪🇪 Эстония [🏳️LTE] | 🥭🔧'
       - '0449 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4654 | 🌐 Unknown | 🏳️ CIDR-IHC | HYSTERIA2 | TG: @YoutubeUnBlockRu'
