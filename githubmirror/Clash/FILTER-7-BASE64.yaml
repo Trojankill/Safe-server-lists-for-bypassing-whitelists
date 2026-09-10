@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-10 08:45:32 UTC
+# 2026-09-10 09:00:55 UTC
 proxies:
   - name: '7 | RAW+REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
     type: vless
@@ -496,32 +496,6 @@ proxies:
       short-id: 94c8a1b378da7250
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0057|'
-    type: vless
-    server: 185.86.144.101
-    port: 443
-    uuid: 9406dc91-9691-4bba-8a02-c7d167b47dac
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0060|'
-    type: vless
-    server: 213.219.214.33
-    port: 443
-    uuid: 9406dc91-9691-4bba-8a02-c7d167b47dac
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
     type: vless
     server: 78.159.250.104
@@ -794,6 +768,19 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: k7vqz.nodes.ac ┃ 🇨🇭 Швейцария'
+    type: vless
+    server: 46.243.142.184
+    port: 4443
+    uuid: fe3c462c-1a73-4498-a102-71c5ab166b0c
+    udp: true
+    tls: true
+    servername: k7vqz.nodes.ac
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: h4ykk3TnjOoph-89y4vL9A_V9nQB1yp1WMN344yhU3I
+      short-id: 791176388131b7e2
+    network: xhttp
   - name: '1811 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 72.56.78.50
@@ -864,6 +851,21 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
   - name: '3079 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 163.192.14.135
@@ -930,6 +932,20 @@ proxies:
     port: 12765
     password: STYyftThFn
     sni: vk.com
+  - name: '🇷🇺 Russia [*CIDR]'
+    type: hysteria2
+    server: cdncache.pleiades.codes
+    port: 8443
+    password: e0b9fb0f-1bbd-478b-9580-c2294778338b
+    sni: cdncache.pleiades.codes
+    skip-cert-verify: false
+  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+    skip-cert-verify: false
   - name: '5612 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 185.156.44.99
@@ -1007,8 +1023,6 @@ proxy-groups:
       - '81.🇳🇱Нидерланды | @LimeVPNFREE'
       - '68.🇳🇱Нидерланды | @LimeVPNFREE'
       - '🇺🇸 AetrisVPN'
-      - '🇩🇪Обходы - TG: AirLinkVPNBot |0057|'
-      - '🇩🇪Обходы - TG: AirLinkVPNBot |0060|'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '78.🇳🇱Нидерланды | @LimeVPNFREE'
       - '93.🇳🇱Нидерланды | @LimeVPNFREE'
@@ -1029,11 +1043,13 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
+      - 'AetrisVPN White list ┃ ✅ SNI: k7vqz.nodes.ac ┃ 🇨🇭 Швейцария'
       - '1811 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇨🇦 LTE 24 | тгк: @rostunnel'
       - '🇰🇷 LTE 97 | тгк: @rostunnel'
       - '🇷🇺 LTE 3 | тгк: @rostunnel'
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
+      - '🇩🇪 Germany | [*CIDR]'
       - '3079 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3404 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3167 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1045,6 +1061,8 @@ proxy-groups:
       - '4592 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '5009 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1590 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '🇷🇺 Russia [*CIDR]'
+      - '🇷🇺 Russia | 🌐 [*CIDR]'
       - '5612 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4845 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3656 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
