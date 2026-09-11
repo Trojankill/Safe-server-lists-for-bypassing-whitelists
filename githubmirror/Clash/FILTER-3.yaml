@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-11 06:45:32 UTC
+# 2026-09-11 07:00:52 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #66'
+  - name: '🇳🇱 The Netherlands — #70'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -29,7 +29,7 @@ proxies:
       short-id: 8e21c5f4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #16'
+  - name: '🇩🇪 Germany — #18'
     type: vless
     server: 188.225.45.152
     port: 443
@@ -56,20 +56,6 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇸🇪 Sweden — #92'
-    type: vless
-    server: 87.242.94.175
-    port: 1443
-    uuid: 917c8451-dd6b-483c-932c-2388b66538fc
-    udp: true
-    tls: true
-    servername: 360.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
-      short-id: 66371c8d7a
-    network: grpc
-    grpc-opts:
   - name: '🇨🇿 Czechia — #15'
     type: vless
     server: 78.159.247.170
@@ -84,43 +70,44 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #34'
+  - name: '🇨🇿 Czechia — #17'
     type: vless
-    server: 185.86.144.101
+    server: 78.159.247.205
     port: 443
-    uuid: f61bbd99-fa8e-4f97-beec-a4c5c4bcf333
+    uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
     udp: true
     tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
+    servername: kinopoisk.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+      public-key: NsTRRl4ofT64w0VwmkpOWE8yfiXLcEqgwgi-9SGnXTA
+      short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #31'
+  - name: '🇨🇿 Czechia — #16'
     type: vless
-    server: 213.219.214.33
+    server: 78.159.247.214
     port: 443
-    uuid: f61bbd99-fa8e-4f97-beec-a4c5c4bcf333
+    uuid: 92089155-6602-4122-86d4-fe6de20e8c4d
     udp: true
     tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
+    servername: kinopoisk.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
+      public-key: NsTRRl4ofT64w0VwmkpOWE8yfiXLcEqgwgi-9SGnXTA
+      short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #66'
+      - '🇳🇱 The Netherlands — #70'
       - '🇷🇸 Serbia — #91'
-      - '🇩🇪 Germany — #16'
+      - '🇩🇪 Germany — #18'
       - '🇷🇺 Beget — #1'
-      - '🇸🇪 Sweden — #92'
       - '🇨🇿 Czechia — #15'
-      - '🇩🇪 Germany — #34'
-      - '🇩🇪 Germany — #31'
+      - '🇨🇿 Czechia — #17'
+      - '🇨🇿 Czechia — #16'
 rules:
   - MATCH,PROXY
