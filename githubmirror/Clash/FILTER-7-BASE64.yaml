@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-11 08:30:45 UTC
+# 2026-09-11 08:45:32 UTC
 proxies:
   - name: '🌍 Рандом | БС¹'
     type: vless
@@ -762,6 +762,20 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '.𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]'
+    type: vmess
     server: 5.188.26.85
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -770,34 +784,6 @@ proxies:
     udp: true
     tls: true
     servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 194.226.142.120
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 2.27.54.132
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -830,12 +816,6 @@ proxies:
     port: 4433
     password: 19f72087-4591-4d72-930b-2697078ec2be
     sni: vk.com
-  - name: '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
-    type: hysteria2
-    server: hye42fd0.w-mebel.pro
-    port: 20443
-    password: 3c48b5f5-7766-4896-874e-b3ba1860e83a
-    sni: hye42fd0.w-mebel.pro
   - name: '2971 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 152.67.200.82
@@ -855,7 +835,6 @@ proxies:
     port: 59448
     password: 5beff945-adaa-492f-85c6-8aaf5df6cfa5
     sni: hy.quattro-tech.ru
-    skip-cert-verify: false
   - name: '0392 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 131.186.19.174
@@ -978,12 +957,10 @@ proxy-groups:
       - '🇷🇺 LTE 6 | тгк: @rostunnel'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '.𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '2890 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3198 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
-      - '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
       - '2971 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
       - '🇪🇪 Эстония [🏳️LTE] | 🥭🔧'
