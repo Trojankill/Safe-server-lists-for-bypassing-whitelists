@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-11 21:45:33 UTC
+# 2026-09-11 22:00:57 UTC
 proxies:
-  - name: '🌍 Рандом | БС¹'
+  - name: '🇺🇸 США | БС¹'
     type: vless
     server: 47.253.226.114
     port: 443
@@ -84,6 +84,19 @@ proxies:
       short-id: 20a080af5636a681
     network: grpc
     grpc-opts:
+  - name: '🇩🇪 Germany — #46'
+    type: vless
+    server: 185.86.144.101
+    port: 443
+    uuid: 2c2fb2d5-c6da-4b2a-89fa-f500481323c8
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
     type: vless
     server: 176.109.88.216
@@ -413,19 +426,6 @@ proxies:
       short-id: 48050fab
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
-    type: vless
-    server: 185.86.144.101
-    port: 443
-    uuid: 81cd6885-cc2f-4ffd-b7e9-be2b26882ad1
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: tradingview.com ┃ 🇺🇸 США'
     type: vless
     server: 31.58.181.88
@@ -559,19 +559,6 @@ proxies:
       public-key: FnoA9F_919MbdRH1bFYENR1Yl9C0MeDdb47rZ4R-IGo
       short-id: dd910a5b30
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: cdn.nodes.ac ┃ 🇱🇹 Литва'
-    type: vless
-    server: 188.225.84.42
-    port: 443
-    uuid: a19b04a8-6a53-47a9-9e70-3dead03e2409
-    udp: true
-    tls: true
-    servername: cdn.nodes.ac
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: oQqnxLVZveJ_o8SpbvRf6DW02pbK0_J7oH_vkLEQPVo
-      short-id: 90f9ae53d5e0a696
-    network: xhttp
   - name: '🇫🇮 Финляндия 2 HOSTKEY B.V.'
     type: vless
     server: 158.160.23.110
@@ -806,19 +793,6 @@ proxies:
       public-key: TJJ4Zfq2KhZii_IP8J1EW4VNt3HBYnlIR5yn7JzbFXs
       short-id: 498dde7df1bf79ab
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: cdn.cdnguard.org ┃ 🇱🇹 Литва'
-    type: vless
-    server: 188.225.32.115
-    port: 443
-    uuid: f2fb319a-9eaa-482a-af24-3bb06cef1091
-    udp: true
-    tls: true
-    servername: cdn.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: oQqnxLVZveJ_o8SpbvRf6DW02pbK0_J7oH_vkLEQPVo
-      short-id: 90f9ae53d5e0a696
-    network: xhttp
   - name: '7047 | 🇩🇪 Germany | 🏳️ SNI-X5 | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 64.188.119.205
@@ -967,35 +941,6 @@ proxies:
         Host: renderer-stream-2-62.mirra.now
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
-    server: 194.226.142.120
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 194.87.71.141
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
     server: 195.19.20.80
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -1031,6 +976,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -1118,12 +1064,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌍 Рандом | БС¹'
+      - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇯🇵 AetrisVPN'
       - '0725 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
+      - '🇩🇪 Germany — #46'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США'
@@ -1148,7 +1095,6 @@ proxy-groups:
       - '91.🇯🇵Япония | @LimeVPNFREE'
       - '97.🇰🇷Южная Корея | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США'
-      - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: tradingview.com ┃ 🇺🇸 США'
       - '🇺🇸 AetrisVPN'
       - '🇬🇧 LTE 133 | тгк: @rostunnel'
@@ -1159,7 +1105,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '29.🇳🇱Нидерланды | @LimeVPNFREE'
-      - 'AetrisVPN White list ┃ ✅ SNI: cdn.nodes.ac ┃ 🇱🇹 Литва'
       - '🇫🇮 Финляндия 2 HOSTKEY B.V.'
       - '17.🇷🇺Россия | @LimeVPNFREE'
       - '🇫🇮 Финляндия 3 PLAY2GO INTERNATIONAL LIMITED'
@@ -1177,7 +1122,6 @@ proxy-groups:
       - '3782 | 🇪🇪 Estonia | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇺🇸 LTE 106 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: amp-api-edge.apps.apple.com ┃ 🇩🇪 Германия'
-      - 'AetrisVPN White list ┃ ✅ SNI: cdn.cdnguard.org ┃ 🇱🇹 Литва'
       - '7047 | 🇩🇪 Germany | 🏳️ SNI-X5 | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
@@ -1187,8 +1131,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '🇷🇺 LTE 8 | тгк: @rostunnel'
       - '🇷🇺 AetrisVPN'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
