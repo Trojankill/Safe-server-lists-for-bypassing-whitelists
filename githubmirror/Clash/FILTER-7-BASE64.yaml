@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-11 22:45:30 UTC
+# 2026-09-11 23:00:51 UTC
 proxies:
+  - name: '2 | RAW+REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 8/10'
+    type: vless
+    server: 195.123.213.28
+    port: 443
+    uuid: 02fcc1a4-ee90-4970-8bbb-4ffaa8109d24
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo
+      short-id: 5c256336e3b673fa
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇺🇸 США | БС¹'
     type: vless
     server: 47.253.226.114
@@ -573,6 +587,20 @@ proxies:
       short-id: 707c8615b9
     network: grpc
     grpc-opts:
+  - name: '4 | REALITY | SNI: www.cloudflare.com | IN: DE OUT: DE | RATING: 7/10'
+    type: vless
+    server: 82.118.19.153
+    port: 443
+    uuid: adcaa148-7c66-4282-a81a-99ec8afa029d
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Tiuy8om5Lk0pWL95-8LaFFTwH0vbURVMoOkaW9xGaiE
+      short-id: 670ed9f350bd8ee0
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: plucky-xenon.cdn.cachefleet.com ┃ 🇫🇷 Франция'
     type: vless
     server: 176.96.138.122
@@ -627,6 +655,20 @@ proxies:
       public-key: PedRm9kq-9CQ4f9Wr1utMyCf1V3qUXH_IeCBBMhy8z0
       short-id: e07824f6b1be0b82
     network: tcp
+  - name: '12 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 4/10'
+    type: vless
+    server: 5.129.210.63
+    port: 8443
+    uuid: c80a96e8-d4a6-4785-b53b-a475b252c4ed
+    udp: true
+    tls: true
+    servername: sun6-21.userapi.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Z5WItgtmxxL_umUUIPO72kSTBGjlGg3sUPigtTG6wlI
+      short-id: ac
+    network: grpc
+    grpc-opts:
   - name: '6291 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu'
     type: vless
     server: 153.76.208.232
@@ -752,6 +794,20 @@ proxies:
       public-key: 54p7hD_YYV5f2ATL7rTBk4NG_KhStO76-1_tSKmXah8
       short-id: d45603
     network: xhttp
+  - name: '7 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 6/10'
+    type: vless
+    server: 82.118.16.187
+    port: 443
+    uuid: dc2259c4-388e-4285-ba18-df619b6672b6
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: R5ycsjJ-v024902dMSqTsSdqxUwCFEXMebdBEWFt9VU
+      short-id: cd6065902eea7a02
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '9.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 37.9.4.112
@@ -1116,6 +1172,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '2 | RAW+REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 8/10'
       - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
@@ -1158,10 +1215,12 @@ proxy-groups:
       - '40.🇳🇱Нидерланды | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: cdn.nodes.ac ┃ 🇱🇹 Литва'
       - '🇩🇪 Германия 5 H2NEXUS CLOUD SERVICES - FZCO'
+      - '4 | REALITY | SNI: www.cloudflare.com | IN: DE OUT: DE | RATING: 7/10'
       - 'AetrisVPN White list ┃ ✅ SNI: plucky-xenon.cdn.cachefleet.com ┃ 🇫🇷 Франция'
       - '5120 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '12.🇷🇺Россия | @LimeVPNFREE'
       - '144.🇷🇺Россия | @LimeVPNFREE'
+      - '12 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 4/10'
       - '6291 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇨🇦 Канада'
       - '7072 | 🇷🇺 Russia | 🏳️ SNI-Ozon | VLESS | TG: @YoutubeUnBlockRu'
@@ -1171,6 +1230,7 @@ proxy-groups:
       - '142.🇭🇰Гонконг | @LimeVPNFREE'
       - '162.🇨🇿Чехия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
+      - '7 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 6/10'
       - '9.🇷🇺Россия | @LimeVPNFREE'
       - '155.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: nalog.ru ┃ 🇷🇺 Россия'
