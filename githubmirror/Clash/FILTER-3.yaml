@@ -1,11 +1,25 @@
 # clash/mihomo subscription
-# 2026-09-12 03:45:31 UTC
+# 2026-09-12 04:00:56 UTC
 proxies:
-  - name: '🇸🇪 Sweden — #121'
+  - name: '🇩🇪 Germany — #28'
+    type: vless
+    server: 188.225.58.153
+    port: 443
+    uuid: 02722550-1915-4629-a653-cbe95e594f70
+    udp: true
+    tls: true
+    servername: public.betust.net
+    client-fingerprint: edge
+    reality-opts:
+      public-key: j4F4oe2w0O7oqpWeUSa44C9FdBHZEH5fTiXBvEVLIyk
+      short-id: c51d359c
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇸🇪 Sweden — #113'
     type: vless
     server: 87.242.94.175
     port: 1443
-    uuid: 1fcccda4-99a8-4e67-841f-14af986affed
+    uuid: 06822410-1f18-46ca-9fce-be4c6a0621aa
     udp: true
     tls: true
     servername: 360.yandex.ru
@@ -15,7 +29,7 @@ proxies:
       short-id: 66371c8d7a
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 The Netherlands — #92'
+  - name: '🇳🇱 The Netherlands — #89'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -29,7 +43,7 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇸 Serbia — #117'
+  - name: '🇷🇸 Serbia — #109'
     type: vless
     server: 188.225.39.107
     port: 14443
@@ -43,7 +57,7 @@ proxies:
       short-id: 8e21c5f4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #22'
+  - name: '🇩🇪 Germany — #29'
     type: vless
     server: 188.225.45.152
     port: 443
@@ -57,7 +71,7 @@ proxies:
       short-id: 52ccb3687fe0b7ec
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇰🇿 Kazakhstan — #78'
+  - name: '🇰🇿 Kazakhstan — #75'
     type: vless
     server: 62.233.39.9
     port: 443
@@ -69,7 +83,7 @@ proxies:
     reality-opts:
       public-key: oHaUPZiESTQQ89DMd4uIcPWgsyeFFy58iZYX_8mbvWk
     network: xhttp
-  - name: '🇩🇪 Germany — #24'
+  - name: '🇩🇪 Germany — #30'
     type: vless
     server: 188.68.216.38
     port: 9891
@@ -83,7 +97,7 @@ proxies:
       short-id: aabbccdd
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 The Netherlands — #99'
+  - name: '🇳🇱 The Netherlands — #95'
     type: vless
     server: 31.131.255.35
     port: 9894
@@ -97,7 +111,7 @@ proxies:
       short-id: aa
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #1'
+  - name: '🇷🇺 Beget — #12'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -110,7 +124,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇨🇿 Czechia — #14'
+  - name: '🇨🇿 Czechia — #26'
     type: vless
     server: 78.159.247.170
     port: 443
@@ -124,7 +138,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #13'
+  - name: '🇨🇿 Czechia — #25'
     type: vless
     server: 78.159.247.205
     port: 443
@@ -138,7 +152,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #15'
+  - name: '🇨🇿 Czechia — #27'
     type: vless
     server: 78.159.247.214
     port: 443
@@ -156,16 +170,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇸🇪 Sweden — #121'
-      - '🇳🇱 The Netherlands — #92'
-      - '🇷🇸 Serbia — #117'
-      - '🇩🇪 Germany — #22'
-      - '🇰🇿 Kazakhstan — #78'
-      - '🇩🇪 Germany — #24'
-      - '🇳🇱 The Netherlands — #99'
-      - '🇷🇺 Beget — #1'
-      - '🇨🇿 Czechia — #14'
-      - '🇨🇿 Czechia — #13'
-      - '🇨🇿 Czechia — #15'
+      - '🇩🇪 Germany — #28'
+      - '🇸🇪 Sweden — #113'
+      - '🇳🇱 The Netherlands — #89'
+      - '🇷🇸 Serbia — #109'
+      - '🇩🇪 Germany — #29'
+      - '🇰🇿 Kazakhstan — #75'
+      - '🇩🇪 Germany — #30'
+      - '🇳🇱 The Netherlands — #95'
+      - '🇷🇺 Beget — #12'
+      - '🇨🇿 Czechia — #26'
+      - '🇨🇿 Czechia — #25'
+      - '🇨🇿 Czechia — #27'
 rules:
   - MATCH,PROXY
