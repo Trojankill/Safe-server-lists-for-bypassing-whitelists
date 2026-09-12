@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-12 21:00:55 UTC
+# 2026-09-12 21:15:32 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #26'
+  - name: '🇳🇱 The Netherlands — #31'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -15,21 +15,7 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇸 Serbia — #33'
-    type: vless
-    server: 188.225.39.107
-    port: 14443
-    uuid: 238e492b-bc20-4380-92b6-135d39112ca4
-    udp: true
-    tls: true
-    servername: login.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: aKfJokRORjNdwkn0XY6KA_PIfjytp4E0liM5v72LM1w
-      short-id: 8e21c5f4
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇬🇧 United Kingdom — #15'
+  - name: '🇬🇧 United Kingdom — #18'
     type: vless
     server: 188.225.27.78
     port: 443
@@ -42,20 +28,6 @@ proxies:
       public-key: Rf2jgZShaYRQ2kh9nF79eB2KFcIdiYHwPWJyFKA_CWU
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #27'
-    type: vless
-    server: 31.131.255.35
-    port: 9894
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: safari
-    reality-opts:
-      public-key: sm3E3hjmT6_Gmg_O9rBz4nfXYrHpnl6-LvcCp6T6_xc
-      short-id: aa
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -69,7 +41,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇨🇿 Czechia — #12'
+  - name: '🇨🇿 Czechia — #14'
     type: vless
     server: 78.159.247.170
     port: 443
@@ -83,7 +55,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #14'
+  - name: '🇨🇿 Czechia — #13'
     type: vless
     server: 78.159.247.205
     port: 443
@@ -97,7 +69,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #13'
+  - name: '🇨🇿 Czechia — #15'
     type: vless
     server: 78.159.247.214
     port: 443
@@ -111,7 +83,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #23'
+  - name: '🇳🇱 The Netherlands — #28'
     type: vless
     server: 188.225.75.183
     port: 12443
@@ -125,32 +97,16 @@ proxies:
       short-id: 41a2b7c9
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Delta — #5'
-    type: vless
-    server: 45.91.55.208
-    port: 443
-    uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-    udp: true
-    tls: true
-    servername: io.ozone.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: a8huhMB5qb3Q0zYwG1QzPjSDTrXufkZMlADT-_EMPhc
-    flow: xtls-rprx-vision
-    network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #26'
-      - '🇷🇸 Serbia — #33'
-      - '🇬🇧 United Kingdom — #15'
-      - '🇳🇱 The Netherlands — #27'
+      - '🇳🇱 The Netherlands — #31'
+      - '🇬🇧 United Kingdom — #18'
       - '🇷🇺 Beget — #1'
-      - '🇨🇿 Czechia — #12'
       - '🇨🇿 Czechia — #14'
       - '🇨🇿 Czechia — #13'
-      - '🇳🇱 The Netherlands — #23'
-      - '🇷🇺 Delta — #5'
+      - '🇨🇿 Czechia — #15'
+      - '🇳🇱 The Netherlands — #28'
 rules:
   - MATCH,PROXY
