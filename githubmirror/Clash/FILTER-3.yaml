@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-12 19:00:55 UTC
+# 2026-09-12 19:15:28 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #21'
+  - name: '🇳🇱 The Netherlands — #29'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -15,7 +15,7 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇸 Serbia — #23'
+  - name: '🇷🇸 Serbia — #37'
     type: vless
     server: 188.225.39.107
     port: 14443
@@ -29,20 +29,33 @@ proxies:
       short-id: 8e21c5f4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #22'
+  - name: '🇬🇧 United Kingdom — #19'
     type: vless
-    server: 31.131.255.35
-    port: 9894
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: 188.225.27.78
+    port: 443
+    uuid: 3b6a9df3-f1d1-4bc1-94a5-0d8f2d5512b1
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: safari
+    servername: max.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: sm3E3hjmT6_Gmg_O9rBz4nfXYrHpnl6-LvcCp6T6_xc
-      short-id: aa
-    network: grpc
-    grpc-opts:
+      public-key: Rf2jgZShaYRQ2kh9nF79eB2KFcIdiYHwPWJyFKA_CWU
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇵🇱 Poland — #36'
+    type: vless
+    server: 72.56.234.16
+    port: 21443
+    uuid: 5edbcb44-8d04-4fa7-a587-bc5d60c24ca1
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: M6BT_GEwaoIZqpxPO6vxMqcXSMjmhAYd2Tb4fJO-uC4
+      short-id: f6d36e2e08205c67
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -70,7 +83,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #13'
+  - name: '🇨🇿 Czechia — #16'
     type: vless
     server: 78.159.247.205
     port: 443
@@ -84,7 +97,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #12'
+  - name: '🇨🇿 Czechia — #15'
     type: vless
     server: 78.159.247.214
     port: 443
@@ -96,6 +109,20 @@ proxies:
     reality-opts:
       public-key: NsTRRl4ofT64w0VwmkpOWE8yfiXLcEqgwgi-9SGnXTA
       short-id: a1b2c3d4
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #24'
+    type: vless
+    server: 188.225.75.183
+    port: 12443
+    uuid: a95b3155-bc03-4789-b367-944b83be8f86
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
+      short-id: 41a2b7c9
     flow: xtls-rprx-vision
     network: raw
   - name: '🇷🇺 Delta — #5'
@@ -111,17 +138,34 @@ proxies:
       public-key: a8huhMB5qb3Q0zYwG1QzPjSDTrXufkZMlADT-_EMPhc
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇸🇪 Sweden — #38'
+    type: vless
+    server: 194.55.239.164
+    port: 443
+    uuid: fd12bf77-bca4-4ccc-8bd0-76a2cfc5985a
+    udp: true
+    tls: true
+    servername: ads.vk.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: sdnD0vxmj8kHBOoVM8TE9IyBCGwnKNB8hZVaHp_Zfjk
+      short-id: c427
+    flow: xtls-rprx-vision
+    network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #21'
-      - '🇷🇸 Serbia — #23'
-      - '🇳🇱 The Netherlands — #22'
+      - '🇳🇱 The Netherlands — #29'
+      - '🇷🇸 Serbia — #37'
+      - '🇬🇧 United Kingdom — #19'
+      - '🇵🇱 Poland — #36'
       - '🇷🇺 Beget — #1'
       - '🇨🇿 Czechia — #14'
-      - '🇨🇿 Czechia — #13'
-      - '🇨🇿 Czechia — #12'
+      - '🇨🇿 Czechia — #16'
+      - '🇨🇿 Czechia — #15'
+      - '🇳🇱 The Netherlands — #24'
       - '🇷🇺 Delta — #5'
+      - '🇸🇪 Sweden — #38'
 rules:
   - MATCH,PROXY
