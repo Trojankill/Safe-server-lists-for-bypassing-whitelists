@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-12 07:45:30 UTC
+# 2026-09-12 08:00:57 UTC
 proxies:
-  - name: '2 | REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 9/10'
-    type: vless
-    server: 195.123.213.28
-    port: 443
-    uuid: 02fcc1a4-ee90-4970-8bbb-4ffaa8109d24
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo
-      short-id: 5c256336e3b673fa
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇺🇸 США | БС¹'
     type: vless
     server: 47.253.226.114
@@ -84,20 +70,6 @@ proxies:
       short-id: b28db60d77c50b4f
     flow: xtls-rprx-vision
     network: raw
-  - name: '16 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 0/10'
-    type: vless
-    server: 46.28.71.247
-    port: 443
-    uuid: 12c53e32-e589-47d6-b857-e4132294f767
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE
-      short-id: 0dfc23fe80778c00
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 46.243.234.72
@@ -195,20 +167,6 @@ proxies:
       short-id: 3c7bbb22bff1d4fd
     flow: xtls-rprx-vision
     network: raw
-  - name: '6 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
-    type: vless
-    server: 45.90.59.15
-    port: 443
-    uuid: 3950b45e-740d-4dca-ac95-505ec8534592
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
-      short-id: 19253fae84102271
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '157.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 83.147.245.135
@@ -563,20 +521,6 @@ proxies:
       public-key: PedRm9kq-9CQ4f9Wr1utMyCf1V3qUXH_IeCBBMhy8z0
       short-id: e07824f6b1be0b82
     network: tcp
-  - name: '3 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 7/10'
-    type: vless
-    server: 5.129.210.63
-    port: 8443
-    uuid: c80a96e8-d4a6-4785-b53b-a475b252c4ed
-    udp: true
-    tls: true
-    servername: sun6-21.userapi.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Z5WItgtmxxL_umUUIPO72kSTBGjlGg3sUPigtTG6wlI
-      short-id: ac
-    network: grpc
-    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇨🇦 Канада'
     type: vless
     server: 151.244.30.176
@@ -1049,13 +993,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '2 | REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 9/10'
       - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇨🇦 LTE 25 | тгк: @rostunnel'
       - '0651 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | 🔐 Stable | TG: @YoutubeUnBlockRu'
-      - '16 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 0/10'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
@@ -1063,7 +1005,6 @@ proxy-groups:
       - '1533 | 🇷🇺 Russia | 🏳️ CIDR-TimeWeb | VLESS | TG: @YoutubeUnBlockRu'
       - '0407 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
-      - '6 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
       - '157.🇷🇺Россия | @LimeVPNFREE'
       - '261.🇷🇺Россия | @LimeVPNFREE'
       - '1742 | 🇫🇮 Finland | 🏳️ SNI-X5 | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu'
@@ -1090,7 +1031,6 @@ proxy-groups:
       - '3471 | 🇷🇺 Russia | 🏳️ CIDR-OLD | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '59.🇷🇺Россия | @LimeVPNFREE'
       - '🇫🇮 Финляндия 3 PLAY2GO INTERNATIONAL LIMITED'
-      - '3 | GRPC+REALITY | SNI: sun6-21.userapi.com | IN: NL OUT: NL | RATING: 7/10'
       - 'AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇨🇦 Канада'
       - '🇨🇦 LTE 28 | тгк: @rostunnel'
       - '153.🇷🇺Россия | @LimeVPNFREE'
