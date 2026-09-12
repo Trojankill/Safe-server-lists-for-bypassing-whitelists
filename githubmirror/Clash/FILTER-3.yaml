@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-12 18:00:56 UTC
+# 2026-09-12 18:15:32 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #39'
+  - name: '🇳🇱 The Netherlands — #21'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -15,7 +15,7 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇸 Serbia — #41'
+  - name: '🇷🇸 Serbia — #23'
     type: vless
     server: 188.225.39.107
     port: 14443
@@ -29,6 +29,20 @@ proxies:
       short-id: 8e21c5f4
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 The Netherlands — #22'
+    type: vless
+    server: 31.131.255.35
+    port: 9894
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: sm3E3hjmT6_Gmg_O9rBz4nfXYrHpnl6-LvcCp6T6_xc
+      short-id: aa
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -42,7 +56,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇨🇿 Czechia — #23'
+  - name: '🇨🇿 Czechia — #14'
     type: vless
     server: 78.159.247.170
     port: 443
@@ -56,7 +70,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #24'
+  - name: '🇨🇿 Czechia — #13'
     type: vless
     server: 78.159.247.205
     port: 443
@@ -70,7 +84,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #22'
+  - name: '🇨🇿 Czechia — #12'
     type: vless
     server: 78.159.247.214
     port: 443
@@ -101,12 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #39'
-      - '🇷🇸 Serbia — #41'
+      - '🇳🇱 The Netherlands — #21'
+      - '🇷🇸 Serbia — #23'
+      - '🇳🇱 The Netherlands — #22'
       - '🇷🇺 Beget — #1'
-      - '🇨🇿 Czechia — #23'
-      - '🇨🇿 Czechia — #24'
-      - '🇨🇿 Czechia — #22'
+      - '🇨🇿 Czechia — #14'
+      - '🇨🇿 Czechia — #13'
+      - '🇨🇿 Czechia — #12'
       - '🇷🇺 Delta — #5'
 rules:
   - MATCH,PROXY
