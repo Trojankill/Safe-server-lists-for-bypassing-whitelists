@@ -80,6 +80,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
     {"name": "FILTER-11", "url": "https://raw.githubusercontent.com/ANT1VEN0M/PODVAL-KOTA-VPN-/refs/heads/main/APTEKAxWHITExLIST"},
     {"name": "FILTER-12", "url": "https://raw.githubusercontent.com/VansFenix/vpnparser/refs/heads/main/all.txt"},
+    {"name": "FILTER-12", "url": "https://raw.githubusercontent.com/MK-l4/Mk14/refs/heads/main/Vagner"},
 ]  
 
 BANNED_DOMAINS = [
