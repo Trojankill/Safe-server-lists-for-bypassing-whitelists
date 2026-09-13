@@ -1,0 +1,116 @@
+# clash/mihomo subscription
+# 2026-09-13 19:30:49 UTC
+proxies:
+  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
+    type: vless
+    server: 89.47.55.9
+    port: 8443
+    uuid: 4350213a-b4e7-262a-0bd7-bd16957cf71a
+    udp: true
+    tls: true
+    servername: www.sony.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: TWaatavWGcWV-E7c4AXmBXypLKJzm6eR3FGG61spayQ
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: 81.90.25.123
+    port: 46908
+    uuid: 8b6aceff-1db9-4d5b-b4b2-d727d55b0f96
+    udp: true
+    tls: true
+    servername: it.nvidia.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: xnETFrUlaDiU4HMW9E0MnKMNNeihztGyA1QKLcyX_xU
+      short-id: d8f1
+    network: grpc
+    grpc-opts:
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 147.78.182.3
+    port: 8443
+    uuid: 8bf3e040-8ac9-5d0e-304f-9b735e145de8
+    udp: true
+    tls: true
+    servername: download.nvidia.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: 77.110.117.199
+    port: 9443
+    uuid: d9d0f208-d582-41d5-bb7b-742671402810
+    udp: true
+    tls: true
+    servername: hub-de-01.hanvpn.cc
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/de01-ws-8e47a'
+      headers:
+        Host: hub-de-01.hanvpn.cc
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: lp.mtcmicserver.ir
+    port: 8080
+    uuid: fa87edcc-4751-4d28-b53b-3abf7bee7ece
+    udp: true
+    tls: true
+    servername: play-apps-features.googleusercontent.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: wegUSBXt8tLaCp7Ze22cuKJa-MQ0KRSe7BX1dDgLRQg
+      short-id: b397faa58de7c5f3
+    network: grpc
+    grpc-opts:
+  - name: '🌐 [??] Неизвестно | TROJAN VFPARSER'
+    type: trojan
+    server: ot2.hyas.space
+    port: 443
+    password: 624209bb-8216-45fe-bbe0-50132ec63162
+    udp: true
+    sni: ot2.hyas.space
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - '🇦🇪 [AE] ОАЭ VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🌐 [??] Неизвестно | TROJAN VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+rules:
+  - MATCH,PROXY
