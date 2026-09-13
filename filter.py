@@ -77,7 +77,9 @@ SOURCES_CONFIG = [
     {"name": "FILTER-7-BASE64", "url": "https://solovyov-jenya2004.vercel.app/final_sorted_base64/"},
     {"name": "FILTER-8-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/refs/heads/main/subs/main/alive_bs.txt"},
     {"name": "FILTER-9-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"},
-]
+    {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
+    {"name": "FILTER-11", "url": "https://raw.githubusercontent.com/ANT1VEN0M/PODVAL-KOTA-VPN-/refs/heads/main/APTEKAxWHITExLIST"},
+]  
 
 BANNED_DOMAINS = [
     '.fly.dev', '.workers.dev', '.us.kg', '.xyz', '.work', '.site', '.click',
