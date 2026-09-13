@@ -331,6 +331,54 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 
 </details>
 
+<details>
+<summary><b>📡 FILTER-9-BASE64</b> — Diversan313 WHITELIST/apex-parser</summary>
+
+<p align="center">
+  <img src="QR-CODE/FILTER-8-BASE64.png" width="300" alt="FILTER-8-BASE64 QR">
+</p>
+
+**URL подписки (base64):**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-9-BASE64.txt
+```
+
+> [!NOTE]
+> Файл закодирован в base64. Клиенты v2rayNG / Karing / Hiddify декодируют автоматически.
+
+</details>
+
+<details>
+<summary><b>📡 FILTER-10</b> — 	VlessForu</summary>
+
+<p align="center">
+  <img src="QR-CODE/FILTER-6.png" width="300" alt="FILTER-6 QR">
+</p>
+
+**URL подписки:**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-10.txt
+```
+
+</details>
+
+<details>
+<summary><b>📡 FILTER-11</b> — KOTVPN</summary>
+
+<p align="center">
+  <img src="QR-CODE/FILTER-6.png" width="300" alt="FILTER-6 QR">
+</p>
+
+**URL подписки:**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-11.txt
+```
+
+</details>
+
 ---
 
 ## 🔎 Как сканировать
