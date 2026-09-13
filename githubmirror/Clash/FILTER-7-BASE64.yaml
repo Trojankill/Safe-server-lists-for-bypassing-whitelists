@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-13 07:15:35 UTC
+# 2026-09-13 07:30:45 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -306,6 +306,47 @@ proxies:
       short-id: 1067b23f928e7618
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: res.cdnguard.org ┃ 🇳🇱 Нидерланды'
+    type: vless
+    server: 185.241.195.202
+    port: 9444
+    uuid: 3e895e30-08fb-404f-ba3e-b7b740a71c0d
+    udp: true
+    tls: true
+    servername: res.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
+      short-id: 413da1312ccce8fb
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'AetrisVPN White list ┃ ✅ SNI: cdn.cdnguard.org ┃ 🇱🇹 Литва'
+    type: vless
+    server: 188.225.32.115
+    port: 443
+    uuid: 3e895e30-08fb-404f-ba3e-b7b740a71c0d
+    udp: true
+    tls: true
+    servername: cdn.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: oQqnxLVZveJ_o8SpbvRf6DW02pbK0_J7oH_vkLEQPVo
+      short-id: 90f9ae53d5e0a696
+    network: xhttp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: s1.cdnguard.org ┃ 🇳🇱 Нидерланды'
+    type: vless
+    server: 217.19.122.219
+    port: 7443
+    uuid: 3e895e30-08fb-404f-ba3e-b7b740a71c0d
+    udp: true
+    tls: true
+    servername: s1.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
+      short-id: f7d9e9a2e78e9a17
+    flow: xtls-rprx-vision
+    network: raw
   - name: '5468 | 🇫🇮 Finland | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 109.107.155.189
@@ -564,19 +605,6 @@ proxies:
       short-id: 940dbf5b
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇸🇪Обходы - TG: AirLinkVPNBot |0100|'
-    type: vless
-    server: 45.8.228.167
-    port: 443
-    uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
-    udp: true
-    tls: true
-    servername: dailycanvas.sysopnova.art
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: n7Eivi9aG8PMxvaP5flLiukPADZIDVuzyOsOWDG43kQ
-      short-id: 5eca
-    network: xhttp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
     type: vless
     server: 78.159.250.104
@@ -916,20 +944,6 @@ proxies:
       short-id: 37fbf155c7a9f3ff
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: s1.cdnguard.org ┃ 🇫🇮 Финляндия'
-    type: vless
-    server: 217.19.122.219
-    port: 7443
-    uuid: d60b15d2-bf86-4d8b-8a87-f778efe5d4a2
-    udp: true
-    tls: true
-    servername: s1.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
-      short-id: f7d9e9a2e78e9a17
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇫🇮 Финляндия 1 Hetzner Online GmbH'
     type: vless
     server: 72.56.238.46
@@ -1080,20 +1094,6 @@ proxies:
       public-key: iRym2aMWC0ZoLJL7MtJm9p0xqFMutfe6_5B5tZyobxU
     flow: xtls-rprx-vision
     network: tcp
-  - name: '4243 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 185.241.195.202
-    port: 9444
-    uuid: fcf257a3-5fc2-41a2-be2d-ff12a27906bc
-    udp: true
-    tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 144.31.78.35
@@ -1349,6 +1349,9 @@ proxy-groups:
       - '170.🇷🇺Россия | @LimeVPNFREE'
       - '73.🇷🇺Россия | @LimeVPNFREE'
       - '🇩🇪 Германия 3 OVH SAS'
+      - 'AetrisVPN White list ┃ ✅ SNI: res.cdnguard.org ┃ 🇳🇱 Нидерланды'
+      - 'AetrisVPN White list ┃ ✅ SNI: cdn.cdnguard.org ┃ 🇱🇹 Литва'
+      - 'AetrisVPN White list ┃ ✅ SNI: s1.cdnguard.org ┃ 🇳🇱 Нидерланды'
       - '5468 | 🇫🇮 Finland | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия'
@@ -1368,7 +1371,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇧🇸 Эщкерия | 🇬🇧 🇷🇺 [🏳️LTE] | 🥭🔧'
-      - '🇸🇪Обходы - TG: AirLinkVPNBot |0100|'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '🇮🇱 Израиль 1 Tabunscic Anatoli'
@@ -1394,7 +1396,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: founders-blog.online ┃ 🇷🇺 Россия'
       - '9 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 5/10'
-      - 'AetrisVPN White list ┃ ✅ SNI: s1.cdnguard.org ┃ 🇫🇮 Финляндия'
       - '🇫🇮 Финляндия 1 Hetzner Online GmbH'
       - '227.🇷🇺Россия | @LimeVPNFREE'
       - '193.🇨🇿Чехия | @LimeVPNFREE'
@@ -1406,7 +1407,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
       - '🇬🇧 Великобритания | 🌐 [🏳️LTE] | 🥭🔧'
       - 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇩🇪 Германия'
-      - '4243 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
