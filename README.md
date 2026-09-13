@@ -155,7 +155,9 @@
 | `FILTER-8-BASE64` | [Diversan313 WHITELIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 | `FILTER-9-BASE64` | [Diversan313 BLACKLIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 | `FILTER-10` | [VlessForu](https://sub.vlessfo.ru/vlessforu/working_configs.txt) | **plaintext** | ✅ |
-| `FILTER-10` | [KOTVPN](https://github.com/ANT1VEN0M/PODVAL-KOTA-VPN) | **plaintext** | ✅ |
+| `FILTER-11` | [KOTVPN](https://github.com/ANT1VEN0M/PODVAL-KOTA-VPN) | **plaintext** | ✅ |
+| `FILTER-12` | [VansFenix](https://github.com/VansFenix/vpnparser) | **plaintext** | ✅ |
+| `FILTER-12` | [MK-14](https://raw.githubusercontent.com/MK-l4/Mk14/refs/heads/main/Vagner) | **plaintext** | ✅ |
 > [!TIP]
 > Все источники проверяются на доступность через `URL Health Report`. Источники с 3+ провалами подряд автоматически пропускаются до следующего успешного цикла.
 
