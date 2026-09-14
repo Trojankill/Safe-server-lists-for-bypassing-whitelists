@@ -1,32 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-14 20:15:35 UTC
+# 2026-09-14 20:30:48 UTC
 proxies:
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: 212.43.150.30
-    port: 37684
-    uuid: 00726276-f581-4815-8610-ba373a65f00d
-    udp: true
-    tls: true
-    servername: play-apps-features.googleusercontent.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: UJXmL43l_agBd7hYNJCKVlvCtkT-oDBMQ0sjlOOxg1Y
-      short-id: f9
-    network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: 145.63.139.40
-    port: 23353
-    uuid: 0435b4d2-5ab7-4873-81b9-ff7ad9d7a67c
-    udp: true
-    tls: true
-    servername: play-apps-features.googleusercontent.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: GkVcEhd2eA7gqxBGKHqnkje6albyNVcuG01RIfZ5GS8
-      short-id: 55e574bbea1a651a
-    network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 178.105.61.61
@@ -41,12 +15,42 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
+  - name: '🇸🇬 [SG] Сингапур VFPARSER'
+    type: ss
+    server: 85.149.211.166
+    port: 443
+    cipher: 2022-blake3-aes-128-gcm
+    password: 'YWJhNmUwZDI5NGE4YTZkOA==:NGUzNjViMzctYzk0ZC00YQ=='
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
