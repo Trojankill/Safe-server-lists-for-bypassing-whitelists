@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-14 08:45:32 UTC
+# 2026-09-14 09:01:04 UTC
 proxies:
   - name: '1 | REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 10/10'
     type: vless
@@ -785,34 +785,6 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
-    server: 195.19.20.80
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 2.27.54.132
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
     server: 5.188.26.85
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -820,6 +792,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -841,6 +814,34 @@ proxies:
         Host: renderer-stream-2-62.mirra.now
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 195.19.20.80
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС#27'
+    type: vmess
+    server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -848,7 +849,6 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -866,6 +866,18 @@ proxies:
     port: 4433
     password: 19f72087-4591-4d72-930b-2697078ec2be
     sni: vk.com
+  - name: '🌐 Anycast-IP | 🇷🇺 🇸🇪 [*CIDR]'
+    type: hysteria2
+    server: 185-22-155-81.liao.kdns.fr
+    port: 50160
+    password: 2a0099ded5baa93c55823af39229c5b1
+    sni: 185-22-155-81.liao.kdns.fr
+  - name: '🇷🇺 Russia [*CIDR]'
+    type: hysteria2
+    server: 185.22.155.81
+    port: 50160
+    password: 2a0099ded5baa93c55823af39229c5b1
+    sni: 185-22-155-81.liao.kdns.fr
   - name: '2669 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 152.67.200.82
@@ -979,10 +991,12 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС#27'
       - '🇩🇪 Germany | [*CIDR]'
       - '2756 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '6102 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '🌐 Anycast-IP | 🇷🇺 🇸🇪 [*CIDR]'
+      - '🇷🇺 Russia [*CIDR]'
       - '2669 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
       - '1874 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
