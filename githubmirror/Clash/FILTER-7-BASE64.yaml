@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-14 15:15:33 UTC
+# 2026-09-14 15:30:46 UTC
 proxies:
+  - name: 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇩🇪 Германия'
+    type: vless
+    server: 87.242.94.175
+    port: 1443
+    uuid: 0189f5b5-fc49-43b3-92ef-01a4d9721005
+    udp: true
+    tls: true
+    servername: 360.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
+      short-id: 66371c8d7a
+    network: grpc
+    grpc-opts:
   - name: '13 | RAW+REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 5/10'
     type: vless
     server: 195.123.213.28
@@ -536,7 +550,7 @@ proxies:
       short-id: 3199b70105c62ce0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0030|'
+  - name: '🇩🇪 Германия 3 U1 Digital Services Ltd'
     type: vless
     server: 178.250.243.45
     port: 443
@@ -548,7 +562,7 @@ proxies:
     reality-opts:
       public-key: LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: '5789 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 5.129.210.63
@@ -576,6 +590,19 @@ proxies:
       public-key: kCKXYcvEQ2cz4d0jBmBjyzbesUZ3AHQBukhqXWPiRlA
       short-id: f3deb2
     network: tcp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
+    type: vless
+    server: 87.242.127.240
+    port: 443
+    uuid: cf222b71-f3a2-44b9-8535-5c725b22eac4
+    udp: true
+    tls: true
+    servername: 360.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
+    network: grpc
+    grpc-opts:
   - name: '13.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 31.128.36.48
@@ -881,6 +908,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇩🇪 Германия'
       - '13 | RAW+REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 5/10'
       - '🌍 Рандом | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
@@ -920,9 +948,10 @@ proxy-groups:
       - '2708 | 🇷🇺 Russia | 🏳️ CIDR-TimeWeb | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '83.🇷🇺Россия | @LimeVPNFREE'
       - '4.🇷🇺Россия | @LimeVPNFREE'
-      - '🇩🇪Обходы - TG: AirLinkVPNBot |0030|'
+      - '🇩🇪 Германия 3 U1 Digital Services Ltd'
       - '5789 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '5007 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
       - '13.🇷🇺Россия | @LimeVPNFREE'
       - '3928 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
       - '27.🇨🇿Чехия | @LimeVPNFREE'
