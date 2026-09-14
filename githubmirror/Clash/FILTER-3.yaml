@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-14 00:45:33 UTC
+# 2026-09-14 01:00:52 UTC
 proxies:
-  - name: '🇸🇪 Sweden — #132'
+  - name: '🇸🇪 Sweden — #152'
     type: vless
     server: 87.242.94.175
     port: 1443
@@ -15,7 +15,7 @@ proxies:
       short-id: 66371c8d7a
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 The Netherlands — #110'
+  - name: '🇳🇱 The Netherlands — #127'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -29,20 +29,33 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇸 Serbia — #129'
+  - name: '🇩🇪 Germany — #80'
     type: vless
-    server: 188.225.45.152
+    server: 212.233.121.169
     port: 443
-    uuid: 238e492b-bc20-4380-92b6-135d39112ca4
+    uuid: 4e151ac8-89da-4454-a660-e5fb9b122633
     udp: true
     tls: true
-    servername: api8.eaglors.com
-    client-fingerprint: qq
+    servername: yandex.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: Nb9IwEEhUHEbHSc6e5uYTjxDgN4ZExhDckM3OgYhj2o
-      short-id: 52ccb3687fe0b7ec
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇩🇪 Germany — #52'
+    type: vless
+    server: 201.24.50.67
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -56,20 +69,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #55'
-    type: vless
-    server: 185.86.144.101
-    port: 443
-    uuid: 70c82a69-539c-4262-9f94-aacb5a4db69b
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇵🇱 Poland — #127'
+  - name: '🇵🇱 Poland — #147'
     type: vless
     server: 178.248.236.209
     port: 10443
@@ -77,7 +77,7 @@ proxies:
     udp: true
     tls: true
     servername: rutube.ru
-    client-fingerprint: qq
+    client-fingerprint: firefox
     reality-opts:
       public-key: glb1LK20uecGGnJ5BErD-hLfJfyay4wG-CiN5YSjT3k
       short-id: 561533e7f4
@@ -125,6 +125,20 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 The Netherlands — #111'
+    type: vless
+    server: 188.225.75.183
+    port: 12443
+    uuid: a95b3155-bc03-4789-b367-944b83be8f86
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
+      short-id: 41a2b7c9
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇩🇪 Germany — #39'
     type: vless
     server: 178.250.243.45
@@ -155,15 +169,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇸🇪 Sweden — #132'
-      - '🇳🇱 The Netherlands — #110'
-      - '🇷🇸 Serbia — #129'
+      - '🇸🇪 Sweden — #152'
+      - '🇳🇱 The Netherlands — #127'
+      - '🇩🇪 Germany — #80'
+      - '🇩🇪 Germany — #52'
       - '🇷🇺 Beget — #1'
-      - '🇩🇪 Germany — #55'
-      - '🇵🇱 Poland — #127'
+      - '🇵🇱 Poland — #147'
       - '🇨🇿 Czechia — #21'
       - '🇨🇿 Czechia — #19'
       - '🇨🇿 Czechia — #20'
+      - '🇳🇱 The Netherlands — #111'
       - '🇩🇪 Germany — #39'
       - '🇷🇺 Delta — #5'
 rules:
