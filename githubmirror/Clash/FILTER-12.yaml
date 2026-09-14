@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-14 13:15:35 UTC
+# 2026-09-14 13:30:48 UTC
 proxies:
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: 81.90.25.123
-    port: 46908
-    uuid: 8b6aceff-1db9-4d5b-b4b2-d727d55b0f96
-    udp: true
-    tls: true
-    servername: it.nvidia.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: xnETFrUlaDiU4HMW9E0MnKMNNeihztGyA1QKLcyX_xU
-      short-id: d8f1
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: ru-kzn.tunnelgate.org
@@ -77,13 +63,6 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 158.101.196.150
@@ -91,19 +70,19 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 'KL+tcAquOdHKZmi2oaMUN6G/VIi0kNptTxE0peCEbPk='
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
-    server: 129.146.118.11
-    port: 50356
+    server: 150.230.23.127
+    port: 45819
     cipher: 2022-blake3-chacha20-poly1305
-    password: 'jyWBH8PWys7muYTwrV1sXByMIbElJrWCu+Jcx2v4C3Q='
+    password: 'O0YzhVbSI6dkXq8u2erAigGyzED8wS+gjA6IoAv7p3M='
     udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
+  - name: '🇩🇪 [DE] Германия VFPARSER'
     type: ss
-    server: 84.247.155.196
-    port: 443
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
+    server: 178.105.187.73
+    port: 8557
+    cipher: 2022-blake3-aes-128-gcm
+    password: 'CDFvxFTDtN82wcL3jMRNPg==:9hc+aOTa6oOZuBPX9EUxvA=='
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -116,15 +95,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🌐 [??] Неизвестно | VLESS VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
