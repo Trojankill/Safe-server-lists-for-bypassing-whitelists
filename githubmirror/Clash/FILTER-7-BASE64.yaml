@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-14 21:15:31 UTC
+# 2026-09-14 21:30:45 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -641,6 +641,20 @@ proxies:
       short-id: 5c766813929a1fdd
     network: grpc
     grpc-opts:
+  - name: '🇸🇪 Швеция 4 Play2Go International Limited'
+    type: vless
+    server: 149.154.68.114
+    port: 443
+    uuid: fbbd97ff-f682-4937-b103-9285b6746d4b
+    udp: true
+    tls: true
+    servername: blamearmlessemcee.cerisesilk.one
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 33Xvg2G3OCbZ8D_psMttGfEhBad9z2LPJpaH_fB51WA
+      short-id: 2e9688b0d26f1142
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 144.31.78.35
@@ -758,6 +772,20 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС¹³'
+    type: vmess
     server: 194.87.71.141
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -770,7 +798,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -779,22 +807,6 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 5.188.26.85
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -936,6 +948,7 @@ proxy-groups:
       - '77.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
       - '81.🇷🇺Россия | @LimeVPNFREE'
+      - '🇸🇪 Швеция 4 Play2Go International Limited'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
@@ -946,8 +959,8 @@ proxy-groups:
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇷🇺 AetrisVPN'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС¹³'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '3080 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4437 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2438 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | HYSTERIA2 | TG: @YoutubeUnBlockRu'
