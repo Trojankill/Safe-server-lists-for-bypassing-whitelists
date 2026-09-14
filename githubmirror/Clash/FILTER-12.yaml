@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-14 04:15:36 UTC
+# 2026-09-14 04:30:47 UTC
 proxies:
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 62.233.39.9
+    port: 8443
+    uuid: 4350213a-b4e7-262a-0bd7-bd16957cf71a
+    udp: true
+    tls: true
+    servername: download.nvidia.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: lDi6FDdd5qUFMjjR1JDidfUU2qE_U1L90VjNTzPyQhs
+    network: grpc
+    grpc-opts:
   - name: '🇦🇪 [AE] ОАЭ VFPARSER'
     type: vless
     server: 89.47.55.9
@@ -14,32 +27,18 @@ proxies:
       public-key: TWaatavWGcWV-E7c4AXmBXypLKJzm6eR3FGG61spayQ
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
-    server: 13.143.66.151
-    port: 443
-    uuid: 4f395e24-b2ad-4b90-a6cd-0b29cfbe9186
+    server: 81.90.25.123
+    port: 46908
+    uuid: 8b6aceff-1db9-4d5b-b4b2-d727d55b0f96
     udp: true
     tls: true
-    servername: kinopoisk.ru
-    client-fingerprint: firefox
+    servername: it.nvidia.com
+    client-fingerprint: chrome
     reality-opts:
-      public-key: f0ZurlaR0w9bzzFDHpDri4nqGMXqPiXV3sIIzgvdXjk
-      short-id: fef51a5f06139c0f
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 [RU] Россия VFPARSER'
-    type: vless
-    server: 201.24.50.67
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
+      public-key: xnETFrUlaDiU4HMW9E0MnKMNNeihztGyA1QKLcyX_xU
+      short-id: d8f1
     network: grpc
     grpc-opts:
   - name: '🇺🇸 [US] США VFPARSER'
@@ -55,6 +54,22 @@ proxies:
       public-key: EG3y7UktGRlzSZZ2oXT_YaO2gVP4ca3Xe6AQ0u9A5DQ
     network: grpc
     grpc-opts:
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: ware.tunnelgate.org
+    port: 443
+    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
+    udp: true
+    tls: true
+    servername: ware.tunnelgate.org
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: qq
+    network: ws
+    ws-opts:
+      path: '/ws/v1/ru'
+      headers:
+        Host: ware.tunnelgate.org
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 178.105.61.61
@@ -85,6 +100,22 @@ proxies:
       path: '/de02-ws-8e47a'
       headers:
         Host: hub-de-02.hanvpn.cc
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: 77.110.117.199
+    port: 443
+    uuid: d9d0f208-d582-41d5-bb7b-742671402810
+    udp: true
+    tls: true
+    servername: hub-de-01.hanvpn.cc
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/de01-ws-8e47a'
+      headers:
+        Host: hub-de-01.hanvpn.cc
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 77.110.117.199
@@ -127,28 +158,20 @@ proxies:
       public-key: -GbQJg3bnEGEVFjVaRRu01cgF1f0K_maI4d5MWtMb28
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🌐 [??] Неизвестно | TROJAN VFPARSER'
     type: trojan
-    server: 162.159.38.58
+    server: ot2.hyas.space
     port: 443
-    password: 62dbcf02-0989-4441-a01a-93f9c3b93525
+    password: 624209bb-8216-45fe-bbe0-50132ec63162
     udp: true
-    sni: ot.hyas.space
-  - name: '🇩🇪 [DE] Германия'
-    type: vmess
-    server: 111.88.74.167
+    sni: ot2.hyas.space
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
     port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
+    password: humanity
     udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
+    sni: www.ignitelimit.com
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 158.101.196.150
@@ -163,13 +186,6 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 'Qye4JK+lHU/8aJtTB5om+IMoxG4r3luE4ogzVo1+Oxk='
     udp: true
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 129.151.95.27
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'etWHWAsjCiGbHaessIM5QuQfSZ8qjOUGlo0fyhpFkDw='
-    udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
     server: 129.146.118.11
@@ -183,13 +199,6 @@ proxies:
     port: 59380
     cipher: chacha20-ietf-poly1305
     password: DdhrBvEX2dHRjaakWHBZUa
-    udp: true
-  - name: '🇹🇷 [TR] Турция VFPARSER'
-    type: ss
-    server: 185.39.204.3
-    port: 8098
-    cipher: chacha20-ietf-poly1305
-    password: PluSKSrbtxTvlVv7BOUwn4
     udp: true
   - name: '🇹🇷 [TR] Турция VFPARSER'
     type: ss
@@ -219,38 +228,30 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇧🇷 [BR] Бразилия VFPARSER'
-    type: ss
-    server: 216.128.168.190
-    port: 8388
-    cipher: aes-256-gcm
-    password: owVdNnQcdPgthSyX
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇦🇪 [AE] ОАЭ VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇩🇪 [DE] Германия'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🌐 [??] Неизвестно | TROJAN VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇹🇷 [TR] Турция VFPARSER'
-      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇧🇷 [BR] Бразилия VFPARSER'
 rules:
   - MATCH,PROXY
