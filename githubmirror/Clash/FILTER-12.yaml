@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-15 01:45:31 UTC
+# 2026-09-15 02:00:52 UTC
 proxies:
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
@@ -15,10 +15,50 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇫🇮 [FI] Финляндия'
+    type: vmess
+    server: 132.243.22.80
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇨🇦 [CA] Канада'
+    type: vmess
+    server: 172.98.207.58
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.144.173
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'MSBulFIL/2cQ1Jg+HZEfrPrfk/2Ev2nlSei+wSvdOLY='
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇫🇮 [FI] Финляндия'
+      - '🇨🇦 [CA] Канада'
       - '🇩🇪 [DE] Германия VFPARSER'
 rules:
   - MATCH,PROXY
