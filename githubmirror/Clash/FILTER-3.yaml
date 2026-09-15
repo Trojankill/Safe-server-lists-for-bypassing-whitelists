@@ -1,7 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-15 17:00:52 UTC
+# 2026-09-15 17:15:29 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #43'
+  - name: '🇩🇪 Germany — #45'
+    type: vless
+    server: 185.86.144.101
+    port: 443
+    uuid: 0ac20744-ee15-4c04-b2f2-70adc8a8f090
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇵🇱 Poland — #118'
+    type: vless
+    server: 189.74.116.7
+    port: 443
+    uuid: 0f754570-3d85-471e-ab9b-9ad2262cefb9
+    udp: true
+    tls: true
+    servername: api.mediapotok.cc
+    client-fingerprint: ios
+    reality-opts:
+      public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+      short-id: a8
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #82'
     type: vless
     server: 85.198.70.200
     port: 14406
@@ -15,7 +42,7 @@ proxies:
       short-id: 1a2b3c4d5e6f7a8b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇮🇸 Iceland — #22'
+  - name: '🇷🇸 Serbia — #119'
     type: vless
     server: 188.225.45.152
     port: 443
@@ -29,7 +56,7 @@ proxies:
       short-id: 52ccb3687fe0b7ec
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #59'
+  - name: '🇳🇱 The Netherlands — #98'
     type: vless
     server: 178.248.236.51
     port: 59443
@@ -43,18 +70,18 @@ proxies:
       short-id: b28b7606
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇪🇪 Estonia — #15'
+  - name: '🇵🇱 Poland — #117'
     type: vless
     server: 104.171.133.111
-    port: 24443
+    port: 22443
     uuid: 5edbcb44-8d04-4fa7-a587-bc5d60c24ca1
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: qq
+    client-fingerprint: safari
     reality-opts:
-      public-key: s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg
-      short-id: 72ccd4a7563c2953
+      public-key: V8llhEcbGI7Zqf52Ec0kryrdRv7lvLcKCjHe1Di23yw
+      short-id: fdf9d63fcdd6be6a
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Beget — #1'
@@ -70,7 +97,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇨🇿 Czechia — #6'
+  - name: '🇨🇿 Czechia — #14'
     type: vless
     server: 78.159.247.170
     port: 443
@@ -84,7 +111,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #5'
+  - name: '🇨🇿 Czechia — #13'
     type: vless
     server: 78.159.247.205
     port: 443
@@ -98,7 +125,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #7'
+  - name: '🇨🇿 Czechia — #15'
     type: vless
     server: 78.159.247.214
     port: 443
@@ -112,7 +139,7 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #13'
+  - name: '🇩🇪 Germany — #21'
     type: vless
     server: 217.19.122.17
     port: 10654
@@ -125,33 +152,35 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇳🇱 The Netherlands — #35'
+  - name: '🇳🇱 The Netherlands — #72'
     type: vless
-    server: 45.11.27.86
-    port: 443
-    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
+    server: 188.225.75.183
+    port: 12443
+    uuid: a95b3155-bc03-4789-b367-944b83be8f86
     udp: true
     tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: firefox
+    servername: api-maps.yandex.ru
+    client-fingerprint: safari
     reality-opts:
-      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
-      short-id: d0aae44f
+      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
+      short-id: 41a2b7c9
     flow: xtls-rprx-vision
     network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #43'
-      - '🇮🇸 Iceland — #22'
-      - '🇳🇱 The Netherlands — #59'
-      - '🇪🇪 Estonia — #15'
+      - '🇩🇪 Germany — #45'
+      - '🇵🇱 Poland — #118'
+      - '🇳🇱 The Netherlands — #82'
+      - '🇷🇸 Serbia — #119'
+      - '🇳🇱 The Netherlands — #98'
+      - '🇵🇱 Poland — #117'
       - '🇷🇺 Beget — #1'
-      - '🇨🇿 Czechia — #6'
-      - '🇨🇿 Czechia — #5'
-      - '🇨🇿 Czechia — #7'
-      - '🇩🇪 Germany — #13'
-      - '🇳🇱 The Netherlands — #35'
+      - '🇨🇿 Czechia — #14'
+      - '🇨🇿 Czechia — #13'
+      - '🇨🇿 Czechia — #15'
+      - '🇩🇪 Germany — #21'
+      - '🇳🇱 The Netherlands — #72'
 rules:
   - MATCH,PROXY
