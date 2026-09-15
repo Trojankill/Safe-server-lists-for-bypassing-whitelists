@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-15 16:15:33 UTC
+# 2026-09-15 16:30:46 UTC
 proxies:
-  - name: '106.🇷🇺Россия | @LimeVPNFREE'
-    type: vless
-    server: 109.73.206.200
-    port: 443
-    uuid: 0480039e-2e85-49e4-9087-ba85e738851a
-    udp: true
-    tls: true
-    servername: ru.it-crp.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: HLKQ0JvyaZ16JNdl0pbEPkiVRYJDiZNzGz9prDMiw2s
-      short-id: a1b2c3d4b5
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇺🇸 США | БС¹'
     type: vless
     server: 47.253.226.114
@@ -857,6 +843,91 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 195.19.20.80
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+    type: vmess
+    server: 194.226.142.120
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+    type: vmess
+    server: 194.87.71.141
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
   - name: '6480 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 163.192.14.135
@@ -912,7 +983,7 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -942,7 +1013,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '106.🇷🇺Россия | @LimeVPNFREE'
       - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
@@ -1005,6 +1075,12 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: cloud.mail.ru ┃ 🇬🇧 Великобритания'
       - '🇷🇺 LTE 6 | тгк: @rostunnel'
       - '🇷🇺 AetrisVPN'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
       - '6480 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3833 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2295 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1014,7 +1090,7 @@ proxy-groups:
       - '3304 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1197 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2366 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Russia | 🌐 [*CIDR]'
       - '1342 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4965 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '1500 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | SS | TG: @YoutubeUnBlockRu'
