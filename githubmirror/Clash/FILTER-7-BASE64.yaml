@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-15 04:15:34 UTC
+# 2026-09-15 04:30:43 UTC
 proxies:
   - name: '1 | REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 10/10'
     type: vless
@@ -112,6 +112,20 @@ proxies:
       short-id: 20a080af5636a681
     network: grpc
     grpc-opts:
+  - name: '! 16 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 5/10'
+    type: vless
+    server: alnilam.yokkastars.com
+    port: 40443
+    uuid: 279a8eef-898f-44ef-b4f5-67a494f4b542
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: qq
+    reality-opts:
+      public-key: vAG5o6TQvpZAlvDnlyhHEFZBuSgEV_ybQigD_mGKh1M
+      short-id: 5b98
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
     type: vless
     server: 176.109.88.216
@@ -167,7 +181,7 @@ proxies:
       short-id: 3c7bbb22bff1d4fd
     flow: xtls-rprx-vision
     network: raw
-  - name: '6 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
+  - name: '8 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 7/10'
     type: vless
     server: 45.90.59.15
     port: 443
@@ -319,7 +333,7 @@ proxies:
       public-key: Yk0_5nZGFdcIL3QVC3ohxhaM6QdaxvPdjuugWdv-hzQ
     flow: xtls-rprx-vision
     network: tcp
-  - name: '9 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
+  - name: '14 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
     type: vless
     server: 85.90.197.220
     port: 443
@@ -697,7 +711,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС⁵'
     type: vmess
     server: 194.226.142.120
     port: 443
@@ -712,7 +726,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС⁶'
     type: vmess
     server: 195.19.20.80
     port: 443
@@ -726,7 +740,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС¹⁰'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -821,11 +835,12 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇮🇹 Италия'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
+      - '! 16 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 5/10'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
-      - '6 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
+      - '8 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 7/10'
       - '269.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
       - '🌍 Обход бс'
@@ -836,7 +851,7 @@ proxy-groups:
       - '🇯🇵 LTE 3 | тгк: @rostunnel'
       - '🇺🇸 AetrisVPN'
       - '362.🇷🇺Россия | @LimeVPNFREE'
-      - '9 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
+      - '14 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
@@ -864,9 +879,9 @@ proxy-groups:
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇷🇺 LTE 8 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС⁵'
+      - '🌍 Рандом | БС⁶'
+      - '🌍 Рандом | БС¹⁰'
       - '🇩🇪 Germany [*CIDR]'
       - '2661 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0942 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
