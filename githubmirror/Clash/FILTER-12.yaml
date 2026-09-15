@@ -1,63 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-15 10:45:33 UTC
+# 2026-09-15 11:00:56 UTC
 proxies:
-  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
-    type: vless
-    server: 45.88.13.4
-    port: 8443
-    uuid: 0ab925b6-35f7-6e27-e713-925bea65455e
-    udp: true
-    tls: true
-    servername: download.nvidia.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk
-    network: grpc
-    grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: marzban-node-production-e513.up.railway.app
-    port: 443
-    uuid: 2b325596-af9c-45ce-8b09-8344dd91bd4f
-    udp: true
-    tls: true
-    servername: marzban-node-production-e513.up.railway.app
-    alpn:
-      - h2
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/vless'
-      headers:
-        Host: marzban-node-production-e513.up.railway.app
-  - name: '🇮🇳 [IN] Индия VFPARSER'
-    type: vless
-    server: hydra.yokkastars.com
-    port: 2443
-    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
-      short-id: 92c32de179e5d908
-    network: grpc
-    grpc-opts:
-  - name: '🇱🇹 [LT] Литва VFPARSER'
-    type: vless
-    server: lt.aether-runet.top
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-    udp: true
-    tls: true
-    servername: lt.aether-runet.top
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: vrcsm8L_tY7sNbnCEdLCEjOthh_w9bdWS3wFPgsIomk
-      short-id: 4fa44664f6a566d3
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇵🇱 [PL] Польша VFPARSER'
     type: vless
     server: pl.bubahero.com
@@ -90,10 +33,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇦🇪 [AE] ОАЭ VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇮🇳 [IN] Индия VFPARSER'
-      - '🇱🇹 [LT] Литва VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
 rules:
