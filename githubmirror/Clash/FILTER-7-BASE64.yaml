@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-14 23:45:31 UTC
+# 2026-09-15 00:00:54 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -781,6 +781,21 @@ proxies:
         Host: renderer-stream-2-62.mirra.now
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 194.226.142.120
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС#43'
+    type: vmess
     server: 195.19.20.80
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -796,7 +811,7 @@ proxies:
         Host: renderer-stream-2-62.mirra.now
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
-    server: 2.27.54.132
+    server: renderer-stream-2-62.mirra.now
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -822,16 +837,15 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany [*CIDR]'
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
     type: vmess
-    server: renderer-stream-2-62.mirra.now
+    server: 2.27.54.132
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
     cipher: auto
     udp: true
     tls: true
-    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -984,9 +998,10 @@ proxy-groups:
       - '🇷🇺 AetrisVPN'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС#43'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany [*CIDR]'
-      - '🇩🇪 Germany [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '7245 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4303 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1403 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | HYSTERIA2 | TG: @YoutubeUnBlockRu'
