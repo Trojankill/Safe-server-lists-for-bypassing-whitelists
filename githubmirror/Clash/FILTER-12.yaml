@@ -1,6 +1,46 @@
 # clash/mihomo subscription
-# 2026-09-15 19:45:32 UTC
+# 2026-09-15 20:00:54 UTC
 proxies:
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 188.225.25.142
+    port: 443
+    uuid: 01a21e01-6098-4c3b-a6fd-1a04d64d0c7f
+    udp: true
+    tls: true
+    servername: prime.betust.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk
+      short-id: 8681edc9
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: 130.49.77.5
+    port: 8443
+    uuid: 1e4668ca-6526-84ac-2a53-28bbc209da13
+    udp: true
+    tls: true
+    servername: www.philips.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Sq7mtLmaanwsTVNBR9gU7ECU87ftrb_wFGRLLNRBlmQ
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: 170.168.99.9
+    port: 8443
+    uuid: 1e4668ca-6526-84ac-2a53-28bbc209da13
+    udp: true
+    tls: true
+    servername: www.epson.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: -GbQJg3bnEGEVFjVaRRu01cgF1f0K_maI4d5MWtMb28
+    network: grpc
+    grpc-opts:
   - name: '🇨🇭 [CH] Швейцария VFPARSER'
     type: vless
     server: nl.armankhan.shop
@@ -13,20 +53,6 @@ proxies:
     reality-opts:
       public-key: RP-llUEvsc-8FhsjGxA0-LOKCbu4z_sylu17aDwDH14
       short-id: 066d77d9
-    network: grpc
-    grpc-opts:
-  - name: '🇮🇳 [IN] Индия VFPARSER'
-    type: vless
-    server: hydra.yokkastars.com
-    port: 2443
-    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
-      short-id: 92c32de179e5d908
     network: grpc
     grpc-opts:
   - name: '🇵🇱 [PL] Польша VFPARSER'
@@ -57,12 +83,12 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
-    server: 93.179.103.129
-    port: 8388
-    cipher: aes-128-gcm
-    password: wu2wei2yi1
+    server: 129.151.81.141
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'LfsGhOfimuYzNHSQpJTAvnNP/c71CVqMt4BBOvQ+O1I='
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -78,24 +104,18 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
-    server: us-2.gsafevpnapi.com
-    port: 31870
-    cipher: aes-256-gcm
-    password: e016d072-ed97-40d4-a83f-04c00f8df2a5
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇨🇭 [CH] Швейцария VFPARSER'
-      - '🇮🇳 [IN] Индия VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
 rules:
   - MATCH,PROXY
