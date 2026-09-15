@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-15 05:30:47 UTC
+# 2026-09-15 05:45:31 UTC
 proxies:
+  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
+    type: vless
+    server: 45.88.13.4
+    port: 8443
+    uuid: 0ab925b6-35f7-6e27-e713-925bea65455e
+    udp: true
+    tls: true
+    servername: download.nvidia.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk
+    network: grpc
+    grpc-opts:
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 178.105.61.61
@@ -15,50 +28,27 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 [FI] Финляндия'
-    type: vmess
-    server: 132.243.22.80
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇨🇦 [CA] Канада'
-    type: vmess
-    server: 172.98.207.58
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
   - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
-    server: 130.61.144.173
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'MSBulFIL/2cQ1Jg+HZEfrPrfk/2Ev2nlSei+wSvdOLY='
+    server: 201.34.151.230
+    port: 23254
+    cipher: aes-256-gcm
+    password: 'd3N1ZE5GQUtJS0Rpdmh5RFhTS0ZOSVNkSlJ0dENqQjl4eVFLMVJoczZ6U2NuenVNaENDT29qeGp4M2xRenZQVQ=='
     udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇦🇪 [AE] ОАЭ VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇫🇮 [FI] Финляндия'
-      - '🇨🇦 [CA] Канада'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
 rules:
   - MATCH,PROXY
