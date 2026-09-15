@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-15 16:30:46 UTC
+# 2026-09-15 16:45:33 UTC
 proxies:
+  - name: '🇨🇭 [CH] Швейцария VFPARSER'
+    type: vless
+    server: nl.armankhan.shop
+    port: 8443
+    uuid: 4798121a-068d-4bf7-b290-287a2aa81f10
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: RP-llUEvsc-8FhsjGxA0-LOKCbu4z_sylu17aDwDH14
+      short-id: 066d77d9
+    network: grpc
+    grpc-opts:
+  - name: '🇮🇳 [IN] Индия VFPARSER'
+    type: vless
+    server: hydra.yokkastars.com
+    port: 2443
+    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: qq
+    reality-opts:
+      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
+      short-id: 92c32de179e5d908
+    network: grpc
+    grpc-opts:
   - name: '🇵🇱 [PL] Польша VFPARSER'
     type: vless
     server: pl.bubahero.com
@@ -29,13 +57,6 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
     server: 93.179.103.129
@@ -57,15 +78,24 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: us-2.gsafevpnapi.com
+    port: 31870
+    cipher: aes-256-gcm
+    password: e016d072-ed97-40d4-a83f-04c00f8df2a5
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇨🇭 [CH] Швейцария VFPARSER'
+      - '🇮🇳 [IN] Индия VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
 rules:
   - MATCH,PROXY
