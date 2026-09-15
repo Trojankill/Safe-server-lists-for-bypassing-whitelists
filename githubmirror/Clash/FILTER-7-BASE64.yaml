@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-15 10:30:43 UTC
+# 2026-09-15 10:45:33 UTC
 proxies:
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
@@ -41,6 +41,20 @@ proxies:
     reality-opts:
       public-key: -kGaCYGM_MImDMVkOsFp4yvv4dLy3FXe9gqAtf4eYF8
       short-id: 905ae32a
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇫🇮 Финляндия'
+    type: vless
+    server: 144.31.50.236
+    port: 443
+    uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
+      short-id: bbe46bd8f6b96839
     flow: xtls-rprx-vision
     network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
@@ -154,20 +168,20 @@ proxies:
       short-id: 7f342137c20387
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇩🇪 Германия'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇩🇪 Германия'
     type: vless
-    server: 198.46.215.223
-    port: 8443
-    uuid: 6346ee2b-aefa-4a58-963a-bb851ed08f41
+    server: 31.76.91.72
+    port: 2087
+    uuid: 524e00ce-ed89-481d-b4a4-6d7017f884e3
     udp: true
     tls: true
-    servername: www.intel.com
+    servername: ads.x5.ru
     client-fingerprint: chrome
     reality-opts:
-      public-key: L817rvnreaFtFfcqfOizxgY7ZzFeSdtopH9HVrB56hk
-      short-id: 0b3bf761ca812ee9
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: -ZTJcZ_UcqAB7LHgkUqhnlJsQs_oBafRgjsFtWZElmM
+      short-id: c226283c4de5b1ad
+    network: grpc
+    grpc-opts:
   - name: '🌍 Обход бс'
     type: vless
     server: 188.68.218.205
@@ -224,7 +238,7 @@ proxies:
       short-id: 48050fab
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇯🇵 Япония'
     type: vless
     server: 3.114.220.22
     port: 18007
@@ -343,6 +357,18 @@ proxies:
       public-key: mpo4BIcoWiMXAQGt5a8IJ4MFkPJQyLC50dO_bXzC7z0
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды 5 Novoserve B.V.'
+    type: vless
+    server: 51.250.106.197
+    port: 443
+    uuid: Fluffy_VPN-Oth8rOq3
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: LGSiGIQDFwB3IgQw8IBEsI5qfQoPQRSeUZWofnEu00U
+    network: xhttp
   - name: '226.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 84.201.180.13
@@ -355,7 +381,7 @@ proxies:
     reality-opts:
       public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
     network: xhttp
-  - name: '🇳🇱 The Netherlands — #122'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇳🇱 Нидерланды'
     type: vless
     server: 45.11.27.86
     port: 443
@@ -369,20 +395,6 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇳🇱 Нидерланды'
-    type: vless
-    server: 172.239.239.53
-    port: 22746
-    uuid: a4846a6c-163f-4b12-a99f-378d814e5e09
-    udp: true
-    tls: true
-    servername: www.intel.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: B6bPTxNaLqqoUTuNggzTBP0pPxJEqE_Bd_Ob27MPvgU
-      short-id: d9fd4fa80238cd05
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇫🇮 Финляндия Hostkey B.V.'
     type: vless
     server: 158.160.17.175
@@ -560,18 +572,18 @@ proxies:
       public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇩🇪 Германия'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
     type: vless
-    server: 192.3.247.109
-    port: 43581
-    uuid: e3a14180-7231-4b6a-9828-cf761cd2bf6f
+    server: lt-cherry-01.com
+    port: 8443
+    uuid: e97a7931-500b-4777-82a2-4237f15bcedd
     udp: true
     tls: true
-    servername: apple.com
+    servername: storage.yandex.net
     client-fingerprint: chrome
     reality-opts:
-      public-key: wh0IE218NveFttUOm9huqT-RQXq9fM_uCsMmKqgRyWY
-      short-id: 0123456789abcdef
+      public-key: L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA
+      short-id: 2cfb5a0ae8ab0cb0
     flow: xtls-rprx-vision
     network: tcp
   - name: '6305 | 🇳🇱 Netherlands | 🏳️ SNI-Rutube | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -828,6 +840,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇨🇦 LTE 24 | тгк: @rostunnel'
+      - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇫🇮 Финляндия'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
@@ -836,12 +849,12 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '117.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇩🇪 Германия'
+      - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇩🇪 Германия'
       - '🌍 Обход бс'
       - '2547 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
+      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇯🇵 Япония'
       - '🇺🇸 AetrisVPN'
       - '7 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 6/10'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
@@ -850,9 +863,9 @@ proxy-groups:
       - '2519 | 🇷🇺 Russia | 🏳️ CIDR-OLD | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
       - '138.🇳🇱Нидерланды | @LimeVPNFREE'
       - '134.🇷🇺Россия | @LimeVPNFREE'
+      - '🇳🇱 Нидерланды 5 Novoserve B.V.'
       - '226.🇷🇺Россия | @LimeVPNFREE'
-      - '🇳🇱 The Netherlands — #122'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇳🇱 Нидерланды'
+      - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇳🇱 Нидерланды'
       - '🇫🇮 Финляндия Hostkey B.V.'
       - '61.🇷🇺Россия | @LimeVPNFREE'
       - '🇩🇪Обходы - TG: AirLinkVPNBot |0036|'
@@ -866,7 +879,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - '6 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 6/10'
       - '63.🇷🇺Россия | @LimeVPNFREE'
-      - 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇩🇪 Германия'
+      - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
       - '6305 | 🇳🇱 Netherlands | 🏳️ SNI-Rutube | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4906 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
