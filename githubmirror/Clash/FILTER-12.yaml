@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-15 14:15:32 UTC
+# 2026-09-15 14:30:47 UTC
 proxies:
   - name: '🇵🇱 [PL] Польша VFPARSER'
     type: vless
@@ -29,11 +29,43 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: 93.179.103.129
+    port: 8388
+    cipher: aes-128-gcm
+    password: wu2wei2yi1
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
