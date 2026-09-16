@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 19:15:32 UTC
+# 2026-09-16 19:30:43 UTC
 proxies:
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
@@ -13,19 +13,6 @@ proxies:
     reality-opts:
       public-key: 2e9dGid5D-e4demAVGqU71uEeusuBhviikchaJ96E3o
       short-id: 8ece2039
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: finland.biznes.lol
-    port: 443
-    uuid: 0e7b66f1-567a-4527-b330-5a7b006d198c
-    udp: true
-    tls: true
-    servername: finland.biznes.lol
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: T0hPoN_eVwntNZZ3Djyfi8AQK8U0dGRmygP5jNJ6bk8
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
@@ -70,27 +57,6 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: 179.254.115.164
-    port: 38851
-    uuid: fb7b035f-6cc4-4d6f-82d2-d657fb81c790
-    udp: true
-    tls: true
-    servername: download.led.samsung.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: yXo9SfvPdSUaUTxXaGbjxi4sTjfh3cuatty0OcUWcz0
-      short-id: b790344649b0
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 443
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
     server: 84.247.155.196
@@ -103,12 +69,9 @@ proxy-groups:
     type: select
     proxies:
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
