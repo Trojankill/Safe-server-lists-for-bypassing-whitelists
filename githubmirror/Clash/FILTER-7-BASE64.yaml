@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 04:15:31 UTC
+# 2026-09-16 04:31:17 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -879,22 +879,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany [*CIDR]'
-    type: vmess
-    server: 194.87.71.141
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany [*CIDR]'
+  - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
     server: 2.27.54.132
     port: 443
@@ -923,6 +908,20 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+    type: vmess
+    server: 194.87.71.141
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
   - name: '2464 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 163.192.14.135
@@ -941,13 +940,13 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌐 Anycast-IP | 🇱🇻 🇸🇪 [*CIDR]'
+  - name: '🇧🇸 Эщкерия | 🇱🇻 🇸🇪 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
@@ -977,7 +976,7 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1058,19 +1057,19 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany [*CIDR]'
-      - '🇩🇪 Germany [*CIDR]'
-      - '🇩🇪 Germany [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '2464 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0854 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
       - '1186 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
-      - '🌐 Anycast-IP | 🇱🇻 🇸🇪 [*CIDR]'
+      - '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇱🇻 🇸🇪 [🏳️LTE] | 🥭🔧'
       - '2405 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3073 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2034 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1305 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
       - '2520 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
 rules:
   - MATCH,PROXY
