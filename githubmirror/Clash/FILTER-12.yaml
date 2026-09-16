@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 04:00:50 UTC
+# 2026-09-16 04:15:31 UTC
 proxies:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
@@ -26,19 +26,6 @@ proxies:
     client-fingerprint: firefox
     reality-opts:
       public-key: T0hPoN_eVwntNZZ3Djyfi8AQK8U0dGRmygP5jNJ6bk8
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇸🇪 [SE] Швеция VFPARSER'
-    type: vless
-    server: sweden.biznes.lol
-    port: 443
-    uuid: 0e7b66f1-567a-4527-b330-5a7b006d198c
-    udp: true
-    tls: true
-    servername: sweden.biznes.lol
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: SG0oIguDhzoiNsBFqfyaRInrrJjKuts7UIfI1K2KYjo
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
@@ -95,6 +82,22 @@ proxies:
       short-id: 4aa753c327e7fd94
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇨🇦 [CA] Канада VFPARSER'
+    type: vless
+    server: 104.20.30.10
+    port: 443
+    uuid: 91d28760-ecf1-450b-9170-d310111a0e6d
+    udp: true
+    tls: true
+    servername: us9.69lover.my
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/api/v2/63e9687fa53e441c/stream'
+      headers:
+        Host: us9.69lover.my
   - name: '🇵🇱 [PL] Польша VFPARSER'
     type: vless
     server: pl.bubahero.com
@@ -137,36 +140,20 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 [NL] Нидерланды'
-    type: vmess
-    server: 64.188.117.165
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: 179.254.115.164
+    port: 38851
+    uuid: fb7b035f-6cc4-4d6f-82d2-d657fb81c790
     udp: true
     tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇫🇷 [FR] Франция'
-    type: vmess
-    server: 90.127.143.135
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
+    servername: download.led.samsung.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: yXo9SfvPdSUaUTxXaGbjxi4sTjfh3cuatty0OcUWcz0
+      short-id: b790344649b0
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 129.151.81.141
@@ -174,19 +161,12 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 'LfsGhOfimuYzNHSQpJTAvnNP/c71CVqMt4BBOvQ+O1I='
     udp: true
-  - name: '🇹🇼 [TW] Тайвань VFPARSER'
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
-    server: 61.231.15.229
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
-    udp: true
-  - name: '🇹🇼 [TW] Тайвань VFPARSER'
-    type: ss
-    server: r3mrcg001287h3p.cybervena.com
-    port: 50099
-    cipher: chacha20-ietf-poly1305
-    password: b1ae0fce-9340-4f2e-882d-fdb2218e2e2b
+    server: 141.144.199.100
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'rTprlZ/C069y6KUXNnd4GDrjrtpRA3bNdUeQGRcZmXY='
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -222,19 +202,17 @@ proxy-groups:
     proxies:
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇸🇪 [SE] Швеция VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇨🇭 [CH] Швейцария VFPARSER'
       - '🇹🇷 [TR] Турция VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды'
-      - '🇫🇷 [FR] Франция'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇹🇼 [TW] Тайвань VFPARSER'
-      - '🇹🇼 [TW] Тайвань VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
