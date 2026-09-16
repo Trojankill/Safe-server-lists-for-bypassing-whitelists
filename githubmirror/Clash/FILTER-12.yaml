@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 07:45:30 UTC
+# 2026-09-16 08:00:49 UTC
 proxies:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
@@ -112,20 +112,6 @@ proxies:
       short-id: 9c2378562188c3cb
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: usa.superbuba.top
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-    udp: true
-    tls: true
-    servername: usa.superbuba.top
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 5en_SFrWntR3ZtxGn7_ZnnK5UW_Prh90rs-o8p7glw4
-      short-id: 9c2378562188c3cb
-    network: grpc
-    grpc-opts:
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 178.105.61.61
@@ -138,6 +124,20 @@ proxies:
     reality-opts:
       public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
       short-id: af04ff8094115e93
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇭🇰 [HK] Гонконг VFPARSER'
+    type: vless
+    server: hk-1.gsafevpnapi.com
+    port: 20270
+    uuid: e9e24ed8-b007-4e29-b54f-1ece641e60fb
+    udp: true
+    tls: true
+    servername: www.yahoo.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: 0MIamX22OTB4zDokZ5WN_GHBVYs7MkFceuipUvql9Q8
+      short-id: d5b538acf8a93540
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
@@ -154,20 +154,26 @@ proxies:
       short-id: b790344649b0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 129.151.81.141
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'LfsGhOfimuYzNHSQpJTAvnNP/c71CVqMt4BBOvQ+O1I='
+  - name: '🇫🇷 [FR] Франция VFPARSER'
+    type: vless
+    server: 95.182.116.169
+    port: 36114
+    uuid: fec50af1-8af9-431d-87d3-2079b200fc3c
     udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 141.144.199.100
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'rTprlZ/C069y6KUXNnd4GDrjrtpRA3bNdUeQGRcZmXY='
+    tls: true
+    servername: googlecommerce.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: hLWJ7lwcegDR0yTwH-RHE3ttVZs4txCWTBDFF5CLgQg
+      short-id: ea0bdca9c9
+    network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
     udp: true
+    sni: www.ignitelimit.com
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
     server: 84.247.155.196
@@ -208,11 +214,11 @@ proxy-groups:
       - '🇹🇷 [TR] Турция VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇭🇰 [HK] Гонконг VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇫🇷 [FR] Франция VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
