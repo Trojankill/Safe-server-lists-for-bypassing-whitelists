@@ -1,18 +1,32 @@
 # clash/mihomo subscription
-# 2026-09-16 22:00:52 UTC
+# 2026-09-16 22:15:30 UTC
 proxies:
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: vless
-    server: house.betust.net
-    port: 443
-    uuid: 01a21e01-6098-4c3b-a6fd-1a04d64d0c7f
+    server: 136.0.116.171
+    port: 8443
+    uuid: 1ec9239a-4174-4496-800b-5756bdf21041
     udp: true
     tls: true
-    servername: apiv6.jarvesitw.ru
+    servername: cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: epF9hW_Z8LxlpJzDRXTJrLOFxelXWbAIWlOGPE-MNys
+      short-id: a1b2c3d4e5f67890
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇴 [RO] Румыния VFPARSER'
+    type: vless
+    server: 146.70.124.85
+    port: 443
+    uuid: 40abbe13-f02e-4da2-9b19-966c2c3eb4ee
+    udp: true
+    tls: true
+    servername: www.datadoghq.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: 2e9dGid5D-e4demAVGqU71uEeusuBhviikchaJ96E3o
-      short-id: 8ece2039
+      public-key: byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE
+      short-id: fe24f8a0a560056e
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
@@ -57,6 +71,27 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.114.207
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'UcnlHOpHlHUejLfgqFfISWebKoZl4ngC58AQM/e/So0='
+    udp: true
+  - name: '🇸🇬 [SG] Сингапур VFPARSER'
+    type: ss
+    server: 194.233.74.160
+    port: 2342
+    cipher: chacha20-ietf-poly1305
+    password: XV4bvaJIWoxl3IYEC1e6W7
+    udp: true
+  - name: '🇵🇱 [PL] Польша VFPARSER'
+    type: ss
+    server: 178.95.176.16
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: rSeYcig_XBy8q3k33NpK3A
+    udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
     server: 84.247.155.196
@@ -68,10 +103,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇷🇴 [RO] Румыния VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇵🇱 [PL] Польша VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
