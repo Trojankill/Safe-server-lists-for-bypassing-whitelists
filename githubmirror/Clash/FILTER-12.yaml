@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-16 16:30:45 UTC
+# 2026-09-16 16:45:33 UTC
 proxies:
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-    type: vless
-    server: 188.225.25.142
-    port: 443
-    uuid: 01a21e01-6098-4c3b-a6fd-1a04d64d0c7f
-    udp: true
-    tls: true
-    servername: prime.betust.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk
-      short-id: 8681edc9
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
     server: house.betust.net
@@ -42,50 +28,20 @@ proxies:
       public-key: T0hPoN_eVwntNZZ3Djyfi8AQK8U0dGRmygP5jNJ6bk8
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇨🇭 [CH] Швейцария VFPARSER'
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
-    server: nl.armankhan.shop
-    port: 8443
-    uuid: 4798121a-068d-4bf7-b290-287a2aa81f10
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: RP-llUEvsc-8FhsjGxA0-LOKCbu4z_sylu17aDwDH14
-      short-id: 066d77d9
-    network: grpc
-    grpc-opts:
-  - name: '🇮🇳 [IN] Индия VFPARSER'
-    type: vless
-    server: hydra.yokkastars.com
-    port: 2443
-    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
-      short-id: 92c32de179e5d908
-    network: grpc
-    grpc-opts:
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: vless
-    server: 104.20.30.10
+    server: gb.superbuba.top
     port: 443
-    uuid: 91d28760-ecf1-450b-9170-d310111a0e6d
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: us9.69lover.my
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/api/v2/63e9687fa53e441c/stream'
-      headers:
-        Host: us9.69lover.my
+    servername: gb.superbuba.top
+    client-fingerprint: random
+    reality-opts:
+      public-key: G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw
+      short-id: 4fa44664f6a566d3
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇵🇱 [PL] Польша VFPARSER'
     type: vless
     server: pl.bubahero.com
@@ -114,20 +70,6 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇭🇰 [HK] Гонконг VFPARSER'
-    type: vless
-    server: hk-1.gsafevpnapi.com
-    port: 20270
-    uuid: e9e24ed8-b007-4e29-b54f-1ece641e60fb
-    udp: true
-    tls: true
-    servername: www.yahoo.com
-    client-fingerprint: ios
-    reality-opts:
-      public-key: 0MIamX22OTB4zDokZ5WN_GHBVYs7MkFceuipUvql9Q8
-      short-id: d5b538acf8a93540
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 179.254.115.164
@@ -142,27 +84,31 @@ proxies:
       short-id: b790344649b0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
-    server: jp-2.gsafevpnapi.com
-    port: 31870
+    server: 84.247.155.196
+    port: 443
     cipher: aes-256-gcm
-    password: 5f82dcfd-cab5-4b71-91c6-8b6fb4f76c55
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
     udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇨🇭 [CH] Швейцария VFPARSER'
-      - '🇮🇳 [IN] Индия VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇵🇱 [PL] Польша VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇭🇰 [HK] Гонконг VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
 rules:
   - MATCH,PROXY
