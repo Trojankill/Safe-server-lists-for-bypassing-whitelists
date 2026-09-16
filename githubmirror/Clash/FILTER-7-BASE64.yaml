@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 00:30:52 UTC
+# 2026-09-16 00:45:28 UTC
 proxies:
   - name: '🇺🇸 США | БС⁵'
     type: vless
@@ -94,6 +94,20 @@ proxies:
     reality-opts:
       public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
       short-id: 9e419c0759b54d6f
+    network: tcp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇸🇪 Швеция'
+    type: vless
+    server: 193.163.203.170
+    port: 443
+    uuid: 11aabba0-5fd1-4f15-8068-74c1a466cefc
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
+      short-id: b28db60d77c50b4f
+    flow: xtls-rprx-vision
     network: tcp
   - name: '8 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 7/10'
     type: vless
@@ -357,7 +371,7 @@ proxies:
       short-id: 7f342137c20387
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 США | БС⁶'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: tradingview.com ┃ 🇺🇸 США'
     type: vless
     server: 31.58.50.200
     port: 8443
@@ -585,6 +599,20 @@ proxies:
     reality-opts:
       public-key: IGkfedwznP5Qy28l7u5ra1FOgN7Wo1w2qh0UjAoWcTY
       short-id: 2605aa36
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
+    type: vless
+    server: 54.251.9.130
+    port: 24146
+    uuid: 9d9a048b-3aea-4b3e-b106-1106bf301feb
+    udp: true
+    tls: true
+    servername: www.intel.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo
+      short-id: 7205d9079521832c
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇳🇱 LTE 10 | тгк: @rostunnel'
@@ -1019,19 +1047,13 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
-  - name: '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
   - name: '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 131.186.19.174
@@ -1099,6 +1121,7 @@ proxy-groups:
       - '🇳🇱 Нидерланды 14 Novoserve B.V.'
       - '🇯🇵 AetrisVPN'
       - '🇹🇷 LTE 17 | тгк: @rostunnel'
+      - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇸🇪 Швеция'
       - '8 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 7/10'
       - '🇮🇹 LTE 29 | тгк: @rostunnel'
       - '🇫🇮 LTE 198 | тгк: @rostunnel'
@@ -1118,7 +1141,7 @@ proxy-groups:
       - '5 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 9/10'
       - '13 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 6/10'
       - '🇸🇬 LTE 158 | тгк: @rostunnel'
-      - '🇺🇸 США | БС⁶'
+      - 'AetrisVPN White list ┃ ✅ SNI: tradingview.com ┃ 🇺🇸 США'
       - '🇸🇪 Швеция 5 Baykov Ilya Sergeevich'
       - '🇫🇮 Финляндия | БС¹'
       - '🇮🇳 Индия | БС¹'
@@ -1135,6 +1158,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '2681 | 🇷🇺 Russia | 🏳️ CIDR-OLD | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
+      - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
       - '🇳🇱 LTE 10 | тгк: @rostunnel'
       - '🇩🇪 LTE 128 | тгк: @rostunnel'
       - '🇫🇮 Финляндия 3 Hostkey B.V.'
@@ -1168,8 +1192,7 @@ proxy-groups:
       - '6718 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3989 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2389 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
-      - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
       - '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3439 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1251 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
