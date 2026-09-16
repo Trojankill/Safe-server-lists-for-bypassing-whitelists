@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 01:30:43 UTC
+# 2026-09-16 01:45:30 UTC
 proxies:
   - name: '🇺🇸 США | БС⁵'
     type: vless
@@ -124,6 +124,48 @@ proxies:
       short-id: a0a305ccc8e94aa8
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | БС¹'
+    type: vless
+    server: 217.19.122.165
+    port: 8443
+    uuid: 1af59df0-01ac-4d4e-ba19-61412a92762d
+    udp: true
+    tls: true
+    servername: vk.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: BSDNHw3umyh5IiFoqdCs_a4YF8Imr_2e0PWvVIKa3FQ
+      short-id: 155374bc2054ec79
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия'
+    type: vless
+    server: 91.240.86.12
+    port: 443
+    uuid: 1af59df0-01ac-4d4e-ba19-61412a92762d
+    udp: true
+    tls: true
+    servername: www.vk.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: nkpZyXHfG7nhEh1vjBjEDV-Tn7UhHEb5iN9iA8gc9VE
+      short-id: c31188450fe50718
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
+    type: vless
+    server: 91.240.86.186
+    port: 443
+    uuid: 1af59df0-01ac-4d4e-ba19-61412a92762d
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇫🇮 Финляндия'
     type: vless
     server: 144.31.50.236
@@ -235,20 +277,6 @@ proxies:
       public-key: fFmp4fFO2wuoJKvc2_e5MF5C92H6Ei4c_AfV7toZO1c
       short-id: a62ae57fa46a0d6d
     network: tcp
-  - name: '4792 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 144.31.93.231
-    port: 443
-    uuid: 3710fc0f-5f0c-4b9c-a5d4-40cb419e943a
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: WKN5yaRN05O2WdCURXRmS-yBVYaabaFWOvGudX6ohWc
-      short-id: b97e7d4582b6fa6e
-    flow: xtls-rprx-vision
-    network: raw
   - name: '302.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 200.169.177.156
@@ -331,20 +359,6 @@ proxies:
       public-key: mr5AF0LFyDzYDRoYAwH6QNcHXL77-LoiwRx50ZzU8QU
     flow: xtls-rprx-vision
     network: tcp
-  - name: '4575 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 185.241.195.202
-    port: 9444
-    uuid: 4e10d80c-c728-4d9e-8ebd-f10c3acacbf1
-    udp: true
-    tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇸🇪 Швеция 5 Baykov Ilya Sergeevich'
     type: vless
     server: 5.129.198.223
@@ -358,6 +372,20 @@ proxies:
       public-key: MiyOBOmkjV9uSx-oM1Aoq9JgIXKjAgvXceTNgSeBvRk
       short-id: d8c870848236fa69
     network: xhttp
+  - name: '1507 | 🇬🇧 United Kingdom | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+    type: vless
+    server: 91.245.226.81
+    port: 443
+    uuid: 6042aecb-c19b-4ebc-a3c7-0bad5fbfe01a
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: KQYuIiPZIouIHwvjU2UTXKK54CSvktrxpCL1aKGYIl4
+      short-id: 511ce432cf5d01dd
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇸🇬 Сингапур | БС¹'
     type: vless
     server: 91.192.81.214
@@ -386,7 +414,7 @@ proxies:
       short-id: 1374bddeb25d
     flow: xtls-rprx-vision
     network: tcp
-  - name: '2712 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '1744 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 144.31.40.96
     port: 2053
@@ -498,34 +526,6 @@ proxies:
       short-id: 29680d77
     flow: xtls-rprx-vision
     network: tcp
-  - name: '2705 | 🇨🇾 Cyprus | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 171.22.130.117
-    port: 443
-    uuid: 901cb0b0-0185-4983-b42a-67c431fa2f10
-    udp: true
-    tls: true
-    servername: storage.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: XNRqBVhMN7DRE0OnISDpLpIr2x7V6reBNg1BdBPP8jk
-      short-id: 29680d77
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '0921 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 193.233.216.233
-    port: 443
-    uuid: 901cb0b0-0185-4983-b42a-67c431fa2f10
-    udp: true
-    tls: true
-    servername: api-maps.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: eWZTT3b4Xa0dYUdW52WtF1n8w3-AS4EHcaettRRa_0Q
-      short-id: 5f96c103e5734528
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 213.219.214.33
@@ -577,20 +577,6 @@ proxies:
     reality-opts:
       public-key: w42qluNCHvJAkqCCjg_BHu7eTr2qRQYn93OKUSfmHEI
     network: xhttp
-  - name: '2681 | 🇷🇺 Russia | 🏳️ CIDR-OLD | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 185.241.195.202
-    port: 8446
-    uuid: 9ae0806c-6398-43da-a3c1-9275b461e9b5
-    udp: true
-    tls: true
-    servername: max.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: IGkfedwznP5Qy28l7u5ra1FOgN7Wo1w2qh0UjAoWcTY
-      short-id: 2605aa36
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
     type: vless
     server: 54.251.9.130
@@ -630,6 +616,20 @@ proxies:
     reality-opts:
       public-key: 3oXLSdYW2x9TMuDRu2Bo4XGXfVtU8cQqBaL2pcWCNEk
       short-id: a20d3ed244c76426
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '0730 | 🇳🇱 Netherlands | 🏳️ SNI-DZEN | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+    type: vless
+    server: 146.103.100.242
+    port: 443
+    uuid: a7c35c0c-e8b6-49a4-9d2c-1acee63fe2d6
+    udp: true
+    tls: true
+    servername: dzen.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: CxjnGHCI3HXN2RAXwytela7jXyOGDCBqzMAqTfm60D0
+      short-id: 4ed920401771c4ab
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇫🇮 Финляндия 5 Hostkey B.V.'
@@ -700,32 +700,6 @@ proxies:
       short-id: 11d27eb4
     flow: xtls-rprx-vision
     network: tcp
-  - name: '4633 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 171.22.74.126
-    port: 443
-    uuid: cb26790c-9ae4-4455-bb58-74e86210103a
-    udp: true
-    tls: true
-    servername: mail.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: Wq6Zg4DEs9iBHN390pK1K59OddfL97aVgP5LZbZM2x0
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '0627 | 🌐 Unknown | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: ruuk04.freesurfer.club
-    port: 443
-    uuid: cb26790c-9ae4-4455-bb58-74e86210103a
-    udp: true
-    tls: true
-    servername: mail.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: Wq6Zg4DEs9iBHN390pK1K59OddfL97aVgP5LZbZM2x0
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇫🇮 Финляндия 3 Hetzner Online GmbH'
     type: vless
     server: 186.246.4.107
@@ -766,7 +740,7 @@ proxies:
       public-key: Sx6bJWPbDlwuMfKjcz-sUyJxZkuks4uLqqLa-1uyjH4
     flow: xtls-rprx-vision
     network: raw
-  - name: '5543 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
+  - name: '0495 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
     type: vless
     server: 212.192.13.233
     port: 443
@@ -780,7 +754,7 @@ proxies:
       short-id: 1bc2c1ef1c
     flow: xtls-rprx-vision
     network: raw
-  - name: '6110 | 🇨🇿 Czechia | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '1421 | 🇨🇿 Czechia | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 31.76.7.154
     port: 7443
@@ -834,20 +808,48 @@ proxies:
       short-id: 2cfb5a0ae8ab0cb0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '5216 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | VLESS | TG: @YoutubeUnBlockRu'
+  - name: '33.🇷🇺Россия | @LimeVPNFREE'
     type: vless
-    server: 31.129.42.175
-    port: 443
-    uuid: f24c25fe-937d-414b-8180-d54c96220e71
+    server: 176.108.241.72
+    port: 2443
+    uuid: eabb8fc5-c05e-4d91-bcf7-0db366a8d593
     udp: true
     tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: safari
+    servername: rg.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: nlSTIZeziCL_gR8HN1UF4F_Gbcrqr4Z9pr_sM6dGbig
-      short-id: c303fd64bf463450
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: 3J5mYA5NziIVJi77fRsx9dZPYWzLkvaIz-cCdZQvhn8
+      short-id: ab90218fde328913
+    network: grpc
+    grpc-opts:
+  - name: '11.🇷🇺Россия | @LimeVPNFREE'
+    type: vless
+    server: 176.108.246.102
+    port: 2443
+    uuid: eabb8fc5-c05e-4d91-bcf7-0db366a8d593
+    udp: true
+    tls: true
+    servername: rg.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 3J5mYA5NziIVJi77fRsx9dZPYWzLkvaIz-cCdZQvhn8
+      short-id: ab90218fde328913
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Германия 4 Hetzner Online GmbH'
+    type: vless
+    server: 31.130.150.244
+    port: 2443
+    uuid: eabb8fc5-c05e-4d91-bcf7-0db366a8d593
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 3J5mYA5NziIVJi77fRsx9dZPYWzLkvaIz-cCdZQvhn8
+      short-id: ab90218fde328913
+    network: grpc
+    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 144.31.78.35
@@ -887,20 +889,6 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
-  - name: '5068 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 72.56.78.50
-    port: 443
-    uuid: fee2cdd8-55d1-4c5b-a67a-cfde8d45eed0
-    udp: true
-    tls: true
-    servername: sun6-21.userapi.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: huH_8n0Dfk4iolIkzrc-qET8ySHWgZAr-i6K6lr6xSs
-      short-id: 375838bc17c0
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 LTE 6 | тгк: @rostunnel'
     type: trojan
     server: 104.18.42.98
@@ -1003,19 +991,19 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '6718 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '2402 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 163.192.14.135
     port: 50160
     password: 099830134df5ac3a04a4b21d39b8c395
     sni: vk.com
-  - name: '3989 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+  - name: '0835 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: us4.xiaoliyu.cyou
     port: 4433
     password: 19f72087-4591-4d72-930b-2697078ec2be
     sni: vk.com
-  - name: '2389 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '1155 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 152.67.200.82
     port: 50160
@@ -1034,55 +1022,36 @@ proxies:
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '2345 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 131.186.19.174
     port: 50160
     password: 7302ad33229de166d393cd56143a1e4c
     sni: vk.com
-  - name: '3439 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+  - name: '3000 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 202.146.222.89
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '1251 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-    type: hysteria2
-    server: vpn-au-002.fastervpn.world
-    port: 443
-    password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-    sni: vk.com
-  - name: '4623 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+  - name: '1988 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: vpn-ca-002.fastervpn.world
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '2461 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+  - name: '1272 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: vpn-in-001.fastervpn.world
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '1398 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+  - name: '2454 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 185.156.44.99
     port: 443
     password: gf1:gfhysteria2024
     sni: vk.com
-  - name: '5152 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-    type: hysteria2
-    server: 54.151.142.26
-    port: 443
-    password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-    sni: vk.com
-  - name: '1559 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | SS | TG: @YoutubeUnBlockRu'
-    type: ss
-    server: 5.101.51.152
-    port: 99
-    cipher: chacha20-ietf-poly1305
-    password: SwEG-P-RsXiRoB114yZ35Q
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
@@ -1096,6 +1065,9 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇸🇪 Швеция'
       - '8 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 7/10'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇮🇹 Италия'
+      - '🇳🇱 Нидерланды | БС¹'
+      - 'AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия'
+      - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇫🇮 Финляндия'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇺🇸 США'
@@ -1104,18 +1076,17 @@ proxy-groups:
       - '9.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
-      - '4792 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '302.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '5 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 9/10'
       - '13 | REALITY | SNI: deepl.com | IN: NL OUT: NL | RATING: 6/10'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
       - 'AetrisVPN White list ┃ ✅ SNI: tradingview.com ┃ 🇺🇸 США'
-      - '4575 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
       - '🇸🇪 Швеция 5 Baykov Ilya Sergeevich'
+      - '1507 | 🇬🇧 United Kingdom | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇸🇬 Сингапур | БС¹'
       - '🇫🇮 Финляндия | БС¹'
-      - '2712 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '1744 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
@@ -1123,36 +1094,33 @@ proxy-groups:
       - '🇺🇸 AetrisVPN'
       - '12 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 6/10'
       - '66.🇷🇺Россия | @LimeVPNFREE'
-      - '2705 | 🇨🇾 Cyprus | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '0921 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇺🇸 США | БС⁷'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
-      - '2681 | 🇷🇺 Russia | 🏳️ CIDR-OLD | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: www.intel.com ┃ 🇸🇬 Сингапур'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.io.ozone.ru ┃ 🇩🇪 Германия'
+      - '0730 | 🇳🇱 Netherlands | 🏳️ SNI-DZEN | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия 5 Hostkey B.V.'
       - '74.🇷🇺Россия | @LimeVPNFREE'
       - '🇩🇪Обходы - TG: AirLinkVPNBot |0036|'
       - '🇭🇺 Венгрия Akenai Products Ltd'
       - '🇨🇦 LTE 30 | тгк: @rostunnel'
-      - '4633 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-      - '0627 | 🌐 Unknown | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия 3 Hetzner Online GmbH'
       - '🇫🇮 Финляндия 4 Hetzner Online GmbH'
       - '310.🇷🇺Россия | @LimeVPNFREE'
-      - '5543 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
-      - '6110 | 🇨🇿 Czechia | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '0495 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
+      - '1421 | 🇨🇿 Czechia | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - '10.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇱🇹 Литва'
-      - '5216 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | VLESS | TG: @YoutubeUnBlockRu'
+      - '33.🇷🇺Россия | @LimeVPNFREE'
+      - '11.🇷🇺Россия | @LimeVPNFREE'
+      - '🇩🇪 Германия 4 Hetzner Online GmbH'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
-      - '5068 | 🇳🇱 Netherlands | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇷🇺 LTE 6 | тгк: @rostunnel'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
@@ -1160,18 +1128,15 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
-      - '6718 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '3989 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '2389 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '2402 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '0835 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
+      - '1155 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
       - '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
-      - '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '3439 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '1251 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '4623 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '2461 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '1398 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '5152 | 🇸🇬 Singapore | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '1559 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | SS | TG: @YoutubeUnBlockRu'
+      - '2345 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '3000 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '1988 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '1272 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '2454 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
 rules:
   - MATCH,PROXY
