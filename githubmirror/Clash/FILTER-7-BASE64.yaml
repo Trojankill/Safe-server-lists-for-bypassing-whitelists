@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 13:45:33 UTC
+# 2026-09-16 14:01:01 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -934,6 +934,21 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
     server: 80.240.252.241
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -956,6 +971,20 @@ proxies:
     udp: true
     tls: true
     servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -1000,21 +1029,6 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: 5.188.26.85
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -1161,10 +1175,11 @@ proxy-groups:
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
-      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
-      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '6263 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3709 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
       - '2231 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
