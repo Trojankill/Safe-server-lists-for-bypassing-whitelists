@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 00:45:28 UTC
+# 2026-09-16 01:00:52 UTC
 proxies:
   - name: '🇺🇸 США | БС⁵'
     type: vless
@@ -536,6 +536,48 @@ proxies:
       public-key: mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg
       short-id: f79448a30d
     network: xhttp
+  - name: '🇸🇪 Швеция 4 Aeza Group LLC'
+    type: vless
+    server: 135.106.216.46
+    port: 443
+    uuid: 901cb0b0-0185-4983-b42a-67c431fa2f10
+    udp: true
+    tls: true
+    servername: storage.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: XNRqBVhMN7DRE0OnISDpLpIr2x7V6reBNg1BdBPP8jk
+      short-id: 29680d77
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '2705 | 🇨🇾 Cyprus | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+    type: vless
+    server: 171.22.130.117
+    port: 443
+    uuid: 901cb0b0-0185-4983-b42a-67c431fa2f10
+    udp: true
+    tls: true
+    servername: storage.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: XNRqBVhMN7DRE0OnISDpLpIr2x7V6reBNg1BdBPP8jk
+      short-id: 29680d77
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '0921 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
+    type: vless
+    server: 193.233.216.233
+    port: 443
+    uuid: 901cb0b0-0185-4983-b42a-67c431fa2f10
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: eWZTT3b4Xa0dYUdW52WtF1n8w3-AS4EHcaettRRa_0Q
+      short-id: 5f96c103e5734528
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 213.219.214.33
@@ -937,6 +979,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -972,7 +1015,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС#23'
     type: vmess
     server: 194.87.71.141
     port: 443
@@ -986,7 +1029,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС#24'
     type: vmess
     server: 195.19.20.80
     port: 443
@@ -1000,7 +1043,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
     type: vmess
     server: 2.27.54.132
     port: 443
@@ -1014,7 +1057,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -1054,6 +1097,12 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
+  - name: '🌐 Anycast-IP | 🇱🇻 [*CIDR]'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
   - name: '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 131.186.19.174
@@ -1153,6 +1202,9 @@ proxy-groups:
       - '🇺🇸 AetrisVPN'
       - '12 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 6/10'
       - '🇦🇹 LTE 193 | тгк: @rostunnel'
+      - '🇸🇪 Швеция 4 Aeza Group LLC'
+      - '2705 | 🇨🇾 Cyprus | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '0921 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇺🇸 США | БС⁷'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
@@ -1185,14 +1237,15 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС#23'
+      - '🌍 Рандом | БС#24'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
       - '6718 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3989 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2389 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
+      - '🌐 Anycast-IP | 🇱🇻 [*CIDR]'
       - '1435 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3439 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1251 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
