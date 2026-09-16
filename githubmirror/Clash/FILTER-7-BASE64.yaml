@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-16 10:15:32 UTC
+# 2026-09-16 10:30:52 UTC
 proxies:
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
@@ -42,7 +42,7 @@ proxies:
       public-key: 2SVMBXiViUclgzkSfLCV2w6dOMJwA61YGFv7ne5wMgM
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇦 LTE 26 | тгк: @rostunnel'
+  - name: '🇨🇦 LTE 22 | тгк: @rostunnel'
     type: vless
     server: 138.2.94.44
     port: 8899
@@ -56,7 +56,7 @@ proxies:
       short-id: 905ae32a
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇹🇷 Турция'
+  - name: '🇹🇷 LTE 129 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
     port: 2053
@@ -69,7 +69,7 @@ proxies:
       public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
       short-id: 9e419c0759b54d6f
     network: tcp
-  - name: '141.🇷🇺Россия | @LimeVPNFREE'
+  - name: '🇫🇮 LTE 126 | тгк: @rostunnel'
     type: vless
     server: 144.31.50.236
     port: 443
@@ -110,7 +110,7 @@ proxies:
       public-key: Ww_HS9_n7ob3uESSXtbU23EPM-BOJ5ZYLp-RFB0L0SY
     network: grpc
     grpc-opts:
-  - name: 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇫🇮 Финляндия'
+  - name: '🇫🇮 LTE 265 | тгк: @rostunnel'
     type: vless
     server: 212.193.18.183
     port: 8446
@@ -124,7 +124,7 @@ proxies:
       short-id: 7f8e9d0c1b2a
     network: grpc
     grpc-opts:
-  - name: 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇺🇸 США'
+  - name: '🇺🇸 LTE 296 | тгк: @rostunnel'
     type: vless
     server: 5.35.81.60
     port: 4443
@@ -359,7 +359,7 @@ proxies:
       short-id: 561533e7f4
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
+  - name: '🇬🇧 LTE 272 | тгк: @rostunnel'
     type: vless
     server: 3.0.111.82
     port: 17623
@@ -373,7 +373,7 @@ proxies:
       short-id: 48050fab
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
+  - name: '🇬🇧 LTE 278 | тгк: @rostunnel'
     type: vless
     server: 3.114.220.22
     port: 10583
@@ -387,7 +387,7 @@ proxies:
       short-id: 48050fab
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇯🇵 Япония'
+  - name: '🇯🇵 LTE 277 | тгк: @rostunnel'
     type: vless
     server: 3.114.220.22
     port: 18007
@@ -628,7 +628,7 @@ proxies:
       public-key: -P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇨🇦 LTE 29 | тгк: @rostunnel'
+  - name: '🇨🇦 LTE 34 | тгк: @rostunnel'
     type: vless
     server: 152.67.211.233
     port: 8899
@@ -831,7 +831,7 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
-  - name: '🇷🇺 LTE 6 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 2 | тгк: @rostunnel'
     type: trojan
     server: 104.18.42.98
     port: 443
@@ -845,7 +845,7 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: '🇷🇺 LTE 7 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 4 | тгк: @rostunnel'
     type: trojan
     server: 172.64.145.158
     port: 443
@@ -861,7 +861,22 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
-    server: 5.188.26.85
+    server: 80.240.252.241
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 194.87.71.141
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -873,7 +888,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС⁵'
     type: vmess
     server: 2.27.54.132
     port: 443
@@ -891,6 +906,21 @@ proxies:
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
     server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany | [*CIDR]'
+    type: vmess
+    server: 5.188.26.85
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -920,13 +950,13 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
@@ -956,7 +986,7 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -976,13 +1006,13 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇳🇱 The Netherlands — #66'
-      - '🇨🇦 LTE 26 | тгк: @rostunnel'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇹🇷 Турция'
-      - '141.🇷🇺Россия | @LimeVPNFREE'
+      - '🇨🇦 LTE 22 | тгк: @rostunnel'
+      - '🇹🇷 LTE 129 | тгк: @rostunnel'
+      - '🇫🇮 LTE 126 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - '🇫🇮 Финляндия 1 Hetzner Online GmbH'
-      - 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇫🇮 Финляндия'
-      - 'AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇺🇸 США'
+      - '🇫🇮 LTE 265 | тгк: @rostunnel'
+      - '🇺🇸 LTE 296 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - '0784 | 🇷🇺 Russia | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
@@ -999,9 +1029,9 @@ proxy-groups:
       - '5588 | 🇬🇧 United Kingdom | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2470 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
-      - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇯🇵 Япония'
+      - '🇬🇧 LTE 272 | тгк: @rostunnel'
+      - '🇬🇧 LTE 278 | тгк: @rostunnel'
+      - '🇯🇵 LTE 277 | тгк: @rostunnel'
       - '2607 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3480 | 🌐 Unknown | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇺🇸 AetrisVPN'
@@ -1019,7 +1049,7 @@ proxy-groups:
       - '63.🇷🇺Россия | @LimeVPNFREE'
       - '🇩🇪Обходы - TG: AirLinkVPNBot |0036|'
       - '3040 | 🇷🇺 Russia | 🏳️ CIDR-TimeWeb | VLESS | TG: @YoutubeUnBlockRu'
-      - '🇨🇦 LTE 29 | тгк: @rostunnel'
+      - '🇨🇦 LTE 34 | тгк: @rostunnel'
       - '1508 | 🇸🇪 Sweden | 🏳️ SNI-Rutube | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '83.🇷🇺Россия | @LimeVPNFREE'
       - '11 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 6/10'
@@ -1034,21 +1064,23 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
-      - '🇷🇺 LTE 6 | тгк: @rostunnel'
-      - '🇷🇺 LTE 7 | тгк: @rostunnel'
+      - '🇷🇺 LTE 2 | тгк: @rostunnel'
+      - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС⁵'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '6069 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3603 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | 🔐 Stable | TG: @YoutubeUnBlockRu'
       - '2168 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
-      - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
       - '4357 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3141 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '4174 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '2236 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Russia | 🌐 [*CIDR]'
+      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '1255 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
 rules:
   - MATCH,PROXY
