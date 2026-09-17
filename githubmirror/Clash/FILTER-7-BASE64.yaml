@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-17 19:45:31 UTC
+# 2026-09-17 20:00:59 UTC
 proxies:
   - name: '🇺🇸 США | БС³'
     type: vless
@@ -15,20 +15,6 @@ proxies:
       short-id: 0990d22f
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
-    type: vless
-    server: 185.229.9.236
-    port: 43005
-    uuid: 02088363-6022-4594-96bf-48c16bbe4be8
-    udp: true
-    tls: true
-    servername: max.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: tP_mtYuA3fZq8C6WatAA4TmDv0_Wigq9xYcmb5UsTRA
-      short-id: 93653ee07ff5124c
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
     server: 45.195.137.5
@@ -715,6 +701,19 @@ proxies:
       short-id: 3199b70105c62ce0
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 The Netherlands — #62'
+    type: vless
+    server: 78.159.245.51
+    port: 6443
+    uuid: bcc2f72f-62ea-4d2d-914a-8a6ae5409724
+    udp: true
+    tls: true
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: o-QrksJtRE_UOjwUEAkN_T_3wo8HWXFo5F97BOmzKAw
+      short-id: 4c2f8435d7555b76
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇳🇱 The Netherlands — #58'
     type: vless
     server: 78.159.245.89
@@ -1153,7 +1152,6 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 США | БС³'
-      - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '2365 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
@@ -1204,6 +1202,7 @@ proxy-groups:
       - '🇮🇳 Индия | БС¹'
       - '🌍 Рандом | БС#59'
       - '33.🇷🇺Россия | @LimeVPNFREE'
+      - '🇳🇱 The Netherlands — #62'
       - '🇳🇱 The Netherlands — #58'
       - '🇩🇪 Германия | БС⁴'
       - '🇨🇦 Канада | БС²'
