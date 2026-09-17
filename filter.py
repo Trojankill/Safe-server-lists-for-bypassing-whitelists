@@ -69,7 +69,7 @@ SUPPORTED_PROTOCOLS = [
 
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://raw.githubusercontent.com/RKPchannel/RKP_bypass_configs/refs/heads/main/whitelist.txt"},
-    {"name": "FILTER-2", "url": "https://p.kfwl.lol/https://pastefy.app/1PhpySgs/raw"},
+    {"name": "FILTER-2", "url": "https://warp-gen.cyb-portal.org/CP-006"},
     {"name": "FILTER-3", "url": "https://raw.githubusercontent.com/zieng2/wl/refs/heads/main/vless_lite.txt"},
     {"name": "FILTER-4", "url": "https://raw.githubusercontent.com/whoahaow/rjsxrd/refs/heads/main/githubmirror/bypass/bypass-all.txt"},
     {"name": "FILTER-5", "url": "https://gitverse.ru/api/repos/Bazz1024/vpn-configs-mirror/raw/branch/main/rkn_white_list"},
