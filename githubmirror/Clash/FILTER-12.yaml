@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-17 13:15:31 UTC
+# 2026-09-17 13:30:48 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -13,6 +13,20 @@ proxies:
     reality-opts:
       public-key: epF9hW_Z8LxlpJzDRXTJrLOFxelXWbAIWlOGPE-MNys
       short-id: a1b2c3d4e5f67890
+    network: grpc
+    grpc-opts:
+  - name: '🇮🇳 [IN] Индия VFPARSER'
+    type: vless
+    server: hydra.yokkastars.com
+    port: 2443
+    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: qq
+    reality-opts:
+      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
+      short-id: 92c32de179e5d908
     network: grpc
     grpc-opts:
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
@@ -43,41 +57,6 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 84.235.162.230
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '0W18BiN3HuF+EBBdvuLgTaot1VAiMBw5c4okk1zE48w='
-    udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 92.5.228.124
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'IJFQQ2fQutTqibPWkWvfkHVS52GKgtIQfKOfzJOqVaQ='
-    udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.146.13
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'oB5H6Y/UUhmW9lutHBne3Cwf6ZBPaKa1vKBj+FHQsYo='
-    udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.130.112
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'p8dN3hVWRx3lfMoay/ro9i7y6izvAO/99zB3o9HYM6w='
-    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
@@ -115,13 +94,6 @@ proxies:
     udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
-    server: jp-2.gsafevpnapi.com
-    port: 31870
-    cipher: aes-256-gcm
-    password: 2bf192f1-7d86-43a3-88b3-8f72b7eb5ad9
-    udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
     server: 23.252.104.131
     port: 54321
     cipher: aes-256-gcm
@@ -132,19 +104,14 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 [US] США VFPARSER'
+      - '🇮🇳 [IN] Индия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
 rules:
   - MATCH,PROXY
