@@ -223,7 +223,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-2</b> — t7954395</summary>
+<summary><b>📡 FILTER-2</b> — CyberPortal</summary>
 
 <p align="center">
   <img src="QR-CODE/FILTER-2.png" width="300" alt="FILTER-2 QR">
@@ -367,7 +367,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-11</b> — KOTVPN</summary>
+<summary><b>📡 FILTER-11</b> — CyberPortal</summary>
 
 <p align="center">
   <img src="QR-CODE/FILTER-6.png" width="300" alt="FILTER-6 QR">
