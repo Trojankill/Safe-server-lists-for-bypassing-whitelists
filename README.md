@@ -382,7 +382,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-12</b> — все конфиги (рекомендуется)</summary>
+<summary><b>📡 FILTER-12</b> — VansFenix</summary>
 
 <p align="center">
   <img src="QR-CODE/ALL.png" width="300" alt="ALL QR">
@@ -397,7 +397,7 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 </details>
 
 <details>
-<summary><b>📡 FILTER-13</b> — все конфиги (рекомендуется)</summary>
+<summary><b>📡 FILTER-13</b> — MK-14</summary>
 
 <p align="center">
   <img src="QR-CODE/ALL.png" width="300" alt="ALL QR">
