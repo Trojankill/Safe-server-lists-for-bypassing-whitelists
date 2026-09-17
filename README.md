@@ -146,7 +146,7 @@
 | ID | Источник | Формат | Статус |
 |:---:|---|:---:|:---:|
 | `FILTER-1` | [RKPchannel/RKP_bypass_configs](https://github.com/RKPchannel/RKP_bypass_configs) | plaintext | ✅ |
-| `FILTER-2` | [t7954395](https://gist.githubusercontent.com/t7954395-dotcom/dd6afb9503f16be9861b20115301e839/raw/c6cc03c6f0e542a81c003ee9a3328bc16e3af762/gistfile1.txt) | plaintext | ✅ |
+| `FILTER-2` | [CyberPortal CIDR](https://warp-gen.cyb-portal.org) | plaintext | ✅ |
 | `FILTER-3` | [zieng2/wl](https://github.com/zieng2/wl) | plaintext | ✅ |
 | `FILTER-4` | [whoahaow/rjsxrd](https://github.com/whoahaow/rjsxrd) | plaintext | ✅ |
 | `FILTER-5` | [Bazz1024](https://gitverse.ru/Bazz1024/vpn-configs-mirror) | plaintext | ✅ |
@@ -155,7 +155,7 @@
 | `FILTER-8-BASE64` | [Diversan313 WHITELIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 | `FILTER-9-BASE64` | [Diversan313 BLACKLIST](https://github.com/Diversan313/apex-parser) | **base64** | ✅ |
 | `FILTER-10` | [VlessForu](https://sub.vlessfo.ru/vlessforu/working_configs.txt) | **plaintext** | ✅ |
-| `FILTER-11` | [GRU VPN](https://vpn.novogodniysait.workers.dev/sub/vip) | **plaintext** | ✅ |
+| `FILTER-11` | [CyberPortal WL](https://warp-gen.cyb-portal.org) | **plaintext** | ✅ |
 | `FILTER-12` | [VansFenix](https://github.com/VansFenix/vpnparser) | **plaintext** | ✅ |
 | `FILTER-13` | [MK-14](https://raw.githubusercontent.com/MK-l4/Mk14/refs/heads/main/Vagner) | **plaintext** | ✅ |
 > [!TIP]
