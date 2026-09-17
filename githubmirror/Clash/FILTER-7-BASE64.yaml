@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-17 06:45:35 UTC
+# 2026-09-17 07:00:52 UTC
 proxies:
   - name: '2 | RAW+REALITY | SNI: www.cloudflare.com | IN: LV OUT: LV | RATING: 8/10'
     type: vless
@@ -749,6 +749,21 @@ proxies:
         Host: tro.baiyi.cloudns.org
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌍 Рандом | БС⁹'
+    type: vmess
     server: 194.226.142.120
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
@@ -762,24 +777,9 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС¹¹'
     type: vmess
     server: 195.19.20.80
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
-    type: vmess
-    server: renderer-stream-2-62.mirra.now
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -820,15 +820,16 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🇩🇪 Germany [*CIDR]'
     type: vmess
-    server: 5.188.26.85
+    server: renderer-stream-2-62.mirra.now
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
     cipher: auto
     udp: true
     tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -967,11 +968,11 @@ proxy-groups:
       - '🇷🇺 LTE 6 | тгк: @rostunnel'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС⁹'
+      - '🌍 Рандом | БС¹¹'
       - '🇩🇪 Germany [*CIDR]'
       - '🇩🇪 Germany [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany [*CIDR]'
       - '3171 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2404 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3549 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
