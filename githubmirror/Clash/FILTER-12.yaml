@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-17 10:30:43 UTC
+# 2026-09-17 10:45:34 UTC
 proxies:
-  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
-    type: vless
-    server: sa-18cf795a50985ad9.sr-fa525e02d0951c2f.r.vpvpn.club
-    port: 443
-    uuid: 0c597b0d-99d7-4c27-befe-6c5d339d7dbe
-    udp: true
-    tls: true
-    servername: baeb.edge-static.space
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
     server: 136.0.116.171
@@ -26,34 +13,6 @@ proxies:
     reality-opts:
       public-key: epF9hW_Z8LxlpJzDRXTJrLOFxelXWbAIWlOGPE-MNys
       short-id: a1b2c3d4e5f67890
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇴 [RO] Румыния VFPARSER'
-    type: vless
-    server: 146.70.124.85
-    port: 443
-    uuid: 40abbe13-f02e-4da2-9b19-966c2c3eb4ee
-    udp: true
-    tls: true
-    servername: www.datadoghq.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: byzvlw97wjAAAfHs5AZRV0P0H6_JKBEZ4yfLS0HNewE
-      short-id: fe24f8a0a560056e
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇮🇳 [IN] Индия VFPARSER'
-    type: vless
-    server: hydra.yokkastars.com
-    port: 2443
-    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
-      short-id: 92c32de179e5d908
     network: grpc
     grpc-opts:
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
@@ -70,20 +29,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 [PL] Польша VFPARSER'
-    type: vless
-    server: pl.bubahero.com
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
-    udp: true
-    tls: true
-    servername: pl.bubahero.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: GmZv3anSeAeHr_cMFKr-6MPLli-nyKNatnY6P3AFK00
-      short-id: 9c2378562188c3cb
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 178.105.61.61
@@ -98,26 +43,26 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: godisko.fun
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
     port: 443
-    uuid: e12d4a74-88e8-4326-9672-5e2f173ffc49
+    password: humanity
     udp: true
-    tls: true
-    servername: godisko.fun
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: maF7kOb9q2KpTnUFoJQhTPVvZ3p5besP3xBGF-pO3xY
-      short-id: 057550fedcc5e2
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
+    sni: www.ignitelimit.com
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
-    server: 129.146.123.29
-    port: 50356
+    server: 84.235.162.230
+    port: 45819
     cipher: 2022-blake3-chacha20-poly1305
-    password: 'PEsqiXk0VctpVxkGsvy90xaUVvmnSf1rJrj+tf5iLlw='
+    password: '0W18BiN3HuF+EBBdvuLgTaot1VAiMBw5c4okk1zE48w='
+    udp: true
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: ss
+    server: 92.5.228.124
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'IJFQQ2fQutTqibPWkWvfkHVS52GKgtIQfKOfzJOqVaQ='
     udp: true
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: ss
@@ -133,19 +78,26 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 'p8dN3hVWRx3lfMoay/ro9i7y6izvAO/99zB3o9HYM6w='
     udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.41.7
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'yuyGqH7zIcMJkpyOWfI6iKEDx8tjXJM4mrBZSWoIHn4='
-    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
     port: 2342
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 82.47.186.18
+    port: 19290
+    cipher: aes-128-gcm
+    password: o2rw2hICwu1blrr_gZAl2Q
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 82.47.186.18
+    port: 55597
+    cipher: aes-128-gcm
+    password: o2rw2hICwu1blrr_gZAl2Q
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -179,19 +131,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇦🇪 [AE] ОАЭ VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇷🇴 [RO] Румыния VFPARSER'
-      - '🇮🇳 [IN] Индия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇵🇱 [PL] Польша VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
