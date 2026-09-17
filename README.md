@@ -381,6 +381,36 @@ https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whi
 
 </details>
 
+<details>
+<summary><b>📡 FILTER-12</b> — все конфиги (рекомендуется)</summary>
+
+<p align="center">
+  <img src="QR-CODE/ALL.png" width="300" alt="ALL QR">
+</p>
+
+**URL подписки:**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-12.txt
+```
+
+</details>
+
+<details>
+<summary><b>📡 FILTER-13</b> — все конфиги (рекомендуется)</summary>
+
+<p align="center">
+  <img src="QR-CODE/ALL.png" width="300" alt="ALL QR">
+</p>
+
+**URL подписки:**
+
+```
+https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/FILTER-13.txt
+```
+
+</details>
+
 ---
 
 ## 🔎 Как сканировать
