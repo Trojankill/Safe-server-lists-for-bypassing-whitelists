@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-17 22:15:31 UTC
+# 2026-09-17 22:30:44 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -43,13 +43,20 @@ proxies:
       short-id: af04ff8094115e93
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
+  - name: '🇯🇵 [JP] Япония'
+    type: vmess
+    server: w12.luoli.de
     port: 443
-    password: humanity
+    uuid: 42a99644-b90b-3627-8809-a2d6c4078b59
+    alterId: 0
+    cipher: auto
     udp: true
-    sni: www.ignitelimit.com
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/v2ws'
+      headers:
+        Host: w12.luoli.de
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 92.5.200.242
@@ -106,7 +113,7 @@ proxy-groups:
       - '🇺🇸 [US] США VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇯🇵 [JP] Япония'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
