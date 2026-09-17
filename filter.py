@@ -78,7 +78,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-8-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/refs/heads/main/subs/main/alive_bs.txt"},
     {"name": "FILTER-9-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"},
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
-    {"name": "FILTER-11", "url": "https://enc.ring-team.casa/sub/i0aw2qdvk7"},
+    {"name": "FILTER-11", "url": "https://warp-gen.cyb-portal.org/CP-035"},
     {"name": "FILTER-12", "url": "https://raw.githubusercontent.com/VansFenix/vpnparser/refs/heads/main/all.txt"},
     {"name": "FILTER-13", "url": "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"},
 ]  
