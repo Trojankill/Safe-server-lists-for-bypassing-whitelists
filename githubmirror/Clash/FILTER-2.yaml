@@ -1,23 +1,76 @@
 # clash/mihomo subscription
-# 2026-09-18 18:30:44 UTC
+# 2026-09-18 18:45:32 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #10'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #53'
+    type: vmess
+    server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #55'
+    type: vmess
+    server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌀 CYBERPORTAL | CIDR White All RU #52'
+    type: vmess
+    server: 5.188.26.85
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #51'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #8'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #48'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #47'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #10'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #8'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #53'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #55'
+      - '🌀 CYBERPORTAL | CIDR White All RU #52'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #51'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #48'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #47'
 rules:
   - MATCH,PROXY
