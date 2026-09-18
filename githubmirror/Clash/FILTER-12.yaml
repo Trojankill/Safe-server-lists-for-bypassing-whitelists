@@ -1,6 +1,60 @@
 # clash/mihomo subscription
-# 2026-09-18 22:15:31 UTC
+# 2026-09-18 22:30:42 UTC
 proxies:
+  - name: '🇪🇪 [EE] Эстония VFPARSER'
+    type: vless
+    server: ee-tll-2.blook.network
+    port: 443
+    uuid: 2ae07678-1ba2-4656-8000-464fc8977fe5
+    udp: true
+    tls: true
+    servername: ee-tll-2.blook.network
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zz5an-cyTeNncGZS0TPNcHuZDpq5sbTDHgVi7xYCc2U
+      short-id: 75e648ad855c
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
+    type: vless
+    server: fi.nvrsk-not-news.ru
+    port: 42062
+    uuid: 5a676086-981f-4cdb-9b4e-6d579881a603
+    udp: true
+    tls: true
+    servername: api.vk.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: nz_-f0x2HonNSLcydWbXLK_IeDTjMuXeMOPu9XmyxB8
+      short-id: 9e
+    network: tcp
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 77.110.104.238
+    port: 2053
+    uuid: 937fbdad-d97b-4540-9136-de1886df866f
+    udp: true
+    tls: true
+    servername: www.tagesschau.de
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: sHEHsya9ZbC34uBUOzAfAO8u2b3Ik71hp4AKMGLvZxw
+      short-id: facfeeb537603598
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: 46.243.142.227
+    port: 10443
+    uuid: a85ddf9f-329b-4c31-a80a-cd0f2e5b2a30
+    udp: true
+    tls: true
+    servername: shprcdn.quest
+    client-fingerprint: safari
+    reality-opts:
+      public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
+    network: grpc
+    grpc-opts:
   - name: '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: ru.verymad.net
@@ -28,6 +82,13 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: ss
     server: 130.61.45.208
@@ -70,13 +131,6 @@ proxies:
     cipher: aes-128-gcm
     password: o2rw2hICwu1blrr_gZAl2Q
     udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 82.47.186.18
-    port: 55597
-    cipher: aes-128-gcm
-    password: o2rw2hICwu1blrr_gZAl2Q
-    udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
     server: 84.247.155.196
@@ -102,14 +156,18 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇪🇪 [EE] Эстония VFPARSER'
+      - '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
