@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 04:15:33 UTC
+# 2026-09-18 04:30:44 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -41,6 +41,19 @@ proxies:
       public-key: Sq7mtLmaanwsTVNBR9gU7ECU87ftrb_wFGRLLNRBlmQ
     network: grpc
     grpc-opts:
+  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
+    type: vless
+    server: 45.88.13.5
+    port: 8443
+    uuid: 2bb8b13c-b3f0-2552-da05-d0929bfb36db
+    udp: true
+    tls: true
+    servername: download.nvidia.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk
+    network: grpc
+    grpc-opts:
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -56,34 +69,26 @@ proxies:
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: 178.105.61.61
-    port: 2083
-    uuid: cb077bf2-70b7-457b-af42-27cdc3e0e544
-    udp: true
-    tls: true
-    servername: 178.105.61.61
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: H0nCazQFHVhSObfqSUhGLhK7KRwKzTMggIBPjnMMqhk
-      short-id: af04ff8094115e93
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇺🇸 [US] США'
-    type: vmess
-    server: 13.140.28.46
+    type: trojan
+    server: 88.198.82.150
     port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: ex1ogt73nzpqkac2.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
     alterId: 0
     cipher: auto
     udp: true
     tls: true
-    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
-      path: '/api/v1/gpu-stream/socket'
+      path: '/ws-vmess'
       headers:
-        Host: renderer-stream-2-62.mirra.now
+        Host: ex1ogt73nzpqkac2.v.3dns.vip
   - name: '🇯🇵 [JP] Япония'
     type: vmess
     server: w12.luoli.de
@@ -105,13 +110,6 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: '6b5USMvmAQHf9E0ZTvGyFGglLcCnmSW/LgLufsmrROE='
     udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 92.5.200.242
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'YQvvZt181rxCCndy4oHTBxncy0LbaXHGKwoNIjWpOiU='
-    udp: true
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 134.65.61.47
@@ -132,13 +130,6 @@ proxies:
     port: 61312
     cipher: 2022-blake3-chacha20-poly1305
     password: 'ycwk3ARQrmPRobKmV2L5+6iEX1EXrMxO6r/TTn6h2hU='
-    udp: true
-  - name: '🇹🇷 [TR] Турция VFPARSER'
-    type: ss
-    server: 153.52.92.81
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: IXa3ylzS_jBOAsQy071tIQ
     udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
@@ -189,16 +180,15 @@ proxy-groups:
       - '🇺🇸 [US] США VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇦🇪 [AE] ОАЭ VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇺🇸 [US] США'
+      - '🇭🇰 [HK] Гонконг'
       - '🇯🇵 [JP] Япония'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
