@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 14:45:33 UTC
+# 2026-09-18 15:00:59 UTC
 proxies:
   - name: '🇺🇸 США | БС⁴'
     type: vless
@@ -94,7 +94,7 @@ proxies:
       public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
       short-id: 9e419c0759b54d6f
     network: tcp
-  - name: '38.🇷🇺Россия | @LimeVPNFREE'
+  - name: '🇪🇺 AetrisVPN'
     type: vless
     server: 193.233.222.87
     port: 2086
@@ -108,7 +108,7 @@ proxies:
       short-id: d3e4f5a1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '47.🇷🇺Россия | @LimeVPNFREE'
+  - name: '🇪🇸 AetrisVPN'
     type: vless
     server: 193.233.222.87
     port: 2090
@@ -384,6 +384,20 @@ proxies:
       short-id: 72ccd4a7563c2953
     network: grpc
     grpc-opts:
+  - name: '🇩🇪 AetrisVPN'
+    type: vless
+    server: 188.68.218.205
+    port: 443
+    uuid: 6aaa7d1d-8b35-4fd2-ae60-0129ad624935
+    udp: true
+    tls: true
+    servername: static-basket-01.wbbasket.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: 8dPBbufX7ST4NrD8Etatp_FR_mbd38vXa2ZXCVLxjQ4
+      short-id: 0fc62d3cd3089adb
+    network: grpc
+    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: api.max.ru ┃ 🇷🇺 Россия'
     type: vless
     server: 31.130.155.114
@@ -495,7 +509,7 @@ proxies:
       short-id: 91c91e25817ab51c
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇳🇱 AetrisVPN'
     type: vless
     server: nl.gruztrack.online
     port: 2053
@@ -509,20 +523,6 @@ proxies:
       short-id: e35c7f14cc807f4d
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 AetrisVPN'
-    type: vless
-    server: 34.222.2.182
-    port: 50159
-    uuid: 8c235628-4c27-44b5-9559-7ab1d53b7ff3
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: SX1vaYIIZcbcfO3RrAPhYQ1FAeA7bkcDZJtEDN9pbxw
-      short-id: 94c8a1b378da7250
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '12 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 4/10'
     type: vless
     server: 85.90.197.220
@@ -655,7 +655,7 @@ proxies:
       public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
     network: grpc
     grpc-opts:
-  - name: '114.🇳🇱Нидерланды | @LimeVPNFREE'
+  - name: '🇩🇪 AetrisVPN'
     type: vless
     server: shprcdn.quest
     port: 10443
@@ -991,6 +991,15 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
+  - name: '🇪🇺 AetrisVPN'
+    type: vmess
+    server: 45.32.57.118
+    port: 4433
+    uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
   - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
     server: 5.188.26.85
@@ -1024,13 +1033,13 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
@@ -1060,7 +1069,7 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
+  - name: '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1073,12 +1082,124 @@ proxies:
     port: 443
     password: gf1:gfhysteria2024
     sni: vk.com
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 5.78.51.123
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: 8tmnvX5zYuWGVIDP2jglZw
+    udp: true
+  - name: '🇪🇺 AetrisVPN'
+    type: ss
+    server: 83.171.225.55
+    port: 1443
+    cipher: chacha20-ietf-poly1305
+    password: ZjAxZ
+    udp: true
+  - name: '🇧🇪 AetrisVPN'
+    type: ss
+    server: 31.76.82.131
+    port: 34260
+    cipher: chacha20-ietf-poly1305
+    password: cTAObwg4OWWXkZJQs0ZdgC
+    udp: true
+  - name: '🇷🇺 AetrisVPN'
+    type: ss
+    server: 130.49.189.158
+    port: 43558
+    cipher: chacha20-ietf-poly1305
+    password: 'jIlQi9jGPJd7KHMx6Y4+JbaNoWSWfe2A73U4J4o0Qrs='
+    udp: true
+  - name: '🇯🇵 AetrisVPN'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 AetrisVPN'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.246.132
+    port: 7307
+    cipher: aes-256-gcm
+    password: FoOiGlkAA9yPEGP
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.247.175
+    port: 8008
+    cipher: aes-256-gcm
+    password: XKFKl2rULjIp74
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.246.107
+    port: 8888
+    cipher: aes-256-gcm
+    password: Y6R9pAtvxxzmGC
+    udp: true
   - name: '1410 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | SS | TG: @YoutubeUnBlockRu'
     type: ss
     server: 212.192.15.231
     port: 8388
     cipher: aes-256-gcm
     password: Z9TvqsEkWr7P7GXe
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.247.124
+    port: 2375
+    cipher: aes-256-gcm
+    password: faBAoD54k87UJG7
+    udp: true
+  - name: '🇨🇦 AetrisVPN'
+    type: ss
+    server: 51.79.49.116
+    port: 8882
+    cipher: aes-256-gcm
+    password: kDWvXYZoTBcGkC4
+    udp: true
+  - name: '🇧🇷 AetrisVPN'
+    type: ss
+    server: 216.128.168.190
+    port: 8388
+    cipher: aes-256-gcm
+    password: owVdNnQcdPgthSyX
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.247.206
+    port: 4444
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: '🇺🇸 AetrisVPN'
+    type: ss
+    server: 15.204.247.244
+    port: 4444
+    cipher: aes-256-gcm
+    password: pKEW8JPByTVTLtM
+    udp: true
+  - name: '🇨🇾 AetrisVPN'
+    type: ss
+    server: 64.176.2.21
+    port: 8388
+    cipher: aes-256-gcm
+    password: xBStBEVqvGwHPocc
+    udp: true
+  - name: '🇨🇦 AetrisVPN'
+    type: ss
+    server: 51.222.141.125
+    port: 445
+    cipher: aes-256-gcm
+    password: zDNVedRFPQexG9v
     udp: true
 proxy-groups:
   - name: PROXY
@@ -1091,8 +1212,8 @@ proxy-groups:
       - '3662 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇨🇦 LTE 22 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇹🇷 Турция'
-      - '38.🇷🇺Россия | @LimeVPNFREE'
-      - '47.🇷🇺Россия | @LimeVPNFREE'
+      - '🇪🇺 AetrisVPN'
+      - '🇪🇸 AetrisVPN'
       - '🇳🇱 Нидерланды | БС¹'
       - '🇪🇸 Испания | БС¹'
       - '🇸🇬 Сингапур | БС¹'
@@ -1112,6 +1233,7 @@ proxy-groups:
       - "🇷🇴 Румыния MAGIT'ST SRL"
       - '0493 | 🇩🇪 Germany | 🏳️ SNI-Ozon | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇪🇪 Эстония | БС¹'
+      - '🇩🇪 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api.max.ru ┃ 🇷🇺 Россия'
       - '1675 | 🇵🇱 Poland | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4509 | 🇩🇪 Germany | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1120,8 +1242,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇯🇵 Япония'
       - 'AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇷🇺 Россия'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇺🇸 AetrisVPN'
+      - '🇳🇱 AetrisVPN'
       - '12 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 4/10'
       - '4061 | 🇷🇺 Russia | 🏳️ CIDR-OLD | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
@@ -1132,7 +1253,7 @@ proxy-groups:
       - '1181 | 🇫🇮 Finland | 🏳️ SNI-Ozon | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇵🇱 Польша'
       - '95.🇳🇱Нидерланды | @LimeVPNFREE'
-      - '114.🇳🇱Нидерланды | @LimeVPNFREE'
+      - '🇩🇪 AetrisVPN'
       - '19.🇷🇺Россия | @LimeVPNFREE'
       - '🇨🇦 LTE 25 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
@@ -1157,18 +1278,35 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany [*CIDR]'
+      - '🇪🇺 AetrisVPN'
       - '🇩🇪 Germany | [*CIDR]'
       - '2663 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '1586 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3243 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
-      - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
       - '3138 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4478 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3700 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1863 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇧🇸 Эщкерия | 🇷🇺 🇸🇪 [🏳️LTE] | 🥭🔧'
+      - '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
       - '1254 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '🇺🇸 AetrisVPN'
+      - '🇪🇺 AetrisVPN'
+      - '🇧🇪 AetrisVPN'
+      - '🇷🇺 AetrisVPN'
+      - '🇯🇵 AetrisVPN'
+      - '🇯🇵 AetrisVPN'
+      - '🇺🇸 AetrisVPN'
+      - '🇺🇸 AetrisVPN'
+      - '🇺🇸 AetrisVPN'
       - '1410 | 🇨🇳 HongKong | 🏳️ CIDR-OLD | SS | TG: @YoutubeUnBlockRu'
+      - '🇺🇸 AetrisVPN'
+      - '🇨🇦 AetrisVPN'
+      - '🇧🇷 AetrisVPN'
+      - '🇺🇸 AetrisVPN'
+      - '🇺🇸 AetrisVPN'
+      - '🇨🇾 AetrisVPN'
+      - '🇨🇦 AetrisVPN'
 rules:
   - MATCH,PROXY
