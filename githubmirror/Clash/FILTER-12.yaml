@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 10:00:53 UTC
+# 2026-09-18 10:15:32 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -15,22 +15,6 @@ proxies:
       short-id: a1b2c3d4e5f67890
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: ufguei5465-production.up.railway.app
-    port: 443
-    uuid: 4b5678ac-60ab-72a4-cf9c-75af3f02f595
-    udp: true
-    tls: true
-    servername: ufguei5465-production.up.railway.app
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/ws/4b5678ac-60ab-72a4-cf9c-75af3f02f595'
-      headers:
-        Host: ufguei5465-production.up.railway.app
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: poland.snappycore.com
@@ -45,22 +29,6 @@ proxies:
       short-id: 3d87c490ddd41305
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: yuewryuiwe81-production.up.railway.app
-    port: 443
-    uuid: ac8182b8-f89e-424d-ba73-62f0545195d2
-    udp: true
-    tls: true
-    servername: yuewryuiwe81-production.up.railway.app
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: firefox
-    network: ws
-    ws-opts:
-      path: '/ws/ac8182b8-f89e-424d-ba73-62f0545195d2'
-      headers:
-        Host: yuewryuiwe81-production.up.railway.app
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -75,20 +43,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇭🇰 [HK] Гонконг'
-    type: vmess
-    server: ex1ogt73nzpqkac2.v.3dns.vip
-    port: 443
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/ws-vmess'
-      headers:
-        Host: ex1ogt73nzpqkac2.v.3dns.vip
   - name: '🇯🇵 [JP] Япония'
     type: vmess
     server: w12.luoli.de
@@ -103,19 +57,19 @@ proxies:
       path: '/v2ws'
       headers:
         Host: w12.luoli.de
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.82.183
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'rsZGSjFXUyi6kX8P6glg15+TdK0zdtKVBjkHYeZdJ58='
+    udp: true
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 144.24.225.111
     port: 61312
     cipher: 2022-blake3-chacha20-poly1305
     password: 'xtHPuZw32Ek7q4odOVXoMn+UY9C/IdokDkolQjvdxrk='
-    udp: true
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 129.151.73.255
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'ycwk3ARQrmPRobKmV2L5+6iEX1EXrMxO6r/TTn6h2hU='
     udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
@@ -164,13 +118,10 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 [US] США VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇭🇰 [HK] Гонконг'
       - '🇯🇵 [JP] Япония'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
