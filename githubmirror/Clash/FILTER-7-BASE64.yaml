@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 11:45:33 UTC
+# 2026-09-18 12:00:55 UTC
 proxies:
   - name: '🇺🇸 США | БС²'
     type: vless
@@ -893,9 +893,24 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС¹⁸'
     type: vmess
     server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany [*CIDR]'
+    type: vmess
+    server: 5.188.26.85
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -926,16 +941,10 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-  - name: '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
   - name: '3130 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1052,12 +1061,12 @@ proxy-groups:
       - '2297 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | TROJAN | TG: @YoutubeUnBlockRu'
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '🇷🇺 LTE 5 | тгк: @rostunnel'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС¹⁸'
+      - '🇩🇪 Germany [*CIDR]'
       - '2656 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '1583 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3235 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇧🇸 Эщкерия | 🇷🇺 [🏳️LTE] | 🥭🔧'
-      - '🇧🇸 Эщкерия | 🇱🇻 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
       - '3130 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4468 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3693 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
