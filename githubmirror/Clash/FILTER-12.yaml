@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 13:30:47 UTC
+# 2026-09-18 13:45:31 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -15,20 +15,6 @@ proxies:
       short-id: a1b2c3d4e5f67890
     network: grpc
     grpc-opts:
-  - name: '🇫🇮 [FI] Финляндия VFPARSER'
-    type: vless
-    server: poland.snappycore.com
-    port: 443
-    uuid: 8f9c5260-9456-472b-8ee2-444500ba6cab
-    udp: true
-    tls: true
-    servername: poland.snappycore.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: SCuasCPva4lPGu-QRP955zZB8f6i7ydHBQh6bsSlrgo
-      short-id: 3d87c490ddd41305
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -43,27 +29,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇯🇵 [JP] Япония'
-    type: vmess
-    server: w12.luoli.de
-    port: 443
-    uuid: 42a99644-b90b-3627-8809-a2d6c4078b59
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/v2ws'
-      headers:
-        Host: w12.luoli.de
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.82.183
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'rsZGSjFXUyi6kX8P6glg15+TdK0zdtKVBjkHYeZdJ58='
-    udp: true
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 144.24.225.111
@@ -118,10 +83,7 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 [US] США VFPARSER'
-      - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇯🇵 [JP] Япония'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
