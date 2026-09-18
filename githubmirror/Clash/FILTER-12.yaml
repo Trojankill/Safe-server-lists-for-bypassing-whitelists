@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 19:00:59 UTC
+# 2026-09-18 19:15:37 UTC
 proxies:
   - name: '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
     type: vless
@@ -28,6 +28,34 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.45.208
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: '5rGNq8QrmZV0BGch+Rxs68Jr0LuVGuDhkVhLj4zEhR0='
+    udp: true
+  - name: '🇸🇬 [SG] Сингапур VFPARSER'
+    type: ss
+    server: 138.2.71.128
+    port: 56927
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'mYD6SNVk6rYfSsNcRE54unnYKlp5hRZk+XTtDnjEzjY='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.40.61
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'rYYQVHYHRQ85q+A8qkzqg51BCs9HBK4Psg7VO/z6rMc='
+    udp: true
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: 129.146.5.155
+    port: 50356
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'weY5SuElMZv3cFUuqwueCsMJOtulfSGK+49UclgGrog='
+    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
@@ -70,25 +98,21 @@ proxies:
     cipher: aes-256-gcm
     password: Proxy2024
     udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: yyz-ca-01.blncvpn4u.cc
-    port: 9443
-    cipher: aes-256-gcm
-    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
