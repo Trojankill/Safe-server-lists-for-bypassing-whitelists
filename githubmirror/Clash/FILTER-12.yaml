@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-18 07:15:32 UTC
+# 2026-09-18 07:30:46 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -15,45 +15,52 @@ proxies:
       short-id: a1b2c3d4e5f67890
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: vless
-    server: 188.137.251.183
-    port: 51053
-    uuid: 25fbd2b5-3263-4bae-a7e5-a2bd4b679424
+    server: ufguei5465-production.up.railway.app
+    port: 443
+    uuid: 4b5678ac-60ab-72a4-cf9c-75af3f02f595
     udp: true
     tls: true
-    servername: play-apps-features.googleusercontent.com
+    servername: ufguei5465-production.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws/4b5678ac-60ab-72a4-cf9c-75af3f02f595'
+      headers:
+        Host: ufguei5465-production.up.railway.app
+  - name: '🇫🇮 [FI] Финляндия VFPARSER'
+    type: vless
+    server: poland.snappycore.com
+    port: 443
+    uuid: 8f9c5260-9456-472b-8ee2-444500ba6cab
+    udp: true
+    tls: true
+    servername: poland.snappycore.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: uRsgB9Pp5QwwMS7cmv6KSUVSS0Iz0QAXrI6qQaZUTAI
-      short-id: 4feec2
+      public-key: SCuasCPva4lPGu-QRP955zZB8f6i7ydHBQh6bsSlrgo
+      short-id: 3d87c490ddd41305
+    flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: vless
-    server: 130.49.77.6
-    port: 8443
-    uuid: 2bb8b13c-b3f0-2552-da05-d0929bfb36db
+    server: yuewryuiwe81-production.up.railway.app
+    port: 443
+    uuid: ac8182b8-f89e-424d-ba73-62f0545195d2
     udp: true
     tls: true
-    servername: www.philips.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Sq7mtLmaanwsTVNBR9gU7ECU87ftrb_wFGRLLNRBlmQ
-    network: grpc
-    grpc-opts:
-  - name: '🇦🇪 [AE] ОАЭ VFPARSER'
-    type: vless
-    server: 45.88.13.5
-    port: 8443
-    uuid: 2bb8b13c-b3f0-2552-da05-d0929bfb36db
-    udp: true
-    tls: true
-    servername: download.nvidia.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: FOQzn10eHqu4F5xOxiXW2bTDG8lH4TdOXP6A5rDqKFk
-    network: grpc
-    grpc-opts:
+    servername: yuewryuiwe81-production.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: '/ws/ac8182b8-f89e-424d-ba73-62f0545195d2'
+      headers:
+        Host: yuewryuiwe81-production.up.railway.app
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -68,13 +75,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
   - name: '🇭🇰 [HK] Гонконг'
     type: vmess
     server: ex1ogt73nzpqkac2.v.3dns.vip
@@ -103,20 +103,6 @@ proxies:
       path: '/v2ws'
       headers:
         Host: w12.luoli.de
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 134.65.59.59
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '6b5USMvmAQHf9E0ZTvGyFGglLcCnmSW/LgLufsmrROE='
-    udp: true
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 134.65.61.47
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'sDhEhHHvZ8tSUziGGDt1rQuh7bgTpUccfw5JnGsAvB4='
-    udp: true
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 144.24.225.111
@@ -178,15 +164,12 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 [US] США VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇦🇪 [AE] ОАЭ VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇭🇰 [HK] Гонконг'
       - '🇯🇵 [JP] Япония'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
