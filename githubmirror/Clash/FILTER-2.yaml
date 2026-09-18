@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-18 10:45:34 UTC
+# 2026-09-18 11:00:53 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #80'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #40'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -16,19 +16,13 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #76'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #31'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #75'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #37'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -39,9 +33,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #80'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #76'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #75'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #40'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #31'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #37'
 rules:
   - MATCH,PROXY
