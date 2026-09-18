@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-17 23:45:32 UTC
+# 2026-09-18 00:00:54 UTC
 proxies:
   - name: '🇺🇸 США | БС⁴'
     type: vless
@@ -631,20 +631,6 @@ proxies:
       short-id: 3fca1964759edc55
     flow: xtls-rprx-vision
     network: tcp
-  - name: '42.🇷🇺Россия | @LimeVPNFREE'
-    type: vless
-    server: 37.9.4.45
-    port: 443
-    uuid: 91f81a3e-3f86-4b07-a97f-71fa1cd69cc1
-    udp: true
-    tls: true
-    servername: st1-13.vkvideo.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: L4qog99qs-tLgndAzpzgEWdiy76Z8OLGslpKisbIU2Y
-      short-id: 3fca1964759edc55
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 213.219.214.33
@@ -1118,6 +1104,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -1138,9 +1125,24 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇩🇪 Germany | [*CIDR]'
+  - name: '🌍 Рандом | БС¹⁹'
     type: vmess
     server: 2.27.54.132
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+    type: vmess
+    server: 194.87.71.141
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -1152,7 +1154,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+  - name: '🇩🇪 Germany | [*CIDR]'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -1296,7 +1298,6 @@ proxy-groups:
       - '🇦🇹 LTE 181 | тгк: @rostunnel'
       - '1632 | 🌐 Unknown | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '8.🇷🇺Россия | @LimeVPNFREE'
-      - '42.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇺🇸 США | БС⁵'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
@@ -1333,8 +1334,9 @@ proxy-groups:
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
-      - '🇩🇪 Germany | [*CIDR]'
+      - '🌍 Рандом | БС¹⁹'
       - '🌐 Anycast-IP | 🇩🇪 🇸🇪 | [*CIDR]'
+      - '🇩🇪 Germany | [*CIDR]'
       - '2139 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3192 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '5087 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
