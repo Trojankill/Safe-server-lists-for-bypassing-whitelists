@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-19 16:30:42 UTC
+# 2026-09-19 16:45:31 UTC
 proxies:
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: balance2.nvrsk-not-news.ru
+    port: 43582
+    uuid: 419e6d23-5166-42de-bbed-efbcb3e9a037
+    udp: true
+    tls: true
+    servername: vkontakte.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: xan4iyYYeN4WR6UJ0-lvdqpdpabZ2sfNxBlhp5Xb7So
+      short-id: 1d375df67c
+    network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: 14ang88.snusoed.baby
@@ -15,22 +28,34 @@ proxies:
       short-id: 2e124af254a65e7c
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇪🇸 [ES] Испания VFPARSER'
     type: vless
-    server: panel-production-a472.up.railway.app
-    port: 443
-    uuid: 662a0afa-1304-951b-67ff-9190609f9c66
+    server: es.nvrsk-not-news.ru
+    port: 48072
+    uuid: 6433cc6b-2a88-49c9-ac10-a20f6c34abc0
     udp: true
     tls: true
-    servername: panel-production-a472.up.railway.app
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/ws/662a0afa-1304-951b-67ff-9190609f9c66'
-      headers:
-        Host: vodiwalkerpanel-production-a472.up.railway.app
+    servername: blog.api.www.cloudflare.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: B7tmAX9jcQZkmxfVVW89mAWM6qPTYjgwM4YPknjxa3I
+      short-id: e50d
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 77.110.104.238
+    port: 2053
+    uuid: 937fbdad-d97b-4540-9136-de1886df866f
+    udp: true
+    tls: true
+    servername: www.tagesschau.de
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: sHEHsya9ZbC34uBUOzAfAO8u2b3Ik71hp4AKMGLvZxw
+      short-id: facfeeb537603598
+    network: grpc
+    grpc-opts:
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
     server: 46.243.142.227
@@ -44,6 +69,20 @@ proxies:
       public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
     network: grpc
     grpc-opts:
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 5.78.159.97
+    port: 443
+    uuid: b88a54a0-501c-4acf-930b-305354452f4e
+    udp: true
+    tls: true
+    servername: www.yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: XB7peN-a_9j_WGBHvs3DIMDlsOzJAOehGnziOE9OvwE
+      short-id: 884dffd8e62a5c48
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -58,33 +97,46 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.112.180
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '++mR5br/NAviA18jrILlV+DvdnZdmQqWhx54nclkxAI='
+  - name: '🇮🇳 [IN] Индия VFPARSER'
+    type: vless
+    server: assets-fi.pleiades.codes
+    port: 443
+    uuid: c797b9ad-6f9e-4eee-befd-eef119ec3637
     udp: true
+    tls: true
+    servername: assets-fi.pleiades.codes
+    alpn:
+      - h2
+    client-fingerprint: firefox
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: godisko.fun
+    port: 9443
+    uuid: e12d4a74-88e8-4326-9672-5e2f173ffc49
+    udp: true
+    tls: true
+    servername: b2bshop.samsung.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: maF7kOb9q2KpTnUFoJQhTPVvZ3p5besP3xBGF-pO3xY
+      short-id: 00849d56be
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.ignitelimit.com
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 129.151.68.65
     port: 61312
     cipher: 2022-blake3-chacha20-poly1305
     password: '0N1dYtQFmHnwBeKv53o5MJDkRzbGYY1KkLXnaNkWo3o='
-    udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 143.47.191.60
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '9BOOXAN/80Y2IXJXkG2hlG1Dax/3LDeewNBkdiJWeHs='
-    udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.130.160
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'Agibj1Vmrbe4+wbHOjbYmeiae3Wi3nnIMa1mmgiKcu0='
     udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
@@ -114,6 +166,27 @@ proxies:
     cipher: aes-128-gcm
     password: o2rw2hICwu1blrr_gZAl2Q
     udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 82.47.186.18
+    port: 55597
+    cipher: aes-128-gcm
+    password: o2rw2hICwu1blrr_gZAl2Q
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
   - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
     server: yyz-ca-01.blncvpn4u.cc
@@ -125,18 +198,24 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 [RU] Россия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇪🇸 [ES] Испания VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇮🇳 [IN] Индия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
