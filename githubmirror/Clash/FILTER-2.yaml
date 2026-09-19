@@ -1,31 +1,45 @@
 # clash/mihomo subscription
-# 2026-09-19 11:15:29 UTC
+# 2026-09-19 11:30:45 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #32'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #31'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #31'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #26'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #41'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #24'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
     skip-cert-verify: false
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #21'
+    type: hysteria2
+    server: 84.23.54.203
+    port: 1935
+    password: 'hysteria2_fastlane_cfm7kzssa%3AOHDpvCARUv5xvE07caQIrVo6IpqRkgkq'
+    sni: ru2.h.smartaisupport.ru
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #25'
+    type: hysteria2
+    server: 87.239.111.109
+    port: 1935
+    password: 'hysteria2_fastlane_f6dt3q19m%3AvqCgcZnSL76jftd4853Sq8pUCmsYIjTJ'
+    sni: ru2.h.smartaisupport.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #32'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #31'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #41'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #31'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #26'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #24'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #21'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #25'
 rules:
   - MATCH,PROXY
