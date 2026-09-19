@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-19 04:30:42 UTC
+# 2026-09-19 04:45:29 UTC
 proxies:
   - name: '94.🇳🇱Нидерланды | @LimeVPNFREE'
     type: vless
@@ -608,6 +608,34 @@ proxies:
       public-key: npJEB6VpYJ9iYTZ-z0IL06Xs7PEz0N3fZU_IRwftQ00
       short-id: f24c17bb7fc284
     network: tcp
+  - name: '🇳🇱 The Netherlands — #126'
+    type: vless
+    server: 185.241.195.202
+    port: 9444
+    uuid: 5d2339f1-ca7b-4b32-8414-1120df811eb2
+    udp: true
+    tls: true
+    servername: res.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
+      short-id: 413da1312ccce8fb
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #125'
+    type: vless
+    server: 185.86.145.34
+    port: 7445
+    uuid: 5d2339f1-ca7b-4b32-8414-1120df811eb2
+    udp: true
+    tls: true
+    servername: s1.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
+      short-id: f7d9e9a2e78e9a17
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇨🇭 Switzerland — #12'
     type: vless
     server: 94.139.255.254
@@ -1792,21 +1820,6 @@ proxies:
     password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
     udp: true
     sni: grape-turbo-fr.roxa.org
-  - name: '🇷🇺 Россия | VMESS WS TLS | Кроме mts'
-    type: vmess
-    server: renderer-stream-2-62.mirra.now
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-2-62.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
   - name: '🇺🇸 LTE 158 | тгк: @rostunnel'
     type: vmess
     server: 212.87.220.98
@@ -1876,6 +1889,21 @@ proxies:
     cipher: auto
     udp: true
     tls: true
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 Germany [*CIDR]'
+    type: vmess
+    server: renderer-stream-2-62.mirra.now
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -1962,7 +1990,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🇷🇺 Россия | HYSTERIA2 TCP | Кроме megafon'
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
@@ -2552,6 +2580,8 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '314.🇩🇪Германия | @LimeVPNFREE'
       - '🇺🇸 США 11'
+      - '🇳🇱 The Netherlands — #126'
+      - '🇳🇱 The Netherlands — #125'
       - '🇨🇭 Switzerland — #12'
       - '🇪🇪 Эстония | БС¹'
       - '40.🇷🇺Россия | @LimeVPNFREE'
@@ -2642,11 +2672,11 @@ proxy-groups:
       - '🇮🇪 Ирландия'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
-      - '🇷🇺 Россия | VMESS WS TLS | Кроме mts'
       - '🇺🇸 LTE 158 | тгк: @rostunnel'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
       - '🇩🇪 Germany | [*CIDR]'
+      - '🇩🇪 Germany [*CIDR]'
       - '🇩🇪 Germany [*CIDR]'
       - '🇪🇺 AetrisVPN'
       - '🇪🇺 AetrisVPN'
@@ -2654,7 +2684,7 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
-      - '🇷🇺 Россия | HYSTERIA2 TCP | Кроме megafon'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '2654 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '1548 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
