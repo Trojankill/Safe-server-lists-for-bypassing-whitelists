@@ -1,52 +1,45 @@
 # clash/mihomo subscription
-# 2026-09-19 17:30:41 UTC
+# 2026-09-19 17:45:30 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия · 🇸🇪 Швеция #19'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия · 🇸🇪 Швеция #40'
     type: hysteria2
     server: 46.8.210.129
     port: 22443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #24'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #36'
+    type: hysteria2
+    server: 46.8.210.152
+    port: 23443
+    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
+    sni: disk.api-yandex.net
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #41'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #18'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #38'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #16'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #46'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
     skip-cert-verify: false
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #11'
-    type: hysteria2
-    server: 84.23.54.203
-    port: 1935
-    password: 'hysteria2_fastlane_cfm7kzssa%3AOHDpvCARUv5xvE07caQIrVo6IpqRkgkq'
-    sni: ru2.h.smartaisupport.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #12'
-    type: hysteria2
-    server: 87.239.111.109
-    port: 1935
-    password: 'hysteria2_fastlane_f6dt3q19m%3AvqCgcZnSL76jftd4853Sq8pUCmsYIjTJ'
-    sni: ru2.h.smartaisupport.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия · 🇸🇪 Швеция #19'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия · 🇸🇪 Швеция #24'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #18'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #16'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #11'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #12'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия · 🇸🇪 Швеция #40'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #36'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #41'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #38'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #46'
 rules:
   - MATCH,PROXY
