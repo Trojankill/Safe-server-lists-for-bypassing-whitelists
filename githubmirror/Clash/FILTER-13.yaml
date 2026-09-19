@@ -1,82 +1,37 @@
 # clash/mihomo subscription
-# 2026-09-19 12:00:52 UTC
+# 2026-09-19 12:15:31 UTC
 proxies:
-  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #11'
+  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #160'
     type: vless
-    server: 94.183.170.147
-    port: 8443
-    uuid: 5edbcb44-8d04-4fa7-a587-bc5d60c24ca1
+    server: 47.253.226.114
+    port: 443
+    uuid: 055a1ce8-2a16-4a0d-a2c2-22826c9b2413
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: s2uiu3GQA2SlZzsr86Z5Dav97eAFTPf7Nvr-zqzzRgg
-      short-id: 72ccd4a7563c2953
-    network: grpc
-    grpc-opts:
-  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #101'
-    type: vless
-    server: 46.243.142.227
-    port: 10443
-    uuid: a85ddf9f-329b-4c31-a80a-cd0f2e5b2a30
-    udp: true
-    tls: true
-    servername: shprcdn.quest
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
-    network: grpc
-    grpc-opts:
-  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #37'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: b575ebe8-cc27-4d61-9e88-3a9d597b4e73
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
-  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #35'
-    type: vless
-    server: 150.241.102.181
-    port: 443
-    uuid: d7cad038-0c3f-4cce-8f8a-36464aaf66c0
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 6KP5Xi1ao0hD5M3FGmco7NgKxU8z5gQVHwsvrQJVFS0
-      short-id: 8f3e2b1a
-    network: grpc
-    grpc-opts:
-  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #12'
-    type: vless
-    server: 91.215.40.6
-    port: 443
-    uuid: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-    udp: true
-    tls: true
-    servername: id.dframe.app
     client-fingerprint: chrome
     reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
-    network: grpc
-    grpc-opts:
+      public-key: Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇪🇺 OT@Hy2UDP (WIFI/LTE) #195'
+    type: vless
+    server: 62.133.62.149
+    port: 8443
+    uuid: 8afeb33c-b686-43e9-a629-0d98f991ec28
+    udp: true
+    tls: true
+    servername: eh5.vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: 60VJEyhQZ02pWstqdr20-YEpVvqbfq4iI8i9lbfIkQg
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #11'
-      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #101'
-      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #37'
-      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #35'
-      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #12'
+      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #160'
+      - '🇪🇺 OT@Hy2UDP (WIFI/LTE) #195'
 rules:
   - MATCH,PROXY
