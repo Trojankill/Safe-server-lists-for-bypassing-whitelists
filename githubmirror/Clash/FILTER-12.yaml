@@ -1,6 +1,48 @@
 # clash/mihomo subscription
-# 2026-09-19 04:00:52 UTC
+# 2026-09-19 04:15:32 UTC
 proxies:
+  - name: '🇫🇮 [FI] Финляндия VFPARSER'
+    type: vless
+    server: 193.233.222.87
+    port: 2087
+    uuid: 0fb762db-28c2-49ad-9b4d-8c78f2f03a5e
+    udp: true
+    tls: true
+    servername: www.yahoo.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: nsapufcKm2Vtze3oJ3aWmRiEG71TjDXLWcUvs6tXuC0
+      short-id: 7f8e9d0c1b2a
+    network: grpc
+    grpc-opts:
+  - name: '🇫🇮 [FI] Финляндия VFPARSER'
+    type: vless
+    server: 193.233.222.87
+    port: 2097
+    uuid: 0fb762db-28c2-49ad-9b4d-8c78f2f03a5e
+    udp: true
+    tls: true
+    servername: www.yahoo.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: nsapufcKm2Vtze3oJ3aWmRiEG71TjDXLWcUvs6tXuC0
+      short-id: f1a2b3c4
+    network: grpc
+    grpc-opts:
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: vless
+    server: 14ang88.snusoed.baby
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+    tls: true
+    servername: 14ang88.snusoed.baby
+    client-fingerprint: random
+    reality-opts:
+      public-key: s0ypPx0AL3k2KOk74tbm-aE-i7eIR_MYVzfLHZeLaUk
+      short-id: 2e124af254a65e7c
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: fi.nvrsk-not-news.ru
@@ -55,12 +97,119 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇵🇱 [PL] Польша'
+    type: vmess
+    server: 145.63.134.175
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇬🇧 [GB] Великобритания'
+    type: vmess
+    server: 185.92.74.108
+    port: 443
+    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: renderer-stream-2-62.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-2-62.mirra.now
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.112.180
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: '++mR5br/NAviA18jrILlV+DvdnZdmQqWhx54nclkxAI='
+    udp: true
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: ss
+    server: 129.151.68.65
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: '0N1dYtQFmHnwBeKv53o5MJDkRzbGYY1KkLXnaNkWo3o='
+    udp: true
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: ss
     server: 130.61.45.208
     port: 59924
     cipher: 2022-blake3-chacha20-poly1305
     password: '5rGNq8QrmZV0BGch+Rxs68Jr0LuVGuDhkVhLj4zEhR0='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.176.44
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'AQqPf1u0AmCFWLNBxK7ve1ODd1cTFFCg+q5qsF3hwoM='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.130.160
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'Agibj1Vmrbe4+wbHOjbYmeiae3Wi3nnIMa1mmgiKcu0='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.179.28
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'XNRi9m8avIapydZV8GsJsnl049u4moNNBG90ENSviv4='
+    udp: true
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: ss
+    server: 158.178.151.166
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'gfUQDQFFyto9dzLAec5MeJgPRwSwEedoPiuWL6+NTPA='
+    udp: true
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: ss
+    server: 141.148.227.15
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'eZXBNy4NEyQQCdk1JguxJWL7EkNVlmk8FAZBu9i41Cg='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.43.8
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'frq0kd4mc0blKfmdiWiCosE/ahalb3nREwOnDCHUsZo='
+    udp: true
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: 129.146.75.221
+    port: 50356
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'ko88AO1Lj50PH3xGQ/SzJChWovcD99np3GwLcJwj/Eo='
+    udp: true
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: ss
+    server: 143.47.187.148
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'jV5AUHtwwIqzjlwmuewCRCeGlfjXHO5+EQyzgwuzlIQ='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.235.30
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'm/CrE+EuNElAAVP1IrhSyQYq0EUT+XiDckrdlPOdMFA='
     udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
@@ -82,6 +231,20 @@ proxies:
     port: 50356
     cipher: 2022-blake3-chacha20-poly1305
     password: 'weY5SuElMZv3cFUuqwueCsMJOtulfSGK+49UclgGrog='
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: 130.61.119.122
+    port: 59924
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'uuMbME5levfAj7yT6O3+6D+ufAlCTzK4KcgVq6AZAv8='
+    udp: true
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: 107.174.88.128
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: 063aee2ed1124285b5d8a8b049e24cba
     udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
@@ -122,12 +285,30 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
       - '🇷🇺 [RU] Россия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇵🇱 [PL] Польша'
+      - '🇬🇧 [GB] Великобритания'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
