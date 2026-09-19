@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-18 23:30:40 UTC
+# 2026-09-19 00:00:53 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #64'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #68'
     type: vmess
     server: 2.27.54.132
     port: 443
@@ -10,48 +10,7 @@ proxies:
     cipher: auto
     udp: true
     tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #65'
-    type: vmess
-    server: 195.19.20.80
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #66'
-    type: vmess
-    server: 80.240.252.241
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #67'
-    type: vmess
-    server: 5.188.26.85
-    port: 443
-    uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
+    servername: renderer-stream-2-62.mirra.now
     network: ws
     ws-opts:
       path: '/api/v1/gpu-stream/socket'
@@ -72,9 +31,9 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #70'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #72'
     type: vmess
-    server: 194.87.71.141
+    server: 5.188.26.85
     port: 443
     uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
     alterId: 0
@@ -87,7 +46,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #79'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #75'
     type: vmess
     server: renderer-stream-2-62.mirra.now
     port: 443
@@ -102,19 +61,19 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-2-62.mirra.now
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #56'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #60'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #54'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #59'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #64'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -125,15 +84,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #64'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #65'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #66'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #67'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #68'
       - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #69'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #70'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #79'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #56'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #54'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #72'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇸🇪 Швеция #75'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #60'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #59'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #64'
 rules:
   - MATCH,PROXY
