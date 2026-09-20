@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-20 10:30:41 UTC
+# 2026-09-20 10:45:32 UTC
 proxies:
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
@@ -28,47 +28,6 @@ proxies:
       public-key: OgTkmAQdLjipA9oLloxbU5BAX3hPjzbvkEGHF4aZ8z4
       short-id: 8a7d5e0248cdb1b1
     network: tcp
-  - name: '🇷🇺 [RU] Россия VFPARSER'
-    type: vless
-    server: 77.110.104.238
-    port: 2053
-    uuid: 937fbdad-d97b-4540-9136-de1886df866f
-    udp: true
-    tls: true
-    servername: www.tagesschau.de
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: sHEHsya9ZbC34uBUOzAfAO8u2b3Ik71hp4AKMGLvZxw
-      short-id: facfeeb537603598
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: 46.243.142.227
-    port: 10443
-    uuid: a85ddf9f-329b-4c31-a80a-cd0f2e5b2a30
-    udp: true
-    tls: true
-    servername: shprcdn.quest
-    client-fingerprint: safari
-    reality-opts:
-      public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: 2.26.17.7
-    port: 57399
-    uuid: ab1d1d4a-8a20-4de8-ad92-4cf966f55e12
-    udp: true
-    tls: true
-    servername: mena-images.shop.samsung.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: MvtucQsi4BhuQWrVaWLNjiuO8bKMdGzthb_ZGBtu7nU
-      short-id: a141a9
-    network: grpc
-    grpc-opts:
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -83,33 +42,36 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+  - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
-    server: italia.superbuba.top
+    server: gesmankos.sadiepinki.com
     port: 443
     uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: italia.superbuba.top
+    servername: gesmankos.sadiepinki.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: G2U8_BvRAgcOw0sX8u_0yYdVAlD8CWLSi-uYjvH07hw
+      public-key: rCkSHJ7goy7ZvSlau4LfXF-QLloOJMNeMxpeeQtwtVs
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇮🇳 [IN] Индия VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: vless
-    server: assets-fi.pleiades.codes
+    server: 69.46.46.214
     port: 443
-    uuid: c797b9ad-6f9e-4eee-befd-eef119ec3637
+    uuid: cb7863e8-6dd0-21cf-bf95-363ee6f6e9d9
     udp: true
     tls: true
-    servername: assets-fi.pleiades.codes
+    servername: solipanel-production-0e94.up.railway.app
     alpn:
-      - h2
-    client-fingerprint: edge
-    network: grpc
-    grpc-opts:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws/cb7863e8-6dd0-21cf-bf95-363ee6f6e9d9'
+      headers:
+        Host: solipanel-production-0e94.up.railway.app
   - name: '🇨🇿 [CZ] Чехия VFPARSER'
     type: vless
     server: 31.76.7.227
@@ -124,34 +86,6 @@ proxies:
       short-id: 4af4102cb26e59
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏳️ Белый айпи | 🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: 94.183.224.45
-    port: 443
-    uuid: d72f05b0-b182-4783-a6f2-21cecc7d841a
-    udp: true
-    tls: true
-    servername: dzen.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: SibLV5WBGdljTiUCmKx77KhHQfErCwjDMD_ZLoha3js
-      short-id: a1b2c3d4e5f67890
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇹🇷 [TR] Турция VFPARSER'
-    type: vless
-    server: nl.node-edge09.com
-    port: 443
-    uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-    udp: true
-    tls: true
-    servername: nl.node-edge09.com
-    client-fingerprint: safari
-    reality-opts:
-      public-key: S6t9-gOX2mxWKNGvGSJ8NxDdlJy78d4gN2-wv2d0hFw
-      short-id: 8319913f2e5f5711
-    network: grpc
-    grpc-opts:
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: pl.node-edge09.com
@@ -180,20 +114,13 @@ proxies:
       short-id: 8319913f2e5f5711
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: godisko.fun
-    port: 9443
-    uuid: e12d4a74-88e8-4326-9672-5e2f173ffc49
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
     udp: true
-    tls: true
-    servername: b2bshop.samsung.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: maF7kOb9q2KpTnUFoJQhTPVvZ3p5besP3xBGF-pO3xY
-      short-id: 00849d56be
-    flow: xtls-rprx-vision
-    network: tcp
+    sni: www.ignitelimit.com
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 168.107.68.192
@@ -256,18 +183,13 @@ proxy-groups:
     proxies:
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇮🇳 [IN] Индия VFPARSER'
-      - '🇨🇿 [CZ] Чехия VFPARSER'
-      - '🏳️ Белый айпи | 🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇨🇿 [CZ] Чехия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
