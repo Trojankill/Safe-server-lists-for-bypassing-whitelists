@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-20 13:15:30 UTC
+# 2026-09-20 13:30:44 UTC
 proxies:
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
@@ -27,6 +27,19 @@ proxies:
     reality-opts:
       public-key: OgTkmAQdLjipA9oLloxbU5BAX3hPjzbvkEGHF4aZ8z4
       short-id: 8a7d5e0248cdb1b1
+    network: tcp
+  - name: '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: ru.verymad.net
+    port: 25947
+    uuid: a9c66e1a-798e-437f-b0bf-f06c32a9666a
+    udp: true
+    tls: true
+    servername: vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: CQlKsUxdTGqcS0I4ZZUzUzIvWzOowSeaPbWk0IKaxC0
+      short-id: 650ae4b84a581e1c
     network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
@@ -56,22 +69,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: 69.46.46.214
-    port: 443
-    uuid: cb7863e8-6dd0-21cf-bf95-363ee6f6e9d9
-    udp: true
-    tls: true
-    servername: solipanel-production-0e94.up.railway.app
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/ws/cb7863e8-6dd0-21cf-bf95-363ee6f6e9d9'
-      headers:
-        Host: solipanel-production-0e94.up.railway.app
   - name: '🇨🇿 [CZ] Чехия VFPARSER'
     type: vless
     server: 31.76.7.227
@@ -114,33 +111,12 @@ proxies:
       short-id: 8319913f2e5f5711
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 168.107.68.192
     port: 56927
     cipher: 2022-blake3-chacha20-poly1305
     password: '3wYtGhROca1p818RFgftCeodooVes1HaskrJVHZoF3c='
-    udp: true
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 129.151.68.65
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '0N1dYtQFmHnwBeKv53o5MJDkRzbGYY1KkLXnaNkWo3o='
-    udp: true
-  - name: '🇸🇬 [SG] Сингапур VFPARSER'
-    type: ss
-    server: 129.150.59.192
-    port: 56927
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '2t7ioVN2zeH8TORMF3lxl8mKAb+1Db7YlFKCQBS424k='
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -156,20 +132,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
     udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 443
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 80
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
   - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
     server: yyz-ca-01.blncvpn4u.cc
@@ -183,20 +145,15 @@ proxy-groups:
     proxies:
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇨🇿 [CZ] Чехия VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
