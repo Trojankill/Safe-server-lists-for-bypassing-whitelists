@@ -1,38 +1,37 @@
 # clash/mihomo subscription
-# 2026-09-21 11:30:46 UTC
+# 2026-09-21 11:45:34 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #4'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #22'
     type: hysteria2
     server: 46.8.210.129
     port: 22443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #8'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #24'
+    type: hysteria2
+    server: 46.8.210.152
+    port: 23443
+    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
+    sni: disk.api-yandex.net
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #29'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #3'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #21'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #13'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #4'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #8'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #3'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #13'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #22'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #24'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #29'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #21'
 rules:
   - MATCH,PROXY
