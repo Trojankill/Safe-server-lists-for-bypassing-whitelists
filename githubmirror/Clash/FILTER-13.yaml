@@ -1,10 +1,43 @@
 # clash/mihomo subscription
-# 2026-09-21 11:15:35 UTC
+# 2026-09-21 11:30:45 UTC
 proxies:
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: 0c0dea97-bb53-4684-bd7c-0065eb5ca5e8
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality | beeline,t2 only'
+    type: vless
+    server: 188.225.33.112
+    port: 443
+    uuid: 85b72048-d250-43e7-a830-206b28c9f5c3
+    udp: true
+    tls: true
+    servername: smartcaptcha.yandexcloud.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: miH_ROFipWmvm-PqF1dSgN1jp7nIQZyKFhdILXXrsQI
+      short-id: 91c91e25817ab51c
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
     type: hysteria2
     server: 46.8.210.129
     port: 22443
+    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
+    sni: disk.api-yandex.net
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
+    type: hysteria2
+    server: 46.8.210.152
+    port: 23443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
@@ -23,6 +56,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality | beeline,t2 only'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
