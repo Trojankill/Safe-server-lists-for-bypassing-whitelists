@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-21 12:45:36 UTC
+# 2026-09-21 13:01:03 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS RAW Reality | megafon only'
     type: vless
@@ -57,16 +57,22 @@ proxies:
     network: raw
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
     type: hysteria2
-    server: 46.8.210.129
-    port: 22443
-    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
-    sni: disk.api-yandex.net
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
-    type: hysteria2
     server: 46.8.210.152
     port: 23443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 22443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
@@ -76,6 +82,7 @@ proxy-groups:
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY

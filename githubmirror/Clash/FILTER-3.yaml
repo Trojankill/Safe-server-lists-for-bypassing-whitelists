@@ -1,9 +1,9 @@
 # clash/mihomo subscription
-# 2026-09-21 12:45:33 UTC
+# 2026-09-21 13:01:00 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #82'
+  - name: '🇳🇱 The Netherlands — #70'
     type: vless
-    server: 84.201.180.13
+    server: 84.201.169.241
     port: 443
     uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
     udp: true
@@ -11,21 +11,9 @@ proxies:
     servername: api-maps.yandex.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
-    network: xhttp
-  - name: '🇳🇱 The Netherlands — #96'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: 3071c17b-36b4-4135-b289-cf14bc59db28
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
+      public-key: xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -39,7 +27,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #16'
+  - name: '🇩🇪 Germany — #18'
     type: vless
     server: 188.225.83.133
     port: 443
@@ -53,20 +41,20 @@ proxies:
       short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #8'
+  - name: '🇳🇱 The Netherlands — #100'
     type: vless
-    server: 217.19.122.17
-    port: 10654
-    uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
+    server: 46.243.142.184
+    port: 8444
+    uuid: 9c340697-2469-4ff3-a94e-763fda8f1f4e
     udp: true
     tls: true
-    servername: bl3fk52.sysopnova.art
-    client-fingerprint: firefox
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
     reality-opts:
-      public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
-      short-id: 5c3fb122
-    network: xhttp
-  - name: '🇳🇱 The Netherlands — #68'
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 The Netherlands — #73'
     type: vless
     server: 45.11.27.86
     port: 443
@@ -80,7 +68,7 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #67'
+  - name: '🇳🇱 The Netherlands — #68'
     type: vless
     server: 188.225.45.152
     port: 12096
@@ -88,13 +76,13 @@ proxies:
     udp: true
     tls: true
     servername: www.x5.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
       short-id: fd5b64ba
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇮🇳 India — #56'
+  - name: '🇮🇳 India — #57'
     type: vless
     server: 89.169.171.202
     port: 8444
@@ -111,13 +99,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #82'
-      - '🇳🇱 The Netherlands — #96'
+      - '🇳🇱 The Netherlands — #70'
       - '🇷🇺 Beget — #1'
-      - '🇩🇪 Germany — #16'
-      - '🇩🇪 Germany — #8'
+      - '🇩🇪 Germany — #18'
+      - '🇳🇱 The Netherlands — #100'
+      - '🇳🇱 The Netherlands — #73'
       - '🇳🇱 The Netherlands — #68'
-      - '🇳🇱 The Netherlands — #67'
-      - '🇮🇳 India — #56'
+      - '🇮🇳 India — #57'
 rules:
   - MATCH,PROXY
