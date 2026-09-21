@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-21 19:15:35 UTC
+# 2026-09-21 19:30:43 UTC
 proxies:
-  - name: '🇩🇪 Германия 2 Timeweb LLP'
-    type: vless
-    server: 89.223.125.83
-    port: 443
-    uuid: 038bd394-4918-4162-9f8b-95d1ed33f0fd
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: jop8TUr_L2ug9iQTSEYm6Ugm1PdXzKw7i4CHY6kyjCw
-      short-id: 0ee0444561c74114
-    network: tcp
   - name: '🇵🇱 Польша | БС¹'
     type: vless
     server: 82.118.22.161
@@ -83,20 +70,6 @@ proxies:
       short-id: e787c66988b14914
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 Нидерланды 7 The Constant Company LLC'
-    type: vless
-    server: 89.169.166.43
-    port: 2015
-    uuid: 0a0667bd-1bdb-4555-a4a6-6903623fc804
-    udp: true
-    tls: true
-    servername: gateway.icloud.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: HnO7i6WBCj_5_km3TtotQJa76TbOVq1HuFhhqKVtr3U
-      short-id: e787c66988b14914
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇹🇷 LTE 9 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
@@ -359,7 +332,7 @@ proxies:
       short-id: a9c4f17e3b62d8
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия 3 JSC Timeweb'
+  - name: '🇷🇺 [WL] Сервер 110'
     type: vless
     server: 89.223.125.83
     port: 2053
@@ -586,6 +559,19 @@ proxies:
     tls: true
     servername: vu.nl
     client-fingerprint: firefox
+    reality-opts:
+      public-key: BTCZ0hMhV10H818mbm54EQdU0s3qQXMtY4Hl67dFA18
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 GidroksiFree #16 | 🛡БС | 🟢LTE | 2191ms | ↓0.0Mbps'
+    type: vless
+    server: 88.216.92.78
+    port: 443
+    uuid: 5934cc4f-c17b-41c0-9280-c75eb222f4b7
+    udp: true
+    tls: true
+    servername: vu.nl
+    client-fingerprint: chrome
     reality-opts:
       public-key: BTCZ0hMhV10H818mbm54EQdU0s3qQXMtY4Hl67dFA18
     flow: xtls-rprx-vision
@@ -980,6 +966,32 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇺🇸 GidroksiFree #1 | 🛡БС | 🟢LTE | 750ms | ↓1.6Mbps'
+    type: vless
+    server: 79.141.172.154
+    port: 10453
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    udp: true
+    tls: true
+    servername: www.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc
+    network: grpc
+    grpc-opts:
+  - name: '🇮🇳 India — #33'
+    type: vless
+    server: 89.169.171.202
+    port: 8444
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    udp: true
+    tls: true
+    servername: www.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY
+    network: grpc
+    grpc-opts:
   - name: '13.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 88.218.170.236
@@ -1196,7 +1208,7 @@ proxies:
       short-id: a7c31f92
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия 5 JSC Timeweb'
+  - name: '🇷🇺 Россия 2 JSC Timeweb'
     type: vless
     server: 5.129.251.213
     port: 46446
@@ -1586,13 +1598,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Германия 2 Timeweb LLP'
       - '🇵🇱 Польша | БС¹'
       - '🇳🇱 LTE 229 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '0469 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | VLESS | TG: @YoutubeUnBlockRu'
-      - '🇳🇱 Нидерланды 7 The Constant Company LLC'
       - '🇹🇷 LTE 9 | тгк: @rostunnel'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - '🇳🇱 Нидерланды | БС¹'
@@ -1612,7 +1622,7 @@ proxy-groups:
       - '🇳🇱 AetrisVPN'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
-      - '🇷🇺 Россия 3 JSC Timeweb'
+      - '🇷🇺 [WL] Сервер 110'
       - 'AetrisVPN White list ┃ ✅ SNI: www.tradingview.com ┃ 🇫🇮 Финляндия'
       - '🇫🇮 Финляндия | БС³'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
@@ -1629,6 +1639,7 @@ proxy-groups:
       - '254.🇮🇳Индия | @LimeVPNFREE'
       - '0654 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'Бесплатный VPN tg:VLESSFORU 🇱🇹'
+      - '🇳🇱 GidroksiFree #16 | 🛡БС | 🟢LTE | 2191ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #14 | 🛡БС | 🟢LTE | 794ms | ↓0.1Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
@@ -1658,6 +1669,8 @@ proxy-groups:
       - '3285 | 🇫🇮 Finland | 🏳️ SNI-Ozon | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇵🇱 Польша'
       - '🇵🇱 [WL] Сервер 119'
+      - '🇺🇸 GidroksiFree #1 | 🛡БС | 🟢LTE | 750ms | ↓1.6Mbps'
+      - '🇮🇳 India — #33'
       - '13.🇷🇺Россия | @LimeVPNFREE'
       - '45.🇳🇱Нидерланды | @LimeVPNFREE'
       - '362.🇫🇷Франция | @LimeVPNFREE'
@@ -1674,7 +1687,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - '🇮🇹 Италия | БС¹'
       - '137.🇺🇸США | @LimeVPNFREE'
-      - '🇷🇺 Россия 5 JSC Timeweb'
+      - '🇷🇺 Россия 2 JSC Timeweb'
       - '228.🇷🇺Россия | @LimeVPNFREE'
       - '🇳🇱 AetrisVPN'
       - '🇪🇺 AetrisVPN'
