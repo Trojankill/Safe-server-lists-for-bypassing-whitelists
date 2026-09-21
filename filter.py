@@ -80,7 +80,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
     {"name": "FILTER-11", "url": "https://warp-gen.cyb-portal.org/CP-035"},
     {"name": "FILTER-12", "url": "https://raw.githubusercontent.com/VansFenix/vpnparser/refs/heads/main/all.txt"},
-    {"name": "FILTER-13", "url": "https://raw.githubusercontent.com/ImSketch1337/vless-/refs/heads/main/BLWLservers.txt"},
+    {"name": "FILTER-13", "url": "https://hub.mos.ru/kfwl/auto/raw/main/wl"},
 ]  
 
 BANNED_DOMAINS = [
