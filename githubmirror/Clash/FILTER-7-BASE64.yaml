@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-21 23:15:39 UTC
+# 2026-09-21 23:30:46 UTC
 proxies:
   - name: '🇺🇸 США | БС⁴'
     type: vless
@@ -1463,6 +1463,15 @@ proxies:
       short-id: 123abcdf
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'LTE/5G Все операторы 🇪🇺'
+    type: trojan
+    server: ih.lavivas.org
+    port: 8443
+    password: ZBR29pYTPUhKhqtnn926PUWzzjxGY0JX
+    udp: true
+    sni: ih.lavivas.org
+    alpn:
+      - 'h2%2Chttp%2F1.1'
   - name: '🇪🇺 AetrisVPN'
     type: vmess
     server: 45.32.57.118
@@ -1526,7 +1535,7 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇷🇺 Russia [*CIDR]'
+  - name: '🇷🇺 Россия | БС⁹'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1804,6 +1813,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
       - '5405 | 🌐 Unknown | 🏳️ CIDR-VK | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
       - '🇩🇪 [WL] Сервер 58'
+      - 'LTE/5G Все операторы 🇪🇺'
       - '🇪🇺 AetrisVPN'
       - '2340 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3591 | 🇷🇺 Russia | 🏳️ SNI-Yandex | HYSTERIA2 | TG: @YoutubeUnBlockRu'
@@ -1814,7 +1824,7 @@ proxy-groups:
       - '5690 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '5862 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3600 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Russia [*CIDR]'
+      - '🇷🇺 Россия | БС⁹'
       - '4848 | 🇷🇴 Romania | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇩🇪 ФРГ [#РКП]'
       - '🇺🇸 AetrisVPN'
