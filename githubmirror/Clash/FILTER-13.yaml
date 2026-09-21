@@ -1,6 +1,12 @@
 # clash/mihomo subscription
-# 2026-09-21 10:45:34 UTC
+# 2026-09-21 11:00:57 UTC
 proxies:
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
+    type: hysteria2
+    server: 46.8.210.129
+    port: 22443
+    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
+    sni: disk.api-yandex.net
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -17,6 +23,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме mts'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
