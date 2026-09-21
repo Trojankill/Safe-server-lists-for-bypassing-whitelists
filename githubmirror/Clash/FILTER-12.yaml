@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-21 16:15:38 UTC
+# 2026-09-21 16:30:52 UTC
 proxies:
+  - name: '🇹🇷 [TR] Турция VFPARSER'
+    type: vless
+    server: www.sorfema.ir
+    port: 8443
+    uuid: 35144244-d73c-44c0-97ae-8b8003c2214a
+    udp: true
+    tls: true
+    servername: music.youtube.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: 5oaCVJDTs_bOhuJIF1J98UAVQFu47Cu1TZoHme-jyxg
+      short-id: 74e78273a1a1165e
+    network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: 94.130.68.139
@@ -73,15 +86,24 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
+  - name: '🇨🇦 [CA] Канада VFPARSER'
+    type: ss
+    server: yyz-ca-01.blncvpn4u.cc
+    port: 9443
+    cipher: aes-256-gcm
+    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
