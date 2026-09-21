@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-21 18:15:35 UTC
+# 2026-09-21 18:30:50 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+    type: vless
+    server: 91.240.87.166
+    port: 443
+    uuid: 054b2555-c134-43e7-9443-af941fb447b2
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.184
@@ -14,6 +28,18 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
+    type: vless
+    server: 84.201.180.13
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
+    network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.178
@@ -70,7 +96,7 @@ proxies:
       short-id: fd5b64ba
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Кроме megafon'
     type: vless
     server: mur.burladuck.com
     port: 443
@@ -90,16 +116,25 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS TCP Reality | Кроме megafon'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
