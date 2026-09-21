@@ -1,44 +1,51 @@
 # clash/mihomo subscription
-# 2026-09-21 02:15:31 UTC
+# 2026-09-21 02:30:42 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #64'
-    type: hysteria2
-    server: have.whit3.net
+  - name: '🌀 CYBERPORTAL | CIDR White All RU #4'
+    type: vless
+    server: posa6.api3-max.ru
     port: 443
-    password: 1e1c72f4-325b-4db0-b2d4-dc9c7cddc46a
-    sni: have.whit3.net
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #60'
+    uuid: cdd6bfce-781a-4454-b7d5-4778abb5c24f
+    udp: true
+    tls: true
+    servername: posa6.api3-max.ru
+    alpn:
+      - h3
+    client-fingerprint: chrome
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #68'
     type: hysteria2
     server: 46.8.210.129
     port: 22443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #62'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #70'
     type: hysteria2
     server: 46.8.210.152
     port: 23443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #59'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #67'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #73'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #82'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
     skip-cert-verify: false
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #58'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #66'
     type: hysteria2
     server: 84.23.54.203
     port: 1935
@@ -48,12 +55,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #64'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #60'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #62'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #59'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #73'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #58'
+      - '🌀 CYBERPORTAL | CIDR White All RU #4'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #68'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #70'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #67'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #82'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия #66'
 rules:
   - MATCH,PROXY
