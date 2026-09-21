@@ -1,32 +1,18 @@
 # clash/mihomo subscription
-# 2026-09-19 16:15:31 UTC
+# 2026-09-21 09:45:32 UTC
 proxies:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇪🇪 Эстония [#РКП]'
     type: vless
-    server: 179.254.115.49
+    server: 188.225.83.133
     port: 443
-    uuid: 2ac46dc3-0593-4898-bd52-42a7d5a8f2e2
+    uuid: 8c7e1e4d-9369-49db-b35c-366aa23fcd78
     udp: true
     tls: true
-    servername: de1-web.mysoyka.online
+    servername: xnodtwx.artemida.live
     client-fingerprint: random
     reality-opts:
-      public-key: 5USjl6vRG3X4bxVWL9oZ7eUpyr-N3kezxnUi14WOrlY
-      short-id: 3d475d331e49eee8
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: vless
-    server: 77.110.104.238
-    port: 2053
-    uuid: 937fbdad-d97b-4540-9136-de1886df866f
-    udp: true
-    tls: true
-    servername: www.tagesschau.de
-    client-fingerprint: random
-    reality-opts:
-      public-key: sHEHsya9ZbC34uBUOzAfAO8u2b3Ik71hp4AKMGLvZxw
-      short-id: facfeeb537603598
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
@@ -43,19 +29,19 @@ proxies:
       short-id: 2cce6a63eaeb0b4f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 Германия [#РКП]'
+  - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
-    server: 46.243.142.227
-    port: 10443
-    uuid: a85ddf9f-329b-4c31-a80a-cd0f2e5b2a30
+    server: 191.44.38.143
+    port: 8443
+    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
     udp: true
     tls: true
-    servername: shprcdn.quest
+    servername: nl2.yabloko.top
     client-fingerprint: random
     reality-opts:
-      public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
-    network: grpc
-    grpc-opts:
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
+    network: tcp
   - name: '🏴‍️ Неизвестный [#РКП]'
     type: vless
     server: 195.133.73.65
@@ -70,16 +56,24 @@ proxies:
       short-id: 64c1fe36c7846400
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 5.42.96.76
+    port: 443
+    uuid: f96d53bc-e0a9-4ea9-b3f1-dd8033fd7f1f
+    udp: true
+    tls: true
+    servername: ruself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
+      short-id: 7f2e9c4b1a8d6e55
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇳🇴 Норвегия [#РКП]'
     type: hysteria2
     server: 46.8.210.129
     port: 22443
-    password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
-    sni: disk.api-yandex.net
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: hysteria2
-    server: 46.8.210.152
-    port: 23443
     password: 2a3b101d-d8f9-40e7-9373-b0ef487c0035
     sni: disk.api-yandex.net
   - name: '🇷🇺 Россия [#РКП]'
@@ -89,23 +83,21 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
   - name: '🇩🇪 ФРГ [#РКП]'
-    type: ss
-    server: 193.233.126.36
-    port: 55597
-    cipher: aes-128-gcm
-    password: o2rw2hICwu1blrr_gZAl2Q
-    udp: true
+    type: hysteria2
+    server: 84.23.54.203
+    port: 1935
+    password: 'hysteria2_fastlane_cfm7kzssa%3AOHDpvCARUv5xvE07caQIrVo6IpqRkgkq'
+    sni: ru2.h.smartaisupport.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
+      - '🇪🇪 Эстония [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇩🇪 Германия [#РКП]'
-      - '🏴‍️ Неизвестный [#РКП]'
-      - '🇳🇴 Норвегия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
+      - '🏴‍️ Неизвестный [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇳🇴 Норвегия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
 rules:
