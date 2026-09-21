@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-21 04:15:30 UTC
+# 2026-09-21 04:30:42 UTC
 proxies:
+  - name: '🇭🇰 [HK] Гонконг VFPARSER'
+    type: vless
+    server: akahkakhknmbzqwcnpy.jiedddym.com
+    port: 39879
+    uuid: 17ab31f7-c021-4aec-83b2-ab48de8886bd
+    udp: true
+    tls: true
+    servername: www.lamer.com.hk
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Lff3UGrC1porayJJU-QhztTrrLk_HnQ91bMuizKe0RY
+      short-id: bc8324bf23b5d9
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: rbgcpqqnbgwlxxn.jiedddym.com
+    port: 46642
+    uuid: 17ab31f7-c021-4aec-83b2-ab48de8886bd
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: -Zr7fVQUR-O0IZn6-ZkSom3lwBR1KodQgeAQpO3kVnQ
+      short-id: fe4b900431df7b4a
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇪🇪 [EE] Эстония VFPARSER'
     type: vless
     server: 132.243.65.161
@@ -15,19 +43,6 @@ proxies:
       short-id: 7a3f9e2b1c8d4f6a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
-    type: vless
-    server: 193.233.223.87
-    port: 7443
-    uuid: 541b92a5-7a97-4b6b-a6be-bd4f5a5b0911
-    udp: true
-    tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: safari
-    reality-opts:
-      public-key: 36VgwCvCzW3ST22DrfRU7y8mVfm0PM7JpkXQnN9yLiE
-    network: grpc
-    grpc-opts:
   - name: '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: ru.verymad.net
@@ -57,6 +72,22 @@ proxies:
     network: tcp
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
+    server: 69.46.46.192
+    port: 443
+    uuid: d3d4eb9c-1e95-f0ca-6340-b5465e61c435
+    udp: true
+    tls: true
+    servername: vodiwalkerpanel-production-60f4.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws/d3d4eb9c-1e95-f0ca-6340-b5465e61c435'
+      headers:
+        Host: vodiwalkerpanel-production-60f4.up.railway.app
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
     server: 13.143.166.25
     port: 443
     uuid: dcf8e133-09a2-4884-abf9-80356bb334ac
@@ -69,20 +100,6 @@ proxies:
       short-id: a7c31f92
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇹🇷 [TR] Турция VFPARSER'
-    type: vless
-    server: nl.node-edge09.com
-    port: 443
-    uuid: ddf09ad0-02dc-485b-9048-1038de5bebf0
-    udp: true
-    tls: true
-    servername: nl.node-edge09.com
-    client-fingerprint: safari
-    reality-opts:
-      public-key: S6t9-gOX2mxWKNGvGSJ8NxDdlJy78d4gN2-wv2d0hFw
-      short-id: 8319913f2e5f5711
-    network: grpc
-    grpc-opts:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
     server: us.cache-4d8a.com
@@ -97,26 +114,19 @@ proxies:
       short-id: 8319913f2e5f5711
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇸🇬 [SG] Сингапур VFPARSER'
-    type: ss
-    server: 129.150.59.192
-    port: 56927
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '2t7ioVN2zeH8TORMF3lxl8mKAb+1Db7YlFKCQBS424k='
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: trojan
+    server: 88.198.82.150
+    port: 443
+    password: humanity
     udp: true
+    sni: www.ignitelimit.com
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 141.148.225.103
     port: 45819
     cipher: 2022-blake3-chacha20-poly1305
     password: '8RRsprK4nxB5VqKlMGFdXJerGo79K5bKdz4uF4crI8E='
-    udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 141.148.239.222
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'j/ElfFW5mBIpS9nK1vvCZhZBTKBfyAPIRuP6DxnzRV8='
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -171,15 +181,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇭🇰 [HK] Гонконг VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇪🇪 [EE] Эстония VFPARSER'
-      - '🏳️ Белый айпи | 🇫🇮 [FI] Финляндия VFPARSER'
       - '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇮🇩 [ID] Индонезия VFPARSER'
