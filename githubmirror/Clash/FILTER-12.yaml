@@ -1,61 +1,36 @@
 # clash/mihomo subscription
-# 2026-09-21 07:30:46 UTC
+# 2026-09-21 07:45:31 UTC
 proxies:
-  - name: '🇭🇰 [HK] Гонконг VFPARSER'
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
-    server: akahkakhknmbzqwcnpy.jiedddym.com
-    port: 39879
-    uuid: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-    udp: true
-    tls: true
-    servername: www.lamer.com.hk
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Lff3UGrC1porayJJU-QhztTrrLk_HnQ91bMuizKe0RY
-      short-id: bc8324bf23b5d9
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: rbgcpqqnbgwlxxn.jiedddym.com
-    port: 46642
-    uuid: 17ab31f7-c021-4aec-83b2-ab48de8886bd
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: -Zr7fVQUR-O0IZn6-ZkSom3lwBR1KodQgeAQpO3kVnQ
-      short-id: fe4b900431df7b4a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇪🇪 [EE] Эстония VFPARSER'
-    type: vless
-    server: 132.243.65.161
+    server: latisha.loozerp.wiki
     port: 443
-    uuid: 4d08aa81-f729-4857-a2e9-06e48b8b9556
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
     udp: true
     tls: true
-    servername: ee.global-cdn.org
-    client-fingerprint: safari
-    reality-opts:
-      public-key: RO5YMxxtJmZo2w370qG-seJ41toowHPbz6i2uXJ2gG0
-      short-id: 7a3f9e2b1c8d4f6a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
-    type: vless
-    server: ru.verymad.net
-    port: 25947
-    uuid: a9c66e1a-798e-437f-b0bf-f06c32a9666a
-    udp: true
-    tls: true
-    servername: vk.com
+    servername: latisha.loozerp.wiki
     client-fingerprint: random
     reality-opts:
-      public-key: CQlKsUxdTGqcS0I4ZZUzUzIvWzOowSeaPbWk0IKaxC0
-      short-id: 650ae4b84a581e1c
+      public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
+      short-id: ff776ff77be48b88
+    flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: ru-kzn.tunnelgate.org
+    port: 443
+    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
+    udp: true
+    tls: true
+    servername: ru-kzn.tunnelgate.org
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: qq
+    network: ws
+    ws-opts:
+      path: '/ws/v1/pl'
+      headers:
+        Host: ru-kzn.tunnelgate.org
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: vless
     server: gb.superbuba.top
@@ -114,13 +89,6 @@ proxies:
       short-id: 8319913f2e5f5711
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: trojan
-    server: 88.198.82.150
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.ignitelimit.com
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 141.148.225.103
@@ -134,13 +102,6 @@ proxies:
     port: 2087
     cipher: 2022-blake3-aes-256-gcm
     password: 'WAqeGA+dU+HZYSipCio+Jmt7SSVfHjwMH7j8xmsm7/s=:althddZ27iu261I+568pk7HZzBFDCyIx6pvG8H9oXow='
-    udp: true
-  - name: '🇮🇩 [ID] Индонезия VFPARSER'
-    type: ss
-    server: 103.160.63.199
-    port: 31348
-    cipher: chacha20-ietf-poly1305
-    password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
     udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
@@ -181,18 +142,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇭🇰 [HK] Гонконг VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇪🇪 [EE] Эстония VFPARSER'
-      - '🏳️ Белый айпи | 🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
