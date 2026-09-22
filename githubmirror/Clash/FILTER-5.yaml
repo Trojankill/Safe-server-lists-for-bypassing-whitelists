@@ -1,23 +1,37 @@
 # clash/mihomo subscription
-# 2026-09-22 14:45:37 UTC
+# 2026-09-22 15:01:02 UTC
 proxies:
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0057|'
+  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0063|'
     type: vless
-    server: 84.201.146.8
+    server: 158.160.189.29
     port: 443
-    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    uuid: 260cb339-80ad-481f-a9d4-d414c52d013c
     udp: true
     tls: true
-    servername: max.ru
+    servername: yandex.ru
     client-fingerprint: safari
     reality-opts:
-      public-key: biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo
-    network: xhttp
-  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0032|'
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0068|'
+    type: vless
+    server: 185.86.144.101
+    port: 443
+    uuid: 260cb339-80ad-481f-a9d4-d414c52d013c
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0057|'
     type: vless
     server: 212.233.121.186
     port: 443
-    uuid: 30b4a4e1-f6bc-4d90-8278-2e3e3dac50f3
+    uuid: 260cb339-80ad-481f-a9d4-d414c52d013c
     udp: true
     tls: true
     servername: yandex.ru
@@ -39,11 +53,11 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0068|'
+  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0092|'
     type: vless
     server: 46.243.142.184
     port: 8444
-    uuid: 6388dabd-2250-4142-a3a0-64d7f8547a9b
+    uuid: 9a329049-b9cd-4ee1-9f7d-2c80ed3b25fc
     udp: true
     tls: true
     servername: ppfu3n-01.p.portshaper.com
@@ -52,7 +66,21 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0058|'
+  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0089|'
+    type: vless
+    server: 45.11.27.86
+    port: 443
+    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
+      short-id: d0aae44f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0085|'
     type: vless
     server: 188.225.45.152
     port: 12096
@@ -60,7 +88,7 @@ proxies:
     udp: true
     tls: true
     servername: www.x5.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
       short-id: fd5b64ba
@@ -70,10 +98,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0057|'
-      - '🇩🇪Обходы - TG: AirLinkVPNBot |0032|'
+      - '🇩🇪Обходы - TG: AirLinkVPNBot |0063|'
+      - '🇩🇪Обходы - TG: AirLinkVPNBot |0068|'
+      - '🇩🇪Обходы - TG: AirLinkVPNBot |0057|'
       - '🇷🇺Обходы - TG: AirLinkVPNBot |0004|'
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0068|'
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0058|'
+      - '🇳🇱Обходы - TG: AirLinkVPNBot |0092|'
+      - '🇳🇱Обходы - TG: AirLinkVPNBot |0089|'
+      - '🇳🇱Обходы - TG: AirLinkVPNBot |0085|'
 rules:
   - MATCH,PROXY
