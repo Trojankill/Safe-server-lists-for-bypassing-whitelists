@@ -1,32 +1,18 @@
 # clash/mihomo subscription
-# 2026-09-22 13:01:03 UTC
+# 2026-09-22 13:15:31 UTC
 proxies:
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
-    server: nether.snappycore.com
-    port: 443
-    uuid: 8f9c5260-9456-472b-8ee2-444500ba6cab
+    server: 159.69.103.251
+    port: 2053
+    uuid: 6cf6bb53-9785-49d5-9d39-53b4de45ff84
     udp: true
     tls: true
-    servername: nether.snappycore.com
-    client-fingerprint: firefox
+    servername: 91.98.44.116
+    client-fingerprint: chrome
     reality-opts:
-      public-key: SCuasCPva4lPGu-QRP955zZB8f6i7ydHBQh6bsSlrgo
-      short-id: 3d87c490ddd41305
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇧🇷 [BR] Бразилия VFPARSER'
-    type: vless
-    server: 201.51.17.24
-    port: 1443
-    uuid: b0c51c20-1557-4f1f-9eaa-6e4c844a04ca
-    udp: true
-    tls: true
-    servername: www.google.com
-    client-fingerprint: safari
-    reality-opts:
-      public-key: ODyAfL7Ie0jmStqz0l2pTq9acdVcmK650m4r1b-R_lM
-      short-id: c7199351636c8880
+      public-key: W2V2xk0G3_neYDnTLNhaYxovp_ThMXDw68uweM12W2Y
+      short-id: 5ecb8c5a753a36fc
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
@@ -43,6 +29,27 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 135.106.221.177
+    port: 11801
+    uuid: eaa3e093-ef0e-437d-8993-18db7744d37f
+    udp: true
+    tls: true
+    servername: dog1302.mynetoff.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: WQAdveYQROgc_PlY3nHKZVQJozJWGtpHUz2TtasRV2M
+      short-id: 5aafa1
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: ss
+    server: 129.151.72.134
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'JDuG6erD7ug3QCtbLAZ2KCJaOhCmxAXL5C8bFxSsMBw='
+    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
@@ -50,21 +57,14 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
     udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: yyz-ca-01.blncvpn4u.cc
-    port: 9443
-    cipher: aes-256-gcm
-    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇧🇷 [BR] Бразилия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
