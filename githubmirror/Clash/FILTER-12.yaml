@@ -1,20 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-22 10:15:32 UTC
+# 2026-09-22 10:30:46 UTC
 proxies:
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
-    server: ned.nloo1.5gvpn.pw
-    port: 2087
-    uuid: aebbd166-e3e3-42f1-a334-0f007b2b207a
+    server: nether.snappycore.com
+    port: 443
+    uuid: 8f9c5260-9456-472b-8ee2-444500ba6cab
     udp: true
     tls: true
-    servername: ned.nloo1.5gvpn.pw
+    servername: nether.snappycore.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: pl2ck-Vb_6pFsEsU0Ox-aYpbPSKdbx8X6jFl5Gq7nT0
-      short-id: 2997f2bc86f3
-    network: grpc
-    grpc-opts:
+      public-key: SCuasCPva4lPGu-QRP955zZB8f6i7ydHBQh6bsSlrgo
+      short-id: 3d87c490ddd41305
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇧🇷 [BR] Бразилия VFPARSER'
     type: vless
     server: 201.51.17.24
@@ -43,40 +43,6 @@ proxies:
       short-id: 4fa44664f6a566d3
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇨🇭 [CH] Швейцария VFPARSER'
-    type: vless
-    server: 82.38.139.24
-    port: 8445
-    uuid: e5d73666-1ac5-49fc-8e4d-5c8cad769588
-    udp: true
-    tls: true
-    servername: hetzner.com
-    client-fingerprint: safari
-    reality-opts:
-      public-key: _UazRMiBq9RqMaVrHeLsvUuoBkGFo9Gm-A4ivuZ6ZS8
-      short-id: 6ba85179e30d4fc2
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: 31.76.109.46
-    port: 443
-    uuid: ec7a4183-3e7b-49c4-90dc-fe352e1b0ad0
-    udp: true
-    tls: true
-    servername: nl.mcloud.mov
-    client-fingerprint: safari
-    reality-opts:
-      public-key: fkZTYNydTBVO-1LSiTvDcyBMx-zBP5Am780jECmUgg0
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇮🇩 [ID] Индонезия VFPARSER'
-    type: ss
-    server: 103.160.63.199
-    port: 31348
-    cipher: chacha20-ietf-poly1305
-    password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
-    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
@@ -84,19 +50,12 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
     udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
+  - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
-    server: 84.247.155.196
-    port: 443
+    server: yyz-ca-01.blncvpn4u.cc
+    port: 9443
     cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 80
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
+    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
 proxy-groups:
   - name: PROXY
@@ -105,11 +64,7 @@ proxy-groups:
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇧🇷 [BR] Бразилия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇨🇭 [CH] Швейцария VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
