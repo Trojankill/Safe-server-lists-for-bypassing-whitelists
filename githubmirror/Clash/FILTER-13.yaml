@@ -1,34 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-22 15:30:49 UTC
+# 2026-09-22 15:45:34 UTC
 proxies:
-  - name: '🇨🇿 Чехия | VLESS TCP Reality'
-    type: vless
-    server: 78.159.247.151
-    port: 30073
-    uuid: 20b53251-25c6-4ba1-bcc3-4e5f491c7e97
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇨🇿 Чехия | VLESS TCP Reality'
-    type: vless
-    server: 78.159.247.235
-    port: 30023
-    uuid: 20b53251-25c6-4ba1-bcc3-4e5f491c7e97
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.29
@@ -41,20 +13,6 @@ proxies:
     reality-opts:
       public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
       short-id: aa
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
-    type: vless
-    server: 188.225.83.133
-    port: 443
-    uuid: 8c7e1e4d-9369-49db-b35c-366aa23fcd78
-    udp: true
-    tls: true
-    servername: xnodtwx.artemida.live
-    client-fingerprint: random
-    reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality'
@@ -85,34 +43,61 @@ proxies:
       short-id: b4e5b7cefcd0d47c
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
-    server: 188.225.76.244
-    port: 6666
-    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
+    server: 188.225.45.152
+    port: 12096
+    uuid: a95b3155-bc03-4789-b367-944b83be8f86
     udp: true
     tls: true
-    servername: vkvd519.okcdn.ru
-    client-fingerprint: firefox
+    servername: www.x5.ru
+    client-fingerprint: chrome
     reality-opts:
-      public-key: SxYQfCF7C0hUlC_K0y8GONEC2jhHwzwO1AHVhkbqFyc
-      short-id: 43dcff53849b81e6
+      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
+      short-id: fd5b64ba
     flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
     type: vless
-    server: 188.225.76.244
-    port: 7777
-    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
+    server: 91.240.86.12
+    port: 443
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: api.vk.ru
+    servername: yandex.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: SxYQfCF7C0hUlC_K0y8GONEC2jhHwzwO1AHVhkbqFyc
-      short-id: 43dcff53849b81e6
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+    type: vless
+    server: 91.240.87.166
+    port: 443
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: d8202b78-9ce4-48cf-8861-c6c3f534c07f
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -120,25 +105,17 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: itsallproxy.quattro-tech.ru
     skip-cert-verify: false
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇨🇿 Чехия | VLESS TCP Reality'
-      - '🇨🇿 Чехия | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
-      - '🇷🇺 Россия | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
+      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
