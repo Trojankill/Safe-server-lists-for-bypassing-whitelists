@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-22 01:30:41 UTC
+# 2026-09-22 01:45:29 UTC
 proxies:
   - name: 'Бесплатный VPN tg:VLESSFORU 🇪🇪'
     type: vless
@@ -23,7 +23,7 @@ proxies:
     udp: true
     tls: true
     servername: nl07.shifor01.life
-    client-fingerprint: firefox
+    client-fingerprint: random
     reality-opts:
       public-key: 0FwNJ9HYJgVj5566tb0zwjGTPLb-42i-mlXnceB9-Tc
       short-id: 3ac25eef1431b799
@@ -42,7 +42,7 @@ proxies:
       public-key: 36sTeaLdaAjQQxxzh492XihoPi2YxmttQyncmLuxYHE
       short-id: 169fc2df88419465
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
   - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
     type: vless
     server: us05.shifor01.life
@@ -56,6 +56,19 @@ proxies:
       public-key: 36sTeaLdaAjQQxxzh492XihoPi2YxmttQyncmLuxYHE
       short-id: 169fc2df88419465
     flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+    type: vless
+    server: 144.31.166.205
+    port: 10000
+    uuid: 135852be-3cfc-4551-b6bf-641911655174
+    udp: true
+    tls: true
+    servername: zoom.us
+    client-fingerprint: ios
+    reality-opts:
+      public-key: UOa0v_JpSPRPMO6ABMM7tIir-GclotOVfnbI2WqJGVE
+      short-id: 9791feaccc1ca4d8
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
     type: vless
@@ -71,6 +84,19 @@ proxies:
       short-id: 75c55b707d25ae8d
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'SNi yandex.ru 🇷🇺'
+    type: vless
+    server: 84.201.169.241
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
     type: vless
     server: de1-web.mysoyka.online
@@ -83,6 +109,33 @@ proxies:
     reality-opts:
       public-key: 5USjl6vRG3X4bxVWL9oZ7eUpyr-N3kezxnUi14WOrlY
       short-id: 3d475d331e49eee8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'LTE/5G MegafonYota Tele2 🇪🇺'
+    type: vless
+    server: 81.94.148.178
+    port: 7445
+    uuid: 3bfa6cb9-d4ff-42a5-aa48-c5956db62964
+    udp: true
+    tls: true
+    servername: s1.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
+      short-id: f7d9e9a2e78e9a17
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+    type: vless
+    server: dedicated.pivo.lol
+    port: 7443
+    uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
+    udp: true
+    tls: true
+    servername: dedicated.pivo.lol
+    alpn:
+      - 'h2%2Chttp%2F1.1'
+    client-fingerprint: firefox
     flow: xtls-rprx-vision
     network: tcp
   - name: 'LTE/5G Все операторы 🇪🇺'
@@ -98,19 +151,32 @@ proxies:
     client-fingerprint: firefox
     network: grpc
     grpc-opts:
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
     type: vless
-    server: 207.57.128.108
-    port: 35559
-    uuid: 6d7deb4c-d700-4e0f-bc17-122ccc564f28
+    server: ndi.lavivas.org
+    port: 2096
+    uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
     udp: true
     tls: true
-    servername: www.ebay.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 0BRJ4nv0yLutb5ATRT3WbLgE9Y58udx3PbVOUVbOhkY
+    servername: ndi.lavivas.org
+    alpn:
+      - 'h2%2Chttp%2F1.1'
+    client-fingerprint: firefox
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'SNi x5.ru 🇷🇺'
+    type: vless
+    server: 193.233.223.87
+    port: 7443
+    uuid: 541b92a5-7a97-4b6b-a6be-bd4f5a5b0911
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 36VgwCvCzW3ST22DrfRU7y8mVfm0PM7JpkXQnN9yLiE
+    network: grpc
+    grpc-opts:
   - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
     type: vless
     server: slowkd.sadiepinki.com
@@ -153,20 +219,62 @@ proxies:
       short-id: c8c75aaf699259b4
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'LTE/5G Все операторы 🇪🇺'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
     type: vless
-    server: xnodtwx.artemida.live
+    server: 72.56.1.5
     port: 443
-    uuid: 8c7e1e4d-9369-49db-b35c-366aa23fcd78
+    uuid: 8057eabc-921d-4ef5-9acb-80ccc6b48379
     udp: true
     tls: true
-    servername: xnodtwx.artemida.live
+    servername: www.siemens.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      public-key: 0FeZt3p4idHrFpZRIjn69W_zUFiVBKmoGhkqSqbAvRw
+      short-id: 271684C10127374D
+    network: grpc
+    grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+    type: vless
+    server: 186.246.6.110
+    port: 443
+    uuid: 8c40bb2c-157a-4830-a2c3-0b35ef50c660
+    udp: true
+    tls: true
+    servername: upload.hexagonicfield.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
       short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+    type: vless
+    server: 201.24.52.151
+    port: 443
+    uuid: 8c40bb2c-157a-4830-a2c3-0b35ef50c660
+    udp: true
+    tls: true
+    servername: hexagonicfield.com
+    client-fingerprint: ios
+    reality-opts:
+      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
+      short-id: 3f8e2d1c9b4a7e6f
+    network: grpc
+    grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+    type: vless
+    server: nl2.bbobr.win
+    port: 443
+    uuid: 8d2196c0-2ec7-4867-8d66-d5d19bf8fb23
+    udp: true
+    tls: true
+    servername: nl2.bbobr.win
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: eztZ1H-OkkHao6d4FhX8Q728qN1UIeFcYH2jObRq1gc
+      short-id: fbe9c012125d90d2
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'LTE/5G Все операторы 🇪🇺'
     type: vless
     server: 217.19.122.17
@@ -188,7 +296,7 @@ proxies:
     udp: true
     tls: true
     servername: yoy-api.bachidze.com
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
     flow: xtls-rprx-vision
@@ -220,19 +328,6 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
-    type: vless
-    server: 45.145.229.184
-    port: 29680
-    uuid: a6eae9b3-15eb-455f-a5f1-b73b2d304a32
-    udp: true
-    tls: true
-    servername: www.ebay.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: PcmyuWGLbzBiTAqTuui0FSq3DUa6SIXzbDFARaeV23U
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
     type: vless
     server: poland2.serverslocal.ru
@@ -245,34 +340,6 @@ proxies:
     reality-opts:
       public-key: dkaIImQrQ1ZVQGNfyrNZbtkE-8hxp_u8AH99XDFgfHw
       short-id: 75c55b707d25ae8d
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-    type: vless
-    server: 2.26.11.76
-    port: 443
-    uuid: aebbd166-e3e3-42f1-a334-0f007b2b207a
-    udp: true
-    tls: true
-    servername: gerselfst.5gvpn.pw
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wupiGtRSZmAvbMLgjj2UZXs-7ABBTEBQquIdPUvD2Fg
-      short-id: 6e22571117b6
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
-    type: vless
-    server: 80.66.89.205
-    port: 443
-    uuid: aebbd166-e3e3-42f1-a334-0f007b2b207a
-    udp: true
-    tls: true
-    servername: ruselfst.5gvpn.pw
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: SNhzgT65uGhfEzAZWsKySy28360mbRZnXpjtvBtAFAY
-      short-id: a8f3c21d9e07
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
@@ -288,17 +355,44 @@ proxies:
       public-key: I5G9JXV21qrWwDPvOvegdnK_4KPfVHFtqME8fEt-BgI
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
     type: vless
-    server: 150.241.71.245
+    server: 177.3.215.83
+    port: 443
+    uuid: c6fc18ad-dc32-4d0d-8340-741223ad431e
+    udp: true
+    tls: true
+    servername: p2-se-01.mdvcore.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: be2LfUOlBNEmO30OTqZrAyZD-hSKRYFMH1DGUgSuhXY
+      short-id: 09f402a46369773b
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+    type: vless
+    server: 177.3.215.62
     port: 443
     uuid: c795bdd5-0460-42bd-927b-fbff154d2ab5
     udp: true
     tls: true
-    servername: gag.fl.iki-servers.com
+    servername: swd2.iki-servers.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: ssz8kvl1tH0TUaFREVSV_X-ED0AR-eeaWpKg2jQM8D8
+      public-key: tvauhVyVSDXCgEXE34h4x7uuXTkKfC72bQeoAV1PVA8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇨🇭'
+    type: vless
+    server: 45.140.205.2
+    port: 443
+    uuid: c795bdd5-0460-42bd-927b-fbff154d2ab5
+    udp: true
+    tls: true
+    servername: promo.ch.iki-servers.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: he6F0xhRgRSY0qekzzUoFHroztc6V06CpJ5UfSSlxmg
     flow: xtls-rprx-vision
     network: tcp
   - name: 'SNi dzen.ru 🇩🇪'
@@ -329,33 +423,18 @@ proxies:
       short-id: a1b2c3d4e5f67890
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺&happ://routing/onadd/eyJOYW1lIjoiVGc6IFZsZXNzRm9ydSAgIiwiR2xvYmFsUHJveHkiOiJ0cnVlIiwiVXNlQ2h1bmtGaWxlcyI6InRydWUiLCJSZW1vdGVEbnMiOiI5NC4xNDAuMTQuMTQiLCJEb21lc3RpY0RucyI6Ijc3Ljg4LjguOCIsIlJlbW90ZUROU1R5cGUiOiJEb0giLCJSZW1vdGVETlNEb21haW4iOiJodHRwczovL2Rucy5hZGd1YXJkLWRucy5jb20vZG5zLXF1ZXJ5IiwiUmVtb3RlRE5TSVAiOiI4LjguOC44IiwiRG9tZXN0aWNETlNUeXBlIjoiRG9IIiwiRG9tZXN0aWNETlNEb21haW4iOiJodHRwczovLzc3Ljg4LjguOC9kbnMtcXVlcnkiLCJEb21lc3RpY0ROU0lQIjoiNzcuODguOC44IiwiR2VvaXB1cmwiOiJodHRwczovL3N1Yi52bGVzc2ZvLnJ1L3ZsZXNzZm9ydS9nZW9pcC5kYXQiLCJHZW9zaXRldXJsIjoiaHR0cHM6Ly9zdWIudmxlc3Nmby5ydS92bGVzc2ZvcnUvZ2Vvc2l0ZS5kYXQiLCJMYXN0VXBkYXRlZCI6IjE3ODY0OTI4MDAiLCJEbnNIb3N0cyI6eyJsa2ZsMi5uYWxvZy5ydSI6IjIxMy4yNC42NC4xNzUiLCJsa25wZC5uYWxvZy5ydSI6IjIxMy4yNC42NC4xODEifSwiUm91dGVPcmRlciI6ImJsb2NrLXByb3h5LWRpcmVjdCIsIkRpcmVjdFNpdGVzIjpbImdlb3NpdGU6cHJpdmF0ZSIsImdlb3NpdGU6Y2F0ZWdvcnktcnUiLCJwcm90b2NvbDpiaXR0b3JyZW50IiwiZG9tYWluOjJnaXMucnUiLCJkb21haW46YWRzLng1LnJ1IiwiZG9tYWluOjJnaXMuY29tIiwiZG9tYWluOmFpZi5ydSIsImRvbWFpbjphZXJvZmxvdC5ydSIsImRvbWFpbjphbGZhYmFuay5ydSIsImRvbWFpbjphdml0by5ydSIsImRvbWFpbjpiZWVsaW5lLnJ1IiwiZG9tYWluOmJ1cmdlcmtpbmdydXMucnUiLCJkb21haW46ZGVsbGluLnJ1IiwiZG9tYWluOmRyaXZlMi5ydSIsImRvbWFpbjpkemVuLnJ1IiwiZG9tYWluOmZseXBvYmVkYS5ydSIsImRvbWFpbjpmb3JiZXMucnUiLCJkb21haW46Z2F6ZXRhLnJ1IiwiZG9tYWluOmdhenByb21iYW5rLnJ1IiwiZG9tYWluOmdpc21ldGVvLnJ1IiwiZG9tYWluOmdvc3VzbHVnaS5ydSIsImRvbWFpbjpoaC5ydSIsImRvbWFpbjprb250dXIucnUiLCJkb21haW46a29udHVyLmhvc3QiLCJkb21haW46a3AucnUiLCJkb21haW46a3VwZXIucnUiLCJkb21haW46bGVudGEucnUiLCJkb21haW46bWFpbC5ydSIsImRvbWFpbjptYXgucnUiLCJkb21haW46bWVnYW1hcmtldC5ydSIsImRvbWFpbjptZWdhbWFya2V0LnRlY2giLCJkb21haW46bWVnYWZvbi5ydSIsImRvbWFpbjptb2V4LmNvbSIsImRvbWFpbjptb3RpdnRlbGVjb20ucnUiLCJkb21haW46b3pvbi5ydSIsImRvbWFpbjpwZXJ2eWUucnUiLCJkb21haW46cHNiYW5rLnJ1IiwiZG9tYWluOnJhbWJsZXIucnUiLCJkb21haW46cmFtYmxlci1jby5ydSIsImRvbWFpbjpyYmMucnUiLCJkb21haW46cmVnLnJ1IiwiZG9tYWluOnJldmlld3MuMmdpcy5jb20iLCJkb21haW46cmcucnUiLCJkb21haW46cmlhLnJ1IiwiZG9tYWluOnJ1d2lraS5ydSIsImRvbWFpbjpydXN0b3JlLnJ1IiwiZG9tYWluOnJ1dHViZS5ydSIsImRvbWFpbjpyemQucnUiLCJkb21haW46c2lyZW5hLXRyYXZlbC5ydSIsImRvbWFpbjpzcmF2bmkucnUiLCJkb21haW46dC1qLnJ1IiwiZG9tYWluOnQyLnJ1IiwiZG9tYWluOnRhbmstb25saW5lLmNvbSIsImRvbWFpbjp0YXhpbWF4aW0ucnUiLCJkb21haW46dGJhbmstb25saW5lLmNvbSIsImRvbWFpbjppbWdzbWFpbC5ydSIsImRvbWFpbjpvay5ydSIsImRvbWFpbjp5YWRyby5ydSIsImRvbWFpbjp0aWxkYWFwaS5jb20iLCJkb21haW46dG5zLWNvdW50ZXIucnUiLCJkb21haW46dHJ2bC55YW5kZXgubmV0IiwiZG9tYWluOnR1dHUucnUiLCJkb21haW46dmsuY29tIiwiZG9tYWluOnZrLnJ1IiwiZG9tYWluOnZrdmlkZW8ucnUiLCJkb21haW46dnRiLnJ1IiwiZG9tYWluOng1LnJ1IiwiZG9tYWluOnlhLnJ1IiwiZG9tYWluOnlhbmRleC5ydSIsImRvbWFpbjp5YW5kZXgubmV0IiwiZG9tYWluOnlhbmRleC5jb20iLCJkb21haW46eWFzdGF0aWMubmV0IiwiZG9tYWluOnlhbmRleGNsb3VkLm5ldCIsImRvbWFpbjp3aWxkYmVycmllcy5ydSIsImRvbWFpbjp3YmJhc2tldC5ydSIsImZ1bGw6Z28ueWFuZGV4IiwiZnVsbDpydS5ydXdpa2kucnUiLCJkb21haW46YXZpdG8uc3QiLCJkb21haW46Z2VvYmFza2V0LnJ1IiwiZG9tYWluOndiLnJ1IiwiZG9tYWluOnhuLS05MGFjYWdiaGdwY2E3YzhjN2YueG4tLXAxYWkiLCJkb21haW46eG4tLTgwYWpnaGhvYzJhajFjOGIueG4tLXAxYWkiLCJkb21haW46eG4tLTkwYWl2Y2R0NmR4YmMueG4tLXAxYWkiLCJkb21haW46eG4tLWIxYWV3LnhuLS1wMWFpIiwiZG9tYWluOm9uZW1lLmFwcCIsImRvbWFpbjpvbmVtZS5ydSIsImRvbWFpbjpteWNkbi5tZSIsImRvbWFpbjp2a3VzZXIubmV0IiwiZG9tYWluOnlhc3RhdGljLnJ1IiwiZG9tYWluOnlhbmRleC5uZXQiLCJkb21haW46dm9za2hvZC5ydSIsImRvbWFpbjphcHB0cmFjZXIucnUiXSwiRGlyZWN0SXAiOlsiZ2VvaXA6cHJpdmF0ZSIsIjg5LjIwOC44NS4xODgiXSwiUHJveHlTaXRlcyI6WyJnZW9zaXRlOnRlbGVncmFtIiwiZG9tYWluOnZsZXNzZm8ucnUiXSwiUHJveHlJcCI6W10sIkJsb2NrU2l0ZXMiOlsiIl0sIkJsb2NrSXAiOltdLCJEb21haW5TdHJhdGVneSI6IklQSWZOb25NYXRjaCIsIkZha2VETlMiOiJ0cnVlIn0='
     type: vless
-    server: 154.222.69.250
+    server: 191.44.38.143
     port: 8443
-    uuid: d7e7d6ee-7588-44a7-8813-908abc25a1d2
+    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
     udp: true
     tls: true
-    servername: static.operator.mail.ru
-    client-fingerprint: firefox
+    servername: nl2.yabloko.top
+    client-fingerprint: random
     reality-opts:
-      public-key: 3L3i_4b1jo-cCwx3TwIEjjOxQIMm6ysblH3AvTlvgBk
-      short-id: 633f723d754c971b
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
-    type: vless
-    server: 13.143.166.25
-    port: 443
-    uuid: dcf8e133-09a2-4884-abf9-80356bb334ac
-    udp: true
-    tls: true
-    servername: ivory875.filebeam.website
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xcTXD3of3Yt5hHdIwYGZ1LjMBgiL6sqj5J33J4U4ozM
-      short-id: a7c31f92
-    flow: xtls-rprx-vision
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
     type: vless
@@ -371,6 +450,33 @@ proxies:
       short-id: 6aa2d2e950441a9a
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+    type: vless
+    server: 5.42.96.76
+    port: 443
+    uuid: f96d53bc-e0a9-4ea9-b3f1-dd8033fd7f1f
+    udp: true
+    tls: true
+    servername: ruself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
+      short-id: 7f2e9c4b1a8d6e55
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+    type: vless
+    server: 89.125.100.29
+    port: 443
+    uuid: fe7a9e7a-cd1f-4128-b2a1-48ef38dd107e
+    udp: true
+    tls: true
+    servername: nl2.yabloko.top
+    client-fingerprint: random
+    reality-opts:
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
+    network: tcp
   - name: 'LTE/5G Все операторы 🇪🇺'
     type: trojan
     server: ih.lavivas.org
@@ -380,20 +486,6 @@ proxies:
     sni: ih.lavivas.org
     alpn:
       - 'h2%2Chttp%2F1.1'
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇹🇼'
-    type: vmess
-    server: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
-    port: 443
-    uuid: d90e4077-bc7e-414d-a650-70bf1baae4d6
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
-    network: ws
-    ws-opts:
-      headers:
-        Host: dee2309db4se3grs6e8hg4w61sd53g1.oylfmxz.cn
 proxy-groups:
   - name: PROXY
     type: select
@@ -402,30 +494,37 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
+      - 'SNi yandex.ru 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - 'LTE/5G MegafonYota Tele2 🇪🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'LTE/5G Все операторы 🇪🇺'
-      - 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'SNi x5.ru 🇷🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇦🇹'
       - 'Бесплатный VPN tg:VLESSFORU 🇦🇹'
-      - 'LTE/5G Все операторы 🇪🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'LTE/5G Все операторы 🇪🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'SNi x5.ru 🇷🇺'
-      - 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
-      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
+      - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇨🇭'
       - 'SNi dzen.ru 🇩🇪'
       - 'SNi dzen.ru 🇫🇮'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺&happ://routing/onadd/eyJOYW1lIjoiVGc6IFZsZXNzRm9ydSAgIiwiR2xvYmFsUHJveHkiOiJ0cnVlIiwiVXNlQ2h1bmtGaWxlcyI6InRydWUiLCJSZW1vdGVEbnMiOiI5NC4xNDAuMTQuMTQiLCJEb21lc3RpY0RucyI6Ijc3Ljg4LjguOCIsIlJlbW90ZUROU1R5cGUiOiJEb0giLCJSZW1vdGVETlNEb21haW4iOiJodHRwczovL2Rucy5hZGd1YXJkLWRucy5jb20vZG5zLXF1ZXJ5IiwiUmVtb3RlRE5TSVAiOiI4LjguOC44IiwiRG9tZXN0aWNETlNUeXBlIjoiRG9IIiwiRG9tZXN0aWNETlNEb21haW4iOiJodHRwczovLzc3Ljg4LjguOC9kbnMtcXVlcnkiLCJEb21lc3RpY0ROU0lQIjoiNzcuODguOC44IiwiR2VvaXB1cmwiOiJodHRwczovL3N1Yi52bGVzc2ZvLnJ1L3ZsZXNzZm9ydS9nZW9pcC5kYXQiLCJHZW9zaXRldXJsIjoiaHR0cHM6Ly9zdWIudmxlc3Nmby5ydS92bGVzc2ZvcnUvZ2Vvc2l0ZS5kYXQiLCJMYXN0VXBkYXRlZCI6IjE3ODY0OTI4MDAiLCJEbnNIb3N0cyI6eyJsa2ZsMi5uYWxvZy5ydSI6IjIxMy4yNC42NC4xNzUiLCJsa25wZC5uYWxvZy5ydSI6IjIxMy4yNC42NC4xODEifSwiUm91dGVPcmRlciI6ImJsb2NrLXByb3h5LWRpcmVjdCIsIkRpcmVjdFNpdGVzIjpbImdlb3NpdGU6cHJpdmF0ZSIsImdlb3NpdGU6Y2F0ZWdvcnktcnUiLCJwcm90b2NvbDpiaXR0b3JyZW50IiwiZG9tYWluOjJnaXMucnUiLCJkb21haW46YWRzLng1LnJ1IiwiZG9tYWluOjJnaXMuY29tIiwiZG9tYWluOmFpZi5ydSIsImRvbWFpbjphZXJvZmxvdC5ydSIsImRvbWFpbjphbGZhYmFuay5ydSIsImRvbWFpbjphdml0by5ydSIsImRvbWFpbjpiZWVsaW5lLnJ1IiwiZG9tYWluOmJ1cmdlcmtpbmdydXMucnUiLCJkb21haW46ZGVsbGluLnJ1IiwiZG9tYWluOmRyaXZlMi5ydSIsImRvbWFpbjpkemVuLnJ1IiwiZG9tYWluOmZseXBvYmVkYS5ydSIsImRvbWFpbjpmb3JiZXMucnUiLCJkb21haW46Z2F6ZXRhLnJ1IiwiZG9tYWluOmdhenByb21iYW5rLnJ1IiwiZG9tYWluOmdpc21ldGVvLnJ1IiwiZG9tYWluOmdvc3VzbHVnaS5ydSIsImRvbWFpbjpoaC5ydSIsImRvbWFpbjprb250dXIucnUiLCJkb21haW46a29udHVyLmhvc3QiLCJkb21haW46a3AucnUiLCJkb21haW46a3VwZXIucnUiLCJkb21haW46bGVudGEucnUiLCJkb21haW46bWFpbC5ydSIsImRvbWFpbjptYXgucnUiLCJkb21haW46bWVnYW1hcmtldC5ydSIsImRvbWFpbjptZWdhbWFya2V0LnRlY2giLCJkb21haW46bWVnYWZvbi5ydSIsImRvbWFpbjptb2V4LmNvbSIsImRvbWFpbjptb3RpdnRlbGVjb20ucnUiLCJkb21haW46b3pvbi5ydSIsImRvbWFpbjpwZXJ2eWUucnUiLCJkb21haW46cHNiYW5rLnJ1IiwiZG9tYWluOnJhbWJsZXIucnUiLCJkb21haW46cmFtYmxlci1jby5ydSIsImRvbWFpbjpyYmMucnUiLCJkb21haW46cmVnLnJ1IiwiZG9tYWluOnJldmlld3MuMmdpcy5jb20iLCJkb21haW46cmcucnUiLCJkb21haW46cmlhLnJ1IiwiZG9tYWluOnJ1d2lraS5ydSIsImRvbWFpbjpydXN0b3JlLnJ1IiwiZG9tYWluOnJ1dHViZS5ydSIsImRvbWFpbjpyemQucnUiLCJkb21haW46c2lyZW5hLXRyYXZlbC5ydSIsImRvbWFpbjpzcmF2bmkucnUiLCJkb21haW46dC1qLnJ1IiwiZG9tYWluOnQyLnJ1IiwiZG9tYWluOnRhbmstb25saW5lLmNvbSIsImRvbWFpbjp0YXhpbWF4aW0ucnUiLCJkb21haW46dGJhbmstb25saW5lLmNvbSIsImRvbWFpbjppbWdzbWFpbC5ydSIsImRvbWFpbjpvay5ydSIsImRvbWFpbjp5YWRyby5ydSIsImRvbWFpbjp0aWxkYWFwaS5jb20iLCJkb21haW46dG5zLWNvdW50ZXIucnUiLCJkb21haW46dHJ2bC55YW5kZXgubmV0IiwiZG9tYWluOnR1dHUucnUiLCJkb21haW46dmsuY29tIiwiZG9tYWluOnZrLnJ1IiwiZG9tYWluOnZrdmlkZW8ucnUiLCJkb21haW46dnRiLnJ1IiwiZG9tYWluOng1LnJ1IiwiZG9tYWluOnlhLnJ1IiwiZG9tYWluOnlhbmRleC5ydSIsImRvbWFpbjp5YW5kZXgubmV0IiwiZG9tYWluOnlhbmRleC5jb20iLCJkb21haW46eWFzdGF0aWMubmV0IiwiZG9tYWluOnlhbmRleGNsb3VkLm5ldCIsImRvbWFpbjp3aWxkYmVycmllcy5ydSIsImRvbWFpbjp3YmJhc2tldC5ydSIsImZ1bGw6Z28ueWFuZGV4IiwiZnVsbDpydS5ydXdpa2kucnUiLCJkb21haW46YXZpdG8uc3QiLCJkb21haW46Z2VvYmFza2V0LnJ1IiwiZG9tYWluOndiLnJ1IiwiZG9tYWluOnhuLS05MGFjYWdiaGdwY2E3YzhjN2YueG4tLXAxYWkiLCJkb21haW46eG4tLTgwYWpnaGhvYzJhajFjOGIueG4tLXAxYWkiLCJkb21haW46eG4tLTkwYWl2Y2R0NmR4YmMueG4tLXAxYWkiLCJkb21haW46eG4tLWIxYWV3LnhuLS1wMWFpIiwiZG9tYWluOm9uZW1lLmFwcCIsImRvbWFpbjpvbmVtZS5ydSIsImRvbWFpbjpteWNkbi5tZSIsImRvbWFpbjp2a3VzZXIubmV0IiwiZG9tYWluOnlhc3RhdGljLnJ1IiwiZG9tYWluOnlhbmRleC5uZXQiLCJkb21haW46dm9za2hvZC5ydSIsImRvbWFpbjphcHB0cmFjZXIucnUiXSwiRGlyZWN0SXAiOlsiZ2VvaXA6cHJpdmF0ZSIsIjg5LjIwOC44NS4xODgiXSwiUHJveHlTaXRlcyI6WyJnZW9zaXRlOnRlbGVncmFtIiwiZG9tYWluOnZsZXNzZm8ucnUiXSwiUHJveHlJcCI6W10sIkJsb2NrU2l0ZXMiOlsiIl0sIkJsb2NrSXAiOltdLCJEb21haW5TdHJhdGVneSI6IklQSWZOb25NYXRjaCIsIkZha2VETlMiOiJ0cnVlIn0='
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'LTE/5G Все операторы 🇪🇺'
-      - 'Бесплатный VPN tg:VLESSFORU 🇹🇼'
 rules:
   - MATCH,PROXY
