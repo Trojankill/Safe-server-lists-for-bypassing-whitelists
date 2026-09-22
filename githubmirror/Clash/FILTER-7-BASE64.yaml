@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-22 02:30:46 UTC
+# 2026-09-22 02:45:30 UTC
 proxies:
   - name: '🇺🇸 США | БС⁴'
     type: vless
@@ -192,6 +192,20 @@ proxies:
       short-id: 27e53bbcab7593d7
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇺🇸 GidroksiFree #2 | 🛡БС | 🟢LTE | 1296ms | ↓1.4Mbps'
+    type: vless
+    server: 185.95.231.156
+    port: 443
+    uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
+    udp: true
+    tls: true
+    servername: www.apple.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
+      short-id: a3a578ab
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
     type: vless
     server: 188.225.39.107
@@ -829,6 +843,19 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
+  - name: '🇺🇸 GidroksiFree #4 | 🛡БС | 🟢LTE | 699ms | ↓1.8Mbps'
+    type: vless
+    server: 79.141.172.154
+    port: 10453
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    udp: true
+    tls: true
+    servername: www.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: rAHMmpeUJ6uOoGgk31dTF4-1RTtLZFnOEs_li2AYQWc
+    network: grpc
+    grpc-opts:
   - name: '🇮🇳 India — #68'
     type: vless
     server: 89.169.171.202
@@ -1236,6 +1263,13 @@ proxies:
       short-id: 123abcdf
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 AetrisVPN'
+    type: trojan
+    server: 51.250.45.147
+    port: 8443
+    password: 650fc0b6-0082-4bc2-84e6-510a41970df6
+    udp: true
+    sni: yandex.com
   - name: '🇪🇺 AetrisVPN'
     type: vmess
     server: 45.32.57.118
@@ -1269,12 +1303,6 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
   - name: '2047 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 131.186.19.174
@@ -1287,19 +1315,12 @@ proxies:
     port: 443
     password: H7mP2xY9kJ4nQ8wR5tF6vB3z
     sni: vk.com
-  - name: '🇫🇷 France [*CIDR]'
+  - name: '🇫🇷 Франция [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: ru1.didiservice.com
     port: 443
     password: d76aca2e-1a63-4c00-89fb-07957cecc3e4
     sni: ru1.didiservice.com
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-    skip-cert-verify: false
   - name: '🇳🇱 LTE 170 | тгк: @rostunnel'
     type: hysteria2
     server: 84.23.54.203
@@ -1464,6 +1485,7 @@ proxy-groups:
       - '🇺🇸 США | БС⁵'
       - '🇸🇬 Сингапур | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
+      - '🇺🇸 GidroksiFree #2 | 🛡БС | 🟢LTE | 1296ms | ↓1.4Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '327.🇩🇪Германия | @LimeVPNFREE'
@@ -1511,6 +1533,7 @@ proxy-groups:
       - '🇵🇱 [WL] Сервер 120'
       - '250.🇵🇱Польша | @LimeVPNFREE'
       - '🇷🇺 LTE 163 | тгк: @rostunnel'
+      - '🇺🇸 GidroksiFree #4 | 🛡БС | 🟢LTE | 699ms | ↓1.8Mbps'
       - '🇮🇳 India — #68'
       - '🇸🇪 Sweden — #99'
       - '37.🇷🇺Россия | @LimeVPNFREE'
@@ -1541,16 +1564,15 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
       - '91.🇳🇱Нидерланды | @LimeVPNFREE'
       - '🇩🇪 [WL] Сервер 97'
+      - '🇩🇪 AetrisVPN'
       - '🇪🇺 AetrisVPN'
       - '1377 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇳🇴 Норвегия [#РКП]'
       - '1678 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
-      - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
       - '2047 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0947 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
-      - '🇫🇷 France [*CIDR]'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇫🇷 Франция [🏳️LTE] | 🥭🔧'
       - '🇳🇱 LTE 170 | тгк: @rostunnel'
       - '🇺🇸 AetrisVPN'
       - '22.🇫🇷Франция | @LimeVPNFREE'
