@@ -1,31 +1,23 @@
 # clash/mihomo subscription
-# 2026-09-22 01:45:30 UTC
+# 2026-09-22 02:00:56 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #87'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #58'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇫🇷 Франция #82'
     type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #65'
-    type: hysteria2
-    server: msk.frkn.org
+    server: ru1.didiservice.com
     port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-    skip-cert-verify: false
+    password: d76aca2e-1a63-4c00-89fb-07957cecc3e4
+    sni: ru1.didiservice.com
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #58'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #65'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #87'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇫🇷 Франция #82'
 rules:
   - MATCH,PROXY
