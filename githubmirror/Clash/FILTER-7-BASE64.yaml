@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-22 10:45:32 UTC
+# 2026-09-22 11:00:56 UTC
 proxies:
   - name: '3 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 7/10'
     type: vless
@@ -109,20 +109,6 @@ proxies:
       public-key: UOa0v_JpSPRPMO6ABMM7tIir-GclotOVfnbI2WqJGVE
       short-id: 9791feaccc1ca4d8
     network: tcp
-  - name: '🇸🇪Обходы - TG: AirLinkVPNBot |0078|'
-    type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 18a44c08-207a-4ec4-bdfe-83ad945bc6aa
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
   - name: '296.🌐Неизвестно | @LimeVPNFREE'
     type: vless
     server: 35.201.230.136
@@ -233,6 +219,20 @@ proxies:
     reality-opts:
       public-key: IDjWshY2nmbQJzUme5TMymI-RI99Zku45lO9k1HKyTA
       short-id: 20a080af5636a681
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 AetrisVPN'
+    type: vless
+    server: 87.242.94.69
+    port: 1443
+    uuid: 27f38989-2591-4b09-8fb7-66b05dd2d459
+    udp: true
+    tls: true
+    servername: edge.edgeprobe.dev
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
+      short-id: 327088cd7331
     network: grpc
     grpc-opts:
   - name: '🇳🇱 AetrisVPN'
@@ -603,6 +603,19 @@ proxies:
       short-id: c8c75aaf699259b4
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 The Netherlands — #67'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: 7aa9676c-f737-43fb-910f-6a0e836ef11f
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 178.248.236.209
@@ -817,20 +830,6 @@ proxies:
       public-key: YPxklREENCJn2akAL8LHl9IuYYLlOv_3FG_9oJXiDXQ
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇪🇪Обходы - TG: AirLinkVPNBot |0049|'
-    type: vless
-    server: 90.156.218.106
-    port: 2104
-    uuid: a76f6959-7d88-40c5-8984-4d888aa42389
-    udp: true
-    tls: true
-    servername: 419ec9.relay-edge.net
-    client-fingerprint: safari
-    reality-opts:
-      public-key: 4YFpLhV9HbwlCXzvCL8EfvYe-V-VCuXZIaOWS11lKXI
-      short-id: 11f303a9ff001d7c
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇫🇮 Finland — #50'
     type: vless
     server: 90.156.218.106
@@ -1368,7 +1367,7 @@ proxies:
     password: a6cf39b3-0424-42a2-abf7-b426da69b1a4
     sni: de.i-love-russia.online
     skip-cert-verify: false
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1526,7 +1525,6 @@ proxy-groups:
       - '🇬🇧 LTE 9 | тгк: @rostunnel'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-      - '🇸🇪Обходы - TG: AirLinkVPNBot |0078|'
       - '296.🌐Неизвестно | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇫🇷 Франция'
       - '78.🇵🇱Польша | @LimeVPNFREE'
@@ -1535,6 +1533,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
+      - '🇩🇪 AetrisVPN'
       - '🇳🇱 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - '🇫🇮 Финляндия | БС⁴'
@@ -1562,6 +1561,7 @@ proxy-groups:
       - '18.🇦🇲Армения | @LimeVPNFREE'
       - '173.🇦🇹Австрия | @LimeVPNFREE'
       - '186.🇦🇹Австрия | @LimeVPNFREE'
+      - '🇳🇱 The Netherlands — #67'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
       - '232.🇩🇪Германия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇩🇪 Германия'
@@ -1578,7 +1578,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇵🇱 Польша'
       - '60.🇫🇮Финляндия | @LimeVPNFREE'
       - '322.🇰🇿Казахстан | @LimeVPNFREE'
-      - '🇪🇪Обходы - TG: AirLinkVPNBot |0049|'
       - '🇫🇮 Finland — #50'
       - '🇵🇱 [WL] Сервер 90'
       - '7 | REALITY | SNI: www.cloudflare.com | IN: DE OUT: DE | RATING: 4/10'
@@ -1625,7 +1624,7 @@ proxy-groups:
       - '5312 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3226 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия — Helsinki'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Russia | 🌐 [*CIDR]'
       - '🇩🇪 ФРГ [#РКП]'
       - '🇺🇸 AetrisVPN'
       - '26.🇫🇷Франция | @LimeVPNFREE'
