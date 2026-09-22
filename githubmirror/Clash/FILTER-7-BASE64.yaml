@@ -1,6 +1,33 @@
 # clash/mihomo subscription
-# 2026-09-22 21:01:00 UTC
+# 2026-09-22 21:15:38 UTC
 proxies:
+  - name: '🇺🇸 США | БС⁷'
+    type: vless
+    server: 167.17.69.171
+    port: 443
+    uuid: 00144519-7e0d-476b-8d28-435576af9262
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk
+      short-id: 0990d22f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇺🇸 США | БС⁶'
+    type: vless
+    server: 47.253.226.114
+    port: 443
+    uuid: 055a1ce8-2a16-4a0d-a2c2-22826c9b2413
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
     server: 45.195.137.5
@@ -69,6 +96,20 @@ proxies:
       short-id: 3ac25eef1431b799
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | БС¹'
+    type: vless
+    server: 31.56.184.132
+    port: 8443
+    uuid: 11f21602-47aa-42e2-9149-69120f2e6df6
+    udp: true
+    tls: true
+    servername: cloudflare.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: bzbe7QdD633ew_Er1_YWEhuCEHWurmDpxpz3fRzXr0A
+      short-id: b4e3b0b55b8dc75b
+    network: grpc
+    grpc-opts:
   - name: '204.🌐Неизвестно | @LimeVPNFREE'
     type: vless
     server: 35.201.230.136
@@ -97,7 +138,7 @@ proxies:
       short-id: 9c56fddf237e8eaf
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇸🇬 Сингапур | БС¹'
+  - name: '🇸🇬 [WL] Сервер 111'
     type: vless
     server: 206.206.76.75
     port: 443
@@ -105,7 +146,7 @@ proxies:
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: firefox
+    client-fingerprint: random
     reality-opts:
       public-key: TqIFzUEEI1pIOR8BEpkNKEXcJ6cPfE5EzHb5joIivig
       short-id: 9930177816ab09da
@@ -222,6 +263,20 @@ proxies:
       short-id: fc994ae7eb10
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇦🇺 Австралия | БС¹'
+    type: vless
+    server: 51.161.204.244
+    port: 443
+    uuid: 36e89875-9c53-482b-bc41-d3890e9da176
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: gCAazs5uxNuMZIxfDdw8wPE0nwKY4QfBfBkQveKAkEk
+      short-id: 0ad08b47f498efd2
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 185.229.9.151
@@ -263,34 +318,32 @@ proxies:
       public-key: dB68n-Vyph0_KBtBIe45b5GCB4F1IqpBF_ohlN-KpkY
       short-id: 50440423703c945f
     network: tcp
-  - name: '🇳🇱 AetrisVPN'
+  - name: '! 8 | GRPC+TLS | SNI: ih.lavivas.org | IN: RU OUT: DE | RATING: 2/10'
     type: vless
-    server: 185.241.195.151
-    port: 9444
-    uuid: 4b1178cb-f3ed-445a-ae32-12c988494f49
+    server: ih.lavivas.org
+    port: 8080
+    uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
     udp: true
     tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱 AetrisVPN'
+    servername: ih.lavivas.org
+    alpn:
+      - h2
+    client-fingerprint: edge
+    network: grpc
+    grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
     type: vless
-    server: 81.94.148.178
-    port: 7445
-    uuid: 4b1178cb-f3ed-445a-ae32-12c988494f49
+    server: ndi.lavivas.org
+    port: 2096
+    uuid: 44e1105d-b46e-402f-933b-eaa136fcbb24
     udp: true
     tls: true
-    servername: s1.cdnguard.org
+    servername: ndi.lavivas.org
+    alpn:
+      - 'h2%2Chttp%2F1.1'
     client-fingerprint: firefox
-    reality-opts:
-      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
-      short-id: f7d9e9a2e78e9a17
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: '1631 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
     type: vless
     server: 85.198.97.155
@@ -330,7 +383,7 @@ proxies:
       public-key: 97C6O3repofpoaJzvu1d4o7amhJGA8hF_yJls7SNIgU
       short-id: b9299afa0dcac824
     network: tcp
-  - name: '🇳🇱 Нидерланды | БС¹'
+  - name: '0660 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 87.199.205.28
     port: 443
@@ -400,19 +453,6 @@ proxies:
       short-id: a1b2c3d4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇧🇷 Бразилия | БС¹'
-    type: vless
-    server: 34.39.174.220
-    port: 443
-    uuid: 5e517b94-e207-47ee-be3c-3020a57594e8
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: pCImwRkTjx8OIUiu1WFelZQFt1p3Q0lUoPbvjVq8GTs
-      short-id: b62a4da6cd1c4dd6
-    network: tcp
   - name: '0488 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 157.228.135.109
@@ -439,6 +479,48 @@ proxies:
     reality-opts:
       public-key: QENEcLcm2hcsVE7BtOM_FJifyY19wta8EGHpwniYlGw
       short-id: 7c2e5a91d3b04f68
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇫🇷 Франция 4 CGI GLOBAL LIMITED'
+    type: vless
+    server: 159.194.209.203
+    port: 2053
+    uuid: 6796f262-ca34-4b8e-b86e-6c175c081f2e
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DcAXpVZZ7_JtJqz9b6ax9gWWvkH_6icdC29j6keGPj8
+      short-id: c4e81a7b
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇱🇻 Латвия 6 CGI GLOBAL LIMITED'
+    type: vless
+    server: 159.194.209.203
+    port: 2083
+    uuid: 6796f262-ca34-4b8e-b86e-6c175c081f2e
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DcAXpVZZ7_JtJqz9b6ax9gWWvkH_6icdC29j6keGPj8
+      short-id: c4e81a7b
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇫🇷 Франция 3 Baykov Ilya Sergeevich'
+    type: vless
+    server: 159.194.209.203
+    port: 2096
+    uuid: 6796f262-ca34-4b8e-b86e-6c175c081f2e
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DcAXpVZZ7_JtJqz9b6ax9gWWvkH_6icdC29j6keGPj8
+      short-id: c4e81a7b
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇩🇪 AetrisVPN'
@@ -482,20 +564,6 @@ proxies:
       public-key: kqIDhDhYFrXD-1GeurwjzFwbB0zWipgWmcbADXwmyy8
       short-id: 3fd0a8ddef3ae5c6
     network: tcp
-  - name: '🇩🇪 AetrisVPN'
-    type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 70b0e57d-045c-4e8b-9841-7f1063e72e95
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
   - name: '🇪🇸 GidroksiFree #17 | 🛡БС | 🟢LTE | 746ms | ↓3.6Mbps'
     type: vless
     server: 92.118.127.16
@@ -524,7 +592,7 @@ proxies:
       short-id: c8c75aaf699259b4
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 AetrisVPN'
+  - name: '🇩🇪 [WL] Сервер 83'
     type: vless
     server: 5.188.114.71
     port: 443
@@ -566,19 +634,6 @@ proxies:
       short-id: e3d38cee79d4f94c
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 AetrisVPN'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: 87aea87f-de4a-4cbe-953b-6726721bde4a
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
   - name: '2156 | 🇫🇷 France | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 62.133.62.149
@@ -647,7 +702,7 @@ proxies:
       public-key: cTwhlN0bIkprnzvGCMPmsdxk8XkqUz3LcCrS0FKnbVI
       short-id: c08efcd72d7e8389
     network: tcp
-  - name: '🇬🇧 Великобритания 1 GLOBAL CONNECTIVITY SOLUTIONS LLP'
+  - name: '🇬🇧 Великобритания GLOBAL CONNECTIVITY SOLUTIONS LLP'
     type: vless
     server: 31.177.82.251
     port: 443
@@ -700,6 +755,19 @@ proxies:
       public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 AetrisVPN'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: 968f0934-658c-4e5d-aa98-ede419c46cf1
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
     type: vless
     server: 78.159.250.104
@@ -1009,6 +1077,20 @@ proxies:
       public-key: 6tH_NDFcxWn60B3s-MgrkBTU2yUUBY42ZG1av50Ywhk
       short-id: ae682368818bd6c5
     network: tcp
+  - name: '🇳🇱 Нидерланды 5 Timeweb, LLP'
+    type: vless
+    server: 185.154.194.196
+    port: 443
+    uuid: d6b004da-8166-40cc-988e-5abf63d2b8c0
+    udp: true
+    tls: true
+    servername: payeeclickerhalogen.berylcord.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: QPfM5knVgOkIykx2AC8S1MvkO_x-T9xMRYJdkF9aEng
+      short-id: fda83f2787e6016d
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '2664 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 154.222.69.166
@@ -1146,7 +1228,7 @@ proxies:
       short-id: 64c1fe36c7846400
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 Финляндия | БС³'
+  - name: '🇫🇮 Финляндия | БС¹'
     type: vless
     server: 107.181.151.241
     port: 443
@@ -1186,6 +1268,34 @@ proxies:
     reality-opts:
       public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
       short-id: 7f2e9c4b1a8d6e55
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США 5 Cloudflare, Inc.'
+    type: vless
+    server: 31.128.39.89
+    port: 443
+    uuid: fc47db0c-c6f2-4665-bdb2-8f717822ce9d
+    udp: true
+    tls: true
+    servername: waw4427j8an5w5a90j.datahubfiles.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 4nly47ThhozNi9819yFtSuDTjC-R1DvrJqi1hOhOGSE
+      short-id: 219fae13a1ff7bfa
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇱🇻 Латвия 5 Beget LLC'
+    type: vless
+    server: 46.173.17.19
+    port: 443
+    uuid: fc47db0c-c6f2-4665-bdb2-8f717822ce9d
+    udp: true
+    tls: true
+    servername: 9f8hqeju.datahubfiles.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Hhp-DQNkUYOkbWR64BHWc7gGYfeqU8yYAwX6sTsqf3A
+      short-id: 4d5163ec7a1bf048
     flow: xtls-rprx-vision
     network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
@@ -1323,14 +1433,14 @@ proxies:
     password: a6cf39b3-0424-42a2-abf7-b426da69b1a4
     sni: de.i-love-russia.online
     skip-cert-verify: false
-  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
     skip-cert-verify: false
-  - name: '🇩🇪 Germany [*CIDR] VK'
+  - name: '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 84.23.54.203
     port: 1935
@@ -1459,14 +1569,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇺🇸 США | БС⁷'
+      - '🇺🇸 США | БС⁶'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '2629 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇹🇷 LTE 5 | тгк: @rostunnel'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - '🇳🇱 Нидерланды | БС¹'
       - '204.🌐Неизвестно | @LimeVPNFREE'
       - '143.🇺🇸США | @LimeVPNFREE'
-      - '🇸🇬 Сингапур | БС¹'
+      - '🇸🇬 [WL] Сервер 111'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
       - '🇺🇸 GidroksiFree #2 | 🛡БС | 🟢LTE | 1414ms | ↓1.7Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
@@ -1475,41 +1588,43 @@ proxy-groups:
       - '🇳🇱 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - '🇫🇮 Финляндия | БС⁴'
+      - '🇦🇺 Австралия | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '2 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 6/10'
       - '189.🇮🇳Индия | @LimeVPNFREE'
-      - '🇳🇱 AetrisVPN'
-      - '🇳🇱 AetrisVPN'
+      - '! 8 | GRPC+TLS | SNI: ih.lavivas.org | IN: RU OUT: DE | RATING: 2/10'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - '1631 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '198.🇦🇺Австралия | @LimeVPNFREE'
       - '218.🇮🇳Индия | @LimeVPNFREE'
-      - '🇳🇱 Нидерланды | БС¹'
+      - '0660 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '266.🇵🇹Португалия | @LimeVPNFREE'
       - '129.🇩🇪Германия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
-      - '🇧🇷 Бразилия | БС¹'
       - '0488 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3285 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '🇫🇷 Франция 4 CGI GLOBAL LIMITED'
+      - '🇱🇻 Латвия 6 CGI GLOBAL LIMITED'
+      - '🇫🇷 Франция 3 Baykov Ilya Sergeevich'
       - '🇩🇪 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api.max.ru ┃ 🇷🇺 Россия'
       - '193.🇰🇷Южная Корея | @LimeVPNFREE'
-      - '🇩🇪 AetrisVPN'
       - '🇪🇸 GidroksiFree #17 | 🛡БС | 🟢LTE | 746ms | ↓3.6Mbps'
       - '111.🇦🇹Австрия | @LimeVPNFREE'
-      - '🇩🇪 AetrisVPN'
+      - '🇩🇪 [WL] Сервер 83'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
-      - '🇳🇱 AetrisVPN'
       - '2156 | 🇫🇷 France | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '168.🇫🇮Финляндия | @LimeVPNFREE'
       - 'tg:VLESSFORU top ping 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - '127.🇺🇸США | @LimeVPNFREE'
-      - '🇬🇧 Великобритания 1 GLOBAL CONNECTIVITY SOLUTIONS LLP'
+      - '🇬🇧 Великобритания GLOBAL CONNECTIVITY SOLUTIONS LLP'
       - '3897 | 🇺🇸 USA | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '268.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
+      - '🇳🇱 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '🇫🇷 GidroksiFree #8 | 🛡БС | 🟢LTE | 1147ms | ↓0.2Mbps'
@@ -1533,6 +1648,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: ozon.ru ┃ 🇷🇺 Россия'
       - '6 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 4/10'
       - '25.🇫🇷Франция | @LimeVPNFREE'
+      - '🇳🇱 Нидерланды 5 Timeweb, LLP'
       - '2664 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '4329 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
@@ -1543,9 +1659,11 @@ proxy-groups:
       - '🇳🇱 AetrisVPN'
       - '🇪🇺 AetrisVPN'
       - '59.🇷🇺Россия | @LimeVPNFREE'
-      - '🇫🇮 Финляндия | БС³'
+      - '🇫🇮 Финляндия | БС¹'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
       - '🇷🇺 AetrisVPN'
+      - '🇺🇸 США 5 Cloudflare, Inc.'
+      - '🇱🇻 Латвия 5 Beget LLC'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
@@ -1562,8 +1680,8 @@ proxy-groups:
       - '5866 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3557 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия — Helsinki'
-      - '🇷🇺 Russia | 🌐 [*CIDR]'
-      - '🇩🇪 Germany [*CIDR] VK'
+      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
       - '🇺🇸 AetrisVPN'
       - '🇪🇺 AetrisVPN'
       - '🇧🇪 AetrisVPN'
