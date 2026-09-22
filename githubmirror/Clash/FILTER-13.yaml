@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-22 09:45:35 UTC
+# 2026-09-22 10:01:01 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
     type: vless
@@ -15,6 +15,34 @@ proxies:
       short-id: 327088cd7331
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 213.171.25.29
+    port: 9889
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: qq
+    reality-opts:
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 188.225.45.152
+    port: 12096
+    uuid: a95b3155-bc03-4789-b367-944b83be8f86
+    udp: true
+    tls: true
+    servername: www.x5.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
+      short-id: fd5b64ba
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -32,6 +60,8 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
