@@ -1,25 +1,11 @@
 # clash/mihomo subscription
-# 2026-09-23 16:30:58 UTC
+# 2026-09-23 16:45:31 UTC
 proxies:
-  - name: '🇨🇿 Чехия | VLESS RAW Reality'
-    type: vless
-    server: 78.159.247.151
-    port: 30073
-    uuid: 20b53251-25c6-4ba1-bcc3-4e5f491c7e97
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.184
     port: 8444
-    uuid: 760d4e7b-6327-48b3-b061-66e5509e05a6
+    uuid: 58a03fe0-482a-49db-b0ff-817f91c2489f
     udp: true
     tls: true
     servername: ppfu3n-01.p.portshaper.com
@@ -32,7 +18,7 @@ proxies:
     type: vless
     server: 87.242.94.69
     port: 1443
-    uuid: a5459ace-a713-46d7-8331-f789dc570c29
+    uuid: bdf2ec4d-ea64-425d-bed1-35d2e31fa5e3
     udp: true
     tls: true
     servername: edge.edgeprobe.dev
@@ -42,48 +28,6 @@ proxies:
       short-id: 327088cd7331
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
-    type: vless
-    server: 188.225.45.152
-    port: 12096
-    uuid: a95b3155-bc03-4789-b367-944b83be8f86
-    udp: true
-    tls: true
-    servername: www.x5.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
-      short-id: fd5b64ba
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
-    type: vless
-    server: 185.241.195.151
-    port: 9444
-    uuid: f62a96f9-b003-4344-a572-03e86859f4ae
-    udp: true
-    tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱 Нидерланды | VLESS RAW Reality'
-    type: vless
-    server: 81.94.148.178
-    port: 7445
-    uuid: f62a96f9-b003-4344-a572-03e86859f4ae
-    udp: true
-    tls: true
-    servername: s1.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
-      short-id: f7d9e9a2e78e9a17
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -91,23 +35,12 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇨🇿 Чехия | VLESS RAW Reality'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-      - '🇷🇺 Россия | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
-      - '🇳🇱 Нидерланды | VLESS RAW Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
