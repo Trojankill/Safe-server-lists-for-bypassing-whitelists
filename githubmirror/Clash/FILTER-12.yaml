@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-23 04:15:33 UTC
+# 2026-09-23 04:30:44 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -71,42 +71,6 @@ proxies:
       short-id: c2466b9944ea3d2f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇪🇸 [ES] Испания VFPARSER'
-    type: vless
-    server: 83.147.242.230
-    port: 443
-    uuid: fc47db0c-c6f2-4665-bdb2-8f717822ce9d
-    udp: true
-    tls: true
-    servername: h8wfq9h89fqwhq8wf9.datahubfiles.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: mg2URd06-rc-sNNFMNjJDtihZS8mKWMkEjvBsIw_1hA
-      short-id: 496ec87bcb686a66
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇭🇰 [HK] Гонконг'
-    type: vmess
-    server: 8.217.229.155
-    port: 443
-    uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: qTKDR8jXE3wEFxJM.v.3dns.vip
-    network: ws
-    ws-opts:
-      path: '/ws-vmess'
-      headers:
-        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.145.33
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: '2IhI4JDsLapp7N4PfL+duHVI+taMbdDLJkhaQfTBUZQ='
-    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
@@ -114,26 +78,19 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
     udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 443
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 80
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: ss
     server: 185.22.155.203
     port: 10090
     cipher: aes-256-gcm
     password: 895b4b796a357570
+    udp: true
+  - name: '🇨🇦 [CA] Канада VFPARSER'
+    type: ss
+    server: yyz-ca-01.blncvpn4u.cc
+    port: 9443
+    cipher: aes-256-gcm
+    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
 proxy-groups:
   - name: PROXY
@@ -144,12 +101,8 @@ proxy-groups:
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇸🇪 [SE] Швеция VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇪🇸 [ES] Испания VFPARSER'
-      - '🇭🇰 [HK] Гонконг'
-      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
