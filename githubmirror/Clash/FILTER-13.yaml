@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-23 14:30:53 UTC
+# 2026-09-23 14:45:36 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS TCP Reality'
     type: vless
@@ -15,6 +15,20 @@ proxies:
       short-id: b655c7700ed2f3f1
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+    type: vless
+    server: 87.242.94.69
+    port: 1443
+    uuid: 10d6caf5-acc8-4dd2-b37d-0176fadfb0ef
+    udp: true
+    tls: true
+    servername: edge.edgeprobe.dev
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
+      short-id: 327088cd7331
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
     type: vless
     server: 185.241.195.151
@@ -56,33 +70,20 @@ proxies:
       short-id: f7d9e9a2e78e9a17
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
     type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: 6bc202b4-8b9b-47b9-ab79-df9dfc0b07b7
+    server: 185.229.9.175
+    port: 443
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-    type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 939d6cd7-66ca-4c5e-890d-b9d553146ded
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
+    servername: api.ok.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
+      public-key: Eutx4frdhG1y7THj7k3CjazAsrCMj932RtbV4a1QfQk
+      short-id: d5b6308860d578bb
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
     type: vless
     server: 91.240.86.186
@@ -129,11 +130,11 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS TCP Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
       - '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇳🇱 Нидерланды | VLESS RAW Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
