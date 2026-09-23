@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-23 01:15:31 UTC
+# 2026-09-23 01:30:45 UTC
 proxies:
+  - name: '🇫🇮 [FI] Финляндия VFPARSER'
+    type: vless
+    server: 95.217.24.236
+    port: 2087
+    uuid: 10d85f65-f8d6-4504-b1e2-94649db1577a
+    udp: true
+    tls: true
+    servername: 62.238.41.21
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: KN8tFlpIwPgJGwUCG7Pp9c9c0juYKPvNIv4kFHwqbyk
+      short-id: a32cfb5deca913ad
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 5.78.139.175
+    port: 80
+    uuid: 695fdf80-e4f8-400f-bb42-f9fdcb8e8267
+    udp: true
+    tls: true
+    servername: 5.78.139.175
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Si3nHb-uXwCpAXeH8H3WkhfSvRVk6Q5oL5ej04WPglI
+      short-id: 81c2dc2ca4e93afc
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: 135.106.221.177
@@ -43,6 +71,35 @@ proxies:
       short-id: c2466b9944ea3d2f
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇪🇸 [ES] Испания VFPARSER'
+    type: vless
+    server: 83.147.242.230
+    port: 443
+    uuid: fc47db0c-c6f2-4665-bdb2-8f717822ce9d
+    udp: true
+    tls: true
+    servername: h8wfq9h89fqwhq8wf9.datahubfiles.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mg2URd06-rc-sNNFMNjJDtihZS8mKWMkEjvBsIw_1hA
+      short-id: 496ec87bcb686a66
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: 8.217.229.155
+    port: 443
+    uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: qTKDR8jXE3wEFxJM.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: ss
     server: 130.61.145.33
@@ -57,6 +114,20 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
     udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: ss
     server: 185.22.155.203
@@ -68,11 +139,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇸🇪 [SE] Швеция VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
+      - '🇪🇸 [ES] Испания VFPARSER'
+      - '🇭🇰 [HK] Гонконг'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
 rules:
   - MATCH,PROXY
