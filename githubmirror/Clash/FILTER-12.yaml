@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-23 07:00:58 UTC
+# 2026-09-23 07:15:31 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -57,33 +57,26 @@ proxies:
       short-id: 6aa2d2e950441a9a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: 132.243.28.215
-    port: 443
-    uuid: fc47db0c-c6f2-4665-bdb2-8f717822ce9d
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: ss
+    server: 129.151.73.227
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'EG7gd6f1FSkm+x/OoWRHzsRT1Jl/tSx0EWxkprEGZSo='
     udp: true
-    tls: true
-    servername: 98fqyhewf8qe9hy.datahubfiles.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: h7QhnEwH563RIEWqW9thv09tmOjD3f5cV1kedJduL3A
-      short-id: c2466b9944ea3d2f
-    flow: xtls-rprx-vision
-    network: tcp
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: ss
+    server: 144.24.228.23
+    port: 61312
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'hsuAtTyIs0Gl65/0moSA/jcDwzE2LUfpWINEzRhWxG0='
+    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 194.233.74.160
     port: 2342
     cipher: chacha20-ietf-poly1305
     password: XV4bvaJIWoxl3IYEC1e6W7
-    udp: true
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-    type: ss
-    server: 185.22.155.203
-    port: 10090
-    cipher: aes-256-gcm
-    password: 895b4b796a357570
     udp: true
   - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
@@ -100,9 +93,9 @@ proxy-groups:
       - '🇺🇸 [US] США VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇸🇪 [SE] Швеция VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
