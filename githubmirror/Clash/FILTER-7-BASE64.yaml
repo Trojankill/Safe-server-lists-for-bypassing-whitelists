@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-23 13:30:55 UTC
+# 2026-09-23 13:45:34 UTC
 proxies:
   - name: '🇺🇸 США | БС⁵'
     type: vless
@@ -152,20 +152,6 @@ proxies:
       short-id: 27e53bbcab7593d7
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇺🇸 GidroksiFree #3 | 🛡БС | 🟢LTE | 1284ms | ↓2.0Mbps'
-    type: vless
-    server: 185.95.231.156
-    port: 443
-    uuid: 1f8cf47a-b66a-4916-979f-26edfcf44eea
-    udp: true
-    tls: true
-    servername: www.apple.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To
-      short-id: a3a578ab
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
     type: vless
     server: 188.225.39.107
@@ -807,6 +793,32 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇸🇪 GidroksiFree #5 | 🛡БС | 🟢LTE | 392ms | ↓1.4Mbps'
+    type: vless
+    server: 79.141.174.147
+    port: 33743
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    udp: true
+    tls: true
+    servername: www.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY
+    network: grpc
+    grpc-opts:
+  - name: '269.🇷🇺Россия | @LimeVPNFREE'
+    type: vless
+    server: 89.169.171.202
+    port: 8444
+    uuid: b3a11068-1a7e-4643-85de-7c82cce46943
+    udp: true
+    tls: true
+    servername: www.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wGMBs7bvzyzA0-OUiwSkOOTDEMdxEOsSdRzxiP8GGQY
+    network: grpc
+    grpc-opts:
   - name: '5007 | 🇷🇺 Russia | 🏳️ CIDR-beeline | VLESS | TG: @YoutubeUnBlockRu'
     type: vless
     server: 185.134.200.9
@@ -1164,7 +1176,7 @@ proxies:
     port: 50160
     password: 3d7634af8cb2c6cb4bac1c0efad8b43d
     sni: vk.com
-  - name: '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+  - name: '🇱🇻 Латвия | БС¹'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
@@ -1195,7 +1207,7 @@ proxies:
     password: a6cf39b3-0424-42a2-abf7-b426da69b1a4
     sni: de.i-love-russia.online
     skip-cert-verify: false
-  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1349,7 +1361,6 @@ proxy-groups:
       - '🇨🇭 Switzerland — #7'
       - '🇸🇬 [WL] Сервер 135'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇳🇱 Нидерланды'
-      - '🇺🇸 GidroksiFree #3 | 🛡БС | 🟢LTE | 1284ms | ↓2.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '🇳🇱 AetrisVPN'
@@ -1397,6 +1408,8 @@ proxy-groups:
       - '4166 | 🇳🇱 Netherlands | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '🇵🇱 [WL] Сервер 141'
+      - '🇸🇪 GidroksiFree #5 | 🛡БС | 🟢LTE | 392ms | ↓1.4Mbps'
+      - '269.🇷🇺Россия | @LimeVPNFREE'
       - '5007 | 🇷🇺 Russia | 🏳️ CIDR-beeline | VLESS | TG: @YoutubeUnBlockRu'
       - '8.🇷🇺Россия | @LimeVPNFREE'
       - 'LTE/5G Все операторы 🇪🇺'
@@ -1426,12 +1439,12 @@ proxy-groups:
       - '0575 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '5179 | 🌐 Unknown | 🏳️ CIDR-OLD | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '0910 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
+      - '🇱🇻 Латвия | БС¹'
       - '0021 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2623 | 🇨🇳 HongKong | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3529 | 🌐 Unknown | 🏳️ SNI-VK | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия — Helsinki'
-      - '🇷🇺 Russia | 🌐 [*CIDR]'
+      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '4617 | 🇺🇸 USA | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇺🇸 AetrisVPN'
       - '🇪🇺 AetrisVPN'
