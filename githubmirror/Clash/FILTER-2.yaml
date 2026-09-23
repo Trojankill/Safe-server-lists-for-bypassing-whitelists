@@ -1,17 +1,24 @@
 # clash/mihomo subscription
-# 2026-09-23 02:30:44 UTC
+# 2026-09-23 02:45:32 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #61'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #62'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #61'
 rules:
   - MATCH,PROXY
