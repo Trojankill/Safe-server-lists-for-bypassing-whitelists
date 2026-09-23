@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-23 10:30:45 UTC
+# 2026-09-23 10:45:35 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -13,6 +13,34 @@ proxies:
     reality-opts:
       public-key: KN8tFlpIwPgJGwUCG7Pp9c9c0juYKPvNIv4kFHwqbyk
       short-id: a32cfb5deca913ad
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇨🇿 [CZ] Чехия VFPARSER'
+    type: vless
+    server: cepchik.nxxzxaw.beer
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+    tls: true
+    servername: cepchik.nxxzxaw.beer
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM
+      short-id: f19e02a2fb573c18
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: germoff.nxxzxaw.beer
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+    tls: true
+    servername: germoff.nxxzxaw.beer
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 9xlKofHgn6_79fzCJNtw11zc1zicldVPHk6_h1KTIXA
+      short-id: 9532ce4ecd911eac
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 [US] США VFPARSER'
@@ -29,6 +57,22 @@ proxies:
       short-id: 81c2dc2ca4e93afc
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: fbsv6.guardora.pro
+    port: 443
+    uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
+    udp: true
+    tls: true
+    servername: fbsv6.guardora.pro
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: '/ws'
+      headers:
+        Host: fbsv6.guardora.pro
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: 135.106.221.177
@@ -41,6 +85,20 @@ proxies:
     reality-opts:
       public-key: WQAdveYQROgc_PlY3nHKZVQJozJWGtpHUz2TtasRV2M
       short-id: 5aafa1
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇧🇷 [BR] Бразилия VFPARSER'
+    type: vless
+    server: germanz.ruletka.study
+    port: 443
+    uuid: f495298f-2bdb-4fd8-9ac9-5dd33d1b482a
+    udp: true
+    tls: true
+    servername: germanz.ruletka.study
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
+      short-id: ff776ff77be48b88
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇸🇪 [SE] Швеция VFPARSER'
@@ -57,13 +115,6 @@ proxies:
       short-id: 6aa2d2e950441a9a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
-    type: ss
-    server: 129.151.73.227
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'EG7gd6f1FSkm+x/OoWRHzsRT1Jl/tSx0EWxkprEGZSo='
-    udp: true
   - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
     server: 144.24.228.23
@@ -90,10 +141,13 @@ proxy-groups:
     type: select
     proxies:
       - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇨🇿 [CZ] Чехия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇧🇷 [BR] Бразилия VFPARSER'
       - '🇸🇪 [SE] Швеция VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
