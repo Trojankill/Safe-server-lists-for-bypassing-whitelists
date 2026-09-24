@@ -1,37 +1,25 @@
 # clash/mihomo subscription
-# 2026-09-24 09:00:57 UTC
+# 2026-09-24 09:15:38 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+  - name: '🇨🇿 Чехия | VLESS RAW Reality'
     type: vless
-    server: 46.243.142.42
-    port: 7443
-    uuid: 65cd649c-f2f5-49c4-8f57-94d9b706e846
+    server: 78.159.247.151
+    port: 30073
+    uuid: 20b53251-25c6-4ba1-bcc3-4e5f491c7e97
     udp: true
     tls: true
-    servername: shprcdn.homes
-    client-fingerprint: safari
-    reality-opts:
-      public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
-    network: xhttp
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-    type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 6a9c7e23-73cc-4cbd-9c4a-9aa0f9619eaa
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
+    servername: eh.vk.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
+      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
+      short-id: a150dff4
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.184
     port: 8444
-    uuid: 8bc9c9f8-f6e3-4f7b-a73e-edb398f360e0
+    uuid: 4bdd4af8-40f0-4a5d-9cdd-f51111bcfbfb
     udp: true
     tls: true
     servername: ppfu3n-01.p.portshaper.com
@@ -40,27 +28,12 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
-    type: vless
-    server: 91.215.40.106
-    port: 443
-    uuid: ab40c8b0-268e-4251-b8a6-133a53a946ef
-    udp: true
-    tls: true
-    servername: kioth.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: SwPM1hGH3KvZSMihEdRm8V___vJiFqaBD507p_oFPDM
-      short-id: 18d92bf8
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-    skip-cert-verify: false
+    sni: itsallproxy.quattro-tech.ru
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -71,10 +44,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+      - '🇨🇿 Чехия | VLESS RAW Reality'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
