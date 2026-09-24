@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-24 22:15:34 UTC
+# 2026-09-24 22:30:44 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -13,6 +13,34 @@ proxies:
     reality-opts:
       public-key: KN8tFlpIwPgJGwUCG7Pp9c9c0juYKPvNIv4kFHwqbyk
       short-id: a32cfb5deca913ad
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: vless
+    server: polkakurvich.hohoterz.beer
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+    tls: true
+    servername: polkakurvich.hohoterz.beer
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: X6gBZNZSv_k1pyvLmQaDD4LsYk7jIA1SObRR5r-4Ynk
+      short-id: fcfd621a2f36e3b6
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇪🇸 [ES] Испания VFPARSER'
+    type: vless
+    server: spanish67.kovsh.lol
+    port: 443
+    uuid: 4bdeee92-97e8-414d-bef6-ec1d5e2ab73b
+    udp: true
+    tls: true
+    servername: spanish67.kovsh.lol
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: bZpzmeWiEJyJQy0W2hHc34Nr6BuFXj1UDd80Cbwh1Fk
+      short-id: ff776ff77be48b88
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
@@ -31,6 +59,34 @@ proxies:
       path: '/ws'
       headers:
         Host: fbsv6.guardora.pro
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: vless
+    server: angldril.pumpkinpie.study
+    port: 443
+    uuid: f495298f-2bdb-4fd8-9ac9-5dd33d1b482a
+    udp: true
+    tls: true
+    servername: angldril.pumpkinpie.study
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
+      short-id: ff776ff77be48b88
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇲🇩 [MD] Молдова VFPARSER'
+    type: vless
+    server: hapatronik.vodniki.monster
+    port: 443
+    uuid: f495298f-2bdb-4fd8-9ac9-5dd33d1b482a
+    udp: true
+    tls: true
+    servername: hapatronik.vodniki.monster
+    client-fingerprint: random
+    reality-opts:
+      public-key: W-zf_ncm9sYALF5EqvUsxqTkYGdAw-tQczT2SqwVMGE
+      short-id: ff776ff77be48b88
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 158.178.229.235
@@ -38,12 +94,26 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: '4nphreJpAUpxvkVQmO2l37kEup8qRu7pcSYU0JbJLVM='
     udp: true
-  - name: '🇮🇩 [ID] Индонезия VFPARSER'
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
-    server: 103.160.63.199
-    port: 31348
-    cipher: chacha20-ietf-poly1305
-    password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
+    server: 92.5.200.64
+    port: 45819
+    cipher: 2022-blake3-chacha20-poly1305
+    password: 'KdOEa+dVRB5OxZvDlur6Cj0tndokRlxu/lDzjX3lZ7E='
+    udp: true
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: ss
+    server: 67.215.235.109
+    port: 443
+    cipher: 2022-blake3-aes-128-gcm
+    password: '7VOMWk6RwicM3IKLPijKrA=='
+    udp: true
+  - name: '🇯🇵 [JP] Япония VFPARSER'
+    type: ss
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -64,9 +134,15 @@ proxy-groups:
     type: select
     proxies:
       - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇪🇸 [ES] Испания VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇲🇩 [MD] Молдова VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇮🇩 [ID] Индонезия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
