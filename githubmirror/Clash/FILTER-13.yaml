@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-24 09:30:47 UTC
+# 2026-09-24 09:45:38 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+    type: vless
+    server: 87.242.94.69
+    port: 1443
+    uuid: 201a1cc5-f6b7-464b-9171-6c40ba0981de
+    udp: true
+    tls: true
+    servername: edge.edgeprobe.dev
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
+      short-id: 327088cd7331
+    network: grpc
+    grpc-opts:
   - name: '🇨🇿 Чехия | VLESS RAW Reality'
     type: vless
     server: 78.159.247.151
@@ -28,12 +42,27 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 213.171.25.29
+    port: 9889
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aabb
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: itsallproxy.quattro-tech.ru
+    sni: hy.quattro-tech.ru
+    skip-cert-verify: false
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -44,8 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
       - '🇨🇿 Чехия | VLESS RAW Reality'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
