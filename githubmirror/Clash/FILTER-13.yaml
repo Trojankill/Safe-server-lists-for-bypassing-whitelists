@@ -1,61 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-24 15:30:51 UTC
+# 2026-09-24 15:45:41 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | VLESS RAW Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
-    server: 81.94.148.178
-    port: 7445
-    uuid: 196e0389-a349-424f-9072-5b8dab2162d9
-    udp: true
-    tls: true
-    servername: s1.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wBB_aSYGm86IhxUcO8jccIsaBJZdNGlo3hTQlJFftkE
-      short-id: f7d9e9a2e78e9a17
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇨🇿 Чехия | VLESS RAW Reality'
-    type: vless
-    server: 78.159.247.235
-    port: 30023
-    uuid: 20b53251-25c6-4ba1-bcc3-4e5f491c7e97
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.184
+    server: 188.225.82.184
     port: 8444
-    uuid: 278a46e2-ce8e-4dbe-b3cf-806dca7dd636
+    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
     udp: true
     tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
+    servername: merkos.mervi.icu
+    client-fingerprint: qq
     reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-    type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 338219e6-d759-4e2b-804b-313a7d869e59
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
+      public-key: mJYcWoyt-aPd7ndRT0FPGTGbhr_1cs70bixk9fgOuVs
+      short-id: 3c1c7806e845d8ca
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
     server: 46.243.142.42
@@ -68,34 +27,19 @@ proxies:
     reality-opts:
       public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
     network: xhttp
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
-    server: 45.11.27.86
-    port: 443
-    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
+    server: 46.243.142.184
+    port: 8444
+    uuid: 89224ca1-7cda-4747-a2bd-314420949a6b
     udp: true
     tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: chrome
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
     reality-opts:
-      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
-      short-id: d0aae44f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
-    type: vless
-    server: 188.225.45.152
-    port: 12096
-    uuid: a95b3155-bc03-4789-b367-944b83be8f86
-    udp: true
-    tls: true
-    servername: www.x5.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: Nq6KRzyjC95-W9JtG13EwPzNccKnZwMzhxEM_3zkdk8
-      short-id: fd5b64ba
-    flow: xtls-rprx-vision
-    network: raw
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -107,13 +51,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS RAW Reality'
-      - '🇨🇿 Чехия | VLESS RAW Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
