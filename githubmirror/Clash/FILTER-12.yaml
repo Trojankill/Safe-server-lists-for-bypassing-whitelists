@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-24 07:15:31 UTC
+# 2026-09-24 07:30:51 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -43,20 +43,6 @@ proxies:
       short-id: 085f6d90
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: 23.81.34.204
-    port: 443
-    uuid: 99955907-9070-46f0-a200-9c7a0b9d74fe
-    udp: true
-    tls: true
-    servername: speed.cloudflare.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: J_p_dxR8dIKaezk1_Ins5MZ7e4dqgrr2n9690vVuQ2s
-      short-id: b19b017d6f453873
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: vless
     server: fbsv6.guardora.pro
@@ -80,26 +66,12 @@ proxies:
     cipher: 2022-blake3-chacha20-poly1305
     password: 'CJz7/MZF6sW6ylvOCfAE+EmAqYZKN1GnMlS4tGUS3J4='
     udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
-    server: 141.148.238.85
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'OBLEHLEO7gz50MY5w15pldd9sLDdtEWkpabDDc6KnKM='
-    udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 443
+    server: yyz-ca-01.blncvpn4u.cc
+    port: 9443
     cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
-    udp: true
-  - name: '🇯🇵 [JP] Япония VFPARSER'
-    type: ss
-    server: 84.247.155.196
-    port: 80
-    cipher: aes-256-gcm
-    password: 3eOFeNssde7PYYMv
+    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
 proxy-groups:
   - name: PROXY
@@ -108,11 +80,8 @@ proxy-groups:
       - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
