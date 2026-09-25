@@ -1,18 +1,17 @@
 # clash/mihomo subscription
-# 2026-09-25 11:45:30 UTC
+# 2026-09-25 12:01:02 UTC
 proxies:
-  - name: '🇸🇪 Sweden — #129'
+  - name: '🇳🇱 The Netherlands — #119'
     type: vless
-    server: 87.242.94.69
-    port: 1443
-    uuid: 2420683b-ca94-4684-9a8b-b5c33779ba32
+    server: 46.243.142.184
+    port: 8444
+    uuid: 223e1308-8de9-4edf-abda-707dff76d83a
     udp: true
     tls: true
-    servername: edge.edgeprobe.dev
-    client-fingerprint: firefox
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
     reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
   - name: '🇳🇱 The Netherlands — #113'
@@ -42,7 +41,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇵🇱 Poland — #122'
+  - name: '🇵🇱 Poland — #126'
     type: vless
     server: 46.243.142.42
     port: 7443
@@ -68,20 +67,33 @@ proxies:
       short-id: c4e81a7b
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇫🇷 France — #68'
+  - name: '🇩🇪 Germany — #60'
     type: vless
-    server: 201.24.50.94
+    server: 185.86.144.101
     port: 443
-    uuid: 8057eabc-921d-0002-9acb-80ccc6b48379
+    uuid: 6f55ab5b-a631-4b7c-9aea-98cbd3738459
     udp: true
     tls: true
-    servername: download.amd.com
-    client-fingerprint: ios
+    servername: yandex.ru
+    client-fingerprint: chrome
     reality-opts:
-      public-key: wG3BS0H2EKpY2tpv9bWipTmafwIdXuUXPAZCpr1eZ0M
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #21'
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇩🇪 Germany — #59'
+    type: vless
+    server: 212.233.121.186
+    port: 443
+    uuid: 6f55ab5b-a631-4b7c-9aea-98cbd3738459
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇩🇪 Germany — #26'
     type: vless
     server: 217.19.122.17
     port: 10654
@@ -94,7 +106,7 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇩🇪 Germany — #29'
+  - name: '🇩🇪 Germany — #34'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -121,46 +133,7 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #114'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: d4603b74-492c-4916-8155-5fac6881107e
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #62'
-    type: vless
-    server: 185.86.144.101
-    port: 443
-    uuid: e8ae561a-62c3-4e1c-bf5e-714c099a1b11
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #55'
-    type: vless
-    server: 212.233.121.186
-    port: 443
-    uuid: e8ae561a-62c3-4e1c-bf5e-714c099a1b11
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #26'
+  - name: '🇩🇪 Germany — #31'
     type: vless
     server: 91.196.32.216
     port: 9543
@@ -178,18 +151,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇸🇪 Sweden — #129'
+      - '🇳🇱 The Netherlands — #119'
       - '🇳🇱 The Netherlands — #113'
       - '🇷🇺 Beget — #4'
-      - '🇵🇱 Poland — #122'
+      - '🇵🇱 Poland — #126'
       - '🇱🇻 Latvia — #99'
-      - '🇫🇷 France — #68'
-      - '🇩🇪 Germany — #21'
-      - '🇩🇪 Germany — #29'
-      - '🇳🇱 The Netherlands — #101'
-      - '🇳🇱 The Netherlands — #114'
-      - '🇩🇪 Germany — #62'
-      - '🇩🇪 Germany — #55'
+      - '🇩🇪 Germany — #60'
+      - '🇩🇪 Germany — #59'
       - '🇩🇪 Germany — #26'
+      - '🇩🇪 Germany — #34'
+      - '🇳🇱 The Netherlands — #101'
+      - '🇩🇪 Germany — #31'
 rules:
   - MATCH,PROXY
