@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-25 16:15:42 UTC
+# 2026-09-25 16:30:53 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
@@ -27,6 +27,34 @@ proxies:
       public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
       short-id: eea4ab7bddaeea39
     network: xhttp
+  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+    type: vless
+    server: 87.242.94.69
+    port: 1443
+    uuid: 30c79470-1984-4df6-bca8-0994566ea28a
+    udp: true
+    tls: true
+    servername: edge.edgeprobe.dev
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
+      short-id: 327088cd7331
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 31.177.111.4
+    port: 443
+    uuid: 4f29ea6e-8b9d-4eb4-a0fc-aa8a1ed25d3e
+    udp: true
+    tls: true
+    servername: community-bd.paruscamp.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: NjbnmsosFJHk-7LJei0QOWDI4f7Db2lO6rsdJ0wfHlE
+      short-id: 9654e54cf3aaa5bb
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
     server: 87.242.94.69
@@ -41,6 +69,20 @@ proxies:
       short-id: 77fd95bd06f80caf
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 213.171.25.178
+    port: 9830
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+      short-id: aabb
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.29
@@ -81,6 +123,19 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: ee100491-058e-4e54-be7e-f0f03cd55271
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -94,10 +149,14 @@ proxy-groups:
     proxies:
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
