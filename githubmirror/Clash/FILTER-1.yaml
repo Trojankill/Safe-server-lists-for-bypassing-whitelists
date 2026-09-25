@@ -1,75 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-25 11:00:55 UTC
+# 2026-09-25 11:15:33 UTC
 proxies:
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 5.42.96.76
-    port: 443
-    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
-    udp: true
-    tls: true
-    servername: ruself.yandex-api.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
-      short-id: 7f2e9c4b1a8d6e55
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 94.141.162.51
-    port: 443
-    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
-    udp: true
-    tls: true
-    servername: rutube.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: KQASJC-erEvv8cgBbvJRMfHq0Z0TApsQUNtdSwl0YQY
-      short-id: 8f3e9c4b1a8d6e21
-    network: grpc
-    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 161.104.38.98
-    port: 443
-    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
-    udp: true
-    tls: true
-    servername: donatov.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: vless
-    server: 5.42.114.41
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 5.35.87.69
-    port: 443
-    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
-    udp: true
-    tls: true
-    servername: a.wb.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
-      short-id: 76f547961a8ca082
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
     type: vless
     server: 147.45.148.6
     port: 443
@@ -82,18 +14,18 @@ proxies:
       public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
-    server: 213.226.112.36
-    port: 443
-    uuid: ffb3118d-729f-40c0-bbe8-c3172c1ea8fb
+    server: 191.44.38.143
+    port: 8443
+    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
     udp: true
     tls: true
-    servername: ru1.boutique-hotel1108.ru
+    servername: nl2.yabloko.top
     client-fingerprint: random
     reality-opts:
-      public-key: hIVbIYF3iwOuSetN2shx2JuS_lhCeTfgIxK9WtJgFnc
-    flow: xtls-rprx-vision
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
@@ -101,17 +33,27 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: ss
+    server: 188.225.78.31
+    port: 2053
+    cipher: 2022-blake3-aes-256-gcm
+    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
