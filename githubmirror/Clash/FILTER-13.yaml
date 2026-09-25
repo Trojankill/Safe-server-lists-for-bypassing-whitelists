@@ -1,60 +1,39 @@
 # clash/mihomo subscription
-# 2026-09-25 19:30:50 UTC
+# 2026-09-25 19:45:37 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
-    server: 213.171.25.29
-    port: 9889
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: 45.11.27.86
+    port: 443
+    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: qq
+    servername: 5post-gate.x5.ru
+    client-fingerprint: chrome
     reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-      short-id: aabb
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
+      short-id: d0aae44f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Кроме megafon'
     type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: 6da63bb7-f08d-44c0-baec-65969e4c2bcd
+    server: 91.240.86.12
+    port: 443
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
-    type: vless
-    server: 94.139.255.254
-    port: 5443
-    uuid: c526623a-4521-406f-9bf6-d3f2825bb7c3
-    udp: true
-    tls: true
-    servername: shprcdn.net
+    servername: yandex.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-      short-id: eea4ab7bddaeea39
-    network: xhttp
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 22443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-    skip-cert-verify: false
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality | Кроме megafon'
 rules:
   - MATCH,PROXY
