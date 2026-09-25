@@ -1,6 +1,32 @@
 # clash/mihomo subscription
-# 2026-09-25 13:30:47 UTC
+# 2026-09-25 13:45:32 UTC
 proxies:
+  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+    type: vless
+    server: 46.243.142.63
+    port: 8443
+    uuid: 1f47f87b-8557-46d9-8af0-1a41958d2bca
+    udp: true
+    tls: true
+    servername: an9b3d-07.p.portshaper.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
+    type: vless
+    server: 94.139.255.254
+    port: 5443
+    uuid: 1f47f87b-8557-46d9-8af0-1a41958d2bca
+    udp: true
+    tls: true
+    servername: shprcdn.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.184
@@ -14,7 +40,7 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 31.177.111.4
     port: 443
@@ -27,26 +53,29 @@ proxies:
       public-key: NjbnmsosFJHk-7LJei0QOWDI4f7Db2lO6rsdJ0wfHlE
       short-id: 9654e54cf3aaa5bb
     flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+    network: raw
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
-    server: 46.243.142.63
-    port: 8443
-    uuid: c8a42672-3c1e-4f12-b440-0da844863715
+    server: 87.242.94.69
+    port: 10443
+    uuid: 4f29ea6e-8b9d-4eb4-a0fc-aa8a1ed25d3e
     udp: true
     tls: true
-    servername: an9b3d-07.p.portshaper.com
+    servername: strm.yandex.net
     client-fingerprint: firefox
     reality-opts:
-      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-      short-id: eea4ab7bddaeea39
-    network: xhttp
+      public-key: QgFtyaoTWOV0-gHdEd2n9uCUrGZ76GcJM8Y3OQ4jgm0
+      short-id: 77fd95bd06f80caf
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
 rules:
   - MATCH,PROXY
