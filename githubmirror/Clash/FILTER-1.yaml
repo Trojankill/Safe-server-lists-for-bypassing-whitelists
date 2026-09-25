@@ -1,48 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-25 06:30:45 UTC
+# 2026-09-25 06:45:31 UTC
 proxies:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 200.165.234.137
-    port: 443
-    uuid: 0082f629-fe72-40b0-8e62-ba358eaacbde
-    udp: true
-    tls: true
-    servername: v2.convertermini.fit
-    client-fingerprint: random
-    reality-opts:
-      public-key: WrrPv_Uwwhb3Jpds7vUPTuNG-ifDlNMMnB_gKVDY71M
-      short-id: 43dcff53849b81e6
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: vless
-    server: v3.gogdownload.art
-    port: 443
-    uuid: 0082f629-fe72-40b0-8e62-ba358eaacbde
-    udp: true
-    tls: true
-    servername: v3.gogdownload.art
-    client-fingerprint: random
-    reality-opts:
-      public-key: GjEV_MwHo_P-Px2xc_3DSgckKeTq0AMh0BF3y6txGGM
-      short-id: 43dcff53849b81e6
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇧🇬 Болгария [#РКП]'
-    type: vless
-    server: 188.225.82.184
-    port: 8444
-    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
-    udp: true
-    tls: true
-    servername: merkos.mervi.icu
-    client-fingerprint: random
-    reality-opts:
-      public-key: mJYcWoyt-aPd7ndRT0FPGTGbhr_1cs70bixk9fgOuVs
-      short-id: 3c1c7806e845d8ca
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: vless
     server: 5.42.96.76
@@ -95,7 +53,7 @@ proxies:
     client-fingerprint: random
     reality-opts:
       public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aabb
+      short-id: aa
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
@@ -111,32 +69,31 @@ proxies:
       public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
       short-id: 76f547961a8ca082
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 5.182.4.137
+    server: 147.45.148.6
     port: 443
-    uuid: ab40c8b0-268e-4251-b8a6-133a53a946ef
+    uuid: 974f2c7e-a292-4207-8315-ef4151bdca41
     udp: true
     tls: true
-    servername: cp.webx24.ru
+    servername: yoy-api.bachidze.com
     client-fingerprint: random
     reality-opts:
-      public-key: xAxUkXOzTYVx_560spBFMNGDNg8r_-bC-5S0NqhJYgs
-      short-id: 16f55acec37a4f27
+      public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
-    server: 191.44.38.143
-    port: 8443
-    uuid: fe7a9e7a-cd1f-4128-b2a1-48ef38dd107e
+    server: 213.226.112.36
+    port: 443
+    uuid: ffb3118d-729f-40c0-bbe8-c3172c1ea8fb
     udp: true
     tls: true
-    servername: nl2.yabloko.top
+    servername: ru1.boutique-hotel1108.ru
     client-fingerprint: random
     reality-opts:
-      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
-      short-id: 1c10c8c03e2f0484
+      public-key: hIVbIYF3iwOuSetN2shx2JuS_lhCeTfgIxK9WtJgFnc
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
@@ -148,16 +105,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🏴 Неизвестный [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇧🇬 Болгария [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
