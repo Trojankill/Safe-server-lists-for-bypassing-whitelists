@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-25 15:30:51 UTC
+# 2026-09-25 15:45:35 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -15,7 +15,7 @@ proxies:
       short-id: a32cfb5deca913ad
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: vless
     server: 150.241.105.184
     port: 8443
@@ -29,6 +29,34 @@ proxies:
       short-id: 7791cacf0b57f34c
     network: grpc
     grpc-opts:
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: sde1.subsconnect.com
+    port: 443
+    uuid: 55d21d88-ff56-4210-a44c-4c00d853ad63
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: gDZ5Ddo3albCw8ChoudlrzLWHWfGth3G1db2bIaEfTw
+      short-id: e254
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇹🇷 [TR] Турция VFPARSER'
+    type: vless
+    server: tr.drive-host.uk
+    port: 443
+    uuid: 5a6042e9-013f-4be4-a0d3-1fd4b9bd414b
+    udp: true
+    tls: true
+    servername: tr.drive-host.uk
+    client-fingerprint: random
+    reality-opts:
+      public-key: OkpVqxUj7ycs77ceBMx3hzabS-5kk8nKVQUs0Ow1nkQ
+      short-id: f74c6a18133e2e72
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: 103.245.229.32
@@ -43,7 +71,23 @@ proxies:
       short-id: b4e44a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 217.19.122.65
+    port: 443
+    uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
+    udp: true
+    tls: true
+    servername: fbsv6.guardora.pro
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: firefox
+    network: ws
+    ws-opts:
+      path: '/ws'
+      headers:
+        Host: fbsv6.guardora.pro
+  - name: '🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: fbsv6.guardora.pro
     port: 443
@@ -109,14 +153,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
     udp: true
-  - name: '🇮🇩 [ID] Индонезия VFPARSER'
-    type: ss
-    server: 103.160.63.199
-    port: 31348
-    cipher: chacha20-ietf-poly1305
-    password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
-    udp: true
-  - name: '🇫🇷 [FR] Франция VFPARSER'
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
     server: 158.173.221.214
     port: 11001
@@ -136,13 +173,6 @@ proxies:
     port: 80
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
-    udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
-    server: 15.204.246.107
-    port: 8888
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
     udp: true
   - name: '🇨🇦 [CA] Канада VFPARSER'
     type: ss
@@ -165,7 +195,7 @@ proxies:
     cipher: aes-256-gcm
     password: faBAoD54k87UJG7
     udp: true
-  - name: '🇨🇿 [CZ] Чехия VFPARSER'
+  - name: '🇫🇷 [FR] Франция VFPARSER'
     type: ss
     server: 141.227.134.63
     port: 17000
@@ -198,24 +228,25 @@ proxy-groups:
     type: select
     proxies:
       - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇭🇰 [HK] Гонконг'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇹🇼 [TW] Тайвань VFPARSER'
-      - '🇮🇩 [ID] Индонезия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇫🇷 [FR] Франция VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇨🇿 [CZ] Чехия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
