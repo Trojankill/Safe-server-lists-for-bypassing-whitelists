@@ -1,34 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-25 10:30:47 UTC
+# 2026-09-25 10:45:33 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
-    type: vless
-    server: 188.225.82.184
-    port: 8444
-    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
-    udp: true
-    tls: true
-    servername: merkos.mervi.icu
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: mJYcWoyt-aPd7ndRT0FPGTGbhr_1cs70bixk9fgOuVs
-      short-id: 3c1c7806e845d8ca
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
-    type: vless
-    server: 188.225.82.184
-    port: 8445
-    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
-    udp: true
-    tls: true
-    servername: merkos.mervi.icu
-    client-fingerprint: random
-    reality-opts:
-      public-key: BA5WVTKrFVIXrmpoqw94bsuzV9hwFX51xkv7sgGd5jg
-      short-id: 9e78bf164cea7f92
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 31.177.111.4
@@ -43,42 +15,38 @@ proxies:
       short-id: 9654e54cf3aaa5bb
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
-    server: 87.242.94.69
-    port: 10443
-    uuid: 4f29ea6e-8b9d-4eb4-a0fc-aa8a1ed25d3e
+    server: 46.243.142.63
+    port: 8443
+    uuid: db791a45-d30f-4038-ad2c-bb790754d714
     udp: true
     tls: true
-    servername: strm.yandex.net
+    servername: an9b3d-07.p.portshaper.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: QgFtyaoTWOV0-gHdEd2n9uCUrGZ76GcJM8Y3OQ4jgm0
-      short-id: 77fd95bd06f80caf
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
     type: vless
-    server: 91.240.87.166
-    port: 443
-    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
+    server: 94.139.255.254
+    port: 5443
+    uuid: db791a45-d30f-4038-ad2c-bb790754d714
     udp: true
     tls: true
-    servername: yandex.ru
+    servername: shprcdn.net
     client-fingerprint: firefox
     reality-opts:
-      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
-      short-id: 7bb730e3e6616d31
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality'
 rules:
   - MATCH,PROXY
