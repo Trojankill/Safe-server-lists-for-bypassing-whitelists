@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-25 03:45:32 UTC
+# 2026-09-25 04:00:56 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: 60dedd1b-a7a8-4b3f-94e6-e7064a7be78f
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
-    network: grpc
-    grpc-opts:
   - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
     server: 46.243.142.42
@@ -26,7 +13,7 @@ proxies:
     reality-opts:
       public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
     network: xhttp
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
+  - name: '🇷🇺 Россия | VLESS TCP Reality'
     type: vless
     server: 45.11.27.86
     port: 443
@@ -39,7 +26,7 @@ proxies:
       public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
       short-id: d0aae44f
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
     type: vless
     server: 87.242.94.69
@@ -54,6 +41,19 @@ proxies:
       short-id: 327088cd7331
     network: grpc
     grpc-opts:
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: fc11a129-adbb-4ea8-b39d-beb941bdbdf9
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -65,10 +65,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
