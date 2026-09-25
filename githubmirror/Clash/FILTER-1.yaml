@@ -1,18 +1,59 @@
 # clash/mihomo subscription
-# 2026-09-25 12:45:30 UTC
+# 2026-09-25 13:01:03 UTC
 proxies:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 147.45.148.6
+    server: 161.104.38.98
     port: 443
-    uuid: 974f2c7e-a292-4207-8315-ef4151bdca41
+    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
     udp: true
     tls: true
-    servername: yoy-api.bachidze.com
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI
-    flow: xtls-rprx-vision
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
+  - name: '🇬🇧 Великобритания [#РКП]'
+    type: vless
+    server: 176.123.167.90
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aabb
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 5.42.114.41
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 5.35.87.69
+    port: 443
+    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
+    udp: true
+    tls: true
+    servername: a.wb.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
+      short-id: 76f547961a8ca082
     network: tcp
   - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
@@ -33,27 +74,15 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: ss
-    server: 188.225.78.31
-    port: 2053
-    cipher: 2022-blake3-aes-256-gcm
-    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏴 Неизвестный [#РКП]'
+      - '🇬🇧 Великобритания [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
 rules:
   - MATCH,PROXY

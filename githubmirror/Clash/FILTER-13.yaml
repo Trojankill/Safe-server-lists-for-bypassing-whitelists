@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-25 12:45:32 UTC
+# 2026-09-25 13:01:06 UTC
 proxies:
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: 223e1308-8de9-4edf-abda-707dff76d83a
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS TCP Reality'
     type: vless
     server: 31.177.111.4
@@ -28,25 +41,12 @@ proxies:
       public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
       short-id: eea4ab7bddaeea39
     network: xhttp
-  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
-    type: vless
-    server: 94.139.255.254
-    port: 5443
-    uuid: d39c1133-b3d2-45ac-b2e4-50fc366abaf4
-    udp: true
-    tls: true
-    servername: shprcdn.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-      short-id: eea4ab7bddaeea39
-    network: xhttp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS XHTTP Reality'
 rules:
   - MATCH,PROXY
