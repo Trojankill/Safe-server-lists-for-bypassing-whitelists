@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-25 11:30:48 UTC
+# 2026-09-25 11:45:32 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
@@ -15,10 +15,38 @@ proxies:
       short-id: 9654e54cf3aaa5bb
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+    type: vless
+    server: 46.243.142.63
+    port: 8443
+    uuid: d39c1133-b3d2-45ac-b2e4-50fc366abaf4
+    udp: true
+    tls: true
+    servername: an9b3d-07.p.portshaper.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
+    type: vless
+    server: 94.139.255.254
+    port: 5443
+    uuid: d39c1133-b3d2-45ac-b2e4-50fc366abaf4
+    udp: true
+    tls: true
+    servername: shprcdn.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality'
 rules:
   - MATCH,PROXY
