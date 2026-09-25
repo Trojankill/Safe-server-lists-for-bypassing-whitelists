@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-25 10:15:34 UTC
+# 2026-09-25 10:30:46 UTC
 proxies:
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇦'
-    type: vless
-    server: 13.143.193.156
-    port: 443
-    uuid: 02bd8b5a-170b-4a79-8e68-9cec710272c7
-    udp: true
-    tls: true
-    servername: nl2.gursub.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: ltHl15Wq549qC2JdAtesy-POs6Hwm_BbrlzuwDkWoUk
-      short-id: a1b2c3d4e5f6a1b2
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '58.🇦🇪ОАЭ | @LimeVPNFREE'
     type: vless
     server: 217.60.177.195
@@ -24,6 +10,20 @@ proxies:
     tls: true
     servername: est1.gursub.com
     client-fingerprint: firefox
+    reality-opts:
+      public-key: 6S5TksQPwvFJqlj5JJGnuUFF06crL-xFS15111ml9kY
+      short-id: 529a266bd38ca939
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇦🇪'
+    type: vless
+    server: est1.gursub.com
+    port: 443
+    uuid: 02bd8b5a-170b-4a79-8e68-9cec710272c7
+    udp: true
+    tls: true
+    servername: est1.gursub.com
+    client-fingerprint: chrome
     reality-opts:
       public-key: 6S5TksQPwvFJqlj5JJGnuUFF06crL-xFS15111ml9kY
       short-id: 529a266bd38ca939
@@ -371,6 +371,20 @@ proxies:
       short-id: fda83f2787e6016d
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+    type: vless
+    server: 107.149.159.190
+    port: 4433
+    uuid: 443d55c9-9b78-4ad4-ac34-5ada5b98e97e
+    udp: true
+    tls: true
+    servername: www.postgresql.org
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ptrxM_lwiuXte-ynRSfM7AyayGbWrfCzkV1gQ5EgeSw
+      short-id: 0fa5bc397af019a2
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США'
     type: vless
     server: 38.77.133.202
@@ -385,20 +399,6 @@ proxies:
       short-id: e70046c27dae6aa7
     flow: xtls-rprx-vision
     network: tcp
-  - name: '308.🇩🇪Германия | @LimeVPNFREE'
-    type: vless
-    server: 150.241.105.184
-    port: 8443
-    uuid: 4cf9c712-11c4-47d8-aa31-a1693a1aa4e5
-    udp: true
-    tls: true
-    servername: www.v2host.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: hXqnRjRf0FfXsWWfj-tJY9hxq7dDfu_KWB9udeNGkFI
-      short-id: 7791cacf0b57f34c
-    network: grpc
-    grpc-opts:
   - name: '2633 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 87.199.205.28
@@ -535,6 +535,20 @@ proxies:
       short-id: 0fc62d3cd3089adb
     network: grpc
     grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
+    type: vless
+    server: 144.31.150.111
+    port: 443
+    uuid: 6db6b948-655f-4f68-a9e7-865050e05b31
+    udp: true
+    tls: true
+    servername: ej204.subaru-volga.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: PcC4S9huwrDj7pr0-GAKEdvDNp1lA1CiKLLM-9By6jw
+      short-id: caf2
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '260.🇫🇮Финляндия | @LimeVPNFREE'
     type: vless
     server: ej204.subaru-volga.com
@@ -1144,7 +1158,7 @@ proxies:
     port: 443
     password: dissolved-vpn-pass
     sni: dissolvedvpn.eu.cc
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1281,8 +1295,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 'Бесплатный VPN tg:VLESSFORU 🇺🇦'
       - '58.🇦🇪ОАЭ | @LimeVPNFREE'
+      - 'Бесплатный VPN tg:VLESSFORU 🇦🇪'
       - '303.🇺🇸США | @LimeVPNFREE'
       - '🌍 Рандом | БС¹'
       - '🇺🇸 [WL] Сервер 180'
@@ -1308,8 +1322,8 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '4 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 9/10'
       - '🇳🇱 LTE 6 | тгк: @rostunnel'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США'
-      - '308.🇩🇪Германия | @LimeVPNFREE'
       - '2633 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇩🇪 LTE 202 | тгк: @rostunnel'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇿'
@@ -1320,6 +1334,7 @@ proxy-groups:
       - '1242 | 🇩🇪 Germany | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2728 | 🌐 Unknown | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
       - '🇩🇪 AetrisVPN'
+      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
       - '260.🇫🇮Финляндия | @LimeVPNFREE'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'AetrisVPN White list ┃ ✅ SNI: api.max.ru ┃ 🇷🇺 Россия'
@@ -1370,7 +1385,7 @@ proxy-groups:
       - '0971 | 🇩🇪 Germany | 🏳️ SNI-Yandex | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0083 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇫🇮 Финляндия — Helsinki'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
       - '🇺🇸 AetrisVPN'
       - '🇪🇺 AetrisVPN'
       - '🇧🇪 AetrisVPN'
