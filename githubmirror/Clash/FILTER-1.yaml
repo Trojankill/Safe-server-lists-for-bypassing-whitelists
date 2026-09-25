@@ -1,33 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-25 18:45:31 UTC
+# 2026-09-25 19:01:01 UTC
 proxies:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 161.104.38.98
-    port: 443
-    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
-    udp: true
-    tls: true
-    servername: donatov.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
-  - name: '🇬🇧 Великобритания [#РКП]'
-    type: vless
-    server: 176.123.167.90
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aabb
-    network: grpc
-    grpc-opts:
   - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
     server: 5.42.114.41
@@ -39,35 +12,49 @@ proxies:
     client-fingerprint: random
     reality-opts:
       public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇫🇮 Финляндия [#РКП]'
     type: vless
-    server: 5.35.87.69
+    server: ultimate.warriorofblacksun.run
     port: 443
-    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
+    uuid: cb6ebb1f-2c69-4816-85ff-9c8a0570b0ab
     udp: true
     tls: true
-    servername: a.wb.ru
+    servername: ultimate.warriorofblacksun.run
     client-fingerprint: random
     reality-opts:
-      public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
-      short-id: 76f547961a8ca082
-    network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
+      public-key: Ww_HS9_n7ob3uESSXtbU23EPM-BOJ5ZYLp-RFB0L0SY
+    network: grpc
+    grpc-opts:
+  - name: '🇧🇻 Остров Буве [#РКП]'
     type: vless
-    server: 191.44.38.143
-    port: 8443
-    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
+    server: xnodtwx.artemida.live
+    port: 443
+    uuid: d9ca156c-8b6d-4ca6-8be1-4eee64c93c36
     udp: true
     tls: true
-    servername: nl2.yabloko.top
+    servername: xnodtwx.artemida.live
     client-fingerprint: random
     reality-opts:
-      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
-      short-id: 1c10c8c03e2f0484
-    network: tcp
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    network: grpc
+    grpc-opts:
+  - name: '🇫🇮 Финляндия [#РКП]'
+    type: vless
+    server: 87.228.101.2
+    port: 27446
+    uuid: f3cebdc9-c825-4ff8-9743-184befbf1a67
+    udp: true
+    tls: true
+    servername: ads.x5.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg
+      short-id: e67fb918ed6b9ffb
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -78,11 +65,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🏴 Неизвестный [#РКП]'
-      - '🇬🇧 Великобритания [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇫🇮 Финляндия [#РКП]'
+      - '🇧🇻 Остров Буве [#РКП]'
+      - '🇫🇮 Финляндия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
