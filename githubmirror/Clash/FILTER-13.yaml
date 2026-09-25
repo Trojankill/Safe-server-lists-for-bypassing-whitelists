@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-25 10:00:59 UTC
+# 2026-09-25 10:15:35 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 188.225.82.184
+    port: 8444
+    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
+    udp: true
+    tls: true
+    servername: merkos.mervi.icu
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: mJYcWoyt-aPd7ndRT0FPGTGbhr_1cs70bixk9fgOuVs
+      short-id: 3c1c7806e845d8ca
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 188.225.82.184
+    port: 8445
+    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
+    udp: true
+    tls: true
+    servername: merkos.mervi.icu
+    client-fingerprint: random
+    reality-opts:
+      public-key: BA5WVTKrFVIXrmpoqw94bsuzV9hwFX51xkv7sgGd5jg
+      short-id: 9e78bf164cea7f92
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 31.177.111.4
@@ -29,26 +57,28 @@ proxies:
       short-id: 77fd95bd06f80caf
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
-    server: 45.11.27.86
+    server: 91.240.87.166
     port: 443
-    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
+    uuid: c5694dc5-39fd-4a92-8430-3837baa522a3
     udp: true
     tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: chrome
+    servername: yandex.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
-      short-id: d0aae44f
+      public-key: 2ZUQYIhUijdJ1vRL8iR8RxjmJvRVHYp-JoWevQ2LyR4
+      short-id: 7bb730e3e6616d31
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
 rules:
   - MATCH,PROXY
