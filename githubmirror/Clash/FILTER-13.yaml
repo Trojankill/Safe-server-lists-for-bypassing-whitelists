@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-25 03:15:32 UTC
+# 2026-09-25 03:30:45 UTC
 proxies:
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.184
+    port: 8444
+    uuid: 60dedd1b-a7a8-4b3f-94e6-e7064a7be78f
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
+    network: grpc
+    grpc-opts:
   - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
     server: 46.243.142.42
@@ -27,6 +40,20 @@ proxies:
       short-id: d0aae44f
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
+    type: vless
+    server: 87.242.94.69
+    port: 1443
+    uuid: b65a30ea-d187-4ea8-8d7e-2eccdb9f9044
+    udp: true
+    tls: true
+    servername: edge.edgeprobe.dev
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
+      short-id: 327088cd7331
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -38,8 +65,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
