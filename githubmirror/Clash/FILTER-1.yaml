@@ -1,60 +1,33 @@
 # clash/mihomo subscription
-# 2026-09-25 20:30:42 UTC
+# 2026-09-25 20:45:31 UTC
 proxies:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 5.42.114.41
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇮 Финляндия [#РКП]'
-    type: vless
-    server: ultimate.warriorofblacksun.run
+    server: 161.104.38.98
     port: 443
-    uuid: cb6ebb1f-2c69-4816-85ff-9c8a0570b0ab
+    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
     udp: true
     tls: true
-    servername: ultimate.warriorofblacksun.run
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: Ww_HS9_n7ob3uESSXtbU23EPM-BOJ5ZYLp-RFB0L0SY
-    network: grpc
-    grpc-opts:
-  - name: '🇧🇻 Остров Буве [#РКП]'
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: xnodtwx.artemida.live
+    server: 195.133.73.65
     port: 443
-    uuid: d9ca156c-8b6d-4ca6-8be1-4eee64c93c36
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
     udp: true
     tls: true
-    servername: xnodtwx.artemida.live
+    servername: anyfile2file.com
     client-fingerprint: random
     reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇮 Финляндия [#РКП]'
-    type: vless
-    server: 87.228.101.2
-    port: 27446
-    uuid: f3cebdc9-c825-4ff8-9743-184befbf1a67
-    udp: true
-    tls: true
-    servername: ads.x5.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg
-      short-id: e67fb918ed6b9ffb
-    network: grpc
-    grpc-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -65,10 +38,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇫🇮 Финляндия [#РКП]'
-      - '🇧🇻 Остров Буве [#РКП]'
-      - '🇫🇮 Финляндия [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
