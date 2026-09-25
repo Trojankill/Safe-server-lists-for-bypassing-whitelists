@@ -1,11 +1,64 @@
 # clash/mihomo subscription
-# 2026-09-25 07:15:36 UTC
+# 2026-09-25 07:30:49 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 188.225.82.184
+    port: 8445
+    uuid: 0efd1a54-64d3-4033-873f-100cf93d85fd
+    udp: true
+    tls: true
+    servername: merkos.mervi.icu
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: BA5WVTKrFVIXrmpoqw94bsuzV9hwFX51xkv7sgGd5jg
+      short-id: 9e78bf164cea7f92
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+    type: vless
+    server: 46.243.142.42
+    port: 7443
+    uuid: 65cd649c-f2f5-49c4-8f57-94d9b706e846
+    udp: true
+    tls: true
+    servername: shprcdn.homes
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
+    type: vless
+    server: 185.241.195.151
+    port: 9444
+    uuid: 742a7565-6cc9-492a-8028-1a4381bbe5cb
+    udp: true
+    tls: true
+    servername: res.cdnguard.org
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
+      short-id: 413da1312ccce8fb
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+    type: vless
+    server: 46.243.142.63
+    port: 8443
+    uuid: 742a7565-6cc9-492a-8028-1a4381bbe5cb
+    udp: true
+    tls: true
+    servername: an9b3d-07.p.portshaper.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
+      short-id: eea4ab7bddaeea39
+    network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
     type: vless
     server: 87.242.94.69
     port: 1443
-    uuid: 8f5613b2-a4c2-460c-8803-34d90ec689af
+    uuid: 7e6b1af6-f439-4c76-8245-b9e1a1f84bb9
     udp: true
     tls: true
     servername: edge.edgeprobe.dev
@@ -26,6 +79,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
+      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
