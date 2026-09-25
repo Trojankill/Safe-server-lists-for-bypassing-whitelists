@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-25 15:45:36 UTC
+# 2026-09-25 16:01:00 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
     type: vless
@@ -27,20 +27,6 @@ proxies:
       public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
       short-id: eea4ab7bddaeea39
     network: xhttp
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
-    type: vless
-    server: 31.177.111.4
-    port: 443
-    uuid: 4f29ea6e-8b9d-4eb4-a0fc-aa8a1ed25d3e
-    udp: true
-    tls: true
-    servername: community-bd.paruscamp.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: NjbnmsosFJHk-7LJei0QOWDI4f7Db2lO6rsdJ0wfHlE
-      short-id: 9654e54cf3aaa5bb
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
     server: 87.242.94.69
@@ -81,6 +67,20 @@ proxies:
     reality-opts:
       public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
     network: xhttp
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 45.11.27.86
+    port: 443
+    uuid: a2738d8d-ed26-4b13-a4a2-b89c7238cd10
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IBzFSziv_xISB-Q6X90PocTBde6jb4X6swEvdZQhqzk
+      short-id: d0aae44f
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -94,10 +94,10 @@ proxy-groups:
     proxies:
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
