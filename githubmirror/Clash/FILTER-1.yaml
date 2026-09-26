@@ -1,6 +1,18 @@
 # clash/mihomo subscription
-# 2026-09-26 09:00:51 UTC
+# 2026-09-26 09:15:30 UTC
 proxies:
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 46.243.142.42
+    port: 7443
+    uuid: 65cd649c-f2f5-49c4-8f57-94d9b706e846
+    udp: true
+    tls: true
+    servername: shprcdn.homes
+    client-fingerprint: random
+    reality-opts:
+      public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
+    network: xhttp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 94.241.140.159
@@ -49,20 +61,22 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: ss
+    server: 188.225.78.31
+    port: 2053
+    cipher: 2022-blake3-aes-256-gcm
+    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇩🇪 ФРГ [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇧🇻 Остров Буве [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
 rules:
   - MATCH,PROXY
