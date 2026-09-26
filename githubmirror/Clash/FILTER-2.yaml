@@ -1,24 +1,37 @@
 # clash/mihomo subscription
-# 2026-09-26 14:45:42 UTC
+# 2026-09-26 15:00:58 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #26'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #36'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #33'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #42'
     type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-    skip-cert-verify: false
+    server: 194.55.239.152
+    port: 20003
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: price.spb-barber.hair
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #43'
+    type: hysteria2
+    server: 194.55.239.152
+    port: 20004
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: last.autobustime.live
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия · 🇵🇱 Польша #41'
+    type: hysteria2
+    server: 194.55.239.152
+    port: 20005
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: info.autobustime.live
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #26'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #33'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #36'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #42'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇴 Норвегия #43'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия · 🇵🇱 Польша #41'
 rules:
   - MATCH,PROXY
