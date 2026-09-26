@@ -1,72 +1,67 @@
 # clash/mihomo subscription
-# 2026-09-26 15:45:27 UTC
+# 2026-09-26 16:00:55 UTC
 proxies:
-  - name: '🇸🇪 Швеция [#РКП]'
+  - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
-    server: 161.104.107.97
-    port: 443
-    uuid: dc0d27ba-34d2-4c8b-9cba-9ddbbb632748
+    server: 5.42.114.41
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: www.nvidia.com
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: V6DsIO1Bnyj5xLsTtYzyz2KGkkpgpt7I3L-SN06Du1Y
-      short-id: 348b9654fcb1
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: info.moscowtour.world
+    port: 443
+    uuid: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    udp: true
+    tls: true
+    servername: info.moscowtour.world
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 195.133.73.65
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    server: du-rov.secureservice.top
+    port: 8443
+    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: du-rov.secureservice.top
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
+      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+      short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇧🇻 Остров Буве [#РКП]'
     type: vless
-    server: tgfree.rush-server.com
+    server: 188.225.83.133
     port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    uuid: d9ca156c-8b6d-4ca6-8be1-4eee64c93c36
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: xnodtwx.artemida.live
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: hysteria2
-    server: 194.55.239.152
-    port: 20003
-    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
-    sni: price.spb-barber.hair
-  - name: '🇺🇸 США [#РКП]'
-    type: hysteria2
-    server: 194.55.239.152
-    port: 20004
-    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
-    sni: last.autobustime.live
-  - name: '🇱🇻 Латвия [#РКП]'
-    type: hysteria2
-    server: 194.55.239.152
-    port: 20005
-    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
-    sni: info.autobustime.live
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: msk.frkn.org
@@ -77,13 +72,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇸🇪 Швеция [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇺🇸 США [#РКП]'
-      - '🇱🇻 Латвия [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🇧🇻 Остров Буве [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
