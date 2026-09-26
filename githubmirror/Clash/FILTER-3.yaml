@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-26 22:45:30 UTC
+# 2026-09-26 23:00:57 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #120'
+  - name: '🇳🇱 The Netherlands — #128'
     type: vless
     server: 46.243.142.184
     port: 8444
@@ -14,7 +14,19 @@ proxies:
       public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #79'
+  - name: '🇳🇱 The Netherlands — #117'
+    type: vless
+    server: 84.201.180.13
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
+    network: xhttp
+  - name: '🇩🇪 Germany — #47'
     type: vless
     server: 188.225.57.223
     port: 443
@@ -28,7 +40,7 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇬🇧 United Kingdom — #88'
+  - name: '🇬🇧 United Kingdom — #85'
     type: vless
     server: 37.18.15.228
     port: 10022
@@ -42,7 +54,7 @@ proxies:
       short-id: f74c6a18133e2e72
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #2'
+  - name: '🇷🇺 Beget — #3'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -55,7 +67,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇵🇱 Poland — #125'
+  - name: '🇵🇱 Poland — #134'
     type: vless
     server: 46.243.142.42
     port: 7443
@@ -67,20 +79,20 @@ proxies:
     reality-opts:
       public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
     network: xhttp
-  - name: '🇸🇪 Sweden — #130'
+  - name: '🇬🇧 United Kingdom — #84'
     type: vless
-    server: 45.8.228.167
+    server: 84.38.181.249
     port: 443
-    uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
     udp: true
     tls: true
-    servername: bl3fk52.sysopnova.art
-    client-fingerprint: ios
+    servername: open.spotify.com
+    client-fingerprint: safari
     reality-opts:
-      public-key: n7Eivi9aG8PMxvaP5flLiukPADZIDVuzyOsOWDG43kQ
-      short-id: 5eca
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
     network: xhttp
-  - name: '🇳🇱 The Netherlands — #110'
+  - name: '🇳🇱 The Netherlands — #116'
     type: vless
     server: 45.11.27.86
     port: 443
@@ -98,12 +110,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #120'
-      - '🇩🇪 Germany — #79'
-      - '🇬🇧 United Kingdom — #88'
-      - '🇷🇺 Beget — #2'
-      - '🇵🇱 Poland — #125'
-      - '🇸🇪 Sweden — #130'
-      - '🇳🇱 The Netherlands — #110'
+      - '🇳🇱 The Netherlands — #128'
+      - '🇳🇱 The Netherlands — #117'
+      - '🇩🇪 Germany — #47'
+      - '🇬🇧 United Kingdom — #85'
+      - '🇷🇺 Beget — #3'
+      - '🇵🇱 Poland — #134'
+      - '🇬🇧 United Kingdom — #84'
+      - '🇳🇱 The Netherlands — #116'
 rules:
   - MATCH,PROXY
