@@ -1,61 +1,19 @@
 # clash/mihomo subscription
-# 2026-09-26 17:30:43 UTC
+# 2026-09-26 17:45:29 UTC
 proxies:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
-    server: 5.42.114.41
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: info.moscowtour.world
+    server: 85.198.97.155
     port: 443
-    uuid: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    uuid: 828d1c2b-8345-4e59-bbd0-c2991514c1a5
     udp: true
     tls: true
-    servername: info.moscowtour.world
-    alpn:
-      - h2
-    client-fingerprint: random
-    network: grpc
-    grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: du-rov.secureservice.top
-    port: 8443
-    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-    udp: true
-    tls: true
-    servername: du-rov.secureservice.top
+    servername: yandex.ru
     client-fingerprint: random
     reality-opts:
-      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-      short-id: 3cbc3d737fb9c4af
+      public-key: SaImbTlBTEGJOdghqZ6dNg3TY3WfnlvP8PgewUeokgE
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇧🇻 Остров Буве [#РКП]'
-    type: vless
-    server: 188.225.83.133
-    port: 443
-    uuid: d9ca156c-8b6d-4ca6-8be1-4eee64c93c36
-    udp: true
-    tls: true
-    servername: xnodtwx.artemida.live
-    client-fingerprint: random
-    reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -72,10 +30,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇧🇻 Остров Буве [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
