@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-26 03:45:29 UTC
+# 2026-09-26 04:00:53 UTC
 proxies:
   - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
@@ -28,33 +28,6 @@ proxies:
       public-key: IRJV6rxUjx3vlkGijnm9-LDNC5M3vLOBabpnRYuIs3M
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 161.104.38.98
-    port: 443
-    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
-    udp: true
-    tls: true
-    servername: donatov.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: vless
-    server: 200.169.183.68
-    port: 443
-    uuid: 54127949-5b65-4600-a976-326c99cfc794
-    udp: true
-    tls: true
-    servername: s3-m.perecmusic.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4
-      short-id: e1f8a3b6
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
     server: 5.42.114.41
@@ -69,11 +42,11 @@ proxies:
       short-id: aa
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇺🇸 США [#РКП]'
     type: vless
     server: ru-001.zapretu.net
     port: 443
-    uuid: 8d321a7d-a874-0006-becd-8ed824bf80a3
+    uuid: 8d321a7d-a874-0002-becd-8ed824bf80a3
     udp: true
     tls: true
     servername: ru-001.zapretu.net
@@ -123,40 +96,38 @@ proxies:
       short-id: 64c1fe36c7846400
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 Финляндия [#РКП]'
-    type: vless
-    server: 87.228.101.2
-    port: 27446
-    uuid: f3cebdc9-c825-4ff8-9743-184befbf1a67
-    udp: true
-    tls: true
-    servername: ads.x5.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: sgFFdQvfeujBKh6g7N7klU_u0mKYlr800MFbko5FzUg
-      short-id: e67fb918ed6b9ffb
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: ss
+    server: 188.225.78.31
+    port: 2053
+    cipher: 2022-blake3-aes-256-gcm
+    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇳🇱 Нидерланды [#РКП]'
       - '🇸🇪 Швеция [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
+      - '🇺🇸 США [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇫🇮 Финляндия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
 rules:
   - MATCH,PROXY

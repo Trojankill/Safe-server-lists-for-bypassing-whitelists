@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-26 03:45:30 UTC
+# 2026-09-26 04:00:54 UTC
 proxies:
+  - name: '🇵🇱 Польша [#РКП]'
+    type: vless
+    server: 159.194.215.186
+    port: 443
+    uuid: 00897d7e-9cf6-0384-9c6c-3097d08d998b
+    udp: true
+    tls: true
+    servername: proxy-1.kotnetwork.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: IRJV6rxUjx3vlkGijnm9-LDNC5M3vLOBabpnRYuIs3M
+      short-id: 6ba85179e30d4fc3
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '95.🇦🇪ОАЭ | @LimeVPNFREE'
     type: vless
     server: 217.60.177.195
@@ -222,19 +236,6 @@ proxies:
       short-id: 20a080af5636a681
     network: grpc
     grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 161.104.38.98
-    port: 443
-    uuid: 256c5e3e-431d-0032-bed4-bfcf1334f64b
-    udp: true
-    tls: true
-    servername: donatov.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
   - name: '🇫🇮 [WL] Сервер 19'
     type: vless
     server: 31.129.97.137
@@ -386,20 +387,6 @@ proxies:
       short-id: ef1d3554c652a436
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: vless
-    server: 200.169.183.68
-    port: 443
-    uuid: 54127949-5b65-4600-a976-326c99cfc794
-    udp: true
-    tls: true
-    servername: s3-m.perecmusic.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4
-      short-id: e1f8a3b6
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 194.48.142.103
@@ -645,6 +632,19 @@ proxies:
     client-fingerprint: qq
     reality-opts:
       public-key: 1sSmdw90uTiGuitDvp_q8zcXTcHXKQS3IVjA7T1UNiY
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США [#РКП]'
+    type: vless
+    server: ru-001.zapretu.net
+    port: 443
+    uuid: 8d321a7d-a874-0002-becd-8ed824bf80a3
+    udp: true
+    tls: true
+    servername: ru-001.zapretu.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: l9b1AQuRbk4WA3hUVHI3mGBW-X5gNKFF72fWvismAS0
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇩🇪 Германия 3 netcup GmbH'
@@ -1161,7 +1161,7 @@ proxies:
     port: 50160
     password: 7302ad33229de166d393cd56143a1e4c
     sni: vk.com
-  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1326,6 +1326,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇵🇱 Польша [#РКП]'
       - '95.🇦🇪ОАЭ | @LimeVPNFREE'
       - '🇵🇱 Польша | БС¹'
       - '🇺🇸 [WL] Сервер 101'
@@ -1342,7 +1343,6 @@ proxy-groups:
       - '18.🇸🇪Швеция | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
-      - '🏴 Неизвестный [#РКП]'
       - '🇫🇮 [WL] Сервер 19'
       - '🇳🇱 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
@@ -1354,7 +1354,6 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - '🇷🇺➜🇳🇱 GidroksiFree #5 | 🔗Каскад | 🛡БС | 🟢LTE | 1526ms | ↓0.0Mbps'
       - '2256 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu'
-      - '🇩🇪 ФРГ [#РКП]'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
       - 'AetrisVPN White list ┃ ✅ SNI: kinopoisk.ru ┃ 🇨🇿 Чехия'
@@ -1373,6 +1372,7 @@ proxy-groups:
       - '274.🇯🇵Япония | @LimeVPNFREE'
       - '259.🇰🇷Южная Корея | @LimeVPNFREE'
       - '🇩🇪 [WL] Сервер 98'
+      - '🇺🇸 США [#РКП]'
       - '🇩🇪 Германия 3 netcup GmbH'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇬🇧 United Kingdom — #63'
@@ -1415,7 +1415,7 @@ proxy-groups:
       - '2390 | 🇷🇺 Russia | 🏳️ CIDR-beeline | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '0808 | 🇩🇪 Germany | 🏳️ SNI-Yandex | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0077 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '🇬🇧 LTE 129 | тгк: @rostunnel'
       - '🇺🇸 AetrisVPN'
       - '🇪🇺 AetrisVPN'
