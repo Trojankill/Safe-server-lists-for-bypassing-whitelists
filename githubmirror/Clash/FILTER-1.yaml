@@ -1,49 +1,37 @@
 # clash/mihomo subscription
-# 2026-09-26 12:15:33 UTC
+# 2026-09-26 12:30:44 UTC
 proxies:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇸🇪 Швеция [#РКП]'
     type: vless
-    server: 46.243.142.42
-    port: 7443
-    uuid: 65cd649c-f2f5-49c4-8f57-94d9b706e846
-    udp: true
-    tls: true
-    servername: shprcdn.homes
-    client-fingerprint: random
-    reality-opts:
-      public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
-    network: xhttp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 94.241.140.159
+    server: 161.104.107.97
     port: 443
-    uuid: becd3b04-62a8-4b74-be67-be746008b4c2
+    uuid: dc0d27ba-34d2-4c8b-9cba-9ddbbb632748
     udp: true
     tls: true
-    servername: cdn-13829.grani-gaming.shop
+    servername: www.nvidia.com
     client-fingerprint: random
     reality-opts:
-      public-key: 9qsH_tfXO07d8csijXTPkwI6PR0Mdzwum4CaAbeBAFI
-      short-id: 91b7c3a4e6d2f058
+      public-key: V6DsIO1Bnyj5xLsTtYzyz2KGkkpgpt7I3L-SN06Du1Y
+      short-id: 348b9654fcb1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇧🇻 Остров Буве [#РКП]'
-    type: vless
-    server: 188.225.83.133
-    port: 443
-    uuid: d9ca156c-8b6d-4ca6-8be1-4eee64c93c36
-    udp: true
-    tls: true
-    servername: xnodtwx.artemida.live
-    client-fingerprint: random
-    reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
-    network: grpc
-    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 195.133.73.65
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: tgfree.rush-server.com
     port: 443
     uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
     udp: true
@@ -61,22 +49,41 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: ss
-    server: 188.225.78.31
-    port: 2053
-    cipher: 2022-blake3-aes-256-gcm
-    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
-    udp: true
+  - name: '🇳🇱 Нидерланды [#РКП]'
+    type: hysteria2
+    server: 194.55.239.152
+    port: 20003
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: price.spb-barber.hair
+  - name: '🇺🇸 США [#РКП]'
+    type: hysteria2
+    server: 194.55.239.152
+    port: 20004
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: last.autobustime.live
+  - name: '🇱🇻 Латвия [#РКП]'
+    type: hysteria2
+    server: 194.55.239.152
+    port: 20005
+    password: 5d5586a3-b5f3-40ac-bab2-2f36bc60ec0b
+    sni: info.autobustime.live
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 ФРГ [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇧🇻 Остров Буве [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇺🇸 США [#РКП]'
+      - '🇱🇻 Латвия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
