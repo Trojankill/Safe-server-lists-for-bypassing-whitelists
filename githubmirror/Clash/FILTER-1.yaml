@@ -1,17 +1,72 @@
 # clash/mihomo subscription
-# 2026-09-26 20:45:29 UTC
+# 2026-09-26 21:00:54 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 85.198.97.155
+    server: 37.252.23.165
     port: 443
-    uuid: 828d1c2b-8345-4e59-bbd0-c2991514c1a5
+    uuid: 32d7dffc-62ba-4db2-b5f8-0df22674e1fb
     udp: true
     tls: true
-    servername: yandex.ru
+    servername: ru.netgridflow.com
     client-fingerprint: random
     reality-opts:
-      public-key: SaImbTlBTEGJOdghqZ6dNg3TY3WfnlvP8PgewUeokgE
+      public-key: nilJ07r1KZ0-KhmRNYeICXGhM9HeG9uxnRaqjYz3fWg
+      short-id: 0b7688cb60960fb3
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 Германия [#РКП]'
+    type: vless
+    server: 5.42.114.41
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇺🇸 США [#РКП]'
+    type: vless
+    server: 213.171.26.168
+    port: 443
+    uuid: 8d321a7d-a874-0002-becd-8ed824bf80a3
+    udp: true
+    tls: true
+    servername: ru-001.zapretu.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: l9b1AQuRbk4WA3hUVHI3mGBW-X5gNKFF72fWvismAS0
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США [#РКП]'
+    type: vless
+    server: 82.202.138.16
+    port: 443
+    uuid: 8d321a7d-a874-0002-becd-8ed824bf80a3
+    udp: true
+    tls: true
+    servername: ru-001.zapretu.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: l9b1AQuRbk4WA3hUVHI3mGBW-X5gNKFF72fWvismAS0
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 82.202.169.103
+    port: 443
+    uuid: c260fba0-9609-4190-b0ba-1538c08c0d22
+    udp: true
+    tls: true
+    servername: www.timeweb.cloud
+    client-fingerprint: random
+    reality-opts:
+      public-key: 6nMLrNLKpFCpq1EiubHesAsD_Jbl83vWRQYh7BIvJG8
+      short-id: 2d26dd5b
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -26,12 +81,56 @@ proxies:
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: s3.hide-internet.ru
+    port: 443
+    cipher: chacha20-ietf-poly1305
+    password: u453NtOK40bP8VqmIFpHg4
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 135.106.227.252
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: KHdJKMAYowrILcVjV7t4lPtuh5bVXUAS
+    udp: true
+  - name: '🇳🇴 Норвегия [#РКП]'
+    type: ss
+    server: 139.100.236.74
+    port: 1
+    cipher: chacha20-ietf-poly1305
+    password: WxYpOK1iPSJySbVNMMJDtw
+    udp: true
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: ss
+    server: 139.100.236.74
+    port: 2
+    cipher: chacha20-ietf-poly1305
+    password: WxYpOK1iPSJySbVNMMJDtw
+    udp: true
+  - name: '🇨🇾 Кипр [#РКП]'
+    type: ss
+    server: 139.100.236.74
+    port: 3
+    cipher: chacha20-ietf-poly1305
+    password: WxYpOK1iPSJySbVNMMJDtw
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 Германия [#РКП]'
+      - '🇺🇸 США [#РКП]'
+      - '🇺🇸 США [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇳🇴 Норвегия [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇨🇾 Кипр [#РКП]'
 rules:
   - MATCH,PROXY
