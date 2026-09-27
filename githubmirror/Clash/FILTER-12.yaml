@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 10:45:34 UTC
+# 2026-09-27 11:00:59 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -14,19 +14,6 @@ proxies:
       public-key: KN8tFlpIwPgJGwUCG7Pp9c9c0juYKPvNIv4kFHwqbyk
       short-id: a32cfb5deca913ad
     flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇮🇷 [IR] Иран VFPARSER'
-    type: vless
-    server: ir.karmatel.ir
-    port: 10295
-    uuid: 3c8668d5-3d85-49de-9d81-1695824d356b
-    udp: true
-    tls: true
-    servername: zs.lanzivo.ir
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: R_45G_7m9djDDXv3yyV50Sv3kB_OSgd7qeRp2D5ciW0
-      short-id: 71953c13d6
     network: tcp
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -70,36 +57,6 @@ proxies:
       short-id: 6ebef7b4905d53f8
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇸🇪 [SE] Швеция VFPARSER'
-    type: vless
-    server: 191.44.114.66
-    port: 443
-    uuid: 718b9643-20e3-4f9e-9f8d-87ce6801d55e
-    udp: true
-    tls: true
-    servername: ai.android
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: uE1WBdW9se1rQnx8Vh-a1jjaehzK-iUmCVrPui5KU3g
-      short-id: 53499a662395
-    network: grpc
-    grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: www.large-files.info
-    port: 8443
-    uuid: 7c99dc89-bf49-45c9-acc5-e43f36657518
-    udp: true
-    tls: true
-    servername: www.large-files.info
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/var/www/html/video/preview/download/i8o0la'
-      headers:
-        Host: www.large-files.info
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: 103.245.229.32
@@ -142,38 +99,20 @@ proxies:
       short-id: f70764f8
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 [RU] Россия VFPARSER'
-    type: vless
-    server: ru-kzn.tunnelgate.org
-    port: 443
-    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
-    udp: true
-    tls: true
-    servername: ru-kzn.tunnelgate.org
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: qq
-    network: ws
-    ws-opts:
-      path: '/ws/v1/pl'
-      headers:
-        Host: ru-kzn.tunnelgate.org
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
-    server: ware.tunnelgate.org
+    server: 185.229.9.157
     port: 443
-    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
+    uuid: 9e4f675b-d6bf-42d1-be55-389f622783af
     udp: true
     tls: true
-    servername: ware.tunnelgate.org
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: qq
-    network: ws
-    ws-opts:
-      path: '/ws/v1/ru'
-      headers:
-        Host: ware.tunnelgate.org
+    servername: 360.yandex.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
+      short-id: 27e53bbcab7593d7
+    network: grpc
+    grpc-opts:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: fbsv6.guardora.pro
@@ -190,22 +129,6 @@ proxies:
       path: '/ws'
       headers:
         Host: fbsv6.guardora.pro
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: victoryprovpn-production-b905.up.railway.app
-    port: 443
-    uuid: ede9d391-34c5-5ee5-c89e-dd119ce35203
-    udp: true
-    tls: true
-    servername: victoryprovpn-production-b905.up.railway.app
-    alpn:
-      - 'http/1.1'
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/ws/ede9d391-34c5-5ee5-c89e-dd119ce35203'
-      headers:
-        Host: victoryprovpn-production-b905.up.railway.app
   - name: '🇭🇰 [HK] Гонконг'
     type: vmess
     server: 8.217.229.155
@@ -228,16 +151,16 @@ proxies:
     cipher: 2022-blake3-aes-128-gcm
     password: '7VOMWk6RwicM3IKLPijKrA=='
     udp: true
-  - name: '🇭🇰 [HK] Гонконг VFPARSER'
-    type: ss
-    server: 122.10.117.1
-    port: 11365
-    cipher: 2022-blake3-aes-128-gcm
-    password: 'TmjQqVqztHiRk6Q5rKnTiQ=='
-    udp: true
   - name: '🇹🇼 [TW] Тайвань VFPARSER'
     type: ss
     server: 36.224.141.124
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
+    udp: true
+  - name: '🇹🇼 [TW] Тайвань VFPARSER'
+    type: ss
+    server: r3mrcg001286ek2.cybervena.com
     port: 50099
     cipher: chacha20-ietf-poly1305
     password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
@@ -298,27 +221,29 @@ proxies:
     cipher: aes-256-gcm
     password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
+  - name: '🇨🇦 [CA] Канада VFPARSER'
+    type: ss
+    server: 51.222.141.125
+    port: 445
+    cipher: aes-256-gcm
+    password: zDNVedRFPQexG9v
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🇮🇷 [IR] Иран VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇸🇪 [SE] Швеция VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇭🇰 [HK] Гонконг'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇭🇰 [HK] Гонконг VFPARSER'
+      - '🇹🇼 [TW] Тайвань VFPARSER'
       - '🇹🇼 [TW] Тайвань VFPARSER'
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
@@ -326,6 +251,7 @@ proxy-groups:
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
