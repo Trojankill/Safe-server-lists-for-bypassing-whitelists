@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 03:15:29 UTC
+# 2026-09-27 03:30:43 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -14,6 +14,19 @@ proxies:
       public-key: KN8tFlpIwPgJGwUCG7Pp9c9c0juYKPvNIv4kFHwqbyk
       short-id: a32cfb5deca913ad
     flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇮🇷 [IR] Иран VFPARSER'
+    type: vless
+    server: ir.karmatel.ir
+    port: 10295
+    uuid: 3c8668d5-3d85-49de-9d81-1695824d356b
+    udp: true
+    tls: true
+    servername: zs.lanzivo.ir
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: R_45G_7m9djDDXv3yyV50Sv3kB_OSgd7qeRp2D5ciW0
+      short-id: 71953c13d6
     network: tcp
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -43,6 +56,34 @@ proxies:
       short-id: e254
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: snl6.subsconnect.com
+    port: 443
+    uuid: 55d21d88-ff56-4210-a44c-4c00d853ad63
+    udp: true
+    tls: true
+    servername: snl06.subsconnect.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zksXSMTi4o5RuY3REC9y64bluZ1SYYD3Jm-zkifLNAc
+      short-id: 6ebef7b4905d53f8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇸🇪 [SE] Швеция VFPARSER'
+    type: vless
+    server: 191.44.114.66
+    port: 443
+    uuid: 718b9643-20e3-4f9e-9f8d-87ce6801d55e
+    udp: true
+    tls: true
+    servername: ai.android
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: uE1WBdW9se1rQnx8Vh-a1jjaehzK-iUmCVrPui5KU3g
+      short-id: 53499a662395
+    network: grpc
+    grpc-opts:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
     server: www.large-files.info
@@ -73,6 +114,66 @@ proxies:
       short-id: b4e44a
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    type: vless
+    server: match.betust.net
+    port: 443
+    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    udp: true
+    tls: true
+    servername: apiv12nd.goonars.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: OINuDFEDTdmtFR8QRxAZfQIMPA-wJxfGN1LjB3TFUHo
+      short-id: 535a3304
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: tickets.betust.net
+    port: 443
+    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    udp: true
+    tls: true
+    servername: tickets.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: TRaUsnzFf-AhWUuW4RQUQOBYTdM-qJdLDTTkzQNkcRw
+      short-id: f70764f8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: ru-kzn.tunnelgate.org
+    port: 443
+    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
+    udp: true
+    tls: true
+    servername: ru-kzn.tunnelgate.org
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: qq
+    network: ws
+    ws-opts:
+      path: '/ws/v1/pl'
+      headers:
+        Host: ru-kzn.tunnelgate.org
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: ware.tunnelgate.org
+    port: 443
+    uuid: b80b392c-0cf4-42f9-ae54-9f862e3ba276
+    udp: true
+    tls: true
+    servername: ware.tunnelgate.org
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: qq
+    network: ws
+    ws-opts:
+      path: '/ws/v1/ru'
+      headers:
+        Host: ware.tunnelgate.org
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: fbsv6.guardora.pro
@@ -89,6 +190,22 @@ proxies:
       path: '/ws'
       headers:
         Host: fbsv6.guardora.pro
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: victoryprovpn-production-b905.up.railway.app
+    port: 443
+    uuid: ede9d391-34c5-5ee5-c89e-dd119ce35203
+    udp: true
+    tls: true
+    servername: victoryprovpn-production-b905.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws/ede9d391-34c5-5ee5-c89e-dd119ce35203'
+      headers:
+        Host: victoryprovpn-production-b905.up.railway.app
   - name: '🇭🇰 [HK] Гонконг'
     type: vmess
     server: 8.217.229.155
@@ -99,21 +216,6 @@ proxies:
     udp: true
     tls: true
     servername: qTKDR8jXE3wEFxJM.v.3dns.vip
-    network: ws
-    ws-opts:
-      path: '/ws-vmess'
-      headers:
-        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
-  - name: '🇭🇰 [HK] Гонконг'
-    type: vmess
-    server: qtkdr8jxe3wefxjm.v.3dns.vip
-    port: 443
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: qtkdr8jxe3wefxjm.v.3dns.vip
     network: ws
     ws-opts:
       path: '/ws-vmess'
@@ -163,13 +265,6 @@ proxies:
     udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
-    server: 216.105.168.156
-    port: 11330
-    cipher: aes-128-gcm
-    password: 404243f1f29932014b81216208f96031
-    udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
     server: 64.42.181.101
     port: 12995
     cipher: aes-128-gcm
@@ -208,12 +303,19 @@ proxy-groups:
     type: select
     proxies:
       - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇮🇷 [IR] Иран VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇸🇪 [SE] Швеция VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇭🇰 [HK] Гонконг'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇭🇰 [HK] Гонконг'
       - '🇺🇸 [US] США VFPARSER'
       - '🇭🇰 [HK] Гонконг VFPARSER'
@@ -221,7 +323,6 @@ proxy-groups:
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇨🇳 [CN] Китай VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
