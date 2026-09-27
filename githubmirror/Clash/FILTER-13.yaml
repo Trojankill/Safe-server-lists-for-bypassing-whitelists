@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 15:15:32 UTC
+# 2026-09-27 15:30:46 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
@@ -83,13 +83,20 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 22443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: itsallproxy.quattro-tech.ru
-    skip-cert-verify: false
+  - name: '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+    type: vless
+    server: 217.19.122.106
+    port: 10022
+    uuid: d9df60f1-281e-4582-999e-9c84282ba300
+    udp: true
+    tls: true
+    servername: 32tkm.guardora.pro
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: qTfZpilVyQrFDIgxmEsd18Ph3c_-8O-R_af4o_WQ_Tg
+      short-id: f74c6a18133e2e72
+    flow: xtls-rprx-vision
+    network: raw
 proxy-groups:
   - name: PROXY
     type: select
@@ -100,6 +107,6 @@ proxy-groups:
       - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
 rules:
   - MATCH,PROXY
