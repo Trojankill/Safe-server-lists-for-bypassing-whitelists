@@ -1,34 +1,34 @@
 # clash/mihomo subscription
-# 2026-09-27 08:30:50 UTC
+# 2026-09-27 08:45:31 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 188.225.57.223
     port: 443
-    uuid: 422a83ad-2fc5-4456-a382-d837a3c545dc
+    uuid: 0b936dc3-9fe5-47c8-8d60-ea6e860b246e
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: firefox
+    client-fingerprint: qq
     reality-opts:
       public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
-    server: 213.171.25.178
-    port: 9830
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: 37.18.14.25
+    port: 10022
+    uuid: 0b936dc3-9fe5-47c8-8d60-ea6e860b246e
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: chrome
+    servername: 32tkm.guardora.pro
+    client-fingerprint: firefox
     reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-      short-id: aabb
-    network: grpc
-    grpc-opts:
+      public-key: qTfZpilVyQrFDIgxmEsd18Ph3c_-8O-R_af4o_WQ_Tg
+      short-id: f74c6a18133e2e72
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.29
@@ -37,24 +37,12 @@ proxies:
     udp: true
     tls: true
     servername: dl.google.com
-    client-fingerprint: firefox
+    client-fingerprint: qq
     reality-opts:
       public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-      short-id: aa
+      short-id: aabb
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS XHTTP Reality'
-    type: vless
-    server: 46.243.142.42
-    port: 7443
-    uuid: 65cd649c-f2f5-49c4-8f57-94d9b706e846
-    udp: true
-    tls: true
-    servername: shprcdn.homes
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: ypzgxQ7VhTlTqjT0pAzWBIyotcG7SYqMpErwMBDci0g
-    network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
     type: vless
     server: 185.229.9.157
@@ -83,36 +71,14 @@ proxies:
       short-id: 0afbd1d3
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.184
-    port: 8444
-    uuid: d65a3ff7-232e-4991-8001-8ef578cbd4b5
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 22443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇳🇱 Нидерланды | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
