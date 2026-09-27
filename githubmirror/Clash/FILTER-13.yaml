@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 09:30:45 UTC
+# 2026-09-27 09:45:30 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
@@ -29,6 +29,32 @@ proxies:
       short-id: f74c6a18133e2e72
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
+    type: vless
+    server: 84.201.180.13
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    udp: true
+    tls: true
+    servername: api-maps.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 213.171.25.178
+    port: 9830
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+      short-id: aabb
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.29
@@ -43,6 +69,19 @@ proxies:
       short-id: aabb
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
+    type: vless
+    server: 91.215.40.26
+    port: 16443
+    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
+    udp: true
+    tls: true
+    servername: ddg.steptofsvo.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: NcusujNOLaj9kiNIAMzg3BKdb3WYXMdkCgfeNHyie1E
+      short-id: 67ca97db5f330f5f
+    network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
     type: vless
     server: 185.229.9.157
@@ -65,7 +104,7 @@ proxies:
     udp: true
     tls: true
     servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: 4Y0QLEasqtkWqfbrRedWqrZSPTnB14FDfI9q1v5SsHs
       short-id: 0afbd1d3
@@ -77,7 +116,10 @@ proxy-groups:
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
 rules:
