@@ -1,18 +1,18 @@
 # clash/mihomo subscription
-# 2026-09-27 17:45:37 UTC
+# 2026-09-27 18:00:51 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+  - name: '🇷🇺 Россия | VLESS TCP Reality'
     type: vless
-    server: 91.240.87.237
+    server: 45.11.26.198
     port: 443
-    uuid: 1b201db0-b373-455a-8ccd-fd624aaef8d3
+    uuid: 06d05a0a-f298-4be9-8fab-3de32e3fb770
     udp: true
     tls: true
-    servername: fiae3.maxtelemost.com
+    servername: acwl1.astro-wall.online
     client-fingerprint: firefox
     reality-opts:
-      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
-      short-id: 00000000
+      public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
+      short-id: 4dfbbbbefe73af81
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
@@ -29,34 +29,6 @@ proxies:
       short-id: ff0d
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
-    type: vless
-    server: 185.229.9.74
-    port: 443
-    uuid: 3ebf23f9-e64a-4cad-a970-0562bc0fd8c0
-    udp: true
-    tls: true
-    servername: www.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM
-      short-id: 0bb3fbdc6cb178d4
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
-    type: vless
-    server: 217.19.122.47
-    port: 443
-    uuid: 4b6e0604-fbd4-43fa-9950-9bf0be749153
-    udp: true
-    tls: true
-    servername: shop.dataroute.biz
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: EjaV0Cpi-uTaHAs-W8SHf9xGEjQdOlAW4EfXX5mbFjc
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.178
@@ -85,29 +57,13 @@ proxies:
       short-id: aa
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: a8082fbe-7ef3-4e20-b2dd-e498db11029b
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-      - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
-      - '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
 rules:
   - MATCH,PROXY
