@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 10:15:32 UTC
+# 2026-09-27 10:30:47 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
     type: vless
@@ -15,6 +15,20 @@ proxies:
     network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
+    server: 188.225.57.223
+    port: 443
+    uuid: 4cf91b33-f246-47a5-8844-2e850c00285f
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
     server: 213.171.25.178
     port: 9830
     uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
@@ -25,6 +39,20 @@ proxies:
     reality-opts:
       public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
       short-id: aabb
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 213.171.25.29
+    port: 9889
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aa
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
@@ -68,20 +96,6 @@ proxies:
       short-id: 0afbd1d3
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
-    type: vless
-    server: 188.225.57.223
-    port: 443
-    uuid: b917685e-d937-494c-917e-2f856aecf0f8
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -94,10 +108,11 @@ proxy-groups:
     proxies:
       - '🇷🇺 Россия | VLESS XHTTP Reality | megafon only'
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
