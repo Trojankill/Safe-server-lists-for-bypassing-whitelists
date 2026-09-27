@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-27 12:15:33 UTC
+# 2026-09-27 12:30:47 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 188.225.57.223
+    port: 443
+    uuid: 229c140f-a3c1-41e3-821e-dd727370a97e
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.178
@@ -29,6 +43,19 @@ proxies:
       short-id: aa
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
+    type: vless
+    server: 91.215.40.26
+    port: 16443
+    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
+    udp: true
+    tls: true
+    servername: ddg.steptofsvo.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: NcusujNOLaj9kiNIAMzg3BKdb3WYXMdkCgfeNHyie1E
+      short-id: 67ca97db5f330f5f
+    network: xhttp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -42,6 +69,8 @@ proxy-groups:
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
