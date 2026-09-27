@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 22:00:55 UTC
+# 2026-09-27 22:15:29 UTC
 proxies:
   - name: '🇫🇮 Финляндия [#РКП]'
     type: vless
@@ -29,6 +29,46 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 45.11.26.198
+    port: 443
+    uuid: 06d05a0a-f298-4be9-8fab-3de32e3fb770
+    udp: true
+    tls: true
+    servername: acwl1.astro-wall.online
+    client-fingerprint: random
+    reality-opts:
+      public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
+      short-id: 4dfbbbbefe73af81
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇸🇪 Швеция [#РКП]'
+    type: vless
+    server: 161.104.38.98
+    port: 443
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
+    udp: true
+    tls: true
+    servername: donatov.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
+  - name: '🇱🇻 Латвия [#РКП]'
+    type: vless
+    server: 84.38.187.169
+    port: 443
+    uuid: 553d8193-d897-0037-bb46-f075b670f22a
+    udp: true
+    tls: true
+    servername: mc.yandex.tr
+    client-fingerprint: random
+    reality-opts:
+      public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
+      short-id: 94c9dbbf07366d96
+    network: xhttp
   - name: '🇩🇪 Германия [#РКП]'
     type: vless
     server: de-gw.videomonitor.cloud
@@ -59,6 +99,20 @@ proxies:
       short-id: 64c1fe36c7846400
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: tgfree.rush-server.com
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -73,6 +127,13 @@ proxies:
     sni: msk.frkn.org
   - name: '🇷🇺 Россия [#РКП]'
     type: ss
+    server: 31.130.151.110
+    port: 888
+    cipher: chacha20-ietf-poly1305
+    password: eGhEETcnlO2yHa1Bw-xW1g
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
     server: 195.225.108.233
     port: 4500
     cipher: chacha20-ietf-poly1305
@@ -84,8 +145,13 @@ proxy-groups:
     proxies:
       - '🇫🇮 Финляндия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
+      - '🇱🇻 Латвия [#РКП]'
       - '🇩🇪 Германия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
