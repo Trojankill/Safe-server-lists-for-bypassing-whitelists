@@ -1,20 +1,29 @@
 # clash/mihomo subscription
-# 2026-09-27 20:45:31 UTC
+# 2026-09-27 21:00:52 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #101'
+    type: vmess
+    server: 158.160.211.200
+    port: 11556
+    uuid: e2733dbc-1bc6-4835-b90a-447806f9efcd
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: tcp
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #90'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: itsallproxy.quattro-tech.ru
-    skip-cert-verify: false
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды · 🇺🇸 США #75'
+    sni: hy.quattro-tech.ru
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇺🇸 США #99'
     type: hysteria2
     server: vpn.ai-boost.tech
     port: 2086
     password: d900526f-30d7-4f4b-9dbe-e98f17b6fbcc
     sni: vpn.ai-boost.tech
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #72'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #97'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -25,8 +34,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды · 🇺🇸 США #75'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #72'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #101'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #90'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇩🇪 Германия · 🇺🇸 США #99'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #97'
 rules:
   - MATCH,PROXY
