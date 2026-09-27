@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-27 15:30:46 UTC
+# 2026-09-27 15:45:35 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
@@ -28,33 +28,6 @@ proxies:
       short-id: aabb
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS RAW Reality'
-    type: vless
-    server: 37.9.4.72
-    port: 8443
-    uuid: 811cc789-005a-497a-b806-e9f4b5f3b985
-    udp: true
-    tls: true
-    servername: storage.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 18y4PTTEdVw3diJQc06EkUDp1a2gKOp7E3P1smULhDI
-      short-id: 89e0494514bb
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
-    type: vless
-    server: 91.215.40.26
-    port: 16443
-    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
-    udp: true
-    tls: true
-    servername: ddg.steptofsvo.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: NcusujNOLaj9kiNIAMzg3BKdb3WYXMdkCgfeNHyie1E
-      short-id: 67ca97db5f330f5f
-    network: xhttp
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
     type: vless
     server: 185.229.9.157
@@ -73,7 +46,7 @@ proxies:
     type: vless
     server: 188.225.57.223
     port: 443
-    uuid: d7beb5f9-94d2-4b93-ac54-6fae5253aba7
+    uuid: d9df60f1-281e-4582-999e-9c84282ba300
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
@@ -97,16 +70,22 @@ proxies:
       short-id: f74c6a18133e2e72
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 22443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: itsallproxy.quattro-tech.ru
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
