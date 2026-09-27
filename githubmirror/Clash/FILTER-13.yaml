@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-27 14:15:32 UTC
+# 2026-09-27 14:30:57 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
-    type: vless
-    server: 188.225.57.223
-    port: 443
-    uuid: 212c16e6-6b7f-4efc-8019-b2f54f0bc185
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
     server: 213.171.25.29
@@ -23,13 +9,13 @@ proxies:
     udp: true
     tls: true
     servername: dl.google.com
-    client-fingerprint: qq
+    client-fingerprint: firefox
     reality-opts:
       public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
       short-id: aabb
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 37.9.4.72
     port: 8443
@@ -42,46 +28,32 @@ proxies:
       public-key: 18y4PTTEdVw3diJQc06EkUDp1a2gKOp7E3P1smULhDI
       short-id: 89e0494514bb
     flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
+    network: raw
+  - name: '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
     type: vless
-    server: 185.229.9.157
+    server: 91.215.40.26
+    port: 16443
+    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
+    udp: true
+    tls: true
+    servername: ddg.steptofsvo.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: NcusujNOLaj9kiNIAMzg3BKdb3WYXMdkCgfeNHyie1E
+      short-id: 67ca97db5f330f5f
+    network: xhttp
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 188.225.57.223
     port: 443
-    uuid: 9e4f675b-d6bf-42d1-be55-389f622783af
+    uuid: d7beb5f9-94d2-4b93-ac54-6fae5253aba7
     udp: true
     tls: true
-    servername: 360.yandex.ru
-    client-fingerprint: safari
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
     reality-opts:
-      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
-      short-id: 27e53bbcab7593d7
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-    type: vless
-    server: 185.229.9.160
-    port: 443
-    uuid: 9e4f675b-d6bf-42d1-be55-389f622783af
-    udp: true
-    tls: true
-    servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: safari
-    reality-opts:
-      public-key: 4Y0QLEasqtkWqfbrRedWqrZSPTnB14FDfI9q1v5SsHs
-      short-id: 0afbd1d3
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: d6024461-a558-4684-9c0e-6dc6c963e537
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
@@ -96,11 +68,9 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS XHTTP Reality | Кроме mts'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Кроме megafon'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
