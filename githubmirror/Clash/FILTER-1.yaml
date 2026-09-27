@@ -1,11 +1,25 @@
 # clash/mihomo subscription
-# 2026-09-27 16:45:30 UTC
+# 2026-09-27 17:00:56 UTC
 proxies:
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇳🇱 Нидерланды [#РКП]'
+    type: vless
+    server: 185.229.9.31
+    port: 41011
+    uuid: 29fa14a3-40dd-48ac-94f1-8b0bf6eac6b1
+    udp: true
+    tls: true
+    servername: s3.t2.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: 1VyJ_wt8NjUBMGHR_jId8919MvPscyNHqFL1kNUDfCk
+      short-id: ff0d
+    network: grpc
+    grpc-opts:
+  - name: '🇸🇪 Швеция [#РКП]'
     type: vless
     server: 161.104.38.98
     port: 443
-    uuid: 553d8193-d897-0032-bb46-f075b670f22a
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
     udp: true
     tls: true
     servername: donatov.net
@@ -14,33 +28,20 @@ proxies:
       public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
       short-id: 8ba6e72ee60667f6
     network: xhttp
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇬🇧 Великобритания [#РКП]'
     type: vless
-    server: 91.215.40.26
-    port: 16443
-    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
+    server: 176.123.167.90
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: ddg.steptofsvo.com
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: NcusujNOLaj9kiNIAMzg3BKdb3WYXMdkCgfeNHyie1E
-      short-id: 67ca97db5f330f5f
-    network: xhttp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 195.133.73.65
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
-    udp: true
-    tls: true
-    servername: anyfile2file.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aabbccdd
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -53,22 +54,46 @@ proxies:
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: ss
-    server: 31.130.151.110
-    port: 888
+    server: 31.130.149.165
+    port: 1088
     cipher: chacha20-ietf-poly1305
-    password: eGhEETcnlO2yHa1Bw-xW1g
+    password: CjpRx1qwMxaVfY0dAVIFs3YG1dzffZxk
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 139.100.236.186
+    port: 777
+    cipher: chacha20-ietf-poly1305
+    password: cwQI02gbDIBBNkg-5bZ28-wNZ4FJBGUv
+    udp: true
+  - name: '🇩🇪 Германия [#РКП]'
+    type: ss
+    server: 139.100.236.49
+    port: 77
+    cipher: chacha20-ietf-poly1305
+    password: cwQI02gbDIBBNkg-5bZ28-wNZ4FJBGUv
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 195.225.108.233
+    port: 4500
+    cipher: chacha20-ietf-poly1305
+    password: rQvE_rqbOFGsP8qWA1HxmUpBeFqinJ56
     udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
+      - '🇬🇧 Великобритания [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 Германия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
