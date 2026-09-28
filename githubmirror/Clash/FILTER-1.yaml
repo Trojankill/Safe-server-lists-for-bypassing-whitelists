@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-28 18:30:46 UTC
+# 2026-09-28 18:45:31 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: vless
-    server: 158.160.160.21
-    port: 443
-    uuid: 06d05a0a-f298-0001-8fab-3de32e3fb770
-    udp: true
-    tls: true
-    servername: matrix.stargazed.space
-    client-fingerprint: random
-    reality-opts:
-      public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
-      short-id: 0e9e64843ec8
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
     server: 188.225.46.116
@@ -45,16 +31,28 @@ proxies:
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 195.133.73.65
+    server: 161.104.38.98
     port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 91.218.230.224
+    port: 443
+    uuid: dc4d4d46-d4ae-4b54-ba30-f8e241f22969
+    udp: true
+    tls: true
+    servername: cloudeg.tvss-911.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: J5r8RCXI68K7XwXhpBx2JrFKea-e-jsiYYjhwAfDnHI
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -76,24 +74,16 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 9qGcNiZj4uCi7DGSjxlg5Q
     udp: true
-  - name: '🇨🇾 Кипр [#РКП]'
-    type: ss
-    server: 80.242.57.97
-    port: 3
-    cipher: chacha20-ietf-poly1305
-    password: 9qGcNiZj4uCi7DGSjxlg5Q
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇳🇱 Нидерланды [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
       - '🇩🇪 Германия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇳🇴 Норвегия [#РКП]'
-      - '🇨🇾 Кипр [#РКП]'
 rules:
   - MATCH,PROXY

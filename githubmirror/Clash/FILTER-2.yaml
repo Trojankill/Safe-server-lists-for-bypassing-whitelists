@@ -1,27 +1,23 @@
 # clash/mihomo subscription
-# 2026-09-28 18:31:03 UTC
+# 2026-09-28 18:45:32 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #46'
-    type: vmess
-    server: 158.160.211.200
-    port: 11556
-    uuid: e2733dbc-1bc6-4835-b90a-447806f9efcd
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: tcp
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #41'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #70'
+    type: hysteria2
+    server: 84.252.100.204
+    port: 8227
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: sw.lumenvpn.tech
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #46'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #41'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #74'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #70'
 rules:
   - MATCH,PROXY
