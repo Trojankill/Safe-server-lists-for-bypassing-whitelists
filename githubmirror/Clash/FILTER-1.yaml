@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-28 05:30:41 UTC
+# 2026-09-28 05:45:31 UTC
 proxies:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
@@ -17,46 +17,32 @@ proxies:
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: v2.convertermini.fit
+    server: 158.160.160.21
     port: 443
-    uuid: 0082f629-fe72-40b0-8e62-ba358eaacbde
+    uuid: 06d05a0a-f298-0001-8fab-3de32e3fb770
     udp: true
     tls: true
-    servername: v2.convertermini.fit
-    client-fingerprint: random
-    reality-opts:
-      public-key: WrrPv_Uwwhb3Jpds7vUPTuNG-ifDlNMMnB_gKVDY71M
-      short-id: 43dcff53849b81e6
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: vless
-    server: 188.225.46.116
-    port: 443
-    uuid: 06d05a0a-f298-0004-8fab-3de32e3fb770
-    udp: true
-    tls: true
-    servername: nexus.stargazed.space
+    servername: matrix.stargazed.space
     client-fingerprint: random
     reality-opts:
       public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
-      short-id: de9719220a
+      short-id: 0e9e64843ec8
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
-    server: 45.93.201.119
+    server: 45.11.26.198
     port: 443
-    uuid: 10394279-283c-4ab8-8529-f1e0a4c61bc8
+    uuid: 06d05a0a-f298-4be9-8fab-3de32e3fb770
     udp: true
     tls: true
-    servername: vir2albridge.com
+    servername: acwl1.astro-wall.online
     client-fingerprint: random
     reality-opts:
-      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
-      short-id: 6f3c1b8e5d2a4f7c
-    network: grpc
-    grpc-opts:
+      public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
+      short-id: 4dfbbbbefe73af81
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: vless
     server: 5.42.96.76
@@ -71,75 +57,47 @@ proxies:
       short-id: 7f2e9c4b1a8d6e55
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 Великобритания [#РКП]'
+  - name: '🇸🇪 Швеция [#РКП]'
     type: vless
-    server: 176.123.167.90
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aabbccdd
-    network: grpc
-    grpc-opts:
-  - name: '🇱🇹 Литва [#РКП]'
-    type: vless
-    server: 188.225.25.195
+    server: 161.104.38.98
     port: 443
-    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
     udp: true
     tls: true
-    servername: app25.betust.net
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: Fe_144ALuRRedGs06ljDnE1f_G2B2wE4i9_diqw5LnY
-      short-id: a16bc894
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇱🇹 Литва [#РКП]'
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
+  - name: '🇵🇱 Польша [#РКП]'
     type: vless
-    server: 188.225.44.89
-    port: 443
-    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    server: 87.239.106.24
+    port: 28447
+    uuid: 68d89911-b92d-46fe-9007-3645c3b285f0
     udp: true
     tls: true
-    servername: app12.betust.net
+    servername: pl.sparxiecn.com
+    alpn:
+      - 'h2%2Chttp%2F1.1'
     client-fingerprint: random
-    reality-opts:
-      public-key: Fgd7fSq-ZXnAZd3GUYGEfTyiz9wno4IWVIcs7-Narwg
-      short-id: f73ac93d
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
+    network: ws
+    ws-opts:
+      path: '/lovelive'
+      headers:
+        Host: pl.sparxiecn.com
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 188.225.58.238
-    port: 443
-    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    server: 191.44.38.143
+    port: 8443
+    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
     udp: true
     tls: true
-    servername: app5.betust.net
+    servername: nl2.yabloko.top
     client-fingerprint: random
     reality-opts:
-      public-key: laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk
-      short-id: e84029c5
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 37.252.23.165
-    port: 443
-    uuid: d3aeadf0-94bd-46bd-88f5-ed920a3449fd
-    udp: true
-    tls: true
-    servername: ru.netgridflow.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: nilJ07r1KZ0-KhmRNYeICXGhM9HeG9uxnRaqjYz3fWg
-      short-id: dda29ff7e5832d15
-    flow: xtls-rprx-vision
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
@@ -167,12 +125,12 @@ proxies:
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇸🇪 Швеция [#РКП]'
     type: ss
-    server: 31.130.151.110
-    port: 888
-    cipher: chacha20-ietf-poly1305
-    password: eGhEETcnlO2yHa1Bw-xW1g
+    server: 188.225.78.31
+    port: 2053
+    cipher: 2022-blake3-aes-256-gcm
+    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
     udp: true
 proxy-groups:
   - name: PROXY
@@ -180,17 +138,14 @@ proxy-groups:
     proxies:
       - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇬🇧 Великобритания [#РКП]'
-      - '🇱🇹 Литва [#РКП]'
-      - '🇱🇹 Литва [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
+      - '🇵🇱 Польша [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
 rules:
   - MATCH,PROXY
