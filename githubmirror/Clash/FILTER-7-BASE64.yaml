@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-28 22:30:43 UTC
+# 2026-09-28 22:45:33 UTC
 proxies:
   - name: '172.🇺🇸США | @LimeVPNFREE'
     type: vless
@@ -388,21 +388,6 @@ proxies:
       short-id: f54ec8b46381247f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇪🇺 AetrisVPN'
-    type: vless
-    server: cdn1.pandaonline.org
-    port: 443
-    uuid: 3e628fe4-2cbf-4740-9e49-d8b5d9b61916
-    udp: true
-    tls: true
-    servername: cdn1.pandaonline.org
-    alpn:
-      - h3
-    network: ws
-    ws-opts:
-      path: '/stream/119857546/chat'
-      headers:
-        Host: cdn1.pandaonline.org
   - name: '58.🇳🇱Нидерланды | @LimeVPNFREE'
     type: vless
     server: 78.159.250.214
@@ -472,20 +457,6 @@ proxies:
       short-id: ef1d3554c652a436
     flow: xtls-rprx-vision
     network: raw
-  - name: '62.🇷🇺Россия | @LimeVPNFREE'
-    type: vless
-    server: 193.233.247.60
-    port: 443
-    uuid: 5413edfb-08d6-4fba-b51c-809c04feb127
-    udp: true
-    tls: true
-    servername: www.chitai-gorod.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: c5VEuaQj6ClJwRZvXbXwb2vMBxdye2O-0jHi2Q3NEGU
-      short-id: 7e93843097e0c549
-    network: grpc
-    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 161.104.38.98
@@ -1531,6 +1502,18 @@ proxies:
     port: 8227
     password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
     sni: sw.lumenvpn.tech
+  - name: '🇳🇱 The Netherlands [SNI-RU] tcp-reset-club.net'
+    type: hysteria2
+    server: nl01ntrhy01.tcp-reset-club.net
+    port: 443
+    password: aa6f8aaf-d7ff-46f8-a9a0-d143d7e71f71
+    sni: tcp-reset-club.net
+  - name: '🇷🇴 Romania [SNI-RU] tcp-reset-club.net'
+    type: hysteria2
+    server: rou0001ntrhy01.tcp-reset-club.net
+    port: 443
+    password: aa6f8aaf-d7ff-46f8-a9a0-d143d7e71f71
+    sni: tcp-reset-club.net
   - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
@@ -1752,13 +1735,11 @@ proxy-groups:
       - '2 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 9/10'
       - '117.🇩🇪Германия | @LimeVPNFREE'
       - '241.🇺🇦Украина | @LimeVPNFREE'
-      - '🇪🇺 AetrisVPN'
       - '58.🇳🇱Нидерланды | @LimeVPNFREE'
       - '138.🇪🇪Эстония | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: www.tradingview.com ┃ 🇫🇮 Финляндия'
       - '🇷🇺➜🇳🇱 GidroksiFree #5 | 🔗Каскад | 🛡БС | 🟢LTE | 1526ms | ↓0.0Mbps'
       - '1034 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '62.🇷🇺Россия | @LimeVPNFREE'
       - '🏴 Неизвестный [#РКП]'
       - '191.🇷🇴Румыния | @LimeVPNFREE'
       - '182.🇺🇸США | @LimeVPNFREE'
@@ -1841,6 +1822,8 @@ proxy-groups:
       - '🇷🇺 Россия — Moscow'
       - '5299 | 🇰🇷 South Korea | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇸🇪 Швеция [🏳️LTE] | 🥭🔧'
+      - '🇳🇱 The Netherlands [SNI-RU] tcp-reset-club.net'
+      - '🇷🇴 Romania [SNI-RU] tcp-reset-club.net'
       - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '3827 | 🇷🇺 Russia | 🏳️ CIDR-TimeWeb | SS | TG: @YoutubeUnBlockRu'
       - '🇺🇸 AetrisVPN'
