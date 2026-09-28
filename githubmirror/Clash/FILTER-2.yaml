@@ -1,7 +1,17 @@
 # clash/mihomo subscription
-# 2026-09-28 10:15:42 UTC
+# 2026-09-28 10:30:46 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #21'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
+    type: vmess
+    server: 158.160.211.200
+    port: 11556
+    uuid: e2733dbc-1bc6-4835-b90a-447806f9efcd
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: tcp
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #61'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
@@ -11,6 +21,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #21'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #67'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #61'
 rules:
   - MATCH,PROXY
