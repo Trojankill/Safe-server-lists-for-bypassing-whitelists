@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-28 02:45:30 UTC
+# 2026-09-28 03:00:58 UTC
 proxies:
-  - name: '🇩🇪 Germany — #121'
-    type: vless
-    server: 185.86.144.101
-    port: 443
-    uuid: 02d89ad4-bb61-4c24-9985-a6ab50e6e87e
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #91'
+  - name: '🇩🇪 Germany — #67'
     type: vless
     server: 188.225.57.223
     port: 443
@@ -28,7 +15,7 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇬🇧 United Kingdom — #133'
+  - name: '🇬🇧 United Kingdom — #111'
     type: vless
     server: 217.19.122.106
     port: 10022
@@ -42,7 +29,21 @@ proxies:
       short-id: f74c6a18133e2e72
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇱🇹 Lithuania — #162'
+  - name: '🇫🇷 France — #106'
+    type: vless
+    server: 91.240.87.237
+    port: 443
+    uuid: 1b201db0-b373-455a-8ccd-fd624aaef8d3
+    udp: true
+    tls: true
+    servername: fiae3.maxtelemost.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
+      short-id: 00000000
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇱🇹 Lithuania — #142'
     type: vless
     server: 194.87.239.50
     port: 443
@@ -69,7 +70,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇱 The Netherlands — #189'
+  - name: '🇳🇱 The Netherlands — #159'
     type: vless
     server: 46.243.142.192
     port: 8444
@@ -82,20 +83,20 @@ proxies:
       public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
     network: grpc
     grpc-opts:
-  - name: '🇬🇧 United Kingdom — #129'
+  - name: '🇩🇪 Germany — #98'
     type: vless
-    server: 84.38.181.249
+    server: 185.86.144.101
     port: 443
-    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
+    uuid: b362a214-a03f-4bb8-90de-d09c97d3392b
     udp: true
     tls: true
-    servername: open.spotify.com
-    client-fingerprint: safari
+    servername: yandex.ru
+    client-fingerprint: chrome
     reality-opts:
-      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
-      short-id: 6bc02f1c474260c3
-    network: xhttp
-  - name: '🇸🇪 Sweden — #214'
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇸🇪 Sweden — #172'
     type: vless
     server: 82.202.178.131
     port: 31443
@@ -109,7 +110,7 @@ proxies:
       short-id: e351ebf520
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #74'
+  - name: '🇩🇪 Germany — #66'
     type: vless
     server: 78.159.247.151
     port: 50097
@@ -127,14 +128,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Germany — #121'
-      - '🇩🇪 Germany — #91'
-      - '🇬🇧 United Kingdom — #133'
-      - '🇱🇹 Lithuania — #162'
+      - '🇩🇪 Germany — #67'
+      - '🇬🇧 United Kingdom — #111'
+      - '🇫🇷 France — #106'
+      - '🇱🇹 Lithuania — #142'
       - '🇷🇺 Beget — #7'
-      - '🇳🇱 The Netherlands — #189'
-      - '🇬🇧 United Kingdom — #129'
-      - '🇸🇪 Sweden — #214'
-      - '🇩🇪 Germany — #74'
+      - '🇳🇱 The Netherlands — #159'
+      - '🇩🇪 Germany — #98'
+      - '🇸🇪 Sweden — #172'
+      - '🇩🇪 Germany — #66'
 rules:
   - MATCH,PROXY
