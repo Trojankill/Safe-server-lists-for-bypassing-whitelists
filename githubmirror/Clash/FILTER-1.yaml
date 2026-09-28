@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-28 14:45:34 UTC
+# 2026-09-28 15:01:00 UTC
 proxies:
   - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
@@ -29,7 +29,7 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇷 Франция [#РКП]'
+  - name: '🇮🇸 Исландия [#РКП]'
     type: vless
     server: 85.193.94.217
     port: 443
@@ -43,45 +43,18 @@ proxies:
       short-id: 52ccb3687fe0b7ec
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 161.104.38.98
-    port: 443
-    uuid: 553d8193-d897-0032-bb46-f075b670f22a
-    udp: true
-    tls: true
-    servername: donatov.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
-  - name: '🇮🇹 Италия [#РКП]'
-    type: vless
-    server: 185.229.9.16
-    port: 1443
-    uuid: 6ccd9a9b-716e-4ca7-aa45-bf415ff5909f
-    udp: true
-    tls: true
-    servername: ligastavok.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: eIwe5pSZs414JJDSuBA3R4-ikllq0oITezzVIdUkACI
-      short-id: ad7dab462a323acb
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 195.133.73.65
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    server: du-rov.secureservice.top
+    port: 8443
+    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: du-rov.secureservice.top
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
+      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+      short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -108,12 +81,19 @@ proxies:
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
-  - name: '🇵🇱 Польша [#РКП]'
+  - name: '🇳🇴 Норвегия [#РКП]'
     type: ss
-    server: 188.225.78.31
-    port: 2053
-    cipher: 2022-blake3-aes-256-gcm
-    password: 'g4h/AcJh1+jg9+yonlMK4Wq7fhbFY3NkcOzUVlZ9GjU='
+    server: 80.242.57.97
+    port: 1
+    cipher: chacha20-ietf-poly1305
+    password: 9qGcNiZj4uCi7DGSjxlg5Q
+    udp: true
+  - name: '🇨🇾 Кипр [#РКП]'
+    type: ss
+    server: 80.242.57.97
+    port: 3
+    cipher: chacha20-ietf-poly1305
+    password: 9qGcNiZj4uCi7DGSjxlg5Q
     udp: true
 proxy-groups:
   - name: PROXY
@@ -121,14 +101,13 @@ proxy-groups:
     proxies:
       - '🇳🇱 Нидерланды [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
-      - '🇫🇷 Франция [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇮🇹 Италия [#РКП]'
+      - '🇮🇸 Исландия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
       - '🇦🇹 Австрия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇵🇱 Польша [#РКП]'
+      - '🇳🇴 Норвегия [#РКП]'
+      - '🇨🇾 Кипр [#РКП]'
 rules:
   - MATCH,PROXY
