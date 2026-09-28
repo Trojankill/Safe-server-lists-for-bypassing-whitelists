@@ -1,35 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-28 09:15:30 UTC
+# 2026-09-28 09:30:44 UTC
 proxies:
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 5.42.96.76
-    port: 443
-    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
-    udp: true
-    tls: true
-    servername: ruself.yandex-api.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
-      short-id: 7f2e9c4b1a8d6e55
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: vless
-    server: 185.229.9.31
-    port: 49175
-    uuid: 29fa14a3-40dd-48ac-94f1-8b0bf6eac6b1
-    udp: true
-    tls: true
-    servername: max.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: xnWGzgAkUvHwQ7iDHFhkgyRUmBL1VV-H-F1rfll48BI
-      short-id: a1b2c3d4
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇫🇷 Франция [#РКП]'
     type: vless
     server: 85.193.94.217
     port: 443
@@ -43,19 +15,20 @@ proxies:
       short-id: 52ccb3687fe0b7ec
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
-    server: 191.44.38.143
-    port: 8443
-    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
+    server: 5.42.114.41
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: nl2.yabloko.top
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
-      short-id: 1c10c8c03e2f0484
-    network: tcp
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aabb
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 195.133.73.65
@@ -76,21 +49,41 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇳🇱 Нидерланды [#РКП]'
+    type: hysteria2
+    server: 195.58.37.76
+    port: 8111
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: nl5.lumenvpn.tech
+  - name: '🇦🇹 Австрия [#РКП]'
+    type: hysteria2
+    server: 5.129.255.2
+    port: 8229
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: au1.lumenvpn.tech
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 90.156.203.62
+    port: 5112
+    cipher: chacha20-ietf-poly1305
+    password: VVlAff77CnAU43Aoc5j15Y
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇫🇷 Франция [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇦🇹 Австрия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
