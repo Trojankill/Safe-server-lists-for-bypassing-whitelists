@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-09-28 11:15:31 UTC
+# 2026-09-28 11:30:45 UTC
 proxies:
-  - name: '🇫🇷 Франция [#РКП]'
+  - name: '🇳🇱 Нидерланды [#РКП]'
+    type: vless
+    server: 188.225.46.116
+    port: 443
+    uuid: 06d05a0a-f298-0004-8fab-3de32e3fb770
+    udp: true
+    tls: true
+    servername: nexus.stargazed.space
+    client-fingerprint: random
+    reality-opts:
+      public-key: RMjWKm3Jj09ytfHD-90J0c3qdpQtjqJ4muUSAuF2eXQ
+      short-id: de9719220a
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 Германия [#РКП]'
     type: vless
     server: 85.193.94.217
     port: 443
@@ -15,34 +29,19 @@ proxies:
       short-id: 52ccb3687fe0b7ec
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇸🇪 Швеция [#РКП]'
     type: vless
-    server: 5.42.114.41
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aabb
-    network: grpc
-    grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 195.133.73.65
+    server: 161.104.38.98
     port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -67,24 +66,16 @@ proxies:
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 90.156.203.62
-    port: 5112
-    cipher: chacha20-ietf-poly1305
-    password: VVlAff77CnAU43Aoc5j15Y
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇫🇷 Франция [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇩🇪 Германия [#РКП]'
+      - '🇸🇪 Швеция [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды [#РКП]'
       - '🇦🇹 Австрия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
