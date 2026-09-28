@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-28 00:00:56 UTC
+# 2026-09-28 00:15:30 UTC
 proxies:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
@@ -42,6 +42,34 @@ proxies:
       public-key: Vh3wggwHjUKIEPw37Fjzm6x4hbuTb8WcyfRHwdljYk8
       short-id: e2504a30a3ffaf61
     network: tcp
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: vless
+    server: sde1.subsconnect.com
+    port: 443
+    uuid: 55d21d88-ff56-4210-a44c-4c00d853ad63
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: gDZ5Ddo3albCw8ChoudlrzLWHWfGth3G1db2bIaEfTw
+      short-id: e254
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: snl6.subsconnect.com
+    port: 443
+    uuid: 55d21d88-ff56-4210-a44c-4c00d853ad63
+    udp: true
+    tls: true
+    servername: snl06.subsconnect.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: zksXSMTi4o5RuY3REC9y64bluZ1SYYD3Jm-zkifLNAc
+      short-id: 6ebef7b4905d53f8
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: 103.245.229.32
@@ -68,6 +96,20 @@ proxies:
     reality-opts:
       public-key: OINuDFEDTdmtFR8QRxAZfQIMPA-wJxfGN1LjB3TFUHo
       short-id: 535a3304
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: subscribe.betust.net
+    port: 443
+    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    udp: true
+    tls: true
+    servername: subscribe.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: 6qbnUXper_wImNs0YVUh93oCcnAojWAnLBRW7hxvslw
+      short-id: 9a264653
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
@@ -100,6 +142,35 @@ proxies:
       path: '/ws'
       headers:
         Host: fbsv6.guardora.pro
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: qtkdr8jxe3wefxjm.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: 8.217.229.155
+    port: 443
+    uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: qTKDR8jXE3wEFxJM.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: qTKDR8jXE3wEFxJM.v.3dns.vip
   - name: '🇺🇸 [US] США'
     type: vmess
     server: guanwang.awsno.com
@@ -121,6 +192,13 @@ proxies:
     port: 443
     cipher: 2022-blake3-aes-128-gcm
     password: '7VOMWk6RwicM3IKLPijKrA=='
+    udp: true
+  - name: '🇹🇼 [TW] Тайвань VFPARSER'
+    type: ss
+    server: r3mrcg001286ek2.cybervena.com
+    port: 50099
+    cipher: chacha20-ietf-poly1305
+    password: 7e731ec3-f8e1-43f6-92cf-3978d14705c4
     udp: true
   - name: '🇮🇩 [ID] Индонезия VFPARSER'
     type: ss
@@ -164,6 +242,13 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 9epp3o9ng8ej59uv
     udp: true
+  - name: '🇨🇳 [CN] Китай VFPARSER'
+    type: ss
+    server: 124.151.25.50
+    port: 8020
+    cipher: aes-128-gcm
+    password: 2wsxcde3
+    udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
     server: 84.247.155.196
@@ -199,13 +284,6 @@ proxies:
     cipher: aes-256-gcm
     password: pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL
     udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: 51.222.141.125
-    port: 445
-    cipher: aes-256-gcm
-    password: zDNVedRFPQexG9v
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
@@ -213,23 +291,29 @@ proxy-groups:
       - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇭🇰 [HK] Гонконг'
+      - '🇭🇰 [HK] Гонконг'
       - '🇺🇸 [US] США'
       - '🇺🇸 [US] США VFPARSER'
+      - '🇹🇼 [TW] Тайвань VFPARSER'
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇷🇴 [RO] Румыния VFPARSER'
       - '🇷🇴 [RO] Румыния VFPARSER'
       - '🇷🇴 [RO] Румыния VFPARSER'
       - '🇷🇴 [RO] Румыния VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇨🇳 [CN] Китай VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
