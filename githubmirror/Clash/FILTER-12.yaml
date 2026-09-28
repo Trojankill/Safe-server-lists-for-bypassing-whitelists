@@ -1,6 +1,66 @@
 # clash/mihomo subscription
-# 2026-09-28 21:45:30 UTC
+# 2026-09-28 22:00:54 UTC
 proxies:
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: nl-1.omuservice.tech
+    port: 8443
+    uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
+    udp: true
+    tls: true
+    servername: www.ozone.nl
+    client-fingerprint: random
+    reality-opts:
+      public-key: XgdHElYEGdc0A5NTZP4uTya2Y4WTKnfFV4ormD7rLx4
+      short-id: debb
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: nl-3.omuvpn.tech
+    port: 443
+    uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
+    udp: true
+    tls: true
+    servername: ozone.nl
+    client-fingerprint: random
+    reality-opts:
+      public-key: 94vM83D04n5QHxwxT-DSY8Q5YqGjMFEHnDVS_M-L2wc
+      short-id: 5d8ec7b1dbc0
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: vyvoz-musora.cc
+    port: 443
+    uuid: 365de9e9-ba29-4819-af2d-766f9638e3be
+    udp: true
+    tls: true
+    servername: vyvoz-musora.cc
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: edge
+    network: ws
+    ws-opts:
+      path: '/e8ws'
+      headers:
+        Host: vyvoz-musora.cc
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: lands.zavqeron.ir
+    port: 2053
+    uuid: 49b65d3a-b53e-45d0-b71e-f295146849c8
+    udp: true
+    tls: true
+    servername: zavqeron.ir
+    alpn:
+      - 'h3%2Ch2%2Chttp/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/nl-cdn'
+      headers:
+        Host: lands.zavqeron.ir
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
     server: sde1.subsconnect.com
@@ -15,6 +75,20 @@ proxies:
       short-id: e254
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇨🇾 [CY] Кипр VFPARSER'
+    type: vless
+    server: hydra.yokkastars.com
+    port: 2443
+    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
+    udp: true
+    tls: true
+    servername: deepl.com
+    client-fingerprint: qq
+    reality-opts:
+      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
+      short-id: 92c32de179e5d908
+    network: grpc
+    grpc-opts:
   - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
     server: 103.245.229.32
@@ -27,6 +101,36 @@ proxies:
     reality-opts:
       public-key: sUDdxp5g9lRHlVEH6meJWXah84yhLDyVI7KuZhW-MTQ
       short-id: b4e44a
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: victoryprovpn-production-aa9f.up.railway.app
+    port: 443
+    uuid: 8f6e1d7f-1cdb-2f99-ffbe-988c484f6881
+    udp: true
+    tls: true
+    servername: victoryprovpn-production-aa9f.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: ios
+    network: ws
+    ws-opts:
+      path: '/ws/8f6e1d7f-1cdb-2f99-ffbe-988c484f6881'
+      headers:
+        Host: victoryprovpn-production-aa9f.up.railway.app
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: subscribe.betust.net
+    port: 443
+    uuid: 94877739-3af6-4fbb-85b6-ca6fe86c7696
+    udp: true
+    tls: true
+    servername: subscribe.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: 6qbnUXper_wImNs0YVUh93oCcnAojWAnLBRW7hxvslw
+      short-id: 9a264653
     flow: xtls-rprx-vision
     network: tcp
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
@@ -43,6 +147,36 @@ proxies:
       short-id: 3b74d85e
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇨🇾 [CY] Кипр VFPARSER'
+    type: vless
+    server: india.letsconnectpoint.com
+    port: 443
+    uuid: a368752a-32fc-42f3-980a-6b049218b23f
+    udp: true
+    tls: true
+    servername: india.letsconnectpoint.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: erUEmyU1QK8y2corQh9bOjk0oHl2Mo6Z9WgoyKg_rC0
+      short-id: c1e3d5d4
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: victoryprovpn-production-e95a.up.railway.app
+    port: 443
+    uuid: b4a433b0-6661-c68d-ad79-1b0b439df694
+    udp: true
+    tls: true
+    servername: victoryprovpn-production-e95a.up.railway.app
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: ios
+    network: ws
+    ws-opts:
+      path: '/ws/b4a433b0-6661-c68d-ad79-1b0b439df694'
+      headers:
+        Host: victoryprovpn-production-e95a.up.railway.app
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: fbsv6.guardora.pro
@@ -59,38 +193,35 @@ proxies:
       path: '/ws'
       headers:
         Host: fbsv6.guardora.pro
-  - name: '🏳️ Белый айпи | 🇵🇱 [PL] Польша VFPARSER'
-    type: vless
-    server: 83.168.89.185
-    port: 9443
-    uuid: e60bc99b-6630-4799-af84-f90ebdc643b6
-    udp: true
-    tls: true
-    servername: ya.ru
-    client-fingerprint: randomized
-    reality-opts:
-      public-key: 8Psrf1KEB56yBqaxcNhwcVWJ0_t6in3UP-QVkmVobVw
-    network: grpc
-    grpc-opts:
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: trojan
-    server: cz-musica.moritech.net
-    port: 443
-    password: f8b-U5TxjNRYKLvU0Js_6YeMCdj_82km
-    udp: true
-    sni: cz-musica.moritech.net
-    alpn:
-      - h2
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
+  - name: '🇭🇰 [HK] Гонконг'
     type: vmess
-    server: 158.160.211.200
-    port: 11556
-    uuid: e2733dbc-1bc6-4835-b90a-447806f9efcd
+    server: nycqg19zkwacpm1b.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
     alterId: 0
     cipher: auto
     udp: true
     tls: true
-    network: tcp
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: nycqg19zkwacpm1b.v.3dns.vip
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: vah4urdzl3jdx5r2.v.3dns.vip
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: VAH4URdZL3jDX5r2.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: VAH4URdZL3jDX5r2.v.3dns.vip
   - name: '🇺🇸 [US] США'
     type: vmess
     server: guanwang.awsno.com
@@ -106,13 +237,6 @@ proxies:
       path: '/hls/cctv5phd.m3u8'
       headers:
         Host: guanwang.awsno.com
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: ss
-    server: 141.148.230.108
-    port: 45819
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'mlWD9u1sjOnwYOKi6HUtwdwWnaGR+Rj8CC5a5N88lbY='
-    udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
     server: 67.215.235.109
@@ -120,12 +244,33 @@ proxies:
     cipher: 2022-blake3-aes-128-gcm
     password: '7VOMWk6RwicM3IKLPijKrA=='
     udp: true
+  - name: '🇮🇩 [ID] Индонезия VFPARSER'
+    type: ss
+    server: 103.160.63.199
+    port: 31348
+    cipher: chacha20-ietf-poly1305
+    password: 8C5valhOd8vfwaTXUSZ6Zyb0Ip34lRR5z7P8az
+    udp: true
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 45.128.12.20
     port: 14249
     cipher: chacha20-ietf-poly1305
     password: 9epp3o9ng8ej59uv
+    udp: true
+  - name: '🇹🇷 [TR] Турция VFPARSER'
+    type: ss
+    server: istan17.zavqeron.ir
+    port: 8389
+    cipher: chacha20-ietf-poly1305
+    password: Gc9jTDnPAeTz4Z8jDbqI2A
+    udp: true
+  - name: '🇩🇪 [DE] Германия VFPARSER'
+    type: ss
+    server: shep17.zavqeron.ir
+    port: 8391
+    cipher: chacha20-ietf-poly1305
+    password: Gc9jTDnPAeTz4Z8jDbqI2A
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -155,48 +300,34 @@ proxies:
     cipher: aes-256-gcm
     password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: 51.222.155.32
-    port: 5003
-    cipher: aes-256-gcm
-    password: g5MeD6Ft3CWlJId
-    udp: true
-  - name: '🇵🇱 [PL] Польша VFPARSER'
-    type: ss
-    server: 146.59.116.19
-    port: 17000
-    cipher: aes-256-gcm
-    password: pX0uhU3ZjUcLWYs0Vez55BO3JoQrRlL
-    udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: 51.222.141.125
-    port: 445
-    cipher: aes-256-gcm
-    password: zDNVedRFPQexG9v
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🏳️ Белый айпи | 🇵🇱 [PL] Польша VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
-      - '🇺🇸 [US] США'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇨🇾 [CY] Кипр VFPARSER'
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇨🇾 [CY] Кипр VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇭🇰 [HK] Гонконг'
+      - '🇭🇰 [HK] Гонконг'
+      - '🇺🇸 [US] США'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇹🇷 [TR] Турция VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇵🇱 [PL] Польша VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
