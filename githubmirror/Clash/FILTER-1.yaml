@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-29 10:15:31 UTC
+# 2026-09-29 10:30:45 UTC
 proxies:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: ru-test.omuservice.tech
-    port: 8443
-    uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
-    udp: true
-    tls: true
-    servername: www.ozone.nl
-    client-fingerprint: random
-    reality-opts:
-      public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
-      short-id: 8024
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 Германия [#РКП]'
+  - name: '🇵🇱 Польша [#РКП]'
     type: vless
     server: 85.193.94.217
     port: 443
@@ -44,16 +30,70 @@ proxies:
     network: xhttp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: du-rov.secureservice.top
-    port: 8443
-    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
+    server: 84.38.187.169
+    port: 443
+    uuid: 553d8193-d897-0037-bb46-f075b670f22a
     udp: true
     tls: true
-    servername: du-rov.secureservice.top
+    servername: mc.yandex.tr
     client-fingerprint: random
     reality-opts:
-      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-      short-id: 3cbc3d737fb9c4af
+      public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
+      short-id: 94c9dbbf07366d96
+    network: xhttp
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 176.109.105.186
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 5.129.249.45
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 ФРГ [#РКП]'
+    type: vless
+    server: 82.202.138.46
+    port: 9891
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+    network: grpc
+    grpc-opts:
+  - name: '🇵🇱 Польша [#РКП]'
+    type: vless
+    server: 109.120.181.153
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -62,14 +102,25 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 90.156.203.62
+    port: 5112
+    cipher: chacha20-ietf-poly1305
+    password: VVlAff77CnAU43Aoc5j15Y
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇵🇱 Польша [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇩🇪 Германия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇵🇱 Польша [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
