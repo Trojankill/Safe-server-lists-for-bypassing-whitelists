@@ -1,46 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-29 12:30:48 UTC
+# 2026-09-29 12:45:36 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
+  - name: '🇩🇪 Германия | VLESS RAW Reality'
     type: vless
-    server: 185.241.195.151
-    port: 9444
-    uuid: 0b353c88-7746-45f8-baf1-b6bf15dd5d9e
+    server: 185.134.200.243
+    port: 49000
+    uuid: 22f1ad12-b224-409f-9d0d-0150caee7a90
     udp: true
     tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
+    servername: static-r5q1ml4-games.cdn-mirror.net
+    client-fingerprint: random
     reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
+      public-key: LQypRJXu7PXJqo1ZKfaIgamOjl58R2CtSYUXjroQQw0
+      short-id: fdbcfbf9d14832fb
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
-    type: vless
-    server: 45.9.24.125
-    port: 8443
-    uuid: 0b353c88-7746-45f8-baf1-b6bf15dd5d9e
-    udp: true
-    tls: true
-    servername: an9b3d-07.p.portshaper.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-      short-id: eea4ab7bddaeea39
-    network: xhttp
-  - name: '🇷🇺 Россия | VLESS XHTTP Reality'
-    type: vless
-    server: 94.139.255.254
-    port: 5443
-    uuid: 0b353c88-7746-45f8-baf1-b6bf15dd5d9e
-    udp: true
-    tls: true
-    servername: shprcdn.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
-      short-id: eea4ab7bddaeea39
-    network: xhttp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -51,9 +25,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS RAW Reality | Кроме mts'
-      - '🇷🇺 Россия | VLESS XHTTP Reality'
-      - '🇷🇺 Россия | VLESS XHTTP Reality'
+      - '🇩🇪 Германия | VLESS RAW Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
