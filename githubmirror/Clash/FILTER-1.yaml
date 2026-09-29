@@ -1,18 +1,18 @@
 # clash/mihomo subscription
-# 2026-09-29 17:01:07 UTC
+# 2026-09-29 17:15:29 UTC
 proxies:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: ru-test.omuservice.tech
+    server: 83.222.8.125
     port: 8443
-    uuid: 6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5
+    uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
     udp: true
     tls: true
-    servername: www.ozone.nl
+    servername: ozone.nl
     client-fingerprint: random
     reality-opts:
       public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
-      short-id: a378b3
+      short-id: ccbe97abe7
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇵🇱 Польша [#РКП]'
@@ -30,32 +30,11 @@ proxies:
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 81.31.246.15
-    port: 443
-    uuid: ae0d0211-b7dc-461d-9d41-1eb224876f30
-    udp: true
-    tls: true
-    servername: gateru.responsiblecare.uk
-    client-fingerprint: random
-    reality-opts:
-      public-key: Zkjmoy79UuCGCS5_4fMfhv0lXDvgBjUTT7jCdQoWdQQ
-      short-id: 2ad4123458ff3fe5
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇫🇮 Финляндия [#РКП]'
-    type: ss
-    server: 139.100.236.123
-    port: 77
-    cipher: chacha20-ietf-poly1305
-    password: 5oqJfg8HYHNhmlereZ3BWWx31INfoXTJ
-    udp: true
   - name: '🇷🇺 Россия [#РКП]'
     type: ss
     server: 62.181.53.170
@@ -63,30 +42,12 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 9qGcNiZj4uCi7DGSjxlg5Q
     udp: true
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 135.106.228.252
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: S3RC92kbVfEODumWv8DGgew8zCuLbDlq
-    udp: true
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 90.156.203.62
-    port: 5112
-    cipher: chacha20-ietf-poly1305
-    password: VVlAff77CnAU43Aoc5j15Y
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏴 Неизвестный [#РКП]'
       - '🇵🇱 Польша [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇫🇮 Финляндия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
