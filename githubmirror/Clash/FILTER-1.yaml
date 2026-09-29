@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-29 06:45:31 UTC
+# 2026-09-29 07:00:53 UTC
 proxies:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
@@ -8,14 +8,14 @@ proxies:
     uuid: 228ecfd3-9bf0-42fd-a50e-581f84022513
     udp: true
     tls: true
-    servername: ozone.nl
+    servername: www.ozone.nl
     client-fingerprint: random
     reality-opts:
       public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
-      short-id: ccbe97abe7
+      short-id: 8024
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Польша [#РКП]'
+  - name: '🇩🇪 Германия [#РКП]'
     type: vless
     server: 85.193.94.217
     port: 443
@@ -31,95 +31,45 @@ proxies:
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 193.33.133.10
+    server: 161.104.38.98
     port: 443
-    uuid: 4871e898-0980-402f-882f-e1983ffc851b
+    uuid: 553d8193-d897-0024-bb46-f075b670f22a
     udp: true
     tls: true
-    servername: ozon.ru
+    servername: donatov.net
     client-fingerprint: random
     reality-opts:
-      public-key: QpSbM6vm53d3Gtk9lCosSTmLyljcQkjSQ_r15xVEUHU
-    network: grpc
-    grpc-opts:
+      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
+      short-id: 8ba6e72ee60667f6
+    network: xhttp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 193.33.133.195
-    port: 443
-    uuid: 4871e898-0980-402f-882f-e1983ffc851b
+    server: du-rov.secureservice.top
+    port: 8443
+    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
     tls: true
-    servername: ozon.ru
+    servername: du-rov.secureservice.top
     client-fingerprint: random
     reality-opts:
-      public-key: 5f_7knvdTuK5bek16zI3cgP5sjDAPJaeFKjd-NALfwQ
-    network: grpc
-    grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 193.33.133.33
-    port: 443
-    uuid: 4871e898-0980-402f-882f-e1983ffc851b
-    udp: true
-    tls: true
-    servername: ozon.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: QpSbM6vm53d3Gtk9lCosSTmLyljcQkjSQ_r15xVEUHU
-    network: grpc
-    grpc-opts:
+      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+      short-id: 3cbc3d737fb9c4af
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇳🇱 Нидерланды [#РКП]'
-    type: hysteria2
-    server: 185.246.65.176
-    port: 8112
-    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
-    sni: nl2.lumenvpn.tech
-  - name: '🇱🇹 Литва [#РКП]'
-    type: hysteria2
-    server: 185.246.65.176
-    port: 8113
-    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
-    sni: lit1.lumenvpn.tech
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: hysteria2
-    server: 185.246.65.176
-    port: 8220
-    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
-    sni: ge1.lumenvpn.tech
-  - name: '🇳🇴 Норвегия [#РКП]'
-    type: ss
-    server: 80.242.57.97
-    port: 1
-    cipher: chacha20-ietf-poly1305
-    password: 9qGcNiZj4uCi7DGSjxlg5Q
-    udp: true
-  - name: '🇨🇾 Кипр [#РКП]'
-    type: ss
-    server: 80.242.57.97
-    port: 3
-    cipher: chacha20-ietf-poly1305
-    password: 9qGcNiZj4uCi7DGSjxlg5Q
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏴 Неизвестный [#РКП]'
-      - '🇵🇱 Польша [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇩🇪 Германия [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇱🇹 Литва [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇳🇴 Норвегия [#РКП]'
-      - '🇨🇾 Кипр [#РКП]'
 rules:
   - MATCH,PROXY
