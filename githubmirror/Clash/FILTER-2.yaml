@@ -1,23 +1,48 @@
 # clash/mihomo subscription
-# 2026-09-29 01:15:37 UTC
+# 2026-09-29 01:30:44 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #37'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇵🇱 Польша #19'
+    type: vless
+    server: cdn1.pandaonline.org
+    port: 443
+    uuid: 3e628fe4-2cbf-4740-9e49-d8b5d9b61916
+    udp: true
+    tls: true
+    servername: cdn1.pandaonline.org
+    alpn:
+      - h3
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/stream/119857546/chat'
+      headers:
+        Host: cdn1.pandaonline.org
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #33'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #59'
     type: hysteria2
     server: 84.252.100.204
     port: 8227
     password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
     sni: sw.lumenvpn.tech
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #69'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #37'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #33'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇵🇱 Польша #19'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #59'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #69'
 rules:
   - MATCH,PROXY
