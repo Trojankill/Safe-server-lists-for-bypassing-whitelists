@@ -1,47 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-29 20:00:57 UTC
+# 2026-09-29 20:15:29 UTC
 proxies:
-  - name: '🇸🇪 Sweden — #67'
-    type: vless
-    server: 176.108.246.110
-    port: 9830
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-    network: grpc
-    grpc-opts:
-  - name: '🇸🇪 Sweden — #66'
-    type: vless
-    server: 176.108.246.58
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-    network: grpc
-    grpc-opts:
-  - name: '🇺🇸 United States — #68'
-    type: vless
-    server: 176.108.246.73
-    port: 9873
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-      short-id: aabbccdd
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Beget — #9'
+  - name: '🇷🇺 Beget — #10'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -54,7 +14,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #61'
+  - name: '🇩🇪 Germany — #60'
     type: vless
     server: 78.159.247.188
     port: 10010
@@ -68,19 +28,6 @@ proxies:
       short-id: a150dff4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #28'
-    type: vless
-    server: 37.18.14.168
-    port: 10654
-    uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
-    udp: true
-    tls: true
-    servername: bl3fk52.sysopnova.art
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
-      short-id: 5c3fb122
-    network: xhttp
   - name: '🇬🇧 United Kingdom — #62'
     type: vless
     server: 84.38.181.249
@@ -98,12 +45,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇸🇪 Sweden — #67'
-      - '🇸🇪 Sweden — #66'
-      - '🇺🇸 United States — #68'
-      - '🇷🇺 Beget — #9'
-      - '🇩🇪 Germany — #61'
-      - '🇩🇪 Germany — #28'
+      - '🇷🇺 Beget — #10'
+      - '🇩🇪 Germany — #60'
       - '🇬🇧 United Kingdom — #62'
 rules:
   - MATCH,PROXY
