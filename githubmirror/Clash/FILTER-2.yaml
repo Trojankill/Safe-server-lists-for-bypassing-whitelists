@@ -1,35 +1,43 @@
 # clash/mihomo subscription
-# 2026-09-29 02:45:42 UTC
+# 2026-09-29 03:01:07 UTC
 proxies:
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇵🇱 Польша #19'
-    type: vless
-    server: cdn1.pandaonline.org
-    port: 443
-    uuid: 3e628fe4-2cbf-4740-9e49-d8b5d9b61916
-    udp: true
-    tls: true
-    servername: cdn1.pandaonline.org
-    alpn:
-      - h3
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/stream/119857546/chat'
-      headers:
-        Host: cdn1.pandaonline.org
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #60'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #59'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #56'
+    type: hysteria2
+    server: 185.246.65.176
+    port: 8112
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: nl2.lumenvpn.tech
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇹 Литва #53'
+    type: hysteria2
+    server: 185.246.65.176
+    port: 8113
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: lit1.lumenvpn.tech
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #55'
+    type: hysteria2
+    server: 212.192.14.212
+    port: 8111
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: nl8.lumenvpn.tech
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #52'
+    type: hysteria2
+    server: 212.192.14.212
+    port: 8113
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: lat1.lumenvpn.tech
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #54'
     type: hysteria2
     server: 84.252.100.204
     port: 8227
     password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
     sni: sw.lumenvpn.tech
-  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #69'
+  - name: '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #65'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -40,9 +48,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇵🇱 Польша #19'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #63'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #59'
-      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #69'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #60'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #56'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇹 Литва #53'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇳🇱 Нидерланды #55'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇱🇻 Латвия #52'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇸🇪 Швеция #54'
+      - '🌀 CYBERPORTAL | CIDR White All RU | 🇷🇺 Россия #65'
 rules:
   - MATCH,PROXY
