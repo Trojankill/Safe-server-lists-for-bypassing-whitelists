@@ -1,6 +1,46 @@
 # clash/mihomo subscription
-# 2026-09-29 18:45:33 UTC
+# 2026-09-29 19:01:06 UTC
 proxies:
+  - name: '🇸🇪 Sweden — #67'
+    type: vless
+    server: 176.108.246.110
+    port: 9830
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+    network: grpc
+    grpc-opts:
+  - name: '🇸🇪 Sweden — #66'
+    type: vless
+    server: 176.108.246.58
+    port: 9881
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+    network: grpc
+    grpc-opts:
+  - name: '🇺🇸 United States — #68'
+    type: vless
+    server: 176.108.246.73
+    port: 9873
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+      short-id: aabbccdd
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Beget — #9'
     type: vless
     server: 45.12.75.242
@@ -14,7 +54,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #58'
+  - name: '🇩🇪 Germany — #61'
     type: vless
     server: 78.159.247.188
     port: 10010
@@ -28,7 +68,7 @@ proxies:
       short-id: a150dff4
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #25'
+  - name: '🇩🇪 Germany — #28'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -41,42 +81,29 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇵🇱 Poland — #63'
+  - name: '🇬🇧 United Kingdom — #62'
     type: vless
-    server: 188.225.79.44
+    server: 84.38.181.249
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
     udp: true
     tls: true
-    servername: eh.vk.ru
-    client-fingerprint: firefox
+    servername: open.spotify.com
+    client-fingerprint: safari
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇫🇷 France — #60'
-    type: vless
-    server: 91.240.87.237
-    port: 443
-    uuid: e0a8c12c-6fe9-42a3-990e-abe2ea6e5605
-    udp: true
-    tls: true
-    servername: fiae3.maxtelemost.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: raw
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
+    network: xhttp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇸🇪 Sweden — #67'
+      - '🇸🇪 Sweden — #66'
+      - '🇺🇸 United States — #68'
       - '🇷🇺 Beget — #9'
-      - '🇩🇪 Germany — #58'
-      - '🇩🇪 Germany — #25'
-      - '🇵🇱 Poland — #63'
-      - '🇫🇷 France — #60'
+      - '🇩🇪 Germany — #61'
+      - '🇩🇪 Germany — #28'
+      - '🇬🇧 United Kingdom — #62'
 rules:
   - MATCH,PROXY
