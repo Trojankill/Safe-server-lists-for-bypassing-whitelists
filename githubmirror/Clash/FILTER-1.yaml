@@ -1,19 +1,33 @@
 # clash/mihomo subscription
-# 2026-09-29 20:30:46 UTC
+# 2026-09-29 20:45:31 UTC
 proxies:
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
-    server: 161.104.38.98
+    server: ru3.pleiades.codes
     port: 443
-    uuid: 553d8193-d897-0024-bb46-f075b670f22a
+    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
     udp: true
     tls: true
-    servername: donatov.net
+    servername: ru3.pleiades.codes
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 Нидерланды [#РКП]'
+    type: vless
+    server: 85.193.94.217
+    port: 443
+    uuid: 3aaa8219-d891-4ab4-b953-f681392cc598
+    udp: true
+    tls: true
+    servername: api8.eaglors.com
     client-fingerprint: random
     reality-opts:
-      public-key: kYwdZueXQt_DEKPrWTw8yoj6G4AWqupg8UrWjAgWbkE
-      short-id: 8ba6e72ee60667f6
-    network: xhttp
+      public-key: Nb9IwEEhUHEbHSc6e5uYTjxDgN4ZExhDckM3OgYhj2o
+      short-id: 52ccb3687fe0b7ec
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇩🇪 ФРГ [#РКП]'
     type: vless
     server: 78.159.247.188
@@ -40,6 +54,20 @@ proxies:
     reality-opts:
       public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
       short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: gateru.responsiblecare.uk
+    port: 443
+    uuid: ae0d0211-b7dc-461d-9d41-1eb224876f30
+    udp: true
+    tls: true
+    servername: gateru.responsiblecare.uk
+    client-fingerprint: random
+    reality-opts:
+      public-key: Zkjmoy79UuCGCS5_4fMfhv0lXDvgBjUTT7jCdQoWdQQ
+      short-id: 2ad4123458ff3fe5
     flow: xtls-rprx-vision
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
@@ -70,32 +98,12 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇷 Франция [#РКП]'
-    type: vless
-    server: 91.240.87.237
-    port: 443
-    uuid: fa0e2bc7-1892-4a4d-9c5e-dba1ca3c675e
-    udp: true
-    tls: true
-    servername: fiae3.maxtelemost.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
   - name: '🇷🇺 Россия [#РКП]'
     type: ss
     server: 62.181.53.170
@@ -107,13 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🏴 Неизвестный [#РКП]'
+      - '🇩🇪 ФРГ [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
       - '🇩🇪 ФРГ [#РКП]'
       - '🇵🇱 Польша [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇫🇷 Франция [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
