@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-29 22:15:30 UTC
+# 2026-09-29 22:30:41 UTC
 proxies:
-  - name: '🇩🇪 ФРГ [#РКП]'
+  - name: '🇵🇱 Польша [#РКП]'
     type: vless
     server: ru3.pleiades.codes
     port: 443
@@ -14,34 +14,33 @@ proxies:
     client-fingerprint: random
     network: grpc
     grpc-opts:
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 84.38.187.169
+    port: 443
+    uuid: 553d8193-d897-0037-bb46-f075b670f22a
+    udp: true
+    tls: true
+    servername: mc.yandex.tr
+    client-fingerprint: random
+    reality-opts:
+      public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
+      short-id: 94c9dbbf07366d96
+    network: xhttp
   - name: '🇳🇱 Нидерланды [#РКП]'
     type: vless
-    server: 85.193.94.217
-    port: 443
-    uuid: 3aaa8219-d891-4ab4-b953-f681392cc598
+    server: 37.139.42.187
+    port: 8088
+    uuid: 64017d58-1297-4cd0-9a9b-4ec325f411f8
     udp: true
     tls: true
-    servername: api8.eaglors.com
+    servername: pic.rutubelist.ru
     client-fingerprint: random
     reality-opts:
-      public-key: Nb9IwEEhUHEbHSc6e5uYTjxDgN4ZExhDckM3OgYhj2o
-      short-id: 52ccb3687fe0b7ec
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 ФРГ [#РКП]'
-    type: vless
-    server: 78.159.247.188
-    port: 10010
-    uuid: 6a3c68b1-d4b8-4dff-975f-a01da4184225
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: PAP10NLpy_4J_vf1CEtDuLJtce3pLSNhHLbuuAUXqBU
+      short-id: a1b2c3d4
+    network: grpc
+    grpc-opts:
   - name: '🇵🇱 Польша [#РКП]'
     type: vless
     server: 109.120.181.153
@@ -54,20 +53,6 @@ proxies:
     reality-opts:
       public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
       short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: gateru.responsiblecare.uk
-    port: 443
-    uuid: ae0d0211-b7dc-461d-9d41-1eb224876f30
-    udp: true
-    tls: true
-    servername: gateru.responsiblecare.uk
-    client-fingerprint: random
-    reality-opts:
-      public-key: Zkjmoy79UuCGCS5_4fMfhv0lXDvgBjUTT7jCdQoWdQQ
-      short-id: 2ad4123458ff3fe5
     flow: xtls-rprx-vision
     network: tcp
   - name: '🏴 Неизвестный [#РКП]'
@@ -84,6 +69,20 @@ proxies:
       short-id: defeaa98406c7bdf
     network: grpc
     grpc-opts:
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 5.42.99.64
+    port: 8443
+    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
+    udp: true
+    tls: true
+    servername: du-rov.secureservice.top
+    client-fingerprint: random
+    reality-opts:
+      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
+      short-id: 3cbc3d737fb9c4af
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: du-rov.secureservice.top
@@ -115,11 +114,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 ФРГ [#РКП]'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇩🇪 ФРГ [#РКП]'
       - '🇵🇱 Польша [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🇳🇱 Нидерланды [#РКП]'
+      - '🇵🇱 Польша [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
