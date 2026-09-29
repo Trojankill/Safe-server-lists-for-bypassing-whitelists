@@ -1,20 +1,61 @@
 # clash/mihomo subscription
-# 2026-09-29 10:01:00 UTC
+# 2026-09-29 10:15:33 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
-    server: 213.171.25.29
-    port: 9889
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: 188.225.57.223
+    port: 443
+    uuid: 35cc83d5-81fe-44dc-8eca-06ffce67aa8a
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: firefox
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
     reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-      short-id: aabb
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
+  - name: '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+    type: vless
+    server: 217.19.122.106
+    port: 10022
+    uuid: 35cc83d5-81fe-44dc-8eca-06ffce67aa8a
+    udp: true
+    tls: true
+    servername: 32tkm.guardora.pro
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: qTfZpilVyQrFDIgxmEsd18Ph3c_-8O-R_af4o_WQ_Tg
+      short-id: f74c6a18133e2e72
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.192
+    port: 8444
+    uuid: 74a3f477-aa0a-4a23-a7d7-c9dd729ae601
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS TCP Reality'
+    type: vless
+    server: 188.225.79.44
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -26,6 +67,9 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
