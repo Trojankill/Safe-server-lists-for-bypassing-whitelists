@@ -1,19 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-29 13:30:48 UTC
+# 2026-09-29 13:45:34 UTC
 proxies:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 84.38.187.169
-    port: 443
-    uuid: 553d8193-d897-0037-bb46-f075b670f22a
+    server: ru-test.omuservice.tech
+    port: 8443
+    uuid: 6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5
     udp: true
     tls: true
-    servername: mc.yandex.tr
+    servername: www.ozone.nl
     client-fingerprint: random
     reality-opts:
-      public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
-      short-id: 94c9dbbf07366d96
-    network: xhttp
+      public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
+      short-id: a378b3
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇵🇱 Польша [#РКП]'
     type: vless
     server: 109.120.181.153
@@ -28,18 +29,18 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 195.133.73.65
+    server: 81.31.246.15
     port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    uuid: ae0d0211-b7dc-461d-9d41-1eb224876f30
     udp: true
     tls: true
-    servername: anyfile2file.com
+    servername: gateru.responsiblecare.uk
     client-fingerprint: random
     reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
+      public-key: Zkjmoy79UuCGCS5_4fMfhv0lXDvgBjUTT7jCdQoWdQQ
+      short-id: 2ad4123458ff3fe5
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -48,13 +49,45 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇫🇮 Финляндия [#РКП]'
+    type: ss
+    server: 139.100.236.123
+    port: 77
+    cipher: chacha20-ietf-poly1305
+    password: 5oqJfg8HYHNhmlereZ3BWWx31INfoXTJ
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 62.181.53.170
+    port: 2055
+    cipher: chacha20-ietf-poly1305
+    password: 9qGcNiZj4uCi7DGSjxlg5Q
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 135.106.228.252
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: S3RC92kbVfEODumWv8DGgew8zCuLbDlq
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 90.156.203.62
+    port: 5112
+    cipher: chacha20-ietf-poly1305
+    password: VVlAff77CnAU43Aoc5j15Y
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏴 Неизвестный [#РКП]'
       - '🇵🇱 Польша [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇫🇮 Финляндия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
