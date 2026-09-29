@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-29 02:30:42 UTC
+# 2026-09-29 02:45:34 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -180,7 +180,7 @@ proxies:
       short-id: 27e53bbcab7593d7
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0132|'
+  - name: '🇳🇱 AetrisVPN'
     type: vless
     server: 84.201.169.241
     port: 443
@@ -431,22 +431,6 @@ proxies:
       short-id: 3c7ab85b281ecc8f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Польша [🏳️LTE] | 🥭🔧'
-    type: vless
-    server: cdn1.pandaonline.org
-    port: 443
-    uuid: 3e628fe4-2cbf-4740-9e49-d8b5d9b61916
-    udp: true
-    tls: true
-    servername: cdn1.pandaonline.org
-    alpn:
-      - h3
-    client-fingerprint: chrome
-    network: ws
-    ws-opts:
-      path: '/stream/119857546/chat'
-      headers:
-        Host: cdn1.pandaonline.org
   - name: '125.🇳🇱Нидерланды | @LimeVPNFREE'
     type: vless
     server: 78.159.250.214
@@ -1423,13 +1407,13 @@ proxies:
     port: 443
     password: 4927997d847df94e1cc3f8dd77ce3283
     sni: api-maps.yandex.ru
-  - name: '🇳🇱 Нидерланды [#РКП]'
+  - name: '🇳🇱 Нидерланды | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 185.246.65.176
     port: 8112
     password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
     sni: nl2.lumenvpn.tech
-  - name: '🇱🇹 Литва [#РКП]'
+  - name: '🇱🇹 Литва | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 185.246.65.176
     port: 8113
@@ -1441,6 +1425,18 @@ proxies:
     port: 8220
     password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
     sni: ge1.lumenvpn.tech
+  - name: '🇳🇱 Нидерланды [🏳️LTE] | 🥭🔧'
+    type: hysteria2
+    server: 212.192.14.212
+    port: 8111
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: nl8.lumenvpn.tech
+  - name: '🇱🇻 Латвия | 🌐 [🏳️LTE] | 🥭🔧'
+    type: hysteria2
+    server: 212.192.14.212
+    port: 8113
+    password: ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD
+    sni: lat1.lumenvpn.tech
   - name: '🇸🇪 Швеция [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: 84.252.100.204
@@ -1658,7 +1654,7 @@ proxy-groups:
       - '269.🇷🇺Россия | @LimeVPNFREE'
       - '🇷🇺 Россия 1 JSC TIMEWEB'
       - '1778 | 🇷🇺 Russia | 🏳️ CIDR-Citytelecom | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0132|'
+      - '🇳🇱 AetrisVPN'
       - '🇸🇬 Сингапур | БС¹'
       - '🇺🇸 GidroksiFree #23 | 🛡БС | 🟢LTE | 1645ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
@@ -1676,7 +1672,6 @@ proxy-groups:
       - '237.🇩🇪Германия | @LimeVPNFREE'
       - '324.🇺🇦Украина | @LimeVPNFREE'
       - '343.🇷🇺Россия | @LimeVPNFREE'
-      - '🇵🇱 Польша [🏳️LTE] | 🥭🔧'
       - '125.🇳🇱Нидерланды | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: ozon.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: ozon.ru ┃ 🇬🇧 Великобритания'
@@ -1751,9 +1746,11 @@ proxy-groups:
       - '2855 | 🌐 Unknown | 🏳️ CIDR-Hostkey | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3121 | 🇷🇺 Russia | 🏳️ CIDR-IOT | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇩🇪 GidroksiFree #29 | 🟢LTE | 0ms | ↓0.0Mbps'
-      - '🇳🇱 Нидерланды [#РКП]'
-      - '🇱🇹 Литва [#РКП]'
+      - '🇳🇱 Нидерланды | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇱🇹 Литва | 🌐 [🏳️LTE] | 🥭🔧'
       - '🇩🇪 ФРГ [#РКП]'
+      - '🇳🇱 Нидерланды [🏳️LTE] | 🥭🔧'
+      - '🇱🇻 Латвия | 🌐 [🏳️LTE] | 🥭🔧'
       - '🇸🇪 Швеция [🏳️LTE] | 🥭🔧'
       - '🇳🇱 The Netherlands [SNI-RU] tcp-reset-club.net'
       - '🇷🇴 Romania [SNI-RU] tcp-reset-club.net'
