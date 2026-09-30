@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 15:45:31 UTC
+# 2026-09-30 16:00:59 UTC
 proxies:
   - name: '🇺🇸 США | БС⁵'
     type: vless
@@ -205,7 +205,7 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 GidroksiFree #34 | 🟢LTE | 1825ms | ↓0.0Mbps'
+  - name: '🇳🇱 GidroksiFree #40 | 🟢LTE | 1825ms | ↓0.0Mbps'
     type: vless
     server: 185.244.49.44
     port: 8443
@@ -1500,6 +1500,19 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
+  - name: '🇳🇱🕊 Нидерланды [(Не)Обход БС ] #18'
+    type: trojan
+    server: 199.107.164.105
+    port: 443
+    password: 8GXLP3dEzm7T8wP5Jx0Ufg
+    udp: true
+    sni: quictest.burncommunity.ru
+    alpn:
+      - 'http%2F1.1'
+    network: ws
+    ws-opts:
+      headers:
+        Host: quictest.burncommunity.ru
   - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
     type: trojan
     server: 107.149.159.190
@@ -1765,7 +1778,7 @@ proxy-groups:
       - '🇺🇸 США | БС¹'
       - '🇷🇺 GidroksiFree #31 | 🟢LTE | 381ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
-      - '🇳🇱 GidroksiFree #34 | 🟢LTE | 1825ms | ↓0.0Mbps'
+      - '🇳🇱 GidroksiFree #40 | 🟢LTE | 1825ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇱🇹 GidroksiFree #20 | 🔗Каскад | 🛡БС | 🟢LTE | 2657ms | ↓0.0Mbps'
@@ -1860,6 +1873,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
+      - '🇳🇱🕊 Нидерланды [(Не)Обход БС ] #18'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - '🇪🇺 AetrisVPN'
       - '2427 | 🌐 Unknown | 🏳️ CIDR-Hostkey | HYSTERIA2 | TG: @YoutubeUnBlockRu'
