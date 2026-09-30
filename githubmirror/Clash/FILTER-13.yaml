@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-09-30 09:45:31 UTC
+# 2026-09-30 10:00:56 UTC
 proxies:
-  - name: '🇵🇱 Польша | VLESS TCP Reality'
+  - name: '🇵🇱 Польша | VLESS RAW Reality'
     type: vless
     server: 185.141.227.190
     port: 7443
@@ -9,12 +9,12 @@ proxies:
     udp: true
     tls: true
     servername: cesadilya.karp1pdd.life
-    client-fingerprint: firefox
+    client-fingerprint: random
     reality-opts:
       public-key: JGzcySOlry32qM4bdf-WiIiOJEsrDNYs_cbuH-zuRnI
       short-id: 013f62ba58a63a61
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.192
@@ -32,7 +32,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | VLESS TCP Reality'
+      - '🇵🇱 Польша | VLESS RAW Reality'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
 rules:
   - MATCH,PROXY
