@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-30 09:15:33 UTC
+# 2026-09-30 09:30:46 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
-    type: vless
-    server: 217.19.122.47
-    port: 443
-    uuid: 0bec3196-3bd2-4d02-b03f-9eee712f2064
-    udp: true
-    tls: true
-    servername: shop.dataroute.biz
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: EjaV0Cpi-uTaHAs-W8SHf9xGEjQdOlAW4EfXX5mbFjc
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇵🇱 Польша | VLESS TCP Reality'
     type: vless
     server: 185.141.227.190
@@ -29,11 +15,24 @@ proxies:
       short-id: 013f62ba58a63a61
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.192
+    port: 8444
+    uuid: 66f9aa63-d6e6-4d80-8390-6c2e13ece2df
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+    network: grpc
+    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
       - '🇵🇱 Польша | VLESS TCP Reality'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
 rules:
   - MATCH,PROXY
