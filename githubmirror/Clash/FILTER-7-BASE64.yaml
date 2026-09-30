@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 18:45:30 UTC
+# 2026-09-30 19:00:56 UTC
 proxies:
   - name: '134.🇺🇸США | @LimeVPNFREE'
     type: vless
@@ -84,6 +84,32 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇩🇪 LTE 58 | тгк: @rostunnel'
+    type: vless
+    server: ru3.pleiades.codes
+    port: 443
+    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    udp: true
+    tls: true
+    servername: ru3.pleiades.codes
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 AetrisVPN'
+    type: vless
+    server: ru4.pleiades.codes
+    port: 443
+    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    udp: true
+    tls: true
+    servername: ru4.pleiades.codes
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
   - name: '🇺🇸 LTE 42 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
@@ -1630,6 +1656,8 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
+      - '🇩🇪 LTE 58 | тгк: @rostunnel'
+      - '🇳🇱 AetrisVPN'
       - '🇺🇸 LTE 42 | тгк: @rostunnel'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
