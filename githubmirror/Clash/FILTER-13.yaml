@@ -1,24 +1,39 @@
 # clash/mihomo subscription
-# 2026-09-30 08:45:34 UTC
+# 2026-09-30 09:01:00 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+  - name: '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
     type: vless
-    server: 45.9.24.125
-    port: 8448
-    uuid: 8340b1af-8d36-4b1b-b117-28528c273f72
+    server: 217.19.122.47
+    port: 443
+    uuid: 0bec3196-3bd2-4d02-b03f-9eee712f2064
     udp: true
     tls: true
-    servername: 86v99n-10.p.portshaper.com
+    servername: shop.dataroute.biz
     client-fingerprint: firefox
     reality-opts:
-      public-key: ZgSVwP_wlM4-oG8E03W3cMqK_VrS8oHXF4wzyBkISWo
-      short-id: a1b2c3d4
-    network: grpc
-    grpc-opts:
+      public-key: EjaV0Cpi-uTaHAs-W8SHf9xGEjQdOlAW4EfXX5mbFjc
+      short-id: 00000000
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇵🇱 Польша | VLESS TCP Reality'
+    type: vless
+    server: 185.141.227.190
+    port: 7443
+    uuid: 52f0d0fb-1484-4c56-9b0c-215757f9fbf8
+    udp: true
+    tls: true
+    servername: cesadilya.karp1pdd.life
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: JGzcySOlry32qM4bdf-WiIiOJEsrDNYs_cbuH-zuRnI
+      short-id: 013f62ba58a63a61
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇳🇱 Нидерланды | VLESS TCP Reality | Все операторы'
+      - '🇵🇱 Польша | VLESS TCP Reality'
 rules:
   - MATCH,PROXY
