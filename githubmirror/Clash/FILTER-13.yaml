@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 16:45:33 UTC
+# 2026-09-30 17:00:57 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
@@ -15,20 +15,6 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇵🇱 Польша | VLESS RAW Reality'
-    type: vless
-    server: 185.141.227.190
-    port: 8446
-    uuid: da495553-3239-4d2b-9ded-d7c10f6896a3
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: NLQmEFT9-1ocGHnvGt7poB-1EJ6vxrJAzdZLvXoawy8
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
     server: 194.55.239.148
@@ -50,20 +36,12 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇵🇱 Польша | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
