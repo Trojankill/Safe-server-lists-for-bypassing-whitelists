@@ -1,34 +1,33 @@
 # clash/mihomo subscription
-# 2026-09-30 23:30:43 UTC
+# 2026-09-30 23:45:30 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+  - name: '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
     type: vless
-    server: 188.225.57.223
-    port: 443
-    uuid: ce49f85b-b86c-4fc5-b74b-8ee5121dd81b
+    server: 217.19.122.106
+    port: 10022
+    uuid: 36332116-412a-4433-b679-6426b025a69d
     udp: true
     tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
+    servername: 32tkm.guardora.pro
     client-fingerprint: firefox
     reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
+      public-key: qTfZpilVyQrFDIgxmEsd18Ph3c_-8O-R_af4o_WQ_Tg
+      short-id: f74c6a18133e2e72
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+    type: vless
+    server: 46.243.142.192
+    port: 8444
+    uuid: f4f3c3f3-ceb7-4541-a5e1-0eaeca5087cb
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-    type: vless
-    server: 194.55.239.148
-    port: 443
-    uuid: ff65fb9b-552f-426f-8321-4c85024377e6
-    udp: true
-    tls: true
-    servername: my.selectel.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: -GzslqnFGVkpNJvcZt7uKnMGOn8R2v_z6sLOtmci6B0
-      short-id: 2fff0b51ab07386a
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -36,12 +35,19 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
