@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 13:45:34 UTC
+# 2026-09-30 14:01:33 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
     type: vless
@@ -29,6 +29,20 @@ proxies:
       short-id: f74c6a18133e2e72
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+    type: vless
+    server: 194.55.239.148
+    port: 443
+    uuid: ff65fb9b-552f-426f-8321-4c85024377e6
+    udp: true
+    tls: true
+    servername: my.selectel.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: -GzslqnFGVkpNJvcZt7uKnMGOn8R2v_z6sLOtmci6B0
+      short-id: 2fff0b51ab07386a
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -42,6 +56,7 @@ proxy-groups:
     proxies:
       - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
       - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
