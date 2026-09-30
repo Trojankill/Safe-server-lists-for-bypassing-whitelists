@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 06:30:43 UTC
+# 2026-09-30 06:45:30 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -391,6 +391,20 @@ proxies:
       short-id: ef1d3554c652a436
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 185.141.227.190
+    port: 7443
+    uuid: 52f0d0fb-1484-4c56-9b0c-215757f9fbf8
+    udp: true
+    tls: true
+    servername: cesadilya.karp1pdd.life
+    client-fingerprint: random
+    reality-opts:
+      public-key: JGzcySOlry32qM4bdf-WiIiOJEsrDNYs_cbuH-zuRnI
+      short-id: 013f62ba58a63a61
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: mc.yandex.tr ┃ 🇩🇪 Германия'
     type: vless
     server: 84.38.187.169
@@ -603,6 +617,19 @@ proxies:
     reality-opts:
       public-key: PwTWopKMpDawru-Y7AllJMSAORInNOBKuA28h0r9DXE
       short-id: ba35e449b9e0
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: renderer-bridge-2-102.mirra.now
+    port: 443
+    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+    udp: true
+    tls: true
+    servername: renderer-bridge-2-102.mirra.now
+    alpn:
+      - h2
+    client-fingerprint: random
     network: grpc
     grpc-opts:
   - name: '🇭🇰 [WL] Сервер 113'
@@ -1183,6 +1210,20 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 194.55.239.148
+    port: 443
+    uuid: ff65fb9b-552f-426f-8321-4c85024377e6
+    udp: true
+    tls: true
+    servername: my.selectel.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: -GzslqnFGVkpNJvcZt7uKnMGOn8R2v_z6sLOtmci6B0
+      short-id: 2fff0b51ab07386a
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
     type: trojan
     server: 107.149.159.190
@@ -1211,12 +1252,6 @@ proxies:
     port: 443
     password: 4927997d847df94e1cc3f8dd77ce3283
     sni: api-maps.yandex.ru
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: 109.69.21.169
-    port: 6443
-    password: 8b25a466-71a7-4eef-b735-3d7b9901e74c
-    sni: cdn.annet.site
   - name: '🇩🇪 Германия — Frankfurt am Main'
     type: hysteria2
     server: 162.249.125.133
@@ -1460,6 +1495,7 @@ proxy-groups:
       - '🇷🇺 LTE 293 | тгк: @rostunnel'
       - '🇷🇺➜🇳🇱 GidroksiFree #5 | 🔗Каскад | 🛡БС | 🟢LTE | 1526ms | ↓0.0Mbps'
       - '3218 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - 'AetrisVPN White list ┃ ✅ SNI: mc.yandex.tr ┃ 🇩🇪 Германия'
       - '🇵🇱 Польша 2 Moskalev Georgiy'
       - '🇩🇪 AetrisVPN'
@@ -1476,6 +1512,7 @@ proxy-groups:
       - '🇩🇪 [WL] Сервер 134'
       - '43.🇫🇮Финляндия | @LimeVPNFREE'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇭🇰 [WL] Сервер 113'
       - '🇭🇰 [WL] Сервер 112'
       - '12.🇷🇺Россия | @LimeVPNFREE'
@@ -1519,11 +1556,11 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - '🇪🇺 AetrisVPN'
       - '🇱🇻 Латвия [🏳️LTE] | 🥭🔧'
       - '🇩🇪 GidroksiFree #29 | 🟢LTE | 0ms | ↓0.0Mbps'
-      - '🇷🇺 Россия [#РКП]'
       - '🇩🇪 Германия — Frankfurt am Main'
       - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
       - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
