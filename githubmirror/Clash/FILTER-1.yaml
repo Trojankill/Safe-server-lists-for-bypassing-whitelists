@@ -1,32 +1,62 @@
 # clash/mihomo subscription
-# 2026-09-30 18:00:59 UTC
+# 2026-09-30 18:15:34 UTC
 proxies:
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: ru3.pleiades.codes
-    port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    server: 5.42.122.61
+    port: 8443
+    uuid: 10a60cfd-a88d-4d18-88f6-a1cfed828280
     udp: true
     tls: true
-    servername: ru3.pleiades.codes
-    alpn:
-      - h2
+    servername: kinopoisk.ru
     client-fingerprint: random
-    network: grpc
-    grpc-opts:
+    reality-opts:
+      public-key: tQurYwCIDKzXfvBAJPccnGVjW0STryfR8jtukxLedXQ
+      short-id: 9b47430cd9785bcb
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 5.42.96.41
+    port: 8443
+    uuid: 10a60cfd-a88d-4d18-88f6-a1cfed828280
+    udp: true
+    tls: true
+    servername: kinopoisk.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: tQurYwCIDKzXfvBAJPccnGVjW0STryfR8jtukxLedXQ
+      short-id: 9b47430cd9785bcb
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
-    server: ru4.pleiades.codes
+    server: 201.34.137.10
     port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    uuid: 2412bd96-925b-43f2-81d1-0ed4f0793699
     udp: true
     tls: true
-    servername: ru4.pleiades.codes
-    alpn:
-      - h2
+    servername: www.amd.com
     client-fingerprint: random
-    network: grpc
-    grpc-opts:
+    reality-opts:
+      public-key: UqwrpVT2mTXoymXrw42zfdrAirVjQgEHkT4yuTUYC3o
+      short-id: e42d1a5b7d25196b
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 104.171.128.153
+    port: 1443
+    uuid: 6bf6596c-e7de-4a2d-91fd-27ef84e8ece2
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: ocG6EJZEOhettlC_iezs_K6GttZjpP1zLs2cKrtxygY
+      short-id: 0aa749fc5434630a
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
     server: 109.69.20.101
@@ -55,20 +85,20 @@ proxies:
       short-id: 9f8442aef1b6598f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 109.120.181.153
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    server: 176.53.162.58
+    port: 24446
+    uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
     udp: true
     tls: true
-    servername: eh.vk.ru
+    servername: spry-jolt.cdn.cachefleet.com
     client-fingerprint: random
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: esOi15BFVX7pHyci7GQp8_FVlY2EmjSF2-0pPu4lIlk
+      short-id: defeaa98406c7bdf
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 5.42.99.64
@@ -83,9 +113,23 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇫🇷 Франция | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 91.240.87.237
+    port: 443
+    uuid: e34765d6-5625-489c-8664-0dc6c0d55f91
+    udp: true
+    tls: true
+    servername: fiae3.maxtelemost.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
+      short-id: 00000000
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: tgfree.rush-server.com
+    server: 195.133.73.65
     port: 443
     uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
     udp: true
@@ -103,17 +147,34 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇦🇲 Армения | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
+      - '🇫🇷 Франция | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
