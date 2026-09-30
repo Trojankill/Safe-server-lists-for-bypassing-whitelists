@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-09-30 12:00:56 UTC
+# 2026-09-30 12:15:32 UTC
 proxies:
-  - name: '🇬🇧 United Kingdom — #73'
+  - name: '🇺🇸 США | БС²'
+    type: vless
+    server: 167.17.69.171
+    port: 443
+    uuid: 00144519-7e0d-476b-8d28-435576af9262
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk
+      short-id: 0990d22f
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇬🇧Обходы - TG: AirLinkVPNBot |0076|'
     type: vless
     server: 217.19.122.106
     port: 10022
@@ -57,20 +71,6 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇺🇸 США | БС¹'
-    type: vless
-    server: 195.211.98.43
-    port: 443
-    uuid: 1b4b11d5-4c2d-4533-9a55-636757cdee94
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA
-      short-id: 9c56fddf237e8eaf
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇷🇺 GidroksiFree #31 | 🟢LTE | 381ms | ↓0.0Mbps'
     type: vless
     server: 5.42.96.76
@@ -456,19 +456,6 @@ proxies:
       short-id: ddc95422
     flow: xtls-rprx-vision
     network: tcp
-  - name: '4689 | 🇳🇱 Netherlands | 🏳️ CIDR-CloudRu | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 66f9aa63-d6e6-4d80-8390-6c2e13ece2df
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
   - name: '🇺🇸 [WL] Сервер 78'
     type: vless
     server: lk-1.yes-on.ru
@@ -994,7 +981,7 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇨🇦 Канада | БС¹'
+  - name: '🇨🇦 [WL] Сервер 101'
     type: vless
     server: 209.200.246.148
     port: 443
@@ -1006,6 +993,20 @@ proxies:
     reality-opts:
       public-key: uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk
       short-id: f98843107912e782
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США | БС¹'
+    type: vless
+    server: 195.123.240.65
+    port: 443
+    uuid: ce18d0eb-5c71-41f9-96e5-1632e22456e4
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE
+      short-id: 19296c9f1bf9c7b1
     flow: xtls-rprx-vision
     network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
@@ -1402,11 +1403,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇬🇧 United Kingdom — #73'
+      - '🇺🇸 США | БС²'
+      - '🇬🇧Обходы - TG: AirLinkVPNBot |0076|'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
-      - '🇺🇸 США | БС¹'
       - '🇷🇺 GidroksiFree #31 | 🟢LTE | 381ms | ↓0.0Mbps'
       - '3590 | 🇷🇺 Russia | 🏳️ CIDR-Yandex | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇷🇺➜🇳🇱 GidroksiFree #22 | 🔗Каскад | 🛡БС | 🟢LTE | 498ms | ↓0.0Mbps'
@@ -1435,7 +1436,6 @@ proxy-groups:
       - '4168 | 🇵🇱 Poland | 🏳️ CIDR-CDNetworks | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0269 | 🇵🇱 Poland | 🏳️ CIDR-CDNetworks | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '2885 | 🌐 Unknown | 🏳️ CIDR-CDNetworks | VLESS | TG: @YoutubeUnBlockRu'
-      - '4689 | 🇳🇱 Netherlands | 🏳️ CIDR-CloudRu | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇺🇸 [WL] Сервер 78'
       - '🇩🇪 AetrisVPN'
       - '0685 | 🇷🇺 Russia | 🏳️ CIDR-VK | VLESS | TG: @YoutubeUnBlockRu'
@@ -1475,7 +1475,8 @@ proxy-groups:
       - '🇦🇱 [WL] Сервер 98'
       - '🇪🇺 AetrisVPN'
       - '🏴 Неизвестный [#РКП]'
-      - '🇨🇦 Канада | БС¹'
+      - '🇨🇦 [WL] Сервер 101'
+      - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
       - '90.🇬🇧Великобритания | @LimeVPNFREE'
       - '98.🇬🇧Великобритания | @LimeVPNFREE'

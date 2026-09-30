@@ -1,24 +1,23 @@
 # clash/mihomo subscription
-# 2026-09-30 11:30:46 UTC
+# 2026-09-30 12:15:34 UTC
 proxies:
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-    type: vless
-    server: 91.240.87.237
-    port: 443
-    uuid: e34765d6-5625-489c-8664-0dc6c0d55f91
-    udp: true
-    tls: true
-    servername: fiae3.maxtelemost.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
-      short-id: 00000000
-    flow: xtls-rprx-vision
-    network: tcp
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 22443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
