@@ -1,47 +1,20 @@
 # clash/mihomo subscription
-# 2026-09-30 16:30:49 UTC
+# 2026-09-30 16:45:33 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 17a29734-51e8-4ccd-92ea-62307f1a5b2f
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-    type: vless
-    server: 87.242.94.19
-    port: 1443
-    uuid: a7887baa-ef51-4fe4-9230-777d678e5151
-    udp: true
-    tls: true
-    servername: edge.edgeprobe.dev
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: xuCfFoK0x0ZEOvd7HQ9dF2HlZMkKvVV9rQmkiYcBuik
-      short-id: 327088cd7331
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
-    type: vless
-    server: 217.19.122.106
-    port: 10022
+    server: 188.225.57.223
+    port: 443
     uuid: ce49f85b-b86c-4fc5-b74b-8ee5121dd81b
     udp: true
     tls: true
-    servername: 32tkm.guardora.pro
+    servername: cloudcdn-m9-12.cdn.yandex.net
     client-fingerprint: firefox
     reality-opts:
-      public-key: qTfZpilVyQrFDIgxmEsd18Ph3c_-8O-R_af4o_WQ_Tg
-      short-id: f74c6a18133e2e72
-    flow: xtls-rprx-vision
-    network: raw
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: '🇵🇱 Польша | VLESS RAW Reality'
     type: vless
     server: 185.141.227.190
@@ -87,9 +60,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality | Все операторы'
-      - '🇳🇱 Нидерланды | VLESS RAW Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇵🇱 Польша | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
