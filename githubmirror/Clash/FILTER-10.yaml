@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-09-30 11:45:32 UTC
+# 2026-09-30 12:00:56 UTC
 proxies:
   - name: 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
     type: vless
@@ -29,7 +29,7 @@ proxies:
       short-id: e852dc
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'tg:VLESSFORU top ping 🇩🇪'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
     type: vless
     server: 192.142.12.175
     port: 443
@@ -224,28 +224,13 @@ proxies:
       path: '/linkvws'
       headers:
         Host: aksai.org
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-    type: vmess
-    server: aidrivercat.org
-    port: 443
-    uuid: 03fcc618-b93d-6796-6aed-8a38c975d581
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: aidrivercat.org
-    network: ws
-    ws-opts:
-      path: '/linkvws'
-      headers:
-        Host: aidrivercat.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
-      - 'tg:VLESSFORU top ping 🇩🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'tg:VLESSFORU 🇵🇱 ⚡'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
@@ -260,6 +245,5 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇦'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
 rules:
   - MATCH,PROXY
