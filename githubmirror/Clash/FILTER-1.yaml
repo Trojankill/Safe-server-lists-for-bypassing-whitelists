@@ -1,19 +1,33 @@
 # clash/mihomo subscription
-# 2026-09-30 11:30:44 UTC
+# 2026-09-30 11:45:31 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+  - name: '🇷🇺 Россия | 🔗 Каскад [#РКП]'
     type: vless
-    server: ru4.pleiades.codes
+    server: 217.19.122.47
     port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    uuid: 13b05d05-3bc1-481a-b5bb-b583a5a2c9cd
     udp: true
     tls: true
-    servername: ru4.pleiades.codes
-    alpn:
-      - h2
+    servername: shop.dataroute.biz
     client-fingerprint: random
-    network: grpc
-    grpc-opts:
+    reality-opts:
+      public-key: EjaV0Cpi-uTaHAs-W8SHf9xGEjQdOlAW4EfXX5mbFjc
+      short-id: 00000000
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇫🇷 Франция | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 91.240.87.237
+    port: 443
+    uuid: 153e4e15-76f6-0005-af2e-252ba2599188
+    udp: true
+    tls: true
+    servername: fiae0.maxtelemost.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 84.38.187.169
@@ -27,9 +41,9 @@ proxies:
       public-key: rJMYW6mHgjs61mHxfm8Gmm_Re23sV_xe5b0IrTpLsiQ
       short-id: 94c9dbbf07366d96
     network: xhttp
-  - name: '🇮🇹 Италия | 🔗 Каскад [#РКП]'
+  - name: '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
     type: vless
-    server: 176.109.107.1
+    server: 176.109.104.103
     port: 9881
     uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
@@ -37,7 +51,7 @@ proxies:
     servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
     network: grpc
     grpc-opts:
   - name: '🇬🇧 Великобритания | 🔗 Каскад [#РКП]'
@@ -53,51 +67,36 @@ proxies:
       public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
     network: grpc
     grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇷🇸 Сербия | 🔗 Каскад [#РКП]'
     type: vless
-    server: 83.222.8.125
-    port: 8443
-    uuid: 6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5
+    server: 45.132.176.161
+    port: 9889
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: www.ozone.nl
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
-      short-id: ccbe97abe7
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aa
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
-    server: ru-test.omuservice.tech
-    port: 8443
-    uuid: 6db7ea14-ed33-4591-a9b1-f1e91b1c0ff5
-    udp: true
-    tls: true
-    servername: www.ozone.nl
-    client-fingerprint: random
-    reality-opts:
-      public-key: yyH7Fyfh1ULPH4L5mFVtqPf_rB1IY6jwDgOuIRY7-wA
-      short-id: ccbe97abe7
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 109.120.181.153
+    server: renderer-bridge-2-102.mirra.now
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
     udp: true
     tls: true
-    servername: eh.vk.ru
+    servername: renderer-bridge-2-102.mirra.now
+    alpn:
+      - h2
     client-fingerprint: random
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 5.42.99.64
+    server: du-rov.secureservice.top
     port: 8443
     uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
@@ -107,6 +106,20 @@ proxies:
     reality-opts:
       public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
       short-id: 3cbc3d737fb9c4af
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 194.55.239.148
+    port: 443
+    uuid: ff65fb9b-552f-426f-8321-4c85024377e6
+    udp: true
+    tls: true
+    servername: my.selectel.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: -GzslqnFGVkpNJvcZt7uKnMGOn8R2v_z6sLOtmci6B0
+      short-id: 2fff0b51ab07386a
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
@@ -122,6 +135,12 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
   - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+  - name: '🇷🇺 Россия [#РКП]'
     type: ss
     server: 90.156.203.62
     port: 5112
@@ -132,16 +151,18 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия | 🔗 Каскад [#РКП]'
+      - '🇫🇷 Франция | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇮🇹 Италия | 🔗 Каскад [#РКП]'
+      - '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
       - '🇬🇧 Великобритания | 🔗 Каскад [#РКП]'
+      - '🇷🇸 Сербия | 🔗 Каскад [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
