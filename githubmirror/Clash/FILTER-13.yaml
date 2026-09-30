@@ -1,33 +1,6 @@
 # clash/mihomo subscription
-# 2026-09-30 10:30:48 UTC
+# 2026-09-30 10:45:35 UTC
 proxies:
-  - name: '🇵🇱 Польша | VLESS RAW Reality'
-    type: vless
-    server: 185.141.227.190
-    port: 7443
-    uuid: 52f0d0fb-1484-4c56-9b0c-215757f9fbf8
-    udp: true
-    tls: true
-    servername: cesadilya.karp1pdd.life
-    client-fingerprint: random
-    reality-opts:
-      public-key: JGzcySOlry32qM4bdf-WiIiOJEsrDNYs_cbuH-zuRnI
-      short-id: 013f62ba58a63a61
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 66f9aa63-d6e6-4d80-8390-6c2e13ece2df
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | VLESS XHTTP Reality'
     type: vless
     server: 45.9.24.125
@@ -54,13 +27,26 @@ proxies:
       public-key: 5hhzoP441DrGa2l5YlwizPSA5chdY2VjRP7CiEfLLA0
       short-id: eea4ab7bddaeea39
     network: xhttp
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+    type: vless
+    server: 91.240.87.237
+    port: 443
+    uuid: e34765d6-5625-489c-8664-0dc6c0d55f91
+    udp: true
+    tls: true
+    servername: fiae3.maxtelemost.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4
+      short-id: 00000000
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | VLESS RAW Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
 rules:
   - MATCH,PROXY
