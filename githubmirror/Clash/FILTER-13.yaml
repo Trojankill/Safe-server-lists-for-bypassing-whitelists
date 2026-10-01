@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 15:45:35 UTC
+# 2026-10-01 16:00:59 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
@@ -63,6 +63,12 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
+  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    type: hysteria2
+    server: 91.240.86.70
+    port: 24443
+    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
@@ -71,6 +77,7 @@ proxy-groups:
       - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
