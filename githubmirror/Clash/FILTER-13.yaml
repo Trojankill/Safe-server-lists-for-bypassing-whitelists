@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-01 13:30:50 UTC
+# 2026-10-01 13:45:32 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+    type: vless
+    server: 185.91.52.13
+    port: 30007
+    uuid: 5bba3558-ad1c-4d97-a360-7d993d503abd
+    udp: true
+    tls: true
+    servername: storage.yandexcloud.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk
+      short-id: 54861d36
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.192
@@ -45,6 +59,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
