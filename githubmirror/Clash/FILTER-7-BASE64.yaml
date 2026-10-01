@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 07:15:30 UTC
+# 2026-10-01 07:30:42 UTC
 proxies:
   - name: '🇺🇸 США | БС³'
     type: vless
@@ -95,32 +95,6 @@ proxies:
     reality-opts:
       public-key: q9Zo-6alw8lCv4yIA7RFsLD8gZG-Ftva6QEvcKwPGzU
       short-id: bdb0dfdd
-    network: grpc
-    grpc-opts:
-  - name: '5 | GRPC+TLS | SNI: nl.g4m1.biz | IN: RU OUT: NL | RATING: 7/10'
-    type: vless
-    server: nl.g4m1.biz
-    port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-    udp: true
-    tls: true
-    servername: nl.g4m1.biz
-    alpn:
-      - h2
-    client-fingerprint: firefox
-    network: grpc
-    grpc-opts:
-  - name: '🇵🇱 Польша [🏳️LTE] | 🥭🔧'
-    type: vless
-    server: pli.g4m1.biz
-    port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-    udp: true
-    tls: true
-    servername: pli.g4m1.biz
-    alpn:
-      - h2
-    client-fingerprint: firefox
     network: grpc
     grpc-opts:
   - name: '🇷🇺 LTE 7 | тгк: @rostunnel'
@@ -276,6 +250,32 @@ proxies:
       public-key: b6SEWuzbmM0LK3AgcYZCIDPFRYbdP6ScVeajomMn_xU
     network: grpc
     grpc-opts:
+  - name: '🌍 XX - 041'
+    type: vless
+    server: 159.194.243.175
+    port: 443
+    uuid: 237f3738-b70a-4146-89a8-10e914387c1d
+    udp: true
+    tls: true
+    servername: anisabrand.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Q9-Fzdk-ww9qRMYjTvPwQXlbTfdsmEviG0ZXsPxXSxg
+      short-id: 62b5bd3a2607bc
+    network: xhttp
+  - name: '🇩🇪 Германия 1 HOSTKEY B.V.'
+    type: vless
+    server: 159.194.243.175
+    port: 8443
+    uuid: 237f3738-b70a-4146-89a8-10e914387c1d
+    udp: true
+    tls: true
+    servername: www.anisabrand.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Q9-Fzdk-ww9qRMYjTvPwQXlbTfdsmEviG0ZXsPxXSxg
+      short-id: 51228b5e10828f7f
+    network: xhttp
   - name: 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
     type: vless
     server: 188.225.39.107
@@ -727,7 +727,7 @@ proxies:
       short-id: 0ba5a6f592759750
     network: grpc
     grpc-opts:
-  - name: '🇵🇱 Польша 4 Moskalev Georgiy'
+  - name: '🇵🇱 Польша 2 Moskalev Georgiy'
     type: vless
     server: 45.9.24.199
     port: 7443
@@ -891,7 +891,7 @@ proxies:
       short-id: 561533e7f4
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 Германия 28 WAIcore Ltd'
+  - name: '🇩🇪 Германия 13 Timeweb, LLP'
     type: vless
     server: 188.225.27.178
     port: 443
@@ -904,7 +904,7 @@ proxies:
       public-key: 0omtLHQHyKnV7w05maiOqvL5PvxdCQKw_zDqqgR28X8
       short-id: 8d0ff3d6ec629371
     network: xhttp
-  - name: '🇩🇪 Германия 23 Timeweb, LLP'
+  - name: '🇩🇪 Германия 11 Ultahost, Inc.'
     type: vless
     server: 217.25.93.215
     port: 443
@@ -917,7 +917,7 @@ proxies:
       public-key: 0omtLHQHyKnV7w05maiOqvL5PvxdCQKw_zDqqgR28X8
       short-id: 8d0ff3d6ec629371
     network: xhttp
-  - name: '🇩🇪 Германия 24 Timeweb, LLP'
+  - name: '🇩🇪 Германия 10 Ultahost, Inc.'
     type: vless
     server: 45.8.99.5
     port: 443
@@ -1895,6 +1895,24 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
+  - name: '🇩🇪 Germany [*CIDR]'
+    type: hysteria2
+    server: 45.151.101.197
+    port: 2053
+    password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
+    sni: hy2.80.240.25.205.nip.io
+  - name: '🇳🇱 The Netherlands [*CIDR]'
+    type: hysteria2
+    server: 45.151.101.197
+    port: 443
+    password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
+    sni: hy2.95.179.191.167.nip.io
+  - name: '🇸🇪 Sweden [*CIDR]'
+    type: hysteria2
+    server: 45.151.101.197
+    port: 8443
+    password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
+    sni: hy2.70.34.213.83.nip.io
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: msk.frkn.org
@@ -2058,8 +2076,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
       - '🇳🇱 Нидерланды — Amsterdam'
-      - '5 | GRPC+TLS | SNI: nl.g4m1.biz | IN: RU OUT: NL | RATING: 7/10'
-      - '🇵🇱 Польша [🏳️LTE] | 🥭🔧'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '3214 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '1161 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -2071,6 +2087,8 @@ proxy-groups:
       - '84.🇫🇷Франция | @LimeVPNFREE'
       - '🇷🇺➜🇳🇱 GidroksiFree #78 | 🔗Каскад | 🛡БС | 🟢LTE | 859ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
+      - '🌍 XX - 041'
+      - '🇩🇪 Германия 1 HOSTKEY B.V.'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - '🇳🇱 GidroksiFree #34 | 🛡БС | 🟢LTE | 6962ms | ↓0.0Mbps'
       - '1199 | 🇷🇺 Russia | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
@@ -2104,7 +2122,7 @@ proxy-groups:
       - '30.🇷🇺Россия | @LimeVPNFREE'
       - '🇲🇩🕊 Молдова [(Не)Обход БС] #20'
       - '🇷🇺 LTE 231 | тгк: @rostunnel'
-      - '🇵🇱 Польша 4 Moskalev Georgiy'
+      - '🇵🇱 Польша 2 Moskalev Georgiy'
       - '🇩🇪 AetrisVPN'
       - '4268 | 🇷🇺 Russia | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
@@ -2116,9 +2134,9 @@ proxy-groups:
       - '🇷🇺 LTE 194 | тгк: @rostunnel'
       - '🇷🇺 LTE 195 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: rutube.ru ┃ 🇩🇪 Германия'
-      - '🇩🇪 Германия 28 WAIcore Ltd'
-      - '🇩🇪 Германия 23 Timeweb, LLP'
-      - '🇩🇪 Германия 24 Timeweb, LLP'
+      - '🇩🇪 Германия 13 Timeweb, LLP'
+      - '🇩🇪 Германия 11 Ultahost, Inc.'
+      - '🇩🇪 Германия 10 Ultahost, Inc.'
       - '🇳🇱 LTE 152 | тгк: @rostunnel'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
@@ -2197,6 +2215,9 @@ proxy-groups:
       - '1573 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '1231 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '3611 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | HYSTERIA2 | TG: @YoutubeUnBlockRu'
+      - '🇩🇪 Germany [*CIDR]'
+      - '🇳🇱 The Netherlands [*CIDR]'
+      - '🇸🇪 Sweden [*CIDR]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '148.🇺🇸США | @LimeVPNFREE'
