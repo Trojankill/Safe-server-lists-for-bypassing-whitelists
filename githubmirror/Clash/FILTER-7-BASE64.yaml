@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 21:45:32 UTC
+# 2026-10-01 22:00:57 UTC
 proxies:
   - name: '🇳🇱 Нидерланды 10 Timeweb, LLP'
     type: vless
@@ -178,6 +178,20 @@ proxies:
     reality-opts:
       public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
       short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇸🇪 Sweden [*CIDR]'
+    type: vless
+    server: 185.147.26.218
+    port: 443
+    uuid: 195c005f-ec14-5d06-885c-02fb42575608
+    udp: true
+    tls: true
+    servername: id.vk.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: jgFG50Yuw5A-La-S54Sge3vnkF3N0GVH6ZDXg15CbHg
+      short-id: 58a148ca1ae650b1
     network: grpc
     grpc-opts:
   - name: '🇷🇺 GidroksiFree #69 | 🟢LTE | 740ms | ↓0.0Mbps'
@@ -772,7 +786,7 @@ proxies:
       short-id: 94acb54627612d43
     flow: xtls-rprx-vision
     network: tcp
-  - name: '211.🇷🇺Россия | @LimeVPNFREE'
+  - name: '🇸🇪 Sweden [*CIDR]'
     type: vless
     server: 5.188.81.58
     port: 443
@@ -1474,7 +1488,7 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
-  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+  - name: '🇷🇺 Russia [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1487,6 +1501,13 @@ proxies:
     port: 1080
     cipher: chacha20-ietf-poly1305
     password: 8tmnvX5zYuWGVIDP2jglZw
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 136.234.5.169
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: 9eg_BscJb6bBsMz84M_6VjrMD1BVqXeF
     udp: true
   - name: '21.🇬🇧Великобритания | @LimeVPNFREE'
     type: ss
@@ -1508,6 +1529,13 @@ proxies:
     port: 43558
     cipher: chacha20-ietf-poly1305
     password: 'IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw='
+    udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 80.87.197.181
+    port: 2055
+    cipher: chacha20-ietf-poly1305
+    password: MBiJEJ5VgZXVSj58CEEFZA
     udp: true
   - name: '🇷🇺 LTE 161 | тгк: @rostunnel'
     type: ss
@@ -1652,6 +1680,7 @@ proxy-groups:
       - '🇩🇪 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇸🇪 Швеция'
       - '🇩🇪 AetrisVPN'
+      - '🇸🇪 Sweden [*CIDR]'
       - '🇷🇺 GidroksiFree #69 | 🟢LTE | 740ms | ↓0.0Mbps'
       - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '85.🇫🇷Франция | @LimeVPNFREE'
@@ -1695,7 +1724,7 @@ proxy-groups:
       - '27.🇫🇮Финляндия | @LimeVPNFREE'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
       - '🇬🇷 Греция | БС¹'
-      - '211.🇷🇺Россия | @LimeVPNFREE'
+      - '🇸🇪 Sweden [*CIDR]'
       - '🇭🇰 [WL] Сервер 142'
       - '🇭🇰 [WL] Сервер 141'
       - '338.🇩🇪Германия | @LimeVPNFREE'
@@ -1752,11 +1781,13 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
-      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Russia [*CIDR]'
       - '149.🇺🇸США | @LimeVPNFREE'
+      - '🇷🇺 Россия [#РКП]'
       - '21.🇬🇧Великобритания | @LimeVPNFREE'
       - '16.🇫🇷Франция | @LimeVPNFREE'
       - '77.🇦🇱Албания | @LimeVPNFREE'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 LTE 161 | тгк: @rostunnel'
       - '🇪🇺 AetrisVPN'
       - '🇧🇪 AetrisVPN'
