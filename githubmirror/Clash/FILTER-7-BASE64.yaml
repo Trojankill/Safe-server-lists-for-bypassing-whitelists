@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 13:45:32 UTC
+# 2026-10-01 14:00:57 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -250,7 +250,7 @@ proxies:
       public-key: Q9-Fzdk-ww9qRMYjTvPwQXlbTfdsmEviG0ZXsPxXSxg
       short-id: 62b5bd3a2607bc
     network: xhttp
-  - name: '🇷🇺➜🇩🇪 GidroksiFree #35 | 🔗Каскад | 🛡БС | 🟢LTE | 818ms | ↓0.0Mbps'
+  - name: '🇩🇪 Германия 2 HOSTKEY B.V.'
     type: vless
     server: 159.194.243.175
     port: 8443
@@ -258,7 +258,7 @@ proxies:
     udp: true
     tls: true
     servername: www.anisabrand.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: Q9-Fzdk-ww9qRMYjTvPwQXlbTfdsmEviG0ZXsPxXSxg
       short-id: 51228b5e10828f7f
@@ -485,7 +485,7 @@ proxies:
       short-id: 3c7bbb22bff1d4fd
     flow: xtls-rprx-vision
     network: raw
-  - name: '4.🇷🇺Россия | @LimeVPNFREE'
+  - name: '🇷🇺 GidroksiFree #73 | 🟢LTE | 483ms | ↓0.0Mbps'
     type: vless
     server: 185.73.126.217
     port: 50000
@@ -493,7 +493,7 @@ proxies:
     udp: true
     tls: true
     servername: creators.radeon.com
-    client-fingerprint: firefox
+    client-fingerprint: random
     reality-opts:
       public-key: dEvwASt7DRDtH_N5VcHkZo2VQxMVDdevaN-xFxmkIDw
       short-id: c8edc5
@@ -623,20 +623,6 @@ proxies:
       short-id: ef1d3554c652a436
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇫🇮 [WL] Сервер 106'
-    type: vless
-    server: 45.81.33.194
-    port: 443
-    uuid: 5347ce17-6883-463b-b5a2-b3c1af3b37ee
-    udp: true
-    tls: true
-    servername: www.intel.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: c7ZErLG_xbyKs-WwNIoBuH4GTEVoNuwXz4bulmhGkmM
-      short-id: d1ff22c8
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇲🇩🕊 Молдова [(Не)Обход БС] #20'
     type: vless
     server: 188.225.76.197
@@ -664,6 +650,20 @@ proxies:
       short-id: 0ba5a6f592759750
     network: grpc
     grpc-opts:
+  - name: '🇫🇮 [WL] Сервер 106'
+    type: vless
+    server: 45.81.33.194
+    port: 443
+    uuid: 61bbfc27-4a5e-4d9c-a879-54d998a605e9
+    udp: true
+    tls: true
+    servername: www.intel.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: c7ZErLG_xbyKs-WwNIoBuH4GTEVoNuwXz4bulmhGkmM
+      short-id: a50a8dd7
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇵🇱 Польша 2 Moskalev Georgiy'
     type: vless
     server: 45.9.24.199
@@ -966,7 +966,7 @@ proxies:
       short-id: 94acb54627612d43
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇭🇰 [WL] Сервер 91'
+  - name: '🇭🇰 [WL] Сервер 95'
     type: vless
     server: 139.28.168.201
     port: 443
@@ -975,6 +975,20 @@ proxies:
     tls: true
     servername: china.letsconnectpoint.com
     client-fingerprint: firefox
+    reality-opts:
+      public-key: 4ubYp4HaBJgn1qXwfo0hiejncurXCckII-O_FMDXTgI
+      short-id: 3b74d85e
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇭🇰 [WL] Сервер 99'
+    type: vless
+    server: china.letsconnectpoint.com
+    port: 443
+    uuid: 914f3806-07a1-4158-9624-e183de065a38
+    udp: true
+    tls: true
+    servername: china.letsconnectpoint.com
+    client-fingerprint: random
     reality-opts:
       public-key: 4ubYp4HaBJgn1qXwfo0hiejncurXCckII-O_FMDXTgI
       short-id: 3b74d85e
@@ -1244,7 +1258,7 @@ proxies:
       short-id: 77d4e9e5a5243324
     network: grpc
     grpc-opts:
-  - name: '🇪🇺 [WL] Сервер 88'
+  - name: '🌐 [WL] Сервер 42'
     type: vless
     server: 5.42.99.64
     port: 8443
@@ -1706,6 +1720,12 @@ proxies:
     port: 8443
     password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
     sni: hy2.70.34.213.83.nip.io
+  - name: '🇷🇺 Russia [*CIDR]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
   - name: '103.🇺🇸США | @LimeVPNFREE'
     type: ss
     server: 5.78.51.123
@@ -1868,7 +1888,7 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #78 | 🔗Каскад | 🛡БС | 🟢LTE | 859ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
       - '🇳🇱 Нидерланды 6 JSC TIMEWEB'
-      - '🇷🇺➜🇩🇪 GidroksiFree #35 | 🔗Каскад | 🛡БС | 🟢LTE | 818ms | ↓0.0Mbps'
+      - '🇩🇪 Германия 2 HOSTKEY B.V.'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - '🇳🇱 GidroksiFree #34 | 🛡БС | 🟢LTE | 6962ms | ↓0.0Mbps'
       - '1695 | 🇷🇺 Russia | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
@@ -1885,7 +1905,7 @@ proxy-groups:
       - '🇽🇽 GidroksiFree #44 | 🟢LTE | 492ms | ↓0.0Mbps'
       - '🇷🇺 LTE 57 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
-      - '4.🇷🇺Россия | @LimeVPNFREE'
+      - '🇷🇺 GidroksiFree #73 | 🟢LTE | 483ms | ↓0.0Mbps'
       - '1 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 10/10'
       - '0151 | 🇷🇺 Russia | 🏳️ CIDR-LandVPS | VLESS | TG: @YoutubeUnBlockRu'
       - '🇺🇸 США 10 Hetzner Online GmbH'
@@ -1895,9 +1915,9 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '🇷🇺➜🇳🇱 GidroksiFree #5 | 🔗Каскад | 🛡БС | 🟢LTE | 1526ms | ↓0.0Mbps'
       - '1863 | 🇳🇱 Netherlands | 🏳️ SNI-OK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇫🇮 [WL] Сервер 106'
       - '🇲🇩🕊 Молдова [(Не)Обход БС] #20'
       - '🇷🇺➜🇩🇪 GidroksiFree #50 | 🔗Каскад | 🛡БС | 🟢LTE | 863ms | ↓0.0Mbps'
+      - '🇫🇮 [WL] Сервер 106'
       - '🇵🇱 Польша 2 Moskalev Georgiy'
       - '🇩🇪 AetrisVPN'
       - '4144 | 🇷🇺 Russia | 🏳️ SNI-MAX | VLESS | TG: @YoutubeUnBlockRu'
@@ -1920,7 +1940,8 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
       - '🇬🇷 Греция | БС¹'
-      - '🇭🇰 [WL] Сервер 91'
+      - '🇭🇰 [WL] Сервер 95'
+      - '🇭🇰 [WL] Сервер 99'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '🇬🇧 Великобритания 1 GLOBAL CONNECTIVITY SOLUTIONS LLP'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
@@ -1941,7 +1962,7 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇬🇧'
       - '🇷🇺 LTE 127 | тгк: @rostunnel'
       - '1238 | 🇩🇪 Germany | 🏳️ SNI-X5 | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇪🇺 [WL] Сервер 88'
+      - '🌐 [WL] Сервер 42'
       - '5831 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '🇨🇦 Канада | БС¹'
       - '128.🇨🇭Швейцария | @LimeVPNFREE'
@@ -1983,6 +2004,7 @@ proxy-groups:
       - '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
       - '🇳🇱 Нидерланды [🏳️LTE] | 🥭🔧'
       - '🇸🇪 Швеция [🏳️LTE] | 🥭🔧'
+      - '🇷🇺 Russia [*CIDR]'
       - '103.🇺🇸США | @LimeVPNFREE'
       - '17.🇬🇧Великобритания | @LimeVPNFREE'
       - '67.🇫🇷Франция | @LimeVPNFREE'
