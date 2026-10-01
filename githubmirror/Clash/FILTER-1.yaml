@@ -1,47 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-01 09:15:34 UTC
+# 2026-10-01 09:30:48 UTC
 proxies:
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 82.148.31.52
-    port: 443
-    uuid: 2f6c70f3-206a-4bc1-ac1f-6b70153f9c73
-    udp: true
-    tls: true
-    servername: unpkg.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko
-      short-id: b0d8c9a285c70f6f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 217.168.247.110
-    port: 443
-    uuid: 4abdfe42-aec7-4b66-974d-3f891e2e8184
-    udp: true
-    tls: true
-    servername: mail.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: m_tb05uuGKA4Va4XYUKtXeWmyBi2SyLdnkZOVFdNnRI
-      short-id: d1eb6eeb7d1f481f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇨🇭 Швейцария | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 45.132.176.161
-    port: 9882
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-    network: grpc
-    grpc-opts:
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
     server: 5.129.249.45
@@ -56,7 +15,7 @@ proxies:
       short-id: aabb
     network: grpc
     grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
     server: 109.69.20.101
     port: 2087
@@ -70,7 +29,7 @@ proxies:
       short-id: f6019bc89397da24
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
+  - name: '🇦🇲 Армения | 🔗 Каскад [#РКП]'
     type: vless
     server: 109.69.20.101
     port: 2088
@@ -84,9 +43,36 @@ proxies:
       short-id: 9f8442aef1b6598f
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: renderer-bridge-1-832.mirra.now
+    port: 443
+    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+    udp: true
+    tls: true
+    servername: renderer-bridge-1-832.mirra.now
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 5.42.99.64
+    server: 176.53.162.58
+    port: 24446
+    uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
+    udp: true
+    tls: true
+    servername: spry-jolt.cdn.cachefleet.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: esOi15BFVX7pHyci7GQp8_FVlY2EmjSF2-0pPu4lIlk
+      short-id: defeaa98406c7bdf
+    network: grpc
+    grpc-opts:
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: du-rov.secureservice.top
     port: 8443
     uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
@@ -98,18 +84,19 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 191.44.38.143
-    port: 8443
-    uuid: fe7a9e7a-cd1f-4128-b2a1-48ef38dd107e
+    server: 195.133.73.65
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
     udp: true
     tls: true
-    servername: nl2.yabloko.top
+    servername: anyfile2file.com
     client-fingerprint: random
     reality-opts:
-      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
-      short-id: 1c10c8c03e2f0484
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
@@ -129,20 +116,26 @@ proxies:
     port: 6443
     password: e2c9a585-57e5-4b18-92b3-2e299efa7cdf
     sni: api.unio.finance
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇨🇭 Швейцария | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+      - '🇦🇲 Армения | 🔗 Каскад [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
