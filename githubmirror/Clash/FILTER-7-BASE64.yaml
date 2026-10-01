@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 13:15:37 UTC
+# 2026-10-01 13:30:48 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -84,32 +84,6 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 NL - 003'
-    type: vless
-    server: nl.g4m1.biz
-    port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-    udp: true
-    tls: true
-    servername: nl.g4m1.biz
-    alpn:
-      - h2
-    client-fingerprint: firefox
-    network: grpc
-    grpc-opts:
-  - name: '🇵🇱 PL - 004'
-    type: vless
-    server: pli.g4m1.biz
-    port: 443
-    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-    udp: true
-    tls: true
-    servername: pli.g4m1.biz
-    alpn:
-      - h2
-    client-fingerprint: firefox
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 LTE 7 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
@@ -1150,20 +1124,6 @@ proxies:
       short-id: 670ed9f350bd8ee0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: rutg.own-homelab.cloud
-    port: 443
-    uuid: ade11809-4672-5bb5-92bf-bb191dba0a86
-    udp: true
-    tls: true
-    servername: rutg.own-homelab.cloud
-    client-fingerprint: random
-    reality-opts:
-      public-key: Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU
-      short-id: 08
-    network: grpc
-    grpc-opts:
   - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
     type: vless
     server: 31.76.249.116
@@ -1471,6 +1431,45 @@ proxies:
       short-id: cd6065902eea7a02
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇪🇸 Испания | 🔗 Каскад [#РКП]'
+    type: vless
+    server: es.g4m1.biz
+    port: 443
+    uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
+    udp: true
+    tls: true
+    servername: es.g4m1.biz
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: ger.g4m1.biz
+    port: 443
+    uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
+    udp: true
+    tls: true
+    servername: ger.g4m1.biz
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+    type: vless
+    server: pli.g4m1.biz
+    port: 443
+    uuid: e0b9fb0f-1bbd-478b-9580-c2294778338b
+    udp: true
+    tls: true
+    servername: pli.g4m1.biz
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
   - name: '180.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 62.109.19.28
@@ -1681,12 +1680,6 @@ proxies:
     port: 8443
     password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
     sni: hy2.70.34.213.83.nip.io
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
   - name: '121.🇺🇸США | @LimeVPNFREE'
     type: ss
     server: 5.78.51.123
@@ -1715,7 +1708,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 'IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw='
     udp: true
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇷🇺 AetrisVPN'
     type: ss
     server: 90.156.203.62
     port: 5112
@@ -1837,8 +1830,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
-      - '🇳🇱 NL - 003'
-      - '🇵🇱 PL - 004'
       - '🇷🇺 LTE 7 | тгк: @rostunnel'
       - '2 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 9/10'
       - '1635 | 🇩🇪 Germany | 🏳️ SNI-MAILRU | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1915,7 +1906,6 @@ proxy-groups:
       - '🌍🕊 Европа [(Не)Обход БС] #24'
       - '🇳🇱 LTE 76 | тгк: @rostunnel'
       - '10 | REALITY | SNI: www.cloudflare.com | IN: DE OUT: DE | RATING: 4/10'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '24.🇷🇺Россия | @LimeVPNFREE'
@@ -1939,6 +1929,9 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - '4149 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - '13 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 2/10'
+      - '🇪🇸 Испания | 🔗 Каскад [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '180.🇷🇺Россия | @LimeVPNFREE'
       - '🇳🇱 AetrisVPN'
       - '82.🇷🇺Россия | @LimeVPNFREE'
@@ -1962,12 +1955,11 @@ proxy-groups:
       - '🇩🇪 Германия [🏳️LTE] | 🥭🔧'
       - '🇳🇱 Нидерланды [🏳️LTE] | 🥭🔧'
       - '🇸🇪 Швеция [🏳️LTE] | 🥭🔧'
-      - '🇷🇺 Россия [#РКП]'
       - '121.🇺🇸США | @LimeVPNFREE'
       - '14.🇬🇧Великобритания | @LimeVPNFREE'
       - '8.🇫🇷Франция | @LimeVPNFREE'
       - '102.🇦🇱Албания | @LimeVPNFREE'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 AetrisVPN'
       - '🇪🇺 AetrisVPN'
       - '🇧🇪 AetrisVPN'
       - '🇯🇵 AetrisVPN'
