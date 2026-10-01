@@ -1,9 +1,23 @@
 # clash/mihomo subscription
-# 2026-10-01 05:00:55 UTC
+# 2026-10-01 05:15:35 UTC
 proxies:
   - name: '🇷🇺 Россия [#РКП]'
     type: vless
     server: 5.42.96.76
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: ruself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
+      short-id: 7f2e9c4b1a8d6e55
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: ruself.yandex-api.com
     port: 443
     uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
     udp: true
@@ -29,20 +43,34 @@ proxies:
       short-id: b3ef5984820e8da0
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
+  - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: 5.42.105.86
-    port: 2053
-    uuid: 41f33146-7eb4-11f1-855a-d60b69bb56c6
+    server: orbitway.pinecore.net
+    port: 443
+    uuid: 2d8e976b-9017-4116-8cc5-15c5c93a0b59
     udp: true
     tls: true
-    servername: nl.gruztrack.online
+    servername: orbitway.pinecore.net
     client-fingerprint: random
     reality-opts:
-      public-key: 75W-x6PKwwG6fJJbrIkGcsBgMKP7pQnw2HlM8oevDjM
-      short-id: 29c9b82395df8529
-    network: grpc
-    grpc-opts:
+      public-key: HjstheApR8mjk3d1bseY4_B1mE1qjbgI8GbNj4sg6EE
+      short-id: baf60f71ee0350ef
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: retrocore.pinecore.net
+    port: 443
+    uuid: 2d8e976b-9017-4116-8cc5-15c5c93a0b59
+    udp: true
+    tls: true
+    servername: retrocore.pinecore.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: HjstheApR8mjk3d1bseY4_B1mE1qjbgI8GbNj4sg6EE
+      short-id: baf60f71ee0350ef
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: vless
     server: 217.168.247.110
@@ -57,20 +85,6 @@ proxies:
       short-id: d1eb6eeb7d1f481f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: rutg.own-homelab.cloud
-    port: 443
-    uuid: 5812be10-ba11-51cf-a0f4-ddea7ae15db0
-    udp: true
-    tls: true
-    servername: rutg.own-homelab.cloud
-    client-fingerprint: random
-    reality-opts:
-      public-key: Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU
-      short-id: 08
-    network: grpc
-    grpc-opts:
   - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
     server: 185.91.52.13
@@ -85,75 +99,34 @@ proxies:
       short-id: 54861d36
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇷 Франция | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.242.94.28
-    port: 2443
-    uuid: 5da95c12-3fb6-4846-bb7e-2be2441267b1
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-9.cdn.yandex.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: uVBnwRHxC00G__KwRjBul-KLyS2F0PNwGQZJy5hwxEw
-      short-id: 744283eabd1dade6
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
-    server: 147.45.141.182
-    port: 2087
-    uuid: 617fe816-8f02-11f1-9ca5-1e6febe3e1df
+    server: 176.109.105.186
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: max.ru
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: LBsG9yP94EfV0y0hUGiraFdedsHbp4JjDp3XppkTnyQ
-      short-id: 0ba5a6f592759750
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
     network: grpc
     grpc-opts:
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
-    server: 188.225.57.223
-    port: 443
-    uuid: 6ec4a118-1bd6-4cbf-bf61-1d8a1acbb082
+    server: 5.129.249.45
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
     network: grpc
     grpc-opts:
-  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 217.16.18.121
-    port: 443
-    uuid: 7043445a-b975-4771-89a6-e76c15aaaa5e
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: OKJ9724-_gjuXTPkyMo0pwm0TfBM0PN8tTh8HMnE1Wg
-      short-id: f73c22d382939b8f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: rutw.2clash.ru
-    port: 443
-    uuid: 7776eda9-9a8a-43fc-a184-9034a46c7f16
-    udp: true
-    tls: true
-    servername: rutw.2clash.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: Yk0_5nZGFdcIL3QVC3ohxhaM6QdaxvPdjuugWdv-hzQ
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
     server: 109.69.20.101
@@ -182,34 +155,6 @@ proxies:
       short-id: 9f8442aef1b6598f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-    type: vless
-    server: nl.gruztrack.online
-    port: 2053
-    uuid: 910a6034-5e74-11f1-bd95-ee5f4ed81fa1
-    udp: true
-    tls: true
-    servername: nl.gruztrack.online
-    client-fingerprint: random
-    reality-opts:
-      public-key: 75W-x6PKwwG6fJJbrIkGcsBgMKP7pQnw2HlM8oevDjM
-      short-id: 29c9b82395df8529
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.228.101.184
-    port: 443
-    uuid: 928e5fef-9f6b-4705-872a-4ef528a725f6
-    udp: true
-    tls: true
-    servername: ads.x5.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: EqoBhFbuO605d09fK5nbwLsMeybnbAjikSfYlqnlKDY
-      short-id: b9375f0fa99f07b0
-    network: grpc
-    grpc-opts:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
     server: 109.120.181.153
@@ -224,20 +169,34 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
     type: vless
-    server: 90.156.218.163
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    server: nl.gruztrack.online
+    port: 2053
+    uuid: b1e4bfe2-2b12-11f1-92cb-12ba70109d32
     udp: true
     tls: true
-    servername: eh.vk.ru
+    servername: nl.gruztrack.online
     client-fingerprint: random
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: 75W-x6PKwwG6fJJbrIkGcsBgMKP7pQnw2HlM8oevDjM
+      short-id: b328618afa4a944e
+    network: grpc
+    grpc-opts:
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 176.53.162.58
+    port: 24446
+    uuid: b229d38c-35ec-4a0b-9c86-8fceba243d6c
+    udp: true
+    tls: true
+    servername: spry-jolt.cdn.cachefleet.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: esOi15BFVX7pHyci7GQp8_FVlY2EmjSF2-0pPu4lIlk
+      short-id: defeaa98406c7bdf
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 5.42.99.64
@@ -265,6 +224,20 @@ proxies:
       public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
       short-id: 1c10c8c03e2f0484
     network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: tgfree.rush-server.com
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия | 🔗 Каскад [#РКП]'
     type: vless
     server: 217.19.122.47
@@ -279,33 +252,6 @@ proxies:
       short-id: 00000000
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇨🇿 Чехия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 85.117.235.50
-    port: 443
-    uuid: f4d71fd6-1c25-4748-836b-1dbda9268039
-    udp: true
-    tls: true
-    servername: cz1.animeteka.info
-    client-fingerprint: random
-    reality-opts:
-      public-key: PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc
-      short-id: 232b1b09e45325a4
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 85.208.87.32
-    port: 443
-    uuid: ff65fb9b-552f-426f-8321-4c85024377e6
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: zjv3djnsCKDqP7zZFIrJ9ImzgdPE3zFMCYrOvdWqkEE
-      short-id: 06bf5b24acb9
-    network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -314,58 +260,6 @@ proxies:
     sni: srv-8718e6.frd21.ru
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 109.73.206.138
-    port: 443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-    obfs: salamander
-    obfs-password: GFMZeQE35ETsq6hyaz96TJc0
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: 201.24.50.134
-    port: 6443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 217.199.253.114
-    port: 443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 217.199.253.20
-    port: 6443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 31.130.135.139
-    port: 443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 31.177.111.70
-    port: 2053
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-    obfs: salamander
-    obfs-password: fMlwt8EB_s-GotYPayiMyF1-
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: 31.177.111.70
-    port: 6443
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 45.11.26.99
-    port: 2053
-    password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
-    sni: api.unio.finance
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: 91.240.86.70
@@ -378,24 +272,6 @@ proxies:
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 87.228.101.153
-    port: 443
-    password: 928e5fef-9f6b-4705-872a-4ef528a725f6
-    sni: univideo.svc-endpoint.com
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 87.228.101.166
-    port: 443
-    password: 928e5fef-9f6b-4705-872a-4ef528a725f6
-    sni: univideo.svc-endpoint.com
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 87.228.101.83
-    port: 443
-    password: 928e5fef-9f6b-4705-872a-4ef528a725f6
-    sni: univideo.svc-endpoint.com
   - name: '🇷🇺 Россия [#РКП]'
     type: hysteria2
     server: msk.frkn.org
@@ -408,46 +284,39 @@ proxies:
     port: 6443
     password: f9253b31-5fd6-4155-a7cc-f5fce8f5efa7
     sni: api.unio.finance
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 90.156.203.62
+    port: 5112
+    cipher: chacha20-ietf-poly1305
+    password: VVlAff77CnAU43Aoc5j15Y
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇪🇸 Испания | 🔗 Каскад [#РКП]'
-      - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇫🇷 Франция | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇦🇲 Армения | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇷🇺 Россия | 🔗 Каскад [#РКП]'
-      - '🇨🇿 Чехия | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
