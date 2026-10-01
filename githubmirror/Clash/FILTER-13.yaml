@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-01 15:15:36 UTC
+# 2026-10-01 15:30:59 UTC
 proxies:
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+    type: vless
+    server: 188.225.77.177
+    port: 443
+    uuid: 0662319c-0b3f-4382-885a-de3f6c04674e
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
     type: vless
     server: 185.91.52.13
@@ -15,18 +29,17 @@ proxies:
       short-id: 54861d36
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
+  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
-    server: 188.225.77.177
-    port: 443
-    uuid: 789c812f-706f-47fb-8285-d1815dda7780
+    server: 46.243.142.192
+    port: 8444
+    uuid: 79c2d013-1edf-47e7-84ae-6b407adfc9e8
     udp: true
     tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
     reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality'
@@ -50,20 +63,14 @@ proxies:
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
     skip-cert-verify: false
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
