@@ -1,20 +1,33 @@
 # clash/mihomo subscription
-# 2026-10-01 13:00:56 UTC
+# 2026-10-01 13:15:36 UTC
 proxies:
   - name: '🇩🇪 Germany — #81'
     type: vless
-    server: 185.86.144.101
+    server: 212.233.121.169
     port: 443
-    uuid: 55c5cd1b-fdf7-44ce-b5e5-530fff878a13
+    uuid: 0c251232-3877-49e7-89cb-00e96e965e4e
     udp: true
     tls: true
     servername: yandex.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #102'
+  - name: '🇩🇪 Germany — #77'
+    type: vless
+    server: 212.233.121.186
+    port: 443
+    uuid: 0c251232-3877-49e7-89cb-00e96e965e4e
+    udp: true
+    tls: true
+    servername: yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #105'
     type: vless
     server: 185.91.52.13
     port: 30007
@@ -28,7 +41,7 @@ proxies:
       short-id: 54861d36
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #14'
+  - name: '🇷🇺 Beget — #19'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -41,11 +54,11 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #82'
+  - name: '🇩🇪 Germany — #86'
     type: vless
     server: 188.225.77.177
     port: 443
-    uuid: 78fc7876-13ab-44d8-acc2-a5c22d22e445
+    uuid: 65b64481-b075-424b-b43c-ce47c2beb470
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
@@ -55,7 +68,20 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #34'
+  - name: '🇳🇱 The Netherlands — #108'
+    type: vless
+    server: 46.243.142.192
+    port: 8444
+    uuid: 7cba37e8-c67e-4adf-9403-a6bb81da6074
+    udp: true
+    tls: true
+    servername: ppfu3n-01.p.portshaper.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #37'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -68,7 +94,7 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇵🇱 Poland — #106'
+  - name: '🇵🇱 Poland — #111'
     type: vless
     server: 188.225.79.44
     port: 443
@@ -82,7 +108,7 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #33'
+  - name: '🇨🇿 Czechia — #36'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -101,11 +127,13 @@ proxy-groups:
     type: select
     proxies:
       - '🇩🇪 Germany — #81'
-      - '🇳🇱 The Netherlands — #102'
-      - '🇷🇺 Beget — #14'
-      - '🇩🇪 Germany — #82'
-      - '🇩🇪 Germany — #34'
-      - '🇵🇱 Poland — #106'
-      - '🇨🇿 Czechia — #33'
+      - '🇩🇪 Germany — #77'
+      - '🇳🇱 The Netherlands — #105'
+      - '🇷🇺 Beget — #19'
+      - '🇩🇪 Germany — #86'
+      - '🇳🇱 The Netherlands — #108'
+      - '🇩🇪 Germany — #37'
+      - '🇵🇱 Poland — #111'
+      - '🇨🇿 Czechia — #36'
 rules:
   - MATCH,PROXY
