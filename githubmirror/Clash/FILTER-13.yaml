@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-01 14:15:32 UTC
+# 2026-10-01 14:30:47 UTC
 proxies:
   - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
     type: vless
@@ -15,17 +15,18 @@ proxies:
       short-id: 54861d36
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 7cba37e8-c67e-4adf-9403-a6bb81da6074
+    server: 188.225.77.177
+    port: 443
+    uuid: 789c812f-706f-47fb-8285-d1815dda7780
     udp: true
     tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
     reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
@@ -46,7 +47,7 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
