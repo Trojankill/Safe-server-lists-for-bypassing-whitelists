@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-02 10:15:38 UTC
+# 2026-10-02 10:30:43 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS RAW Reality'
     type: vless
@@ -13,6 +13,20 @@ proxies:
     reality-opts:
       public-key: blW-TdkBvKRn4-lkM64Cn2QgfOqjCRYRQ9upE6RPt3c
       short-id: c0c41dc21cf7c18e
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+    type: vless
+    server: 185.91.52.13
+    port: 30007
+    uuid: 5bba3558-ad1c-4d97-a360-7d993d503abd
+    udp: true
+    tls: true
+    servername: storage.yandexcloud.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk
+      short-id: 54861d36
     flow: xtls-rprx-vision
     network: raw
   - name: '🇷🇺 Россия | VLESS XHTTP Reality'
@@ -41,20 +55,20 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
-    server: 185.91.52.191
+    server: 188.225.77.177
     port: 443
-    uuid: d01e89b1-e260-4d30-a363-4a46ff3f9627
+    uuid: ae5288e4-1e8e-4ca7-8ae7-66ba7eee366e
     udp: true
     tls: true
-    servername: www.vk.com
-    client-fingerprint: firefox
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
     reality-opts:
-      public-key: QkLK7zt-xvRvN9Dysl2eiN9Z5_8uRDS2r9LRcKG-H28
-      short-id: 27e53bbcab7593d7
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺 Россия | VLESS TCP Reality'
     type: vless
     server: 37.9.4.112
@@ -68,30 +82,10 @@ proxies:
       public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
-    type: vless
-    server: 188.225.77.177
-    port: 443
-    uuid: f99fcd23-6ce5-4c91-a402-c5ca99e90dae
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
-    password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-    sni: hy.quattro-tech.ru
-  - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
-    type: hysteria2
-    server: 91.240.86.70
-    port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
 proxy-groups:
@@ -99,12 +93,11 @@ proxy-groups:
     type: select
     proxies:
       - '🇳🇱 Нидерланды | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇷🇺 Россия | VLESS XHTTP Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality | Все операторы'
-      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | VLESS gRPC Reality'
-      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
   - MATCH,PROXY
