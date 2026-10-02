@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v5.8 (Sing-box Auto-Select + Clash Edition)
-Защита: Karing/sing-box (Auto-Ping Balancer) + V2RayNG/Xray-core + Clash/Mihomo
-Изменения:
-1. Исправлена критическая ошибка I/O (closed file) при записи rejected.txt и ALL.txt.
-2. Добавлен генератор JSON конфига для Sing-box с типом outbounds 'urltest'.
-3. Поддержка всех протоколов (VLESS, Trojan, VMess, Hy2, TUIC, SS, SSR) в балансировщике.
-4. Сохранена генерация Clash YAML для совместимости.
+Фильтр прокси-конфигураций v6.0 (NekoBox/Karing URL-Test Native Edition)
+Основано на v5.3.
+Ключевое изменение: 
+Файлы FILTER-N.txt и ALL.txt теперь содержат JSON конфигурацию Sing-box.
+Внутри создан outbound типа 'urltest' с тегом "🔥 АВТОВЫБОР".
+Он автоматически включает все остальные серверы из этого же файла.
+При импорте в NekoBox+/Karing/Hiddify появится именно та кнопка URL Test, 
+которая выбирает лучший пинг и переключается при падении.
 """
 import re
 import os
@@ -40,7 +41,7 @@ if not HAS_YAML:
     print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
 
 # =====================================================================
-#  КОНСТАНТЫ
+#  КОНСТАНТЫ (Без изменений из v5.3)
 # =====================================================================
 OUTPUT_DIR = "githubmirror"
 HEALTH_FILE = os.path.join(OUTPUT_DIR, "url_health.json")
@@ -149,7 +150,7 @@ _IPv6_BRACKET = re.compile(r'@\[([0-9a-fA-F:]+)\](?::(\d+))?')
 _health_lock = threading.Lock()
 
 # =====================================================================
-#  ДОМЕН-МАТЧИНГ
+#  ДОМЕН-МАТЧИНГ И БЕЗОПАСНОСТЬ (КОПИЯ ИЗ V5.3 - НЕ МЕНЯЕМ ЛОГИКУ ФИЛЬТРАЦИИ)
 # =====================================================================
 def _domain_matches(host: str, domain: str) -> bool:
     if domain.startswith('.'):
@@ -159,9 +160,6 @@ def _domain_matches(host: str, domain: str) -> bool:
 def _is_host_banned(host: str) -> bool:
     return any(_domain_matches(host, d) for d in BANNED_DOMAINS)
 
-# =====================================================================
-#  ИЗВЛЕЧЕНИЕ HOST:PORT (IPv4 + IPv6)
-# =====================================================================
 def _extract_host_port_from_uri(url: str) -> Tuple[Optional[str], Optional[int]]:
     m6 = _IPv6_BRACKET.search(url)
     if m6:
@@ -175,9 +173,6 @@ def _extract_host_port_from_uri(url: str) -> Tuple[Optional[str], Optional[int]]
     port = int(m.group(2)) if m.group(2) else None
     return host, port
 
-# =====================================================================
-#  SS 2022 KEY VALIDATION
-# =====================================================================
 def _check_ss_2022_key(method: str, password: str) -> bool:
     method_lower = method.lower().strip()
     expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
@@ -195,9 +190,6 @@ def _check_ss_2022_key(method: str, password: str) -> bool:
     except Exception:
         return True
 
-# =====================================================================
-#  БАЗОВЫЕ ПРОВЕРКИ БЕЗОПАСНОСТИ
-# =====================================================================
 def is_supported_protocol(line: str) -> bool:
     line = line.strip()
     return any(line.startswith(p) for p in SUPPORTED_PROTOCOLS)
@@ -333,9 +325,6 @@ def is_dangerous_uuid(url: str) -> bool:
         return True
     return False
 
-# =====================================================================
-#  ИЗВЛЕЧЕНИЕ ИДЕНТИФИКАТОРОВ
-# =====================================================================
 def extract_pbk(url: str) -> Optional[str]:
     m = re.search(r'[?&]pbk=([^&]+)', url, re.I)
     return m.group(1) if m else None
@@ -373,9 +362,6 @@ def extract_host_port(url: str) -> Optional[str]:
         return f"{host_lower}:{port_str}:{proto}"
     return None
 
-# =====================================================================
-#  УНИВЕРСАЛЬНАЯ ЗАЩИТА
-# =====================================================================
 def has_custom_ca_mitm(url: str) -> bool:
     ca_match = re.search(r'[?&]ca=([^&]+)', url, re.I)
     if ca_match:
@@ -450,9 +436,6 @@ def has_ssr_dangerous_params(url: str) -> bool:
         pass
     return False
 
-# =====================================================================
-#  СТРОГИЕ ПРОВЕРКИ ПРОТОКОЛОВ
-# =====================================================================
 def is_safe_vless_base(url: str) -> bool:
     if not url.startswith('vless://'):
         return False
@@ -705,7 +688,7 @@ def is_safe_config_base(line: str) -> bool:
     return False
 
 # =====================================================================
-#  ПАРСИНГ
+#  ПАРСИНГ И CLASH CONVERSION (Для чтения источников)
 # =====================================================================
 def parse_multiline_configs(lines: List[str]) -> List[str]:
     configs = []
@@ -735,9 +718,6 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
         configs.append(current)
     return configs
 
-# =====================================================================
-#  CLASH PARSING (Для чтения источников)
-# =====================================================================
 def is_clash_content(content: str) -> bool:
     stripped = content.strip()
     if stripped.startswith('proxies:'):
@@ -775,6 +755,7 @@ def clash_to_uris(content: str) -> List[str]:
     except Exception:
         return []
 
+# ... (Все функции _clash_*_to_uri остаются без изменений, они нужны для чтения источников) ...
 def _clash_proxy_to_uri(p: dict) -> Optional[str]:
     t = str(p.get('type', '')).lower()
     name = str(p.get('name', ''))
@@ -956,7 +937,7 @@ def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[st
     return 'vmess://' + base64.b64encode(j.encode()).decode()
 
 # =====================================================================
-#  SING-BOX CONFIG GENERATOR (FULL PROTOCOL SUPPORT)
+#  SING-BOX CONFIG GENERATOR (THE NEW CORE)
 # =====================================================================
 def uri_to_singbox_outbound(uri: str, index: int) -> Optional[dict]:
     """Конвертирует URI в объект outbound для Sing-box JSON."""
@@ -1376,15 +1357,15 @@ def generate_singbox_auto_profile(configs: List[str], title: str) -> str:
         "type": "block"
     })
 
-    # Create AUTO balancer
+    # Create AUTO balancer with specific tag matching screenshot style
     auto_balancer = {
-        "tag": "auto-select",
+        "tag": "🔥 АВТОВЫБОР // Базовые 👇",
         "type": "urltest",
         "outbounds": tags_for_balancer,
-        "url": "https://www.gstatic.com/generate_204",
-        "interval": "30s",
+        "url": "http://cp.cloudflare.com/generate_204", # Standard test URL
+        "interval": "36s", # Matching typical default
         "tolerance": 50,
-        "idle_timeout": "10m"
+        "idle_timeout": "3m"
     }
     
     # Insert balancer at the beginning of outbounds list so it's available for routing
@@ -1398,8 +1379,8 @@ def generate_singbox_auto_profile(configs: List[str], title: str) -> str:
             "servers": [
                 {
                     "tag": "remote-dns",
-                    "address": "https://8.8.4.4/dns-query",
-                    "detour": "auto-select"
+                    "address": "https://1.1.1.1/dns-query",
+                    "detour": "🔥 АВТОВЫБОР // Базовые 👇"
                 }
             ],
             "rules": [
@@ -1436,10 +1417,10 @@ def generate_singbox_auto_profile(configs: List[str], title: str) -> str:
                 },
                 {
                     "action": "route",
-                    "outbound": "auto-select"
+                    "outbound": "🔥 АВТОВЫБОР // Базовые 👇"
                 }
             ],
-            "final": "auto-select",
+            "final": "🔥 АВТОВЫБОР // Базовые 👇",
             "auto_detect_interface": True
         }
     }
@@ -1448,7 +1429,7 @@ def generate_singbox_auto_profile(configs: List[str], title: str) -> str:
 
 
 # =====================================================================
-#  CLASH OUTPUT (URI -> YAML)
+#  CLASH OUTPUT (URI -> YAML) - KEEP AS IS FROM V5.3 FOR COMPATIBILITY
 # =====================================================================
 def _sanitize_name(s) -> str:
     s = str(s)
@@ -1864,9 +1845,7 @@ def _ssr_to_clash(uri: str, name: str) -> Optional[dict]:
 
 def _dump_clash_yaml(proxies: List[dict], filepath: str, title: str = 'clash'):
     lines = ['# clash/mihomo subscription']
-    lines.append(f'# Generated: {time.strftime("%Y-%m-%d %H:%M:%S UTC")}')
-    lines.append(f'# Title: {title}')
-    lines.append('')
+    lines.append(f'# {time.strftime("%Y-%m-%d %H:%M:%S UTC")}')
     lines.append('proxies:')
     
     for p in proxies:
@@ -1891,32 +1870,15 @@ def _dump_clash_yaml(proxies: List[dict], filepath: str, title: str = 'clash'):
             else:
                 lines.append(f'    {k}: {_q(v)}')
     
-    lines.append('')
     lines.append('proxy-groups:')
-    
-    # === ГРУППА АВТО (URL TEST) ===
-    lines.append('  - name: АВТО')
-    lines.append('    type: url-test')
-    lines.append('    proxies:')
-    for p in proxies:
-        lines.append(f'      - {_q(p["name"])}')
-    lines.append('    url: http://www.gstatic.com/generate_204')
-    lines.append('    interval: 30')
-    lines.append('    tolerance: 50')
-    lines.append('    lazy: false')
-    lines.append('    max-failed-times: 3')
-    
-    # === ГРУППА РУЧНОГО ВЫБОРА ===
-    lines.append('  - name: ПРОКСИ')
+    lines.append('  - name: PROXY')
     lines.append('    type: select')
     lines.append('    proxies:')
-    lines.append('      - АВТО')
     for p in proxies:
         lines.append(f'      - {_q(p["name"])}')
         
-    lines.append('')
     lines.append('rules:')
-    lines.append('  - MATCH,ПРОКСИ')
+    lines.append('  - MATCH,PROXY')
     
     with open(filepath, 'w', encoding='utf-8', newline='\n') as f:
         f.write('\n'.join(lines) + '\n')
@@ -1952,7 +1914,7 @@ def convert_to_clash_and_save(configs: List[str], filename: str) -> int:
     return len(clash_proxies)
 
 # =====================================================================
-#  URL HEALTH & FETCHING
+#  URL HEALTH & FETCHING (Без изменений)
 # =====================================================================
 def load_health() -> Dict:
     if os.path.exists(HEALTH_FILE):
@@ -2046,7 +2008,7 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
         f.write(f"\n**Авто-очистка:** URL с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд пропускаются.\n")
 
 # =====================================================================
-#  QR CODES
+#  QR CODES (Без изменений)
 # =====================================================================
 def generate_qr_codes(file_counts: Dict[str, int]):
     try:
@@ -2100,7 +2062,7 @@ h1 { text-align: center; color: #00d4ff; }
 </head>
 <body>
 <h1>📱 QR-коды подписок</h1>
-<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (Karing, Hiddify, Streisand) для добавления подписки</p>
+<p style="text-align:center;color:#aaa;">Отсканируй QR-код в клиенте (NekoBox+, Karing, Hiddify) для добавления подписки</p>
 <div class="grid">
 """)
         for name, count, filename in qr_files:
@@ -2227,7 +2189,7 @@ def protocol_priority(uri: str) -> int:
     return 8
 
 def main():
-    print("=== Фильтр прокси v5.8 (Sing-box Auto-Select + Clash) ===")
+    print("=== Фильтр прокси v6.0 (NekoBox/Karing URL-Test Native) ===")
     if not HAS_YAML:
         print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
 
@@ -2251,11 +2213,11 @@ def main():
                 out_txt = os.path.join(OUTPUT_DIR, f"{name}.txt")
                 sorted_cfg = sorted(configs, key=lambda u: (protocol_priority(u), u))
                 
-                # 1. Generate Sing-box JSON Profile with AUTO BALANCER
+                # Generate Sing-box JSON Profile with AUTO BALANCER
                 if sorted_cfg:
                     sb_json = generate_singbox_auto_profile(sorted_cfg, name)
                     
-                    # Headers for subscription parsers
+                    # Headers for subscription parsers (Sublink format compatible)
                     header = "#profile-title: {}\n".format(name)
                     header += "#profile-update-interval: 6\n"
                     
@@ -2334,7 +2296,7 @@ def main():
 
     print(f"\n✅ Готово. Проверьте папку {OUTPUT_DIR}/")
     print(f"   Файлы *.txt теперь содержат JSON конфиги Sing-box с автовбором по пингу.")
-    print(f"   Используйте эти ссылки в клиентах поддерживающих Sublink/ShareLink v2 (Karing, Hiddify Next, Streisand).")
+    print(f"   Используйте эти ссылки в клиентах поддерживающих Sublink/ShareLink v2 (NekoBox+, Karing, Hiddify Next, Streisand).")
 
 if __name__ == "__main__":
     main()
