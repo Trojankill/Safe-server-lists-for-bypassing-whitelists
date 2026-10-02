@@ -1,53 +1,93 @@
 # clash/mihomo subscription
-# 2026-10-02 03:00:55 UTC
+# 2026-10-02 03:15:35 UTC
 proxies:
-  - name: '🇵🇱 Польша | VLESS TCP Reality'
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
-    server: 185.141.227.145
-    port: 7449
-    uuid: 2690c11f-7258-43fe-aeb9-d90f93a3c317
+    server: 31.177.111.4
+    port: 443
+    uuid: 49c8e76e-7e52-426a-8669-51d93c7a6d12
     udp: true
     tls: true
-    servername: passport.yandex.ru
+    servername: community-bd.paruscamp.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: blW-TdkBvKRn4-lkM64Cn2QgfOqjCRYRQ9upE6RPt3c
-      short-id: c0c41dc21cf7c18e
+      public-key: NjbnmsosFJHk-7LJei0QOWDI4f7Db2lO6rsdJ0wfHlE
+      short-id: 9654e54cf3aaa5bb
     flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия | VLESS TCP Reality'
+    network: raw
+  - name: '🇷🇺 Россия | VLESS gRPC Reality'
     type: vless
-    server: 46.243.234.157
-    port: 8445
-    uuid: bb26e00a-f640-408b-bc9a-279879085c29
+    server: 188.225.77.177
+    port: 443
+    uuid: 7a67a788-2b73-48b0-ba4f-71348b9e2d43
     udp: true
     tls: true
-    servername: passport.yandex.ru
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 212.233.121.186
+    port: 443
+    uuid: 8405ce10-ac91-499f-98d3-a26521a28384
+    udp: true
+    tls: true
+    servername: yandex.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: HVR_0ft6MHL84tW3jBjQFjbtgP4Y01NDFbnHNxsSRWE
+      public-key: CF49-iS9dsHBwvqYFoDs_T3Me8TT0FpNW2kibGBkVXY
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
   - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
     type: vless
     server: 46.243.142.192
     port: 8444
-    uuid: f40a033c-40cc-4ae6-9fcb-01771c3a4a4f
+    uuid: 8f4bbd93-22b7-4ce4-8b6e-621db814757f
     udp: true
     tls: true
     servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: firefox
+    client-fingerprint: edge
     reality-opts:
       public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 188.225.79.44
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS TCP Reality'
+    type: vless
+    server: 37.9.4.112
+    port: 443
+    uuid: dfad3362-8534-4495-bf49-89f2ae229e7a
+    udp: true
+    tls: true
+    servername: eh.vk.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
-    skip-cert-verify: false
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -58,9 +98,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS TCP Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇳🇱 Нидерланды | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
