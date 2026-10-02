@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-02 06:15:34 UTC
+# 2026-10-02 06:30:47 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS RAW Reality'
     type: vless
@@ -15,19 +15,6 @@ proxies:
       short-id: c0c41dc21cf7c18e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 95393b58-fc05-415f-acde-2c22eec3fc2b
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 188.225.79.44
@@ -54,6 +41,32 @@ proxies:
     reality-opts:
       public-key: 8qUiIosG5-OQWo0tD29BQCbxb50neUg8BynxdAvDzB4
       short-id: 132142
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 185.134.203.61
+    port: 8445
+    uuid: bb26e00a-f640-408b-bc9a-279879085c29
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: jevHLhaXUL4xbcFLBB-1rA1T04VrMvXKBhJbCs67Lkc
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇷🇺 Россия | VLESS RAW Reality'
+    type: vless
+    server: 46.243.234.157
+    port: 8445
+    uuid: bb26e00a-f640-408b-bc9a-279879085c29
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: HVR_0ft6MHL84tW3jBjQFjbtgP4Y01NDFbnHNxsSRWE
     flow: xtls-rprx-vision
     network: raw
   - name: '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
@@ -97,20 +110,6 @@ proxies:
       public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия | VLESS gRPC Reality'
-    type: vless
-    server: 188.225.77.177
-    port: 443
-    uuid: ed715145-89e1-41b6-a761-9652429813d7
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
     type: hysteria2
     server: 91.240.86.70
@@ -128,13 +127,13 @@ proxy-groups:
     type: select
     proxies:
       - '🇳🇱 Нидерланды | VLESS RAW Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS RAW Reality | megafon only'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS RAW Reality | Кроме megafon'
       - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
       - '🇷🇺 Россия | VLESS TCP Reality'
-      - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
 rules:
