@@ -1,5 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-02 16:45:30 UTC
+# Generated: 2026-10-02 17:15:32 UTC
+# Title: FILTER-12
+
 proxies:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
@@ -273,9 +275,10 @@ proxies:
     cipher: aes-256-gcm
     password: zDNVedRFPQexG9v
     udp: true
+
 proxy-groups:
-  - name: PROXY
-    type: select
+  - name: АВТО
+    type: url-test
     proxies:
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
@@ -304,5 +307,42 @@ proxy-groups:
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    tolerance: 50
+    lazy: false
+    max-failed-times: 3
+  - name: ПРОКСИ
+    type: select
+    proxies:
+      - АВТО
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇨🇾 [CY] Кипр VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
+      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇫🇷 [FR] Франция VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇮🇩 [ID] Индонезия VFPARSER'
+      - '🇸🇬 [SG] Сингапур VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇲🇾 [MY] Малайзия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇰🇷 [KR] Южная Корея VFPARSER'
+      - '🇸🇨 [SC] Сейшелы VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
+
 rules:
-  - MATCH,PROXY
+  - MATCH,ПРОКСИ

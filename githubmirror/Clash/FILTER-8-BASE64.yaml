@@ -1,5 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-02 16:45:30 UTC
+# Generated: 2026-10-02 17:15:31 UTC
+# Title: FILTER-8-BASE64
+
 proxies:
   - name: '🇸🇪 [WL] Сервер 31'
     type: vless
@@ -200,9 +202,10 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 'IcovoXEMyjfGjN9RenzKs0/iPaZ3vtk9fkxJ0s/R5vw='
     udp: true
+
 proxy-groups:
-  - name: PROXY
-    type: select
+  - name: АВТО
+    type: url-test
     proxies:
       - '🇸🇪 [WL] Сервер 31'
       - '🇷🇺 [WL] Сервер 1'
@@ -219,5 +222,30 @@ proxy-groups:
       - '🇫🇷 [WL] Сервер 22'
       - '🇨🇿 [WL] Сервер 20'
       - '🇦🇱 [WL] Сервер 5'
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    tolerance: 50
+    lazy: false
+    max-failed-times: 3
+  - name: ПРОКСИ
+    type: select
+    proxies:
+      - АВТО
+      - '🇸🇪 [WL] Сервер 31'
+      - '🇷🇺 [WL] Сервер 1'
+      - '🇵🇱 [WL] Сервер 33'
+      - '🇷🇺 [WL] Сервер 3'
+      - '🇩🇪 [WL] Сервер 34'
+      - '🇧🇩 [WL] Сервер 15'
+      - '🇷🇺 [WL] Сервер 36'
+      - '🇩🇪 [WL] Сервер 10'
+      - '🇷🇺 [WL] Сервер 8'
+      - '🇵🇱 [WL] Сервер 38'
+      - '🇵🇱 [WL] Сервер 19'
+      - '🇵🇱 [WL] Сервер 29'
+      - '🇫🇷 [WL] Сервер 22'
+      - '🇨🇿 [WL] Сервер 20'
+      - '🇦🇱 [WL] Сервер 5'
+
 rules:
-  - MATCH,PROXY
+  - MATCH,ПРОКСИ

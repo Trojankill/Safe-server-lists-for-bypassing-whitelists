@@ -1,5 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-02 16:45:31 UTC
+# Generated: 2026-10-02 17:15:33 UTC
+# Title: FILTER-13
+
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS RAW Reality'
     type: vless
@@ -88,9 +90,10 @@ proxies:
     port: 22443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+
 proxy-groups:
-  - name: PROXY
-    type: select
+  - name: АВТО
+    type: url-test
     proxies:
       - '🇳🇱 Нидерланды | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
@@ -99,5 +102,22 @@ proxy-groups:
       - '🇷🇺 Россия | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS TCP Reality'
       - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    tolerance: 50
+    lazy: false
+    max-failed-times: 3
+  - name: ПРОКСИ
+    type: select
+    proxies:
+      - АВТО
+      - '🇳🇱 Нидерланды | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality | Все операторы'
+      - '🇷🇺 Россия | VLESS XHTTP Reality'
+      - '🇷🇺 Россия | VLESS RAW Reality'
+      - '🇷🇺 Россия | VLESS gRPC Reality'
+      - '🇷🇺 Россия | VLESS TCP Reality'
+      - '🇷🇺 Россия | HYSTERIA2 UDP | Кроме megafon'
+
 rules:
-  - MATCH,PROXY
+  - MATCH,ПРОКСИ

@@ -1,5 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-02 16:45:30 UTC
+# Generated: 2026-10-02 17:15:32 UTC
+# Title: FILTER-10
+
 proxies:
   - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
     type: vless
@@ -17,7 +19,7 @@ proxies:
       path: '/ws'
       headers:
         Host: adheres-scruple.quick-cdn.net
-  - name: 'tg:VLESSFORU top ping 🇵🇱'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
     type: vless
     server: 149.86.227.200
     port: 443
@@ -478,7 +480,7 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: raw
-  - name: 'tg:VLESSFORU 🇵🇱 ⚡'
+  - name: 'tg:VLESSFORU top ping 🇵🇱'
     type: vless
     server: 179.254.71.20
     port: 52006
@@ -666,7 +668,7 @@ proxies:
       path: '/linkvws'
       headers:
         Host: aksai.org
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇨🇦'
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
     type: vmess
     server: mygptagent.org
     port: 443
@@ -681,12 +683,13 @@ proxies:
       path: '/linkvws'
       headers:
         Host: mygptagent.org
+
 proxy-groups:
-  - name: PROXY
-    type: select
+  - name: АВТО
+    type: url-test
     proxies:
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
-      - 'tg:VLESSFORU top ping 🇵🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇿'
@@ -720,7 +723,7 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
       - 'LTE/5G Beeline 🇪🇺'
-      - 'tg:VLESSFORU 🇵🇱 ⚡'
+      - 'tg:VLESSFORU top ping 🇵🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇳'
@@ -734,6 +737,66 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇦'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
+    url: http://www.gstatic.com/generate_204
+    interval: 30
+    tolerance: 50
+    lazy: false
+    max-failed-times: 3
+  - name: ПРОКСИ
+    type: select
+    proxies:
+      - АВТО
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇨🇿'
+      - 'Бесплатный VPN tg:VLESSFORU 🇨🇭'
+      - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'LTE/5G Все операторы 🇪🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇨🇭'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
+      - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇫🇷'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
+      - 'LTE/5G Все операторы 🇪🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇬🇧'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'SNi vk.com 🇫🇷'
+      - 'Бесплатный VPN tg:VLESSFORU 🇹🇷'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇨🇾'
+      - 'LTE/5G Все операторы 🇪🇺'
+      - 'LTE/5G Все операторы 🇪🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
+      - 'LTE/5G Beeline 🇪🇺'
+      - 'tg:VLESSFORU top ping 🇵🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇮🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇮🇳'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
+      - 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
+      - 'Бесплатный VPN tg:VLESSFORU 🇧🇷'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇦'
+      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇸'
+
 rules:
-  - MATCH,PROXY
+  - MATCH,ПРОКСИ
