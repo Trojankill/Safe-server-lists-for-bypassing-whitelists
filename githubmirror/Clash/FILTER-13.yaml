@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-02 04:00:59 UTC
+# 2026-10-02 04:15:32 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | VLESS TCP Reality'
     type: vless
@@ -15,19 +15,6 @@ proxies:
       short-id: c0c41dc21cf7c18e
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 Нидерланды | VLESS gRPC Reality'
-    type: vless
-    server: 46.243.142.192
-    port: 8444
-    uuid: 8f4bbd93-22b7-4ce4-8b6e-621db814757f
-    udp: true
-    tls: true
-    servername: ppfu3n-01.p.portshaper.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: 28g5n3dLFkPoggCYNdyOemaK3r55baTU42SYh0cxzUw
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Россия | VLESS RAW Reality'
     type: vless
     server: 188.225.79.44
@@ -128,7 +115,6 @@ proxy-groups:
     type: select
     proxies:
       - '🇳🇱 Нидерланды | VLESS TCP Reality'
-      - '🇳🇱 Нидерланды | VLESS gRPC Reality'
       - '🇷🇺 Россия | VLESS RAW Reality'
       - '🇷🇺 Россия | VLESS TCP Reality | megafon only'
       - '🇷🇺 Россия | VLESS TCP Reality | Кроме megafon'
