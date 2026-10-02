@@ -1398,7 +1398,7 @@ def generate_singbox_auto_profile(configs: List[str], title: str) -> str:
             "servers": [
                 {
                     "tag": "remote-dns",
-                    "address": "https://1.1.1.1/dns-query",
+                    "address": "https://8.8.4.4/dns-query",
                     "detour": "auto-select"
                 }
             ],
