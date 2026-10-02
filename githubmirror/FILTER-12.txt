@@ -8,8 +8,8 @@
     "servers": [
       {
         "tag": "remote-dns",
-        "address": "https://8.8.4.4/dns-query",
-        "detour": "auto-select"
+        "address": "https://1.1.1.1/dns-query",
+        "detour": "🔥 АВТОВЫБОР // Базовые 👇"
       }
     ],
     "rules": [
@@ -31,7 +31,7 @@
   ],
   "outbounds": [
     {
-      "tag": "auto-select",
+      "tag": "🔥 АВТОВЫБОР // Базовые 👇",
       "type": "urltest",
       "outbounds": [
         "🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER",
@@ -62,10 +62,10 @@
         "🇨🇦 [CA] Канада VFPARSER",
         "🇨🇦 [CA] Канада VFPARSER"
       ],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "30s",
+      "url": "http://cp.cloudflare.com/generate_204",
+      "interval": "36s",
       "tolerance": 50,
-      "idle_timeout": "10m"
+      "idle_timeout": "3m"
     },
     {
       "tag": "🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER",
@@ -525,10 +525,10 @@
       },
       {
         "action": "route",
-        "outbound": "auto-select"
+        "outbound": "🔥 АВТОВЫБОР // Базовые 👇"
       }
     ],
-    "final": "auto-select",
+    "final": "🔥 АВТОВЫБОР // Базовые 👇",
     "auto_detect_interface": true
   }
 }

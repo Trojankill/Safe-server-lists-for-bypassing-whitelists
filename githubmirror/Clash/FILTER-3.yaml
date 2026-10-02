@@ -1,7 +1,5 @@
 # clash/mihomo subscription
-# Generated: 2026-10-02 17:30:46 UTC
-# Title: FILTER-3
-
+# 2026-10-02 17:34:17 UTC
 proxies:
   - name: '🇫🇮 Finland — #115'
     type: vless
@@ -193,34 +191,10 @@ proxies:
       short-id: 232b1b09e45325a4
     flow: xtls-rprx-vision
     network: raw
-
 proxy-groups:
-  - name: АВТО
-    type: url-test
-    proxies:
-      - '🇫🇮 Finland — #115'
-      - '🇳🇱 The Netherlands — #144'
-      - '🇩🇪 Germany — #97'
-      - '🇷🇺 Timeweb — #43'
-      - '🇳🇱 The Netherlands — #145'
-      - '🇳🇱 The Netherlands — #146'
-      - '🇳🇱 The Netherlands — #142'
-      - '🇷🇺 Beget — #28'
-      - '🇩🇪 Germany — #74'
-      - '🇩🇪 Germany — #57'
-      - '🇬🇧 United Kingdom — #118'
-      - '🇸🇪 Sweden — #180'
-      - '🇵🇱 Poland — #160'
-      - '🇨🇿 Czechia — #56'
-    url: http://www.gstatic.com/generate_204
-    interval: 30
-    tolerance: 50
-    lazy: false
-    max-failed-times: 3
-  - name: ПРОКСИ
+  - name: PROXY
     type: select
     proxies:
-      - АВТО
       - '🇫🇮 Finland — #115'
       - '🇳🇱 The Netherlands — #144'
       - '🇩🇪 Germany — #97'
@@ -235,6 +209,5 @@ proxy-groups:
       - '🇸🇪 Sweden — #180'
       - '🇵🇱 Poland — #160'
       - '🇨🇿 Czechia — #56'
-
 rules:
-  - MATCH,ПРОКСИ
+  - MATCH,PROXY

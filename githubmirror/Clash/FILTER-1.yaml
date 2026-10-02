@@ -1,7 +1,5 @@
 # clash/mihomo subscription
-# Generated: 2026-10-02 17:30:47 UTC
-# Title: FILTER-1
-
+# 2026-10-02 17:34:17 UTC
 proxies:
   - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
     type: vless
@@ -91,28 +89,10 @@ proxies:
     port: 8471
     password: 7599d30f-5507-43b1-ba9d-35f1cf483ba6
     sni: ekb.th3web.com
-
 proxy-groups:
-  - name: АВТО
-    type: url-test
-    proxies:
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    url: http://www.gstatic.com/generate_204
-    interval: 30
-    tolerance: 50
-    lazy: false
-    max-failed-times: 3
-  - name: ПРОКСИ
+  - name: PROXY
     type: select
     proxies:
-      - АВТО
       - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
@@ -121,6 +101,5 @@ proxy-groups:
       - '🇷🇺 Россия [#РКП]'
       - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-
 rules:
-  - MATCH,ПРОКСИ
+  - MATCH,PROXY

@@ -1,7 +1,5 @@
 # clash/mihomo subscription
-# Generated: 2026-10-02 17:30:47 UTC
-# Title: FILTER-12
-
+# 2026-10-02 17:34:17 UTC
 proxies:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
@@ -275,47 +273,10 @@ proxies:
     cipher: aes-256-gcm
     password: zDNVedRFPQexG9v
     udp: true
-
 proxy-groups:
-  - name: АВТО
-    type: url-test
-    proxies:
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇨🇾 [CY] Кипр VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇫🇷 [FR] Франция VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇮🇩 [ID] Индонезия VFPARSER'
-      - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇲🇾 [MY] Малайзия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
-      - '🇸🇨 [SC] Сейшелы VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-    url: http://www.gstatic.com/generate_204
-    interval: 30
-    tolerance: 50
-    lazy: false
-    max-failed-times: 3
-  - name: ПРОКСИ
+  - name: PROXY
     type: select
     proxies:
-      - АВТО
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
@@ -343,6 +304,5 @@ proxy-groups:
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
-
 rules:
-  - MATCH,ПРОКСИ
+  - MATCH,PROXY
