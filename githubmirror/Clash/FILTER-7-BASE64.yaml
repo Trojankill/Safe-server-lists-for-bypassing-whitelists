@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-02 19:15:33 UTC
+# 2026-10-02 19:30:45 UTC
 proxies:
   - name: '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
     type: vless
@@ -192,6 +192,20 @@ proxies:
       short-id: 20a080af5636a681
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 [WL] Сервер 17'
+    type: vless
+    server: 13.143.184.226
+    port: 443
+    uuid: 24e3a924-fc4b-4e3f-98a8-85d506d530f9
+    udp: true
+    tls: true
+    servername: msc1.serverslocal.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: qPh1iuwpELosLWTxOXyfCiMghs_sjSzCOGbkiF0gdkk
+      short-id: f7e66e308136e1a1
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '348.🇩🇪Германия | @LimeVPNFREE'
     type: vless
     server: 94.183.253.211
@@ -1291,20 +1305,6 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
-  - name: 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇬🇧 Великобритания'
-    type: vless
-    server: 89.34.90.68
-    port: 8443
-    uuid: fe8e2ffb-8796-408c-af5b-0d4774215e00
-    udp: true
-    tls: true
-    servername: 360.yandex.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: dTdncizxtVTqDZDkQoYdRTkf2Mn6XuKtkzg8vZhrkzA
-      short-id: 6ba85179e30d4fc2
-    network: grpc
-    grpc-opts:
   - name: '125.🇫🇮Финляндия | @LimeVPNFREE'
     type: vless
     server: 31.76.21.78
@@ -1409,6 +1409,13 @@ proxies:
     port: 8388
     cipher: chacha20-ietf-poly1305
     password: zRZNBszYyWo5
+    udp: true
+  - name: '🇷🇺 [WL] Сервер 38'
+    type: ss
+    server: 136.234.6.43
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: zoCbUA8419OtbVd3bWFRgWOclId6PDr8
     udp: true
   - name: '19.🇫🇷Франция | @LimeVPNFREE'
     type: ss
@@ -1540,6 +1547,7 @@ proxy-groups:
       - '🇳🇱 GidroksiFree #34 | 🛡БС | 🟢LTE | 6962ms | ↓0.0Mbps'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
+      - '🇷🇺 [WL] Сервер 17'
       - '348.🇩🇪Германия | @LimeVPNFREE'
       - '🇷🇺➜🇱🇹 GidroksiFree #20 | 🔗Каскад | 🛡БС | 🟢LTE | 2657ms | ↓0.0Mbps'
       - '🇳🇱 AetrisVPN'
@@ -1621,7 +1629,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
-      - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇬🇧 Великобритания'
       - '125.🇫🇮Финляндия | @LimeVPNFREE'
       - '122.🇱🇻Латвия | @LimeVPNFREE'
       - '🇪🇺 AetrisVPN'
@@ -1636,6 +1643,7 @@ proxy-groups:
       - '4G/LTE №11 📶'
       - '137.🇺🇸США | @LimeVPNFREE'
       - '17.🇬🇧Великобритания | @LimeVPNFREE'
+      - '🇷🇺 [WL] Сервер 38'
       - '19.🇫🇷Франция | @LimeVPNFREE'
       - '116.🇦🇱Албания | @LimeVPNFREE'
       - '🇪🇺 AetrisVPN'
