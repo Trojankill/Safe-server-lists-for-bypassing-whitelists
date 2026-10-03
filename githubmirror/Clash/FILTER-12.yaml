@@ -1,6 +1,47 @@
 # clash/mihomo subscription
-# 2026-10-03 00:30:43 UTC
+# 2026-10-03 00:45:31 UTC
 proxies:
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: us1.avroraservice.online
+    port: 443
+    uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+    udp: true
+    tls: true
+    servername: us1.avroraservice.online
+    alpn:
+      - h2
+    client-fingerprint: firefox
+    network: grpc
+    grpc-opts:
+  - name: '🇮🇪 [IE] Ирландия VFPARSER'
+    type: vless
+    server: ie.monkora.org
+    port: 443
+    uuid: 454431fc-71e2-42b1-b375-5b55dd06666a
+    udp: true
+    tls: true
+    servername: www.asus.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: gojmfVDE3y9OZmqSZqkJBTNGPyD5-sjkDYmcD8tsxCQ
+      short-id: cfa818cb27f59905
+    network: grpc
+    grpc-opts:
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: lt.monkora.org
+    port: 443
+    uuid: 454431fc-71e2-42b1-b375-5b55dd06666a
+    udp: true
+    tls: true
+    servername: www.asus.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: gojmfVDE3y9OZmqSZqkJBTNGPyD5-sjkDYmcD8tsxCQ
+      short-id: cfa818cb27f59905
+    network: grpc
+    grpc-opts:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: ware.tunnelgate.org
@@ -17,60 +58,31 @@ proxies:
       path: '/ws/v1/ru'
       headers:
         Host: ware.tunnelgate.org
-  - name: '🇷🇺 [RU] Россия VFPARSER'
+  - name: '🇫🇮 [FI] Финляндия VFPARSER'
     type: vless
-    server: 176.108.243.18
-    port: 9872
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: v3.tgphoenix.ir
+    port: 8443
+    uuid: 6414b234-957e-4777-b39f-9a30080ace9b
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: sm3E3hjmT6_Gmg_O9rBz4nfXYrHpnl6-LvcCp6T6_xc
-      short-id: aabb
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 [RU] Россия VFPARSER'
-    type: vless
-    server: 176.108.246.73
-    port: 9873
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
+    servername: www.aparat.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
-      short-id: aabbccdd
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 [RU] Россия VFPARSER'
+      public-key: uYtexW4wx3Ql_q73x3PM2Vbc3xyKxBgEh5FUL0CmogM
+      short-id: 45d28a6346d04a99
+    network: tcp
+  - name: '🏳️ Белый айпи | 🇱🇺 [LU] Люксембург VFPARSER'
     type: vless
-    server: 176.108.249.189
-    port: 9881
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    server: lbeiggdz.smart-cats.ru
+    port: 443
+    uuid: 8325bd97-b77c-4917-acaa-2446e9e8cc03
     udp: true
     tls: true
-    servername: dl.google.com
-    client-fingerprint: random
+    servername: vk.com
+    client-fingerprint: firefox
     reality-opts:
-      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
-      short-id: aabb
-    network: grpc
-    grpc-opts:
-  - name: '🇨🇾 [CY] Кипр VFPARSER'
-    type: vless
-    server: hydra.yokkastars.com
-    port: 2443
-    uuid: 5e679ccd-1586-4d5f-b87b-48251046cad8
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: qq
-    reality-opts:
-      public-key: h85e28MxBgNyT9d9cNeOLVtWfHq6cT_1_oxZOTajtTg
-      short-id: 92c32de179e5d908
+      public-key: mzrVbIsEggpJfXR8M7yxki2vgv3sXWQdy1bGhXqatUY
+      short-id: 79651ae525860543
     network: grpc
     grpc-opts:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
@@ -103,34 +115,19 @@ proxies:
       short-id: 6d962e8d8a0dce
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇭🇰 [HK] Гонконг'
-    type: vmess
-    server: nycqg19zkwacpm1b.v.3dns.vip
+  - name: '🇹🇼 [TW] Тайвань VFPARSER'
+    type: trojan
+    server: ttww11.bpca2026.top
     port: 443
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    alterId: 0
-    cipher: auto
+    password: 9efd3f19-c7cb-4fa9-8d66-0598043597dc
     udp: true
-    tls: true
-    servername: NYcQg19zkwaCPM1B.v.3dns.vip
-    network: ws
-    ws-opts:
-      path: '/ws-vmess'
-      headers:
-        Host: NYcQg19zkwaCPM1B.v.3dns.vip
-  - name: '🇬🇧 [GB] Великобритания VFPARSER'
+    sni: ttww11.bpca2026.top
+  - name: '🇹🇷 [TR] Турция VFPARSER'
     type: ss
-    server: 129.151.75.247
-    port: 61312
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'BHkQ13jCKX876J8TVa/Qx/Awfit4mFt+6V5zdKGczsw='
-    udp: true
-  - name: '🇩🇪 [DE] Германия VFPARSER'
-    type: ss
-    server: 130.61.42.148
-    port: 59924
-    cipher: 2022-blake3-chacha20-poly1305
-    password: 'tGXsbUDisR28c/KS0RDOlgQS1gVT7UJ5Sf0/5QvMwR4='
+    server: bale.xv98.ir
+    port: 5051
+    cipher: chacha20-ietf-poly1305
+    password: 68mL2QkZEBlxWa3hcslGDw
     udp: true
   - name: '🇮🇩 [ID] Индонезия VFPARSER'
     type: ss
@@ -167,27 +164,6 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
-    server: 15.204.246.107
-    port: 8888
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
-    type: ss
-    server: 211.174.113.172
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
-    udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
-    type: ss
-    server: ce1fc2d8.krkt.hkssip.com
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
-    udp: true
   - name: '🇸🇨 [SC] Сейшелы VFPARSER'
     type: ss
     server: 45.207.207.25
@@ -202,45 +178,26 @@ proxies:
     cipher: aes-256-gcm
     password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: yyz-ca-01.blncvpn4u.cc
-    port: 9443
-    cipher: aes-256-gcm
-    password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
-    udp: true
-  - name: '🇨🇦 [CA] Канада VFPARSER'
-    type: ss
-    server: 51.222.141.125
-    port: 445
-    cipher: aes-256-gcm
-    password: zDNVedRFPQexG9v
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
-      - '🇷🇺 [RU] Россия VFPARSER'
-      - '🇨🇾 [CY] Кипр VFPARSER'
+      - '🇮🇪 [IE] Ирландия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇫🇮 [FI] Финляндия VFPARSER'
+      - '🏳️ Белый айпи | 🇱🇺 [LU] Люксембург VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇭🇰 [HK] Гонконг'
-      - '🇬🇧 [GB] Великобритания VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🇹🇼 [TW] Тайвань VFPARSER'
+      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
       - '🇸🇨 [SC] Сейшелы VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
-      - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
   - MATCH,PROXY
