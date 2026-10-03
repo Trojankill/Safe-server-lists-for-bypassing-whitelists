@@ -1,9 +1,23 @@
 # clash/mihomo subscription
-# 2026-10-03 22:00:53 UTC
+# 2026-10-03 22:16:06 UTC
 proxies:
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+    type: vless
+    server: ru-hub3.lovely.my
+    port: 35104
+    uuid: 7cdc8f71-59a5-431e-a0a2-10b241a77844
+    udp: true
+    tls: true
+    servername: ru-hub3.lovely.my
+    client-fingerprint: random
+    reality-opts:
+      public-key: beQVYWqGX6Y4GXk6NoFRPypmusny1k_5Ybnt1YxWulo
+      short-id: dd5d489812949805
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
-    server: du-rov.secureservice.top
+    server: 5.42.99.64
     port: 8443
     uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
     udp: true
@@ -15,25 +29,28 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 195.133.73.65
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+    type: hysteria2
+    server: 77.232.139.128
+    port: 11592
+    password: 033dc6b532
+    sni: srv-8718e6.frd21.ru
+    obfs: salamander
+    obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 135.106.137.65
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: OahAs_MieM2B3nc2JG9pZOi7KRsn6W0e
     udp: true
-    tls: true
-    servername: anyfile2file.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
