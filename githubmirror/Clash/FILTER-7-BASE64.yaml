@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-03 02:15:39 UTC
+# 2026-10-03 02:30:44 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -15,6 +15,20 @@ proxies:
       short-id: 0990d22f
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇧🇪 Бельгия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: freeru01.tunnely.space
+    port: 443
+    uuid: 00625f73-0343-43fb-9738-a3052638cfe7
+    udp: true
+    tls: true
+    servername: free07.tunnely.space
+    client-fingerprint: random
+    reality-opts:
+      public-key: mChFHtaRmeuO2aDuDPqZvBFaCz6f34sVJIKuJcAR130
+      short-id: d1694c220d4b13e7
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
     server: 45.195.137.5
@@ -85,7 +99,7 @@ proxies:
       short-id: 2b03d7853fc8faa6
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: vless
     server: us1.avroraservice.online
     port: 443
@@ -95,10 +109,10 @@ proxies:
     servername: us1.avroraservice.online
     alpn:
       - h2
-    client-fingerprint: firefox
+    client-fingerprint: random
     network: grpc
     grpc-opts:
-  - name: '🇫🇮 LTE 7 | тгк: @rostunnel'
+  - name: '🇵🇱 LTE 6 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
     port: 2053
@@ -139,7 +153,7 @@ proxies:
       short-id: 9c56fddf237e8eaf
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 LTE 4 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 3 | тгк: @rostunnel'
     type: vless
     server: 144.31.50.236
     port: 443
@@ -346,7 +360,7 @@ proxies:
       short-id: 4be4110078ebed4a
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 LTE 106 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 78 | тгк: @rostunnel'
     type: vless
     server: 23.95.222.127
     port: 8443
@@ -569,7 +583,7 @@ proxies:
       short-id: 0df2f86d58385f90
     network: grpc
     grpc-opts:
-  - name: '🇵🇱 LTE 139 | тгк: @rostunnel'
+  - name: '🇷🇸 LTE 112 | тгк: @rostunnel'
     type: vless
     server: 45.9.24.199
     port: 7443
@@ -752,7 +766,7 @@ proxies:
       public-key: 8bMoXjt19DiBhVEEzx2xxe9dsgYOerlQC6yf0JDOoQE
       short-id: 6f01a3e0f21267
     network: tcp
-  - name: '🇷🇺 LTE 162 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 124 | тгк: @rostunnel'
     type: vless
     server: 3.39.4.109
     port: 13672
@@ -902,6 +916,19 @@ proxies:
       short-id: 94acb54627612d43
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: renderer-bridge-1-832.mirra.now
+    port: 443
+    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+    udp: true
+    tls: true
+    servername: renderer-bridge-1-832.mirra.now
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
   - name: '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 941ms | ↓0.0Mbps'
     type: vless
     server: 87.228.101.184
@@ -1127,6 +1154,19 @@ proxies:
       public-key: DRxBiZFrywyVJE3HruA1StzL1UpXUy5QDJzFx1CCiQQ
       short-id: 62224fbf662c
     network: xhttp
+  - name: '🇷🇺 LTE 185 | тгк: @rostunnel'
+    type: vless
+    server: es2.h1cloud.net
+    port: 25535
+    uuid: c379d8e4-c67d-42ec-a3ed-ca99d1ad0546
+    udp: true
+    tls: true
+    servername: www.microsoft.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: Jh7CocBJSA55VZcLfXwXwoQ_Hi5pV-L1vv1SY-IrSh4
+      short-id: 7642ce57308852e7
+    network: tcp
   - name: '310.🇷🇺Россия | @LimeVPNFREE'
     type: vless
     server: 5.42.99.64
@@ -1196,6 +1236,19 @@ proxies:
       public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
     network: grpc
     grpc-opts:
+  - name: '🇷🇺 Россия — St Petersburg'
+    type: vless
+    server: 188.68.218.37
+    port: 8443
+    uuid: d13baced-948a-40d7-be31-7b44fa768552
+    udp: true
+    tls: true
+    servername: rumulti.federal-usa.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: J5ITJbg5FQFembAfkogKHHQB6DigsFXQxK7xu-QMWUs
+      short-id: 6b2f4e6ac9b1d2f0
+    network: xhttp
   - name: '12 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 6/10'
     type: vless
     server: 46.28.67.55
@@ -1264,7 +1317,35 @@ proxies:
       public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 LTE 60 | тгк: @rostunnel'
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 185.146.156.181
+    port: 443
+    uuid: e6261601-0ba9-465d-9c70-6c8b4e47c7e4
+    udp: true
+    tls: true
+    servername: duckduckgo.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: IxFbqmfuwejYSKYu69qBnzG9yWSuf7UjHujXWOO_w34
+      short-id: 9137d914cd770b54
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 62.109.19.28
+    port: 443
+    uuid: e6261601-0ba9-465d-9c70-6c8b4e47c7e4
+    udp: true
+    tls: true
+    servername: duckduckgo.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: IxFbqmfuwejYSKYu69qBnzG9yWSuf7UjHujXWOO_w34
+      short-id: 9137d914cd770b54
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 LTE 52 | тгк: @rostunnel'
     type: vless
     server: 195.133.73.65
     port: 443
@@ -1334,7 +1415,7 @@ proxies:
       short-id: 2f930fc490dd300f
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 LTE 163 | тгк: @rostunnel'
+  - name: '🇩🇪 Germany — #85'
     type: vless
     server: 46.8.209.69
     port: 9443
@@ -1456,7 +1537,7 @@ proxies:
     cipher: auto
     udp: true
     network: tcp
-  - name: '🇷🇺 LTE 165 | тгк: @rostunnel'
+  - name: '🇵🇱 LTE 128 | тгк: @rostunnel'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -1470,7 +1551,7 @@ proxies:
     port: 6443
     password: 0f8c0e93-1b91-456c-b0a0-58568ac0f690
     sni: api.unio.finance
-  - name: '🇷🇺 GidroksiFree #69 | 🟢LTE | 149ms | ↓0.0Mbps'
+  - name: '🇷🇺 GidroksiFree #65 | 🟢LTE | 149ms | ↓0.0Mbps'
     type: hysteria2
     server: 91.240.86.70
     port: 24443
@@ -1514,7 +1595,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 8tmnvX5zYuWGVIDP2jglZw
     udp: true
-  - name: '🇵🇱 LTE 224 | тгк: @rostunnel'
+  - name: '🇵🇱 LTE 170 | тгк: @rostunnel'
     type: ss
     server: 200.165.234.199
     port: 1088
@@ -1528,7 +1609,7 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: zRZNBszYyWo5
     udp: true
-  - name: '🇷🇺 LTE 3 | тгк: @rostunnel'
+  - name: '🇵🇱 LTE 166 | тгк: @rostunnel'
     type: ss
     server: 136.234.6.43
     port: 1080
@@ -1549,7 +1630,14 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: HPOhndNCal7oZOTHG05hpZDhb8PNQEGh
     udp: true
-  - name: '🇵🇱 LTE 223 | тгк: @rostunnel'
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 62.217.181.57
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: MQC4oXhq62cUJ9uQ2kuS1w
+    udp: true
+  - name: '🇵🇱 LTE 169 | тгк: @rostunnel'
     type: ss
     server: 185.75.189.178
     port: 4500
@@ -1675,28 +1763,22 @@ proxies:
     cipher: aes-256-gcm
     password: zDNVedRFPQexG9v
     udp: true
-  - name: '31.🇷🇺Россия | @LimeVPNFREE'
-    type: ss
-    server: 62.217.181.57
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: MQC4oXhq62cUJ9uQ2kuS1w
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇺🇸 США | БС¹'
+      - '🇧🇪 Бельгия | 🔗 Каскад [#РКП]'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
       - '300.🇷🇺Россия | @LimeVPNFREE'
       - '1932 | 🇷🇺 Russia | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇫🇮 LTE 7 | тгк: @rostunnel'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇵🇱 LTE 6 | тгк: @rostunnel'
       - '7 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 7/10'
       - '🇺🇸 США | БС²'
-      - '🇷🇺 LTE 4 | тгк: @rostunnel'
+      - '🇷🇺 LTE 3 | тгк: @rostunnel'
       - '267.🇫🇷Франция | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
       - '🇷🇺➜🇳🇱 GidroksiFree #78 | 🔗Каскад | 🛡БС | 🟢LTE | 859ms | ↓0.0Mbps'
@@ -1711,7 +1793,7 @@ proxy-groups:
       - '🇫🇮 Финляндия | БС²'
       - '🇫🇮 Финляндия | БС¹'
       - '68.🇵🇱Польша | @LimeVPNFREE'
-      - '🇷🇺 LTE 106 | тгк: @rostunnel'
+      - '🇷🇺 LTE 78 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '🇷🇺 GidroksiFree #73 | 🟢LTE | 483ms | ↓0.0Mbps'
@@ -1727,7 +1809,7 @@ proxy-groups:
       - '🇷🇺➜🇩🇪 GidroksiFree #50 | 🔗Каскад | 🛡БС | 🟢LTE | 863ms | ↓0.0Mbps'
       - '🇩🇪 [WL] Сервер 44'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
-      - '🇵🇱 LTE 139 | тгк: @rostunnel'
+      - '🇷🇸 LTE 112 | тгк: @rostunnel'
       - '287.🇵🇱Польша | @LimeVPNFREE'
       - '321.🇱🇻Латвия | @LimeVPNFREE'
       - '🌍 XX - 022'
@@ -1740,7 +1822,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇷🇺 Россия'
       - '0621 | 🇮🇪 Ireland | 🏳️ SNI-VK | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '208.🇷🇺Россия | @LimeVPNFREE'
-      - '🇷🇺 LTE 162 | тгк: @rostunnel'
+      - '🇷🇺 LTE 124 | тгк: @rostunnel'
       - '🇱🇺 Luxembourg [SNI-RU] vk.com'
       - 'AetrisVPN White list ┃ ✅ SNI: vk.com ┃ 🇩🇪 Германия'
       - '82.🇷🇺Россия | @LimeVPNFREE'
@@ -1751,6 +1833,7 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #51 | 🔗Каскад | 🛡БС | 🟢LTE | 782ms | ↓0.0Mbps'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
       - '🇬🇷 Греция | БС¹'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 941ms | ↓0.0Mbps'
       - '54.🇷🇺Россия | @LimeVPNFREE'
       - '🇷🇺 GidroksiFree #15 | 🟢LTE | 6954ms | ↓0.0Mbps'
@@ -1768,22 +1851,26 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇱🇻'
       - '🇷🇺➜🇫🇮 GidroksiFree #37 | 🔗Каскад | 🛡БС | 🟢LTE | 1090ms | ↓0.0Mbps'
+      - '🇷🇺 LTE 185 | тгк: @rostunnel'
       - '310.🇷🇺Россия | @LimeVPNFREE'
       - '🇳🇱 [WL] Сервер 51'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '🇨🇦 Канада | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
+      - '🇷🇺 Россия — St Petersburg'
       - '12 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 6/10'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇫🇮 Финляндия'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - '🇺🇸 США 18 Timeweb, LLP'
-      - '🇷🇺 LTE 60 | тгк: @rostunnel'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 LTE 52 | тгк: @rostunnel'
       - '48.🇷🇺Россия | @LimeVPNFREE'
       - 'Бесплатный VPN tg:VLESSFORU 🇷🇴'
       - '🇷🇸 Serbia [*CIDR]'
       - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
-      - '🇷🇺 LTE 163 | тгк: @rostunnel'
+      - '🇩🇪 Germany — #85'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
@@ -1794,21 +1881,22 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇬🇧'
       - '🇪🇺 AetrisVPN'
-      - '🇷🇺 LTE 165 | тгк: @rostunnel'
+      - '🇵🇱 LTE 128 | тгк: @rostunnel'
       - '🇷🇺 Россия — Moscow'
-      - '🇷🇺 GidroksiFree #69 | 🟢LTE | 149ms | ↓0.0Mbps'
+      - '🇷🇺 GidroksiFree #65 | 🟢LTE | 149ms | ↓0.0Mbps'
       - '🇩🇪 GidroksiFree #29 | 🟢LTE | 0ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
       - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '🇺🇸 AetrisVPN'
-      - '🇵🇱 LTE 224 | тгк: @rostunnel'
+      - '🇵🇱 LTE 170 | тгк: @rostunnel'
       - '84.🇬🇧Великобритания | @LimeVPNFREE'
-      - '🇷🇺 LTE 3 | тгк: @rostunnel'
+      - '🇵🇱 LTE 166 | тгк: @rostunnel'
       - '33.🇫🇷Франция | @LimeVPNFREE'
       - '🇷🇺 [WL] Сервер 30'
-      - '🇵🇱 LTE 223 | тгк: @rostunnel'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇵🇱 LTE 169 | тгк: @rostunnel'
       - '🌐 [WL] Сервер 19'
       - '🇪🇺 AetrisVPN'
       - '🇧🇪 AetrisVPN'
@@ -1826,6 +1914,5 @@ proxy-groups:
       - '🇺🇸 AetrisVPN'
       - '🇨🇾 AetrisVPN'
       - '358.🇨🇦Канада | @LimeVPNFREE'
-      - '31.🇷🇺Россия | @LimeVPNFREE'
 rules:
   - MATCH,PROXY
