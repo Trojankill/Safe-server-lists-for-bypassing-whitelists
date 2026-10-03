@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-03 09:30:41 UTC
+# 2026-10-03 09:45:31 UTC
 proxies:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
@@ -15,20 +15,20 @@ proxies:
       short-id: 27e53bbcab7593d7
     network: grpc
     grpc-opts:
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
-    server: 81.94.148.120
-    port: 7449
-    uuid: 2690c11f-7258-43fe-aeb9-d90f93a3c317
+    server: 176.109.105.186
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
-    servername: passport.yandex.ru
+    servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: blW-TdkBvKRn4-lkM64Cn2QgfOqjCRYRQ9upE6RPt3c
-      short-id: c0c41dc21cf7c18e
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
+      short-id: aa
+    network: grpc
+    grpc-opts:
   - name: '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
     type: vless
     server: 176.123.165.25
@@ -85,6 +85,48 @@ proxies:
       short-id: e7
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 46.8.210.33
+    port: 443
+    uuid: 8f6e49e6-7f03-4f10-9da9-1716158d80ed
+    udp: true
+    tls: true
+    servername: krutilka.loknietotop.digital
+    client-fingerprint: random
+    reality-opts:
+      public-key: teCpxFQgBGXtZvYMdkoFz2aj17cbfrw-R15tzgmQWVM
+      short-id: 3cdcdf4283d9e015
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 195.133.73.65
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: tgfree.rush-server.com
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -105,18 +147,28 @@ proxies:
     port: 24443
     password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
     sni: hy.quattro-tech.ru
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇫🇷 Франция | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇱🇻 Латвия | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
