@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-03 22:45:28 UTC
+# 2026-10-03 23:00:52 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -31,32 +31,38 @@ proxies:
       path: '/ws/v1/ru'
       headers:
         Host: ware.tunnelgate.org
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
-    server: 217.60.96.102
+    server: 78.159.246.110
     port: 443
-    uuid: d3179449-2988-40ec-b08f-dcfe6e66ba63
+    uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
     udp: true
     tls: true
-    servername: ne2000.bearbeer.digital
-    client-fingerprint: qq
-    reality-opts:
-      public-key: z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 [DE] Германия VFPARSER'
+    servername: fbsv6.guardora.pro
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws'
+      headers:
+        Host: fbsv6.guardora.pro
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
-    server: 31.77.226.120
+    server: fbsv6.guardora.pro
     port: 443
-    uuid: d3179449-2988-40ec-b08f-dcfe6e66ba63
+    uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
     udp: true
     tls: true
-    servername: de2222.bearbeer.digital
-    client-fingerprint: qq
-    reality-opts:
-      public-key: z-TKWOWgZLfzQ-wNdwXQqVwaUgCmbchM2Xtrk1NGynU
-    flow: xtls-rprx-vision
-    network: tcp
+    servername: fbsv6.guardora.pro
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/ws'
+      headers:
+        Host: fbsv6.guardora.pro
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: vless
     server: jumpernode.online
@@ -71,25 +77,27 @@ proxies:
       short-id: 6d962e8d8a0dce
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: 72.56.41.232
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
+    type: vmess
+    server: renderer-stream-1-832.mirra.now
     port: 443
-    uuid: f811a2e8-08ed-4b30-b44c-449a7cab54d8
+    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
+    alterId: 0
+    cipher: auto
     udp: true
     tls: true
-    servername: usatimewebnew.space
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: FFsBozg2vRN-wNNsv6Y97sbr4EF5aIHiYF7-xHa_9Fk
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇹🇷 [TR] Турция VFPARSER'
+    servername: renderer-stream-1-832.mirra.now
+    network: ws
+    ws-opts:
+      path: '/api/v1/gpu-stream/socket'
+      headers:
+        Host: renderer-stream-1-832.mirra.now
+  - name: '🇺🇸 [US] США VFPARSER'
     type: ss
-    server: bale.xv98.ir
-    port: 5051
+    server: ss.043.node-for-bigairport.win
+    port: 20006
     cipher: chacha20-ietf-poly1305
-    password: 68mL2QkZEBlxWa3hcslGDw
+    password: 792e0bdb-01db-450c-94c4-925151eb396e
     udp: true
   - name: '🇮🇩 [ID] Индонезия VFPARSER'
     type: ss
@@ -126,27 +134,6 @@ proxies:
     cipher: aes-256-gcm
     password: PCnnH6SQSnfoS27
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: ss
-    server: 15.204.246.107
-    port: 8888
-    cipher: aes-256-gcm
-    password: Y6R9pAtvxxzmGC
-    udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
-    type: ss
-    server: 211.174.113.172
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
-    udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
-    type: ss
-    server: ce1fc2d8.krkt.hkssip.com
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
-    udp: true
   - name: '🇸🇨 [SC] Сейшелы VFPARSER'
     type: ss
     server: 45.207.207.25
@@ -174,19 +161,16 @@ proxy-groups:
     proxies:
       - '🇺🇸 [US] США VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇨🇴 [CO] Колумбия VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
       - '🇸🇨 [SC] Сейшелы VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
