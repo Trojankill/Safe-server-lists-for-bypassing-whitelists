@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-03 11:00:53 UTC
+# 2026-10-03 11:15:30 UTC
 proxies:
+  - name: '🇺🇸 США | БС¹'
+    type: vless
+    server: 167.17.69.171
+    port: 443
+    uuid: 00144519-7e0d-476b-8d28-435576af9262
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk
+      short-id: 0990d22f
+    flow: xtls-rprx-vision
+    network: raw
   - name: '7 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 5/10'
     type: vless
     server: 82.118.22.161
@@ -898,6 +912,20 @@ proxies:
       short-id: 94acb54627612d43
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇺🇸 США | БС²'
+    type: vless
+    server: 5.34.178.120
+    port: 443
+    uuid: 9063f9fb-e88a-4ee0-b4a4-a92ca7316a9f
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: EVhq2BxKuw2Cody1DmF_HPvUYKwzdXbHP47blUv-eRM
+      short-id: 55ab5559e3a6d10a
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
     type: vless
     server: 185.166.154.111
@@ -964,7 +992,7 @@ proxies:
       public-key: XrgbY2hKJQG8QOZO2J1pGmZsbvjSsSWoM9iULIMGK00
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 United Kingdom — #70'
+  - name: '🇬🇧Обходы - TG: AirLinkVPNBot |0073|'
     type: vless
     server: 84.38.181.249
     port: 443
@@ -1137,6 +1165,32 @@ proxies:
       short-id: 3199b70105c62ce0
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇷🇺➜🇳🇱 GidroksiFree #33 | 🔗Каскад | 🛡БС | 🟢LTE | 539ms | ↓0.0Mbps'
+    type: vless
+    server: 5.129.245.147
+    port: 443
+    uuid: b9a2bba1-9d4c-4ec6-b70a-488acce346d0
+    udp: true
+    tls: true
+    servername: www.wertergr.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 7W0gpi6vpmoJYIsYuOZjDP9Udj0LubCNHFx4U9RC3HQ
+      short-id: 09
+    network: xhttp
+  - name: '🇷🇺 GidroksiFree #46 | 🟢LTE | 1355ms | ↓0.0Mbps'
+    type: vless
+    server: 5.129.245.147
+    port: 56889
+    uuid: b9a2bba1-9d4c-4ec6-b70a-488acce346d0
+    udp: true
+    tls: true
+    servername: wertergr.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: utlaTe5B7ueiIKvIpFv9C8Ft9MRVH_FrpHxl9PSJhkU
+      short-id: bb4b164711c00249
+    network: xhttp
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: 78.159.246.110
@@ -1240,12 +1294,12 @@ proxies:
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: uTmb-ytXsx8p0fkBz7A76SHpWk7_oVutIA4LGTE8BQk
       short-id: f98843107912e782
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
   - name: 'AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇺🇸 США'
     type: vless
     server: 93.189.229.166
@@ -1800,6 +1854,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇺🇸 США | БС¹'
       - '7 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 5/10'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
@@ -1865,12 +1920,13 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #51 | 🔗Каскад | 🛡БС | 🟢LTE | 782ms | ↓0.0Mbps'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
       - '6 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 6/10'
+      - '🇺🇸 США | БС²'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
       - '35.🇷🇺Россия | @LimeVPNFREE'
       - '🇷🇺 GidroksiFree #15 | 🟢LTE | 6954ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '28.🇷🇺Россия | @LimeVPNFREE'
-      - '🇬🇧 United Kingdom — #70'
+      - '🇬🇧Обходы - TG: AirLinkVPNBot |0073|'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '1 | REALITY | SNI: gateway.icloud.com | IN: NL OUT: NL | RATING: 10/10'
@@ -1883,6 +1939,8 @@ proxy-groups:
       - '🇫🇮 [WL] Сервер 53'
       - '188.🇷🇺Россия | @LimeVPNFREE'
       - '114.🇷🇺Россия | @LimeVPNFREE'
+      - '🇷🇺➜🇳🇱 GidroksiFree #33 | 🔗Каскад | 🛡БС | 🟢LTE | 539ms | ↓0.0Mbps'
+      - '🇷🇺 GidroksiFree #46 | 🟢LTE | 1355ms | ↓0.0Mbps'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇬🇧'
