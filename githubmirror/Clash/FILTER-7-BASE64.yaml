@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 20:15:32 UTC
+# 2026-10-04 20:30:43 UTC
 proxies:
   - name: '9 | RAW+REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
     type: vless
@@ -771,6 +771,20 @@ proxies:
     tls: true
     servername: voks.serveroff.net
     client-fingerprint: firefox
+    reality-opts:
+      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
+      short-id: 8c42ac6d1473fc34
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: voks.serveroff.net
+    port: 12443
+    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
+    udp: true
+    tls: true
+    servername: voks.serveroff.net
+    client-fingerprint: random
     reality-opts:
       public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
       short-id: 8c42ac6d1473fc34
@@ -1623,7 +1637,7 @@ proxies:
       public-key: ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4
       short-id: b4c823
     network: xhttp
-  - name: '🇫🇮 AetrisVPN'
+  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
     type: vless
     server: 188.225.35.40
     port: 3443
@@ -1795,6 +1809,12 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
   - name: '🇳🇱 GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
     type: hysteria2
     server: 185.245.105.174
@@ -1994,6 +2014,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: static.rutube.ru ┃ 🇵🇱 Польша'
       - '🇩🇪 AetrisVPN'
       - '🇳🇱 Нидерланды 9 NovoServe B.V.'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - 'Бесплатный VPN tg:VLESSFORU 🇪🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇪🇪'
       - '244.🇪🇪Эстония | @LimeVPNFREE'
@@ -2056,7 +2077,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: www.yandex.ru ┃ 🇺🇸 США'
-      - '🇫🇮 AetrisVPN'
+      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
       - '30.🇱🇻Латвия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: ozon.ru ┃ 🇩🇪 Германия'
@@ -2074,6 +2095,7 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
+      - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
       - '247.🇺🇸США | @LimeVPNFREE'
       - '🇵🇱 LTE 155 | тгк: @rostunnel'
