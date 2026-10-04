@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 20:00:49 UTC
+# 2026-10-04 20:15:32 UTC
 proxies:
   - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
@@ -15,6 +15,34 @@ proxies:
       short-id: 8c42ac6d1473fc34
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: voks.serveroff.net
+    port: 12443
+    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
+    udp: true
+    tls: true
+    servername: voks.serveroff.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
+      short-id: 8c42ac6d1473fc34
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 188.225.18.91
+    port: 443
+    uuid: 7fab503a-458a-45e6-b985-e60523eb7954
+    udp: true
+    tls: true
+    servername: rbc.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: -Rr9E_n1_cBdsHQ_Sy3yMQXUMGjmTp-dUU_IQHy_FVQ
+      short-id: 6ba85179e30d4fc2
+    network: grpc
+    grpc-opts:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
     server: 90.156.218.163
@@ -29,6 +57,20 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 188.225.35.40
+    port: 3443
+    uuid: fee34dc3-0837-4214-8b76-c4ed4d7404ba
+    udp: true
+    tls: true
+    servername: fi3.yservice.help
+    client-fingerprint: random
+    reality-opts:
+      public-key: -qLezG1nUEtvOJi-Ra7WRYv-aHkv3PSefEuXpWV2G04
+      short-id: abcd1234
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -37,12 +79,30 @@ proxies:
     sni: srv-8718e6.frd21.ru
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 135.106.137.65
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
