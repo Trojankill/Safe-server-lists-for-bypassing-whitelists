@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 09:15:30 UTC
+# 2026-10-04 09:30:41 UTC
 proxies:
   - name: '139.🇺🇸США | @LimeVPNFREE'
     type: vless
@@ -98,7 +98,7 @@ proxies:
       short-id: 2b03d7853fc8faa6
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 LTE 4 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 4 | тгк: @rostunnel'
     type: vless
     server: 151.241.226.201
     port: 2053
@@ -303,6 +303,20 @@ proxies:
       short-id: 701c4492fe75c46b
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇳🇱 Нидерланды 9 Timeweb, LLP'
+    type: vless
+    server: 188.225.78.141
+    port: 443
+    uuid: 258ea6ce-8488-4560-bfef-fea2f8bb8caf
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: q7-UiP5VTNSa_KKMZV62HAND6cudj8evyGBTHl3jlTY
+      short-id: 6ecafcd5a84ae6ad
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '0272 | 🇳🇱 Netherlands | 🏳️ CIDR-CDNetworks | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
     type: vless
     server: 81.94.148.120
@@ -385,7 +399,7 @@ proxies:
       short-id: 664b8a28e735af5f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 LTE 68 | тгк: @rostunnel'
+  - name: '🇷🇺 LTE 49 | тгк: @rostunnel'
     type: vless
     server: 23.95.222.127
     port: 8443
@@ -704,7 +718,7 @@ proxies:
       short-id: 2bd6a47090adc591
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 LTE 162 | тгк: @rostunnel'
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
     server: voks.serveroff.net
     port: 12443
@@ -1087,7 +1101,7 @@ proxies:
       short-id: abbcd128
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 LTE 133 | тгк: @rostunnel'
+  - name: '🇬🇧 Великобритания GLOBAL CONNECTIVITY SOLUTIONS LLP'
     type: vless
     server: 84.38.181.249
     port: 443
@@ -1399,7 +1413,7 @@ proxies:
       short-id: 6aa2d2e950441a9a
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 LTE 147 | тгк: @rostunnel'
+  - name: '🇪🇸 LTE 112 | тгк: @rostunnel'
     type: vless
     server: es2.h1cloud.net
     port: 25535
@@ -1642,7 +1656,7 @@ proxies:
       short-id: 6d021e2120ed3fac
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇳🇱 LTE 58 | тгк: @rostunnel'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: nl2.yabloko.top ┃ 🇳🇱 Нидерланды'
     type: vless
     server: 191.44.38.143
     port: 8443
@@ -1836,7 +1850,16 @@ proxies:
     alpn:
       - h2
       - 'http/1.1'
-  - name: '4G/LTE №10 📶'
+  - name: '🇪🇺 AetrisVPN'
+    type: vmess
+    server: 45.32.57.118
+    port: 4433
+    uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
+    alterId: 0
+    cipher: auto
+    udp: true
+    network: tcp
+  - name: '🇳🇱 The Netherlands | [*CIDR]'
     type: vmess
     server: renderer-stream-1-832.mirra.now
     port: 443
@@ -1850,15 +1873,6 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-1-832.mirra.now
-  - name: '🇪🇺 AetrisVPN'
-    type: vmess
-    server: 45.32.57.118
-    port: 4433
-    uuid: 35b89832-0a7c-48dd-8d1c-a2891b522195
-    alterId: 0
-    cipher: auto
-    udp: true
-    network: tcp
   - name: '🇷🇺 GidroksiFree #13 | 🟢LTE | 564ms | ↓0.0Mbps'
     type: hysteria2
     server: 77.232.139.128
@@ -1916,12 +1930,13 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
+    skip-cert-verify: false
   - name: '5361 | 🇳🇱 Netherlands | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
     type: hysteria2
     server: 5.129.235.85
@@ -2085,7 +2100,7 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
       - '0316 | 🇷🇺 Russia | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
       - '2401 | 🇷🇺 Russia | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
-      - '🇵🇱 LTE 4 | тгк: @rostunnel'
+      - '🇷🇺 LTE 4 | тгк: @rostunnel'
       - '1 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 10/10'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - '0784 | 🇷🇺 Russia | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
@@ -2100,13 +2115,14 @@ proxy-groups:
       - '🇳🇱 GidroksiFree #34 | 🛡БС | 🟢LTE | 6962ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇱🇹 GidroksiFree #20 | 🔗Каскад | 🛡БС | 🟢LTE | 2657ms | ↓0.0Mbps'
+      - '🇳🇱 Нидерланды 9 Timeweb, LLP'
       - '0272 | 🇳🇱 Netherlands | 🏳️ CIDR-CDNetworks | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
       - '🇳🇱 AetrisVPN'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания'
       - '🇷🇺➜🇫🇮 GidroksiFree #25 | 🔗Каскад | 🛡БС | 🟢LTE | 643ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: api.yandex.ru ┃ 🇩🇪 Германия'
-      - '🇷🇺 LTE 68 | тгк: @rostunnel'
+      - '🇷🇺 LTE 49 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '🇷🇺 GidroksiFree #73 | 🟢LTE | 483ms | ↓0.0Mbps'
       - '5 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 5/10'
@@ -2129,7 +2145,7 @@ proxy-groups:
       - '🇷🇺➜🇩🇪 GidroksiFree #50 | 🔗Каскад | 🛡БС | 🟢LTE | 863ms | ↓0.0Mbps'
       - '🇩🇪 AetrisVPN'
       - '3391 | 🇬🇧 United Kingdom | 🏳️ SNI-Tinkoff | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇵🇱 LTE 162 | тгк: @rostunnel'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '47.🇱🇹Литва | @LimeVPNFREE'
       - '43.🇱🇹Литва | @LimeVPNFREE'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
@@ -2157,7 +2173,7 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #15 | 🟢LTE | 6954ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
       - '5520 | 🇷🇺 Russia | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
-      - '🇷🇺 LTE 133 | тгк: @rostunnel'
+      - '🇬🇧 Великобритания GLOBAL CONNECTIVITY SOLUTIONS LLP'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - 'AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '2 | REALITY | SNI: gateway.icloud.com | IN: NL OUT: NL | RATING: 10/10'
@@ -2180,7 +2196,7 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США'
       - '64.🇸🇪Швеция | @LimeVPNFREE'
       - '7.🇸🇪Швеция | @LimeVPNFREE'
-      - '🇳🇱 LTE 147 | тгк: @rostunnel'
+      - '🇪🇸 LTE 112 | тгк: @rostunnel'
       - '🌐 [WL] Сервер 27'
       - 'AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия'
       - '🇨🇦 Канада | БС¹'
@@ -2198,7 +2214,7 @@ proxy-groups:
       - '0019 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия'
-      - '🇳🇱 LTE 58 | тгк: @rostunnel'
+      - 'AetrisVPN White list ┃ ✅ SNI: nl2.yabloko.top ┃ 🇳🇱 Нидерланды'
       - '🏴 Неизвестный [#РКП]'
       - 'AetrisVPN White list ┃ ✅ SNI: web.max.ru ┃ 🇷🇺 Россия'
       - '327.🇵🇱Польша | @LimeVPNFREE'
@@ -2214,8 +2230,8 @@ proxy-groups:
       - '3 | TLS | SNI: pl.tronsg.com | IN: PL OUT: PL | RATING: 8/10'
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇪'
       - '3897 | 🇷🇺 Russia | 🏳️ CIDR-CloudRu | TROJAN | TG: @YoutubeUnBlockRu'
-      - '4G/LTE №10 📶'
       - '🇪🇺 AetrisVPN'
+      - '🇳🇱 The Netherlands | [*CIDR]'
       - '🇷🇺 GidroksiFree #13 | 🟢LTE | 564ms | ↓0.0Mbps'
       - '3435 | 🇷🇺 Russia | 🏳️ CIDR-IOT | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇷🇺 Россия — Moscow'
@@ -2225,7 +2241,7 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Russia | 🌐 [*CIDR]'
       - '5361 | 🇳🇱 Netherlands | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
       - '🇳🇱 GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
       - '152.🇺🇸США | @LimeVPNFREE'
