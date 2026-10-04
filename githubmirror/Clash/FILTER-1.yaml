@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 14:15:27 UTC
+# 2026-10-04 14:30:43 UTC
 proxies:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
@@ -13,6 +13,22 @@ proxies:
     reality-opts:
       public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
       short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 176.109.107.120
+    port: 443
+    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
+    udp: true
+    tls: true
+    servername: 2gis.ru
+    alpn:
+      - 'http%2F1.1'
+    client-fingerprint: random
+    reality-opts:
+      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
+      short-id: 766d197af8a04d7b
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
@@ -43,21 +59,14 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
     udp: true
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 135.106.137.166
-    port: 4500
-    cipher: chacha20-ietf-poly1305
-    password: KNvv2p5JBwCDSneDQM4-KlQOGYHgX_7Y
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
