@@ -1,18 +1,18 @@
 # clash/mihomo subscription
-# 2026-10-04 05:01:28 UTC
+# 2026-10-04 05:15:30 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #77'
+  - name: '🇳🇱 The Netherlands — #105'
     type: vless
-    server: 188.225.78.141
-    port: 443
-    uuid: 258ea6ce-8488-4560-bfef-fea2f8bb8caf
+    server: 37.139.42.208
+    port: 9444
+    uuid: 5a3f58ee-fc83-4f46-b019-f82d18d2db63
     udp: true
     tls: true
-    servername: max.ru
-    client-fingerprint: edge
+    servername: res.cdnguard.org
+    client-fingerprint: firefox
     reality-opts:
-      public-key: q7-UiP5VTNSa_KKMZV62HAND6cudj8evyGBTHl3jlTY
-      short-id: 6ecafcd5a84ae6ad
+      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
+      short-id: 413da1312ccce8fb
     flow: xtls-rprx-vision
     network: raw
   - name: '🇷🇺 Beget — #26'
@@ -28,7 +28,21 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇬🇧 United Kingdom — #56'
+  - name: '🇳🇱 The Netherlands — #89'
+    type: vless
+    server: 31.130.155.114
+    port: 443
+    uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
+    udp: true
+    tls: true
+    servername: api.max.ru
+    client-fingerprint: edge
+    reality-opts:
+      public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
+      short-id: 6c183039c8fe2676
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇬🇧 United Kingdom — #72'
     type: vless
     server: 188.225.25.14
     port: 443
@@ -42,21 +56,7 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 The Netherlands — #87'
-    type: vless
-    server: 37.139.42.208
-    port: 9444
-    uuid: 76383b3d-2a06-4978-9aef-4278a9dccee3
-    udp: true
-    tls: true
-    servername: res.cdnguard.org
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: zoQ5Lz62_sEMvHJywCYjYpunMOlGG1rf_jL81iCbwQk
-      short-id: 413da1312ccce8fb
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #51'
+  - name: '🇩🇪 Germany — #52'
     type: vless
     server: 37.18.14.115
     port: 10654
@@ -69,7 +69,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇩🇪 Germany — #50'
+  - name: '🇩🇪 Germany — #51'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -82,7 +82,20 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇨🇿 Czechia — #49'
+  - name: '🇬🇧 United Kingdom — #71'
+    type: vless
+    server: 84.38.181.249
+    port: 443
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
+    udp: true
+    tls: true
+    servername: open.spotify.com
+    client-fingerprint: edge
+    reality-opts:
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
+    network: xhttp
+  - name: '🇨🇿 Czechia — #50'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -100,12 +113,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #77'
+      - '🇳🇱 The Netherlands — #105'
       - '🇷🇺 Beget — #26'
-      - '🇬🇧 United Kingdom — #56'
-      - '🇳🇱 The Netherlands — #87'
+      - '🇳🇱 The Netherlands — #89'
+      - '🇬🇧 United Kingdom — #72'
+      - '🇩🇪 Germany — #52'
       - '🇩🇪 Germany — #51'
-      - '🇩🇪 Germany — #50'
-      - '🇨🇿 Czechia — #49'
+      - '🇬🇧 United Kingdom — #71'
+      - '🇨🇿 Czechia — #50'
 rules:
   - MATCH,PROXY
