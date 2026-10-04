@@ -1,76 +1,50 @@
 # clash/mihomo subscription
-# 2026-10-04 21:30:41 UTC
+# 2026-10-04 21:45:29 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 185.241.195.82
-    port: 12443
-    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
-    udp: true
-    tls: true
-    servername: voks.serveroff.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
-      short-id: 8c42ac6d1473fc34
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: voks.serveroff.net
-    port: 12443
-    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
-    udp: true
-    tls: true
-    servername: voks.serveroff.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
-      short-id: 8c42ac6d1473fc34
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.18.91
-    port: 443
-    uuid: 7fab503a-458a-45e6-b985-e60523eb7954
-    udp: true
-    tls: true
-    servername: rbc.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: -Rr9E_n1_cBdsHQ_Sy3yMQXUMGjmTp-dUU_IQHy_FVQ
-      short-id: 6ba85179e30d4fc2
-    network: grpc
-    grpc-opts:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
-    server: 90.156.218.163
+    server: 62.152.58.90
     port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
     udp: true
     tls: true
-    servername: eh.vk.ru
+    servername: 360.yandex.ru
     client-fingerprint: random
     reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
+      short-id: 27e53bbcab7593d7
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 188.225.35.40
-    port: 3443
-    uuid: fee34dc3-0837-4214-8b76-c4ed4d7404ba
+    server: 176.109.107.120
+    port: 443
+    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
     udp: true
     tls: true
-    servername: fi3.yservice.help
+    servername: 2gis.ru
+    alpn:
+      - 'http%2F1.1'
     client-fingerprint: random
     reality-opts:
-      public-key: -qLezG1nUEtvOJi-Ra7WRYv-aHkv3PSefEuXpWV2G04
-      short-id: abcd1234
+      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
+      short-id: 766d197af8a04d7b
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 46.8.209.69
+    port: 9443
+    uuid: fd820220-3d27-4f56-b8fa-a0421200e217
+    udp: true
+    tls: true
+    servername: cdn.okko.tv
+    client-fingerprint: random
+    reality-opts:
+      public-key: miH_ROFipWmvm-PqF1dSgN1jp7nIQZyKFhdILXXrsQI
+      short-id: 91c91e25817ab51c
+    network: grpc
+    grpc-opts:
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -92,16 +66,22 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
     udp: true
+  - name: '🇷🇺 Россия [#РКП]'
+    type: ss
+    server: 200.165.232.22
+    port: 140
+    cipher: chacha20-ietf-poly1305
+    password: HxftgY6lQ150JDrLMdiAbb-r8xxzh2T6
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
