@@ -1,20 +1,62 @@
 # clash/mihomo subscription
-# 2026-10-04 01:30:38 UTC
+# 2026-10-04 01:45:30 UTC
 proxies:
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+  - name: '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
     type: vless
-    server: ru-hub3.lovely.my
-    port: 35104
-    uuid: 7cdc8f71-59a5-431e-a0a2-10b241a77844
+    server: 185.207.66.8
+    port: 443
+    uuid: 10394279-283c-4ab8-8529-f1e0a4c61bc8
     udp: true
     tls: true
-    servername: ru-hub3.lovely.my
+    servername: hexagonicfield.com
     client-fingerprint: random
     reality-opts:
-      public-key: beQVYWqGX6Y4GXk6NoFRPypmusny1k_5Ybnt1YxWulo
-      short-id: dd5d489812949805
+      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
+      short-id: 5d1e8b3f6c2a9d4e
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 45.93.201.119
+    port: 443
+    uuid: 10394279-283c-4ab8-8529-f1e0a4c61bc8
+    udp: true
+    tls: true
+    servername: vir2albridge.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
+      short-id: 6f3c1b8e5d2a4f7c
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: voks.serveroff.net
+    port: 12443
+    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
+    udp: true
+    tls: true
+    servername: voks.serveroff.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
+      short-id: 8c42ac6d1473fc34
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 193.160.208.137
+    port: 443
+    uuid: a08b9c24-3252-4f7f-afa9-4a37040950fd
+    udp: true
+    tls: true
+    servername: api.hexagonicfield.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4
+      short-id: a1b2c3d4e5f6a7b8
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 5.42.99.64
@@ -29,6 +71,33 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 191.44.38.143
+    port: 8443
+    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
+    udp: true
+    tls: true
+    servername: nl2.yabloko.top
+    client-fingerprint: random
+    reality-opts:
+      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
+      short-id: 1c10c8c03e2f0484
+    network: tcp
+  - name: '🏴 Неизвестный [#РКП]'
+    type: vless
+    server: 195.133.73.65
+    port: 443
+    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
+    udp: true
+    tls: true
+    servername: anyfile2file.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
+      short-id: 64c1fe36c7846400
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -38,17 +107,21 @@ proxies:
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
   - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 135.106.137.65
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: OahAs_MieM2B3nc2JG9pZOi7KRsn6W0e
-    udp: true
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
