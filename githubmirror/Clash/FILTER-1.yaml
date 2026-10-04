@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 15:45:32 UTC
+# 2026-10-04 16:01:26 UTC
 proxies:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
@@ -32,19 +32,6 @@ proxies:
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 37.9.4.112
-    port: 443
-    uuid: dfad3362-8534-4495-bf49-89f2ae229e7a
-    udp: true
-    tls: true
-    servername: eh.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: 2SkXJNcemtEtKD4RSQbOEzo2IgZJ-IsmWAsma3LkhlA
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -53,11 +40,17 @@ proxies:
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
   - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
+  - name: '🏴 Неизвестный [#РКП]'
     type: ss
     server: 135.106.137.65
     port: 1080
     cipher: chacha20-ietf-poly1305
-    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
+    password: OahAs_MieM2B3nc2JG9pZOi7KRsn6W0e
     udp: true
 proxy-groups:
   - name: PROXY
@@ -66,7 +59,7 @@ proxy-groups:
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
+      - '🏴 Неизвестный [#РКП]'
 rules:
   - MATCH,PROXY
