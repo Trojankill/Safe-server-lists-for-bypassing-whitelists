@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 03:15:29 UTC
+# 2026-10-04 03:30:43 UTC
 proxies:
   - name: '🇺🇸 США | БС³'
     type: vless
@@ -13,6 +13,20 @@ proxies:
     reality-opts:
       public-key: lYcMPEgf6ePmF_d8RXR5fsVorycW37v_ECl-fz_H6w4
       short-id: cfe08c23a85f24
+    network: tcp
+  - name: '9 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
+    type: vless
+    server: 82.118.22.161
+    port: 443
+    uuid: 05488656-d4bf-4634-8b2e-e4ff5a56c7e2
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: xY1KpNxaIGmi6jfeudYQ_aaLGQqWK_uHStnwUFd2_2E
+      short-id: fa3ea655619a3e78
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -207,7 +221,7 @@ proxies:
     h2-opts:
       path:
         - '/'
-  - name: '🇽🇽 GidroksiFree #40 | 🟢LTE | 1520ms | ↓0.0Mbps'
+  - name: '🇽🇽 GidroksiFree #48 | 🟢LTE | 1520ms | ↓0.0Mbps'
     type: vless
     server: 185.95.231.156
     port: 443
@@ -929,7 +943,7 @@ proxies:
       short-id: e7
     flow: xtls-rprx-vision
     network: raw
-  - name: '8 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
+  - name: '🇬🇷 Греция | БС¹'
     type: vless
     server: 85.90.197.220
     port: 443
@@ -937,7 +951,7 @@ proxies:
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4
       short-id: 94acb54627612d43
@@ -1473,6 +1487,20 @@ proxies:
       short-id: 4326
     flow: xtls-rprx-vision
     network: tcp
+  - name: '16 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 0/10'
+    type: vless
+    server: 82.118.16.189
+    port: 443
+    uuid: d5e5f5a1-0f23-4c49-af9f-4be445bf9d8e
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: SjGkzJQ9I6ZZjC3V73atcPMczhMm0oiTrB8mUQXz1HY
+      short-id: 37fbf155c7a9f3ff
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇩🇪 Германия'
     type: vless
     server: 31.76.100.41
@@ -1553,7 +1581,7 @@ proxies:
       public-key: hTweFDvbSucrGERtiiwDfoqD3vo_Z9cuaqboff3FTXQ
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇮🇹 [WL] Сервер 52'
+  - name: '12 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 4/10'
     type: vless
     server: 82.118.16.187
     port: 443
@@ -1828,7 +1856,7 @@ proxies:
     password: Trojan
     udp: true
     sni: ie.tronsg.com
-  - name: '16 | TLS | SNI: strong-haddock.rooster465.autos | IN: HK OUT: HK | RATING: 0/10'
+  - name: '15 | TLS | SNI: strong-haddock.rooster465.autos | IN: HK OUT: HK | RATING: 0/10'
     type: trojan
     server: 185.244.208.69
     port: 443
@@ -1881,7 +1909,7 @@ proxies:
       path: '/api/v1/gpu-stream/socket'
       headers:
         Host: renderer-stream-1-832.mirra.now
-  - name: '🇷🇺 GidroksiFree #36 | 🟢LTE | 481ms | ↓0.0Mbps'
+  - name: '🇷🇺 GidroksiFree #45 | 🟢LTE | 481ms | ↓0.0Mbps'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -1938,7 +1966,7 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
-  - name: '🇷🇺 Russia [*CIDR]'
+  - name: '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1951,7 +1979,7 @@ proxies:
     port: 443
     password: gf1:gfhysteria2024
     sni: vk.com
-  - name: '🇳🇱 GidroksiFree #37 | 🟢LTE | 214ms | ↓0.0Mbps'
+  - name: '🇳🇱 GidroksiFree #46 | 🟢LTE | 214ms | ↓0.0Mbps'
     type: hysteria2
     server: 185.245.105.174
     port: 1935
@@ -2123,6 +2151,7 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 США | БС³'
+      - '9 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
       - '🇺🇸 США | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
@@ -2137,7 +2166,7 @@ proxy-groups:
       - '337.🇹🇷Турция | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
       - '🇷🇺➜🇳🇱 GidroksiFree #78 | 🔗Каскад | 🛡БС | 🟢LTE | 859ms | ↓0.0Mbps'
-      - '🇽🇽 GidroksiFree #40 | 🟢LTE | 1520ms | ↓0.0Mbps'
+      - '🇽🇽 GidroksiFree #48 | 🟢LTE | 1520ms | ↓0.0Mbps'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
       - '5360 | 🇷🇺 Russia | 🏳️ SNI-Yandex | VLESS | TG: @YoutubeUnBlockRu'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
@@ -2189,7 +2218,7 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #51 | 🔗Каскад | 🛡БС | 🟢LTE | 782ms | ↓0.0Mbps'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 716ms | ↓0.0Mbps'
       - '1170 | 🇷🇺 Russia | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
-      - '8 | REALITY | SNI: www.cloudflare.com | IN: GR OUT: GR | RATING: 5/10'
+      - '🇬🇷 Греция | БС¹'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '🇷🇺➜🇳🇱 GidroksiFree #27 | 🔗Каскад | 🛡БС | 🟢LTE | 941ms | ↓0.0Mbps'
       - '31.🇷🇺Россия | @LimeVPNFREE'
@@ -2229,13 +2258,14 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
       - '🇷🇴 Румыния | БС¹'
       - '312.🇷🇺Россия | @LimeVPNFREE'
+      - '16 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 0/10'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇩🇪 Германия'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇫🇮 Финляндия'
       - 'AetrisVPN White list ┃ ✅ SNI: 2gis.ru ┃ 🇷🇺 Россия'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇬'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇷'
-      - '🇮🇹 [WL] Сервер 52'
+      - '12 | REALITY | SNI: www.cloudflare.com | IN: IT OUT: IT | RATING: 4/10'
       - '11.🇷🇺Россия | @LimeVPNFREE'
       - '0019 | 🇷🇺 Russia | 🏳️ CIDR-Selectel | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
       - '🇷🇺➜🇫🇷 GidroksiFree #1 | 🔗Каскад | 🛡БС | 🟢LTE | 1237ms | ↓0.0Mbps'
@@ -2256,12 +2286,12 @@ proxy-groups:
       - '🇷🇺 Россия 29 LLC Smart Ape'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇪'
-      - '16 | TLS | SNI: strong-haddock.rooster465.autos | IN: HK OUT: HK | RATING: 0/10'
+      - '15 | TLS | SNI: strong-haddock.rooster465.autos | IN: HK OUT: HK | RATING: 0/10'
       - '3897 | 🇷🇺 Russia | 🏳️ CIDR-CloudRu | TROJAN | TG: @YoutubeUnBlockRu'
       - 'Бесплатный VPN tg:VLESSFORU 🇬🇧'
       - '🇪🇺 AetrisVPN'
       - '🇳🇱 The Netherlands | [*CIDR]'
-      - '🇷🇺 GidroksiFree #36 | 🟢LTE | 481ms | ↓0.0Mbps'
+      - '🇷🇺 GidroksiFree #45 | 🟢LTE | 481ms | ↓0.0Mbps'
       - '3435 | 🇷🇺 Russia | 🏳️ CIDR-IOT | HYSTERIA2 | TG: @YoutubeUnBlockRu'
       - '🇷🇺 Россия — Moscow'
       - '5422 | 🌐 Unknown | 🏳️ CIDR-Hostkey | HYSTERIA2 | TG: @YoutubeUnBlockRu'
@@ -2270,9 +2300,9 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
-      - '🇷🇺 Russia [*CIDR]'
+      - '🇷🇺 Россия [🏳️LTE] | 🥭🔧'
       - '5361 | 🇳🇱 Netherlands | 🏳️ SNI-VK | HYSTERIA2 | 📺 YT | TG: @YoutubeUnBlockRu'
-      - '🇳🇱 GidroksiFree #37 | 🟢LTE | 214ms | ↓0.0Mbps'
+      - '🇳🇱 GidroksiFree #46 | 🟢LTE | 214ms | ↓0.0Mbps'
       - '267.🇺🇸США | @LimeVPNFREE'
       - '42.🇬🇧Великобритания | @LimeVPNFREE'
       - '14.🇫🇷Франция | @LimeVPNFREE'
