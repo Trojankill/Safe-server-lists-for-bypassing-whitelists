@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-04 18:45:36 UTC
+# 2026-10-04 19:01:32 UTC
 proxies:
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 185.241.195.82
+    port: 12443
+    uuid: 6d257a71-6d98-42d2-983a-34363b6dedcd
+    udp: true
+    tls: true
+    servername: voks.serveroff.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: SpsEXoUbH7ZKSnNYR--7IKTG-rsmBayk3F-_GxCwFUw
+      short-id: 8c42ac6d1473fc34
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
     server: 90.156.218.163
@@ -15,20 +29,6 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.35.40
-    port: 3443
-    uuid: fee34dc3-0837-4214-8b76-c4ed4d7404ba
-    udp: true
-    tls: true
-    servername: fi3.yservice.help
-    client-fingerprint: random
-    reality-opts:
-      public-key: -qLezG1nUEtvOJi-Ra7WRYv-aHkv3PSefEuXpWV2G04
-      short-id: abcd1234
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
@@ -37,20 +37,12 @@ proxies:
     sni: srv-8718e6.frd21.ru
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 135.106.137.65
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
