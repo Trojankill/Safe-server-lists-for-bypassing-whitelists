@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-04 17:15:28 UTC
+# 2026-10-04 17:30:42 UTC
 proxies:
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
@@ -15,20 +15,18 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
     type: vless
-    server: 176.109.107.120
-    port: 443
-    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
+    server: 188.225.35.40
+    port: 3443
+    uuid: fee34dc3-0837-4214-8b76-c4ed4d7404ba
     udp: true
     tls: true
-    servername: 2gis.ru
-    alpn:
-      - 'http%2F1.1'
+    servername: fi3.yservice.help
     client-fingerprint: random
     reality-opts:
-      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
-      short-id: 766d197af8a04d7b
+      public-key: -qLezG1nUEtvOJi-Ra7WRYv-aHkv3PSefEuXpWV2G04
+      short-id: abcd1234
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
@@ -40,26 +38,19 @@ proxies:
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
   - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-  - name: '🏴 Неизвестный [#РКП]'
     type: ss
     server: 135.106.137.65
     port: 1080
     cipher: chacha20-ietf-poly1305
-    password: OahAs_MieM2B3nc2JG9pZOi7KRsn6W0e
+    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
     udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
 rules:
   - MATCH,PROXY
