@@ -1,20 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-05 09:45:36 UTC
+# 2026-10-05 10:01:02 UTC
 proxies:
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
-    server: 23.134.76.212
+    server: 62.152.58.90
     port: 443
-    uuid: 3cd1770d-f285-4cf4-8979-e9dd8f4be36a
+    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
     udp: true
     tls: true
-    servername: us.dark-bit.cc
-    client-fingerprint: chrome
+    servername: 360.yandex.ru
+    client-fingerprint: random
     reality-opts:
-      public-key: cYmfBXsDs1sqQ2ZBW3xsFroB7JHV_ufFT5m7ab7STnU
-      short-id: 9ab513f082d4c6e1
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
+      short-id: 27e53bbcab7593d7
+    network: grpc
+    grpc-opts:
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
     type: vless
     server: ware.tunnelgate.org
@@ -31,33 +31,18 @@ proxies:
       path: '/ws/v1/ru'
       headers:
         Host: ware.tunnelgate.org
-  - name: '🇩🇪 [DE] Германия VFPARSER'
+  - name: '🇹🇷 [TR] Турция VFPARSER'
     type: vless
-    server: 177.1.186.117
-    port: 443
-    uuid: 55ccbeb5-0bf4-4e4d-afcb-23c038e73e00
+    server: cookie.wookshop.ir
+    port: 48372
+    uuid: 568bcbbc-7a90-4164-8b5d-1c0bbeccfa38
     udp: true
     tls: true
-    servername: rcge.67resserv67.info
-    client-fingerprint: safari
+    servername: urchin.com
+    client-fingerprint: chrome
     reality-opts:
-      public-key: Dx2F6ThyTXQpu07q1cECPCWBpQwWGNWy1WecyCI7ejA
-      short-id: 29455a3a790acbd0
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
-    type: vless
-    server: 150.241.80.113
-    port: 443
-    uuid: 86037609-3790-4901-bd2f-c698092fb1fc
-    udp: true
-    tls: true
-    servername: nl.skfv-mirror.ru
-    client-fingerprint: safari
-    reality-opts:
-      public-key: qmfrMwVYth3lsYuv7qfr22YlTIlNtVjMl0v4Z5pX7hM
-      short-id: 87cc0414902bee2d
-    flow: xtls-rprx-vision
+      public-key: TlHpZ8aTX6O16TrqRmYN6GP051W3PErHuYxtLxf4nAE
+      short-id: aa7738adec
     network: tcp
   - name: '🇩🇪 [DE] Германия VFPARSER'
     type: vless
@@ -133,20 +118,42 @@ proxies:
       short-id: 6d962e8d8a0dce
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇭🇰 [HK] Гонконг VFPARSER'
-    type: trojan
-    server: 103.38.82.221
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 84.32.71.124
     port: 443
-    password: 53210e66-b1a6-484d-85e9-4e0e8432c47c
+    uuid: e90759b7-6454-4b3a-8453-279e6f496f3a
     udp: true
-    sni: node1.luoye.ee
-  - name: '🇭🇰 [HK] Гонконг VFPARSER'
+    tls: true
+    servername: us1.jetservaki.fit
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: wLANFlHX4PxKF73pKoFgd7gdd6myrYhPEn9FipTTFQQ
+      short-id: f01acad2ba23e527
+    network: grpc
+    grpc-opts:
+  - name: '🇯🇵 [JP] Япония VFPARSER'
     type: trojan
-    server: 149.88.78.173
-    port: 443
-    password: 66974838-ee71-481c-b9dd-172edbccece7
+    server: 45.76.218.34
+    port: 32676
+    password: 6a77ffdb-1799-43de-b17b-57868378d040
     udp: true
-    sni: node2.luoye.ee
+    sni: lazeno.vip
+  - name: '🇭🇰 [HK] Гонконг'
+    type: vmess
+    server: 8.217.254.88
+    port: 443
+    uuid: f23bb427c1f94373876c2f43e9f790f3
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+    network: ws
+    ws-opts:
+      path: '/ws-vmess'
+      headers:
+        Host: 2b9hwY8oCx7Q74NM.v.3dns.vip
   - name: '🇺🇸 [US] США'
     type: vmess
     server: www.shopify.com
@@ -162,36 +169,6 @@ proxies:
       path: '/hls/cctv5phd.m3u8'
       headers:
         Host: guanwang.awsno.com
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
-    type: vmess
-    server: 195.208.65.192
-    port: 443
-    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-1-832.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-1-832.mirra.now
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
-    type: vmess
-    server: renderer-stream-1-832.mirra.now
-    port: 443
-    uuid: 8ffa41d4-e6b5-4af5-a8a9-69e26bec75f5
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: renderer-stream-1-832.mirra.now
-    network: ws
-    ws-opts:
-      path: '/api/v1/gpu-stream/socket'
-      headers:
-        Host: renderer-stream-1-832.mirra.now
   - name: '🇮🇩 [ID] Индонезия VFPARSER'
     type: ss
     server: 103.160.63.199
@@ -206,12 +183,12 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: 9epp3o9ng8ej59uv
     udp: true
-  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+  - name: '🇬🇧 [GB] Великобритания VFPARSER'
     type: ss
-    server: 130.49.189.158
-    port: 43558
+    server: 82.38.31.171
+    port: 443
     cipher: chacha20-ietf-poly1305
-    password: 'mhXYDvaSfHzHZXBswC/zo/o8VqdU3XSBpwWx050Y6MU='
+    password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
@@ -227,12 +204,12 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
+  - name: '🇺🇸 [US] США VFPARSER'
     type: ss
-    server: 211.174.113.172
-    port: 49642
+    server: 15.204.246.107
+    port: 8888
     cipher: aes-256-gcm
-    password: ac9c0a7b
+    password: Y6R9pAtvxxzmGC
     udp: true
   - name: '🇸🇨 [SC] Сейшелы VFPARSER'
     type: ss
@@ -255,31 +232,37 @@ proxies:
     cipher: aes-256-gcm
     password: eveaaTOb8ji8yntw2Z9yWUG0d6Ir8Ld8m3ymH8THdC5egiTH1mXCiBc0Skr7FibH
     udp: true
+  - name: '🇨🇦 [CA] Канада VFPARSER'
+    type: ss
+    server: 51.222.141.125
+    port: 445
+    cipher: aes-256-gcm
+    password: zDNVedRFPQexG9v
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇺🇸 [US] США VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
-      - '🇩🇪 [DE] Германия VFPARSER'
-      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇹🇷 [TR] Турция VFPARSER'
       - '🇩🇪 [DE] Германия VFPARSER'
       - '🇨🇭 [CH] Швейцария VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇷🇺 [RU] Россия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇭🇰 [HK] Гонконг VFPARSER'
-      - '🇭🇰 [HK] Гонконг VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇭🇰 [HK] Гонконг'
       - '🇺🇸 [US] США'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия'
       - '🇮🇩 [ID] Индонезия VFPARSER'
       - '🇸🇬 [SG] Сингапур VFPARSER'
-      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+      - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
       - '🇸🇨 [SC] Сейшелы VFPARSER'
+      - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
       - '🇨🇦 [CA] Канада VFPARSER'
 rules:
