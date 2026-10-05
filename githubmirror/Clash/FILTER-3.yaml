@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-05 11:00:56 UTC
+# 2026-10-05 11:15:38 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #109'
+  - name: '🇳🇱 The Netherlands — #56'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -9,13 +9,27 @@ proxies:
     udp: true
     tls: true
     servername: api.max.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #27'
+  - name: '🇪🇪 Estonia — #28'
+    type: vless
+    server: 188.225.83.133
+    port: 443
+    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+    udp: true
+    tls: true
+    servername: xnodtwx.artemida.live
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -28,21 +42,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇴 Norway — #126'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 74c20c17-7b17-4cfd-8335-8b940188f702
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇬🇧 United Kingdom — #84'
+  - name: '🇬🇧 United Kingdom — #31'
     type: vless
     server: 84.38.181.249
     port: 443
@@ -55,11 +55,39 @@ proxies:
       public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
       short-id: 6bc02f1c474260c3
     network: xhttp
-  - name: '🇳🇱 The Netherlands — #124'
+  - name: '🇺🇸 United States — #85'
+    type: vless
+    server: 188.225.79.44
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇵🇱 Poland — #74'
+    type: vless
+    server: 90.156.218.163
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #72'
     type: vless
     server: 37.139.42.208
     port: 9444
-    uuid: e660f7ba-c595-404c-ac12-d7e5c11420b2
+    uuid: da1b2afc-0a53-4b56-8d52-f57c25f7ff6b
     udp: true
     tls: true
     servername: res.cdnguard.org
@@ -69,11 +97,11 @@ proxies:
       short-id: 413da1312ccce8fb
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #125'
+  - name: '🇳🇱 The Netherlands — #73'
     type: vless
     server: 46.243.234.157
     port: 7443
-    uuid: e660f7ba-c595-404c-ac12-d7e5c11420b2
+    uuid: da1b2afc-0a53-4b56-8d52-f57c25f7ff6b
     udp: true
     tls: true
     servername: s1.cdnguard.org
@@ -83,7 +111,7 @@ proxies:
       short-id: f7d9e9a2e78e9a17
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #67'
+  - name: '🇨🇿 Czechia — #11'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -101,12 +129,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #109'
-      - '🇷🇺 Beget — #27'
-      - '🇳🇴 Norway — #126'
-      - '🇬🇧 United Kingdom — #84'
-      - '🇳🇱 The Netherlands — #124'
-      - '🇳🇱 The Netherlands — #125'
-      - '🇨🇿 Czechia — #67'
+      - '🇳🇱 The Netherlands — #56'
+      - '🇪🇪 Estonia — #28'
+      - '🇷🇺 Beget — #1'
+      - '🇬🇧 United Kingdom — #31'
+      - '🇺🇸 United States — #85'
+      - '🇵🇱 Poland — #74'
+      - '🇳🇱 The Netherlands — #72'
+      - '🇳🇱 The Netherlands — #73'
+      - '🇨🇿 Czechia — #11'
 rules:
   - MATCH,PROXY
