@@ -1,43 +1,69 @@
 # clash/mihomo subscription
-# 2026-10-05 11:30:45 UTC
+# 2026-10-05 11:45:34 UTC
 proxies:
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇱🇹 Литва | 🔗 Каскад [#РКП]'
     type: vless
-    server: 176.109.107.120
+    server: 188.225.24.201
     port: 443
-    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
+    uuid: 7610be85-9855-4010-8929-ce16d4993969
     udp: true
     tls: true
-    servername: 2gis.ru
-    alpn:
-      - 'http%2F1.1'
+    servername: app11.betust.net
     client-fingerprint: random
     reality-opts:
-      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
-      short-id: 766d197af8a04d7b
+      public-key: XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY
+      short-id: 91c2269c
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 77.232.139.128
-    port: 11592
-    password: 033dc6b532
-    sni: srv-8718e6.frd21.ru
-    obfs: salamander
-    obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 135.106.137.65
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 188.225.42.6
+    port: 443
+    uuid: 7610be85-9855-4010-8929-ce16d4993969
     udp: true
+    tls: true
+    servername: app6.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: sS3x_ZygtA9uZ5WaYm7pHjy0_lPNUUK7kOSLz0BNhCs
+      short-id: 54ac91da
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 188.225.58.238
+    port: 443
+    uuid: 7610be85-9855-4010-8929-ce16d4993969
+    udp: true
+    tls: true
+    servername: app5.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk
+      short-id: e84029c5
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 90.156.218.163
+    port: 443
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
+    udp: true
+    tls: true
+    servername: eh.vk.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Россия [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇱🇹 Литва | 🔗 Каскад [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
 rules:
   - MATCH,PROXY
