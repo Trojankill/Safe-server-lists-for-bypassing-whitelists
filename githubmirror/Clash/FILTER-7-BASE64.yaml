@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-05 03:15:31 UTC
+# 2026-10-05 03:30:45 UTC
 proxies:
   - name: '🌍 Рандом | БС¹'
     type: vless
@@ -70,20 +70,6 @@ proxies:
       short-id: de9719220a
     flow: xtls-rprx-vision
     network: raw
-  - name: '0994 | 🇩🇪 Germany | 🏳️ SNI-X5 | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
-    type: vless
-    server: 45.147.31.64
-    port: 2443
-    uuid: 0ab2bb4f-c8ad-4c52-a94f-7a69c71d76f5
-    udp: true
-    tls: true
-    servername: ads.x5.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: AuLWE8R3WD4DwnDxVHgqEcNjyge1btt5PdaUUArdCVk
-      short-id: 2b03d7853fc8faa6
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '0998 | 🌐 Unknown | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
     type: vless
     server: e7q.internet-booster.online
@@ -1035,20 +1021,6 @@ proxies:
       public-key: PL09r78ubjFaOILv5x6HPsCZeTdwhlRb3tuDY5vASwQ
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇹🇷 Турция GLOBAL CONNECTIVITY SOLUTIONS LLP'
-    type: vless
-    server: 89.223.68.139
-    port: 443
-    uuid: 93996a55-febe-4183-9366-df6cb11a34dd
-    udp: true
-    tls: true
-    servername: sun9-38.userapi.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: r6lN34m1nN-xQZ458j5NPD5xJ3_QBF2bGzY4KJEo4ic
-      short-id: abbcd128
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '1042 | 🌐 Unknown | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
     type: vless
     server: tr.datanode-internal.net
@@ -2013,12 +1985,13 @@ proxies:
     port: 443
     password: 928e5fef-9f6b-4705-872a-4ef528a725f6
     sni: univideo.svc-endpoint.com
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇷🇺 Russia [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
+    skip-cert-verify: false
   - name: '🇳🇱 GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
     type: hysteria2
     server: 185.245.105.174
@@ -2195,7 +2168,6 @@ proxy-groups:
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
-      - '0994 | 🇩🇪 Germany | 🏳️ SNI-X5 | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '0998 | 🌐 Unknown | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
       - '🥥SOLO🏝️🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: web.max.ru ┃ 🇺🇸 США'
       - '🇵🇱 LTE 9 | тгк: @rostunnel'
@@ -2265,7 +2237,6 @@ proxy-groups:
       - '60.🇷🇺Россия | @LimeVPNFREE'
       - '🇷🇺 GidroksiFree #15 | 🟢LTE | 6954ms | ↓0.0Mbps'
       - '🥥SOLO🏝️🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия'
-      - '🇹🇷 Турция GLOBAL CONNECTIVITY SOLUTIONS LLP'
       - '1042 | 🌐 Unknown | 🏳️ SNI-VK | VLESS | TG: @YoutubeUnBlockRu'
       - '269.🇩🇪Германия | @LimeVPNFREE'
       - '137.🇩🇪Германия | @LimeVPNFREE'
@@ -2346,7 +2317,7 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #121 | 🟢LTE | 276ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇷🇺 Russia [*CIDR]'
       - '🇳🇱 GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
       - '🇺🇸 AetrisVPN'
       - '50.🇷🇺Россия | @LimeVPNFREE'
