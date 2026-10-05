@@ -1,75 +1,23 @@
 # clash/mihomo subscription
-# 2026-10-05 09:30:45 UTC
+# 2026-10-05 09:45:35 UTC
 proxies:
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 62.152.58.90
+    server: 176.109.107.120
     port: 443
-    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
+    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
     udp: true
     tls: true
-    servername: 360.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
-      short-id: 27e53bbcab7593d7
-    network: grpc
-    grpc-opts:
-  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 176.53.162.90
-    port: 443
-    uuid: 5117ad77-cd9a-46e9-995b-b601b0b5e435
-    udp: true
-    tls: true
-    servername: trust-shell-qe1.cdn.cachefleet.com
+    servername: 2gis.ru
     alpn:
-      - h2
-    client-fingerprint: random
-    network: grpc
-    grpc-opts:
-  - name: '🇱🇹 Литва | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.25.142
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    udp: true
-    tls: true
-    servername: prime.betust.net
+      - 'http%2F1.1'
     client-fingerprint: random
     reality-opts:
-      public-key: SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk
-      short-id: 8681edc9
+      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
+      short-id: 766d197af8a04d7b
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 90.156.218.163
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    udp: true
-    tls: true
-    servername: eh.vk.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 191.44.38.143
-    port: 8443
-    uuid: e9ba7694-8d07-4ddf-8573-c924dc09577a
-    udp: true
-    tls: true
-    servername: nl2.yabloko.top
-    client-fingerprint: random
-    reality-opts:
-      public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
-      short-id: 1c10c8c03e2f0484
-    network: tcp
-  - name: '🇺🇸 США [#РКП]'
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -78,21 +26,18 @@ proxies:
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
   - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: msk.frkn.org
-    port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
+    type: ss
+    server: 135.106.137.65
+    port: 1080
+    cipher: chacha20-ietf-poly1305
+    password: 2Y14rGzr_hGbvOnUvDMR7gXtHMVKCC-N
+    udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
-      - '🇱🇹 Литва | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
