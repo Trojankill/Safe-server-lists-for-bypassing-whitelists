@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-05 05:15:34 UTC
+# 2026-10-05 05:30:46 UTC
 proxies:
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
@@ -15,35 +15,29 @@ proxies:
       short-id: b2baccb38dc00f96
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇹🇷 Турция | 🔗 Каскад [#РКП]'
+  - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 89.223.68.139
+    server: 109.68.214.220
     port: 443
-    uuid: 93996a55-febe-4183-9366-df6cb11a34dd
+    uuid: 65616081-1772-49d7-a793-42bc13d22f69
     udp: true
     tls: true
-    servername: sun9-38.userapi.com
+    servername: ru-1-7.imnotgay.party
     client-fingerprint: random
     reality-opts:
-      public-key: r6lN34m1nN-xQZ458j5NPD5xJ3_QBF2bGzY4KJEo4ic
-      short-id: abbcd128
-    flow: xtls-rprx-vision
+      public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
     network: tcp
   - name: '🇷🇺 Россия [#РКП]'
     type: vless
-    server: 176.109.107.120
+    server: 94.228.123.217
     port: 443
-    uuid: c7e21691-d20d-4c99-b907-9fa16a1d23ac
+    uuid: 65616081-1772-49d7-a793-42bc13d22f69
     udp: true
     tls: true
-    servername: 2gis.ru
-    alpn:
-      - 'http%2F1.1'
+    servername: ru-1-2.imnotgay.party
     client-fingerprint: random
     reality-opts:
-      public-key: 8wdJkt847b6FbdFKpxg5QWJyE7yijdyUYjKIlfE75EI
-      short-id: 766d197af8a04d7b
-    flow: xtls-rprx-vision
+      public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
     network: tcp
   - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
@@ -58,7 +52,7 @@ proxies:
       public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
       short-id: 1c10c8c03e2f0484
     network: tcp
-  - name: '🇺🇸 США [#РКП]'
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -71,9 +65,9 @@ proxy-groups:
     type: select
     proxies:
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇹🇷 Турция | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
       - '🇷🇺 Россия [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
 rules:
   - MATCH,PROXY
