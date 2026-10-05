@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-05 17:45:30 UTC
+# 2026-10-05 18:00:54 UTC
 proxies:
+  - name: '🇵🇱 Poland — #88'
+    type: vless
+    server: 62.152.58.90
+    port: 443
+    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
+    udp: true
+    tls: true
+    servername: 360.yandex.ru
+    client-fingerprint: ios
+    reality-opts:
+      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
+      short-id: 27e53bbcab7593d7
+    network: grpc
+    grpc-opts:
   - name: '🇳🇱 The Netherlands — #69'
     type: vless
     server: 31.130.155.114
@@ -9,13 +23,13 @@ proxies:
     udp: true
     tls: true
     servername: api.max.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇪🇪 Estonia — #42'
+  - name: '🇪🇪 Estonia — #39'
     type: vless
     server: 188.225.83.133
     port: 443
@@ -29,7 +43,7 @@ proxies:
       short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #14'
+  - name: '🇷🇺 Beget — #16'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -42,7 +56,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇱 The Netherlands — #83'
+  - name: '🇳🇱 The Netherlands — #84'
     type: vless
     server: 189.74.114.148
     port: 443
@@ -56,23 +70,22 @@ proxies:
       short-id: a8
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇴 Norway — #84'
+  - name: '🇬🇧 United Kingdom — #42'
     type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 8c7752de-88e6-47c6-864e-8a88e243e505
+    server: 84.38.181.249
+    port: 443
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
     udp: true
     tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
+    servername: open.spotify.com
+    client-fingerprint: edge
     reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇵🇱 Poland — #85'
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
+    network: xhttp
+  - name: '🇵🇱 Poland — #87'
     type: vless
-    server: 109.120.181.153
+    server: 90.156.218.163
     port: 443
     uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
     udp: true
@@ -84,7 +97,35 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #25'
+  - name: '🇬🇧 United Kingdom — #43'
+    type: vless
+    server: 188.225.25.14
+    port: 443
+    uuid: d55448b1-1b29-4be6-92b1-05a63fa3c37a
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-13.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇴 Norway — #85'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: d55448b1-1b29-4be6-92b1-05a63fa3c37a
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇨🇿 Czechia — #23'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -92,7 +133,7 @@ proxies:
     udp: true
     tls: true
     servername: cz1.animeteka.info
-    client-fingerprint: firefox
+    client-fingerprint: ios
     reality-opts:
       public-key: PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc
       short-id: 232b1b09e45325a4
@@ -102,12 +143,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇵🇱 Poland — #88'
       - '🇳🇱 The Netherlands — #69'
-      - '🇪🇪 Estonia — #42'
-      - '🇷🇺 Beget — #14'
-      - '🇳🇱 The Netherlands — #83'
-      - '🇳🇴 Norway — #84'
-      - '🇵🇱 Poland — #85'
-      - '🇨🇿 Czechia — #25'
+      - '🇪🇪 Estonia — #39'
+      - '🇷🇺 Beget — #16'
+      - '🇳🇱 The Netherlands — #84'
+      - '🇬🇧 United Kingdom — #42'
+      - '🇵🇱 Poland — #87'
+      - '🇬🇧 United Kingdom — #43'
+      - '🇳🇴 Norway — #85'
+      - '🇨🇿 Czechia — #23'
 rules:
   - MATCH,PROXY
