@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-05 01:00:50 UTC
+# 2026-10-05 01:15:29 UTC
 proxies:
+  - name: '🇩🇪 Germany — #72'
+    type: vless
+    server: 188.225.58.19
+    port: 443
+    uuid: 1e61c01d-f7d0-4ea7-a7e4-bfa027e27963
+    udp: true
+    tls: true
+    servername: smartcaptcha.yandexcloud.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: -HXpsd4_-Rh8PxkK7dwmEzsAHsss5MQSG-ePRSygFWs
+      short-id: 7dcd042eaf3ba4b1
+    flow: xtls-rprx-vision
+    network: raw
   - name: '🇷🇺 Beget — #19'
     type: vless
     server: 45.12.75.242
@@ -14,7 +28,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #59'
+  - name: '🇩🇪 Germany — #69'
     type: vless
     server: 37.18.14.115
     port: 10654
@@ -27,7 +41,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇩🇪 Germany — #57'
+  - name: '🇩🇪 Germany — #65'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -40,7 +54,7 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇩🇪 Germany — #58'
+  - name: '🇩🇪 Germany — #68'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -53,7 +67,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇬🇧 United Kingdom — #77'
+  - name: '🇬🇧 United Kingdom — #91'
     type: vless
     server: 84.38.181.249
     port: 443
@@ -66,11 +80,11 @@ proxies:
       public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
       short-id: 6bc02f1c474260c3
     network: xhttp
-  - name: '🇳🇱 The Netherlands — #117'
+  - name: '🇳🇱 The Netherlands — #138'
     type: vless
     server: 37.139.42.208
     port: 9444
-    uuid: db4fdd2a-efca-4d70-85d0-78f45c15fbbe
+    uuid: a24179f7-9276-441f-8028-b010669676ff
     udp: true
     tls: true
     servername: res.cdnguard.org
@@ -80,11 +94,11 @@ proxies:
       short-id: 413da1312ccce8fb
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇱 The Netherlands — #116'
+  - name: '🇳🇱 The Netherlands — #139'
     type: vless
     server: 46.243.234.157
     port: 7443
-    uuid: db4fdd2a-efca-4d70-85d0-78f45c15fbbe
+    uuid: a24179f7-9276-441f-8028-b010669676ff
     udp: true
     tls: true
     servername: s1.cdnguard.org
@@ -94,7 +108,7 @@ proxies:
       short-id: f7d9e9a2e78e9a17
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #56'
+  - name: '🇨🇿 Czechia — #63'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -108,17 +122,33 @@ proxies:
       short-id: 232b1b09e45325a4
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇩🇪 Germany — #70'
+    type: vless
+    server: 46.8.209.69
+    port: 9443
+    uuid: fd820220-3d27-4f56-b8fa-a0421200e217
+    udp: true
+    tls: true
+    servername: cdn.okko.tv
+    client-fingerprint: random
+    reality-opts:
+      public-key: miH_ROFipWmvm-PqF1dSgN1jp7nIQZyKFhdILXXrsQI
+      short-id: 91c91e25817ab51c
+    network: grpc
+    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇩🇪 Germany — #72'
       - '🇷🇺 Beget — #19'
-      - '🇩🇪 Germany — #59'
-      - '🇩🇪 Germany — #57'
-      - '🇩🇪 Germany — #58'
-      - '🇬🇧 United Kingdom — #77'
-      - '🇳🇱 The Netherlands — #117'
-      - '🇳🇱 The Netherlands — #116'
-      - '🇨🇿 Czechia — #56'
+      - '🇩🇪 Germany — #69'
+      - '🇩🇪 Germany — #65'
+      - '🇩🇪 Germany — #68'
+      - '🇬🇧 United Kingdom — #91'
+      - '🇳🇱 The Netherlands — #138'
+      - '🇳🇱 The Netherlands — #139'
+      - '🇨🇿 Czechia — #63'
+      - '🇩🇪 Germany — #70'
 rules:
   - MATCH,PROXY
