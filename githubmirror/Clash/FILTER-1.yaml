@@ -1,69 +1,16 @@
 # clash/mihomo subscription
-# 2026-10-05 12:45:33 UTC
+# 2026-10-05 13:30:47 UTC
 proxies:
-  - name: '🇱🇹 Литва | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.24.201
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
     port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    udp: true
-    tls: true
-    servername: app11.betust.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: XhzNlmMTdYr2pYTqiNNP6qWe7BkAgVHU-kZWXc9u9hY
-      short-id: 91c2269c
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.42.6
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    udp: true
-    tls: true
-    servername: app6.betust.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: sS3x_ZygtA9uZ5WaYm7pHjy0_lPNUUK7kOSLz0BNhCs
-      short-id: 54ac91da
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.58.238
-    port: 443
-    uuid: 7610be85-9855-4010-8929-ce16d4993969
-    udp: true
-    tls: true
-    servername: app5.betust.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: laDuxd6kFSPv2nWTy9LUjMGVRZM949R82alkZpMAqlk
-      short-id: e84029c5
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 90.156.218.163
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    udp: true
-    tls: true
-    servername: eh.vk.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: tcp
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇱🇹 Литва | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
