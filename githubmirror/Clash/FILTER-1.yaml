@@ -1,43 +1,60 @@
 # clash/mihomo subscription
-# 2026-10-05 06:45:31 UTC
+# 2026-10-05 07:00:58 UTC
 proxies:
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
-    server: 46.254.17.226
+    server: 62.152.58.90
     port: 443
-    uuid: 2394671f-1526-4e84-b0b6-7b8a628a7b44
+    uuid: 1bb2af63-4472-44ed-9c70-8f316258b68b
     udp: true
     tls: true
-    servername: filecache.ru
+    servername: 360.yandex.ru
     client-fingerprint: random
     reality-opts:
-      public-key: rDu7DyU9KClauBhK7iQeP1Znx4_OAMJqMJp4wlJ5nxc
-      short-id: b2baccb38dc00f96
+      public-key: JBKJlzuJH1YzDHAoz28wEKbzWTGpDpKjgtSq0oT0a0k
+      short-id: 27e53bbcab7593d7
+    network: grpc
+    grpc-opts:
+  - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 176.53.162.90
+    port: 443
+    uuid: 5117ad77-cd9a-46e9-995b-b601b0b5e435
+    udp: true
+    tls: true
+    servername: trust-shell-qe1.cdn.cachefleet.com
+    alpn:
+      - h2
+    client-fingerprint: random
+    network: grpc
+    grpc-opts:
+  - name: '🇱🇹 Литва | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 188.225.25.142
+    port: 443
+    uuid: 7610be85-9855-4010-8929-ce16d4993969
+    udp: true
+    tls: true
+    servername: prime.betust.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: SxbaWzlvE_HQqqsA4PNX2PFcSYXTVE2nZlgLc7cPOgk
+      short-id: 8681edc9
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
-    server: 109.68.214.220
+    server: 90.156.218.163
     port: 443
-    uuid: 65616081-1772-49d7-a793-42bc13d22f69
+    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
     udp: true
     tls: true
-    servername: ru-1-7.imnotgay.party
+    servername: eh.vk.ru
     client-fingerprint: random
     reality-opts:
-      public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 94.228.123.217
-    port: 443
-    uuid: 65616081-1772-49d7-a793-42bc13d22f69
-    udp: true
-    tls: true
-    servername: ru-1-2.imnotgay.party
-    client-fingerprint: random
-    reality-opts:
-      public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
+      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
+      short-id: db04ce8bdb8900f1
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
     type: vless
@@ -52,7 +69,7 @@ proxies:
       public-key: -bdfPh42n5vMnPsrknIDPOzEOMsI1TlY9AjDPSggaR0
       short-id: 1c10c8c03e2f0484
     network: tcp
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
+  - name: '🇺🇸 США [#РКП]'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -60,14 +77,22 @@ proxies:
     sni: srv-8718e6.frd21.ru
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
+      - '🇱🇹 Литва | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇺🇸 США [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
