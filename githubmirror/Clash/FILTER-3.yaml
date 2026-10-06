@@ -1,7 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-06 10:00:54 UTC
+# 2026-10-06 10:15:32 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #46'
+  - name: '🇳🇱 The Netherlands — #28'
+    type: vless
+    server: 84.201.146.8
+    port: 443
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo
+    network: xhttp
+  - name: '🇳🇱 The Netherlands — #26'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -9,27 +21,13 @@ proxies:
     udp: true
     tls: true
     servername: api.max.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇪🇪 Estonia — #43'
-    type: vless
-    server: 188.225.83.133
-    port: 443
-    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-    udp: true
-    tls: true
-    servername: xnodtwx.artemida.live
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Beget — #14'
+  - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -42,11 +40,25 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #42'
+  - name: '🇬🇧 United Kingdom — #25'
+    type: vless
+    server: 188.225.25.14
+    port: 443
+    uuid: 7f3052d7-3de7-41e3-bac9-e9b4c3cb7fdd
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-13.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #24'
     type: vless
     server: 188.225.77.178
     port: 443
-    uuid: 802203e6-4f9e-4630-9e6e-a6f387b03d2a
+    uuid: 7f3052d7-3de7-41e3-bac9-e9b4c3cb7fdd
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
@@ -56,11 +68,11 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇳🇴 Norway — #47'
+  - name: '🇳🇴 Norway — #31'
     type: vless
     server: 87.242.95.164
     port: 9443
-    uuid: 802203e6-4f9e-4630-9e6e-a6f387b03d2a
+    uuid: 7f3052d7-3de7-41e3-bac9-e9b4c3cb7fdd
     udp: true
     tls: true
     servername: passport.yandex.ru
@@ -70,20 +82,21 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇬🇧 United Kingdom — #45'
+  - name: '🇳🇱 The Netherlands — #29'
     type: vless
-    server: 84.38.181.249
-    port: 443
-    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
+    server: 31.129.42.23
+    port: 30052
+    uuid: 8f2d14ac-447d-4d58-bd37-5cac936d96ca
     udp: true
     tls: true
-    servername: open.spotify.com
-    client-fingerprint: safari
+    servername: storage.yandexcloud.net
+    client-fingerprint: firefox
     reality-opts:
-      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
-      short-id: 6bc02f1c474260c3
-    network: xhttp
-  - name: '🇩🇪 Germany — #25'
+      public-key: UR-ELTbCCTAAvg_y8vIznWFkGkCKFFaEAVgTtPYNCCk
+      short-id: 54861d36
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇩🇪 Germany — #7'
     type: vless
     server: 185.91.54.67
     port: 443
@@ -97,7 +110,7 @@ proxies:
       short-id: 377645738e782155
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇨🇿 Czechia — #24'
+  - name: '🇨🇿 Czechia — #6'
     type: vless
     server: 85.117.235.50
     port: 443
@@ -115,13 +128,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #46'
-      - '🇪🇪 Estonia — #43'
-      - '🇷🇺 Beget — #14'
-      - '🇩🇪 Germany — #42'
-      - '🇳🇴 Norway — #47'
-      - '🇬🇧 United Kingdom — #45'
-      - '🇩🇪 Germany — #25'
-      - '🇨🇿 Czechia — #24'
+      - '🇳🇱 The Netherlands — #28'
+      - '🇳🇱 The Netherlands — #26'
+      - '🇷🇺 Beget — #1'
+      - '🇬🇧 United Kingdom — #25'
+      - '🇩🇪 Germany — #24'
+      - '🇳🇴 Norway — #31'
+      - '🇳🇱 The Netherlands — #29'
+      - '🇩🇪 Germany — #7'
+      - '🇨🇿 Czechia — #6'
 rules:
   - MATCH,PROXY
