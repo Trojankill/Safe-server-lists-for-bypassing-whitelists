@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-06 07:15:32 UTC
+# 2026-10-06 07:30:46 UTC
 proxies:
   - name: '🇺🇸 США | БС¹'
     type: vless
@@ -139,6 +139,48 @@ proxies:
       public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
       short-id: 9e419c0759b54d6f
     network: tcp
+  - name: '🇰🇿 Казахстан — Pavlodar'
+    type: vless
+    server: 109.248.247.44
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: kzself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: HXFe_cPryw01zqXchAFjZciDAS4UJg1-xScx6vjgjjY
+      short-id: 7f2e9c4b1a8d6e25
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 5.42.96.76
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: ruself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: c8IEc_c_QBmI5YAwILoVH0xw2xC4AJgJDKEYKcmKogo
+      short-id: 7f2e9c4b1a8d6e55
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇰🇿 Казахстан — Pavlodar'
+    type: vless
+    server: kzself.yandex-api.com
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: kzself.yandex-api.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: HXFe_cPryw01zqXchAFjZciDAS4UJg1-xScx6vjgjjY
+      short-id: 7f2e9c4b1a8d6e25
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 LTE 2 | тгк: @rostunnel'
     type: vless
     server: 144.31.50.236
@@ -180,19 +222,6 @@ proxies:
     h2-opts:
       path:
         - '/'
-  - name: '🇳🇱 [WL] Сервер 58'
-    type: vless
-    server: nl.alpheratzz.org
-    port: 8443
-    uuid: 20ef7310-0b50-4943-98a6-3d0856b383b1
-    udp: true
-    tls: true
-    servername: vusr-6ac431f4.adhil.uk
-    alpn:
-      - h2
-    client-fingerprint: firefox
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
     type: vless
     server: 46.243.142.184
@@ -1797,6 +1826,13 @@ proxies:
     port: 25172
     password: Hd7N0TU7Ow5ZqaIx
     sni: us5.h1cloud.net
+  - name: '🇩🇪 Germany [*CIDR]'
+    type: hysteria2
+    server: 31.76.71.232
+    port: 443
+    password: axP-VNWeg-V-Bd_ZaSJGxWbWEE-t35Y2
+    sni: de.1.23.h2corp.org
+    skip-cert-verify: false
   - name: '🇷🇴 🥥11🏝️ Romania [*CIDR]'
     type: hysteria2
     server: 45.131.186.202
@@ -2027,10 +2063,12 @@ proxy-groups:
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: web.max.ru ┃ 🇺🇸 США'
       - '🇵🇱 LTE 5 | тгк: @rostunnel'
+      - '🇰🇿 Казахстан — Pavlodar'
+      - '🇷🇺 Россия [#РКП]'
+      - '🇰🇿 Казахстан — Pavlodar'
       - '🇷🇺 LTE 2 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇷🇺 Россия'
       - '🇷🇺➜🇳🇱 GidroksiFree #78 | 🔗Каскад | 🛡БС | 🟢LTE | 859ms | ↓0.0Mbps'
-      - '🇳🇱 [WL] Сервер 58'
       - '🇳🇱 GidroksiFree #23 | 🛡БС | 🟢LTE | 415ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: login.vk.com ┃ 🇩🇪 Германия'
       - '🇳🇱 GidroksiFree #34 | 🛡БС | 🟢LTE | 6962ms | ↓0.0Mbps'
@@ -2154,6 +2192,7 @@ proxy-groups:
       - '🇷🇺 GidroksiFree #120 | 🟢LTE | 242ms | ↓0.0Mbps'
       - '🇷🇺 GidroksiFree #119 | 🟢LTE | 225ms | ↓0.0Mbps'
       - '🇺🇸 США 5 Interserver, Inc'
+      - '🇩🇪 Germany [*CIDR]'
       - '🇷🇴 🥥11🏝️ Romania [*CIDR]'
       - '🇮🇹 🥥11🏝️ Italy | 🌐 [*CIDR]'
       - '🇫🇮 Финляндия 2 Web1 Oy'
