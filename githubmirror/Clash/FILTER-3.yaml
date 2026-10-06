@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-06 11:46:05 UTC
+# 2026-10-06 12:00:57 UTC
 proxies:
   - name: '🇷🇺 Beget — #2'
     type: vless
@@ -14,7 +14,21 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇱 The Netherlands — #32'
+  - name: '🇳🇱 The Netherlands — #28'
+    type: vless
+    server: 31.130.155.114
+    port: 443
+    uuid: 6ed6162d-fc15-447c-b04c-5d6975d2231d
+    udp: true
+    tls: true
+    servername: api.max.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
+      short-id: 6c183039c8fe2676
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #26'
     type: vless
     server: 31.129.42.23
     port: 30052
@@ -28,7 +42,7 @@ proxies:
       short-id: 54861d36
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇹🇷 Türkiye — #50'
+  - name: '🇹🇷 Türkiye — #43'
     type: vless
     server: 201.24.125.126
     port: 443
@@ -81,48 +95,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇬🇧 United Kingdom — #28'
-    type: vless
-    server: 84.38.181.249
-    port: 443
-    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
-    udp: true
-    tls: true
-    servername: open.spotify.com
-    client-fingerprint: edge
-    reality-opts:
-      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
-      short-id: 6bc02f1c474260c3
-    network: xhttp
-  - name: '🇩🇪 Germany — #25'
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: ab20059d-c0a6-4b39-9255-4323ce3e9881
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇴 Norway — #36'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: ab20059d-c0a6-4b39-9255-4323ce3e9881
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #9'
+  - name: '🇬🇧 United Kingdom — #24'
     type: vless
     server: 185.91.54.67
     port: 443
@@ -141,14 +114,12 @@ proxy-groups:
     type: select
     proxies:
       - '🇷🇺 Beget — #2'
-      - '🇳🇱 The Netherlands — #32'
-      - '🇹🇷 Türkiye — #50'
+      - '🇳🇱 The Netherlands — #28'
+      - '🇳🇱 The Netherlands — #26'
+      - '🇹🇷 Türkiye — #43'
       - '🇩🇪 Germany — #8'
       - '🇩🇪 Germany — #6'
       - '🇩🇪 Germany — #7'
-      - '🇬🇧 United Kingdom — #28'
-      - '🇩🇪 Germany — #25'
-      - '🇳🇴 Norway — #36'
-      - '🇩🇪 Germany — #9'
+      - '🇬🇧 United Kingdom — #24'
 rules:
   - MATCH,PROXY
