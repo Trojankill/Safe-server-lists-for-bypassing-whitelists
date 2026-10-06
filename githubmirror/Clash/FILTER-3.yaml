@@ -1,49 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-06 07:45:32 UTC
+# 2026-10-06 08:00:52 UTC
 proxies:
-  - name: '🇷🇺 Beget — #16'
-    type: vless
-    server: 109.69.17.166
-    port: 443
-    uuid: 0d6e70a5-abfd-4766-8ad4-e502173ba82b
-    udp: true
-    tls: true
-    servername: ru.virtez.pro
-    client-fingerprint: safari
-    reality-opts:
-      public-key: lVSON4vUK765zNEFQtf0GbZNDc-g37JMairlF7hg6y0
-      short-id: bb34e8c0603c6686
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #30'
-    type: vless
-    server: 46.254.19.190
-    port: 443
-    uuid: 0d6e70a5-abfd-4766-8ad4-e502173ba82b
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: RX4VBHIJ29Oo4oQYRtdmBX5IN35vHwENneqUvwLpjlU
-      short-id: b90185a1
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇳🇱 The Netherlands — #45'
-    type: vless
-    server: 45.139.26.179
-    port: 443
-    uuid: 2b781b4a-5942-48e0-a7f3-5a07b7b488c1
-    udp: true
-    tls: true
-    servername: ads.x5.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI
-      short-id: 15bcc0a77c3cacdf
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 The Netherlands — #44'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -57,7 +15,21 @@ proxies:
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #12'
+  - name: '🇪🇪 Estonia — #43'
+    type: vless
+    server: 188.225.83.133
+    port: 443
+    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
+    udp: true
+    tls: true
+    servername: xnodtwx.artemida.live
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
+      short-id: a1b2c3d4e5f6a7b8
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Beget — #10'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -70,20 +42,35 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇷🇺 Delta — #19'
+  - name: '🇩🇪 Germany — #42'
     type: vless
-    server: 188.130.209.224
-    port: 444
-    uuid: 919a2568-3add-44ec-a769-915adad37bd2
+    server: 188.225.77.178
+    port: 443
+    uuid: e4a820a2-7495-4029-a442-3d7cb38ccc99
     udp: true
     tls: true
-    servername: vextor.win
-    client-fingerprint: firefox
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
     reality-opts:
-      public-key: P7F65GjTQGZju-N8CVHtlKNaWebVe_76Xt7Lm00RuH0
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇩🇪 Germany — #29'
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇴 Norway — #48'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: e4a820a2-7495-4029-a442-3d7cb38ccc99
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #25'
     type: vless
     server: 185.91.54.67
     port: 443
@@ -97,7 +84,7 @@ proxies:
       short-id: 377645738e782155
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #17'
+  - name: '🇷🇺 Beget — #14'
     type: vless
     server: 217.26.25.250
     port: 8443
@@ -115,13 +102,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Beget — #16'
-      - '🇩🇪 Germany — #30'
       - '🇳🇱 The Netherlands — #45'
-      - '🇳🇱 The Netherlands — #44'
-      - '🇷🇺 Beget — #12'
-      - '🇷🇺 Delta — #19'
-      - '🇩🇪 Germany — #29'
-      - '🇷🇺 Beget — #17'
+      - '🇪🇪 Estonia — #43'
+      - '🇷🇺 Beget — #10'
+      - '🇩🇪 Germany — #42'
+      - '🇳🇴 Norway — #48'
+      - '🇩🇪 Germany — #25'
+      - '🇷🇺 Beget — #14'
 rules:
   - MATCH,PROXY
