@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-06 18:15:36 UTC
+# 2026-10-06 18:30:45 UTC
 proxies:
+  - name: '7 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
+    type: vless
+    server: 82.118.22.161
+    port: 443
+    uuid: 05488656-d4bf-4634-8b2e-e4ff5a56c7e2
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: xY1KpNxaIGmi6jfeudYQ_aaLGQqWK_uHStnwUFd2_2E
+      short-id: fa3ea655619a3e78
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
     type: vless
     server: 45.195.137.5
@@ -97,6 +111,20 @@ proxies:
     reality-opts:
       public-key: bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104
       short-id: 9e419c0759b54d6f
+    network: tcp
+  - name: '6 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 4/10'
+    type: vless
+    server: 46.28.71.247
+    port: 443
+    uuid: 12c53e32-e589-47d6-b857-e4132294f767
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE
+      short-id: 0dfc23fe80778c00
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇺🇸 [WL] Сервер 36'
     type: vless
@@ -358,6 +386,20 @@ proxies:
     reality-opts:
       public-key: dEvwASt7DRDtH_N5VcHkZo2VQxMVDdevaN-xFxmkIDw
       short-id: c8edc5
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '8 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 4/10'
+    type: vless
+    server: 45.90.59.15
+    port: 443
+    uuid: 3950b45e-740d-4dca-ac95-505ec8534592
+    udp: true
+    tls: true
+    servername: www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: P7S4UPFlQbmiBr4txyy8NZIMTrmO3UdxyH16WBU-YzY
+      short-id: 19253fae84102271
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
@@ -1057,6 +1099,20 @@ proxies:
       short-id: ba4b2afa9e7193ea
     flow: xtls-rprx-vision
     network: tcp
+  - name: '2 | REALITY | SNI: gateway.icloud.com | IN: NL OUT: NL | RATING: 9/10'
+    type: vless
+    server: 195.123.221.36
+    port: 443
+    uuid: 9c60369d-e5f9-4cec-9e63-1560e88e119a
+    udp: true
+    tls: true
+    servername: gateway.icloud.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: dIv6pPS-x6IzbiPyHX8nNdRrwI2yZl4y3YCeRWy9UgE
+      short-id: 3e67326f98ddb407
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺➜🇵🇱 GidroksiFree #10 | 🔗Каскад | 🛡БС | 🟢LTE | 2073ms | ↓0.0Mbps'
     type: vless
     server: 193.33.133.194
@@ -1315,7 +1371,7 @@ proxies:
       public-key: mK6jUHK0Iv4jpVqpvs4oadjh2Pifkz4QwrOdhWHJ9U0
     network: grpc
     grpc-opts:
-  - name: '5 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 6/10'
+  - name: '5 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 4/10'
     type: vless
     server: 46.28.67.55
     port: 443
@@ -1323,7 +1379,7 @@ proxies:
     udp: true
     tls: true
     servername: www.cloudflare.com
-    client-fingerprint: chrome
+    client-fingerprint: random
     reality-opts:
       public-key: i2dJ1_XGDpp50qpEclh6SWSWkxt4B0t2hi2qOVQbeSU
       short-id: d06d78e974491b6e
@@ -1778,7 +1834,7 @@ proxies:
     port: 8443
     password: axP-VNWeg-V-Bd_ZaSJGxWbWEE-t35Y2
     sni: hazeljournal.gazette.help
-  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+  - name: '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
     type: hysteria2
     server: msk.frkn.org
     port: 443
@@ -1914,6 +1970,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '7 | REALITY | SNI: www.cloudflare.com | IN: PL OUT: PL | RATING: 4/10'
       - 'AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇨🇭 Швейцария'
       - '🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия'
       - '🇷🇺➜🇳🇱 GidroksiFree #16 | 🔗Каскад | 🛡БС | 🟢LTE | 14215ms | ↓0.0Mbps'
@@ -1921,6 +1978,7 @@ proxy-groups:
       - '0509 | 🌐 Unknown | 🏳️ SNI-X5 | VLESS | TG: @YoutubeUnBlockRu'
       - '🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: web.max.ru ┃ 🇷🇺 Россия'
       - '🇵🇱 LTE 4 | тгк: @rostunnel'
+      - '6 | REALITY | SNI: www.cloudflare.com | IN: ES OUT: ES | RATING: 4/10'
       - '🇺🇸 [WL] Сервер 36'
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇫🇮 Финляндия'
       - '69.🇹🇷Турция | @LimeVPNFREE'
@@ -1940,6 +1998,7 @@ proxy-groups:
       - '🇱🇻 LTE 40 | тгк: @rostunnel'
       - 'AetrisVPN White list ┃ ✅ SNI: max.ru ┃ 🇩🇪 Германия'
       - '🇷🇺 GidroksiFree #73 | 🟢LTE | 483ms | ↓0.0Mbps'
+      - '8 | REALITY | SNI: www.cloudflare.com | IN: CH OUT: CH | RATING: 4/10'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - '1833 | 🇺🇸 USA | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
       - '3654 | 🇫🇮 Finland | 🏳️ SNI-MAX | VLESS | 📺 YT | TG: @YoutubeUnBlockRu'
@@ -1991,6 +2050,7 @@ proxy-groups:
       - '🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: www.ozon.ru ┃ 🇵🇱 Польша'
       - '137.🇺🇸США | @LimeVPNFREE'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
+      - '2 | REALITY | SNI: gateway.icloud.com | IN: NL OUT: NL | RATING: 9/10'
       - '🇷🇺➜🇵🇱 GidroksiFree #10 | 🔗Каскад | 🛡БС | 🟢LTE | 2073ms | ↓0.0Mbps'
       - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇵🇱 Польша'
       - '🇫🇮 Финляндия 2 Hetzner Online GmbH'
@@ -2010,7 +2070,7 @@ proxy-groups:
       - '🇨🇦 Канада | БС¹'
       - 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇳🇱 Нидерланды'
       - 'AetrisVPN White list ┃ ✅ SNI: 360.yandex.ru ┃ 🇸🇪 Швеция'
-      - '5 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 6/10'
+      - '5 | REALITY | SNI: www.cloudflare.com | IN: US OUT: RO | RATING: 4/10'
       - '85.🇷🇺Россия | @LimeVPNFREE'
       - 'AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇩🇪 Германия'
       - '🥥SOLO🏝️AetrisVPN White list ┃ ✅ SNI: dzen.ru ┃ 🇫🇮 Финляндия'
@@ -2055,7 +2115,7 @@ proxy-groups:
       - '🇫🇮 Финляндия 4 Web1 Oy'
       - '🇳🇱🥥SOLO🏝️ Нидерланды 6 Scalaxy B.V.'
       - '🇮🇹 Италия 2 SERV.HOST GROUP LTD'
-      - '🇷🇺 Russia | 🌐 [*CIDR]'
+      - '🇷🇺 Россия | 🌐 [🏳️LTE] | 🥭🔧'
       - '🇳🇱 🥥SOLO🏝️GidroksiFree #24 | 🟢LTE | 213ms | ↓0.0Mbps'
       - '71.🇺🇸США | @LimeVPNFREE'
       - '🇪🇺 AetrisVPN'
