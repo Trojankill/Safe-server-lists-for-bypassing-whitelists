@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-06 09:00:59 UTC
+# 2026-10-06 09:15:31 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #45'
+  - name: '🇳🇱 The Netherlands — #46'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -9,7 +9,7 @@ proxies:
     udp: true
     tls: true
     servername: api.max.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
       short-id: 6c183039c8fe2676
@@ -29,7 +29,7 @@ proxies:
       short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #10'
+  - name: '🇷🇺 Beget — #14'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -46,7 +46,7 @@ proxies:
     type: vless
     server: 188.225.77.178
     port: 443
-    uuid: e4a820a2-7495-4029-a442-3d7cb38ccc99
+    uuid: 802203e6-4f9e-4630-9e6e-a6f387b03d2a
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
@@ -56,11 +56,11 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇳🇴 Norway — #48'
+  - name: '🇳🇴 Norway — #47'
     type: vless
     server: 87.242.95.164
     port: 9443
-    uuid: e4a820a2-7495-4029-a442-3d7cb38ccc99
+    uuid: 802203e6-4f9e-4630-9e6e-a6f387b03d2a
     udp: true
     tls: true
     servername: passport.yandex.ru
@@ -70,6 +70,19 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
+  - name: '🇬🇧 United Kingdom — #45'
+    type: vless
+    server: 84.38.181.249
+    port: 443
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
+    udp: true
+    tls: true
+    servername: open.spotify.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
+    network: xhttp
   - name: '🇩🇪 Germany — #25'
     type: vless
     server: 185.91.54.67
@@ -84,30 +97,31 @@ proxies:
       short-id: 377645738e782155
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #14'
+  - name: '🇨🇿 Czechia — #24'
     type: vless
-    server: 217.26.25.250
-    port: 8443
-    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+    server: 85.117.235.50
+    port: 443
+    uuid: f4d71fd6-1c25-4748-836b-1dbda9268039
     udp: true
     tls: true
-    servername: it.nztvpn.com
-    client-fingerprint: ios
+    servername: cz1.animeteka.info
+    client-fingerprint: firefox
     reality-opts:
-      public-key: asfnItYJIxiQpAEBiqeGI-CtbeVQt83jz8EY44wHvFQ
-      short-id: 5aab0b0401044801
+      public-key: PmdZ2ETkHc0zjYcs22xT_wyZk5fEpX7mg7RP396HBBc
+      short-id: 232b1b09e45325a4
     flow: xtls-rprx-vision
     network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #45'
+      - '🇳🇱 The Netherlands — #46'
       - '🇪🇪 Estonia — #43'
-      - '🇷🇺 Beget — #10'
-      - '🇩🇪 Germany — #42'
-      - '🇳🇴 Norway — #48'
-      - '🇩🇪 Germany — #25'
       - '🇷🇺 Beget — #14'
+      - '🇩🇪 Germany — #42'
+      - '🇳🇴 Norway — #47'
+      - '🇬🇧 United Kingdom — #45'
+      - '🇩🇪 Germany — #25'
+      - '🇨🇿 Czechia — #24'
 rules:
   - MATCH,PROXY
