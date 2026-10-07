@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-07 20:15:31 UTC
+# 2026-10-07 20:30:44 UTC
 proxies:
   - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
@@ -29,18 +29,18 @@ proxies:
       short-id: aabbccdd
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+  - name: '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
     type: vless
-    server: 82.202.141.141
-    port: 9892
+    server: 45.132.176.225
+    port: 9881
     uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
     udp: true
     tls: true
     servername: dl.google.com
     client-fingerprint: random
     reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
+      public-key: ycPIUcY6ci2yi7YA_OHc20e4gzxEdJTqpmeShxSuHRU
+      short-id: aabb
     network: grpc
     grpc-opts:
   - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
@@ -57,20 +57,6 @@ proxies:
       short-id: 3b84fc70657725af
     network: grpc
     grpc-opts:
-  - name: '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 84.252.132.76
-    port: 443
-    uuid: 961a77fd-fe35-4037-b541-e5dd056702bd
-    udp: true
-    tls: true
-    servername: www.cloudflare.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: ioNALPZqERtuEf-HOZHM_N58HT-fjufOAdavUyPwiXA
-      short-id: 499660fadb16a200
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
     server: 185.207.1.121
@@ -99,6 +85,20 @@ proxies:
       short-id: db04ce8bdb8900f1
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 72.56.14.67
+    port: 443
+    uuid: b3242aff-f540-4ff3-a367-10ffce0669b3
+    udp: true
+    tls: true
+    servername: net.formatgo.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: qFYCTWoxcyULnNhi8JQ9r1-l5RivEg6rjr_0qXFd4Rk
+      short-id: b0998fba67e3074c
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 5.42.99.64
@@ -113,26 +113,32 @@ proxies:
       short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
-    type: hysteria2
-    server: 77.232.139.128
-    port: 11592
-    password: 033dc6b532
-    sni: srv-8718e6.frd21.ru
-    obfs: salamander
-    obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  - name: '🇷🇺 Россия [#РКП]'
+    type: vless
+    server: 185.65.148.217
+    port: 50443
+    uuid: f11a2b16-bc89-44c6-9bca-17dcc278aff6
+    udp: true
+    tls: true
+    servername: rutube.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: r-_zNu0BrD8PgGzg-KQSes06Si83txHWYPH-o8xXihk
+      short-id: a66ffc56b634bd44
+    flow: xtls-rprx-vision
+    network: tcp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇸🇪 Швеция | 🔗 Каскад [#РКП]'
+      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
-      - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
