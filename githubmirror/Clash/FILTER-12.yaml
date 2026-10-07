@@ -1,6 +1,61 @@
 # clash/mihomo subscription
-# 2026-10-07 03:30:44 UTC
+# 2026-10-07 03:45:30 UTC
 proxies:
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 31.76.64.248
+    port: 443
+    uuid: 0a322246-8c1a-47cd-9865-cccebbb2e5c1
+    udp: true
+    tls: true
+    servername: blog.api.www.cloudflare.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 9OV_GN4lgwY_4llPfYCGev-PPXLMj-hfYnveKF4tjws
+      short-id: f8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇮🇱 [IL] Израиль VFPARSER'
+    type: vless
+    server: S500.shahankhan.ir
+    port: 80
+    uuid: 542997aa-ce04-4474-aaec-03daed5aea3c
+    udp: true
+    tls: true
+    servername: adn-stg.yourservice.samsung.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: bcycek1vZZ5_sS0H7vLZp4TWuTsQNMkWgRBTnswHuRQ
+      short-id: d3ec16bc
+    network: tcp
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: vless
+    server: 31.76.19.168
+    port: 443
+    uuid: 86037609-3790-4901-bd2f-c698092fb1fc
+    udp: true
+    tls: true
+    servername: fi.skfv-mirror.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: qmfrMwVYth3lsYuv7qfr22YlTIlNtVjMl0v4Z5pX7hM
+      short-id: 3f200574d011010f
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
+    type: vless
+    server: 185.207.1.121
+    port: 10470
+    uuid: 98b3d53b-9f34-4cf1-ba87-3be5db6d4c5a
+    udp: true
+    tls: true
+    servername: www.max.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 90jWc7mGJ9NeEI0HpwQ844SjP0W9_MP5bNX6cDOdFnM
+      short-id: 53c6ae
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇯🇵 [JP] Япония VFPARSER'
     type: vless
     server: jumpernode.online
@@ -29,42 +84,33 @@ proxies:
       short-id: 98e90c117acf8155
     network: grpc
     grpc-opts:
-  - name: '🇺🇸 [US] США'
-    type: vmess
-    server: 162.159.130.234
-    port: 2083
-    uuid: ac251237-576f-40c8-a543-554960c958b1
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: or3.sfacg.uk
-    network: ws
-    ws-opts:
-      path: '/or3'
-      headers:
-        Host: or3.sfacg.uk
-  - name: '🇺🇸 [US] США'
-    type: vmess
-    server: www.shopify.com
+  - name: '🇳🇱 [NL] Нидерланды VFPARSER'
+    type: vless
+    server: 89.127.216.177
     port: 443
-    uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-    alterId: 0
-    cipher: auto
+    uuid: f31e6a79-794a-4bf9-bd7f-dfd3ea0600c2
     udp: true
     tls: true
-    servername: guanwang.awsno.com
-    network: ws
-    ws-opts:
-      path: '/hls/cctv5phd.m3u8'
-      headers:
-        Host: guanwang.awsno.com
-  - name: '🇫🇷 [FR] Франция VFPARSER'
+    servername: www.sony.co.uk
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: x2ek6lVjJumu6nwT9BvGzcsa6ocKVtWqD8lnxNOU8RA
+      short-id: 87810942
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇷🇴 [RO] Румыния VFPARSER'
+    type: trojan
+    server: 77.74.123.108
+    port: 4443
+    password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+    udp: true
+    sni: grape-test-italy.dynuddns.net
+  - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
-    server: 155.117.5.167
-    port: 40973
-    cipher: 2022-blake3-aes-256-gcm
-    password: 'hZycIr9ffe++4mxk+rkZHPgFXY1nmfb23fIeZNS3HeI=:HNUZ1NG1sNLqEe6v7XAY39JLPBTA2vAB9PGvS9VZGEA='
+    server: 45.128.12.20
+    port: 14249
+    cipher: chacha20-ietf-poly1305
+    password: 9epp3o9ng8ej59uv
     udp: true
   - name: '🇳🇱 [NL] Нидерланды VFPARSER'
     type: ss
@@ -82,38 +128,58 @@ proxies:
     udp: true
   - name: '🇺🇸 [US] США VFPARSER'
     type: ss
-    server: 143.20.71.17
-    port: 35016
+    server: 66.23.204.210
+    port: 16995
     cipher: aes-128-gcm
-    password: 6ee847c4-04ef-4786-9720-eb6f73fbd80b
+    password: 89d3a0375a279f6e743fea76e72952a8
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
-    server: 172.96.160.250
-    port: 35016
-    cipher: aes-128-gcm
-    password: 6ee847c4-04ef-4786-9720-eb6f73fbd80b
+    server: 84.247.155.196
+    port: 443
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇺🇸 [US] США VFPARSER'
+  - name: '🇯🇵 [JP] Япония VFPARSER'
     type: ss
-    server: 14.1.28.75
-    port: 10741
-    cipher: aes-128-gcm
-    password: 77ac486bc90aba7f880dd81f006f3ddc
+    server: 84.247.155.196
+    port: 80
+    cipher: aes-256-gcm
+    password: 3eOFeNssde7PYYMv
+    udp: true
+  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
+    type: ss
+    server: 211.174.113.172
+    port: 49642
+    cipher: aes-256-gcm
+    password: ac9c0a7b
+    udp: true
+  - name: '🇸🇨 [SC] Сейшелы VFPARSER'
+    type: ss
+    server: 45.207.207.25
+    port: 443
+    cipher: aes-256-gcm
+    password: 'gj1+XKulKV0nmw6IThckOkkJh5DSM7+C'
     udp: true
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇮🇱 [IL] Израиль VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
-      - '🇺🇸 [US] США'
-      - '🇺🇸 [US] США'
-      - '🇫🇷 [FR] Франция VFPARSER'
+      - '🇳🇱 [NL] Нидерланды VFPARSER'
+      - '🇷🇴 [RO] Румыния VFPARSER'
+      - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇯🇵 [JP] Япония VFPARSER'
+      - '🇰🇷 [KR] Южная Корея VFPARSER'
+      - '🇸🇨 [SC] Сейшелы VFPARSER'
 rules:
   - MATCH,PROXY
