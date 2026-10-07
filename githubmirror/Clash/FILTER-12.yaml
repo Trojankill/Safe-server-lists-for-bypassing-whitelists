@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-07 09:30:44 UTC
+# 2026-10-07 09:45:44 UTC
 proxies:
   - name: '🇺🇸 [US] США VFPARSER'
     type: vless
@@ -13,33 +13,6 @@ proxies:
     reality-opts:
       public-key: 9OV_GN4lgwY_4llPfYCGev-PPXLMj-hfYnveKF4tjws
       short-id: f8
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇮🇱 [IL] Израиль VFPARSER'
-    type: vless
-    server: S500.shahankhan.ir
-    port: 80
-    uuid: 542997aa-ce04-4474-aaec-03daed5aea3c
-    udp: true
-    tls: true
-    servername: adn-stg.yourservice.samsung.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: bcycek1vZZ5_sS0H7vLZp4TWuTsQNMkWgRBTnswHuRQ
-      short-id: d3ec16bc
-    network: tcp
-  - name: '🇺🇸 [US] США VFPARSER'
-    type: vless
-    server: 31.76.19.168
-    port: 443
-    uuid: 86037609-3790-4901-bd2f-c698092fb1fc
-    udp: true
-    tls: true
-    servername: fi.skfv-mirror.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: qmfrMwVYth3lsYuv7qfr22YlTIlNtVjMl0v4Z5pX7hM
-      short-id: 3f200574d011010f
     flow: xtls-rprx-vision
     network: tcp
   - name: '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
@@ -98,13 +71,39 @@ proxies:
       short-id: 87810942
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇷🇴 [RO] Румыния VFPARSER'
+  - name: '🇨🇿 [CZ] Чехия VFPARSER'
     type: trojan
-    server: 77.74.123.108
-    port: 4443
-    password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+    server: nl.zhabulik.ru
+    port: 443
+    password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
     udp: true
-    sni: grape-test-italy.dynuddns.net
+    sni: nl.zhabulik.ru
+    alpn:
+      - 'h2%2Chttp/1.1'
+  - name: '🇺🇸 [US] США VFPARSER'
+    type: trojan
+    server: pl.zhabulik.ru
+    port: 443
+    password: WFer-5gN21nfHbVB2N8s71Z74EPUfzVj
+    udp: true
+    sni: pl.zhabulik.ru
+    alpn:
+      - 'h2%2Chttp/1.1'
+  - name: '🇺🇸 [US] США'
+    type: vmess
+    server: www.shopify.com
+    port: 443
+    uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+    alterId: 0
+    cipher: auto
+    udp: true
+    tls: true
+    servername: guanwang.awsno.com
+    network: ws
+    ws-opts:
+      path: '/hls/cctv5phd.m3u8'
+      headers:
+        Host: guanwang.awsno.com
   - name: '🇸🇬 [SG] Сингапур VFPARSER'
     type: ss
     server: 45.128.12.20
@@ -147,13 +146,6 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇰🇷 [KR] Южная Корея VFPARSER'
-    type: ss
-    server: 211.174.113.172
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
-    udp: true
   - name: '🇸🇨 [SC] Сейшелы VFPARSER'
     type: ss
     server: 45.207.207.25
@@ -166,20 +158,19 @@ proxy-groups:
     type: select
     proxies:
       - '🇺🇸 [US] США VFPARSER'
-      - '🇮🇱 [IL] Израиль VFPARSER'
-      - '🇺🇸 [US] США VFPARSER'
       - '🏳️ Белый айпи | 🇷🇺 [RU] Россия VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇫🇮 [FI] Финляндия VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
-      - '🇷🇴 [RO] Румыния VFPARSER'
+      - '🇨🇿 [CZ] Чехия VFPARSER'
+      - '🇺🇸 [US] США VFPARSER'
+      - '🇺🇸 [US] США'
       - '🇸🇬 [SG] Сингапур VFPARSER'
       - '🇳🇱 [NL] Нидерланды VFPARSER'
       - '🇬🇧 [GB] Великобритания VFPARSER'
       - '🇺🇸 [US] США VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
       - '🇯🇵 [JP] Япония VFPARSER'
-      - '🇰🇷 [KR] Южная Корея VFPARSER'
       - '🇸🇨 [SC] Сейшелы VFPARSER'
 rules:
   - MATCH,PROXY
