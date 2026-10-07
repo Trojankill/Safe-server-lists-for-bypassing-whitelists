@@ -80,7 +80,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
     {"name": "FILTER-11", "url": "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"},
     {"name": "FILTER-12", "url": "https://translated.turbopages.org/proxy_u/de-de.ru.e6e5a2dd-6ac65a76-30ee4feb-74722d776562/https/bitbucket.org/igareck/vpn-configs-for-russia/raw/main/WHITE-CIDR-RU-all.txt"},
-    {"name": "FILTER-13", "url": "https://hub.mos.ru/kfwl/auto/raw/main/wl"},
+    {"name": "FILTER-13", "url": "https://raw.githubusercontent.com/MK-l4/EliteQ/main/EliteQ"},
 ]  
 
 BANNED_DOMAINS = [
