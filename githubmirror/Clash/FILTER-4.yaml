@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-07 01:30:39 UTC
+# 2026-10-07 01:45:29 UTC
 proxies:
   - name: 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия t.me/rjsxrd'
     type: vless
@@ -29,20 +29,34 @@ proxies:
       short-id: 72a6fbb66efaa5e2
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
+  - name: 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇳🇱 Нидерланды t.me/rjsxrd'
     type: vless
-    server: 217.198.6.70
+    server: 45.139.26.179
     port: 443
-    uuid: 2809b3ef-00e8-47b1-a51e-a23c4a117b08
+    uuid: 2b781b4a-5942-48e0-a7f3-5a07b7b488c1
     udp: true
     tls: true
-    servername: combochip.ru
+    servername: ads.x5.ru
     client-fingerprint: firefox
     reality-opts:
-      public-key: rpkH5JCoKBH0DDusVNhVmFL_aoPlTyeH0BxDAIfzJ2M
-      short-id: 3a587fe37874
+      public-key: AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI
+      short-id: 15bcc0a77c3cacdf
+    network: grpc
+    grpc-opts:
+  - name: '3324 | 🇪🇪 Estonia | 🏳️ SNI-MAX | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu t.me/rjsxrd'
+    type: vless
+    server: 95.85.224.51
+    port: 443
+    uuid: 342ab7e4-5a89-0001-8809-304120d4aa83
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: WWeAHWUVD-phmnjNJ823cer0c4CMIbEs08AhsuEZmDc
+      short-id: a696de84963656de
     flow: xtls-rprx-vision
-    network: tcp
+    network: raw
   - name: '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
     type: vless
     server: 23.95.222.127
@@ -57,21 +71,7 @@ proxies:
       short-id: 35cd899f8de04801
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇬🇧 United Kingdom | @RaViraNet t.me/rjsxrd'
-    type: vless
-    server: 3.9.135.156
-    port: 51847
-    uuid: 391a01e9-b664-407b-9158-610fab3f5920
-    udp: true
-    tls: true
-    servername: www.tesla.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: S6noV0L8eNASnTe1gXLutLZNdfENsvKMsOJiGQYi6nc
-      short-id: 0eec442e7b34d2f2
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0051| t.me/rjsxrd'
+  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0053| t.me/rjsxrd'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -79,26 +79,12 @@ proxies:
     udp: true
     tls: true
     servername: api.max.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: aySWi4vGm4__zU_RFNtym1AyjtfY0AX9WoigfVG7hWA
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '[371ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd'
-    type: vless
-    server: 5.129.242.110
-    port: 443
-    uuid: 3d3cc1bc-3d6f-03f8-a531-19a1797952bc
-    udp: true
-    tls: true
-    servername: rutube.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: Bz5EbrFHttwOTc1VWhPBAOeoIMDMMZcM02PTZs5AgD4
-      short-id: 1aa948f94316b975
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'LTE/5G Все операторы 🇪🇺 t.me/rjsxrd'
     type: vless
     server: 78.159.250.214
@@ -126,6 +112,35 @@ proxies:
       short-id: 01
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Бесплатный VPN Tg:VlessForU 🇫🇷 t.me/rjsxrd'
+    type: vless
+    server: 62.210.91.2
+    port: 23576
+    uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
+    udp: true
+    tls: true
+    servername: fuck.rkn
+    client-fingerprint: random
+    reality-opts:
+      public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '🇺🇸_美国_150 t.me/rjsxrd'
+    type: vless
+    server: saas.sin.fan
+    port: 443
+    uuid: 495c7195-85b8-498a-bf20-2ea9ce9175b5
+    udp: true
+    tls: true
+    servername: snip.edgeoneai.cc.cd
+    alpn:
+      - 'h3%2Ch2'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/fdip=sstp://vpn:vpn@public-vpn-200.opengw.net:443?ed=2560'
+      headers:
+        Host: snip.edgeoneai.cc.cd
   - name: '巴西_100707071 t.me/rjsxrd'
     type: vless
     server: 177.1.192.72
@@ -182,20 +197,6 @@ proxies:
       short-id: 87810942
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd'
-    type: vless
-    server: 200.169.183.68
-    port: 443
-    uuid: 54127949-5b65-4600-a976-326c99cfc794
-    udp: true
-    tls: true
-    servername: s3-m.perecmusic.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4
-      short-id: e1f8a3b6
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇮🇱 t.me/rjsxrd'
     type: vless
     server: 64.177.68.115
@@ -250,20 +251,6 @@ proxies:
       short-id: 992e5a9a
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
-    type: vless
-    server: 85.209.135.145
-    port: 443
-    uuid: 6a3c68b1-d4b8-0006-975f-a01da4184225
-    udp: true
-    tls: true
-    servername: lk-1.yes-on.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: EroArXWVxIMXclqgp4WNolB5vtfWSZEF1wjb_t1QrBE
-      short-id: a150dcf9
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
     type: vless
     server: 38.150.33.232
@@ -277,18 +264,17 @@ proxies:
       public-key: dpG1tE9V93FM9IJeYC5-n_7RJxX7jOwrWLbQJgZpFFo
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'tg:VLESSFORU top ping 🇳🇱 t.me/rjsxrd'
+  - name: '荷兰_100707221 t.me/rjsxrd'
     type: vless
-    server: 2.27.7.68
-    port: 443
-    uuid: 766a8ef5-ebe4-4307-a4e1-8e821825e69e
+    server: 165.231.99.46
+    port: 8443
+    uuid: 70ad3e9c-89e6-4ee3-91c3-7cb10a4e483a
     udp: true
     tls: true
-    servername: nodenida.quantumguard.run
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: z5ZeDU8NIi-FZSn9oggfC4H0fajOWcvq0h5uivXjElE
-      short-id: 9e29bf25519b2f88
+    servername: file-6ac48f09.adhil.uk
+    alpn:
+      - h2
+    client-fingerprint: safari
     flow: xtls-rprx-vision
     network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇰🇷 Южная Корея t.me/rjsxrd'
@@ -430,7 +416,7 @@ proxies:
       short-id: 9db6b6d13d17987e
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇵🇱 Poland — #69 [Verified RU] t.me/rjsxrd'
+  - name: '🇵🇱Обходы - TG: AirLinkVPNBot |0075| t.me/rjsxrd'
     type: vless
     server: 217.19.122.214
     port: 8448
@@ -444,19 +430,6 @@ proxies:
       short-id: d681ac08
     flow: xtls-rprx-vision
     network: raw
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
-    type: vless
-    server: 194.62.105.40
-    port: 21220
-    uuid: a44768a4-f613-4083-a76d-0df966efdd7e
-    udp: true
-    tls: true
-    servername: iran.panelsaz.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 21eKBpFrgi_Knuo_mmEm3wUXXEi-tY2pDkf1eYM2qzQ
-      short-id: ee814cc2887d69
-    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
     type: vless
     server: 153.80.241.133
@@ -485,6 +458,20 @@ proxies:
       short-id: 20a29d0e0817696b
     flow: xtls-rprx-vision
     network: tcp
+  - name: '🇺🇸 美国 | USA t.me/rjsxrd'
+    type: vless
+    server: 154.21.94.246
+    port: 443
+    uuid: ab1249da-9ac8-44c7-89a3-2d337ab25cb2
+    udp: true
+    tls: true
+    servername: frost.sigy.me
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: C8Qz7kuyHo9O0oBV9W7ltzL8aPLPzdb1vvt3UkJjtF0
+      short-id: ea29b7b15bb24d49
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd'
     type: vless
     server: 209.200.246.61
@@ -499,20 +486,6 @@ proxies:
       short-id: e287e3906e3c
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
-    type: vless
-    server: 189.74.106.19
-    port: 443
-    uuid: b0eed7cb-72e2-4bf5-8668-b803deb5dd47
-    udp: true
-    tls: true
-    servername: api.setevoyprostor.cc
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
-      short-id: a8
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇬🇧 t.me/rjsxrd'
     type: vless
     server: 50.7.154.75
@@ -525,20 +498,6 @@ proxies:
     reality-opts:
       public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
       short-id: a8
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd'
-    type: vless
-    server: 88.218.170.236
-    port: 443
-    uuid: b872771d-e9d1-42d7-ad29-a9acff49ea2d
-    udp: true
-    tls: true
-    servername: www.sun6-21.userapi.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: qC4VE5jv0q0ALYAfCNtAHU-kN32OdA-cqJmXpL4Y2VY
-      short-id: 3199b70105c62ce0
     flow: xtls-rprx-vision
     network: tcp
   - name: '英国_100707323 t.me/rjsxrd'
@@ -566,20 +525,6 @@ proxies:
     reality-opts:
       public-key: diw5L3O4EkRQGWDSfdpQooPUc3zBTItooeOQ_fIDFWI
       short-id: 7f2e9c4b1a8d6e53
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 机场推荐:dafei.de 荷兰 22 t.me/rjsxrd'
-    type: vless
-    server: du-rov.secureservice.top
-    port: 8443
-    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-    udp: true
-    tls: true
-    servername: du-rov.secureservice.top
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-      short-id: 3cbc3d737fb9c4af
     flow: xtls-rprx-vision
     network: tcp
   - name: 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇳🇱 Нидерланды t.me/rjsxrd'
@@ -610,18 +555,18 @@ proxies:
       short-id: 025f065c
     network: grpc
     grpc-opts:
-  - name: '新加坡_100707203 t.me/rjsxrd'
+  - name: '🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd'
     type: vless
-    server: 173.234.14.105
-    port: 59615
-    uuid: e2632874-614e-4261-af62-52aca3358e4e
+    server: 2.27.69.157
+    port: 443
+    uuid: df53b6c2-8005-475c-9eb9-74e1be785dc8
     udp: true
     tls: true
-    servername: biosmod.partners.nvidia.com
+    servername: addons.mozilla.org
     client-fingerprint: chrome
     reality-opts:
-      public-key: 7PB-58vYXFLNhK6kY8bJJO3-fPOXTPQJ0UqDlhSOH3M
-      short-id: 6b
+      public-key: zAmNLsLPizp96b55zNe2kJ3zXBdpuNY0olnRaOpluks
+      short-id: 34e797af
     flow: xtls-rprx-vision
     network: tcp
   - name: 'CF中转_1007072849 t.me/rjsxrd'
@@ -658,20 +603,6 @@ proxies:
       path: '/connect'
       headers:
         Host: cf-vless-4cf55824.aimall.fr
-  - name: '🇬🇧 United Kingdom — #48 [Verified RU] t.me/rjsxrd'
-    type: vless
-    server: 185.91.54.67
-    port: 443
-    uuid: ec56857d-5b0a-446b-a2b4-37b222ae7ab3
-    udp: true
-    tls: true
-    servername: id.x5.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: El1z7MdnRwR9Dc7VztJ0xaUXRMukU9SGhH-oPVB9-S0
-      short-id: 377645738e782155
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
     type: vless
     server: 94.183.193.24
@@ -711,21 +642,7 @@ proxies:
       public-key: zYNnGVEkMFCUR_9NcYeaXfm9A_L-PP6iG2sIIST6S0M
       short-id: 1ed136481e0ede74
     network: tcp
-  - name: '德国_100707209 t.me/rjsxrd'
-    type: vless
-    server: 91.233.8.126
-    port: 443
-    uuid: f08a52a4-a8ff-4c00-af72-ff4c68f0fefa
-    udp: true
-    tls: true
-    servername: tnt-cloud.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: b4n1pcO8ST3JkGtj8YymXVrW17LEe2EHec5wY7hMMR4
-      short-id: 0a4b7c3d
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0057| t.me/rjsxrd'
+  - name: '🇳🇱Обходы - TG: AirLinkVPNBot |0059| t.me/rjsxrd'
     type: vless
     server: 185.134.201.230
     port: 443
@@ -739,19 +656,6 @@ proxies:
       short-id: d4f010dc22a5e425
     network: grpc
     grpc-opts:
-  - name: '🇦🇲 Armenia — #108 t.me/rjsxrd'
-    type: vless
-    server: 77.91.68.70
-    port: 55983
-    uuid: f667a096-5231-4cfb-8759-92bb32473139
-    udp: true
-    tls: true
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg
-      short-id: 0e
-    network: tcp
   - name: '🇸🇪 Швеция t.me/rjsxrd'
     type: trojan
     server: 104.18.153.182
@@ -764,6 +668,13 @@ proxies:
       path: '/WangCai-8'
       headers:
         Host: dimskiee.biz.id
+  - name: '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
+    type: trojan
+    server: 107.149.159.190
+    port: 10443
+    password: 8bdfa4e8dac99c57decdd8bf55d2da4c
+    udp: true
+    sni: cf.shiranyu.xyz
   - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
     type: trojan
     server: de.zhabulik.ru
@@ -793,9 +704,31 @@ proxies:
     alpn:
       - h2
       - 'http/1.1'
+  - name: '🏳️_未知_68 t.me/rjsxrd'
+    type: trojan
+    server: www.wto.org
+    port: 8443
+    password: ec1fa47d-4eac-4b3f-8cae-4a2982d43e2f
+    udp: true
+    sni: jiangjc.pages.dev
+    network: ws
+    ws-opts:
+      path: '/'
   - name: '🇫🇷 Join+Telegram:@SolVPN 🇫🇷 t.me/rjsxrd'
     type: trojan
-    server: 45.130.125.160
+    server: 104.17.121.71
+    port: 443
+    password: humanity
+    udp: true
+    sni: www.calmlunch.com
+    network: ws
+    ws-opts:
+      path: '/assignment'
+      headers:
+        Host: www.calmlunch.com
+  - name: '🏳️_未知_156 t.me/rjsxrd'
+    type: trojan
+    server: 104.18.8.83
     port: 443
     password: humanity
     udp: true
@@ -833,35 +766,6 @@ proxies:
       path: '/?ed=2560'
       headers:
         Host: tro.baiyi.cloudns.org
-  - name: 't.me/rjsxrd'
-    type: vmess
-    server: guanwang.awsno.com
-    port: 443
-    uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    servername: guanwang.awsno.com
-    network: ws
-    ws-opts:
-      path: '/hls/cctv5phd.m3u8'
-      headers:
-        Host: guanwang.awsno.com
-  - name: 't.me/rjsxrd'
-    type: vmess
-    server: 2b9hwy8ocx7q74nm.v.3dns.vip
-    port: 443
-    uuid: f23bb427c1f94373876c2f43e9f790f3
-    alterId: 0
-    cipher: auto
-    udp: true
-    tls: true
-    network: ws
-    ws-opts:
-      path: '/ws-vmess'
-      headers:
-        Host: 2b9hwY8oCx7Q74NM.v.3dns.vip
   - name: '🇮🇩 Join+Telegram:@SolVPN 🇮🇩 t.me/rjsxrd'
     type: ss
     server: 103.160.63.199
@@ -918,12 +822,19 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: BqnqToih0PbU
     udp: true
-  - name: '🇮🇳 Join+Telegram:@SolVPN 🇮🇳 t.me/rjsxrd'
+  - name: '[3175ms IN IN @vlesstrojan] t.me/rjsxrd'
     type: ss
     server: 45.149.114.171
     port: 777
     cipher: chacha20-ietf-poly1305
     password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
+    udp: true
+  - name: 'Шкатулка запретов — 🇺🇸US t.me/rjsxrd'
+    type: ss
+    server: 108.181.57.93
+    port: 8388
+    cipher: chacha20-ietf-poly1305
+    password: RSo52SbxW40r
     udp: true
   - name: '🇪🇸 Join+Telegram:@SolVPN 🇪🇸 t.me/rjsxrd'
     type: ss
@@ -932,16 +843,9 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: WSyL4XTwNsdv
     udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
+  - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
     type: ss
-    server: 82.38.31.180
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '[1135ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd'
-    type: ss
-    server: 82.38.31.185
+    server: 82.38.31.176
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -963,6 +867,13 @@ proxies:
   - name: '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
     type: ss
     server: 82.38.31.198
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
+    type: ss
+    server: 82.38.31.200
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -1011,28 +922,7 @@ proxies:
     udp: true
   - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
     type: ss
-    server: 82.38.31.10
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
-    type: ss
     server: 82.38.31.11
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
-    type: ss
-    server: 82.38.31.149
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
-    type: ss
-    server: 82.38.31.164
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
@@ -1065,13 +955,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
-  - name: '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
-    type: ss
-    server: 82.38.31.2
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
   - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
     type: ss
     server: 82.38.31.46
@@ -1085,13 +968,6 @@ proxies:
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: oZIoA69Q8yhcQV8ka3Pa3A
-    udp: true
-  - name: '🇪🇸 Join+Telegram:@SolVPN 🇪🇸 t.me/rjsxrd'
-    type: ss
-    server: 140.174.184.5
-    port: 8388
-    cipher: chacha20-ietf-poly1305
-    password: qItG8SueYQcP
     udp: true
   - name: '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
     type: ss
@@ -1121,40 +997,12 @@ proxies:
     cipher: aes-256-gcm
     password: 3eOFeNssde7PYYMv
     udp: true
-  - name: '🇷🇺 机场推荐:dafei.de 俄罗斯 08 t.me/rjsxrd'
-    type: ss
-    server: 194.87.68.140
-    port: 10771
-    cipher: aes-256-gcm
-    password: 81a20429165df87e
-    udp: true
-  - name: '🇲🇽 Join+Telegram:@SolVPN 🇲🇽 t.me/rjsxrd'
-    type: ss
-    server: 64.177.90.30
-    port: 8388
-    cipher: aes-256-gcm
-    password: BWyPPTusFKhGgzKh
-    udp: true
-  - name: '🇮🇳 India | @RaViraNet t.me/rjsxrd'
-    type: ss
-    server: 172.105.39.124
-    port: 7002
-    cipher: aes-256-gcm
-    password: RexnBgU7EV5ADxG
-    udp: true
   - name: '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
     type: ss
     server: 15.204.246.107
     port: 8888
     cipher: aes-256-gcm
     password: Y6R9pAtvxxzmGC
-    udp: true
-  - name: '🇰🇷 South Korea | @RaViraNet t.me/rjsxrd'
-    type: ss
-    server: 211.174.113.172
-    port: 49642
-    cipher: aes-256-gcm
-    password: ac9c0a7b
     udp: true
   - name: '🇰🇷 Join+Telegram:@SolVPN 🇰🇷 t.me/rjsxrd'
     type: ss
@@ -1184,6 +1032,13 @@ proxies:
     cipher: aes-256-gcm
     password: g5MeD6Ft3CWlJId
     udp: true
+  - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
+    type: ss
+    server: 140.82.56.38
+    port: 8388
+    cipher: aes-256-gcm
+    password: iOaIXNsQXVIxwmkY
+    udp: true
   - name: '🇮🇹 Join+Telegram:@SolVPN 🇮🇹 t.me/rjsxrd'
     type: ss
     server: 57.131.48.45
@@ -1191,12 +1046,12 @@ proxies:
     cipher: aes-256-gcm
     password: itzvpn@321
     udp: true
-  - name: '🇨🇱 Join+Telegram:@SolVPN 🇨🇱 t.me/rjsxrd'
+  - name: '🇺🇸 AetrisVPN t.me/rjsxrd'
     type: ss
-    server: 64.176.2.21
-    port: 8388
+    server: 15.204.247.206
+    port: 4444
     cipher: aes-256-gcm
-    password: xBStBEVqvGwHPocc
+    password: pKEW8JPByTVTLtM
     udp: true
   - name: '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
     type: ss
@@ -1218,25 +1073,24 @@ proxy-groups:
     proxies:
       - 'AetrisVPN White list ┃ ✅ SNI: yandex.ru ┃ 🇩🇪 Германия t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
+      - 'AetrisVPN White list ┃ ✅ SNI: ads.x5.ru ┃ 🇳🇱 Нидерланды t.me/rjsxrd'
+      - '3324 | 🇪🇪 Estonia | 🏳️ SNI-MAX | VLESS | 📺 YT | 🔐 Stable | TG: @YoutubeUnBlockRu t.me/rjsxrd'
       - '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
-      - '🇬🇧 United Kingdom | @RaViraNet t.me/rjsxrd'
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0051| t.me/rjsxrd'
-      - '[371ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd'
+      - '🇳🇱Обходы - TG: AirLinkVPNBot |0053| t.me/rjsxrd'
       - 'LTE/5G Все операторы 🇪🇺 t.me/rjsxrd'
       - '🇫🇷 Join+Telegram:@SolVPN 🇫🇷 t.me/rjsxrd'
+      - 'Бесплатный VPN Tg:VlessForU 🇫🇷 t.me/rjsxrd'
+      - '🇺🇸_美国_150 t.me/rjsxrd'
       - '巴西_100707071 t.me/rjsxrd'
       - '巴西_100707072 t.me/rjsxrd'
       - '英国_100707334 t.me/rjsxrd'
       - '爱尔兰_100707042 t.me/rjsxrd'
-      - '🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇮🇱 t.me/rjsxrd'
       - '美国_1007071032 t.me/rjsxrd'
       - '🇫🇮 Join+Telegram:@SolVPN 🇫🇮 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪 t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
       - '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
-      - 'tg:VLESSFORU top ping 🇳🇱 t.me/rjsxrd'
+      - '荷兰_100707221 t.me/rjsxrd'
       - 'AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇰🇷 Южная Корея t.me/rjsxrd'
       - '[487ms KR KR @vlesstrojan] t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
@@ -1247,38 +1101,33 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - 'AetrisVPN White list ┃ ✅ SNI: www.max.ru ┃ 🇷🇺 Россия t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
-      - '🇵🇱 Poland — #69 [Verified RU] t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
+      - '🇵🇱Обходы - TG: AirLinkVPNBot |0075| t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
+      - '🇺🇸 美国 | USA t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇬🇧 t.me/rjsxrd'
-      - '🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd'
       - '英国_100707323 t.me/rjsxrd'
       - '[634ms Финляндия FI 🇫🇮 @vlesstrojan] t.me/rjsxrd'
-      - '🇳🇱 机场推荐:dafei.de 荷兰 22 t.me/rjsxrd'
       - 'AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇳🇱 Нидерланды t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-      - '新加坡_100707203 t.me/rjsxrd'
+      - '🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd'
       - 'CF中转_1007072849 t.me/rjsxrd'
       - 'CF中转_1007074349 t.me/rjsxrd'
-      - '🇬🇧 United Kingdom — #48 [Verified RU] t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇦🇪 t.me/rjsxrd'
-      - '德国_100707209 t.me/rjsxrd'
-      - '🇳🇱Обходы - TG: AirLinkVPNBot |0057| t.me/rjsxrd'
-      - '🇦🇲 Armenia — #108 t.me/rjsxrd'
+      - '🇳🇱Обходы - TG: AirLinkVPNBot |0059| t.me/rjsxrd'
       - '🇸🇪 Швеция t.me/rjsxrd'
+      - '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
+      - '🏳️_未知_68 t.me/rjsxrd'
       - '🇫🇷 Join+Telegram:@SolVPN 🇫🇷 t.me/rjsxrd'
+      - '🏳️_未知_156 t.me/rjsxrd'
       - '🇷🇺 Россия t.me/rjsxrd'
       - '🇷🇺 Россия t.me/rjsxrd'
-      - 't.me/rjsxrd'
-      - 't.me/rjsxrd'
       - '🇮🇩 Join+Telegram:@SolVPN 🇮🇩 t.me/rjsxrd'
       - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd'
@@ -1287,11 +1136,12 @@ proxy-groups:
       - '🇿🇦 Join+Telegram:@SolVPN 🇿🇦 t.me/rjsxrd'
       - '🇬🇧 Join+Telegram:@SolVPN 🇬🇧 t.me/rjsxrd'
       - '🇫🇷 Join+Telegram:@SolVPN 🇫🇷 t.me/rjsxrd'
-      - '🇮🇳 Join+Telegram:@SolVPN 🇮🇳 t.me/rjsxrd'
+      - '[3175ms IN IN @vlesstrojan] t.me/rjsxrd'
+      - 'Шкатулка запретов — 🇺🇸US t.me/rjsxrd'
       - '🇪🇸 Join+Telegram:@SolVPN 🇪🇸 t.me/rjsxrd'
-      - '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
-      - '[1135ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
+      - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
+      - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
@@ -1301,32 +1151,24 @@ proxy-groups:
       - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
-      - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
-      - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
-      - '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
       - '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - '🇳🇱 [NL] Нидерланды VFPARSER t.me/rjsxrd'
-      - '🇳🇱 The Netherlands | @RaViraNet t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - 'United+Kingdom t.me/rjsxrd'
-      - '🇪🇸 Join+Telegram:@SolVPN 🇪🇸 t.me/rjsxrd'
       - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇬🇧 Join+Telegram:@SolVPN 🇬🇧 t.me/rjsxrd'
       - '🇯🇵 Japan | @RaViraNet t.me/rjsxrd'
       - '🇯🇵 Join+Telegram:@SolVPN 🇯🇵 t.me/rjsxrd'
-      - '🇷🇺 机场推荐:dafei.de 俄罗斯 08 t.me/rjsxrd'
-      - '🇲🇽 Join+Telegram:@SolVPN 🇲🇽 t.me/rjsxrd'
-      - '🇮🇳 India | @RaViraNet t.me/rjsxrd'
       - '🇺🇸 United States | @RaViraNet t.me/rjsxrd'
-      - '🇰🇷 South Korea | @RaViraNet t.me/rjsxrd'
       - '🇰🇷 Join+Telegram:@SolVPN 🇰🇷 t.me/rjsxrd'
       - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
+      - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - '🇮🇹 Join+Telegram:@SolVPN 🇮🇹 t.me/rjsxrd'
-      - '🇨🇱 Join+Telegram:@SolVPN 🇨🇱 t.me/rjsxrd'
+      - '🇺🇸 AetrisVPN t.me/rjsxrd'
       - '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
       - '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
 rules:
