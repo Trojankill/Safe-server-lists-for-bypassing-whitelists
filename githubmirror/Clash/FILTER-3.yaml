@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-10-07 01:45:29 UTC
+# 2026-10-07 02:01:00 UTC
 proxies:
-  - name: '🇳🇱 The Netherlands — #45'
+  - name: '🇳🇱 The Netherlands — #36'
+    type: vless
+    server: 45.139.26.179
+    port: 443
+    uuid: 2b781b4a-5942-48e0-a7f3-5a07b7b488c1
+    udp: true
+    tls: true
+    servername: ads.x5.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: AhLy7ha7FF2EQfu-3SxOFKUwExyHActYPHtyv82KNCI
+      short-id: 15bcc0a77c3cacdf
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇱 The Netherlands — #30'
     type: vless
     server: 31.130.155.114
     port: 443
@@ -15,7 +29,19 @@ proxies:
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #9'
+  - name: '🇳🇱 The Netherlands — #35'
+    type: vless
+    server: 84.201.135.77
+    port: 443
+    uuid: 57a6de33-cb7e-4ac3-96b3-8ed01915c354
+    udp: true
+    tls: true
+    servername: ads.x5.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: z4ZddzhbeCYDng09RnRL7lEqFGdc-Sb5mQJNHn-2USA
+    network: xhttp
+  - name: '🇷🇺 Beget — #14'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -28,7 +54,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇬🇧 United Kingdom — #43'
+  - name: '🇬🇧 United Kingdom — #29'
     type: vless
     server: 84.38.181.249
     port: 443
@@ -41,7 +67,7 @@ proxies:
       public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
       short-id: 6bc02f1c474260c3
     network: xhttp
-  - name: '🇵🇱 Poland — #68'
+  - name: '🇵🇱 Poland — #55'
     type: vless
     server: 217.19.122.214
     port: 8448
@@ -55,7 +81,7 @@ proxies:
       short-id: d681ac08
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇵🇱 Poland — #66'
+  - name: '🇵🇱 Poland — #51'
     type: vless
     server: 185.229.9.176
     port: 44400
@@ -69,49 +95,7 @@ proxies:
       short-id: fa7e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇬🇧 United Kingdom — #44'
-    type: vless
-    server: 188.225.25.14
-    port: 443
-    uuid: ce3e9db2-42a2-4338-b5e4-2962b1d06c33
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-13.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #38'
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: ce3e9db2-42a2-4338-b5e4-2962b1d06c33
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇴 Norway — #51'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: ce3e9db2-42a2-4338-b5e4-2962b1d06c33
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇱 The Netherlands — #50'
+  - name: '🇳🇱 The Netherlands — #34'
     type: vless
     server: 185.134.201.230
     port: 443
@@ -129,14 +113,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 The Netherlands — #45'
-      - '🇷🇺 Beget — #9'
-      - '🇬🇧 United Kingdom — #43'
-      - '🇵🇱 Poland — #68'
-      - '🇵🇱 Poland — #66'
-      - '🇬🇧 United Kingdom — #44'
-      - '🇩🇪 Germany — #38'
-      - '🇳🇴 Norway — #51'
-      - '🇳🇱 The Netherlands — #50'
+      - '🇳🇱 The Netherlands — #36'
+      - '🇳🇱 The Netherlands — #30'
+      - '🇳🇱 The Netherlands — #35'
+      - '🇷🇺 Beget — #14'
+      - '🇬🇧 United Kingdom — #29'
+      - '🇵🇱 Poland — #55'
+      - '🇵🇱 Poland — #51'
+      - '🇳🇱 The Netherlands — #34'
 rules:
   - MATCH,PROXY
