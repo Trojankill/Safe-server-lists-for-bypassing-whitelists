@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-07 17:15:31 UTC
+# 2026-10-07 17:30:45 UTC
 proxies:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 188.225.83.133
-    port: 443
-    uuid: 4c346148-ece9-487a-bffb-ba5a399b2d71
-    udp: true
-    tls: true
-    servername: xnodtwx.artemida.live
-    client-fingerprint: random
-    reality-opts:
-      public-key: JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw
-      short-id: a1b2c3d4e5f6a7b8
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇴 Норвегия [#РКП]'
+  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
     type: vless
     server: 176.108.252.139
     port: 9881
@@ -29,49 +15,7 @@ proxies:
       short-id: aabb
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Германия [#РКП]'
-    type: vless
-    server: 82.202.141.141
-    port: 9892
-    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
-    udp: true
-    tls: true
-    servername: dl.google.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0
-      short-id: aa
-    network: grpc
-    grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 5.42.99.64
-    port: 8443
-    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
-    udp: true
-    tls: true
-    servername: du-rov.secureservice.top
-    client-fingerprint: random
-    reality-opts:
-      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-      short-id: 3cbc3d737fb9c4af
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 195.133.73.65
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
-    udp: true
-    tls: true
-    servername: anyfile2file.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇺🇸 США [#РКП]'
+  - name: '🇺🇸 США | 🔗 Каскад [#РКП]'
     type: hysteria2
     server: 77.232.139.128
     port: 11592
@@ -90,12 +34,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🏴 Неизвестный [#РКП]'
-      - '🇳🇴 Норвегия [#РКП]'
-      - '🇩🇪 Германия [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇺🇸 США [#РКП]'
+      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
+      - '🇺🇸 США | 🔗 Каскад [#РКП]'
       - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
