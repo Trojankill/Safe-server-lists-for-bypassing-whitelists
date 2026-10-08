@@ -1,48 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-08 11:45:31 UTC
+# 2026-10-08 12:00:59 UTC
 proxies:
-  - name: '🇷🇺 cloud.ru — #5'
-    type: vless
-    server: 188.225.25.14
-    port: 443
-    uuid: 3692c648-39a9-4a26-b82f-36f099862eb0
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-13.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #23'
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: 3692c648-39a9-4a26-b82f-36f099862eb0
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇴 Norway — #30'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 3692c648-39a9-4a26-b82f-36f099862eb0
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: '🇷🇺 Beget — #1'
     type: vless
     server: 45.12.75.242
@@ -56,7 +14,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇺🇸 United States — #37'
+  - name: '🇺🇸 United States — #48'
     type: vless
     server: 87.228.92.108
     port: 25178
@@ -69,7 +27,7 @@ proxies:
       public-key: UTK3fM9wiII4uIcBYUYJwppN1HezxBPhxPfIxDHZqj4
       short-id: ce43937e79bc30f0
     network: raw
-  - name: '🇩🇪 Germany — #8'
+  - name: '🇩🇪 Germany — #10'
     type: vless
     server: 37.18.14.115
     port: 10654
@@ -82,7 +40,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇩🇪 Germany — #6'
+  - name: '🇩🇪 Germany — #8'
     type: vless
     server: 37.18.14.168
     port: 10654
@@ -95,7 +53,7 @@ proxies:
       public-key: ds10ztOlMn8xfeIKEQ1m3I-tdem-abZbHKtJCU13CQM
       short-id: 5c3fb122
     network: xhttp
-  - name: '🇩🇪 Germany — #7'
+  - name: '🇩🇪 Germany — #9'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -108,17 +66,28 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
+  - name: '🇬🇧 United Kingdom — #33'
+    type: vless
+    server: 84.38.181.249
+    port: 443
+    uuid: 9737cc16-7266-45ce-94d9-6e05a45e0b9c
+    udp: true
+    tls: true
+    servername: open.spotify.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: pyZ0M0nE3aGx2UtCXNhajcneyCF4E8J3zpxhIKkQw0w
+      short-id: 6bc02f1c474260c3
+    network: xhttp
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 cloud.ru — #5'
-      - '🇩🇪 Germany — #23'
-      - '🇳🇴 Norway — #30'
       - '🇷🇺 Beget — #1'
-      - '🇺🇸 United States — #37'
+      - '🇺🇸 United States — #48'
+      - '🇩🇪 Germany — #10'
       - '🇩🇪 Germany — #8'
-      - '🇩🇪 Germany — #6'
-      - '🇩🇪 Germany — #7'
+      - '🇩🇪 Germany — #9'
+      - '🇬🇧 United Kingdom — #33'
 rules:
   - MATCH,PROXY
