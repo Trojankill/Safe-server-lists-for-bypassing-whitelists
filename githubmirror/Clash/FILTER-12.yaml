@@ -1,17 +1,30 @@
 # clash/mihomo subscription
-# 2026-10-08 00:15:37 UTC
+# 2026-10-08 00:30:45 UTC
 proxies:
-  - name: '🇷🇺 Russia | 🌐 [*CIDR]'
+  - name: '🇳🇱 The Netherlands | 🌐 [*CIDR]'
+    type: hysteria2
+    server: 94.228.167.49
+    port: 23443
+    password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
+    sni: hy2.95.181.175.123.nip.io
+  - name: '🇳🇱 The Netherlands | 🌐 [*CIDR]'
+    type: hysteria2
+    server: e7q.internet-booster.online
+    port: 23443
+    password: QFO6ZOwTxjvD8ITXouHLh_Rrp-QC3rXnZRTnShz_GcJPRsPXQ4QV456o1TN6ISbN
+    sni: hy2.95.181.175.123.nip.io
+  - name: '🇷🇺 Russia [*CIDR]'
     type: hysteria2
     server: msk.frkn.org
     port: 443
     password: f317b5d6-d399-4d3d-a051-89d674ae953c
     sni: msk.frkn.org
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Russia | 🌐 [*CIDR]'
+      - '🇳🇱 The Netherlands | 🌐 [*CIDR]'
+      - '🇳🇱 The Netherlands | 🌐 [*CIDR]'
+      - '🇷🇺 Russia [*CIDR]'
 rules:
   - MATCH,PROXY
