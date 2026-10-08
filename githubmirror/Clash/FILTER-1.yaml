@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-08 17:30:48 UTC
+# 2026-10-08 17:45:34 UTC
 proxies:
   - name: '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
     type: vless
@@ -40,6 +40,20 @@ proxies:
       public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
     network: grpc
     grpc-opts:
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
+    type: vless
+    server: 45.132.176.190
+    port: 9892
+    uuid: 5d16ac22-6eea-426f-b778-6f4c2961faef
+    udp: true
+    tls: true
+    servername: dl.google.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: bnRIb3Er1i-K6NGGByCO9UbGfOvu43ZoiK7ulPd1SzU
+      short-id: aabbccdd
+    network: grpc
+    grpc-opts:
   - name: '🏴 Неизвестный [#РКП]'
     type: vless
     server: 72.56.241.230
@@ -68,21 +82,7 @@ proxies:
       short-id: 53c6ae
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.32.196
-    port: 10017
-    uuid: 9c14d65b-6fe3-4063-a2eb-5c2b00382fe3
-    udp: true
-    tls: true
-    servername: configuration.apple.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: 0_FWbcTe6tvBuSZ7_7PrMaNmg44a8VxYRXPKjZuERwQ
-      short-id: a150dff4
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇮🇹 Италия | 🔗 Каскад [#РКП]'
+  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
     type: vless
     server: 217.19.122.47
     port: 2006
@@ -131,6 +131,12 @@ proxies:
     sni: srv-8718e6.frd21.ru
     obfs: salamander
     obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  - name: '🇷🇺 Россия [#РКП]'
+    type: hysteria2
+    server: msk.frkn.org
+    port: 443
+    password: f317b5d6-d399-4d3d-a051-89d674ae953c
+    sni: msk.frkn.org
 proxy-groups:
   - name: PROXY
     type: select
@@ -138,12 +144,13 @@ proxy-groups:
       - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
       - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
       - '🇨🇭 Швейцария | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🏴 Неизвестный [#РКП]'
       - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇮🇹 Италия | 🔗 Каскад [#РКП]'
+      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
       - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
       - '🇪🇪 Эстония | 🔗 Каскад [#РКП]'
       - '🇺🇸 США | 🔗 Каскад [#РКП]'
+      - '🇷🇺 Россия [#РКП]'
 rules:
   - MATCH,PROXY
