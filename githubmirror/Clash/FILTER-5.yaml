@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-09 09:15:33 UTC
+# 2026-10-09 09:31:18 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -141,20 +141,6 @@ proxies:
       short-id: dcdb12d8a8b5f21c
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 3de18f11-216d-41c0-a3e5-5642e5a69be8
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 87.199.205.28
@@ -195,20 +181,6 @@ proxies:
     reality-opts:
       public-key: SCQ-mhDUvmeQzJvctQYDDSha1R_rggGFkWK_9IRuvH4
       short-id: aabbccdd
-    network: grpc
-    grpc-opts:
-  - name: 'Russia | s3.storage.selcloud.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 81.163.22.24
-    port: 8443
-    uuid: 8d130a3a-c2fc-4544-99a4-d46ffb12f0a6
-    udp: true
-    tls: true
-    servername: s3.storage.selcloud.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
     network: grpc
     grpc-opts:
   - name: 'Russia | www.max.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -335,48 +307,6 @@ proxies:
       short-id: a3ea871e4ff324c9
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 185.241.195.152
-    port: 9445
-    uuid: d91dc97c-a09b-40fa-9da0-a3d1729f7427
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: i3F_hP7yc9VpcUC2Vn1oAqLyW3hZayGdTybl-VnWdz0
-      short-id: 02827ef87f4a23c0
-    flow: xtls-rprx-vision
-    network: raw
-  - name: 'Russia | www.vk.com | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 185.229.9.234
-    port: 443
-    uuid: db912bab-7c7e-494c-8d91-50e75476acff
-    udp: true
-    tls: true
-    servername: www.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM
-      short-id: 0bb3fbdc6cb178d4
-    flow: xtls-rprx-vision
-    network: raw
-  - name: 'Russia | wap.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 31.177.111.75
-    port: 8443
-    uuid: db912bab-7c7e-494c-8d91-50e75476acff
-    udp: true
-    tls: true
-    servername: wap.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: rVAe7lMXUS4ie-OaecaucJOyl0y1gVmaWFrRq2gMRG8
-      short-id: c1756ac68565f85c
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.112.59.210
@@ -435,11 +365,9 @@ proxy-groups:
       - 'Poland | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Latvia | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | idlecore.me | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | s3.storage.selcloud.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | www.max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Switzerland | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'Bulgaria | disk.ya.ru | XHTTP | [#LSO - #LinSpisokObhod]'
@@ -449,9 +377,6 @@ proxy-groups:
       - 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | piter-noda.wamster.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Russia | www.vk.com | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Russia | wap.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
