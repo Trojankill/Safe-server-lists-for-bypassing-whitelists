@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-09 21:30:42 UTC
+# 2026-10-09 21:45:31 UTC
 proxies:
+  - name: 'Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 82.202.178.133
+    port: 31443
+    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
+    udp: true
+    tls: true
+    servername: smartcaptcha.yandexcloud.net
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: lA0NS88gVVkaZf4qA1aYystzmLsZ5SNzszDsC-8DMSM
+      short-id: e351ebf520
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.95.231.156
@@ -166,20 +180,6 @@ proxies:
       short-id: aabbccdd
     network: grpc
     grpc-opts:
-  - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 195.24.65.221
-    port: 2096
-    uuid: 9e960af7-e6da-4cb4-8617-b4496a7c6cd2
-    udp: true
-    tls: true
-    servername: max.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: -Dg4mGAAM5Lwe9ri7Bx5WlYdPBsyYJy-Pai2Z0FGlyc
-      short-id: afee962d
-    network: grpc
-    grpc-opts:
   - name: 'France | deepl.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 194.76.154.31
@@ -269,6 +269,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - 'Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -280,7 +281,6 @@ proxy-groups:
       - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'France | deepl.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | TCP | [#LSO - #LinSpisokObhod]'
