@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-09 19:15:31 UTC
+# 2026-10-09 19:30:45 UTC
 proxies:
-  - name: 'Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 82.202.178.133
-    port: 31443
-    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
-    udp: true
-    tls: true
-    servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: lA0NS88gVVkaZf4qA1aYystzmLsZ5SNzszDsC-8DMSM
-      short-id: e351ebf520
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.95.231.156
@@ -29,7 +15,7 @@ proxies:
       short-id: a3a578ab
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.141.227.190
     port: 8446
@@ -41,7 +27,7 @@ proxies:
     reality-opts:
       public-key: NLQmEFT9-1ocGHnvGt7poB-1EJ6vxrJAzdZLvXoawy8
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 95.85.224.51
@@ -56,30 +42,18 @@ proxies:
       short-id: a696de84963656de
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | hellox-3.locallynet.org | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: 185.22.234.32
-    port: 7443
-    uuid: 3906af68-311d-4319-9e24-4a83569c20d8
+    server: 144.31.93.231
+    port: 443
+    uuid: 3710fc0f-5f0c-4b9c-a5d4-40cb419e943a
     udp: true
     tls: true
-    servername: hellox-3.locallynet.org
-    alpn:
-      - 'h2%2Chttp%2F1.1'
-    client-fingerprint: qq
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | hellox-3.locallynet.org | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 46.8.208.17
-    port: 7443
-    uuid: 3906af68-311d-4319-9e24-4a83569c20d8
-    udp: true
-    tls: true
-    servername: hellox-3.locallynet.org
-    alpn:
-      - 'h2%2Chttp%2F1.1'
-    client-fingerprint: qq
+    servername: yandex.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: WKN5yaRN05O2WdCURXRmS-yBVYaabaFWOvGudX6ohWc
+      short-id: b97e7d4582b6fa6e
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -124,6 +98,20 @@ proxies:
       short-id: 49900b0593d610
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.45.77
+    port: 443
+    uuid: 57284239-1ceb-439f-826e-cd25fcc1c1c5
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: 5SjHShy0uFG9MmzFbZ21Ozg623ZXKwLf3pzC_QA8CBE
+      short-id: 5803463a64073dfc
+    network: grpc
+    grpc-opts:
   - name: 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 198.55.102.59
@@ -255,15 +243,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 'Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | hellox-3.locallynet.org | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | hellox-3.locallynet.org | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
