@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-09 10:15:32 UTC
+# 2026-10-09 10:30:41 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -141,6 +141,20 @@ proxies:
       short-id: dcdb12d8a8b5f21c
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 4d96bd5c-f82c-490a-b6af-941883d4fbff
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 87.199.205.28
@@ -315,7 +329,7 @@ proxies:
     udp: true
     tls: true
     servername: nl2.nztvpn.com
-    client-fingerprint: random
+    client-fingerprint: chrome
     reality-opts:
       public-key: MTYXgxLIK9PzmQGAjuCmhI1FikCNlvU66NKgQ5g14Bc
       short-id: 0b135481ea1283fc
@@ -365,6 +379,7 @@ proxy-groups:
       - 'Poland | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Latvia | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | idlecore.me | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
