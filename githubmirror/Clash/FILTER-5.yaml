@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-09 07:15:33 UTC
+# 2026-10-09 07:30:43 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -363,6 +363,20 @@ proxies:
       short-id: afee962d
     network: grpc
     grpc-opts:
+  - name: 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.112.59.210
+    port: 443
+    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+    udp: true
+    tls: true
+    servername: nl2.nztvpn.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: MTYXgxLIK9PzmQGAjuCmhI1FikCNlvU66NKgQ5g14Bc
+      short-id: 0b135481ea1283fc
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 147.45.187.188
@@ -423,6 +437,7 @@ proxy-groups:
       - 'Russia | piter-noda.wamster.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]'
