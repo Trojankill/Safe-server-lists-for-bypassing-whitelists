@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-09 20:15:30 UTC
+# 2026-10-09 20:30:45 UTC
 proxies:
   - name: 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -98,6 +98,19 @@ proxies:
       short-id: 49900b0593d610
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | ru14.transitb2bsytems.com | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 46.8.208.80
+    port: 443
+    uuid: 56ff50da-a238-4646-95ab-dd159634bd87
+    udp: true
+    tls: true
+    servername: ru14.transitb2bsytems.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: idWlVgScJ_BPMFeaRXloqfER_vvpoShyaNumvLpMmFA
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 188.225.45.77
@@ -112,6 +125,19 @@ proxies:
       short-id: 5803463a64073dfc
     network: grpc
     grpc-opts:
+  - name: 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    udp: true
+    tls: true
+    servername: ya.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
+    network: raw
   - name: 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 198.55.102.59
@@ -250,7 +276,9 @@ proxy-groups:
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | ru14.transitb2bsytems.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
