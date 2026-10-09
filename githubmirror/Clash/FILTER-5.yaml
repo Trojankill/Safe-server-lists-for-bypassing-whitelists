@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-09 06:45:28 UTC
+# 2026-10-09 07:00:53 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -29,6 +29,20 @@ proxies:
       short-id: a3a578ab
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 26ae32ff-dca6-4da6-9afa-69b99a8a9b97
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 95.85.224.51
@@ -385,6 +399,7 @@ proxy-groups:
     proxies:
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]'
