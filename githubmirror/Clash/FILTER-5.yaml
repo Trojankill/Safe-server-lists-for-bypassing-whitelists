@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-10 12:30:46 UTC
+# 2026-10-10 12:45:29 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -160,35 +160,21 @@ proxies:
     udp: true
     tls: true
     servername: 5post-gate.x5.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: 5SjHShy0uFG9MmzFbZ21Ozg623ZXKwLf3pzC_QA8CBE
       short-id: 5803463a64073dfc
     network: grpc
     grpc-opts:
-  - name: 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: 185.254.98.227
+    server: 185.93.33.17
     port: 9443
     uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
     udp: true
     tls: true
-    servername: static.vkimages.io
+    servername: jobs.vkimages.io
     client-fingerprint: firefox
-    reality-opts:
-      public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
-      short-id: 2f49bccf11150ef2
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 185.254.98.67
-    port: 9443
-    uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
-    udp: true
-    tls: true
-    servername: static.vkimages.io
-    client-fingerprint: random
     reality-opts:
       public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
       short-id: 2f49bccf11150ef2
@@ -318,6 +304,34 @@ proxies:
       short-id: 8fbdc8d37cc76852
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Germany | baget.puffixhosting.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.102.115.7
+    port: 443
+    uuid: e937b92c-701f-420e-a621-3eb3b75de467
+    udp: true
+    tls: true
+    servername: baget.puffixhosting.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: oiM4ujM8pxMF3X8kQhD8ioV8lcTAj7c31rIP9e6bOgA
+      short-id: 94d16ee71404c7a3
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.112.59.210
+    port: 443
+    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+    udp: true
+    tls: true
+    servername: nl2.nztvpn.com
+    client-fingerprint: safari
+    reality-opts:
+      public-key: MTYXgxLIK9PzmQGAjuCmhI1FikCNlvU66NKgQ5g14Bc
+      short-id: 0b135481ea1283fc
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Latvia | lv.shadowshroom.org | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.220.223.109
@@ -363,8 +377,7 @@ proxy-groups:
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est-1.ardesnode.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
@@ -374,6 +387,8 @@ proxy-groups:
       - 'Russia | www.vk.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | www.vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Austria | zsat.eu-cdn294.com | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Germany | baget.puffixhosting.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Latvia | lv.shadowshroom.org | TCP | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]'
