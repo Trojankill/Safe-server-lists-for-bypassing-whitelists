@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-10 18:30:47 UTC
+# 2026-10-10 18:45:33 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -15,6 +15,18 @@ proxies:
       short-id: b28db60d77c50b4f
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | 46.182.24.15 | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 46.182.24.15
+    port: 443
+    uuid: 12e95f93-443c-0002-9a2a-5b318b9124cf
+    udp: true
+    tls: true
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 144.31.50.236
@@ -318,20 +330,6 @@ proxies:
       short-id: c31188450fe50718
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Austria | zsat.eu-cdn294.com | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 185.104.63.173
-    port: 443
-    uuid: e75ad2eb-6c1f-45ce-8023-f5f10875df66
-    udp: true
-    tls: true
-    servername: zsat.eu-cdn294.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: Dj1TD7Sy_TciG915ffXFpMu_pYHnrpGo_ypyyDw44Uc
-      short-id: 8fbdc8d37cc76852
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'Latvia | lv.shadowshroom.org | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.220.223.109
@@ -380,6 +378,7 @@ proxy-groups:
     type: select
     proxies:
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | 46.182.24.15 | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | s3.storage.selcloud.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
@@ -402,7 +401,6 @@ proxy-groups:
       - 'Canada | corporate.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | www.vk.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | www.vk.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Austria | zsat.eu-cdn294.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Latvia | lv.shadowshroom.org | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
