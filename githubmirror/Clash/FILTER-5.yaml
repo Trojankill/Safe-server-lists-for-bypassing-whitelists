@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-10 13:30:45 UTC
+# 2026-10-10 13:45:32 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -166,9 +166,37 @@ proxies:
       short-id: 5803463a64073dfc
     network: grpc
     grpc-opts:
+  - name: 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.254.98.227
+    port: 9443
+    uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
+    udp: true
+    tls: true
+    servername: static.vkimages.io
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
+      short-id: 2f49bccf11150ef2
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.93.33.17
+    port: 9443
+    uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
+    udp: true
+    tls: true
+    servername: jobs.vkimages.io
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho
+      short-id: 2f49bccf11150ef2
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.93.33.20
     port: 9443
     uuid: 596bea4f-a61b-4ad9-86a1-717066a67192
     udp: true
@@ -194,19 +222,6 @@ proxies:
       short-id: 9ea74b83f4993ca9
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
-    udp: true
-    tls: true
-    servername: ya.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
-    network: raw
   - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 72.56.241.230
@@ -233,6 +248,20 @@ proxies:
     reality-opts:
       public-key: MN6QjUHDUXyteMdR-cDna89fq4X3qgQhLnNqTtRUbBQ
       short-id: a8ae
+    network: tcp
+  - name: 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 146.103.100.242
+    port: 443
+    uuid: a7c35c0c-e8b6-49a4-9d2c-1acee63fe2d6
+    udp: true
+    tls: true
+    servername: dzen.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: CxjnGHCI3HXN2RAXwytela7jXyOGDCBqzMAqTfm60D0
+      short-id: 4ed920401771c4ab
+    flow: xtls-rprx-vision
     network: tcp
   - name: 'The Netherlands | www.datadoghq.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -345,6 +374,20 @@ proxies:
       public-key: RdMrEyniUBYe4bPHFYIwdczUWW4vbZe_DboFu8gjN0w
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 147.45.187.188
+    port: 8443
+    uuid: fe8e2ffb-8796-408c-af5b-0d4774215e00
+    udp: true
+    tls: true
+    servername: vedomosti.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: dTdncizxtVTqDZDkQoYdRTkf2Mn6XuKtkzg8vZhrkzA
+      short-id: 6ba85179e30d4fc2
+    network: grpc
+    grpc-opts:
   - name: 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
     type: trojan
     server: trojan.about.lso
@@ -377,11 +420,13 @@ proxy-groups:
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Germany | static.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | jobs.vkimages.io | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est-1.ardesnode.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'France | deepl.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | www.vk.com | RAW | [#LSO - #LinSpisokObhod]'
@@ -390,6 +435,7 @@ proxy-groups:
       - 'Germany | baget.puffixhosting.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Latvia | lv.shadowshroom.org | TCP | [#LSO - #LinSpisokObhod]'
+      - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]'
 rules:
