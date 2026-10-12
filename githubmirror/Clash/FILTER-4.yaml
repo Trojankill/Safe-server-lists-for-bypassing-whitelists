@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-12 10:30:46 UTC
+# 2026-10-12 10:45:33 UTC
 proxies:
   - name: '🇺🇸 United States | TG: @HardVpn_robot t.me/rjsxrd'
     type: vless
@@ -236,20 +236,6 @@ proxies:
       public-key: 2CuJ8hzPOVku22vp00ZZkvvKvzuJ3B61G1WULHLYNW0
     network: grpc
     grpc-opts:
-  - name: '[481ms Финляндия FI 🇫🇮 @vlesstrojan] t.me/rjsxrd'
-    type: vless
-    server: lists.soloramtin.cyou
-    port: 443
-    uuid: 67eb6b17-7797-4ded-bf52-423c4c5f6cbd
-    udp: true
-    tls: true
-    servername: www.foxsports.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: G7bpUPFSW28-oE6ff8qZac1_apU6PiJ-GHmi7tAPDSY
-      short-id: 91af08b1ce1f
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '[486ms KR KR @vlesstrojan] t.me/rjsxrd'
     type: vless
     server: icn-a-01.auuas.com
@@ -334,6 +320,22 @@ proxies:
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
+  - name: 'CF中转_1012115328 t.me/rjsxrd'
+    type: vless
+    server: 172.67.118.45
+    port: 2053
+    uuid: 9d672694-c146-422e-b3b5-3717a38a0fcc
+    udp: true
+    tls: true
+    servername: fr.api-music-fa.com
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/api/voip/updates/static/fr2035'
+      headers:
+        Host: fr.api-music-fa.com
   - name: '🇰🇿 [VL] Казахстан #12539 | РосТуннель t.me/rjsxrd'
     type: vless
     server: 65.109.188.155
@@ -362,20 +364,6 @@ proxies:
       public-key: RY7zkFQ01lI92jxNAyCa8T33UBW1fgpJgg8ZEqMA10k
       short-id: a09ff9f8
     network: tcp
-  - name: '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #133 t.me/rjsxrd'
-    type: vless
-    server: 81.163.22.24
-    port: 8443
-    uuid: a2f4fb1a-1b3b-4630-a762-ad958bc6eeda
-    udp: true
-    tls: true
-    servername: s3.storage.selcloud.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
-    network: grpc
-    grpc-opts:
   - name: '[2512ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd'
     type: vless
     server: 129.101.121.70
@@ -573,6 +561,19 @@ proxies:
       public-key: J-dv-HrWfQ_IOoyutv0Kg-rO8QwoRwc02dS1dS_tblk
       short-id: 2a2ce9e42980
     flow: xtls-rprx-vision
+    network: tcp
+  - name: '美国_101211102 t.me/rjsxrd'
+    type: vless
+    server: 162.35.242.252
+    port: 443
+    uuid: e3e9805a-6c8b-4edd-8ee8-621df79806eb
+    udp: true
+    tls: true
+    servername: nl.aksay.pro
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ClG6fvriBTK8donGsTlKusJ0dwRCgVDDTAGzAtZzJDY
+      short-id: 82c2b7d5e70ff000
     network: tcp
   - name: '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #37 t.me/rjsxrd'
     type: vless
@@ -1037,16 +1038,15 @@ proxy-groups:
       - '🇬🇧 [VL] Великобритания #5924 | РосТуннель t.me/rjsxrd'
       - '🇵🇱 Join+Telegram:@SolVPN 🇵🇱 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
-      - '[481ms Финляндия FI 🇫🇮 @vlesstrojan] t.me/rjsxrd'
       - '[486ms KR KR @vlesstrojan] t.me/rjsxrd'
       - '🇺🇸 [VL] США #832 | РосТуннель t.me/rjsxrd'
       - '🇺🇸 [VL] США #10476 | РосТуннель t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
       - '🇸🇪Обходы - TG: AirLinkVPNBot |0076| t.me/rjsxrd'
+      - 'CF中转_1012115328 t.me/rjsxrd'
       - '🇰🇿 [VL] Казахстан #12539 | РосТуннель t.me/rjsxrd'
       - '美国_1012032034 t.me/rjsxrd'
-      - '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #133 t.me/rjsxrd'
       - '[2512ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd'
       - 'LTE/5G Все операторы 🇪🇺 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇪🇪 t.me/rjsxrd'
@@ -1061,6 +1061,7 @@ proxy-groups:
       - 'LTE/5G Все операторы 🇪🇺 t.me/rjsxrd'
       - '🇮🇹 [VL] Италия #3788 | РосТуннель t.me/rjsxrd'
       - '🇫🇮 Join+Telegram:@SolVPN 🇫🇮 t.me/rjsxrd'
+      - '美国_101211102 t.me/rjsxrd'
       - '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #37 t.me/rjsxrd'
       - '🇨🇦 [VL] Канада #11869 | РосТуннель t.me/rjsxrd'
       - '美国_1012071583 t.me/rjsxrd'
