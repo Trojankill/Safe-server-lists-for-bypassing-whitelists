@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-12 02:30:43 UTC
+# 2026-10-12 02:45:30 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -97,6 +97,48 @@ proxies:
       short-id: a3a578ab
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Russia | cloudcdn-m9-12.cdn.yandex.net | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: 2576349a-b661-437c-a004-92e41a7056fc
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: random
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: 'Russia | eh7.vk.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 31.177.111.144
+    port: 8076
+    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+    udp: true
+    tls: true
+    servername: eh7.vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Z8UamOgTFZ7osBpa9Y4MiILbBzIW2LOjctJw2oev0lg
+      short-id: eb602c754c3af0ef
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Russia | eh7.vk.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 95.167.57.51
+    port: 8445
+    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+    udp: true
+    tls: true
+    servername: eh7.vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Z8UamOgTFZ7osBpa9Y4MiILbBzIW2LOjctJw2oev0lg
+      short-id: eb602c754c3af0ef
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Russia | freetato-digital.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 92.53.74.182
@@ -194,20 +236,6 @@ proxies:
       short-id: 5c766813929a1fdd
     network: grpc
     grpc-opts:
-  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 49d3350e-9888-45c4-8193-f8e0b5604264
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 87.199.205.28
@@ -291,34 +319,6 @@ proxies:
       short-id: aabbccdd
     network: grpc
     grpc-opts:
-  - name: 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 188.225.32.89
-    port: 2443
-    uuid: 8c26aea7-77ef-4b90-9c98-3b940b191883
-    udp: true
-    tls: true
-    servername: avito.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: utvlwXJ0XdCaUDZI540Yeb6U4mflSl1csDA4WdITrDw
-      short-id: 2a1e215c533339e0
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 37.143.15.161
-    port: 2443
-    uuid: 8c26aea7-77ef-4b90-9c98-3b940b191883
-    udp: true
-    tls: true
-    servername: avito.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: s-gskYntpgVc2Gc4CI64vamYaZnnqpzNIhM1HTztJnQ
-      short-id: 999e9c9057344de5
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Russia | a.wb.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.33.24.85
@@ -457,6 +457,34 @@ proxies:
       short-id: 43adea0ec9f97a0a
     network: grpc
     grpc-opts:
+  - name: 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.32.89
+    port: 2443
+    uuid: bb97fe99-cd82-49ad-a7d1-fda389af6ab2
+    udp: true
+    tls: true
+    servername: avito.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: utvlwXJ0XdCaUDZI540Yeb6U4mflSl1csDA4WdITrDw
+      short-id: 2a1e215c533339e0
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 37.143.15.161
+    port: 2443
+    uuid: bb97fe99-cd82-49ad-a7d1-fda389af6ab2
+    udp: true
+    tls: true
+    servername: avito.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: s-gskYntpgVc2Gc4CI64vamYaZnnqpzNIhM1HTztJnQ
+      short-id: 999e9c9057344de5
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.218.17.127
@@ -570,6 +598,20 @@ proxies:
       short-id: 6a42dc3d
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 95.85.251.93
+    port: 8443
+    uuid: fd1d80da-3b27-457a-810b-2b28a309edc1
+    udp: true
+    tls: true
+    servername: travel.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: my0kaAJFk3-xpoZNZ0i-a8SsX7Y9fUP8bHsQILUK6hk
+      short-id: 18a1ed60
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 147.45.187.188
@@ -626,6 +668,9 @@ proxy-groups:
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | cloudcdn-m9-12.cdn.yandex.net | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Russia | eh7.vk.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | eh7.vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | freetato-digital.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est2.god-sky.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -633,15 +678,12 @@ proxy-groups:
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | pbf5bif5gkg.vpvr4ib84nuv6hdkt.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | s3.storage.selcloud.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | cdnjs.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | rutube.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Ireland | vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | a.wb.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -652,6 +694,8 @@ proxy-groups:
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | api-maps.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Armenia | www.google.com | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | avito.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | zy8kehtzu6p.syncport.monster | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | st.avito.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -660,6 +704,7 @@ proxy-groups:
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | de3.vpvr4ib84nuv6hdkt.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | isq.ichost.cloud | TCP | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 2 [#LSO - #LinSpisokObhod]'
