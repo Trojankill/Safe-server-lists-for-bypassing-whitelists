@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-12 15:45:32 UTC
+# 2026-10-12 16:01:00 UTC
 proxies:
-  - name: '🇫🇷 France — #48'
+  - name: '🇫🇷 France — #55'
     type: vless
     server: 79.174.92.222
     port: 443
@@ -15,21 +15,7 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇫🇷 France — #49'
-    type: vless
-    server: 95.167.57.51
-    port: 8445
-    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
-    udp: true
-    tls: true
-    servername: eh7.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: Z8UamOgTFZ7osBpa9Y4MiILbBzIW2LOjctJw2oev0lg
-      short-id: eb602c754c3af0ef
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇷🇺 Beget — #3'
+  - name: '🇷🇺 Beget — #5'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -37,12 +23,26 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #9'
+  - name: '🇳🇴 Norway — #57'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 80cea082-bd40-440e-9710-86442ab0fa87
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #21'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -55,7 +55,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇸🇪 Sweden — #64'
+  - name: '🇸🇪 Sweden — #71'
     type: vless
     server: 188.225.77.254
     port: 443
@@ -69,7 +69,7 @@ proxies:
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇵🇱 Poland — #61'
+  - name: '🇵🇱 Poland — #68'
     type: vless
     server: 78.159.250.34
     port: 4510
@@ -83,59 +83,29 @@ proxies:
       short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #5'
+  - name: '🇷🇺 Beget — #7'
     type: vless
-    server: 159.194.244.247
+    server: 93.188.184.150
     port: 443
     uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
     udp: true
     tls: true
-    servername: ru-1-3.unturned-rust-dead.lol
-    client-fingerprint: random
+    servername: ru-1-2.unturned-rust-dead.lol
+    client-fingerprint: edge
     reality-opts:
       public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
-    network: grpc
-    grpc-opts:
-  - name: '🇩🇪 Germany — #47'
-    type: vless
-    server: 188.225.77.178
-    port: 443
-    uuid: d851ae4b-746e-44b2-aa61-fcdd70ec7d74
-    udp: true
-    tls: true
-    servername: cloudcdn-m9-12.cdn.yandex.net
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇳🇴 Norway — #50'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: d851ae4b-746e-44b2-aa61-fcdd70ec7d74
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇫🇷 France — #48'
-      - '🇫🇷 France — #49'
-      - '🇷🇺 Beget — #3'
-      - '🇩🇪 Germany — #9'
-      - '🇸🇪 Sweden — #64'
-      - '🇵🇱 Poland — #61'
+      - '🇫🇷 France — #55'
       - '🇷🇺 Beget — #5'
-      - '🇩🇪 Germany — #47'
-      - '🇳🇴 Norway — #50'
+      - '🇳🇴 Norway — #57'
+      - '🇩🇪 Germany — #21'
+      - '🇸🇪 Sweden — #71'
+      - '🇵🇱 Poland — #68'
+      - '🇷🇺 Beget — #7'
 rules:
   - MATCH,PROXY
