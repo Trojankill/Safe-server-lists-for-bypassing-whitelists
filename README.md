@@ -562,27 +562,32 @@ python filter.py
 <details>
 <summary>🇷🇺 <b>Русский</b></summary>
 
-- Автор не является владельцем, разработчиком или поставщиком перечисленных VPN-конфигураций. Это независимый информационный обзор и результаты технической фильтрации.
-- Данный репозиторий не является рекламой VPN. Материал предназначен исключительно в информационных целях и для лиц, проживающих в юрисдикциях, где получение такой информации не запрещено. Если вам нельзя читать этот контент — закройте страницу немедленно.
-- Автор не побуждает, не поощряет и не оправдывает использование VPN или любого иного ПО при каких-либо обстоятельствах.
-- Полная ответственность за любое применение данных конфигураций лежит на пользователе.
-- Автор не несёт ответственности за действия третьих лиц, операторов серверов, владельцев подписок и любых upstream-источников.
-- Автор не гарантирует точность, полноту, доступность или безопасность опубликованных данных. Информация предоставляется «как есть».
-- Используйте сервисы в соответствии с местным законодательством.
-- Проект некоммерческий и бесплатный. Любые платёжные, рекламные или сторонние упоминания в upstream-источниках автору не принадлежат и могут быть случайными.
+- Автор не является владельцем/разработчиком/поставщиком перечисленных VPN-конфигураций. Это независимый информационный обзор и результаты тестирования.
+- Данный пост не является рекламой VPN. Весь материал предназначен исключительно в информационных целях, и только для граждан тех стран, где эта информация легальна, как минимум — в научных целях. Если вам такое читать нельзя — закройте эту страницу немедленно!
+- Автор не имеет никаких намерений, не побуждает, не поощряет и не оправдывает использование VPN и любых других программ ни при каких обстоятельствах.
+- Ответственность за любое применение данных VPN-конфигураций — на их пользователе.
+- Отказ от ответственности: автор не несёт ответственность за действия третьих лиц и не поощряет противоправное использование VPN.
+- Автор не несет ответственности за точность, полноту и достоверность опубликованных данных. Все совпадения случайны. Вся информация предоставлена «как есть» и может не соответствовать действительности.
+- Используйте в соответствии с местным законодательством.
+- Используйте VPN только в законных целях: в частности — для обеспечения вашей безопасности в сети и защищённого удалённого доступа, и ни в коем случае не применяйте данную технологию для обхода блокировок.
+- Проект некоммерческий, бесплатный, вся представленная «платежная» информация найдена случайным образом где-то в интернет-пространстве, скопирована «как есть» для демонстрации возможного примера и автору не принадлежит.
+- Совет — закройте эту страницу, удалите все VPN с вашего компьютера, поставьте MAX и Yandex на все устройства, чтобы «ловило» даже на парковке, и пользуйтесь только интернет-ресурсами, которые разрешены вашим интернет-провайдером, ну вы поняли.
 
 </details>
 
 <details>
 <summary>🇬🇧 <b>English</b></summary>
 
-- The author is not the owner, developer, or provider of the listed VPN configurations. This repository is an independent technical filtering and audit project.
-- This project is not VPN advertising. The material is provided for informational purposes only and is intended for users in jurisdictions where accessing such information is lawful.
-- The author does not incite, encourage, or endorse the use of VPNs or any other software under any circumstances.
-- The user bears full responsibility for any use of these configurations.
-- The author is not liable for the actions of third parties, server operators, subscription providers, or upstream sources.
-- The author makes no guarantees regarding accuracy, completeness, availability, or safety of the published data. All information is provided “as is”.
-- Use the services in accordance with local laws.
-- This is a free, non-commercial project. Any payment, promotional, or third-party references found in upstream sources do not belong to the author and may be accidental.
+- The author is not the owner, developer, or provider of the listed VPN configurations. This is an independent informational review presenting test results.
+- This post is not an advertisement for VPNs. All material is intended solely for informational purposes and is directed only at citizens of countries where accessing this information is legal — at the very least, for research purposes. If you are prohibited from reading this content, close this page immediately!
+- The author has no intention of — nor does the author incite, encourage, or condone — the use of VPNs or any other software under any circumstances.
+- The user bears full responsibility for any use of these VPN configurations.
+- The author is not liable for the actions of third parties and does not condone the unlawful use of VPNs.
+- The author assumes no responsibility for the accuracy, completeness, or reliability of the published data. Any resemblance to actual events or persons is purely coincidental. All information is provided "as is" and may not reflect reality.
+- Use in accordance with local laws.
+- Use the VPN only for lawful purposes — specifically, to ensure your online security and secure remote access — and under no circumstances use this technology to bypass blocks.
+- This is a free, non-commercial project; all "payment" information presented here was found randomly online, copied "as is" to demonstrate a potential example, and does not belong to the author.
 
 </details>
+
+---
