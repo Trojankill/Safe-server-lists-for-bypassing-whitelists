@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-12 02:00:56 UTC
+# 2026-10-12 02:15:33 UTC
 proxies:
   - name: '🇺🇸 United States | TG: @HardVpn_robot t.me/rjsxrd'
     type: vless
@@ -56,6 +56,20 @@ proxies:
       short-id: b28db60d77c50b4f
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'SNi rutube.ru 🇷🇺 t.me/rjsxrd'
+    type: vless
+    server: 94.141.162.51
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: rutube.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: KQASJC-erEvv8cgBbvJRMfHq0Z0TApsQUNtdSwl0YQY
+      short-id: 8f3e9c4b1a8d6e21
+    network: grpc
+    grpc-opts:
   - name: '🇫🇮 Join+Telegram:@SolVPN 🇫🇮 t.me/rjsxrd'
     type: vless
     server: 95.216.27.15
@@ -68,6 +82,20 @@ proxies:
     reality-opts:
       public-key: 4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM
       short-id: d368b94e275ab080
+    network: tcp
+  - name: '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
+    type: vless
+    server: tk1.high-speed-test-56424.me
+    port: 443
+    uuid: 37615d66-5467-44a3-bc23-f2c3bef7f761
+    udp: true
+    tls: true
+    servername: aws.amazon.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: p8VhFzvFOBAhWAEAeWmwDxT3xBSRsGYixqi0qnLFnBM
+      short-id: 21270a66
+    flow: xtls-rprx-vision
     network: tcp
   - name: '🇨🇭 Switzerland | TG: @HardVpn_robot t.me/rjsxrd'
     type: vless
@@ -123,6 +151,34 @@ proxies:
       short-id: 6c183039c8fe2676
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
+    type: vless
+    server: 109.172.54.170
+    port: 8443
+    uuid: 3f3119c0-0091-5cdd-a99e-887f4f5f1653
+    udp: true
+    tls: true
+    servername: fi.illusion-vpn.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 4ZZ8wkNxaBDq2Y9DhPFg9tK3JUGX4Oo2xZGsMIe-xAc
+      short-id: 36a7c1d53916950c
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
+    type: vless
+    server: fi.illusion-vpn.ru
+    port: 8443
+    uuid: 3f3119c0-0091-5cdd-a99e-887f4f5f1653
+    udp: true
+    tls: true
+    servername: fi.illusion-vpn.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 4ZZ8wkNxaBDq2Y9DhPFg9tK3JUGX4Oo2xZGsMIe-xAc
+      short-id: 36a7c1d53916950c
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇦🇪 [VL] ОАЭ #12162 | РосТуннель t.me/rjsxrd'
     type: vless
     server: 217.69.167.21
@@ -137,34 +193,22 @@ proxies:
       short-id: b32ee68d
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
+  - name: 'CF中转_101207707 t.me/rjsxrd'
     type: vless
-    server: 45.141.202.49
-    port: 3005
-    uuid: 43212c32-01f2-4356-b216-67dc1c178262
+    server: 188.114.97.6
+    port: 443
+    uuid: 49ccad64-c854-4f33-b334-793cf0d02b74
     udp: true
     tls: true
-    servername: ovk6lv4rlvi.vpvr4ib84nuv6hdkt.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: plRE1F8Uieuj-YsMAw9BrCsIlGzvZFuXy9CyrAs0gns
-      short-id: dad4f76a4aae1737
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-    type: vless
-    server: pbf5bif5gkg.vpvr4ib84nuv6hdkt.ru
-    port: 3217
-    uuid: 43212c32-01f2-4356-b216-67dc1c178262
-    udp: true
-    tls: true
-    servername: pbf5bif5gkg.vpvr4ib84nuv6hdkt.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: q6H77u0NojfL8r8FES3vDKiwFIyAb4SCG5S-5-hNpVI
-      short-id: 35fb61b5ba1d3746
-    flow: xtls-rprx-vision
-    network: tcp
+    servername: newcscf.jisucf.cloudns.ch
+    alpn:
+      - 'http/1.1'
+    client-fingerprint: chrome
+    network: ws
+    ws-opts:
+      path: '/'
+      headers:
+        Host: newcscf.jisucf.cloudns.ch
   - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0089| t.me/rjsxrd'
     type: vless
     server: 188.225.25.14
@@ -235,6 +279,20 @@ proxies:
       short-id: 42b7393d3e94e4c7
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
+    type: vless
+    server: 103.76.131.89
+    port: 443
+    uuid: 62610fc6-8333-41f9-9258-08915e4343ab
+    udp: true
+    tls: true
+    servername: github.io
+    client-fingerprint: random
+    reality-opts:
+      public-key: zAhEr9jTxLlgEpMbFwGAnHkFkYa3nZJ1h4BAp67hlno
+      short-id: 4d3ee72b6bfc59cb
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇷🇺 [VL] Россия #11533 | РосТуннель t.me/rjsxrd'
     type: vless
     server: 185.22.234.32
@@ -288,6 +346,34 @@ proxies:
     reality-opts:
       public-key: r3Y1YAWhGYjD72DevyQuUiJdvaTb7qzxdTNrUWVmOzQ
       short-id: 0bd6
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇪🇪 t.me/rjsxrd'
+    type: vless
+    server: 13.143.239.125
+    port: 443
+    uuid: 8d790ba0-5407-441b-b545-8ab369c591ce
+    udp: true
+    tls: true
+    servername: g1.coconutsvpn.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: XW-uVSKkZJB14OFKOePhEE4UnrAOI4VfuAQQZ_gI3E0
+      short-id: 848eb46fd7a0e43d
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: '伊拉克_101207001 t.me/rjsxrd'
+    type: vless
+    server: blog.salphetka.ru
+    port: 443
+    uuid: 92295a0d-b610-4075-85e9-bfab09ec6f3a
+    udp: true
+    tls: true
+    servername: www.uni-bonn.de
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: ahmKn2YPXJJ0gGtSKyEVCavB2YHyGQSbHCq40tgfHkA
+      short-id: e96c3d6878c984bf
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
@@ -469,20 +555,6 @@ proxies:
       short-id: 5c97b3bc
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-    type: vless
-    server: 31.56.18.77
-    port: 443
-    uuid: cebcaf04-c567-11f1-9902-a337233c6cda
-    udp: true
-    tls: true
-    servername: de5.wizard.select
-    client-fingerprint: random
-    reality-opts:
-      public-key: KIawAxTmmnz2tLnTg26djq1f20QSgBzy9y2mp9HCiFA
-      short-id: c4a866
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '🇯🇵 [VL] Япония #539 | РосТуннель t.me/rjsxrd'
     type: vless
     server: 154.31.114.248
@@ -539,20 +611,6 @@ proxies:
       short-id: 353fdd95
     flow: xtls-rprx-vision
     network: tcp
-  - name: '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #204 t.me/rjsxrd'
-    type: vless
-    server: 168.222.143.254
-    port: 443
-    uuid: ebdf87e8-4f75-4b84-94e0-65ce4894993a
-    udp: true
-    tls: true
-    servername: st.avito.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 3_Qy1SAtWfbiQbznyhlXxJtqB-5QQ46VF1Uz2h5A7Q4
-      short-id: 2dc17935
-    flow: xtls-rprx-vision
-    network: raw
   - name: '🇩🇪Обходы - TG: AirLinkVPNBot |0093| t.me/rjsxrd'
     type: vless
     server: 188.225.77.178
@@ -567,20 +625,6 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇷🇴 [VL] Румыния #12154 | РосТуннель t.me/rjsxrd'
-    type: vless
-    server: 94.249.188.202
-    port: 43000
-    uuid: f8842728-bf43-47e2-83bf-283e21f33664
-    udp: true
-    tls: true
-    servername: 94.249.188.202
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: TdLpPmh5-Tbcj3bUPp7uw9znQ_Asao8z9jG7Eccrhwk
-      short-id: 7887c27d
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '[1043ms ID ID @vlesstrojan] t.me/rjsxrd'
     type: vless
     server: 103.172.197.3
@@ -592,20 +636,6 @@ proxies:
     client-fingerprint: firefox
     reality-opts:
       public-key: ll7JTP628PuBMZJvx6fuhGSmCRSURnReAetmhCEL8GU
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-    type: vless
-    server: 94.249.241.154
-    port: 3408
-    uuid: fafc7c16-f890-45ee-a856-02df225172dd
-    udp: true
-    tls: true
-    servername: de3.vpvr4ib84nuv6hdkt.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: 3eXf94GSzRaECZwUCsF-aQbtxFo5FInM8uUhnyTRjFI
-      short-id: 0f56deee14619eb2
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇸🇪 [VL] Швеция #1468 | РосТуннель t.me/rjsxrd'
@@ -622,6 +652,34 @@ proxies:
       short-id: d0ea1847066af5a6
     network: grpc
     grpc-opts:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
+    type: vless
+    server: api.setevoyzaliv.cc
+    port: 443
+    uuid: fdb13b1b-d306-4abd-b832-51991d1e62db
+    udp: true
+    tls: true
+    servername: api.setevoyzaliv.cc
+    client-fingerprint: random
+    reality-opts:
+      public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+      short-id: a8
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
+    type: vless
+    server: api.videobereg.cc
+    port: 443
+    uuid: fdb13b1b-d306-4abd-b832-51991d1e62db
+    udp: true
+    tls: true
+    servername: api.videobereg.cc
+    client-fingerprint: random
+    reality-opts:
+      public-key: r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs
+      short-id: a8
+    flow: xtls-rprx-vision
+    network: tcp
   - name: '🇮🇩 Join+Telegram:@SolVPN 🇮🇩 t.me/rjsxrd'
     type: trojan
     server: 104.21.70.21
@@ -667,34 +725,6 @@ proxies:
       path: '/@BlueKnight_net--@BlueKnight_net--@BlueKnight_net'
       headers:
         Host: uwu.dianaw.cc.cd
-  - name: '🇻🇳 [TR] Вьетнам #2449 | РосТуннель t.me/rjsxrd'
-    type: trojan
-    server: 104.18.42.98
-    port: 443
-    password: xhl549341
-    udp: true
-    sni: tro.baiyi.cloudns.org
-    alpn:
-      - h3
-    network: ws
-    ws-opts:
-      path: '/?ed=2560'
-      headers:
-        Host: tro.baiyi.cloudns.org
-  - name: '🇷🇺 Россия t.me/rjsxrd'
-    type: trojan
-    server: 172.64.145.158
-    port: 443
-    password: xhl549341
-    udp: true
-    sni: tro.baiyi.cloudns.org
-    alpn:
-      - h3
-    network: ws
-    ws-opts:
-      path: '/?ed=2560'
-      headers:
-        Host: tro.baiyi.cloudns.org
   - name: 't.me/rjsxrd'
     type: vmess
     server: renderer-stream-2-114.mirra.now
@@ -1080,13 +1110,6 @@ proxies:
     cipher: chacha20-ietf-poly1305
     password: tfAcRikawhNoZAhu
     udp: true
-  - name: '🇮🇳 [SS] Индия #11988 | РосТуннель t.me/rjsxrd'
-    type: ss
-    server: 45.149.114.171
-    port: 777
-    cipher: chacha20-ietf-poly1305
-    password: Jeoq8ujfkqZKKvACQhoqBQ1PA3uq4242
-    udp: true
   - name: '🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd'
     type: ss
     server: 132.243.175.144
@@ -1139,13 +1162,6 @@ proxies:
   - name: '🇳🇱 [SS] Нидерланды #5308 | РосТуннель t.me/rjsxrd'
     type: ss
     server: 82.38.31.185
-    port: 8080
-    cipher: chacha20-ietf-poly1305
-    password: k1dBOmOB4oqi7Ump37a1bQ
-    udp: true
-  - name: '🇳🇱 [SS] Нидерланды #11603 | РосТуннель t.me/rjsxrd'
-    type: ss
-    server: 82.38.31.192
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
@@ -1247,6 +1263,13 @@ proxies:
     port: 8080
     cipher: chacha20-ietf-poly1305
     password: k1dBOmOB4oqi7Ump37a1bQ
+    udp: true
+  - name: '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
+    type: ss
+    server: 193.29.139.151
+    port: 8080
+    cipher: chacha20-ietf-poly1305
+    password: oZIoA69Q8yhcQV8ka3Pa3A
     udp: true
   - name: '🇬🇧 [SS] Великобритания #82 | РосТуннель t.me/rjsxrd'
     type: ss
@@ -1381,6 +1404,13 @@ proxies:
     cipher: aes-256-gcm
     password: g5MeD6Ft3CWlJId
     udp: true
+  - name: '🇹🇭 Join+Telegram:@SolVPN 🇹🇭 t.me/rjsxrd'
+    type: ss
+    server: pphfree2.mvpnpvpn.de5.net
+    port: 52351
+    cipher: aes-256-gcm
+    password: 'sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c='
+    udp: true
   - name: '🇮🇹 Join+Telegram:@SolVPN 🇮🇹 t.me/rjsxrd'
     type: ss
     server: 66.245.207.70
@@ -1395,7 +1425,7 @@ proxies:
     cipher: aes-256-gcm
     password: qpSevKaUXYQKvSjp
     udp: true
-  - name: '🇨🇦 [SS] Канада #8624 | РосТуннель t.me/rjsxrd'
+  - name: '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
     type: ss
     server: 51.222.12.127
     port: 445
@@ -1417,23 +1447,29 @@ proxy-groups:
       - '🇹🇷 [VL] Турция #5716 | РосТуннель t.me/rjsxrd'
       - '🇲🇪 [БС-VL] Черногория #14896 | РосТуннель t.me/rjsxrd'
       - '🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd'
+      - 'SNi rutube.ru 🇷🇺 t.me/rjsxrd'
       - '🇫🇮 Join+Telegram:@SolVPN 🇫🇮 t.me/rjsxrd'
+      - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇨🇭 Switzerland | TG: @HardVpn_robot t.me/rjsxrd'
       - '🇮🇩 [VL] Индонезия #6082 | РосТуннель t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇪🇪 t.me/rjsxrd'
       - '🇳🇱Обходы - TG: AirLinkVPNBot |0086| t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd'
       - '🇦🇪 [VL] ОАЭ #12162 | РосТуннель t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
+      - 'CF中转_101207707 t.me/rjsxrd'
       - '🇩🇪Обходы - TG: AirLinkVPNBot |0089| t.me/rjsxrd'
       - 'AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇳🇴 Норвегия t.me/rjsxrd'
       - '🇬🇧 [VL] Великобритания #5924 | РосТуннель t.me/rjsxrd'
       - '🇵🇱 Join+Telegram:@SolVPN 🇵🇱 t.me/rjsxrd'
       - '🇮🇱 [VL] Израиль #53 | РосТуннель t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
       - '🇷🇺 [VL] Россия #11533 | РосТуннель t.me/rjsxrd'
       - '[486ms KR KR @vlesstrojan] t.me/rjsxrd'
       - '🇺🇸 [VL] США #10476 | РосТуннель t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇪🇪 t.me/rjsxrd'
+      - '伊拉克_101207001 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
       - '🇸🇪Обходы - TG: AirLinkVPNBot |0076| t.me/rjsxrd'
       - '🇰🇿 [VL] Казахстан #12539 | РосТуннель t.me/rjsxrd'
@@ -1447,23 +1483,19 @@ proxy-groups:
       - '13 | REALITY | SNI: www.microsoft.com | IN: RU OUT: ES | RATING: 5/10 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - '🇯🇵 [VL] Япония #539 | РосТуннель t.me/rjsxrd'
       - '🇫🇮 Join+Telegram:@SolVPN 🇫🇮 t.me/rjsxrd'
       - '🇯🇵 Join+Telegram:@SolVPN 🇯🇵 t.me/rjsxrd'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd'
-      - '🌀 CYBERPORTAL | Extended WL | 🇷🇺 Россия #204 t.me/rjsxrd'
       - '🇩🇪Обходы - TG: AirLinkVPNBot |0093| t.me/rjsxrd'
-      - '🇷🇴 [VL] Румыния #12154 | РосТуннель t.me/rjsxrd'
       - '[1043ms ID ID @vlesstrojan] t.me/rjsxrd'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd'
       - '🇸🇪 [VL] Швеция #1468 | РосТуннель t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd'
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd'
       - '🇮🇩 Join+Telegram:@SolVPN 🇮🇩 t.me/rjsxrd'
       - '🇸🇪 Швеция t.me/rjsxrd'
       - '🇺🇸 [TR] США #515 | РосТуннель t.me/rjsxrd'
       - '🇭🇺 [TR] Венгрия #11152 | РосТуннель t.me/rjsxrd'
-      - '🇻🇳 [TR] Вьетнам #2449 | РосТуннель t.me/rjsxrd'
-      - '🇷🇺 Россия t.me/rjsxrd'
       - 't.me/rjsxrd'
       - '🇺🇸 [VM] США #200 | РосТуннель t.me/rjsxrd'
       - '🇬🇧 [VM] Великобритания #403 | РосТуннель t.me/rjsxrd'
@@ -1513,7 +1545,6 @@ proxy-groups:
       - '🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd'
       - '🇸🇬 [SS] Сингапур #11296 | РосТуннель t.me/rjsxrd'
       - '🇿🇦 [SS] ЮАР #3983 | РосТуннель t.me/rjsxrd'
-      - '🇮🇳 [SS] Индия #11988 | РосТуннель t.me/rjsxrd'
       - '🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd'
       - '🇺🇸 [SS] США #3385 | РосТуннель t.me/rjsxrd'
       - '🇬🇧 [SS] Великобритания #6626 | РосТуннель t.me/rjsxrd'
@@ -1522,7 +1553,6 @@ proxy-groups:
       - '🇳🇱 [SS] Нидерланды #11883 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #1098 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #5308 | РосТуннель t.me/rjsxrd'
-      - '🇳🇱 [SS] Нидерланды #11603 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #11138 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #10779 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #9108 | РосТуннель t.me/rjsxrd'
@@ -1537,6 +1567,7 @@ proxy-groups:
       - '🇳🇱 [SS] Нидерланды #9565 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #8677 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 [SS] Нидерланды #11474 | РосТуннель t.me/rjsxrd'
+      - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - '🇬🇧 [SS] Великобритания #82 | РосТуннель t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
       - '🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd'
@@ -1556,9 +1587,10 @@ proxy-groups:
       - '🇰🇷 [SS] Южная Корея #5240 | РосТуннель t.me/rjsxrd'
       - '🇺🇸 [SS] США #7065 | РосТуннель t.me/rjsxrd'
       - '🇨🇦 [SS] Канада #7946 | РосТуннель t.me/rjsxrd'
+      - '🇹🇭 Join+Telegram:@SolVPN 🇹🇭 t.me/rjsxrd'
       - '🇮🇹 Join+Telegram:@SolVPN 🇮🇹 t.me/rjsxrd'
       - '[3308ms SG SG @vlesstrojan] t.me/rjsxrd'
-      - '🇨🇦 [SS] Канада #8624 | РосТуннель t.me/rjsxrd'
+      - '🇨🇦 Join+Telegram:@SolVPN 🇨🇦 t.me/rjsxrd'
       - '🇨🇦 [SS] Канада #8599 | РосТуннель t.me/rjsxrd'
 rules:
   - MATCH,PROXY
