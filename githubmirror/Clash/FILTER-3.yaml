@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-12 13:45:35 UTC
+# 2026-10-12 14:00:57 UTC
 proxies:
-  - name: '🇫🇷 France — #52'
+  - name: '🇫🇷 France — #59'
     type: vless
     server: 79.174.92.222
     port: 443
@@ -15,7 +15,21 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇪🇪 Estonia — #49'
+  - name: '🇫🇷 France — #58'
+    type: vless
+    server: 95.167.57.51
+    port: 8445
+    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+    udp: true
+    tls: true
+    servername: eh7.vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: Z8UamOgTFZ7osBpa9Y4MiILbBzIW2LOjctJw2oev0lg
+      short-id: eb602c754c3af0ef
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇪🇪 Estonia — #54'
     type: vless
     server: 188.225.83.133
     port: 443
@@ -37,16 +51,30 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇳🇴 Norway — #53'
+  - name: '🇩🇪 Germany — #53'
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: 8593ebae-2644-4b5c-b6e3-38d008115123
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇳🇴 Norway — #60'
     type: vless
     server: 87.242.95.164
     port: 9443
-    uuid: 6cb9bd50-1003-43a0-84e1-5ef96f72bd46
+    uuid: 8593ebae-2644-4b5c-b6e3-38d008115123
     udp: true
     tls: true
     servername: passport.yandex.ru
@@ -56,7 +84,7 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #14'
+  - name: '🇩🇪 Germany — #18'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -69,7 +97,7 @@ proxies:
       public-key: lGKKIZsN9yBMxzZm8yl7nzNwJII18c_wLd_AbzzvRD8
       short-id: 53361376
     network: xhttp
-  - name: '🇸🇪 Sweden — #65'
+  - name: '🇸🇪 Sweden — #73'
     type: vless
     server: 188.225.77.254
     port: 443
@@ -83,7 +111,21 @@ proxies:
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇵🇱 Poland — #64'
+  - name: '🇵🇱 Poland — #68'
+    type: vless
+    server: 185.229.9.176
+    port: 46018
+    uuid: a5893c8b-28a2-4947-9a1c-708db25506c3
+    udp: true
+    tls: true
+    servername: ligastavok.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: een4U3X5mnY1gH2swiakXS9BJ8P4omf8Qp_s8sTp_3Y
+      short-id: 68ae5e7c11f80af5
+    network: grpc
+    grpc-opts:
+  - name: '🇵🇱 Poland — #72'
     type: vless
     server: 185.229.9.240
     port: 443
@@ -97,7 +139,7 @@ proxies:
       short-id: 27e53bbcab7593d7
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇵🇱 Poland — #62'
+  - name: '🇵🇱 Poland — #70'
     type: vless
     server: 78.159.250.34
     port: 4510
@@ -115,13 +157,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇫🇷 France — #52'
-      - '🇪🇪 Estonia — #49'
+      - '🇫🇷 France — #59'
+      - '🇫🇷 France — #58'
+      - '🇪🇪 Estonia — #54'
       - '🇷🇺 Beget — #7'
-      - '🇳🇴 Norway — #53'
-      - '🇩🇪 Germany — #14'
-      - '🇸🇪 Sweden — #65'
-      - '🇵🇱 Poland — #64'
-      - '🇵🇱 Poland — #62'
+      - '🇩🇪 Germany — #53'
+      - '🇳🇴 Norway — #60'
+      - '🇩🇪 Germany — #18'
+      - '🇸🇪 Sweden — #73'
+      - '🇵🇱 Poland — #68'
+      - '🇵🇱 Poland — #72'
+      - '🇵🇱 Poland — #70'
 rules:
   - MATCH,PROXY
