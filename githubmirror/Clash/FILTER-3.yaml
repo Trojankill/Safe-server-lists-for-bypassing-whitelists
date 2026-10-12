@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-12 03:45:28 UTC
+# 2026-10-12 04:00:53 UTC
 proxies:
-  - name: '🇫🇷 France — #105'
-    type: vless
-    server: 82.202.178.133
-    port: 31443
-    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
-    udp: true
-    tls: true
-    servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: lA0NS88gVVkaZf4qA1aYystzmLsZ5SNzszDsC-8DMSM
-      short-id: e351ebf520
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇫🇷 France — #107'
+  - name: '🇫🇷 France — #100'
     type: vless
     server: 79.174.92.222
     port: 443
@@ -29,7 +15,21 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇳🇱 The Netherlands — #116'
+  - name: '🇳🇱 The Netherlands — #101'
+    type: vless
+    server: 46.254.17.226
+    port: 443
+    uuid: 0e538403-1c73-479a-b121-121087fa59af
+    udp: true
+    tls: true
+    servername: filecache.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: rDu7DyU9KClauBhK7iQeP1Znx4_OAMJqMJp4wlJ5nxc
+      short-id: b2baccb38dc00f96
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇱 The Netherlands — #110'
     type: vless
     server: 185.86.145.78
     port: 8443
@@ -43,7 +43,21 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇪🇪 Estonia — #98'
+  - name: '🇩🇪 Germany — #73'
+    type: vless
+    server: 188.225.77.178
+    port: 443
+    uuid: 49d3350e-9888-45c4-8193-f8e0b5604264
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-12.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇪🇪 Estonia — #96'
     type: vless
     server: 188.225.83.133
     port: 443
@@ -57,7 +71,7 @@ proxies:
       short-id: a1b2c3d4e5f6a7b8
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #19'
+  - name: '🇷🇺 Beget — #23'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -70,7 +84,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇵🇱 Poland — #132'
+  - name: '🇵🇱 Poland — #126'
     type: vless
     server: 45.11.26.215
     port: 443
@@ -83,7 +97,7 @@ proxies:
       public-key: _GufJhu87WDwXQmvnKTOrX3V_rAWZC8_HjrvV-Cs9U0
       short-id: 00000000
     network: xhttp
-  - name: '🇵🇱 Poland — #131'
+  - name: '🇵🇱 Poland — #125'
     type: vless
     server: 78.159.250.34
     port: 4510
@@ -97,31 +111,17 @@ proxies:
       short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇫🇷 France — #106'
-    type: vless
-    server: 82.202.179.104
-    port: 9443
-    uuid: ccd6419d-6943-4e7c-bc8c-7a157dadff80
-    udp: true
-    tls: true
-    servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: tvc-zUxqKX5P3DrZ2OiLIKHVPeu5MKjFLRWRYcvL3BQ
-      short-id: 9b027a0fe332
-    flow: xtls-rprx-vision
-    network: raw
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇫🇷 France — #105'
-      - '🇫🇷 France — #107'
-      - '🇳🇱 The Netherlands — #116'
-      - '🇪🇪 Estonia — #98'
-      - '🇷🇺 Beget — #19'
-      - '🇵🇱 Poland — #132'
-      - '🇵🇱 Poland — #131'
-      - '🇫🇷 France — #106'
+      - '🇫🇷 France — #100'
+      - '🇳🇱 The Netherlands — #101'
+      - '🇳🇱 The Netherlands — #110'
+      - '🇩🇪 Germany — #73'
+      - '🇪🇪 Estonia — #96'
+      - '🇷🇺 Beget — #23'
+      - '🇵🇱 Poland — #126'
+      - '🇵🇱 Poland — #125'
 rules:
   - MATCH,PROXY
