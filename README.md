@@ -232,7 +232,7 @@ githubmirror/url_health.json
 Ниже для каждой подписки даны:
 - GitHub raw;
 - Bitbucket raw;
-- Яндекс.Переводчик поверх Bitbucket raw;
+- Яндекс.Переводчик поверх Bitbucket raw ( из-за атак по их инфраструктуре временно этот способ не работает );
 - Mos.Hub raw;
 - Clash/Mihomo YAML, если нужен именно Clash.
 
@@ -247,7 +247,7 @@ githubmirror/url_health.json
 |---|---|
 | GitHub | [`ALL.txt`](https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/ALL.txt) |
 | Bitbucket | [`ALL.txt`](https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror/ALL.txt) |
-| Яндекс переводчик ( из-за ударов по инфраструктуре временно этот способ не работает| [`ALL.txt через Яндекс`](https://translate.yandex.ru/translate?url=https%3A%2F%2Fbitbucket.org%2Ftrojankill%2Fsafe-server-lists%2Fraw%2Fmain%2Fgithubmirror%2FALL.txt&lang=de-de) |
+| Яндекс переводчик | [`ALL.txt через Яндекс`](https://translate.yandex.ru/translate?url=https%3A%2F%2Fbitbucket.org%2Ftrojankill%2Fsafe-server-lists%2Fraw%2Fmain%2Fgithubmirror%2FALL.txt&lang=de-de) |
 | Mos.Hub | [`ALL.txt`](https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror/ALL.txt) |
 | Clash GitHub | [`ALL.yaml`](https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/Clash/ALL.yaml) |
 | Clash Bitbucket | [`ALL.yaml`](https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror/Clash/ALL.yaml) |
