@@ -33,8 +33,8 @@ jobs:
 
       - name: Configure git
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -47,19 +47,10 @@ jobs:
       - name: Run filter script
         id: filter
         env:
-          # ВАЖНО: замени YOUR_NAMESPACE/YOUR_REPO на реальный путь репы на hub.mos.ru
-          # Это делает QR-коды, которые ведут на hub.mos.ru
-          RAW_BASE: https://hub.mos.ru/Trojankill/safe-server-list/raw/main/githubmirror
+          # QR-коды будут вести на hub.mos.ru
+          RAW_BASE: https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror
         run: |
           set -euo pipefail
-
-          case "${RAW_BASE}" in
-            *YOUR_NAMESPACE*|*YOUR_REPO*)
-              echo "❌ Не забыл заменить YOUR_NAMESPACE/YOUR_REPO в RAW_BASE?"
-              exit 1
-              ;;
-          esac
-
           python filter.py
           echo "status=success" >> "$GITHUB_OUTPUT"
 
@@ -159,12 +150,15 @@ jobs:
 
       - name: Push main branch to hub.mos.ru
         env:
+          # Единственный секрет, который нужен для hub.mos.ru
           HUB_MOS_TOKEN: ${{ secrets.HUB_MOS_TOKEN }}
-          HUB_MOS_USERNAME: ${{ secrets.HUB_MOS_USERNAME }}
 
-          # ВАЖНО: замени YOUR_NAMESPACE/YOUR_REPO на реальный путь репы на hub.mos.ru
+          # Username не секрет.
+          # Для Personal Access Token это твой логин на hub.mos.ru.
+          # Для Project Access Token это имя токена.
+          HUB_MOS_USERNAME: Trojankill
+
           HUB_MOS_REPO_URL: https://hub.mos.ru/Trojankill/safe-server-list.git
-
           HUB_MOS_BRANCH: main
           HUB_MOS_HOST: hub.mos.ru
         run: |
@@ -176,18 +170,9 @@ jobs:
           fi
 
           if [ -z "${HUB_MOS_USERNAME:-}" ]; then
-            echo "❌ GitHub secret HUB_MOS_USERNAME не задан"
-            echo "Для Personal Access Token это твой логин на hub.mos.ru"
-            echo "Для Project Access Token это имя токена"
+            echo "❌ HUB_MOS_USERNAME пустой"
             exit 1
           fi
-
-          case "${HUB_MOS_REPO_URL}" in
-            *YOUR_NAMESPACE*|*YOUR_REPO*)
-              echo "❌ Не забыл заменить YOUR_NAMESPACE/YOUR_REPO в HUB_MOS_REPO_URL?"
-              exit 1
-              ;;
-          esac
 
           printf 'machine %s\nlogin %s\npassword %s\n' \
             "${HUB_MOS_HOST}" \
