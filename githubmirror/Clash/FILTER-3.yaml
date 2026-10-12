@@ -1,11 +1,65 @@
 # clash/mihomo subscription
-# 2026-10-12 10:45:32 UTC
+# 2026-10-12 11:00:58 UTC
 proxies:
-  - name: '🇩🇪 Germany — #86'
+  - name: '🇫🇷 France — #90'
+    type: vless
+    server: 79.174.92.222
+    port: 443
+    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
+    udp: true
+    tls: true
+    servername: m.vk.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
+      short-id: a1b2c3d4
+    network: grpc
+    grpc-opts:
+  - name: '🇦🇱 Albania — #49'
+    type: vless
+    server: 188.225.77.143
+    port: 8458
+    uuid: 40c12ce6-b1c6-424e-862e-010a4585ff52
+    udp: true
+    tls: true
+    servername: ads.x5.ru
+    client-fingerprint: edge
+    reality-opts:
+      public-key: mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc
+      short-id: 6ba85179e30d4fc2
+    network: xhttp
+  - name: '🇷🇺 Beget — #16'
+    type: vless
+    server: 45.12.75.242
+    port: 26424
+    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    udp: true
+    tls: true
+    servername: ya.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+      short-id: 23103e1e
+    network: raw
+  - name: '🇩🇪 Germany — #89'
+    type: vless
+    server: 188.225.25.14
+    port: 443
+    uuid: 921e8dcf-5778-4995-8c1e-4e98e481af74
+    udp: true
+    tls: true
+    servername: cloudcdn-m9-13.cdn.yandex.net
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #88'
     type: vless
     server: 188.225.77.178
     port: 443
-    uuid: 4136705c-c83c-4548-948b-687e35f1fe85
+    uuid: 921e8dcf-5778-4995-8c1e-4e98e481af74
     udp: true
     tls: true
     servername: cloudcdn-m9-12.cdn.yandex.net
@@ -19,7 +73,7 @@ proxies:
     type: vless
     server: 87.242.95.164
     port: 9443
-    uuid: 4136705c-c83c-4548-948b-687e35f1fe85
+    uuid: 921e8dcf-5778-4995-8c1e-4e98e481af74
     udp: true
     tls: true
     servername: passport.yandex.ru
@@ -29,33 +83,20 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #18'
+  - name: '🇸🇪 Sweden — #110'
     type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+    server: 188.225.77.254
+    port: 443
+    uuid: 9cfb9099-439f-4bd2-87d3-54e67269fdc3
     udp: true
     tls: true
-    servername: ya.ru
-    client-fingerprint: chrome
+    servername: io.ozone.ru
+    client-fingerprint: firefox
     reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
+      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
+      short-id: 4951a2313524dd8f
+    flow: xtls-rprx-vision
     network: raw
-  - name: '🇱🇻 Latvia — #90'
-    type: vless
-    server: 81.163.22.24
-    port: 8443
-    uuid: a2f4fb1a-1b3b-4630-a762-ad958bc6eeda
-    udp: true
-    tls: true
-    servername: s3.storage.selcloud.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
-    network: grpc
-    grpc-opts:
   - name: '🇵🇱 Poland — #107'
     type: vless
     server: 78.159.250.34
@@ -74,10 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Germany — #86'
+      - '🇫🇷 France — #90'
+      - '🇦🇱 Albania — #49'
+      - '🇷🇺 Beget — #16'
+      - '🇩🇪 Germany — #89'
+      - '🇩🇪 Germany — #88'
       - '🇳🇴 Norway — #96'
-      - '🇷🇺 Beget — #18'
-      - '🇱🇻 Latvia — #90'
+      - '🇸🇪 Sweden — #110'
       - '🇵🇱 Poland — #107'
 rules:
   - MATCH,PROXY
