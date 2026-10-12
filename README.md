@@ -178,7 +178,7 @@
 |---|---|---|
 | **GitHub** | [Trojankill/Safe-server-lists-for-bypassing-whitelists](https://github.com/Trojankill/Safe-server-lists-for-bypassing-whitelists) | `https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror` |
 | **Bitbucket** | [trojankill/safe-server-lists](https://bitbucket.org/trojankill/safe-server-lists) | `https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror` |
-| **Mos.Hub** | [Trojankill/safe-server-list](https://hub.mos.ru/Trojankill/safe-server-list) | `https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror` |
+| **Mos.Hub ( Работает при БС )** | [Trojankill/safe-server-list](https://hub.mos.ru/Trojankill/safe-server-list) | `https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror` |
 
 > [!NOTE]
 > QR-коды в папке `QR-CODE/` генерируются переменной окружения `RAW_BASE`.  
@@ -247,7 +247,7 @@ githubmirror/url_health.json
 |---|---|
 | GitHub | [`ALL.txt`](https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/ALL.txt) |
 | Bitbucket | [`ALL.txt`](https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror/ALL.txt) |
-| Яндекс переводчик | [`ALL.txt через Яндекс`](https://translate.yandex.ru/translate?url=https%3A%2F%2Fbitbucket.org%2Ftrojankill%2Fsafe-server-lists%2Fraw%2Fmain%2Fgithubmirror%2FALL.txt&lang=de-de) |
+| Яндекс переводчик ( из-за ударов по инфраструктуре временно этот способ не работает| [`ALL.txt через Яндекс`](https://translate.yandex.ru/translate?url=https%3A%2F%2Fbitbucket.org%2Ftrojankill%2Fsafe-server-lists%2Fraw%2Fmain%2Fgithubmirror%2FALL.txt&lang=de-de) |
 | Mos.Hub | [`ALL.txt`](https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror/ALL.txt) |
 | Clash GitHub | [`ALL.yaml`](https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror/Clash/ALL.yaml) |
 | Clash Bitbucket | [`ALL.yaml`](https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror/Clash/ALL.yaml) |
