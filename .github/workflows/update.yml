@@ -1,7 +1,17 @@
+# YAML file: .github/workflows/update.yml | runtime: GitHub Actions
 name: Auto Update Proxy Filters
 
 on:
   workflow_dispatch:
+    inputs:
+      force_mirror:
+        description: 'Force mirror to Bitbucket/hub.mos.ru even if no file changes'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 concurrency:
   group: proxy-filter-update
@@ -10,24 +20,24 @@ concurrency:
 jobs:
   update-files:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     permissions:
       contents: write
     outputs:
       has_changes: ${{ steps.commit.outputs.has_changes }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
       - name: Configure git
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -36,36 +46,55 @@ jobs:
 
       - name: Run filter script
         id: filter
+        env:
+          # ВАЖНО: замени YOUR_NAMESPACE/YOUR_REPO на реальный путь репы на hub.mos.ru
+          # Это делает QR-коды, которые ведут на hub.mos.ru
+          RAW_BASE: https://hub.mos.ru/Trojankill/safe-server-list/raw/main/githubmirror
         run: |
+          set -euo pipefail
+
+          case "${RAW_BASE}" in
+            *YOUR_NAMESPACE*|*YOUR_REPO*)
+              echo "❌ Не забыл заменить YOUR_NAMESPACE/YOUR_REPO в RAW_BASE?"
+              exit 1
+              ;;
+          esac
+
           python filter.py
-          echo "status=success" >> $GITHUB_OUTPUT
+          echo "status=success" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push changes
         id: commit
         if: steps.filter.outputs.status == 'success'
         run: |
+          set -euo pipefail
+
           git add githubmirror/FILTER-*.txt \
                   githubmirror/ALL.txt \
                   githubmirror/url_health.json \
                   githubmirror/URL_HEALTH_REPORT.md \
                   githubmirror/Clash/ \
                   QR-CODE/
+
           if git diff --staged --quiet; then
             echo "No changes to commit"
-            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
+
           git commit -m "auto-update filters + Clash + QR ($(date -u '+%Y-%m-%d %H:%M:%S UTC'))"
           git push origin main
-          echo "has_changes=true" >> $GITHUB_OUTPUT
+          echo "has_changes=true" >> "$GITHUB_OUTPUT"
 
   mirror-to-bitbucket:
     needs: update-files
-    if: needs.update-files.outputs.has_changes == 'true'
+    if: needs.update-files.outputs.has_changes == 'true' || github.event.inputs.force_mirror == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    permissions:
+      contents: read
     steps:
-      - name: Checkout GitHub repository
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           ref: main
@@ -73,6 +102,7 @@ jobs:
 
       - name: Force sync to latest main
         run: |
+          set -euo pipefail
           git fetch origin main
           git reset --hard origin/main
           git log -1 --format="Mirroring commit: %h %ci %s"
@@ -82,17 +112,104 @@ jobs:
           BITBUCKET_TOKEN: ${{ secrets.BITBUCKET_MIRROR_TOKEN }}
         run: |
           set -euo pipefail
+
+          if [ -z "${BITBUCKET_TOKEN:-}" ]; then
+            echo "❌ GitHub secret BITBUCKET_MIRROR_TOKEN не задан"
+            exit 1
+          fi
+
           git remote remove bitbucket 2>/dev/null || true
           git remote add bitbucket "https://x-token-auth:${BITBUCKET_TOKEN}@bitbucket.org/trojankill/safe-server-lists.git"
+
           for attempt in 1 2 3 4 5; do
             echo "Bitbucket push attempt $attempt/5"
             if git push bitbucket HEAD:main --force; then
               echo "✅ Bitbucket push successful"
               exit 0
             fi
+
             sleep_time=$((attempt * 45))
-            echo "❌ Push failed. Sleeping ${sleep_time}s..."
+            echo "❌ Bitbucket push failed. Sleeping ${sleep_time}s..."
             sleep "$sleep_time"
           done
+
           echo "💀 Bitbucket push failed after all retries"
+          exit 1
+
+  mirror-to-hub-mos:
+    needs: update-files
+    if: needs.update-files.outputs.has_changes == 'true' || github.event.inputs.force_mirror == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Force sync to latest main
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git reset --hard origin/main
+          git log -1 --format="Mirroring commit: %h %ci %s"
+
+      - name: Push main branch to hub.mos.ru
+        env:
+          HUB_MOS_TOKEN: ${{ secrets.HUB_MOS_TOKEN }}
+          HUB_MOS_USERNAME: ${{ secrets.HUB_MOS_USERNAME }}
+
+          # ВАЖНО: замени YOUR_NAMESPACE/YOUR_REPO на реальный путь репы на hub.mos.ru
+          HUB_MOS_REPO_URL: https://hub.mos.ru/Trojankill/safe-server-list.git
+
+          HUB_MOS_BRANCH: main
+          HUB_MOS_HOST: hub.mos.ru
+        run: |
+          set -euo pipefail
+
+          if [ -z "${HUB_MOS_TOKEN:-}" ]; then
+            echo "❌ GitHub secret HUB_MOS_TOKEN не задан"
+            exit 1
+          fi
+
+          if [ -z "${HUB_MOS_USERNAME:-}" ]; then
+            echo "❌ GitHub secret HUB_MOS_USERNAME не задан"
+            echo "Для Personal Access Token это твой логин на hub.mos.ru"
+            echo "Для Project Access Token это имя токена"
+            exit 1
+          fi
+
+          case "${HUB_MOS_REPO_URL}" in
+            *YOUR_NAMESPACE*|*YOUR_REPO*)
+              echo "❌ Не забыл заменить YOUR_NAMESPACE/YOUR_REPO в HUB_MOS_REPO_URL?"
+              exit 1
+              ;;
+          esac
+
+          printf 'machine %s\nlogin %s\npassword %s\n' \
+            "${HUB_MOS_HOST}" \
+            "${HUB_MOS_USERNAME}" \
+            "${HUB_MOS_TOKEN}" > "$HOME/.netrc"
+
+          chmod 600 "$HOME/.netrc"
+
+          git remote remove hubmos 2>/dev/null || true
+          git remote add hubmos "${HUB_MOS_REPO_URL}"
+
+          for attempt in 1 2 3 4 5; do
+            echo "hub.mos.ru push attempt $attempt/5"
+            if git push hubmos "HEAD:${HUB_MOS_BRANCH}" --force; then
+              echo "✅ hub.mos.ru push successful"
+              exit 0
+            fi
+
+            sleep_time=$((attempt * 45))
+            echo "❌ hub.mos.ru push failed. Sleeping ${sleep_time}s..."
+            sleep "$sleep_time"
+          done
+
+          echo "💀 hub.mos.ru push failed after all retries"
           exit 1
