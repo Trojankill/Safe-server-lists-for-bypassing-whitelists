@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-13 02:30:43 UTC
+# 2026-10-13 02:45:31 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -15,6 +15,20 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
+  - name: 'Kazakhstan | kzself.yandex-api.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 109.248.247.44
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: kzself.yandex-api.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: HXFe_cPryw01zqXchAFjZciDAS4UJg1-xScx6vjgjjY
+      short-id: 7f2e9c4b1a8d6e25
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 144.31.50.236
@@ -79,7 +93,7 @@ proxies:
     udp: true
     tls: true
     servername: max.ru
-    client-fingerprint: firefox
+    client-fingerprint: qq
     reality-opts:
       public-key: lWZR5WmRc_qa11MTPhUzHF3ijTDdz7rDaTuzj9sglSs
     flow: xtls-rprx-vision
@@ -181,20 +195,6 @@ proxies:
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: raw
-  - name: 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: ivx-ivy-al0.whitenetwork.cloud
-    port: 7445
-    uuid: 66217279-de40-4b62-b2bb-9c33b8fb7a01
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
-      short-id: 283f4b51fbe39ad9
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Russia | maple.hubnori.ink | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 212.109.196.123
@@ -292,7 +292,7 @@ proxies:
       public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
       short-id: 76f547961a8ca082
     network: tcp
-  - name: 'Kazakhstan | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
+  - name: 'Kazakhstan | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 206.223.249.90
     port: 33891
@@ -300,12 +300,12 @@ proxies:
     udp: true
     tls: true
     servername: browser.yandex.com
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: fj5f0rWTOAgd2gqCCWgag3oAGwb6MCef3OFNdnQLWW8
       short-id: f5bc6788
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 188.225.77.254
@@ -334,20 +334,6 @@ proxies:
       short-id: 4951a2313524dd8f
     network: grpc
     grpc-opts:
-  - name: 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 13.143.137.206
-    port: 12443
-    uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-    udp: true
-    tls: true
-    servername: ya.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-      short-id: d2061bb1
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: gw1.edgemedia.lol
@@ -360,33 +346,6 @@ proxies:
     reality-opts:
       public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
       short-id: d2061bb1
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'France | deepl.com | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 194.76.154.31
-    port: 40443
-    uuid: 9f0baff8-bdee-4de9-9515-bcc4932b41fa
-    udp: true
-    tls: true
-    servername: deepl.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: MN6QjUHDUXyteMdR-cDna89fq4X3qgQhLnNqTtRUbBQ
-      short-id: a8ae
-    network: raw
-  - name: 'Russia | eh2.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 83.166.238.78
-    port: 443
-    uuid: a16a3e32-8d63-4dec-8c67-1361388a64ca
-    udp: true
-    tls: true
-    servername: eh2.vk.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wplZIvXK07mASBxxa925dl1XlTjodM98ryNELV1n6y4
-      short-id: be281a03eb330151
     flow: xtls-rprx-vision
     network: tcp
   - name: 'unknown | cdnv-img.perekrestok.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -501,6 +460,20 @@ proxies:
       short-id: 33c0b6e213
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | st.avito.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 168.222.143.254
+    port: 443
+    uuid: ebdf87e8-4f75-4b84-94e0-65ce4894993a
+    udp: true
+    tls: true
+    servername: st.avito.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 3_Qy1SAtWfbiQbznyhlXxJtqB-5QQ46VF1Uz2h5A7Q4
+      short-id: 2dc17935
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'The Netherlands | nl2.nztvpn.com | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.112.59.210
@@ -578,6 +551,7 @@ proxy-groups:
     type: select
     proxies:
       - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Kazakhstan | kzself.yandex-api.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Germany | www.cloudflare.com | GRPC | [#LSO - #LinSpisokObhod]'
@@ -590,7 +564,6 @@ proxy-groups:
       - 'Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-      - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | maple.hubnori.ink | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -598,13 +571,10 @@ proxy-groups:
       - 'unknown | sun6-21.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | a.wb.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Kazakhstan | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Kazakhstan | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'France | deepl.com | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Russia | eh2.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | cdnv-img.perekrestok.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | cdnv-img.perekrestok.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
@@ -613,6 +583,7 @@ proxy-groups:
       - 'Russia | ads.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | vk.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | st.avito.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | nl2.nztvpn.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | de3.vpvr4ib84nuv6hdkt.ru | TCP | [#LSO - #LinSpisokObhod]'

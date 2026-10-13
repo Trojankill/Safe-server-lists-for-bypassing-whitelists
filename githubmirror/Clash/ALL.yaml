@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-13 02:30:44 UTC
+# 2026-10-13 02:45:32 UTC
 proxies:
   - name: '🇳🇱 [BL] Сервер 615 | 154ms'
     type: vless
@@ -1516,6 +1516,20 @@ proxies:
     reality-opts:
       public-key: 0AVsyS7udTbxKRdSyQ2rtFC63icDQOVWq8FvAhhU-WY
       short-id: cbb0a5c1dc905505
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Kazakhstan | kzself.yandex-api.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 109.248.247.44
+    port: 443
+    uuid: 1b7ee703-fa08-4305-8469-ae3e30e61e44
+    udp: true
+    tls: true
+    servername: kzself.yandex-api.com
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: HXFe_cPryw01zqXchAFjZciDAS4UJg1-xScx6vjgjjY
+      short-id: 7f2e9c4b1a8d6e25
     flow: xtls-rprx-vision
     network: tcp
   - name: '🇷🇺 [WL] Сервер 99'
@@ -7413,20 +7427,6 @@ proxies:
       short-id: abcd1234
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: ivx-ivy-al0.whitenetwork.cloud
-    port: 7445
-    uuid: 66217279-de40-4b62-b2bb-9c33b8fb7a01
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
-      short-id: 283f4b51fbe39ad9
-    flow: xtls-rprx-vision
-    network: tcp
   - name: '美国_101220830 | 17ms'
     type: vless
     server: f35free-production.up.railway.app
@@ -10116,7 +10116,7 @@ proxies:
       path: '/TEL,@ELiV2RAY--TEL,@ELiV2RAY'
       headers:
         Host: joinbede.eliv2.io
-  - name: 'Kazakhstan | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
+  - name: 'Kazakhstan | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 206.223.249.90
     port: 33891
@@ -10124,12 +10124,12 @@ proxies:
     udp: true
     tls: true
     servername: browser.yandex.com
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: fj5f0rWTOAgd2gqCCWgag3oAGwb6MCef3OFNdnQLWW8
       short-id: f5bc6788
     flow: xtls-rprx-vision
-    network: raw
+    network: tcp
   - name: '🇬🇧 [BL] Сервер 295'
     type: vless
     server: 23.81.34.204
@@ -10266,20 +10266,6 @@ proxies:
     reality-opts:
       public-key: VeluC9A7XDurAWQNgXKShS2SJSgoK79QHFgiAMYrvGo
       short-id: 7205d9079521832c
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 13.143.137.206
-    port: 12443
-    uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-    udp: true
-    tls: true
-    servername: ya.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-      short-id: d2061bb1
     flow: xtls-rprx-vision
     network: tcp
   - name: 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -10498,20 +10484,6 @@ proxies:
     reality-opts:
       public-key: ftglT-Ghp2FPiPlwyEAldfiAE1IL_AJ9UCkfCj0zk2I
       short-id: a83b77e064761e3c
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | eh2.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 83.166.238.78
-    port: 443
-    uuid: a16a3e32-8d63-4dec-8c67-1361388a64ca
-    udp: true
-    tls: true
-    servername: eh2.vk.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: wplZIvXK07mASBxxa925dl1XlTjodM98ryNELV1n6y4
-      short-id: be281a03eb330151
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇸🇬'
@@ -16559,6 +16531,7 @@ proxy-groups:
       - 'fanqianghui | 112ms'
       - '土耳其_101220030 | 151ms'
       - '土耳其_101220032 | 149ms'
+      - 'Kazakhstan | kzself.yandex-api.com | TCP | [#LSO - #LinSpisokObhod]'
       - '🇷🇺 [WL] Сервер 99'
       - 'By EbraSha 👾 | 421ms'
       - '🇷🇺 [WL] Сервер 100'
@@ -16962,7 +16935,6 @@ proxy-groups:
       - '美国_101220829 | 38ms'
       - '🇫🇮 Finland — #120'
       - 'Бесплатный VPN tg:VLESSFORU 🇷🇺'
-      - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - '美国_101220830 | 17ms'
       - 'By EbraSha 🌐 | 201ms'
       - '美国_101220728 | 20ms'
@@ -17149,7 +17121,7 @@ proxy-groups:
       - 'By EbraSha 🔥 | 205ms'
       - '🔒 VL-WS-TLS 🇺🇸 US-199.232.0.97:443 | 1ms'
       - '🔒 VL-WS-TLS 🇺🇸 US-199.232.8.99:443 | 1ms'
-      - 'Kazakhstan | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Kazakhstan | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - '🇬🇧 [BL] Сервер 295'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - '🇷🇺 [WL] Сервер 96'
@@ -17160,7 +17132,6 @@ proxy-groups:
       - '🇸🇪 Sweden — #144'
       - '🇺🇸 [BL] Сервер 97'
       - '🇸🇬 [BL] Сервер 23'
-      - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'By EbraSha 🦾 | 152ms'
       - '🇬🇧 [BL] Сервер 83'
@@ -17176,7 +17147,6 @@ proxy-groups:
       - '🇰🇿 [BL] Сервер 282'
       - '阿联酋_101220020 | 169ms'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇪'
-      - 'Russia | eh2.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Бесплатный VPN tg:VLESSFORU 🇸🇬'
       - '🇸🇬 [BL] Сервер 356'
       - '🔒 VL-WS-TLS 🏴‍☠️ NA-172.66.44.57:443 | 8ms'
