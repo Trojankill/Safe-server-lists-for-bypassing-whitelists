@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-13 23:30:46 UTC
+# 2026-10-13 23:45:31 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -15,20 +15,6 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: 'Russia | io.ozone.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 188.225.77.254
-    port: 443
-    uuid: 1071a55c-99fd-4d05-977f-cd450ac9a1c8
-    udp: true
-    tls: true
-    servername: io.ozone.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
-      short-id: 4951a2313524dd8f
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 193.163.203.170
@@ -206,20 +192,6 @@ proxies:
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: finkawwwbroy5.qcloud.surf
-    port: 20324
-    uuid: 6656cc0a-5908-4d04-a436-64f5843c0c7a
-    udp: true
-    tls: true
-    servername: metrika.yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: RK2g-bLoaa9GD9cJRRk2ktU9nAvP4-YmUPnBs1-UC1A
-      short-id: a9391e22
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 72.56.241.230
@@ -262,9 +234,9 @@ proxies:
       short-id: abbcd128
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'unknown | vk.com | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | vk.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: rus03.routex-app.space
+    server: 89.208.86.218
     port: 443
     uuid: 97bdd409-6763-4222-a6aa-fa07761f67b6
     udp: true
@@ -275,6 +247,20 @@ proxies:
       public-key: bznxDyVAgreLsIqhgTJpay4Lqhmjf03LHe8npFjn6TE
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.77.254
+    port: 443
+    uuid: 9cfb9099-439f-4bd2-87d3-54e67269fdc3
+    udp: true
+    tls: true
+    servername: io.ozone.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
+      short-id: 4951a2313524dd8f
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 146.103.100.242
@@ -331,20 +317,6 @@ proxies:
       short-id: 33c0b6e213
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 87.242.95.239
-    port: 9443
-    uuid: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-    udp: true
-    tls: true
-    servername: max.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
-    network: grpc
-    grpc-opts:
   - name: 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.31.242.61
@@ -367,7 +339,7 @@ proxies:
     udp: true
     tls: true
     servername: travel.yandex.ru
-    client-fingerprint: chrome
+    client-fingerprint: random
     reality-opts:
       public-key: my0kaAJFk3-xpoZNZ0i-a8SsX7Y9fUP8bHsQILUK6hk
       short-id: 18a1ed60
@@ -420,7 +392,6 @@ proxy-groups:
     type: select
     proxies:
       - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | io.ozone.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
@@ -434,16 +405,15 @@ proxy-groups:
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'unknown | vk.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | vk.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]'
