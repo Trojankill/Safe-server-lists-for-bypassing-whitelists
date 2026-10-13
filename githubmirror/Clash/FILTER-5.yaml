@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-13 15:30:49 UTC
+# 2026-10-13 15:45:33 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -210,6 +210,34 @@ proxies:
       short-id: c430045c
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.150
+    port: 8443
+    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+      short-id: 20272c52657d22da
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.239
+    port: 9445
+    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: y168bU8zcZWat8CcRYRnjCz_L_-OnGvTa4ZZsapmVTQ
+      short-id: 55e5751182be6e90
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 72.56.241.230
@@ -420,34 +448,6 @@ proxies:
       short-id: 0c774b50
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Germany | de3.vpvr4ib84nuv6hdkt.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 94.249.241.154
-    port: 3408
-    uuid: fafc7c16-f890-45ee-a856-02df225172dd
-    udp: true
-    tls: true
-    servername: de3.vpvr4ib84nuv6hdkt.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 3eXf94GSzRaECZwUCsF-aQbtxFo5FInM8uUhnyTRjFI
-      short-id: 0f56deee14619eb2
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Germany | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 195.123.6.19
-    port: 8443
-    uuid: fd1d80da-3b27-457a-810b-2b28a309edc1
-    udp: true
-    tls: true
-    servername: travel.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: EDXtIJRcxgBXd32fNHSWcd8GUarM3aZeYf_xDD5gSXY
-      short-id: 6a42dc3d
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
     type: trojan
     server: 185.220.100.168
@@ -495,6 +495,8 @@ proxy-groups:
       - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -510,8 +512,6 @@ proxy-groups:
       - 'The Netherlands | nl2.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Germany | de3.vpvr4ib84nuv6hdkt.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Germany | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
