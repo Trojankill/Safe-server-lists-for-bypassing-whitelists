@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-13 19:30:48 UTC
+# 2026-10-13 19:45:34 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -85,20 +85,19 @@ proxies:
       short-id: a696de84963656de
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Estonia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: 132.243.74.70
+    server: 46.182.24.240
     port: 443
-    uuid: 4eb80efa-363e-4f7f-a787-7e280c5dadd0
+    uuid: 4330a14e-455d-4b89-82d1-179efb3d0a32
     udp: true
     tls: true
-    servername: yandex.ru
+    servername: max.ru
     client-fingerprint: random
     reality-opts:
-      public-key: 4puvvJ1CFZuEGMT_h2gxqLzYpgmKEfDV1omah9ATKQs
-      short-id: 57ce34a1cbed916f
-    flow: xtls-rprx-vision
-    network: tcp
+      public-key: Ed29G1bO6isJRo8iGPm7W_9c4mVFqHUilPmDP0llJW8
+    network: grpc
+    grpc-opts:
   - name: 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 87.199.205.28
@@ -154,6 +153,33 @@ proxies:
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'unknown | id.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: us.ll0ll.vip
+    port: 2096
+    uuid: 768712b8-81dc-440f-9b38-4523bf767df4
+    udp: true
+    tls: true
+    servername: id.vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    network: grpc
+    grpc-opts:
+  - name: 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.150
+    port: 8443
+    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: pobC1laHCtpMK1EA520CyOpYeel0t90hEV_eRJExFAE
+      short-id: 20272c52657d22da
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 72.56.241.230
@@ -194,6 +220,19 @@ proxies:
     reality-opts:
       public-key: r6lN34m1nN-xQZ458j5NPD5xJ3_QBF2bGzY4KJEo4ic
       short-id: abbcd128
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'unknown | vk.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: rus03.routex-app.space
+    port: 443
+    uuid: 97bdd409-6763-4222-a6aa-fa07761f67b6
+    udp: true
+    tls: true
+    servername: vk.com
+    client-fingerprint: random
+    reality-opts:
+      public-key: bznxDyVAgreLsIqhgTJpay4Lqhmjf03LHe8npFjn6TE
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -238,18 +277,17 @@ proxies:
       short-id: d2061bb1
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | eh.vk.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: 129.101.121.70
-    port: 8443
-    uuid: a96ad3ea-4820-43d2-bbf3-27c6bf19d652
+    server: 171.22.74.237
+    port: 443
+    uuid: a2195ae6-1cd1-41b5-ba99-fb9874ebfc1d
     udp: true
     tls: true
-    servername: storage.yandex.net
+    servername: eh.vk.com
     client-fingerprint: random
     reality-opts:
-      public-key: xX9ZxZRrF_EER9-8fOegxR97HV5KaMaftAD7eq10UXw
-      short-id: 75dd7e79a7876314
+      public-key: xzub3iG_m-4JgVMEqswdhLDc-pIwFdubn7iFysSdmhE
     flow: xtls-rprx-vision
     network: tcp
   - name: 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
@@ -278,6 +316,20 @@ proxies:
     reality-opts:
       public-key: QKaBb_u0KoNkMYbh9ljrxC9BDtnHyFoaMd4-s4xfKxQ
       short-id: 33c0b6e213
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 95.85.251.93
+    port: 8443
+    uuid: fd1d80da-3b27-457a-810b-2b28a309edc1
+    udp: true
+    tls: true
+    servername: travel.yandex.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: my0kaAJFk3-xpoZNZ0i-a8SsX7Y9fUP8bHsQILUK6hk
+      short-id: 18a1ed60
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
@@ -318,20 +370,24 @@ proxy-groups:
       - 'Poland | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Estonia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'unknown | id.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'unknown | vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | eh.vk.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
