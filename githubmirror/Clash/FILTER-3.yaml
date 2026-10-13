@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-13 16:45:32 UTC
+# 2026-10-13 17:01:07 UTC
 proxies:
-  - name: '🇫🇷 France — #93'
+  - name: '🇫🇷 France — #83'
     type: vless
     server: 79.174.92.222
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Beget — #27'
+  - name: '🇷🇺 Beget — #28'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -23,12 +23,12 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇺🇸 United States — #98'
+  - name: '🇺🇸 United States — #93'
     type: vless
     server: 37.18.14.145
     port: 7445
@@ -42,7 +42,48 @@ proxies:
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇸🇪 Sweden — #96'
+  - name: '🇩🇪 Germany — #81'
+    type: vless
+    server: 31.177.111.243
+    port: 443
+    uuid: 90ffa195-de51-4d22-86a2-569be4fe91c9
+    udp: true
+    tls: true
+    servername: smart.heartbeatai.link
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
+      short-id: dfdee30a27b11f0f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇴 Norway — #86'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 90ffa195-de51-4d22-86a2-569be4fe91c9
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇩🇪 Germany — #64'
+    type: vless
+    server: 78.159.240.159
+    port: 10654
+    uuid: 953358cb-82ba-4296-960d-6d2ec3468f4c
+    udp: true
+    tls: true
+    servername: pl314j2.sysopnova.art
+    client-fingerprint: random
+    reality-opts:
+      public-key: W6Y-zf2KrmIKVAEYuxpzQhxMyQliUnEo9LAZYEPAlEI
+      short-id: d14d6fc0
+    network: xhttp
+  - name: '🇸🇪 Sweden — #92'
     type: vless
     server: 188.225.77.254
     port: 443
@@ -56,35 +97,7 @@ proxies:
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #91'
-    type: vless
-    server: 31.177.111.243
-    port: 443
-    uuid: bd73591f-d5e4-4a47-be29-e4be399aaeb7
-    udp: true
-    tls: true
-    servername: smart.heartbeatai.link
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
-      short-id: dfdee30a27b11f0f
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇴 Norway — #94'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: bd73591f-d5e4-4a47-be29-e4be399aaeb7
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇵🇱 Poland — #95'
+  - name: '🇵🇱 Poland — #91'
     type: vless
     server: 37.18.14.145
     port: 4510
@@ -98,30 +111,17 @@ proxies:
       short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #28'
-    type: vless
-    server: 93.188.184.150
-    port: 443
-    uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
-    udp: true
-    tls: true
-    servername: ru-1-2.unturned-rust-dead.lol
-    client-fingerprint: edge
-    reality-opts:
-      public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
-    network: grpc
-    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇫🇷 France — #93'
-      - '🇷🇺 Beget — #27'
-      - '🇺🇸 United States — #98'
-      - '🇸🇪 Sweden — #96'
-      - '🇩🇪 Germany — #91'
-      - '🇳🇴 Norway — #94'
-      - '🇵🇱 Poland — #95'
+      - '🇫🇷 France — #83'
       - '🇷🇺 Beget — #28'
+      - '🇺🇸 United States — #93'
+      - '🇩🇪 Germany — #81'
+      - '🇳🇴 Norway — #86'
+      - '🇩🇪 Germany — #64'
+      - '🇸🇪 Sweden — #92'
+      - '🇵🇱 Poland — #91'
 rules:
   - MATCH,PROXY
