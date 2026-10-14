@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-14 20:30:47 UTC
+# 2026-10-14 20:45:34 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -71,6 +71,19 @@ proxies:
       short-id: 8debcf36f1cc69ff
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | max.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.37.224
+    port: 443
+    uuid: 2db2d74d-f653-459c-818e-22a294e24175
+    udp: true
+    tls: true
+    servername: max.ru
+    client-fingerprint: safari
+    reality-opts:
+      public-key: lWZR5WmRc_qa11MTPhUzHF3ijTDdz7rDaTuzj9sglSs
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'Estonia | max.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 95.85.224.51
@@ -330,6 +343,7 @@ proxy-groups:
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Singapore | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | max.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
