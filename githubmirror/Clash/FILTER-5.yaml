@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-14 09:34:24 UTC
+# 2026-10-14 09:45:31 UTC
 proxies:
-  - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 79.174.92.222
-    port: 443
-    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
-    udp: true
-    tls: true
-    servername: m.vk.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
-      short-id: a1b2c3d4
-    network: grpc
-    grpc-opts:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 193.163.203.170
@@ -71,6 +57,20 @@ proxies:
       short-id: a696de84963656de
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 3d7c81aa-1b5e-43ca-b031-524572fa5479
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 82.29.36.250
@@ -98,18 +98,6 @@ proxies:
       public-key: Ed29G1bO6isJRo8iGPm7W_9c4mVFqHUilPmDP0llJW8
     network: grpc
     grpc-opts:
-  - name: 'Germany | api-maps.yandex.ru | XHTTP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 13.143.188.111
-    port: 8448
-    uuid: 4d404068-37f9-414c-97f5-5af22c72ffd9
-    udp: true
-    tls: true
-    servername: api-maps.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: 8nUpvAaFFrMjl2MBiWqpz7W9xEulryLlf47ZdBISzR8
-    network: xhttp
   - name: 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 87.199.205.28
@@ -132,7 +120,7 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
@@ -177,20 +165,6 @@ proxies:
     reality-opts:
       public-key: 9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY
       short-id: 56daff9a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 87.242.95.239
-    port: 9445
-    uuid: 7ac594a4-fabc-486c-9a91-5662c09e63cd
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: y168bU8zcZWat8CcRYRnjCz_L_-OnGvTa4ZZsapmVTQ
-      short-id: 55e5751182be6e90
     flow: xtls-rprx-vision
     network: tcp
   - name: 'United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
@@ -318,20 +292,6 @@ proxies:
       short-id: d2061bb1
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 83.166.238.57
-    port: 443
-    uuid: a16a3e32-8d63-4dec-8c67-1361388a64ca
-    udp: true
-    tls: true
-    servername: eh3.vk.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: QXw5YbUfPssdgGZIfAol5PonYGWSjlWsWpoij93VU20
-      short-id: b276e04195d77f6b
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 146.103.100.242
@@ -374,20 +334,6 @@ proxies:
       short-id: 315bf0f2ca19696a
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'The Netherlands | api.vk.me | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 31.77.114.114
-    port: 443
-    uuid: adc11f30-e4cb-4985-bf5e-f9ded69c019f
-    udp: true
-    tls: true
-    servername: api.vk.me
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI
-      short-id: db04ce8bdb8900f1
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.218.17.127
@@ -400,6 +346,34 @@ proxies:
     reality-opts:
       public-key: QKaBb_u0KoNkMYbh9ljrxC9BDtnHyFoaMd4-s4xfKxQ
       short-id: 33c0b6e213
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.45.79
+    port: 7443
+    uuid: d570c5e0-947d-4edf-ab13-ea788aa440c2
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 0w339GBhpDiYwa9Wgqu3z3epu8dHAzeYUFXPtvzK8To
+      short-id: 190c27ae5f2e4d2c
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.31.242.61
+    port: 443
+    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+    udp: true
+    tls: true
+    servername: est.nztvpn.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 7mRrVzTchVLWWBru5fCgTvtdkL7lVJ_qRj9HW8Rd8X0
+      short-id: 0da7e14db353e7d0
     flow: xtls-rprx-vision
     network: tcp
   - name: 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -416,19 +390,7 @@ proxies:
       short-id: 0c774b50
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
-    type: trojan
-    server: 185.220.100.168
-    port: 443
-    password: humanity
-    udp: true
-    sni: www.calmlunch.com
-    network: ws
-    ws-opts:
-      path: '/assignment'
-      headers:
-        Host: www.calmlunch.com
-  - name: 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
+  - name: 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
     type: trojan
     server: trojan.about.lso
     port: 443
@@ -448,20 +410,18 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | max.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | max.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Germany | api-maps.yandex.ru | XHTTP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -471,15 +431,14 @@ proxy-groups:
       - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | dzen.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | cloud.1c.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'The Netherlands | api.vk.me | RAW | [#LSO - #LinSpisokObhod]'
       - 'Canada | corporate.amazon.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
-      - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
+      - 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
 rules:
   - MATCH,PROXY
