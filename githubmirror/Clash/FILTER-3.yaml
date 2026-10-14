@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-14 20:45:34 UTC
+# 2026-10-14 21:00:57 UTC
 proxies:
-  - name: '🇩🇪 Germany — #95'
+  - name: '🇩🇪 Germany — #96'
     type: vless
     server: 82.202.178.132
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: 70c20a2f5a7d542e
     network: grpc
     grpc-opts:
-  - name: '🇫🇷 France — #114'
+  - name: '🇫🇷 France — #113'
     type: vless
     server: 79.174.92.222
     port: 443
@@ -29,35 +29,7 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #109'
-    type: vless
-    server: 31.177.111.243
-    port: 443
-    uuid: 3877bbb3-78af-468e-86f8-8cb43bfe31ad
-    udp: true
-    tls: true
-    servername: smart.heartbeatai.link
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
-      short-id: dfdee30a27b11f0f
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇴 Norway — #115'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 3877bbb3-78af-468e-86f8-8cb43bfe31ad
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Beget — #65'
+  - name: '🇷🇺 Beget — #60'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -84,7 +56,7 @@ proxies:
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇫🇷 France — #113'
+  - name: '🇫🇷 France — #114'
     type: vless
     server: 82.202.179.107
     port: 12443
@@ -98,7 +70,7 @@ proxies:
       short-id: 780f5e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #92'
+  - name: '🇩🇪 Germany — #90'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -153,20 +125,48 @@ proxies:
       short-id: 2d0c188798bae174
     flow: xtls-rprx-vision
     network: raw
+  - name: '🇩🇪 Germany — #109'
+    type: vless
+    server: 31.177.111.243
+    port: 443
+    uuid: df6ae00b-40ca-4a43-87fc-40512d694ed6
+    udp: true
+    tls: true
+    servername: smart.heartbeatai.link
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
+      short-id: dfdee30a27b11f0f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇴 Norway — #115'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: df6ae00b-40ca-4a43-87fc-40512d694ed6
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Germany — #95'
-      - '🇫🇷 France — #114'
-      - '🇩🇪 Germany — #109'
-      - '🇳🇴 Norway — #115'
-      - '🇷🇺 Beget — #65'
-      - '🇺🇸 United States — #121'
+      - '🇩🇪 Germany — #96'
       - '🇫🇷 France — #113'
-      - '🇩🇪 Germany — #92'
+      - '🇷🇺 Beget — #60'
+      - '🇺🇸 United States — #121'
+      - '🇫🇷 France — #114'
+      - '🇩🇪 Germany — #90'
       - '🇸🇪 Sweden — #118'
       - '🇸🇪 Sweden — #120'
       - '🇵🇱 Poland — #116'
+      - '🇩🇪 Germany — #109'
+      - '🇳🇴 Norway — #115'
 rules:
   - MATCH,PROXY
