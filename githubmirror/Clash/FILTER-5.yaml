@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-14 15:45:31 UTC
+# 2026-10-14 16:01:05 UTC
 proxies:
+  - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 79.174.92.222
+    port: 443
+    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
+    udp: true
+    tls: true
+    servername: m.vk.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
+      short-id: a1b2c3d4
+    network: grpc
+    grpc-opts:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 193.163.203.170
@@ -113,6 +127,20 @@ proxies:
       short-id: 6ba85179e30d4fc2
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 4834149f-a058-48ce-86e7-976323dfe97f
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: sweedenqfds777.qcloud.surf
@@ -182,20 +210,6 @@ proxies:
       short-id: 55e5751182be6e90
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 82.202.179.107
-    port: 12443
-    uuid: 8822fe1c-7a83-49c0-af96-c2027cb6ddd5
-    udp: true
-    tls: true
-    servername: smartcaptcha.yandexcloud.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 6RMior0_TlChA0R_T8yXvjrrpb_nUiS50uRJrLqFeWM
-      short-id: 780f5e
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: spainspeedboostjbl88.qcloud.surf
@@ -223,6 +237,19 @@ proxies:
       public-key: QnKEZ1Y6NPOi-XcRC-uA8bzhfffQbswLIuGpxkBHSVs
     network: grpc
     grpc-opts:
+  - name: 'Russia | a.wb.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.33.24.85
+    port: 443
+    uuid: 933eb45b-0e97-4ed1-bfb9-e34bd0b4342c
+    udp: true
+    tls: true
+    servername: a.wb.ru
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: M7fn-U9PikoH_WXu6HbDE5bi9ej5cFN8bgWy8qF14WU
+      short-id: 76f547961a8ca082
+    network: raw
   - name: 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 201.34.148.44
@@ -339,6 +366,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -347,14 +375,15 @@ proxy-groups:
       - 'Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | rutube.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+      - 'Russia | a.wb.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
