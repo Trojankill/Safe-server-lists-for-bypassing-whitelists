@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-15 01:30:45 UTC
+# 2026-10-15 01:45:28 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -15,19 +15,6 @@ proxies:
       short-id: a1b2c3d4
     network: grpc
     grpc-opts:
-  - name: 'Russia | de01-edge.atlanta-games.com | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 178.248.236.21
-    port: 50443
-    uuid: 07d0b603-7955-47b9-a913-12e6208062cb
-    udp: true
-    tls: true
-    servername: de01-edge.atlanta-games.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: r-_zNu0BrD8PgGzg-KQSes06Si83txHWYPH-o8xXihk
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 193.163.203.170
@@ -96,34 +83,6 @@ proxies:
     reality-opts:
       public-key: 09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g
       short-id: 09353d6dc5b789
-    flow: xtls-rprx-vision
-    network: raw
-  - name: 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 150.241.101.17
-    port: 8443
-    uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-    udp: true
-    tls: true
-    servername: yandex.net
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 6ba85179e30d4fc2
-    flow: xtls-rprx-vision
-    network: raw
-  - name: 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 150.241.101.80
-    port: 8443
-    uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
-    udp: true
-    tls: true
-    servername: yandex.net
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-      short-id: 6ba85179e30d4fc2
     flow: xtls-rprx-vision
     network: raw
   - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
@@ -223,19 +182,6 @@ proxies:
       short-id: b276e04195d77f6b
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'unknown | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: nw.shadownet.pro
-    port: 8443
-    uuid: a7bee730-ec9f-45fe-a23c-5568af0b202a
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: RDoffndyw7wskux1uVqjlPPe_ikh3cisVEoyleiRlR4
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 129.101.121.70
@@ -278,45 +224,6 @@ proxies:
       short-id: 4326
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'The Netherlands | steamcommunity.com | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 185.245.106.118
-    port: 8443
-    uuid: fcfc0d80-65c9-4a2a-a211-825332ddd07c
-    udp: true
-    tls: true
-    servername: steamcommunity.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: YAGFX8W6o2l3UWIAMEP93ULo0NSQ2iFM8DopfcFDBUk
-    network: grpc
-    grpc-opts:
-  - name: 'Hungary | avito.st | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 217.13.105.43
-    port: 443
-    uuid: fcfc0d80-65c9-4a2a-a211-825332ddd07c
-    udp: true
-    tls: true
-    servername: avito.st
-    client-fingerprint: random
-    reality-opts:
-      public-key: 2C6MqBdf1XxEKmVe_hHfYhov31tM_eEuq_c5ZFMfPAI
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'unknown | wap.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 4hr.secured-by-tenzo.sbs
-    port: 143
-    uuid: fcfc0d80-65c9-4a2a-a211-825332ddd07c
-    udp: true
-    tls: true
-    servername: wap.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: D5ttWzeUeEo0oKchjhHGY7Z8jFrAB-BOz6kdQpCrZg0
-    network: grpc
-    grpc-opts:
   - name: 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
     type: trojan
     server: 185.220.100.168
@@ -350,14 +257,11 @@ proxy-groups:
     type: select
     proxies:
       - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | de01-edge.atlanta-games.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
@@ -365,13 +269,9 @@ proxy-groups:
       - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'unknown | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Russia | ozon.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'The Netherlands | steamcommunity.com | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Hungary | avito.st | TCP | [#LSO - #LinSpisokObhod]'
-      - 'unknown | wap.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
