@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-15 08:45:30 UTC
+# 2026-10-15 09:01:00 UTC
 proxies:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -9,7 +9,7 @@ proxies:
     udp: true
     tls: true
     servername: m.vk.com
-    client-fingerprint: chrome
+    client-fingerprint: firefox
     reality-opts:
       public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
       short-id: a1b2c3d4
@@ -167,7 +167,7 @@ proxies:
       public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
+  - name: 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -175,11 +175,11 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
-    network: raw
+    network: tcp
   - name: 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 78.17.178.125
@@ -208,6 +208,20 @@ proxies:
       short-id: 0c774b50
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 8cdebe13-7073-410f-943c-351ba416e762
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 201.34.148.44
@@ -306,19 +320,21 @@ proxies:
       short-id: ef567890
     network: grpc
     grpc-opts:
-  - name: 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
-    type: trojan
-    server: 185.220.100.168
+  - name: 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 185.31.242.61
     port: 443
-    password: humanity
+    uuid: ee18d188-14cc-417e-beb1-70e4add6d023
     udp: true
-    sni: www.calmlunch.com
-    network: ws
-    ws-opts:
-      path: '/assignment'
-      headers:
-        Host: www.calmlunch.com
-  - name: 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
+    tls: true
+    servername: est.nztvpn.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 7mRrVzTchVLWWBru5fCgTvtdkL7lVJ_qRj9HW8Rd8X0
+      short-id: 0da7e14db353e7d0
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
     type: trojan
     server: trojan.about.lso
     port: 443
@@ -350,9 +366,10 @@ proxy-groups:
       - 'The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.intel.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.samsung.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -360,8 +377,8 @@ proxy-groups:
       - 'unknown | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Germany | api-maps.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
-      - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
+      - 'Estonia | est.nztvpn.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
 rules:
   - MATCH,PROXY
