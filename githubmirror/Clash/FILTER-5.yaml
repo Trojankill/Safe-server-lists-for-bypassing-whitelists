@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-15 10:30:52 UTC
+# 2026-10-15 10:45:32 UTC
 proxies:
-  - name: 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 82.202.178.132
-    port: 443
-    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
-    udp: true
-    tls: true
-    servername: mobile-api-12.sova.toys
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: 1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw
-      short-id: 70c20a2f5a7d542e
-    network: grpc
-    grpc-opts:
   - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 79.174.92.222
@@ -112,6 +98,48 @@ proxies:
       short-id: 09353d6dc5b789
     flow: xtls-rprx-vision
     network: raw
+  - name: 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 150.241.101.17
+    port: 8443
+    uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+    udp: true
+    tls: true
+    servername: yandex.net
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 6ba85179e30d4fc2
+    flow: xtls-rprx-vision
+    network: raw
+  - name: 'Estonia | yandex.net | TCP | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 150.241.101.80
+    port: 8443
+    uuid: 47d9b534-8a0a-4bd2-90f1-1d6ade14427e
+    udp: true
+    tls: true
+    servername: yandex.net
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+      short-id: 6ba85179e30d4fc2
+    flow: xtls-rprx-vision
+    network: tcp
+  - name: 'The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.199.205.28
+    port: 443
+    uuid: 501a2da5-cb22-4a3f-915e-e3b821d1d62d
+    udp: true
+    tls: true
+    servername: vkvd754.okcdn.ru
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw
+      short-id: ef1d3554c652a436
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'The Netherlands | www.intel.com | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 185.236.228.183
@@ -163,20 +191,6 @@ proxies:
     reality-opts:
       public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
       short-id: e0215064d8d1fd7c
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 201.34.148.44
-    port: 443
-    uuid: 93996a55-febe-4183-9366-df6cb11a34dd
-    udp: true
-    tls: true
-    servername: sun9-38.userapi.com
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: r6lN34m1nN-xQZ458j5NPD5xJ3_QBF2bGzY4KJEo4ic
-      short-id: abbcd128
     flow: xtls-rprx-vision
     network: tcp
   - name: 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -311,7 +325,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -319,11 +332,13 @@ proxy-groups:
       - 'Singapore | si1.lazeroe.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Sweden | tcpswed1.figurapn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Estonia | yandex.net | TCP | [#LSO - #LinSpisokObhod]'
+      - 'The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.intel.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.samsung.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
