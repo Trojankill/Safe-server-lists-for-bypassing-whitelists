@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-15 18:45:31 UTC
+# 2026-10-15 19:01:02 UTC
 proxies:
+  - name: 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 82.202.178.132
+    port: 443
+    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
+    udp: true
+    tls: true
+    servername: mobile-api-12.sova.toys
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw
+      short-id: 70c20a2f5a7d542e
+    network: grpc
+    grpc-opts:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 193.163.203.170
@@ -13,20 +27,6 @@ proxies:
     reality-opts:
       public-key: GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o
       short-id: b28db60d77c50b4f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: 'United States | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 193.233.130.119
-    port: 10444
-    uuid: 16f78e38-8df9-4658-93e8-e49feababf5b
-    udp: true
-    tls: true
-    servername: video.yandex.ru
-    client-fingerprint: safari
-    reality-opts:
-      public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-      short-id: 8debcf36f1cc69ff
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -125,20 +125,7 @@ proxies:
       public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 45.12.75.242
-    port: 26424
-    uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
-    udp: true
-    tls: true
-    servername: ya.ru
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
-      short-id: 23103e1e
-    network: raw
-  - name: 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
+  - name: 'Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 78.17.178.125
     port: 443
@@ -146,50 +133,24 @@ proxies:
     udp: true
     tls: true
     servername: cdn.tbank.ru
-    client-fingerprint: chrome
+    client-fingerprint: qq
     reality-opts:
       public-key: jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE
       short-id: e0215064d8d1fd7c
     flow: xtls-rprx-vision
-    network: tcp
-  - name: 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    network: raw
+  - name: 'Singapore | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
-    server: 185.221.199.126
-    port: 2443
-    uuid: 92e135b9-4c04-4e7e-8b28-d8074a202cf8
+    server: 147.93.173.45
+    port: 10444
+    uuid: 75c5f51b-d548-4eab-a26e-aa10fc3dbc7b
     udp: true
     tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: firefox
+    servername: video.yandex.ru
+    client-fingerprint: safari
     reality-opts:
-      public-key: QnKEZ1Y6NPOi-XcRC-uA8bzhfffQbswLIuGpxkBHSVs
-    network: grpc
-    grpc-opts:
-  - name: 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 193.233.222.86
-    port: 2443
-    uuid: 92e135b9-4c04-4e7e-8b28-d8074a202cf8
-    udp: true
-    tls: true
-    servername: 5post-gate.x5.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: QnKEZ1Y6NPOi-XcRC-uA8bzhfffQbswLIuGpxkBHSVs
-    network: grpc
-    grpc-opts:
-  - name: 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 83.166.238.57
-    port: 443
-    uuid: a16a3e32-8d63-4dec-8c67-1361388a64ca
-    udp: true
-    tls: true
-    servername: eh3.vk.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: QXw5YbUfPssdgGZIfAol5PonYGWSjlWsWpoij93VU20
-      short-id: b276e04195d77f6b
+      public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+      short-id: 8debcf36f1cc69ff
     flow: xtls-rprx-vision
     network: tcp
   - name: 'Poland | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
@@ -240,8 +201,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'United States | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]'
@@ -249,11 +210,8 @@ proxy-groups:
       - 'Estonia | yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.intel.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.samsung.com | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Singapore | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
