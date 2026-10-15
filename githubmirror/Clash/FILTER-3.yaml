@@ -1,7 +1,35 @@
 # clash/mihomo subscription
-# 2026-10-15 08:00:57 UTC
+# 2026-10-15 08:15:31 UTC
 proxies:
-  - name: '🇷🇺 Beget — #69'
+  - name: '🇩🇪 Germany — #108'
+    type: vless
+    server: 82.202.178.132
+    port: 443
+    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
+    udp: true
+    tls: true
+    servername: mobile-api-12.sova.toys
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: 1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw
+      short-id: 70c20a2f5a7d542e
+    network: grpc
+    grpc-opts:
+  - name: '🇫🇷 France — #125'
+    type: vless
+    server: 79.174.92.222
+    port: 443
+    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
+    udp: true
+    tls: true
+    servername: m.vk.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
+      short-id: a1b2c3d4
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Beget — #73'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -14,7 +42,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇺🇸 United States — #145'
+  - name: '🇺🇸 United States — #139'
     type: vless
     server: 37.18.14.145
     port: 7445
@@ -22,31 +50,44 @@ proxies:
     udp: true
     tls: true
     servername: passport.yandex.ru
-    client-fingerprint: random
+    client-fingerprint: edge
     reality-opts:
       public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
       short-id: 283f4b51fbe39ad9
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #119'
+  - name: '🇺🇸 United States — #138'
     type: vless
-    server: 31.177.111.243
-    port: 443
-    uuid: 9110e2bd-dd26-4dc2-a675-551ea9a2a84a
+    server: 78.24.216.134
+    port: 2096
+    uuid: 768712b8-81dc-440f-9b38-4523bf767df4
     udp: true
     tls: true
-    servername: smart.heartbeatai.link
+    servername: id.vk.com
     client-fingerprint: firefox
     reality-opts:
-      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
-      short-id: dfdee30a27b11f0f
+      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
+    network: grpc
+    grpc-opts:
+  - name: '🇫🇷 France — #127'
+    type: vless
+    server: 82.202.179.107
+    port: 12443
+    uuid: 8822fe1c-7a83-49c0-af96-c2027cb6ddd5
+    udp: true
+    tls: true
+    servername: smartcaptcha.yandexcloud.net
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 6RMior0_TlChA0R_T8yXvjrrpb_nUiS50uRJrLqFeWM
+      short-id: 780f5e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇳🇴 Norway — #138'
+  - name: '🇳🇴 Norway — #129'
     type: vless
     server: 87.242.95.164
     port: 9443
-    uuid: 9110e2bd-dd26-4dc2-a675-551ea9a2a84a
+    uuid: 8cdebe13-7073-410f-943c-351ba416e762
     udp: true
     tls: true
     servername: passport.yandex.ru
@@ -56,7 +97,7 @@ proxies:
       short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇩🇪 Germany — #100'
+  - name: '🇩🇪 Germany — #107'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -69,7 +110,7 @@ proxies:
       public-key: W6Y-zf2KrmIKVAEYuxpzQhxMyQliUnEo9LAZYEPAlEI
       short-id: d14d6fc0
     network: xhttp
-  - name: '🇸🇪 Sweden — #142'
+  - name: '🇸🇪 Sweden — #134'
     type: vless
     server: 188.225.77.254
     port: 443
@@ -83,7 +124,7 @@ proxies:
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇸🇪 Sweden — #144'
+  - name: '🇸🇪 Sweden — #136'
     type: vless
     server: 188.225.77.254
     port: 8443
@@ -97,7 +138,7 @@ proxies:
       short-id: 4951a2313524dd8f
     network: grpc
     grpc-opts:
-  - name: '🇵🇱 Poland — #139'
+  - name: '🇵🇱 Poland — #130'
     type: vless
     server: 37.18.14.145
     port: 4510
@@ -115,13 +156,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇷🇺 Beget — #69'
-      - '🇺🇸 United States — #145'
-      - '🇩🇪 Germany — #119'
-      - '🇳🇴 Norway — #138'
-      - '🇩🇪 Germany — #100'
-      - '🇸🇪 Sweden — #142'
-      - '🇸🇪 Sweden — #144'
-      - '🇵🇱 Poland — #139'
+      - '🇩🇪 Germany — #108'
+      - '🇫🇷 France — #125'
+      - '🇷🇺 Beget — #73'
+      - '🇺🇸 United States — #139'
+      - '🇺🇸 United States — #138'
+      - '🇫🇷 France — #127'
+      - '🇳🇴 Norway — #129'
+      - '🇩🇪 Germany — #107'
+      - '🇸🇪 Sweden — #134'
+      - '🇸🇪 Sweden — #136'
+      - '🇵🇱 Poland — #130'
 rules:
   - MATCH,PROXY
