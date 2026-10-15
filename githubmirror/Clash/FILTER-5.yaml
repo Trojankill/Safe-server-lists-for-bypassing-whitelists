@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-15 06:45:28 UTC
+# 2026-10-15 07:00:59 UTC
 proxies:
   - name: 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -139,6 +139,19 @@ proxies:
       public-key: xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY
     flow: xtls-rprx-vision
     network: tcp
+  - name: 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 94.228.118.16
+    port: 13443
+    uuid: 617cb81e-b5be-4c0e-852a-f80be1df4a8e
+    udp: true
+    tls: true
+    servername: 5post-gate.x5.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: YvhcuqXRqPigT7_rp9vsV5LAdxXHN8eWB_17SchS_S8
+    network: grpc
+    grpc-opts:
   - name: 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 45.12.75.242
@@ -152,6 +165,20 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
+  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 90ef5de6-0b7d-48f3-9398-b303641b32b0
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
   - name: 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 201.34.148.44
@@ -236,20 +263,6 @@ proxies:
       short-id: ef567890
     network: grpc
     grpc-opts:
-  - name: 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: c82b7655-c6af-4cb7-9252-688fa34c8a6d
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
   - name: 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: qcloudge1.exitvpn.shop
@@ -306,14 +319,15 @@ proxy-groups:
       - 'The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.intel.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.samsung.com | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
+      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'unknown | sun9-38.userapi.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | eh3.vk.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | www.datadoghq.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Germany | api-maps.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]'
