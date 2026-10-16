@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-16 11:15:33 UTC
+# 2026-10-16 11:30:45 UTC
 proxies:
+  - name: 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
+    type: vless
+    server: 13.143.176.183
+    port: 443
+    uuid: 128e1713-9b29-481e-98cc-17dafa31a9cd
+    udp: true
+    tls: true
+    servername: mesh-9012.grani-gaming.shop
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: obJQ3j_BPNvA4MWmXKTfMDuKevECIQ5Gpo2PEfgANSU
+      short-id: 91b7c3a4e6d2f058
+    flow: xtls-rprx-vision
+    network: tcp
   - name: 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
     type: vless
     server: nl02-gos.everycom.store
@@ -353,19 +367,6 @@ proxies:
     reality-opts:
       public-key: QrNs0ew7snHqLfpVXS9RAhlRzgAzzGZK9fXmDcx9xHI
     network: xhttp
-  - name: 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
-    type: vless
-    server: 147.45.222.137
-    port: 443
-    uuid: f9cb2991-ad4a-4a54-aeb3-55d56ac02a8e
-    udp: true
-    tls: true
-    servername: ger01.deflink.net
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: dZl5iJJCMOXR6cJY4M_PbyV2bFp15dhAkz95NCGLsCc
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
     type: vmess
     server: 8.217.254.88
@@ -400,6 +401,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇫🇮'
@@ -426,7 +428,6 @@ proxy-groups:
       - 'Бесплатный VPN tg:VLESSFORU 🇵🇱'
       - 'Бесплатный VPN tg:VLESSFORU 🇺🇸'
       - 'Бесплатный VPN tg:VLESSFORU 🇳🇱'
-      - 'Бесплатный VPN tg:VLESSFORU 🇩🇪'
       - 'Бесплатный VPN tg:VLESSFORU 🇭🇰'
       - 'Бесплатный VPN tg:VLESSFORU 🇨🇦'
 rules:
