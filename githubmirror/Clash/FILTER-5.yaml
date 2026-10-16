@@ -1,34 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-16 05:30:43 UTC
+# 2026-10-16 05:45:30 UTC
 proxies:
-  - name: 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 82.202.178.132
-    port: 443
-    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
-    udp: true
-    tls: true
-    servername: mobile-api-12.sova.toys
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw
-      short-id: 70c20a2f5a7d542e
-    network: grpc
-    grpc-opts:
-  - name: 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 79.174.92.222
-    port: 443
-    uuid: 03ca8c3f-e777-45b5-a1b1-592094ca99ee
-    udp: true
-    tls: true
-    servername: m.vk.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: _PYBo3dyZRpGC44vADqcmlBCSeAVh1X8l3mulghVsTI
-      short-id: a1b2c3d4
-    network: grpc
-    grpc-opts:
   - name: 'Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 81.163.22.35
@@ -281,8 +253,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
-      - 'Russia | m.vk.com | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
