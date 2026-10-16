@@ -1,21 +1,47 @@
 # clash/mihomo subscription
-# 2026-10-16 09:00:58 UTC
+# 2026-10-16 09:15:30 UTC
 proxies:
-  - name: '🇩🇪 Germany — #151'
+  - name: '🇳🇱 The Netherlands — #153'
     type: vless
-    server: 82.202.178.132
+    server: 84.201.146.8
     port: 443
-    uuid: 03218c7c-acd1-45c0-87a1-9cc77101c6b4
+    uuid: 1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200
     udp: true
     tls: true
-    servername: mobile-api-12.sova.toys
-    client-fingerprint: chrome
+    servername: max.ru
+    client-fingerprint: edge
     reality-opts:
-      public-key: 1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw
-      short-id: 70c20a2f5a7d542e
+      public-key: biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo
+    network: xhttp
+  - name: '🇩🇪 Germany — #146'
+    type: vless
+    server: 31.177.111.243
+    port: 443
+    uuid: 2f8114a7-5c4c-4fe4-84ef-415d62f009bd
+    udp: true
+    tls: true
+    servername: smart.heartbeatai.link
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
+      short-id: dfdee30a27b11f0f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇴 Norway — #156'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 2f8114a7-5c4c-4fe4-84ef-415d62f009bd
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
     network: grpc
     grpc-opts:
-  - name: '🇷🇺 Selectel — #127'
+  - name: '🇷🇺 Selectel — #119'
     type: vless
     server: 37.143.15.206
     port: 443
@@ -29,7 +55,7 @@ proxies:
       short-id: 111111
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #103'
+  - name: '🇷🇺 Beget — #102'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -37,40 +63,24 @@ proxies:
     udp: true
     tls: true
     servername: ya.ru
-    client-fingerprint: firefox
+    client-fingerprint: chrome
     reality-opts:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇩🇪 Germany — #165'
+  - name: '🇮🇹 Italy — #152'
     type: vless
-    server: 31.177.111.243
-    port: 443
-    uuid: 7c5cc590-991e-4edb-a252-90bc79b5ccf8
+    server: 46.243.232.174
+    port: 8465
+    uuid: 661b4f83-f297-4a72-9663-ac71a7547644
     udp: true
     tls: true
-    servername: smart.heartbeatai.link
-    client-fingerprint: firefox
+    servername: it-vpn.nimarko.org
+    client-fingerprint: random
     reality-opts:
-      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
-      short-id: dfdee30a27b11f0f
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇴 Norway — #171'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 7c5cc590-991e-4edb-a252-90bc79b5ccf8
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇷 France — #168'
+      public-key: 8-i1IWISmS4ZMxopNJiRNZN_rsPiptQl_M3dJno2U1Q
+    network: xhttp
+  - name: '🇫🇷 France — #149'
     type: vless
     server: 82.202.179.107
     port: 12443
@@ -84,7 +94,7 @@ proxies:
       short-id: 780f5e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #149'
+  - name: '🇩🇪 Germany — #132'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -101,12 +111,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Germany — #151'
-      - '🇷🇺 Selectel — #127'
-      - '🇷🇺 Beget — #103'
-      - '🇩🇪 Germany — #165'
-      - '🇳🇴 Norway — #171'
-      - '🇫🇷 France — #168'
-      - '🇩🇪 Germany — #149'
+      - '🇳🇱 The Netherlands — #153'
+      - '🇩🇪 Germany — #146'
+      - '🇳🇴 Norway — #156'
+      - '🇷🇺 Selectel — #119'
+      - '🇷🇺 Beget — #102'
+      - '🇮🇹 Italy — #152'
+      - '🇫🇷 France — #149'
+      - '🇩🇪 Germany — #132'
 rules:
   - MATCH,PROXY
