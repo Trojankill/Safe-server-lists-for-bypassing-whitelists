@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v6.0 (Karing + Clash/Mihomo + sing-box Edition)
+Фильтр прокси-конфигураций v7.0 (Maximum Security Edition)
 Защита: Karing (sing-box) + V2RayNG/v2rayTun (Xray-core) + Clash (Mihomo) + sing-box-extended
-v6.0: Интеграция чекера sing-box-extended, IPv6 host extraction, SSR obfs/protocol param validation,
-Clash name sanitization + host:port dedup, timeout 30s, explicit SS 2022 rem=1 rejection
 
-Объединяет:
-- Строгие проверки безопасности из filter.py v5.3
-- Чекер совместимости с sing-box-extended из Cleaner.py
-- Проверку SNI для TLS-конфигов
-- Проверку методов шифрования SS
+v7.0 изменения:
+- Исправлена инверсия skip-cert-verify
+- Добавлены значения yes/on/enabled для insecure параметров
+- Поддержка ss:// формы 3 (весь конфиг в одном base64 токене)
+- Поддержка urlsafe base64 для SSR пейлоадов
+- Псевдонимы aead_* шифров (реально грузятся Xray)
+- Расширенный список слабых шифров (CTR, camellia, idea, rc2, seed, cfb1)
+- Единый декодер base64 (standard + urlsafe алфавиты)
+- Единое извлечение SS/SSR кредов (все 3 формы ss:// + ssr://)
 """
 import re
 import os
@@ -18,6 +20,7 @@ import sys
 import json
 import time
 import base64
+import binascii
 import threading
 import subprocess
 import urllib.request
@@ -67,14 +70,8 @@ SUPPORTED_PROTOCOLS = [
     "ss://", "ssr://", "tuic://",
 ]
 
-# Из Cleaner.py: чекер sing-box-extended
+# --- Совместимость с sing-box-extended ---
 SING_BOX_SUPPORTED_TRANSPORTS = {'tcp', 'ws', 'grpc', 'http', 'raw', 'xhttp'}
-SING_BOX_SUPPORTED_SECURITY = {'tls', 'reality', 'none'}
-SING_BOX_SUPPORTED_SS_METHODS = {
-    'aes-128-gcm', 'aes-256-gcm', 'chacha20-poly1305', 'chacha20-ietf-poly1305',
-    'xchacha20-poly1305', 'xchacha20-ietf-poly1305',
-    '2022-blake3-aes-128-gcm', '2022-blake3-aes-256-gcm', '2022-blake3-chacha20-poly1305'
-}
 
 SOURCES_CONFIG = [
     {"name": "FILTER-1", "url": "https://hub.mos.ru/rkp/sub-roskompozor/raw/main/wl"},
@@ -104,7 +101,54 @@ BANNED_DOMAINS = [
     'gpt-plus.vepene.site',
 ]
 
+# =====================================================================
+#  ТАКСОНОМИЯ ШИФРОВ SHADOWSOCKS (полная, из анализа Xray)
+# =====================================================================
+
+# Слабые шифры — никогда не должны попадать в secure tier
+SS_WEAK_CIPHERS = {
+    'rc4', 'rc4-md5', 'rc4-md5-6', 'des', 'des-cfb', 'bf-cfb', 'cast5-cfb',
+    'salsa20', 'xsalsa20', 'chacha20', 'xchacha20',
+    'aes-128-cfb', 'aes-192-cfb', 'aes-256-cfb',
+    'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8',
+    'aes-128-cfb1', 'aes-192-cfb1', 'aes-256-cfb1',
+    'aes-128-cfb-fast', 'aes-192-cfb-fast', 'aes-256-cfb-fast',
+    'aes-128-cfb-simple', 'aes-192-cfb-simple', 'aes-256-cfb-simple',
+    'aes-128-ctr', 'aes-192-ctr', 'aes-256-ctr',
+    'camellia-128-cfb', 'camellia-192-cfb', 'camellia-256-cfb',
+    'idea-cfb', 'rc2-cfb', 'seed-cfb',
+}
+
+# Шифры без шифрования — самая явная угроза
+SS_PLAINTEXT_CIPHERS = {'none', 'plain', ''}
+
+# Псевдонимы, которые реально грузит loader Xray (infra/conf/shadowsocks.go)
+SS_XRAY_ALIASES = {
+    'aead_aes_128_gcm', 'aead_aes_256_gcm',
+    'aead_chacha20_poly1305', 'aead_xchacha20_poly1305',
+}
+
+# Длина ключей для Shadowsocks 2022 (в байтах после base64 decode)
+_SS_2022_KEY_LENGTHS = {
+    '2022-blake3-aes-128-gcm': 16,
+    '2022-blake3-aes-256-gcm': 32,
+    '2022-blake3-chacha20-poly1305': 32,
+}
+
+# Полный безопасный список: всё, что грузит Xray и шифрует
 SAFE_SS_METHODS = {
+    'aes-128-gcm', 'aes-256-gcm',
+    'chacha20-poly1305', 'chacha20-ietf-poly1305',
+    'xchacha20-poly1305', 'xchacha20-ietf-poly1305',
+    *_SS_2022_KEY_LENGTHS,
+    *SS_XRAY_ALIASES,
+}
+
+# Для проверки "слабый или нет": объединённый список
+WEAK_SS_METHODS = SS_WEAK_CIPHERS | SS_PLAINTEXT_CIPHERS
+
+# Для проверки совместимости с sing-box-extended (без псевдонимов — они Xray-only)
+SING_BOX_SUPPORTED_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
     'chacha20-poly1305', 'chacha20-ietf-poly1305',
     'xchacha20-poly1305', 'xchacha20-ietf-poly1305',
@@ -112,32 +156,25 @@ SAFE_SS_METHODS = {
     '2022-blake3-chacha20-poly1305',
 }
 
-WEAK_SS_METHODS = {
-    'rc4', 'rc4-md5', 'rc4-md5-6', 'des', 'des-cfb', 'bf-cfb', 'cast5-cfb',
-    'salsa20', 'xsalsa20', 'chacha20', 'xchacha20', 'aes-128-cfb', 'aes-192-cfb',
-    'aes-256-cfb', 'aes-128-cfb8', 'aes-192-cfb8', 'aes-256-cfb8', 'none', '',
-}
-
-_SS_2022_KEY_LENGTHS = {
-    '2022-blake3-aes-128-gcm': 16,
-    '2022-blake3-aes-256-gcm': 32,
-    '2022-blake3-chacha20-poly1305': 32,
-}
-
 SAFE_FINGERPRINTS = {
     'chrome', 'firefox', 'safari', 'ios', 'android',
     'edge', '360', 'qq', 'random', 'randomized',
 }
 
+# --- Исправленные unsafe-паттерны ---
+# Было: skip-cert-verify=0 и =false (безопасные значения) — инверсия.
+# Стало: только 1/true/yes/on/enabled (небезопасные).
 UNSAFE_PATTERNS = [
-    r'[&?]allowinsecure=1', r'[&?]allowinsecure=true',
-    r'[&?]allow_insecure=1', r'[&?]allow_insecure=true',
-    r'[&?]disable_sni=1', r'[&?]disable_sni=true',
-    r'[&?]insecure=1', r'[&?]insecure=true',
-    r'[&?]security=none', r'[&?]verify=0', r'[&?]verify=false',
-    r'[&?]skip-cert-verify=0', r'[&?]skip-cert-verify=false',
-    r'[&?]allowinsecurecipher=1', r'[&?]allowinsecurecipher=true',
-    r'[&?]tls13=0', r'[&?]tls13=false',
+    r'[&?]allowinsecure=(?:1|true|yes|on)',
+    r'[&?]allow_insecure=(?:1|true|yes|on)',
+    r'[&?]insecure=(?:1|true|yes|on)',
+    r'[&?]verify=(?:0|false|no|off)',
+    r'[&?]skip-cert-verify=(?:1|true|yes|on|enabled)',
+    r'[&?]security=none',
+    r'[&?]encryption=none',
+    r'[&?]allowinsecurecipher=(?:1|true|yes|on)',
+    r'[&?]tls13=(?:0|false)',
+    r'[&?]disable_sni=(?:1|true)',
 ]
 UNSAFE_REGEX = re.compile('|'.join(UNSAFE_PATTERNS), re.IGNORECASE)
 
@@ -157,6 +194,106 @@ _IPv6_BRACKET = re.compile(r'@\[([0-9a-fA-F:]+)\](?::(\d+))?')
 #  ПОТОКОБЕЗОПАСНОСТЬ
 # =====================================================================
 _health_lock = threading.Lock()
+
+# =====================================================================
+#  БАЗОВЫЙ ДЕКОДЕР BASE64 (standard + urlsafe)
+# =====================================================================
+def _b64_decode_flexible(token: str) -> Optional[str]:
+    """Декодирует base64 в обоих алфавитах: standard и urlsafe.
+    SSR-пейлоады используют urlsafe ('-' и '_'); b64decode стандартным
+    алфавитом молча выкидывает эти символы и сдвигает окно декода."""
+    token = token.strip().replace('\n', '').replace('\r', '')
+    rem = len(token) % 4
+    if rem == 1:
+        return None  # base64 не может иметь остаток 1
+    if rem:
+        token += '=' * (4 - rem)
+    try:
+        # Пробуем standard сначала
+        return base64.b64decode(token).decode('utf-8', errors='ignore')
+    except Exception:
+        pass
+    try:
+        # Если не standard — пробуем urlsafe (транслитим -_ в +/)
+        translated = token.translate(str.maketrans('-_', '+/'))
+        return base64.b64decode(translated).decode('utf-8', errors='ignore')
+    except Exception:
+        return None
+
+# =====================================================================
+#  ЕДИНОЕ ИЗВЛЕЧЕНИЕ SS/SSR КРЕДОВ (все 3 формы ss:// + ssr://)
+# =====================================================================
+def extract_ss_credentials(config_line: str) -> Optional[Tuple[str, str]]:
+    """Извлекает method и password из ss:// (все 3 формы) и ssr:// URL.
+
+    Форма 1: ss://method:password@host:port (plaintext creds)
+    Форма 2: ss://b64(method:password)@host:port (base64 creds)
+    Форма 3: ss://b64(method:password@host:port) (всё в одном токене)
+    SSR:     ssr://urlsafe_b64(host:port:protocol:method:obfs:password)
+    """
+    lower = config_line.lower()
+    try:
+        if lower.startswith('ss://'):
+            body = config_line[5:].split('#')[0].split('?')[0]
+
+            # Форма 1: plaintext creds перед @
+            if ':' in body and '@' in body and body.index(':') < body.index('@'):
+                method, _, rest = body.partition(':')
+                return method.strip().lower(), rest.split('@')[0]
+
+            # Форма 2: base64 creds перед @
+            if '@' in body:
+                decoded = _b64_decode_flexible(body.split('@')[0])
+                if decoded is None or ':' not in decoded:
+                    return None
+                method, _, password = decoded.partition(':')
+                return method.strip().lower(), password
+
+            # Форма 3: весь конфиг в одном base64 токене (нет @ в URL)
+            decoded = _b64_decode_flexible(body)
+            if decoded is None or '@' not in decoded:
+                return None
+            credentials, _, _address = decoded.rpartition('@')
+            if ':' not in credentials:
+                return None
+            method, _, password = credentials.partition(':')
+            return method.strip().lower(), password
+
+        if lower.startswith('ssr://'):
+            # SSR payload — urlsafe base64
+            decoded = _b64_decode_flexible(config_line[6:].split('#')[0])
+            if decoded is None:
+                return None
+            parts = decoded.split(':')
+            if len(parts) < 6:
+                return None
+            # host:port:protocol:method:obfs:password
+            return parts[3].strip().lower(), parts[5].split('/')[0]
+    except (ValueError, IndexError, UnicodeDecodeError, binascii.Error):
+        return None
+    return None
+
+# =====================================================================
+#  ПРОВЕРКА SS 2022 КЛЮЧЕЙ
+# =====================================================================
+def _check_ss_2022_key(method: str, password: str) -> bool:
+    """True = отклонить. Проверяет длину ключа после base64 decode.
+    SS 2022 ciphers требуют base64-encoded ключ точной длины."""
+    method_lower = method.lower().strip()
+    expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
+    if expected_len is None:
+        return False
+    if ':' in password:
+        return False  # multi-key формат — легитимная фича Xray, не баг
+    rem = len(password) % 4
+    if rem == 1:
+        return True  # base64 не может иметь остаток 1
+    padded = password + '=' * (4 - rem) if rem else password
+    try:
+        decoded = base64.b64decode(padded)
+        return len(decoded) != expected_len
+    except Exception:
+        return True
 
 # =====================================================================
 #  ДОМЕН-МАТЧИНГ
@@ -187,27 +324,6 @@ def _extract_host_port_from_uri(url: str) -> Tuple[Optional[str], Optional[int]]
     return host, port
 
 # =====================================================================
-#  SS 2022 KEY VALIDATION
-# =====================================================================
-def _check_ss_2022_key(method: str, password: str) -> bool:
-    """True = reject. Проверяет длину ключа после base64 decode."""
-    method_lower = method.lower().strip()
-    expected_len = _SS_2022_KEY_LENGTHS.get(method_lower)
-    if expected_len is None:
-        return False
-    if ':' in password:
-        return False
-    rem = len(password) % 4
-    if rem == 1:
-        return True
-    padded = password + '=' * (4 - rem) if rem else password
-    try:
-        decoded = base64.b64decode(padded, validate=True)
-        return len(decoded) != expected_len
-    except Exception:
-        return True
-
-# =====================================================================
 #  БАЗОВЫЕ ПРОВЕРКИ
 # =====================================================================
 def is_supported_protocol(line: str) -> bool:
@@ -224,9 +340,6 @@ def is_dangerous_domain_param(url: str) -> bool:
             value = match.group(1).lower().strip('.')
             if _is_host_banned(value):
                 return True
-            for domain in BANNED_DOMAINS:
-                if _domain_matches(value, domain):
-                    return True
     return False
 
 def is_banned_host_universal(url: str) -> bool:
@@ -259,22 +372,6 @@ def is_banned_host_universal(url: str) -> bool:
     if _is_host_banned(host):
         return True
     if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost|fe80::|fc00::|fd)', host):
-        return True
-    return False
-
-def is_ssr_host_banned(url: str) -> bool:
-    if not url.startswith('ssr://'):
-        return False
-    try:
-        payload = url[6:].split('#')[0]
-        rem = len(payload) % 4
-        if rem:
-            payload += '=' * (4 - rem)
-        decoded = base64.b64decode(payload).decode('utf-8')
-        host = decoded.split(':')[0].lower().strip('.')
-        if _is_host_banned(host):
-            return True
-    except Exception:
         return True
     return False
 
@@ -437,18 +534,15 @@ def has_invalid_reality_sid(url: str) -> bool:
     return False
 
 # =====================================================================
-#  SSR ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА — obfs_param / protocol_param
+#  SSR ДОПОЛНИТЕЛЬНАЯ ПРОВЕРКА
 # =====================================================================
 def has_ssr_dangerous_params(url: str) -> bool:
-    """Проверяет obfs_param и protocol_param в SSR на запрещённые домены."""
     if not url.startswith('ssr://'):
         return False
     try:
-        payload = url[6:].split('#')[0]
-        rem = len(payload) % 4
-        if rem:
-            payload += '=' * (4 - rem)
-        decoded = base64.b64decode(payload).decode('utf-8')
+        decoded = _b64_decode_flexible(url[6:].split('#')[0])
+        if not decoded:
+            return True
         if '/?' in decoded:
             extra = decoded.split('/?', 1)[1]
             for kv in extra.split('&'):
@@ -465,51 +559,25 @@ def has_ssr_dangerous_params(url: str) -> bool:
     return False
 
 # =====================================================================
-#  НОВЫЕ ПРОВЕРКИ ИЗ CLEANER.PY (sing-box-extended)
+#  СОВМЕСТИМОСТЬ С SING-BOX-EXTENDED
 # =====================================================================
 def is_sing_box_transport_compatible(url: str) -> bool:
-    """Проверяет, поддерживает ли sing-box-extended транспортный протокол."""
-    if url.startswith('vless://'):
-        type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
-        transport = type_match.group(1).lower() if type_match else 'tcp'
-        return transport in SING_BOX_SUPPORTED_TRANSPORTS
-    elif url.startswith('vmess://'):
+    if url.startswith(('vless://', 'vmess://')):
         type_match = re.search(r'[?&]type=([^&]+)', url, re.I)
         transport = type_match.group(1).lower() if type_match else 'tcp'
         return transport in SING_BOX_SUPPORTED_TRANSPORTS
     return True
 
 def is_sing_box_ss_compatible(url: str) -> bool:
-    """Проверяет, поддерживает ли sing-box-extended метод шифрования SS."""
     if url.startswith('ss://'):
-        try:
-            after_proto = url.replace('ss://', '', 1)
-            if '#' in after_proto:
-                after_proto = after_proto.split('#')[0]
-            if '?' in after_proto:
-                after_proto = after_proto.split('?')[0]
-            if '@' not in after_proto:
-                return False
-            userinfo = after_proto.split('@')[0]
-            if ':' not in userinfo:
-                try:
-                    missing = len(userinfo) % 4
-                    if missing:
-                        userinfo += '=' * (4 - missing)
-                    userinfo = base64.b64decode(userinfo).decode('utf-8', errors='ignore')
-                except Exception:
-                    return False
-            if ':' not in userinfo:
-                return False
-            method, _ = userinfo.split(':', 1)
-            method = method.lower().strip()
-            return method in SING_BOX_SUPPORTED_SS_METHODS
-        except Exception:
+        creds = extract_ss_credentials(url)
+        if creds is None:
             return False
+        method, _ = creds
+        return method in SING_BOX_SUPPORTED_SS_METHODS
     return True
 
 def has_valid_sni_for_tls(url: str) -> bool:
-    """Для TLS-конфигов проверяет наличие SNI (требование sing-box-extended)."""
     security_match = re.search(r'[?&]security=([^&]+)', url, re.I)
     if security_match and security_match.group(1).lower() in ('tls', 'reality'):
         sni_match = re.search(r'[?&]sni=[^&]+', url, re.I)
@@ -592,12 +660,12 @@ def is_safe_vmess_base(url: str) -> bool:
         if security in ('tls', 'reality') and not re.search(r'[?&]sni=[^&]+', url, re.I):
             return False
         return True
+    # base64 JSON форма
     b64 = url.replace('vmess://', '').split('#')[0].split('?')[0]
+    decoded = _b64_decode_flexible(b64)
+    if decoded is None:
+        return False
     try:
-        missing = len(b64) % 4
-        if missing:
-            b64 += '=' * (4 - missing)
-        decoded = base64.b64decode(b64).decode('utf-8')
         cfg = json.loads(decoded)
         try:
             aid_val = cfg.get('aid', cfg.get('alterId', 0))
@@ -607,14 +675,12 @@ def is_safe_vmess_base(url: str) -> bool:
             return False
         if not cfg.get('tls', False):
             return False
-        if cfg.get('allowInsecure', False):
+        if cfg.get('allowInsecure', False) or cfg.get('insecure', False):
             return False
-        if str(cfg.get('v', '2')) not in ('1', '2'):
-            return False
-        scy = cfg.get('scy', 'auto').lower()
+        scy = str(cfg.get('scy', 'auto')).lower()
         if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305'):
             return False
-        net = cfg.get('net', 'tcp').lower()
+        net = str(cfg.get('net', 'tcp')).lower()
         if net not in ('ws', 'grpc', 'http', 'tcp', 'raw'):
             return False
         if net in ('ws', 'http') and not cfg.get('host'):
@@ -627,13 +693,13 @@ def is_safe_vmess_base(url: str) -> bool:
         if re.match(r'^(127\.|10\.|192\.168\.|172\.(1[6-9]|2[0-9]|3[01])\.|0\.0\.0\.0|::1|localhost)', add):
             return False
         return True
-    except Exception:
+    except (json.JSONDecodeError, ValueError, TypeError):
         return False
 
 def is_safe_hysteria2_base(url: str) -> bool:
     if not url.startswith(('hysteria2://', 'hy2://')):
         return False
-    if re.search(r'[&?]insecure=1', url, re.I):
+    if re.search(r'[&?]insecure=(?:1|true|yes|on)', url, re.I):
         return False
     if not re.search(r'[?&]sni=[^&]+', url, re.I):
         return False
@@ -671,61 +737,32 @@ def is_safe_tuic_base(url: str) -> bool:
 def is_safe_ss_base(url: str) -> bool:
     if not url.startswith('ss://'):
         return False
-    try:
-        after_proto = url.replace('ss://', '', 1)
-        if '#' in after_proto:
-            after_proto = after_proto.split('#')[0]
-        if '?' in after_proto:
-            after_proto = after_proto.split('?')[0]
-        if '@' not in after_proto:
-            return False
-        userinfo = after_proto.split('@')[0]
-        if ':' not in userinfo:
-            try:
-                missing = len(userinfo) % 4
-                if missing:
-                    userinfo += '=' * (4 - missing)
-                userinfo = base64.b64decode(userinfo).decode('utf-8', errors='ignore')
-            except Exception:
-                return False
-        if ':' not in userinfo:
-            return False
-        method, password = userinfo.split(':', 1)
-        method = method.lower().strip()
-        password = password.strip()
-        if not password:
-            return False
-        if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
-            return False
-        if _check_ss_2022_key(method, password):
-            return False
-    except Exception:
+    creds = extract_ss_credentials(url)
+    if creds is None:
         return False
-    return True
+    method, password = creds
+    if method in SS_PLAINTEXT_CIPHERS:
+        return False
+    if method in SS_WEAK_CIPHERS:
+        return False
+    if method not in SAFE_SS_METHODS:
+        return False
+    return not _check_ss_2022_key(method, password)
 
 def is_safe_ssr_base(url: str) -> bool:
     if not url.startswith('ssr://'):
         return False
-    try:
-        payload = url[6:]
-        rem = len(payload) % 4
-        if rem:
-            payload += '=' * (4 - rem)
-        decoded = base64.b64decode(payload).decode('utf-8')
-        parts = decoded.split(':')
-        if len(parts) < 6:
-            return False
-        method = parts[3].lower()
-        if method in WEAK_SS_METHODS or method not in SAFE_SS_METHODS:
-            return False
-        password_part = parts[5].split('/')[0].strip()
-        if not password_part:
-            return False
-        if has_ssr_dangerous_params(url):
-            return False
-        return True
-    except Exception:
+    creds = extract_ss_credentials(url)
+    if creds is None:
         return False
+    method, _ = creds
+    if method in SS_PLAINTEXT_CIPHERS:
+        return False
+    if method in SS_WEAK_CIPHERS:
+        return False
+    if method not in SAFE_SS_METHODS:
+        return False
+    return not has_ssr_dangerous_params(url)
 
 @lru_cache(maxsize=65536)
 def is_safe_config_base(line: str) -> bool:
@@ -740,19 +777,13 @@ def is_safe_config_base(line: str) -> bool:
     if has_insecure_params(line): return False
     if is_dangerous_domain_param(line): return False
     if is_banned_host_universal(line): return False
-    if is_ssr_host_banned(line): return False
     if has_dangerous_transport_combination(line): return False
     if is_suspicious_encryption(line): return False
     if is_dangerous_uuid(line): return False
-    
-    # Новые проверки из Cleaner.py для sing-box-extended
-    if not is_sing_box_transport_compatible(line):
-        return False
-    if not is_sing_box_ss_compatible(line):
-        return False
-    if not has_valid_sni_for_tls(line):
-        return False
-    
+    if not is_sing_box_transport_compatible(line): return False
+    if not is_sing_box_ss_compatible(line): return False
+    if not has_valid_sni_for_tls(line): return False
+
     if line.startswith('vless://'): return is_safe_vless_base(line)
     if line.startswith('trojan://'): return is_safe_trojan_base(line)
     if line.startswith('vmess://'): return is_safe_vmess_base(line)
@@ -763,7 +794,7 @@ def is_safe_config_base(line: str) -> bool:
     return False
 
 # =====================================================================
-#  ПАРСИНГ
+#  ПАРСИНГ МНОГОСТРОЧНЫХ КОНФИГОВ
 # =====================================================================
 def parse_multiline_configs(lines: List[str]) -> List[str]:
     configs = []
@@ -782,8 +813,6 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
                     current += stripped[1:]
                 elif '&' in current and stripped.startswith('&'):
                     current += stripped[1:]
-                elif '?' in current and '&' not in stripped:
-                    current += '&' + stripped
                 else:
                     current += stripped
             elif current:
@@ -808,8 +837,6 @@ def is_clash_content(content: str) -> bool:
         if ls.startswith('proxies:'):
             return True
         if re.match(r'^-\s+name:', ls) and 'type:' in content:
-            return True
-        if re.match(r'^\{.*name.*type.*\}', ls):
             return True
     if 'proxy-groups:' in stripped and 'proxies:' in stripped:
         return True
@@ -951,19 +978,10 @@ def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[st
             if isinstance(wh, dict) and wh.get('Host'):
                 ws_host = str(wh['Host'])
         vmess_cfg = {
-            'v': '2',
-            'ps': name,
-            'add': host,
-            'port': str(port),
-            'id': uuid,
-            'aid': str(alterId),
-            'scy': cipher,
-            'net': net,
-            'type': 'none',
-            'host': ws_host or host,
-            'path': ws_path or '/',
-            'tls': 'tls' if tls else '',
-            'sni': str(p.get('servername', '')),
+            'v': '2', 'ps': name, 'add': host, 'port': str(port),
+            'id': uuid, 'aid': str(alterId), 'scy': cipher, 'net': net,
+            'type': 'none', 'host': ws_host or host, 'path': ws_path or '/',
+            'tls': 'tls' if tls else '', 'sni': str(p.get('servername', '')),
         }
         b64 = base64.b64encode(json.dumps(vmess_cfg).encode('utf-8')).decode('utf-8')
         return f"vmess://{b64}"
@@ -974,7 +992,6 @@ def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[st
 #  ДЕДУПЛИКАЦИЯ
 # =====================================================================
 def dedup_configs(configs: List[str]) -> List[str]:
-    """Дедупликация по host:port:protocol + UUID/password для vless/trojan."""
     seen = set()
     result = []
     for cfg in configs:
@@ -982,27 +999,15 @@ def dedup_configs(configs: List[str]) -> List[str]:
         if not host_port:
             result.append(cfg)
             continue
-        # Для vless добавляем UUID
         if cfg.startswith('vless://'):
             uuid = extract_uuid(cfg)
-            if uuid:
-                key = f"{host_port}:{uuid}"
-            else:
-                key = host_port
-        # Для trojan добавляем password
+            key = f"{host_port}:{uuid}" if uuid else host_port
         elif cfg.startswith('trojan://'):
             password = extract_trojan_password(cfg)
-            if password:
-                key = f"{host_port}:{password}"
-            else:
-                key = host_port
-        # Для tuic добавляем creds
+            key = f"{host_port}:{password}" if password else host_port
         elif cfg.startswith('tuic://'):
             creds = extract_tuic_creds(cfg)
-            if creds:
-                key = f"{host_port}:{creds}"
-            else:
-                key = host_port
+            key = f"{host_port}:{creds}" if creds else host_port
         else:
             key = host_port
         if key not in seen:
@@ -1022,37 +1027,27 @@ def fetch_url(url: str, timeout: int = FETCH_TIMEOUT) -> Optional[str]:
         return None
 
 def decode_base64_content(content: str) -> str:
-    try:
-        stripped = content.strip()
-        rem = len(stripped) % 4
-        if rem:
-            stripped += '=' * (4 - rem)
-        return base64.b64decode(stripped).decode('utf-8', errors='ignore')
-    except Exception:
-        return content
+    return _b64_decode_flexible(content.strip()) or content
 
 def fetch_all_sources() -> List[str]:
     all_configs = []
     for source in SOURCES_CONFIG:
         url = source['url']
         name = source['name']
-        print(f"  [FETCH] {name}: {url[:80]}...")
+        print(f"  [FETCH] {name}: {url[:60]}...")
         content = fetch_url(url)
         if not content:
-            print(f"  [FAIL] {name}: не удалось загрузить")
+            print(f"  [FAIL] {name}")
             continue
-        # Проверяем — Clash или base64 или plain text
         if is_clash_content(content):
             uris = clash_to_uris(content)
             all_configs.extend(uris)
             print(f"  [OK] {name}: Clash, {len(uris)} конфигов")
         else:
             lines = content.strip().split('\n')
-            # Проверяем base64
             if lines and not any(is_supported_protocol(l.strip()) for l in lines[:5]):
                 decoded = decode_base64_content(content)
                 lines = decoded.strip().split('\n')
-            # Фильтруем только конфиги
             valid_lines = [l.strip() for l in lines if is_supported_protocol(l.strip())]
             all_configs.extend(valid_lines)
             print(f"  [OK] {name}: {len(valid_lines)} конфигов")
@@ -1062,7 +1057,6 @@ def fetch_all_sources() -> List[str]:
 #  ФИЛЬТРАЦИЯ
 # =====================================================================
 def filter_configs(configs: List[str]) -> Tuple[List[str], List[Tuple[str, str]]]:
-    """Фильтрует конфиги. Возвращает (список безопасных, список отклонённых с причинами)."""
     safe_configs = []
     rejected = []
     for cfg in configs:
@@ -1073,7 +1067,6 @@ def filter_configs(configs: List[str]) -> Tuple[List[str], List[Tuple[str, str]]
             rejected.append((cfg, "неподдерживаемый протокол"))
             continue
         if not is_safe_config_base(cfg):
-            # Определяем причину
             reason = _get_rejection_reason(cfg)
             rejected.append((cfg, reason))
             continue
@@ -1081,123 +1074,82 @@ def filter_configs(configs: List[str]) -> Tuple[List[str], List[Tuple[str, str]]
     return safe_configs, rejected
 
 def _get_rejection_reason(url: str) -> str:
-    """Определяет причину отклонения конфига."""
-    if has_custom_ca_mitm(url):
-        return "кастомный CA / MITM"
-    if has_malicious_dns_override(url):
-        return "опасный DNS override"
-    if has_sniffing_exfiltration(url):
-        return "sniffing эксфильтрация"
-    if has_invalid_reality_pbk(url):
-        return "невалидный Reality pbk"
-    if has_invalid_reality_sid(url):
-        return "невалидный Reality sid"
-    if has_insecure_params(url):
-        return "небезопасные параметры"
-    if is_dangerous_domain_param(url):
-        return "опасный домен"
-    if is_banned_host_universal(url):
-        return "забаненный хост"
-    if is_ssr_host_banned(url):
-        return "забаненный SSR хост"
-    if has_dangerous_transport_combination(url):
-        return "опасная комбинация транспорта"
-    if is_suspicious_encryption(url):
-        return "подозрительное шифрование"
-    if is_dangerous_uuid(url):
-        return "опасный UUID"
-    if not is_sing_box_transport_compatible(url):
-        return "транспорт несовместим с sing-box"
-    if not is_sing_box_ss_compatible(url):
-        return "метод SS несовместим с sing-box"
-    if not has_valid_sni_for_tls(url):
-        return "отсутствует SNI для TLS"
-    if url.startswith('vless://') and not is_safe_vless_base(url):
-        return "vless не прошёл проверку"
-    if url.startswith('trojan://') and not is_safe_trojan_base(url):
-        return "trojan не прошёл проверку"
-    if url.startswith('vmess://') and not is_safe_vmess_base(url):
-        return "vmess не прошёл проверку"
-    if url.startswith(('hysteria2://', 'hy2://')) and not is_safe_hysteria2_base(url):
-        return "hysteria2 не прошёл проверку"
-    if url.startswith('tuic://') and not is_safe_tuic_base(url):
-        return "tuic не прошёл проверку"
-    if url.startswith('ss://') and not is_safe_ss_base(url):
-        return "ss не прошёл проверку"
-    if url.startswith('ssr://') and not is_safe_ssr_base(url):
-        return "ssr не прошёл проверку"
+    if has_custom_ca_mitm(url): return "кастомный CA / MITM"
+    if has_malicious_dns_override(url): return "опасный DNS override"
+    if has_sniffing_exfiltration(url): return "sniffing эксфильтрация"
+    if has_invalid_reality_pbk(url): return "невалидный Reality pbk"
+    if has_invalid_reality_sid(url): return "невалидный Reality sid"
+    if has_insecure_params(url): return "небезопасные параметры"
+    if is_dangerous_domain_param(url): return "опасный домен"
+    if is_banned_host_universal(url): return "забаненный хост"
+    if has_dangerous_transport_combination(url): return "опасный транспорт"
+    if is_suspicious_encryption(url): return "подозрительное шифрование"
+    if is_dangerous_uuid(url): return "опасный UUID"
+    if not is_sing_box_transport_compatible(url): return "несовместим с sing-box (транспорт)"
+    if not is_sing_box_ss_compatible(url): return "несовместим с sing-box (шифр SS)"
+    if not has_valid_sni_for_tls(url): return "нет SNI для TLS"
+    if url.startswith('vless://') and not is_safe_vless_base(url): return "vless не прошёл проверку"
+    if url.startswith('trojan://') and not is_safe_trojan_base(url): return "trojan не прошёл проверку"
+    if url.startswith('vmess://') and not is_safe_vmess_base(url): return "vmess не прошёл проверку"
+    if url.startswith(('hysteria2://', 'hy2://')) and not is_safe_hysteria2_base(url): return "hysteria2 не прошёл проверку"
+    if url.startswith('tuic://') and not is_safe_tuic_base(url): return "tuic не прошёл проверку"
+    if url.startswith('ss://') and not is_safe_ss_base(url): return "ss не прошёл проверку"
+    if url.startswith('ssr://') and not is_safe_ssr_base(url): return "ssr не прошёл проверку"
     return "неизвестная причина"
 
 # =====================================================================
 #  СОХРАНЕНИЕ РЕЗУЛЬТАТОВ
 # =====================================================================
 def save_results(safe_configs: List[str], rejected: List[Tuple[str, str]]):
-    # Сохраняем безопасные конфиги
     with open(os.path.join(OUTPUT_DIR, "filtered.txt"), 'w', encoding='utf-8') as f:
         for cfg in safe_configs:
             f.write(cfg + '\n')
-    
-    # Сохраняем base64 версию
+
     b64_content = base64.b64encode('\n'.join(safe_configs).encode('utf-8')).decode('utf-8')
     with open(os.path.join(OUTPUT_DIR, "filtered_base64.txt"), 'w', encoding='utf-8') as f:
         f.write(b64_content)
-    
-    # Сохраняем отклонённые с причинами
+
     with open(os.path.join(REJECT_DIR, "rejected.txt"), 'w', encoding='utf-8') as f:
         for cfg, reason in rejected:
             f.write(f"{reason}|{cfg}\n")
-    
-    # Статистика
+
+    reason_count = defaultdict(int)
+    for _, reason in rejected:
+        reason_count[reason] += 1
+
     stats = {
         'total_input': len(safe_configs) + len(rejected),
         'total_safe': len(safe_configs),
         'total_rejected': len(rejected),
         'timestamp': time.strftime('%Y-%m-%d %H:%M:%S'),
-        'rejection_reasons': defaultdict(int),
+        'rejection_reasons': dict(reason_count),
     }
-    for _, reason in rejected:
-        stats['rejection_reasons'][reason] += 1
-    
     with open(os.path.join(OUTPUT_DIR, "stats.json"), 'w', encoding='utf-8') as f:
         json.dump(stats, f, ensure_ascii=False, indent=2)
-    
-    # Сохраняем Clash формат
+
     _save_clash_format(safe_configs)
 
 def _save_clash_format(configs: List[str]):
-    """Конвертирует и сохраняет в Clash формате."""
     if not HAS_YAML:
         return
-    
     clash_proxies = []
     for cfg in configs:
         proxy = _uri_to_clash_proxy(cfg)
         if proxy:
             clash_proxies.append(proxy)
-    
     if not clash_proxies:
         return
-    
     clash_config = {
         'proxies': clash_proxies,
-        'proxy-groups': [
-            {
-                'name': 'PROXY',
-                'type': 'select',
-                'proxies': [p['name'] for p in clash_proxies]
-            }
-        ],
+        'proxy-groups': [{'name': 'PROXY', 'type': 'select', 'proxies': [p['name'] for p in clash_proxies]}],
         'rules': ['MATCH,PROXY']
     }
-    
     with open(os.path.join(CLASH_DIR, "config.yaml"), 'w', encoding='utf-8') as f:
         yaml.dump(clash_config, f, allow_unicode=True, default_flow_style=False)
 
 def _uri_to_clash_proxy(uri: str) -> Optional[dict]:
-    """Конвертирует URI в Clash proxy формат."""
     try:
         if uri.startswith('vless://'):
-            # Парсим vless URI
             m = re.search(r'vless://([^@]+)@([^:]+):(\d+)(?:\?(.*))?#(.*)?', uri)
             if not m:
                 return None
@@ -1208,14 +1160,10 @@ def _uri_to_clash_proxy(uri: str) -> Optional[dict]:
                     if '=' in kv:
                         k, v = kv.split('=', 1)
                         params[k] = urllib.parse.unquote(v)
-            
             proxy = {
                 'name': urllib.parse.unquote(name or 'vless')[:50],
-                'type': 'vless',
-                'server': host,
-                'port': int(port),
-                'uuid': uuid,
-                'tls': params.get('security') == 'tls',
+                'type': 'vless', 'server': host, 'port': int(port),
+                'uuid': uuid, 'tls': params.get('security') == 'tls',
             }
             if params.get('sni'):
                 proxy['servername'] = params['sni']
@@ -1229,13 +1177,10 @@ def _uri_to_clash_proxy(uri: str) -> Optional[dict]:
                     'headers': {'Host': params.get('host', host)}
                 }
             if params.get('security') == 'reality':
-                proxy['reality-opts'] = {
-                    'public-key': params.get('pbk', ''),
-                }
+                proxy['reality-opts'] = {'public-key': params.get('pbk', '')}
                 if params.get('sid'):
                     proxy['reality-opts']['short-id'] = params['sid']
             return proxy
-        
         elif uri.startswith('trojan://'):
             m = re.search(r'trojan://([^@]+)@([^:]+):(\d+)(?:\?(.*))?#(.*)?', uri)
             if not m:
@@ -1247,57 +1192,32 @@ def _uri_to_clash_proxy(uri: str) -> Optional[dict]:
                     if '=' in kv:
                         k, v = kv.split('=', 1)
                         params[k] = urllib.parse.unquote(v)
-            
             proxy = {
                 'name': urllib.parse.unquote(name or 'trojan')[:50],
-                'type': 'trojan',
-                'server': host,
-                'port': int(port),
+                'type': 'trojan', 'server': host, 'port': int(port),
                 'password': urllib.parse.unquote(password),
             }
             if params.get('sni'):
                 proxy['sni'] = params['sni']
             return proxy
-        
         elif uri.startswith('ss://'):
-            # Парсим SS URI
-            after_proto = uri.replace('ss://', '', 1)
-            if '#' in after_proto:
-                after_proto, name = after_proto.split('#', 1)
-            else:
-                name = 'ss'
-            if '?' in after_proto:
-                after_proto = after_proto.split('?')[0]
-            
-            if '@' in after_proto:
-                userinfo, hostport = after_proto.rsplit('@', 1)
-                if ':' in userinfo:
-                    method, password = userinfo.split(':', 1)
-                else:
-                    # base64 userinfo
-                    try:
-                        missing = len(userinfo) % 4
-                        if missing:
-                            userinfo += '=' * (4 - missing)
-                        decoded = base64.b64decode(userinfo).decode('utf-8')
-                        method, password = decoded.split(':', 1)
-                    except Exception:
-                        return None
-                host, port = hostport.rsplit(':', 1)
-            else:
+            creds = extract_ss_credentials(uri)
+            if creds is None:
                 return None
-            
+            method, password = creds
+            host_port = extract_host_port(uri)
+            if not host_port:
+                return None
+            parts = host_port.rsplit(':', 2)
+            if len(parts) < 3:
+                return None
+            host, port, _ = parts[-3], parts[-2], parts[-1]
             proxy = {
-                'name': urllib.parse.unquote(name)[:50],
-                'type': 'ss',
-                'server': host,
-                'port': int(port),
-                'cipher': method,
-                'password': password,
+                'name': uri.split('#')[1][:50] if '#' in uri else f'ss-{host}:{port}',
+                'type': 'ss', 'server': host, 'port': int(port),
+                'cipher': method, 'password': password,
             }
             return proxy
-        
-        # Другие протоколы
         return None
     except Exception:
         return None
@@ -1307,35 +1227,32 @@ def _uri_to_clash_proxy(uri: str) -> Optional[dict]:
 # =====================================================================
 def main():
     print("=" * 70)
-    print("  ФИЛЬТР ПРОКСИ-КОНФИГУРАЦИЙ v6.0")
+    print("  ФИЛЬТР ПРОКСИ-КОНФИГУРАЦИЙ v7.0")
+    print("  Maximum Security Edition")
     print("  Защита: Karing + V2RayNG + Clash + sing-box-extended")
     print("=" * 70)
     print()
-    
-    # Загружаем конфиги из всех источников
+
     print("[1/4] Загрузка источников...")
     all_configs = fetch_all_sources()
     print(f"      Загружено: {len(all_configs)} конфигов")
     print()
-    
+
     if not all_configs:
         print("[ERROR] Не загружено ни одного конфига")
         return
-    
-    # Фильтруем
+
     print("[2/4] Фильтрация безопасности...")
     safe_configs, rejected = filter_configs(all_configs)
     print(f"      Прошли фильтр: {len(safe_configs)}")
     print(f"      Отклонены: {len(rejected)}")
     print()
-    
-    # Дедупликация
+
     print("[3/4] Дедупликация...")
     deduped_configs = dedup_configs(safe_configs)
     print(f"      После дедупликации: {len(deduped_configs)}")
     print()
-    
-    # Сохраняем
+
     print("[4/4] Сохранение результатов...")
     save_results(deduped_configs, rejected)
     print(f"      Сохранено в {OUTPUT_DIR}/")
@@ -1345,8 +1262,7 @@ def main():
     print(f"        - stats.json (статистика)")
     print(f"        - Clash/config.yaml (Clash формат)")
     print()
-    
-    # Выводим топ причин отклонения
+
     if rejected:
         print("Топ причин отклонения:")
         reason_count = defaultdict(int)
@@ -1355,7 +1271,7 @@ def main():
         for reason, count in sorted(reason_count.items(), key=lambda x: x[1], reverse=True)[:10]:
             print(f"  {count:5d} — {reason}")
         print()
-    
+
     print("=" * 70)
     print("  ГОТОВО")
     print("=" * 70)
