@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-16 02:30:46 UTC
+# 2026-10-16 02:45:30 UTC
 proxies:
   - name: 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
     type: vless
@@ -43,20 +43,6 @@ proxies:
       short-id: b28db60d77c50b4f
     flow: xtls-rprx-vision
     network: tcp
-  - name: 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 144.31.50.236
-    port: 443
-    uuid: 1c332eae-7e02-4acd-996d-4eb3e652401c
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM
-      short-id: bbe46bd8f6b96839
-    flow: xtls-rprx-vision
-    network: raw
   - name: 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 144.31.101.196
@@ -195,34 +181,6 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: 37.18.14.6
-    port: 7445
-    uuid: 66217279-de40-4b62-b2bb-9c33b8fb7a01
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
-      short-id: 283f4b51fbe39ad9
-    flow: xtls-rprx-vision
-    network: raw
-  - name: 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-    type: vless
-    server: ivx-ivy-al0.whitenetwork.cloud
-    port: 7445
-    uuid: 66217279-de40-4b62-b2bb-9c33b8fb7a01
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8
-      short-id: 283f4b51fbe39ad9
-    flow: xtls-rprx-vision
-    network: tcp
   - name: 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
     type: vless
     server: 78.17.178.125
@@ -250,6 +208,20 @@ proxies:
       public-key: mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w
       short-id: 29c2dd1e3ef7c4d4
     network: tcp
+  - name: 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
+    type: vless
+    server: 188.225.77.254
+    port: 443
+    uuid: 9cfb9099-439f-4bd2-87d3-54e67269fdc3
+    udp: true
+    tls: true
+    servername: io.ozone.ru
+    client-fingerprint: random
+    reality-opts:
+      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
+      short-id: 4951a2313524dd8f
+    flow: xtls-rprx-vision
+    network: raw
   - name: 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
     type: trojan
     server: trojan.about.lso
@@ -273,7 +245,6 @@ proxy-groups:
       - 'Russia | mobile-api-12.sova.toys | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]'
       - 'Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
-      - 'Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]'
       - 'United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]'
       - 'Singapore | si1.lazeroe.com | TCP | [#LSO - #LinSpisokObhod]'
@@ -284,10 +255,9 @@ proxy-groups:
       - 'Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]'
       - 'The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]'
-      - 'Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]'
-      - 'unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]'
       - 'United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]'
+      - 'Russia | io.ozone.ru | RAW | [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]'
       - 'Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]'
 rules:
