@@ -1,35 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-16 02:45:29 UTC
+# 2026-10-16 03:00:58 UTC
 proxies:
-  - name: '🇩🇪 Germany — #139'
-    type: vless
-    server: 31.177.111.243
-    port: 443
-    uuid: 1cadf9b5-229b-487d-94d3-c45a9de40ceb
-    udp: true
-    tls: true
-    servername: smart.heartbeatai.link
-    client-fingerprint: firefox
-    reality-opts:
-      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
-      short-id: dfdee30a27b11f0f
-    flow: xtls-rprx-vision
-    network: raw
-  - name: '🇳🇴 Norway — #163'
-    type: vless
-    server: 87.242.95.164
-    port: 9443
-    uuid: 1cadf9b5-229b-487d-94d3-c45a9de40ceb
-    udp: true
-    tls: true
-    servername: passport.yandex.ru
-    client-fingerprint: qq
-    reality-opts:
-      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
-      short-id: 8375b32501373f41
-    network: grpc
-    grpc-opts:
-  - name: '🇷🇺 Selectel — #122'
+  - name: '🇷🇺 Selectel — #128'
     type: vless
     server: 37.143.15.206
     port: 443
@@ -43,7 +15,35 @@ proxies:
       short-id: 111111
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇷🇺 Beget — #104'
+  - name: '🇩🇪 Germany — #155'
+    type: vless
+    server: 31.177.111.243
+    port: 443
+    uuid: 517b2632-c0c6-49df-b6ec-ff1bf54e1406
+    udp: true
+    tls: true
+    servername: smart.heartbeatai.link
+    client-fingerprint: firefox
+    reality-opts:
+      public-key: t192lvTN6ZtCch9LSAkLOKnKuyYdLLaTJx8tn3VRHz0
+      short-id: dfdee30a27b11f0f
+    flow: xtls-rprx-vision
+    network: raw
+  - name: '🇳🇴 Norway — #165'
+    type: vless
+    server: 87.242.95.164
+    port: 9443
+    uuid: 517b2632-c0c6-49df-b6ec-ff1bf54e1406
+    udp: true
+    tls: true
+    servername: passport.yandex.ru
+    client-fingerprint: qq
+    reality-opts:
+      public-key: 9YcV-gA7iaXFnI0HXQa624OIqm4zxO_U2eMCWXQAiCQ
+      short-id: 8375b32501373f41
+    network: grpc
+    grpc-opts:
+  - name: '🇷🇺 Beget — #99'
     type: vless
     server: 45.12.75.242
     port: 26424
@@ -56,7 +56,7 @@ proxies:
       public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
       short-id: 23103e1e
     network: raw
-  - name: '🇫🇷 France — #158'
+  - name: '🇫🇷 France — #160'
     type: vless
     server: 82.202.179.107
     port: 12443
@@ -70,7 +70,7 @@ proxies:
       short-id: 780f5e
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇩🇪 Germany — #132'
+  - name: '🇩🇪 Germany — #138'
     type: vless
     server: 78.159.240.159
     port: 10654
@@ -83,7 +83,7 @@ proxies:
       public-key: W6Y-zf2KrmIKVAEYuxpzQhxMyQliUnEo9LAZYEPAlEI
       short-id: d14d6fc0
     network: xhttp
-  - name: '🇸🇪 Sweden — #165'
+  - name: '🇸🇪 Sweden — #167'
     type: vless
     server: 188.225.77.254
     port: 443
@@ -91,37 +91,22 @@ proxies:
     udp: true
     tls: true
     servername: io.ozone.ru
-    client-fingerprint: random
+    client-fingerprint: firefox
     reality-opts:
       public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
       short-id: 4951a2313524dd8f
     flow: xtls-rprx-vision
     network: raw
-  - name: '🇸🇪 Sweden — #166'
-    type: vless
-    server: 188.225.77.254
-    port: 8443
-    uuid: 9cfb9099-439f-4bd2-87d3-54e67269fdc3
-    udp: true
-    tls: true
-    servername: io.ozone.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s
-      short-id: 4951a2313524dd8f
-    network: grpc
-    grpc-opts:
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇩🇪 Germany — #139'
-      - '🇳🇴 Norway — #163'
-      - '🇷🇺 Selectel — #122'
-      - '🇷🇺 Beget — #104'
-      - '🇫🇷 France — #158'
-      - '🇩🇪 Germany — #132'
-      - '🇸🇪 Sweden — #165'
-      - '🇸🇪 Sweden — #166'
+      - '🇷🇺 Selectel — #128'
+      - '🇩🇪 Germany — #155'
+      - '🇳🇴 Norway — #165'
+      - '🇷🇺 Beget — #99'
+      - '🇫🇷 France — #160'
+      - '🇩🇪 Germany — #138'
+      - '🇸🇪 Sweden — #167'
 rules:
   - MATCH,PROXY
