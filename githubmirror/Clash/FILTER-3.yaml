@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-18 20:45:32 UTC
+# 2026-10-18 21:00:57 UTC
 proxies:
-  - name: "🇩🇪 Germany — #147"
+  - name: "🇩🇪 Germany — #183"
     type: "vless"
     server: "178.248.236.45"
     port: 62443
@@ -15,20 +15,35 @@ proxies:
       short-id: "d0cd6a0b1a18092b"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇪🇪 Estonia — #155"
+  - name: "🇫🇷 France — #190"
     type: "vless"
     server: "188.225.83.133"
     port: 443
     uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
     udp: true
     tls: true
-    client-fingerprint: "chrome"
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #131"
+  - name: "🇲🇽 Mexico — #197"
+    type: "vless"
+    server: "194.55.239.164"
+    port: 8443
+    uuid: "58b364b9-e67f-44a6-b12c-48cdd7b3df33"
+    udp: true
+    tls: true
+    servername: "ads.vk.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1psC2mENtLYukWhrdLs3n1aKRXyG7S0ZNINeZWxWDQs"
+      short-id: "0803c427"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Beget — #144"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -36,12 +51,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #144"
+  - name: "🇩🇪 Germany — #180"
     type: "vless"
     server: "81.94.148.162"
     port: 9446
@@ -54,7 +69,7 @@ proxies:
       public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #134"
+  - name: "🇷🇺 Selectel — #147"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -66,7 +81,19 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇪🇪 Estonia — #159"
+  - name: "🇬🇧 United Kingdom — #194"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "c31589ca-9d14-4044-a732-bb810bad0bcc"
+    udp: true
+    tls: true
+    servername: "bakarova-top.ru"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "xhttp"
+  - name: "🇪🇪 Estonia — #189"
     type: "vless"
     server: "195.24.67.165"
     port: 443
@@ -74,7 +101,7 @@ proxies:
     udp: true
     tls: true
     servername: "qwq.clear-nodefast.cfd"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "DnXBmz9AHnv3Rs-4z_ZLt_sBgmTjVNXxq9aW9xkanEg"
       short-id: "703a00989e6967e8"
@@ -83,11 +110,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #147"
-      - "🇪🇪 Estonia — #155"
-      - "🇷🇺 Beget — #131"
-      - "🇩🇪 Germany — #144"
-      - "🇷🇺 Selectel — #134"
-      - "🇪🇪 Estonia — #159"
+      - "🇩🇪 Germany — #183"
+      - "🇫🇷 France — #190"
+      - "🇲🇽 Mexico — #197"
+      - "🇷🇺 Beget — #144"
+      - "🇩🇪 Germany — #180"
+      - "🇷🇺 Selectel — #147"
+      - "🇬🇧 United Kingdom — #194"
+      - "🇪🇪 Estonia — #189"
 rules:
   - MATCH,PROXY
