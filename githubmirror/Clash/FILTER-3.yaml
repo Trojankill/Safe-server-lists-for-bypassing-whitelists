@@ -1,7 +1,33 @@
 # clash/mihomo subscription
-# 2026-10-18 16:45:30 UTC
+# 2026-10-18 17:00:53 UTC
 proxies:
-  - name: "🇩🇪 Germany — #184"
+  - name: "🇪🇪 Estonia — #197"
+    type: "vless"
+    server: "188.225.72.65"
+    port: 27443
+    uuid: "0a5e61ea-1498-4655-8d36-4f54dfb1c44a"
+    udp: true
+    tls: true
+    servername: "static.polina.mom"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zIF5SLjmd3gzvGPhEBKjqLv8_-7MOHMpJciVEehL0C8"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇳🇱 The Netherlands — #198"
+    type: "vless"
+    server: "84.201.180.13"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #181"
     type: "vless"
     server: "178.248.236.45"
     port: 62443
@@ -15,7 +41,7 @@ proxies:
       short-id: "d0cd6a0b1a18092b"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #199"
+  - name: "🇪🇪 Estonia — #193"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -28,7 +54,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇩🇪 Germany — #188"
+  - name: "🇩🇪 Germany — #185"
     type: "vless"
     server: "185.86.145.128"
     port: 8443
@@ -42,7 +68,7 @@ proxies:
       short-id: "a0d140fa25f56be2"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #120"
+  - name: "🇷🇺 Beget — #126"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -50,32 +76,48 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #181"
+  - name: "🇷🇺 Selectel — #145"
     type: "vless"
-    server: "81.94.148.162"
-    port: 9446
-    uuid: "8571b13c-96ae-480a-8b0d-8969ceda21f8"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "no.roskomnadzor.space"
-    client-fingerprint: "random"
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇦🇹 Austria — #146"
+    type: "vless"
+    server: "185.141.227.190"
+    port: 8446
+    uuid: "d07a73d7-5790-40f3-8cd6-a3dd0ca91da3"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
+      public-key: "NLQmEFT9-1ocGHnvGt7poB-1EJ6vxrJAzdZLvXoawy8"
+      short-id: "00000000"
     flow: "xtls-rprx-vision"
     network: "raw"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #184"
-      - "🇳🇱 The Netherlands — #199"
-      - "🇩🇪 Germany — #188"
-      - "🇷🇺 Beget — #120"
+      - "🇪🇪 Estonia — #197"
+      - "🇳🇱 The Netherlands — #198"
       - "🇩🇪 Germany — #181"
+      - "🇪🇪 Estonia — #193"
+      - "🇩🇪 Germany — #185"
+      - "🇷🇺 Beget — #126"
+      - "🇷🇺 Selectel — #145"
+      - "🇦🇹 Austria — #146"
 rules:
   - MATCH,PROXY
