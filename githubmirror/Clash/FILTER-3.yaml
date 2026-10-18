@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-18 19:00:54 UTC
+# 2026-10-18 19:15:31 UTC
 proxies:
-  - name: "🇩🇪 Germany — #151"
+  - name: "🇩🇪 Germany — #172"
     type: "vless"
     server: "178.248.236.45"
     port: 62443
@@ -15,20 +15,7 @@ proxies:
       short-id: "d0cd6a0b1a18092b"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 cloud.ru — #134"
-    type: "vless"
-    server: "195.133.198.82"
-    port: 1348
-    uuid: "599a6394-f357-4982-8937-2565d8b7ccab"
-    udp: true
-    tls: true
-    servername: "rulist.subversevpn.space"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "I9FFM4ZfnTXWrStUUOrGF0_OtKVH7g42L-euxsLKMHk"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Beget — #131"
+  - name: "🇷🇺 Beget — #142"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -36,12 +23,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #148"
+  - name: "🇩🇪 Germany — #169"
     type: "vless"
     server: "81.94.148.162"
     port: 9446
@@ -54,7 +41,7 @@ proxies:
       public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #138"
+  - name: "🇷🇺 Selectel — #144"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -66,28 +53,13 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇪🇪 Estonia — #156"
-    type: "vless"
-    server: "195.24.67.165"
-    port: 443
-    uuid: "d44bf370-e495-4fe3-92c8-710be5598f66"
-    udp: true
-    tls: true
-    servername: "qwq.clear-nodefast.cfd"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "DnXBmz9AHnv3Rs-4z_ZLt_sBgmTjVNXxq9aW9xkanEg"
-      short-id: "703a00989e6967e8"
-    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #151"
-      - "🇷🇺 cloud.ru — #134"
-      - "🇷🇺 Beget — #131"
-      - "🇩🇪 Germany — #148"
-      - "🇷🇺 Selectel — #138"
-      - "🇪🇪 Estonia — #156"
+      - "🇩🇪 Germany — #172"
+      - "🇷🇺 Beget — #142"
+      - "🇩🇪 Germany — #169"
+      - "🇷🇺 Selectel — #144"
 rules:
   - MATCH,PROXY
