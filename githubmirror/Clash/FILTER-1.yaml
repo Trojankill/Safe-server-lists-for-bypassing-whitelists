@@ -1,567 +1,346 @@
 # clash/mihomo subscription
-# 2026-10-11 20:01:09 UTC
+# 2026-10-18 15:30:46 UTC
 proxies:
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.242.95.77
-    port: 7444
-    uuid: 0a48813f-7258-4e0c-b498-0750f5fdbd2c
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "78.159.246.85"
+    port: 2053
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
     udp: true
     tls: true
-    servername: novosrv.raw-srv.org
-    client-fingerprint: random
-    reality-opts:
-      public-key: PZajgWT2dtEu0Avc2QWiZELK9wDQW9p9vvcckfQBfCE
-      short-id: 632cd48001bdb09a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇨🇦 Канада | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 104.171.138.18
-    port: 8447
-    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+    servername: "fitindoor.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "78.159.250.84"
+    port: 2053
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
     udp: true
     tls: true
-    servername: ru7.bbobr.win
-    client-fingerprint: random
-    reality-opts:
-      public-key: spxYV3CT-gcnk7ABCozoIyrxKu8n-sl36RL6yDh-8xg
-      short-id: feb22e978bd90e60
-    network: grpc
+    servername: "summerculture.net"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "ru1.radiolumens.uk"
+    port: 8444
+    uuid: "36cf792c-f07d-4500-97ea-a395e5178deb"
+    udp: true
+    tls: true
+    servername: "ru1.radiolumens.uk"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    network: "grpc"
     grpc-opts:
-  - name: '🇨🇦 Канада | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 217.149.25.137
-    port: 8447
-    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+      grpc-service-name: "beru-uk"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "ru1.radiolumens.uk"
+    port: 8445
+    uuid: "36cf792c-f07d-4500-97ea-a395e5178deb"
     udp: true
     tls: true
-    servername: ru7.bbobr.win
-    client-fingerprint: random
-    reality-opts:
-      public-key: spxYV3CT-gcnk7ABCozoIyrxKu8n-sl36RL6yDh-8xg
-      short-id: feb22e978bd90e60
-    network: grpc
+    servername: "ru1.radiolumens.uk"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    network: "grpc"
     grpc-opts:
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 94.141.162.88
+      grpc-service-name: "beru-pl"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "159.194.247.77"
+    port: 3443
+    uuid: "50115830-b22e-4688-8d94-de0dc25db31c"
+    udp: true
+    tls: true
+    servername: "music.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "QOmBHIllrJ3GBWZ9Ik__p6FiuZeUAdJ3nyc4OJvMczI"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "music"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "159.194.247.77"
+    port: 4443
+    uuid: "50115830-b22e-4688-8d94-de0dc25db31c"
+    udp: true
+    tls: true
+    servername: "yabro-wbplugin.edadeal.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "QOmBHIllrJ3GBWZ9Ik__p6FiuZeUAdJ3nyc4OJvMczI"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "edadeal"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "195.133.198.82"
+    port: 1348
+    uuid: "599a6394-f357-4982-8937-2565d8b7ccab"
+    udp: true
+    tls: true
+    servername: "rulist.subversevpn.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "I9FFM4ZfnTXWrStUUOrGF0_OtKVH7g42L-euxsLKMHk"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "82.202.141.141"
+    port: 9892
+    uuid: "5d16ac22-6eea-426f-b778-6f4c2961faef"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "81.26.182.128"
     port: 443
-    uuid: 267b3a79-81f2-42ac-a409-c23b05b6329d
+    uuid: "5d7e07ba-f460-4638-af79-bbcde67fcb6b"
     udp: true
     tls: true
-    servername: srv88.bbobr.win
-    client-fingerprint: random
+    servername: "www.samsung.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: K9e4gQJX1KLEmvsKOp9CtJ-o-L4EIpYOPTg5Spo9MWs
-      short-id: 65ceab72c331f307
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 37.139.42.225
-    port: 7448
-    uuid: 2f18de3b-2586-0003-b5ae-a6b2b9412e45
-    udp: true
-    tls: true
-    servername: 37.139.42.225
-    client-fingerprint: random
-    reality-opts:
-      public-key: V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇨🇭 Швейцария | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 81.94.148.104
-    port: 2096
-    uuid: 3fcec4e4-a674-44d2-8cae-c253cec43b9c
-    udp: true
-    tls: true
-    servername: id.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.228.92.114
-    port: 25481
-    uuid: 68c3d665-b2b5-4ffb-9f37-9f3d8c47324d
-    udp: true
-    tls: true
-    servername: www.bing.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mhIAHuZIEr2NpdGGSeOxar7VRSgEfVoNwb_G8Y0073E
-      short-id: 3b84fc70657725af
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: fi-p1.h1cloud.net
-    port: 25481
-    uuid: 68c3d665-b2b5-4ffb-9f37-9f3d8c47324d
-    udp: true
-    tls: true
-    servername: www.bing.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mhIAHuZIEr2NpdGGSeOxar7VRSgEfVoNwb_G8Y0073E
-      short-id: 3b84fc70657725af
-    network: grpc
-    grpc-opts:
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 45.133.151.171
-    port: 25008
-    uuid: 83383473-0d62-4089-ac4d-d7ecb413504a
-    udp: true
-    tls: true
-    servername: www.tori.fi
-    client-fingerprint: random
-    reality-opts:
-      public-key: bh9y0DXvJxirRl4of0wxzH93Vdk8WR-d4BRd62UGSXg
-      short-id: 40eec0d71f64759f
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.228.92.118
-    port: 25551
-    uuid: 83383473-0d62-4089-ac4d-d7ecb413504a
-    udp: true
-    tls: true
-    servername: stats.vk-portal.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: jnWD1a1ZNetH9ME_1w7STlUELItG_Mop8cr9f7rNDjk
-      short-id: 4a7fc71bf81ed2d3
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 159.194.231.57
-    port: 443
-    uuid: 86096188-0ece-41af-922d-792c5f96c3ad
-    udp: true
-    tls: true
-    servername: ign.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: w-dYZr1LgXZrZSJnc7kjXJC3jmC138M_IIp1NsApvlk
-      short-id: fe2e437f64f2da7a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 185.229.9.7
-    port: 443
-    uuid: a5893c8b-28a2-4947-9a1c-708db25506c3
-    udp: true
-    tls: true
-    servername: yandex.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: 1uox9vg8wi_akm_7I_v8xM0MF32jTtqkxlvnqC9Yux8
-      short-id: 27e53bbcab7593d7
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.242.127.113
-    port: 4510
-    uuid: c3db7657-88ce-42a6-b998-1e0364b277ac
-    udp: true
-    tls: true
-    servername: 9c99da.usecache.net
-    client-fingerprint: random
-    reality-opts:
-      public-key: hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM
-      short-id: 2d0c188798bae174
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: du-rov.secureservice.top
+      public-key: "xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "81.26.182.128"
     port: 8443
-    uuid: c53ea5e9-ed8b-4990-805d-7f1d6451426c
+    uuid: "5d7e07ba-f460-4638-af79-bbcde67fcb6b"
     udp: true
     tls: true
-    servername: du-rov.secureservice.top
-    client-fingerprint: random
+    servername: "www.asus.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI
-      short-id: 3cbc3d737fb9c4af
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 185.229.9.234
+      public-key: "xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY"
+    network: "xhttp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.139.27.63"
     port: 443
-    uuid: c5b5ef33-819e-4972-9a5a-4ad91f38507f
+    uuid: "7fc953d6-ae75-46fb-a970-10b57d513487"
     udp: true
     tls: true
-    servername: www.vk.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: 7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM
-      short-id: 0bb3fbdc6cb178d4
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 193.164.149.248
+    servername: "emerge-01.uiu.fyi"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Россия [#РКП] #4"
+    type: "vless"
+    server: "147.45.148.6"
     port: 443
-    uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+    uuid: "8a9c586c-4b2c-49e5-9e78-97408bf58500"
     udp: true
     tls: true
-    servername: ru-1-1.unturned-rust-dead.lol
-    client-fingerprint: random
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: gS0qvWKumWcOVoAgf8SHt6Sm3tqpBw07c5sA_Clb1hg
-    network: tcp
-  - name: '🇷🇺 Россия [#РКП]'
-    type: vless
-    server: 93.188.184.150
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #5"
+    type: "vless"
+    server: "85.193.85.231"
     port: 443
-    uuid: c6e3c24c-ce20-4ad5-8c8c-68cb05890ea8
+    uuid: "8a9c586c-4b2c-49e5-9e78-97408bf58500"
     udp: true
     tls: true
-    servername: ru-1-2.unturned-rust-dead.lol
-    client-fingerprint: random
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: aYz4_13W8gtAXGBrWeqJXtExahAJ9kUPDapqeyAlYCk
-    network: grpc
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "185.141.227.180"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
+    udp: true
+    tls: true
+    servername: "dismissaltree.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "dismissaltree.net"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
+    udp: true
+    tls: true
+    servername: "dismissaltree.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Россия [#РКП] #6"
+    type: "vless"
+    server: "api-l1-1.savethis.cloud"
+    port: 443
+    uuid: "9aa24b2b-47c8-42cc-90db-4fa3c11efc6a"
+    udp: true
+    tls: true
+    servername: "api-l1-1.savethis.cloud"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "G2i-nsQgWiVf52tdCUV-G_VeuCJ3hggwDnTaEAgvg0Y"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "z1q3pv4g78.rucdncomp.pro"
+    port: 443
+    uuid: "a443d7bf-f506-46ce-b64d-cf8891c0a9f7"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "81.17.154.181"
+    port: 443
+    uuid: "b229d38c-35ec-4a0b-9c86-8fceba243d6c"
+    udp: true
+    tls: true
+    servername: "fafeqdhlett2p5la6d.cdn.cachefleet.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "lt69.cdnfern.org"
+    port: 443
+    uuid: "cb5d9bb5-c2f9-46cf-9555-9ead6b30c7b7"
+    udp: true
+    tls: true
+    servername: "lt69.cdnfern.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "5.188.114.149"
+    port: 7443
+    uuid: "e548c96f-7800-42b2-bcc6-8c9d29141da2"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "unNROkbh95ZZNHzG2RIkgrFftOLldNH0ccmtW63CziE"
+    network: "grpc"
     grpc-opts:
-  - name: '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 188.225.57.252
-    port: 8037
-    uuid: d7255425-34b4-4ccc-8a88-427082401e94
-    udp: true
-    tls: true
-    servername: pic.rutubelist.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: i_zbh_lP5Pnxuie4IIB5FiWrde9yYQXH1Gd0Qm-8AAg
-      short-id: 9e5a335de26d1f5a
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 87.228.18.43
-    port: 8443
-    uuid: e3c3b722-1264-4cdc-a97c-b0a1bb73cd67
-    udp: true
-    tls: true
-    servername: s3.storage.selcloud.ru
-    client-fingerprint: random
-    reality-opts:
-      public-key: ivgTfLR13A6xBsicIA28OPoav2tXlsstTTmGuETfnSk
-      short-id: 5c766813929a1fdd
-    network: grpc
-    grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: vless
-    server: 104.171.133.209
-    port: 443
-    uuid: ebd1c0d6-7ff4-4b9f-8692-237517a27a64
-    udp: true
-    tls: true
-    servername: anyfile2file.com
-    client-fingerprint: random
-    reality-opts:
-      public-key: mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0
-      short-id: 64c1fe36c7846400
-    flow: xtls-rprx-vision
-    network: tcp
-  - name: '🇦🇹 Австрия | 🔗 Каскад [#РКП]'
-    type: vless
-    server: 80.87.194.253
+      grpc-service-name: "ebl"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "us.90909.club"
     port: 2096
-    uuid: f13b36ac-3765-4458-8a4d-08575038c463
+    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
     udp: true
     tls: true
-    servername: id.vk.com
-    client-fingerprint: random
+    servername: "id.vk.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-    network: grpc
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
     grpc-opts:
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 15400
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: proxy-registry.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: sXm0lT02h9fsNKAXDOoiPYcqLapQbhVh
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 17483
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: rt-gateway.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: UmPH2NsuaQshhlzF5sY87aWpSaOLYrDm
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 17576
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: report-cache.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: AboMffllG4twGI8sii6Og0vvmeDJT4SB
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 21641
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: webrtc-turn.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: aW5G5KqrY2iHQgQpr9d5v004k8uL7NIX
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 22018
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: audio-forwarder.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: qCeQHsssv17DWFvl7nWYHFW4qDIBZdHU
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 27459
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: upload-gate.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: AboMffllG4twGI8sii6Og0vvmeDJT4SB
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: lbrts-central.duckdns.org
-    port: 46695
-    password: 05cd5acd-469c-46e8-8f94-29b0ccb684ec
-    sni: ws-proxy.lbrts-central.duckdns.org
-    obfs: salamander
-    obfs-password: dvZ9oudJ5hDD7P5OGpSE0m59hwvaETPC
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 19883
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: webrtc-turn.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: 2TX6mSg1T4d2yurWg0N5vbwauVpwcrwB
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 38014
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: catalog-cache.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: 4eqtdMcl0TNqbROkef2o6oXgL7njTUwK
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 43096
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: jenkins-node.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: pSXtt5BPjLJmYqijEkRb75KCBVH0i3yR
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 43650
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: health-probe.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: Fs62D7AD3wG0ksoj4hi5Otn0Nb1HvQja
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 47877
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: resolve-svc.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: Me45ERTWaUSwgZBQ6THFA1Zt00ikkAA6
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 55217
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: firmware-repo.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: Me45ERTWaUSwgZBQ6THFA1Zt00ikkAA6
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: iron-central.duckdns.org
-    port: 56734
-    password: 3dbd0c0c-c1fd-4ce0-9185-bf177a7b57a1
-    sni: audit-stream.iron-central.duckdns.org
-    obfs: salamander
-    obfs-password: Z3b5lZNmHjAHvMEyitoacodIAP9hc0MY
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 11152
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: udp-telemetry.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: 4Q6kBSk7dE1CeidBuDCfjSLHGXy0hGVH
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 12750
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: stream-ingest.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: LFR3hUkFx5lcHmlNVBxpKniMOnza1H3t
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 19807
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: rtc-media.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: B2wguTi2uslqQdDN3Oc52DgfE3sipMQ4
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 26804
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: quic-edge.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: QSquDEwgS9x1XfdJeyWDtdzQ9z3SQipW
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 41280
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: game-matchmaker.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: PaH88xQeZc1fPVnsNeyZphPOeZUGS6zl
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 50853
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: search-index.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: T7rL1aJ7kcAvyvilLqfTD4YdBDugofQG
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: frdm-central.duckdns.org
-    port: 53358
-    password: 68d8cba0-3aed-41eb-92e5-a41fa8b2f53a
-    sni: turn-server.frdm-central.duckdns.org
-    obfs: salamander
-    obfs-password: RN7E60W45DDCf2Ef5nMD87gxvDKMXcnk
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: woof-central.duckdns.org
-    port: 10044
-    password: ad099c1a-5d9b-4962-871a-ce11c47ec5a1
-    sni: receipt-vault.woof-central.duckdns.org
-    obfs: salamander
-    obfs-password: K25TCSbKbECPHEXWRxY3RwL3BbaDFsCe
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: woof-central.duckdns.org
-    port: 27024
-    password: ad099c1a-5d9b-4962-871a-ce11c47ec5a1
-    sni: asset-vault.woof-central.duckdns.org
-    obfs: salamander
-    obfs-password: MeROm0ikMNkTxNzNA3ZD5QwYeVX68An6
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: woof-central.duckdns.org
-    port: 27066
-    password: ad099c1a-5d9b-4962-871a-ce11c47ec5a1
-    sni: upload-gate.woof-central.duckdns.org
-    obfs: salamander
-    obfs-password: TmC1F9ikeUhqx2lw7SqpdvsR27cxY9je
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: woof-central.duckdns.org
-    port: 48166
-    password: ad099c1a-5d9b-4962-871a-ce11c47ec5a1
-    sni: signal-relay.woof-central.duckdns.org
-    obfs: salamander
-    obfs-password: G9FLIXl24taKLcsgBXHhuJaqIkFUtwwH
-  - name: '🏴 Неизвестный [#РКП]'
-    type: hysteria2
-    server: woof-central.duckdns.org
-    port: 48913
-    password: ad099c1a-5d9b-4962-871a-ce11c47ec5a1
-    sni: rtc-media.woof-central.duckdns.org
-    obfs: salamander
-    obfs-password: 7JDxQ0da7wxTY0EBw0xOnqLdtxDQZB8T
-  - name: '🇷🇺 Россия [#РКП]'
-    type: hysteria2
-    server: 94.198.54.132
+      grpc-service-name: "vless-grpc-reality"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
+    type: "hysteria2"
+    server: "77.232.139.128"
+    port: 11592
+    password: "033dc6b532"
+    sni: "srv-8718e6.frd21.ru"
+    obfs: "salamander"
+    obfs-password: "eba1b4766d2a26d6c167e2d2e9efabf4"
+  - name: "🇷🇺 Россия [#РКП] #7"
+    type: "hysteria2"
+    server: "194.87.118.184"
+    port: 2053
+    password: "7ab3c77e-8fcc-4848-918f-cae3d4eac794"
+    sni: "match-stream.lovkisport.blog"
+  - name: "🇨🇳 Китай [#РКП]"
+    type: "hysteria2"
+    server: "ru1server.rabstvo.shop"
     port: 443
-    password: f317b5d6-d399-4d3d-a051-89d674ae953c
-    sni: msk.frkn.org
-  - name: '🇷🇺 Россия [#РКП]'
-    type: ss
-    server: 151.248.116.201
-    port: 1080
-    cipher: chacha20-ietf-poly1305
-    password: _ueom9TCQUnHvddGwcqU7eOG8hw7-jzP
-    udp: true
+    password: "JLPquLGe-9BdswaK3huMYUV7bSIEtUpt"
+    sni: "ru1server.rabstvo.shop"
+  - name: "🇮🇹 Италия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "tw1.gosru.com"
+    port: 443
+    password: "ac0b60b0-8839-4ac0-87db-d0e951937c9a"
+    sni: "tw1.gosru.com"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "82.97.250.65"
+    port: 513
+    password: "nboK5sFjF5lI6W21w-2jujwWsnYnvO1K"
+    sni: "flh.tmcyberx.com"
+    obfs: "salamander"
+    obfs-password: "Jdds8Oph_FVBYLAdZNgW4z0m"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇨🇦 Канада | 🔗 Каскад [#РКП]'
-      - '🇨🇦 Канада | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇳🇱 Нидерланды | 🔗 Каскад [#РКП]'
-      - '🇨🇭 Швейцария | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🇵🇱 Польша | 🔗 Каскад [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇫🇮 Финляндия | 🔗 Каскад [#РКП]'
-      - '🇩🇪 Германия | 🔗 Каскад [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇦🇹 Австрия | 🔗 Каскад [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🏴 Неизвестный [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
-      - '🇷🇺 Россия [#РКП]'
+      - "🇷🇺 Россия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #4"
+      - "🇷🇺 Россия [#РКП] #5"
+      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #4"
+      - "🇷🇺 Россия [#РКП] #6"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #7"
+      - "🇨🇳 Китай [#РКП]"
+      - "🇮🇹 Италия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
