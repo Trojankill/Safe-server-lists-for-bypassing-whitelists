@@ -1,7 +1,34 @@
 # clash/mihomo subscription
-# 2026-10-19 01:00:52 UTC
+# 2026-10-19 01:15:30 UTC
 proxies:
-  - name: "🇷🇺 Beget — #144"
+  - name: "🇪🇪 Estonia — #192"
+    type: "vless"
+    server: "188.225.72.65"
+    port: 27443
+    uuid: "0a5e61ea-1498-4655-8d36-4f54dfb1c44a"
+    udp: true
+    tls: true
+    servername: "static.polina.mom"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zIF5SLjmd3gzvGPhEBKjqLv8_-7MOHMpJciVEehL0C8"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇵🇱 Poland — #206"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    udp: true
+    tls: true
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇷🇺 Beget — #145"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,7 +41,21 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #147"
+  - name: "🇺🇸 United States — #213"
+    type: "vless"
+    server: "37.18.14.6"
+    port: 7445
+    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
+      short-id: "283f4b51fbe39ad9"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Selectel — #148"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -26,7 +67,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #187"
+  - name: "🇬🇧 United Kingdom — #199"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -42,8 +83,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #144"
-      - "🇷🇺 Selectel — #147"
-      - "🇬🇧 United Kingdom — #187"
+      - "🇪🇪 Estonia — #192"
+      - "🇵🇱 Poland — #206"
+      - "🇷🇺 Beget — #145"
+      - "🇺🇸 United States — #213"
+      - "🇷🇺 Selectel — #148"
+      - "🇬🇧 United Kingdom — #199"
 rules:
   - MATCH,PROXY
