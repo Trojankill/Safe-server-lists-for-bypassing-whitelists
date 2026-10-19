@@ -1,34 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-19 13:00:58 UTC
+# 2026-10-19 13:15:35 UTC
 proxies:
-  - name: "🇪🇪 Estonia — #88"
+  - name: "🇳🇱 The Netherlands — #95"
     type: "vless"
-    server: "188.225.72.65"
-    port: 27443
-    uuid: "4336fe66-a5fd-4211-bb22-b2210a312361"
+    server: "84.201.180.13"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
     udp: true
     tls: true
-    servername: "static.polina.mom"
+    servername: "api-maps.yandex.ru"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "zIF5SLjmd3gzvGPhEBKjqLv8_-7MOHMpJciVEehL0C8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇪🇪 Estonia — #85"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇷🇺 Beget — #63"
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+    network: "xhttp"
+  - name: "🇷🇺 Beget — #64"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -36,24 +21,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #64"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #92"
+  - name: "🇬🇧 United Kingdom — #88"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -65,7 +38,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #90"
+  - name: "🇫🇮 Finland — #86"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -83,11 +56,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia — #88"
-      - "🇪🇪 Estonia — #85"
-      - "🇷🇺 Beget — #63"
-      - "🇷🇺 Selectel — #64"
-      - "🇬🇧 United Kingdom — #92"
-      - "🇫🇮 Finland — #90"
+      - "🇳🇱 The Netherlands — #95"
+      - "🇷🇺 Beget — #64"
+      - "🇬🇧 United Kingdom — #88"
+      - "🇫🇮 Finland — #86"
 rules:
   - MATCH,PROXY
