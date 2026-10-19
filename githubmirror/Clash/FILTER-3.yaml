@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-19 21:00:55 UTC
+# 2026-10-19 21:15:32 UTC
 proxies:
-  - name: "🇫🇷 France — #102"
+  - name: "🇫🇷 France — #103"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -27,7 +27,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇪🇪 Estonia — #97"
+  - name: "🇷🇺 Selectel — #72"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇪🇪 Estonia — #99"
     type: "vless"
     server: "46.254.17.76"
     port: 443
@@ -53,7 +65,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #100"
+  - name: "🇫🇮 Finland — #102"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -71,10 +83,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #102"
+      - "🇫🇷 France — #103"
       - "🇷🇺 Beget — #70"
-      - "🇪🇪 Estonia — #97"
+      - "🇷🇺 Selectel — #72"
+      - "🇪🇪 Estonia — #99"
       - "🇬🇧 United Kingdom — #104"
-      - "🇫🇮 Finland — #100"
+      - "🇫🇮 Finland — #102"
 rules:
   - MATCH,PROXY
