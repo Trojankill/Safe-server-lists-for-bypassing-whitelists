@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-19 04:45:30 UTC
+# 2026-10-19 05:00:56 UTC
 proxies:
-  - name: "🇷🇺 Beget — #146"
+  - name: "🇷🇺 Beget — #133"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,31 +14,20 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #149"
+  - name: "🇩🇪 Germany — #138"
     type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    server: "81.94.148.162"
+    port: 9446
+    uuid: "8571b13c-96ae-480a-8b0d-8969ceda21f8"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
+    servername: "no.roskomnadzor.space"
     client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #189"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "c31589ca-9d14-4044-a732-bb810bad0bcc"
-    udp: true
-    tls: true
-    servername: "bakarova-top.ru"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇫🇮 Finland — #180"
+    reality-opts:
+      public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇫🇮 Finland — #150"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -56,9 +45,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #146"
-      - "🇷🇺 Selectel — #149"
-      - "🇬🇧 United Kingdom — #189"
-      - "🇫🇮 Finland — #180"
+      - "🇷🇺 Beget — #133"
+      - "🇩🇪 Germany — #138"
+      - "🇫🇮 Finland — #150"
 rules:
   - MATCH,PROXY
