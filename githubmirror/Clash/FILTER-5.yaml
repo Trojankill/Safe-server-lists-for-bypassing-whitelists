@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-19 06:45:30 UTC
+# 2026-10-19 07:00:55 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -155,19 +155,6 @@ proxies:
       short-id: "ef1d3554c652a436"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
   - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.17.178.125"
@@ -195,6 +182,34 @@ proxies:
       public-key: "mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w"
       short-id: "29c2dd1e3ef7c4d4"
     network: "tcp"
+  - name: "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "72.56.241.75"
+    port: 2443
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "5post-gate.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "QnKEZ1Y6NPOi-XcRC-uA8bzhfffQbswLIuGpxkBHSVs"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "94.228.112.60"
+    port: 2443
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "5post-gate.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "QnKEZ1Y6NPOi-XcRC-uA8bzhfffQbswLIuGpxkBHSVs"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "83.168.71.216"
@@ -207,33 +222,6 @@ proxies:
     reality-opts:
       public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
       short-id: "2f49bccf11150ef2"
-    network: "tcp"
-  - name: "France | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.163.152.205"
-    port: 2053
-    uuid: "a4b5dc53-2eee-4c5e-ac43-d8f0fdc36a40"
-    udp: true
-    tls: true
-    servername: "www.rutube.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "KEwhHRW2YSUHYAKsyX0KE3uKkGVDMudZUhLKfmb8eR0"
-      short-id: "4b27271677fa6fde"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Germany | st7-23.vk.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "13.143.162.138"
-    port: 8443
-    uuid: "abd85b9e-e3f0-4fb7-8229-744e6b007bf9"
-    udp: true
-    tls: true
-    servername: "st7-23.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "D16XKCyXDstbMKxA1qHzgL6AfOcwbQBFF9XKdNoVL04"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -261,20 +249,6 @@ proxies:
     reality-opts:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Russia | www.sun6-21.userapi.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.218.170.236"
-    port: 443
-    uuid: "b872771d-e9d1-42d7-ad29-a9acff49ea2d"
-    udp: true
-    tls: true
-    servername: "www.sun6-21.userapi.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "qC4VE5jv0q0ALYAfCNtAHU-kN32OdA-cqJmXpL4Y2VY"
-      short-id: "3199b70105c62ce0"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Germany | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -337,15 +311,13 @@ proxy-groups:
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "France | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | st7-23.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | www.sun6-21.userapi.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
