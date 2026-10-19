@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-19 02:45:31 UTC
+# 2026-10-19 03:00:59 UTC
 proxies:
-  - name: "🇪🇪 Estonia — #151"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇷🇺 Beget — #133"
+  - name: "🇷🇺 Beget — #146"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -27,21 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇺🇸 United States — #173"
-    type: "vless"
-    server: "37.18.14.6"
-    port: 7445
-    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
-      short-id: "283f4b51fbe39ad9"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇩🇪 Germany — #144"
+  - name: "🇩🇪 Germany — #184"
     type: "vless"
     server: "81.94.148.162"
     port: 9446
@@ -54,7 +27,7 @@ proxies:
       public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #135"
+  - name: "🇷🇺 Selectel — #150"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -66,7 +39,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #166"
+  - name: "🇬🇧 United Kingdom — #205"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -78,15 +51,28 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
+  - name: "🇫🇮 Finland — #196"
+    type: "vless"
+    server: "78.159.250.88"
+    port: 2096
+    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
+    udp: true
+    tls: true
+    servername: "id.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia — #151"
-      - "🇷🇺 Beget — #133"
-      - "🇺🇸 United States — #173"
-      - "🇩🇪 Germany — #144"
-      - "🇷🇺 Selectel — #135"
-      - "🇬🇧 United Kingdom — #166"
+      - "🇷🇺 Beget — #146"
+      - "🇩🇪 Germany — #184"
+      - "🇷🇺 Selectel — #150"
+      - "🇬🇧 United Kingdom — #205"
+      - "🇫🇮 Finland — #196"
 rules:
   - MATCH,PROXY
