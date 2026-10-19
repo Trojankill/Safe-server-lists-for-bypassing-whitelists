@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-19 23:30:43 UTC
+# 2026-10-19 23:45:29 UTC
 proxies:
   - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,6 +15,20 @@ proxies:
       short-id: "7aac777b"
     network: "grpc"
     grpc-opts:
+  - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.202.179.111"
+    port: 15443
+    uuid: "1ba0439d-384c-4a6e-9560-0439698beb2a"
+    udp: true
+    tls: true
+    servername: "smartcaptcha.yandexcloud.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4"
+      short-id: "b74f54b7"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "144.31.50.236"
@@ -89,7 +103,7 @@ proxies:
     udp: true
     tls: true
     servername: "metrika.yandex.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "snNVYSFAGMHIRMnzBZoFFTcu6KowqSFLSyRgmI9NSRU"
       short-id: "5308d9ab"
@@ -135,6 +149,20 @@ proxies:
     reality-opts:
       public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
       short-id: "b7cd177731793b1e"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "82.202.179.106"
+    port: 11443
+    uuid: "54f22246-cc9c-4315-907a-6c94c901d20f"
+    udp: true
+    tls: true
+    servername: "smartcaptcha.yandexcloud.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc"
+      short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -241,6 +269,7 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
@@ -250,6 +279,7 @@ proxy-groups:
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Estonia | npdev.uk | TCP | [#LSO - #LinSpisokObhod]"
