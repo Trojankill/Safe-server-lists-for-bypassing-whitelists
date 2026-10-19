@@ -1,20 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-19 00:01:00 UTC
+# 2026-10-19 00:15:31 UTC
 proxies:
-  - name: "🇩🇪 Germany — #144"
+  - name: "🇷🇺 Beget — #144"
     type: "vless"
-    server: "81.94.148.162"
-    port: 9446
-    uuid: "8571b13c-96ae-480a-8b0d-8969ceda21f8"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
     udp: true
     tls: true
-    servername: "no.roskomnadzor.space"
-    client-fingerprint: "random"
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
-    flow: "xtls-rprx-vision"
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #132"
+  - name: "🇷🇺 Selectel — #147"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -26,21 +26,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇦🇹 Austria — #133"
-    type: "vless"
-    server: "188.225.76.193"
-    port: 443
-    uuid: "b7d26b8c-b23c-41b7-aabe-f3b97407fd0d"
-    udp: true
-    tls: true
-    servername: "at.serv.com.de"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "q51_kjRx9e14b7CphMHH6OiVwoRvZTvZtPDBDn9YHFQ"
-      short-id: "1a56882228ae2b16"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇬🇧 United Kingdom — #151"
+  - name: "🇬🇧 United Kingdom — #187"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -56,9 +42,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #144"
-      - "🇷🇺 Selectel — #132"
-      - "🇦🇹 Austria — #133"
-      - "🇬🇧 United Kingdom — #151"
+      - "🇷🇺 Beget — #144"
+      - "🇷🇺 Selectel — #147"
+      - "🇬🇧 United Kingdom — #187"
 rules:
   - MATCH,PROXY
