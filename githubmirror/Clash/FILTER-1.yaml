@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-18 18:31:09 UTC
+# 2026-10-19 07:31:00 UTC
 proxies:
   - name: "🇷🇺 Россия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "78.159.250.84"
     port: 2053
@@ -26,37 +13,25 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "195.133.198.82"
-    port: 1348
-    uuid: "599a6394-f357-4982-8937-2565d8b7ccab"
-    udp: true
-    tls: true
-    servername: "rulist.subversevpn.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "I9FFM4ZfnTXWrStUUOrGF0_OtKVH7g42L-euxsLKMHk"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
-    type: "vless"
-    server: "81.26.182.128"
-    port: 443
-    uuid: "5d7e07ba-f460-4638-af79-bbcde67fcb6b"
-    udp: true
-    tls: true
-    servername: "www.samsung.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xlXuN8KDdbqGEsaj1m2D8NUnR5d2oeo5TT71RSMmfxY"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "94.228.112.36"
     port: 5443
     uuid: "7014b709-1cd1-4428-860e-fd458055d2b0"
+    udp: true
+    tls: true
+    servername: "files.nyx53.shop"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "m95xufOq7mmISN572WqkK0Bzmzb3hDfpr6WNp76xfyc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "72.56.241.75"
+    port: 5443
+    uuid: "7edce9e2-3434-4596-a5cd-c8d5777484e6"
     udp: true
     tls: true
     servername: "files.nyx53.shop"
@@ -90,7 +65,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Россия [#РКП] #3"
+  - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
     port: 443
@@ -103,7 +78,7 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "85.193.85.231"
     port: 443
@@ -116,7 +91,7 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #3"
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.141.227.180"
     port: 2053
@@ -129,18 +104,19 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Россия [#РКП] #4"
+  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #3"
     type: "vless"
-    server: "185.247.16.227"
-    port: 443
-    uuid: "9aa24b2b-47c8-42cc-90db-4fa3c11efc6a"
+    server: "dismissaltree.net"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
     udp: true
     tls: true
-    servername: "api-l1-1.savethis.cloud"
+    servername: "dismissaltree.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "G2i-nsQgWiVf52tdCUV-G_VeuCJ3hggwDnTaEAgvg0Y"
-    network: "tcp"
+    network: "xhttp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "81.17.154.181"
@@ -153,18 +129,34 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+  - name: "🇮🇸 Исландия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "c31589ca-9d14-4044-a732-bb810bad0bcc"
+    server: "72.56.241.75"
+    port: 57443
+    uuid: "c1e3b665-4447-4759-93cc-c2e8e8a62160"
     udp: true
     tls: true
-    servername: "bakarova-top.ru"
-    alpn:
-      - "h2"
+    servername: "media.polina.lol"
     client-fingerprint: "firefox"
-    network: "xhttp"
+    reality-opts:
+      public-key: "SPX2Uhw5AAifbNUjZf2zwpfvDUlUw3C7waDNMO48lSE"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "78.159.250.88"
+    port: 2096
+    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
+    udp: true
+    tls: true
+    servername: "id.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "78.24.218.228"
@@ -180,34 +172,6 @@ proxies:
     grpc-opts:
       grpc-service-name: "vless-grpc-reality"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП] #4"
-    type: "vless"
-    server: "78.24.218.88"
-    port: 2096
-    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
-    udp: true
-    tls: true
-    servername: "id.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless-grpc-reality"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #5"
-    type: "vless"
-    server: "us.90909.club"
-    port: 2096
-    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
-    udp: true
-    tls: true
-    servername: "id.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless-grpc-reality"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #6"
     type: "hysteria2"
     server: "77.232.139.128"
     port: 11592
@@ -215,49 +179,30 @@ proxies:
     sni: "srv-8718e6.frd21.ru"
     obfs: "salamander"
     obfs-password: "eba1b4766d2a26d6c167e2d2e9efabf4"
-  - name: "🇷🇺 Россия [#РКП] #5"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "hysteria2"
     server: "194.87.118.184"
     port: 2053
     password: "7ab3c77e-8fcc-4848-918f-cae3d4eac794"
     sni: "match-stream.lovkisport.blog"
-  - name: "🇮🇹 Италия | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "147.45.146.132"
-    port: 443
-    password: "ac0b60b0-8839-4ac0-87db-d0e951937c9a"
-    sni: "tw1.gosru.com"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "82.97.250.65"
-    port: 513
-    password: "nboK5sFjF5lI6W21w-2jujwWsnYnvO1K"
-    sni: "flh.tmcyberx.com"
-    obfs: "salamander"
-    obfs-password: "Jdds8Oph_FVBYLAdZNgW4z0m"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Россия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
-      - "🇷🇺 Россия [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
-      - "🇷🇺 Россия [#РКП] #3"
-      - "🏴 Неизвестный [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия | 🔗 Каскад [#РКП] #3"
-      - "🇷🇺 Россия [#РКП] #4"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇮🇸 Исландия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #4"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #5"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #6"
-      - "🇷🇺 Россия [#РКП] #5"
-      - "🇮🇹 Италия | 🔗 Каскад [#РКП]"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #3"
 rules:
   - MATCH,PROXY
