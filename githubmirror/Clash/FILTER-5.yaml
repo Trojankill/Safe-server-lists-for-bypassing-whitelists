@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-19 12:45:33 UTC
+# 2026-10-19 13:00:58 UTC
 proxies:
+  - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.35"
+    port: 8443
+    uuid: "0af8c084-acd8-43a1-be64-baf6f3027194"
+    udp: true
+    tls: true
+    servername: "load.videostreamer.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
+      short-id: "7aac777b"
+    network: "grpc"
+    grpc-opts:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -57,19 +71,6 @@ proxies:
       short-id: "a3a578ab"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.243.99.100"
-    port: 1222
-    uuid: "36c3dcc2-17b6-4478-b8a7-3978e6d5afe9"
-    udp: true
-    tls: true
-    servername: "play.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE"
-      short-id: "a25d0f"
-    network: "tcp"
   - name: "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "85.155.149.9"
@@ -181,33 +182,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "83.168.71.216"
-    port: 443
-    uuid: "a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
-      short-id: "2f49bccf11150ef2"
-    network: "tcp"
-  - name: "France | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.163.152.205"
-    port: 2053
-    uuid: "a4b5dc53-2eee-4c5e-ac43-d8f0fdc36a40"
-    udp: true
-    tls: true
-    servername: "www.rutube.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "KEwhHRW2YSUHYAKsyX0KE3uKkGVDMudZUhLKfmb8eR0"
-      short-id: "4b27271677fa6fde"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
@@ -285,11 +259,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Poland | browser.yandex.com | RAW | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
-      - "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
@@ -298,8 +272,6 @@ proxy-groups:
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | 5post-gate.x5.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
-      - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "France | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | travel.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"

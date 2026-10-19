@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-19 12:45:35 UTC
+# 2026-10-19 13:01:01 UTC
 proxies:
   - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
@@ -1208,6 +1208,20 @@ proxies:
       short-id: "296f27de82dad7ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.35"
+    port: 8443
+    uuid: "0af8c084-acd8-43a1-be64-baf6f3027194"
+    udp: true
+    tls: true
+    servername: "load.videostreamer.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
+      short-id: "7aac777b"
+    network: "grpc"
+    grpc-opts:
   - name: "未知 VLESS-631 | free-nodes | 62ms"
     type: "vless"
     server: "ansooyefilter6.up.railway.app"
@@ -6140,19 +6154,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc_common1"
-  - name: "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.243.99.100"
-    port: 1222
-    uuid: "36c3dcc2-17b6-4478-b8a7-3978e6d5afe9"
-    udp: true
-    tls: true
-    servername: "play.google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE"
-      short-id: "a25d0f"
-    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 148"
     type: "vless"
     server: "208.84.100.209"
@@ -26650,6 +26651,7 @@ proxy-groups:
       - "4Nika-ae413d4371 | 102ms"
       - "俄罗斯联邦_101910052 | 153ms"
       - "🇩🇪 Германия 60 MivoCloud SRL t.me/rjsxrd"
+      - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "未知 VLESS-631 | free-nodes | 62ms"
       - "| 3ms"
       - "美国_1019101004 | 56ms"
@@ -26992,7 +26994,6 @@ proxy-groups:
       - "美国_1019101315 | 126ms"
       - "美国_101910293 | 60ms"
       - "🇩🇪 Германия 61 OVH SAS t.me/rjsxrd"
-      - "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
       - "🇺🇸 [BL] Сервер 148"
       - "🇫🇮 Финляндия 40 Hetzner Online GmbH t.me/rjsxrd"
       - "AU 🇦🇺 | @Raydikalx | 2B377C | 184ms"
