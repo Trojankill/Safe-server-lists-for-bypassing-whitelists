@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-19 11:00:57 UTC
+# 2026-10-19 11:15:32 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #87"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    udp: true
+    tls: true
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
   - name: "🇷🇺 Beget — #50"
     type: "vless"
     server: "45.12.75.242"
@@ -27,7 +40,7 @@ proxies:
       public-key: "kUxaKv4LfQZyhZgBSFVfVK1zSFCyn5zkQXDSipad1jM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #52"
+  - name: "🇷🇺 Selectel — #53"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -39,7 +52,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #64"
+  - name: "🇬🇧 United Kingdom — #80"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -51,7 +64,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #74"
+  - name: "🇫🇮 Finland — #75"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -69,10 +82,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #87"
       - "🇷🇺 Beget — #50"
       - "🇩🇪 Germany — #60"
-      - "🇷🇺 Selectel — #52"
-      - "🇩🇪 Germany — #64"
-      - "🇫🇮 Finland — #74"
+      - "🇷🇺 Selectel — #53"
+      - "🇬🇧 United Kingdom — #80"
+      - "🇫🇮 Finland — #75"
 rules:
   - MATCH,PROXY
