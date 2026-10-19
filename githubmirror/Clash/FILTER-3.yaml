@@ -1,45 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-19 17:00:58 UTC
+# 2026-10-19 17:15:32 UTC
 proxies:
-  - name: "🇧🇬 Bulgaria — #71"
+  - name: "🇳🇱 The Netherlands — #75"
     type: "vless"
-    server: "78.159.246.179"
-    port: 8443
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇪🇪 Estonia — #89"
-    type: "vless"
-    server: "188.225.83.133"
+    server: "84.201.180.13"
     port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
     udp: true
     tls: true
+    servername: "api-maps.yandex.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇷🇺 Selectel — #63"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
     network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #95"
+  - name: "🇬🇧 United Kingdom — #63"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -51,7 +25,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #93"
+  - name: "🇫🇮 Finland — #61"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -69,10 +43,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇧🇬 Bulgaria — #71"
-      - "🇪🇪 Estonia — #89"
-      - "🇷🇺 Selectel — #63"
-      - "🇬🇧 United Kingdom — #95"
-      - "🇫🇮 Finland — #93"
+      - "🇳🇱 The Netherlands — #75"
+      - "🇬🇧 United Kingdom — #63"
+      - "🇫🇮 Finland — #61"
 rules:
   - MATCH,PROXY
