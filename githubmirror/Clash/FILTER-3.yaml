@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-19 16:00:57 UTC
+# 2026-10-19 16:15:46 UTC
 proxies:
-  - name: "🇫🇷 France — #93"
+  - name: "🇧🇬 Bulgaria — #71"
+    type: "vless"
+    server: "78.159.246.179"
+    port: 8443
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "randomquaint.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇪🇪 Estonia — #89"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -14,20 +27,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #63"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇷🇺 Selectel — #65"
+  - name: "🇷🇺 Selectel — #63"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -39,7 +39,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇬🇧 United Kingdom — #94"
+  - name: "🇬🇧 United Kingdom — #95"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -51,7 +51,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #91"
+  - name: "🇫🇮 Finland — #93"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -69,10 +69,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #93"
-      - "🇷🇺 Beget — #63"
-      - "🇷🇺 Selectel — #65"
-      - "🇬🇧 United Kingdom — #94"
-      - "🇫🇮 Finland — #91"
+      - "🇧🇬 Bulgaria — #71"
+      - "🇪🇪 Estonia — #89"
+      - "🇷🇺 Selectel — #63"
+      - "🇬🇧 United Kingdom — #95"
+      - "🇫🇮 Finland — #93"
 rules:
   - MATCH,PROXY
