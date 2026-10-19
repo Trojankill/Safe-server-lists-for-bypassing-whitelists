@@ -1,18 +1,17 @@
 # clash/mihomo subscription
-# 2026-10-19 18:45:32 UTC
+# 2026-10-19 19:00:57 UTC
 proxies:
-  - name: "🇧🇬 Bulgaria — #72"
+  - name: "🇳🇱 The Netherlands — #102"
     type: "vless"
-    server: "78.159.246.179"
-    port: 8443
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    server: "84.201.146.8"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
     udp: true
     tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "max.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo"
     network: "xhttp"
   - name: "🇷🇺 Beget — #63"
     type: "vless"
@@ -27,19 +26,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #67"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇪🇪 Estonia — #84"
+  - name: "🇪🇪 Estonia — #87"
     type: "vless"
     server: "46.254.17.76"
     port: 443
@@ -53,7 +40,7 @@ proxies:
       short-id: "111111"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇬🇧 United Kingdom — #87"
+  - name: "🇬🇧 United Kingdom — #92"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -65,7 +52,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #85"
+  - name: "🇫🇮 Finland — #90"
     type: "vless"
     server: "78.159.250.88"
     port: 2096
@@ -83,11 +70,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇧🇬 Bulgaria — #72"
+      - "🇳🇱 The Netherlands — #102"
       - "🇷🇺 Beget — #63"
-      - "🇷🇺 Selectel — #67"
-      - "🇪🇪 Estonia — #84"
-      - "🇬🇧 United Kingdom — #87"
-      - "🇫🇮 Finland — #85"
+      - "🇪🇪 Estonia — #87"
+      - "🇬🇧 United Kingdom — #92"
+      - "🇫🇮 Finland — #90"
 rules:
   - MATCH,PROXY
