@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 14:00:55 UTC
+# 2026-10-20 14:15:33 UTC
 proxies:
-  - name: "🇫🇷 France — #104"
+  - name: "🇫🇷 France — #76"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,7 +15,19 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇫🇷 France — #103"
+  - name: "🇳🇱 The Netherlands — #85"
+    type: "vless"
+    server: "84.201.180.13"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+    network: "xhttp"
+  - name: "🇫🇷 France — #75"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -29,7 +41,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #79"
+  - name: "🇷🇺 Beget — #62"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -37,24 +49,28 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #80"
+  - name: "🇳🇱 The Netherlands — #88"
     type: "vless"
-    server: "188.72.103.4"
+    server: "46.243.142.2"
     port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "floweroom.vip"
     alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #102"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    network: "ws"
+    ws-opts:
+      path: "/cart/sync/g-jSjxyhq24P"
+      headers:
+        Host: "floweroom.vip"
+  - name: "🇩🇪 Germany — #74"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -74,10 +90,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #104"
-      - "🇫🇷 France — #103"
-      - "🇷🇺 Beget — #79"
-      - "🇷🇺 Selectel — #80"
-      - "🇩🇪 Germany — #102"
+      - "🇫🇷 France — #76"
+      - "🇳🇱 The Netherlands — #85"
+      - "🇫🇷 France — #75"
+      - "🇷🇺 Beget — #62"
+      - "🇳🇱 The Netherlands — #88"
+      - "🇩🇪 Germany — #74"
 rules:
   - MATCH,PROXY
