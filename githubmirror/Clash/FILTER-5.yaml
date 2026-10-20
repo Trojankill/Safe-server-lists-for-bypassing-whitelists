@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-20 22:30:39 UTC
+# 2026-10-20 22:45:31 UTC
 proxies:
-  - name: "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.92.205.63"
-    port: 11167
-    uuid: "1a160cac-979a-4dab-81f0-641423b469f8"
-    udp: true
-    tls: true
-    servername: "www.tesla.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zrwJjaWEAfAZ3QCgnLnLoPE-edB_3wvKCqIz9maP02g"
-      short-id: "ac"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "144.31.50.236"
@@ -57,6 +43,20 @@ proxies:
       short-id: "a3a578ab"
     flow: "xtls-rprx-vision"
     network: "raw"
+  - name: "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "178.92.205.63"
+    port: 11167
+    uuid: "21a73f14-43bd-4dfb-a493-6b1cf2e4e95d"
+    udp: true
+    tls: true
+    servername: "www.tesla.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zrwJjaWEAfAZ3QCgnLnLoPE-edB_3wvKCqIz9maP02g"
+      short-id: "ac"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "unknown | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "demw.verymad.net"
@@ -97,7 +97,7 @@ proxies:
       short-id: "5308d9ab"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.29.36.250"
     port: 443
@@ -108,9 +108,37 @@ proxies:
     client-fingerprint: "chrome"
     reality-opts:
       public-key: "09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g"
-      short-id: "ac3342a709db"
+      short-id: "09353d6dc5b789"
     flow: "xtls-rprx-vision"
-    network: "tcp"
+    network: "raw"
+  - name: "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "150.241.101.17"
+    port: 8443
+    uuid: "47d9b534-8a0a-4bd2-90f1-1d6ade14427e"
+    udp: true
+    tls: true
+    servername: "yandex.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "150.241.101.80"
+    port: 8443
+    uuid: "47d9b534-8a0a-4bd2-90f1-1d6ade14427e"
+    udp: true
+    tls: true
+    servername: "yandex.net"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: "6ba85179e30d4fc2"
+    flow: "xtls-rprx-vision"
+    network: "raw"
   - name: "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "87.199.205.28"
@@ -163,7 +191,7 @@ proxies:
     udp: true
     tls: true
     servername: "smartcaptcha.yandexcloud.net"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "WWmwRoB2K7xonT6jzbhKen_Rp-UM7QCr_vMgmNZuggc"
       short-id: "044a5e06faf5"
@@ -195,6 +223,19 @@ proxies:
     reality-opts:
       public-key: "mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w"
       short-id: "29c2dd1e3ef7c4d4"
+    network: "tcp"
+  - name: "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.223.107.109"
+    port: 443
+    uuid: "8d32831a-3116-49ab-ad6d-d277dba27c05"
+    udp: true
+    tls: true
+    servername: "www.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -238,34 +279,6 @@ proxies:
       short-id: "8fbdc8d37cc76852"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Spain | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "145.249.109.173"
-    port: 27311
-    uuid: "f83ce3c4-07d9-4895-bd14-cb74abbcab37"
-    udp: true
-    tls: true
-    servername: "metrika.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9vHDWMrmerdjndp_XHbCc9jaR-9K95H_mwpLvI2emkY"
-      short-id: "56daff9a"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "9.247.34.118"
-    port: 2053
-    uuid: "fbbfebf3-dfc9-49cb-b5e5-06c99ef3d504"
-    udp: true
-    tls: true
-    servername: "www.rutube.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "1kaGIHz5N3-UTemrcJIP6vGD6aEbTcAmxedDv2VTcSA"
-      short-id: "c46d735d6444850f"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "147.45.187.188"
@@ -301,25 +314,26 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]"
+      - "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod] #2"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Spain | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
