@@ -1,46 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 06:15:30 UTC
+# 2026-10-20 06:30:44 UTC
 proxies:
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "rumos.yandex-api.com"
-    port: 443
-    uuid: "1f36039a-6117-4847-bf47-3c7b21d17730"
-    udp: true
-    tls: true
-    servername: "rumos.yandex-api.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "aacc3j_mijcn5WdrrUcMRlTV7IhTgTVawR6oK_3cJGI"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "185.229.9.77"
-    port: 443
-    uuid: "5fa7f7bd-f48e-428b-8037-683c91af09f3"
-    udp: true
-    tls: true
-    servername: "m.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "oqRus6Z_Q1jqJaTEPu7ENbRL0-XKOw54K0jwCCGLtEk"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "45.139.27.63"
     port: 443
@@ -52,7 +13,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "81.17.154.97"
     port: 443
@@ -90,19 +51,6 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "fitindoor.net"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "81.17.154.181"
@@ -115,39 +63,31 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇹🇷 Турция | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "176.53.162.32"
+    server: "z1q3pv4g78.rucdncomp.pro"
     port: 443
-    uuid: "d86e6fda-e519-03e9-98eb-9ff9a9da5984"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    servername: "8qxtze29d5kf.cdn.cachefleet.com"
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "3kmVb84_3QhYp5xfYbxEmF6w43teAWKd-p9tvAMGVS4"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "🇨🇳 Китай [#РКП]"
-    type: "hysteria2"
-    server: "ru1server.rabstvo.shop"
-    port: 443
-    password: "J0c1ry6eU2BbZqBASe6ke1PRs7OoXCLi"
-    sni: "ru1server.rabstvo.shop"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇷🇺 Россия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇹🇷 Турция | 🔗 Каскад [#РКП]"
-      - "🇨🇳 Китай [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
