@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-20 13:45:31 UTC
+# 2026-10-20 14:00:56 UTC
 proxies:
   - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -182,22 +182,17 @@ proxies:
       short-id: "c46d735d6444850f"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "147.45.187.188"
-    port: 8443
-    uuid: "fe8e2ffb-8796-408c-af5b-0d4774215e00"
+  - name: "Russia | z40.tgnn.live | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "91.240.87.108"
+    port: 443
+    password: "pR320Cwdj7mJ9HKc_UVz-VJyuecT4qdh"
     udp: true
-    tls: true
-    servername: "vedomosti.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "dTdncizxtVTqDZDkQoYdRTkf2Mn6XuKtkzg8vZhrkzA"
-      short-id: "6ba85179e30d4fc2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+    sni: "z40.tgnn.live"
+    alpn:
+      - "h2"
+      - "http/1.1"
+  - name: "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -230,8 +225,8 @@ proxy-groups:
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-      - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+      - "Russia | z40.tgnn.live | unknown | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
