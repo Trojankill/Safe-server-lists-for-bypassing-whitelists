@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 04:45:29 UTC
+# 2026-10-20 05:00:53 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #76"
+  - name: "🇬🇧 United Kingdom — #95"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -13,7 +13,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇷 France — #71"
+  - name: "🇫🇷 France — #90"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -27,7 +27,19 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇧🇬 Bulgaria — #57"
+  - name: "🇳🇱 The Netherlands — #99"
+    type: "vless"
+    server: "84.201.146.8"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "max.ru"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "biyXF3Egpu0ul4Jyf04Vh1Zl6u3JGXJ2k5y5y7pDjgo"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #74"
     type: "vless"
     server: "78.159.246.179"
     port: 8443
@@ -40,20 +52,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 VK — #8"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇸🇪 Sweden — #80"
+  - name: "🇸🇪 Sweden — #111"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -68,7 +67,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #70"
+  - name: "🇫🇷 France — #89"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -82,7 +81,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #53"
+  - name: "🇷🇺 Beget — #70"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -95,29 +94,16 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #56"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #76"
-      - "🇫🇷 France — #71"
-      - "🇧🇬 Bulgaria — #57"
-      - "🇷🇺 VK — #8"
-      - "🇸🇪 Sweden — #80"
-      - "🇫🇷 France — #70"
-      - "🇷🇺 Beget — #53"
-      - "🇷🇺 Selectel — #56"
+      - "🇬🇧 United Kingdom — #95"
+      - "🇫🇷 France — #90"
+      - "🇳🇱 The Netherlands — #99"
+      - "🇧🇬 Bulgaria — #74"
+      - "🇸🇪 Sweden — #111"
+      - "🇫🇷 France — #89"
+      - "🇷🇺 Beget — #70"
 rules:
   - MATCH,PROXY
