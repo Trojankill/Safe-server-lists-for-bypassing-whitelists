@@ -1,19 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 09:45:35 UTC
+# 2026-10-20 10:01:01 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #97"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "09b3f968-a8a4-48ec-a707-e1dac8e9eb6d"
-    udp: true
-    tls: true
-    servername: "www.bakarova-top.ru"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇫🇷 France — #89"
+  - name: "🇫🇷 France — #97"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -27,32 +15,20 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #101"
+  - name: "🇪🇪 Estonia — #92"
     type: "vless"
-    server: "84.201.180.13"
+    server: "188.225.83.133"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
     udp: true
     tls: true
-    servername: "api-maps.yandex.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
-    network: "xhttp"
-  - name: "🇧🇬 Bulgaria — #74"
-    type: "vless"
-    server: "78.159.246.179"
-    port: 8443
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇸🇪 Sweden — #107"
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇸🇪 Sweden — #102"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -67,7 +43,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #88"
+  - name: "🇫🇷 France — #96"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -81,7 +57,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #70"
+  - name: "🇷🇺 Selectel — #71"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -97,12 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #97"
-      - "🇫🇷 France — #89"
-      - "🇳🇱 The Netherlands — #101"
-      - "🇧🇬 Bulgaria — #74"
-      - "🇸🇪 Sweden — #107"
-      - "🇫🇷 France — #88"
-      - "🇷🇺 Selectel — #70"
+      - "🇫🇷 France — #97"
+      - "🇪🇪 Estonia — #92"
+      - "🇸🇪 Sweden — #102"
+      - "🇫🇷 France — #96"
+      - "🇷🇺 Selectel — #71"
 rules:
   - MATCH,PROXY
