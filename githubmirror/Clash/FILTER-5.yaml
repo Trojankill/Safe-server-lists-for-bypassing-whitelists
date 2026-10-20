@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-20 09:30:46 UTC
+# 2026-10-20 09:45:34 UTC
 proxies:
+  - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.35"
+    port: 8443
+    uuid: "0af8c084-acd8-43a1-be64-baf6f3027194"
+    udp: true
+    tls: true
+    servername: "load.videostreamer.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
+      short-id: "7aac777b"
+    network: "grpc"
+    grpc-opts:
   - name: "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.202.179.111"
@@ -113,6 +127,20 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
+  - name: "Germany | st7-23.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "13.143.162.138"
+    port: 8443
+    uuid: "5d0c6f95-7e53-45eb-ba93-89c90331954a"
+    udp: true
+    tls: true
+    servername: "st7-23.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "D16XKCyXDstbMKxA1qHzgL6AfOcwbQBFF9XKdNoVL04"
+      short-id: "00000000"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.17.178.125"
@@ -167,7 +195,7 @@ proxies:
       short-id: "c342eb1745bbaefd"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
     port: 443
@@ -180,7 +208,7 @@ proxies:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     flow: "xtls-rprx-vision"
-    network: "tcp"
+    network: "raw"
   - name: "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.104.63.173"
@@ -229,6 +257,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -237,11 +266,12 @@ proxy-groups:
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod] #2"
+      - "Germany | st7-23.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Estonia | npdev.uk | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
