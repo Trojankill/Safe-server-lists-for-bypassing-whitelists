@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 14:45:32 UTC
+# 2026-10-20 15:00:58 UTC
 proxies:
-  - name: "🇫🇷 France — #76"
+  - name: "🇫🇷 France — #110"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,19 +15,35 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #85"
+  - name: "🇪🇪 Estonia — #105"
     type: "vless"
-    server: "84.201.180.13"
+    server: "188.225.83.133"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
     udp: true
     tls: true
-    servername: "api-maps.yandex.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
-    network: "xhttp"
-  - name: "🇫🇷 France — #75"
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇸🇪 Sweden — #114"
+    type: "vless"
+    server: "188.225.77.254"
+    port: 8443
+    uuid: "5473d93b-3cb2-4a10-9fd5-2b98459d9c53"
+    udp: true
+    tls: true
+    servername: "io.ozone.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
+      short-id: "4951a2313524dd8f"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "ozone"
+  - name: "🇫🇷 France — #109"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -41,36 +57,19 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #62"
+  - name: "🇷🇺 Selectel — #78"
     type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #88"
-    type: "vless"
-    server: "46.243.142.2"
+    server: "188.72.103.4"
     port: 443
-    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "floweroom.vip"
+    servername: "ru.nnight.cfd"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    network: "ws"
-    ws-opts:
-      path: "/cart/sync/g-jSjxyhq24P"
-      headers:
-        Host: "floweroom.vip"
-  - name: "🇩🇪 Germany — #74"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #101"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -90,11 +89,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #76"
-      - "🇳🇱 The Netherlands — #85"
-      - "🇫🇷 France — #75"
-      - "🇷🇺 Beget — #62"
-      - "🇳🇱 The Netherlands — #88"
-      - "🇩🇪 Germany — #74"
+      - "🇫🇷 France — #110"
+      - "🇪🇪 Estonia — #105"
+      - "🇸🇪 Sweden — #114"
+      - "🇫🇷 France — #109"
+      - "🇷🇺 Selectel — #78"
+      - "🇩🇪 Germany — #101"
 rules:
   - MATCH,PROXY
