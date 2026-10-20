@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-20 08:30:57 UTC
+# 2026-10-20 08:45:48 UTC
 proxies:
-  - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "81.163.22.35"
-    port: 8443
-    uuid: "0af8c084-acd8-43a1-be64-baf6f3027194"
-    udp: true
-    tls: true
-    servername: "load.videostreamer.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
-      short-id: "7aac777b"
-    network: "grpc"
-    grpc-opts:
   - name: "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.202.179.111"
@@ -154,6 +140,33 @@ proxies:
       public-key: "mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w"
       short-id: "29c2dd1e3ef7c4d4"
     network: "tcp"
+  - name: "Estonia | npdev.uk | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.255.178.28"
+    port: 8443
+    uuid: "a04c750d-3b71-493b-b2c1-6473ff1209dd"
+    udp: true
+    tls: true
+    servername: "npdev.uk"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "pbsZ_WKQppqB0qF2zgcgwRhy8wnRtPy26sDDp3uqxl4"
+      short-id: "b7e3f4bc485bc37b"
+    network: "tcp"
+  - name: "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "109.120.150.245"
+    port: 2053
+    uuid: "b1097a54-29de-4014-962c-c835d96e8409"
+    udp: true
+    tls: true
+    servername: "www.rutube.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "iywsgYk8P1mWMu9xBjwpJQnBNGSH43RKSaaRVVv75S0"
+      short-id: "c342eb1745bbaefd"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
@@ -166,6 +179,34 @@ proxies:
     reality-opts:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.104.63.173"
+    port: 443
+    uuid: "e75ad2eb-6c1f-45ce-8023-f5f10875df66"
+    udp: true
+    tls: true
+    servername: "zsat.eu-cdn294.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Dj1TD7Sy_TciG915ffXFpMu_pYHnrpGo_ypyyDw44Uc"
+      short-id: "8fbdc8d37cc76852"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "9.247.34.118"
+    port: 2053
+    uuid: "fbbfebf3-dfc9-49cb-b5e5-06c99ef3d504"
+    udp: true
+    tls: true
+    servername: "www.rutube.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "1kaGIHz5N3-UTemrcJIP6vGD6aEbTcAmxedDv2VTcSA"
+      short-id: "c46d735d6444850f"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
@@ -188,7 +229,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -199,7 +239,11 @@ proxy-groups:
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod] #2"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Estonia | npdev.uk | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
