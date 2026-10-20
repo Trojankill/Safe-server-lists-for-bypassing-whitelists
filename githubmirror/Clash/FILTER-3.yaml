@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 19:01:01 UTC
+# 2026-10-20 19:15:29 UTC
 proxies:
-  - name: "🇫🇷 France — #100"
+  - name: "🇫🇷 France — #102"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,7 +15,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇸🇪 Sweden — #105"
+  - name: "🇸🇪 Sweden — #106"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -30,7 +30,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #99"
+  - name: "🇫🇷 France — #101"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -44,7 +44,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #67"
+  - name: "🇷🇺 Beget — #71"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -57,35 +57,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #104"
-    type: "vless"
-    server: "46.243.142.2"
-    port: 443
-    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
-    udp: true
-    tls: true
-    servername: "floweroom.vip"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    network: "ws"
-    ws-opts:
-      path: "/cart/sync/g-jSjxyhq24P"
-      headers:
-        Host: "floweroom.vip"
-  - name: "🇷🇺 Selectel — #68"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #98"
+  - name: "🇩🇪 Germany — #100"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -105,12 +77,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #100"
-      - "🇸🇪 Sweden — #105"
-      - "🇫🇷 France — #99"
-      - "🇷🇺 Beget — #67"
-      - "🇳🇱 The Netherlands — #104"
-      - "🇷🇺 Selectel — #68"
-      - "🇩🇪 Germany — #98"
+      - "🇫🇷 France — #102"
+      - "🇸🇪 Sweden — #106"
+      - "🇫🇷 France — #101"
+      - "🇷🇺 Beget — #71"
+      - "🇩🇪 Germany — #100"
 rules:
   - MATCH,PROXY
