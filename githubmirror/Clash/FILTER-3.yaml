@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 10:45:36 UTC
+# 2026-10-20 11:00:54 UTC
 proxies:
-  - name: "🇫🇷 France — #97"
+  - name: "🇫🇷 France — #70"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,7 +15,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇪🇪 Estonia — #92"
+  - name: "🇵🇱 Poland — #75"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -28,22 +28,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇸🇪 Sweden — #102"
-    type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "5473d93b-3cb2-4a10-9fd5-2b98459d9c53"
-    udp: true
-    tls: true
-    servername: "io.ozone.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #96"
+  - name: "🇫🇷 France — #69"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -57,26 +42,26 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #71"
+  - name: "🇷🇺 Beget — #53"
     type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #97"
-      - "🇪🇪 Estonia — #92"
-      - "🇸🇪 Sweden — #102"
-      - "🇫🇷 France — #96"
-      - "🇷🇺 Selectel — #71"
+      - "🇫🇷 France — #70"
+      - "🇵🇱 Poland — #75"
+      - "🇫🇷 France — #69"
+      - "🇷🇺 Beget — #53"
 rules:
   - MATCH,PROXY
