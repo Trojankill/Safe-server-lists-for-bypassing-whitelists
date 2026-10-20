@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 08:00:56 UTC
+# 2026-10-20 08:15:30 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #115"
+  - name: "🇬🇧 United Kingdom — #83"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -13,7 +13,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇷 France — #108"
+  - name: "🇫🇷 France — #75"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -27,20 +27,33 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Timeweb — #74"
+  - name: "🇧🇬 Bulgaria — #59"
     type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    server: "78.159.246.179"
+    port: 8443
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
     udp: true
     tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇸🇪 Sweden — #120"
+    servername: "randomquaint.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 VK — #8"
+    type: "vless"
+    server: "78.159.246.85"
+    port: 2053
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇸🇪 Sweden — #87"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -55,7 +68,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #107"
+  - name: "🇫🇷 France — #74"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -69,7 +82,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #70"
+  - name: "🇷🇺 Beget — #53"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -77,41 +90,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #4"
-    type: "vless"
-    server: "78.159.246.179"
-    port: 2053
-    uuid: "6a2aff19-ff1f-4a13-96c8-a4d8986a9699"
-    udp: true
-    tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #119"
-    type: "vless"
-    server: "46.243.142.2"
-    port: 443
-    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
-    udp: true
-    tls: true
-    servername: "floweroom.vip"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    network: "ws"
-    ws-opts:
-      path: "/cart/sync/g-jSjxyhq24P"
-      headers:
-        Host: "floweroom.vip"
-  - name: "🇩🇪 Germany — #99"
+  - name: "🇩🇪 Germany — #68"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -127,33 +111,17 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇫🇮 Finland — #106"
-    type: "vless"
-    server: "78.159.250.88"
-    port: 2096
-    uuid: "e667f5c7-6b38-48ef-ab89-40519713afb0"
-    udp: true
-    tls: true
-    servername: "id.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless-grpc-reality"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #115"
-      - "🇫🇷 France — #108"
-      - "🇷🇺 Timeweb — #74"
-      - "🇸🇪 Sweden — #120"
-      - "🇫🇷 France — #107"
-      - "🇷🇺 Beget — #70"
-      - "🇷🇺 VK — #4"
-      - "🇳🇱 The Netherlands — #119"
-      - "🇩🇪 Germany — #99"
-      - "🇫🇮 Finland — #106"
+      - "🇬🇧 United Kingdom — #83"
+      - "🇫🇷 France — #75"
+      - "🇧🇬 Bulgaria — #59"
+      - "🇷🇺 VK — #8"
+      - "🇸🇪 Sweden — #87"
+      - "🇫🇷 France — #74"
+      - "🇷🇺 Beget — #53"
+      - "🇩🇪 Germany — #68"
 rules:
   - MATCH,PROXY
