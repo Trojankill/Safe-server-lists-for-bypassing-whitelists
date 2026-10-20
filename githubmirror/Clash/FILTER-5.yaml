@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-20 15:30:47 UTC
+# 2026-10-20 15:45:29 UTC
 proxies:
   - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -57,6 +57,34 @@ proxies:
       short-id: "a3a578ab"
     flow: "xtls-rprx-vision"
     network: "raw"
+  - name: "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "85.155.149.9"
+    port: 20285
+    uuid: "3acb3c2b-680c-40a5-ac19-9eef6b061efa"
+    udp: true
+    tls: true
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "snNVYSFAGMHIRMnzBZoFFTcu6KowqSFLSyRgmI9NSRU"
+      short-id: "5308d9ab"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "gonci.zaebalsanoproxyklinus.lol"
+    port: 20285
+    uuid: "3acb3c2b-680c-40a5-ac19-9eef6b061efa"
+    udp: true
+    tls: true
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "snNVYSFAGMHIRMnzBZoFFTcu6KowqSFLSyRgmI9NSRU"
+      short-id: "5308d9ab"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.29.36.250"
@@ -113,6 +141,22 @@ proxies:
       short-id: "e0215064d8d1fd7c"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | floweroom.vip | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "46.243.142.2"
+    port: 443
+    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
+    udp: true
+    tls: true
+    servername: "floweroom.vip"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    network: "ws"
+    ws-opts:
+      path: "/cart/sync/g-jSjxyhq24P"
+      headers:
+        Host: "floweroom.vip"
   - name: "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "45.59.120.217"
@@ -182,6 +226,21 @@ proxies:
       short-id: "c46d735d6444850f"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "147.45.187.188"
+    port: 8443
+    uuid: "fe8e2ffb-8796-408c-af5b-0d4774215e00"
+    udp: true
+    tls: true
+    servername: "vedomosti.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "dTdncizxtVTqDZDkQoYdRTkf2Mn6XuKtkzg8vZhrkzA"
+      short-id: "6ba85179e30d4fc2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -206,15 +265,19 @@ proxy-groups:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | floweroom.vip | WebSocket | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
