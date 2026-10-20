@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-20 06:45:36 UTC
+# 2026-10-20 07:01:00 UTC
 proxies:
+  - name: "LTE/5G Все операторы 🇪🇺"
+    type: "vless"
+    server: "nl-cdn.fius.dev"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "nl-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇳🇱 [BL] Сервер 615 | 132ms"
     type: "vless"
     server: "78.17.133.3"
@@ -1147,7 +1160,7 @@ proxies:
       public-key: "7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇬🇧 United Kingdom — #114"
+  - name: "🇬🇧 United Kingdom — #115"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -3029,7 +3042,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇫🇷 France — #109"
+  - name: "🇫🇷 France — #108"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -3043,7 +3056,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 [BL] Сервер 58"
+  - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.202.182.42"
     port: 3443
@@ -4186,7 +4199,7 @@ proxies:
       public-key: "ygxQyBcJzlLgpSl3MCRDDiFET4TT-3wxa4GdG1obkCY"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪"
+  - name: "tg:VLESSFORU top ping 🇩🇪"
     type: "vless"
     server: "50.7.157.237"
     port: 443
@@ -4199,7 +4212,7 @@ proxies:
       public-key: "ygxQyBcJzlLgpSl3MCRDDiFET4TT-3wxa4GdG1obkCY"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪"
     type: "vless"
     server: "de.puflino.com"
     port: 443
@@ -6910,20 +6923,6 @@ proxies:
       path: "/@custom_config?ed=2560"
       headers:
         Host: "downloadlynet.ir."
-  - name: "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "188.225.58.199"
-    port: 9443
-    uuid: "3b02ff50-2aea-4e3f-b2b9-0ba6c5f48bee"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xHDiY_zkHSO5UD9UWaQ1hM7UYPZ2sVw7OEm2abP50w8"
-      short-id: "4e8c470b8d813929"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "[2662][RU][0][VLESS][None][shh_proxy][2026-09-12][2026-10-19 02:08] | 165ms"
     type: "vless"
     server: "188.225.27.78"
@@ -9314,7 +9313,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "@V2rayNGmat"
-  - name: "🇪🇪 Estonia — #98"
+  - name: "🇷🇺 Timeweb — #74"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -9905,7 +9904,7 @@ proxies:
       short-id: "3d144ebb"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "cool [LSO-LTE] 🇹🇷 |#10|"
+  - name: "SNi vk.com 🇹🇷"
     type: "vless"
     server: "193.223.107.102"
     port: 443
@@ -9914,6 +9913,32 @@ proxies:
     tls: true
     servername: "www.vk.com"
     client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "SNi vk.com 🇩🇪"
+    type: "vless"
+    server: "193.223.107.91"
+    port: 443
+    uuid: "50c7eb08-96d2-47ef-92da-014a24b3350f"
+    udp: true
+    tls: true
+    servername: "www.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "SNi vk.com 🇩🇪 #2"
+    type: "vless"
+    server: "node3.yandexdns.ru"
+    port: 443
+    uuid: "50c7eb08-96d2-47ef-92da-014a24b3350f"
+    udp: true
+    tls: true
+    servername: "www.vk.com"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
     flow: "xtls-rprx-vision"
@@ -10514,7 +10539,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "astracat"
-  - name: "🇸🇪 Sweden — #118"
+  - name: "🇸🇪 Sweden — #120"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -10571,7 +10596,7 @@ proxies:
       short-id: "84be686ea1d16478"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇫🇷 France — #108"
+  - name: "🇫🇷 France — #107"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -10999,6 +11024,20 @@ proxies:
       path: "/ws/57b7b73b-120a-f0cf-0ca2-0acf51473b7d"
       headers:
         Host: "x4gd-production.up.railway.app"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇭🇰"
+    type: "vless"
+    server: "154.21.203.106"
+    port: 21033
+    uuid: "57beeeb0-03fc-4fc9-94da-7604488a7134"
+    udp: true
+    tls: true
+    servername: "www.kaidee.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4"
+      short-id: "cbd39bea0805e2"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "🚩 CF | 🔒 VLESS | @vaiking_vpn [1] | 15ms"
     type: "vless"
     server: "162.159.15.252"
@@ -11778,19 +11817,6 @@ proxies:
       path: "/aza2U1BfSh9bppwp/MTkzLjEyMy42OS43Nw==?ed=2087"
       headers:
         Host: "YEcHIv2rAy-X-cgyGFXddewaw345556.PaGeS.DEV"
-  - name: "Russia | m.vk.com | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.229.9.77"
-    port: 443
-    uuid: "5fa7f7bd-f48e-428b-8037-683c91af09f3"
-    udp: true
-    tls: true
-    servername: "m.vk.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "oqRus6Z_Q1jqJaTEPu7ENbRL0-XKOw54K0jwCCGLtEk"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "美国_102004308 | 56ms"
     type: "vless"
     server: "inetchnl-production-824c.up.railway.app"
@@ -12227,7 +12253,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -12735,6 +12761,49 @@ proxies:
       short-id: "9917d2350096"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇬"
+    type: "vless"
+    server: "164.37.224.220"
+    port: 25452
+    uuid: "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d"
+    udp: true
+    tls: true
+    servername: "www.ns.nl"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zJI16_ywLd4clshY0IQQPxQ_YBbIq2b0XTO_dnTJOy4"
+      short-id: "fe51f413b9646e97"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇬 #2"
+    type: "vless"
+    server: "164.37.224.220"
+    port: 25454
+    uuid: "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d"
+    udp: true
+    tls: true
+    servername: "www.ns.nl"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "YOgsoXtChX3RvA0Gf9SSsP8VLP4GGk7dytVBo9qZCH4"
+      short-id: "221ba0d14384ccf1"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "becc6caf9bea"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
+    type: "vless"
+    server: "193.148.253.239"
+    port: 25363
+    uuid: "68c3d665-b2b5-4ffb-9f37-9f3d8c47324d"
+    udp: true
+    tls: true
+    servername: "www.chip.de"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "shUbIWcBJdXaDzO80KqTU9exgMarUCOiiZ56Dwl7XVU"
+      short-id: "7a8e24da4eb2c1b5"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "43f41cd7fee0"
   - name: "🇸🇪 [BL] Сервер 140"
     type: "vless"
     server: "se1.h1cloud.net"
@@ -14407,7 +14476,23 @@ proxies:
     alpn:
       - "h2"
     network: "xhttp"
-  - name: "LTE/5G Все операторы 🇪🇺"
+  - name: "🇳🇱 The Netherlands — #119"
+    type: "vless"
+    server: "46.243.142.2"
+    port: 443
+    uuid: "7c86240f-ac0c-4cfe-87c8-fa0dd69b2d25"
+    udp: true
+    tls: true
+    servername: "floweroom.vip"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    network: "ws"
+    ws-opts:
+      path: "/cart/sync/g-jSjxyhq24P"
+      headers:
+        Host: "floweroom.vip"
+  - name: "LTE/5G Все операторы 🇪🇺 #2"
     type: "vless"
     server: "floweroom.vip"
     port: 443
@@ -16028,20 +16113,6 @@ proxies:
       - "h2"
       - "http/1.1"
     network: "xhttp"
-  - name: "SNi yandex.ru 🇺🇸"
-    type: "vless"
-    server: "177.3.222.174"
-    port: 20268
-    uuid: "8bd04756-3beb-4348-82c9-d35453df50ce"
-    udp: true
-    tls: true
-    servername: "metrika.yandex.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM"
-      short-id: "0c774b50"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "巴西_102004019 | 174ms"
     type: "vless"
     server: "qcloudge1.exitvpn.shop"
@@ -16210,6 +16281,21 @@ proxies:
       public-key: "cAyrINjoyGdw0VlAWjB_N7zFpfvnaj7s9PpX9Dqw2zs"
       short-id: "eaa31296402dac"
     network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺"
+    type: "vless"
+    server: "89.223.124.20"
+    port: 2055
+    uuid: "8dd3cb50-fdce-4aa6-aebb-c773df322055"
+    udp: true
+    tls: true
+    servername: "up.ya-yandex.link"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "2C-oK3mN8pZ8jeTAVhgt6ubT-xqL7cklq9QmwtBY9mE"
+      short-id: "7b86a01d952e8df4"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "sonya-grpc"
   - name: "[6438][US][0][VLESS][None][lrnbymaa][2026-10-01][2026-10-19 02:08] | 48ms"
     type: "vless"
     server: "mortxzaaz98-production.up.railway.app"
@@ -16787,7 +16873,7 @@ proxies:
       short-id: "654119f9d6f01dba"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #2"
+  - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "water.salphetka.ru"
     port: 443
@@ -16869,6 +16955,34 @@ proxies:
     client-fingerprint: "chrome"
     reality-opts:
       public-key: "B2hPRdH13moEXzVXSINTdTHCYkgaNO53lgCIhDx7cmg"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
+    type: "vless"
+    server: "94.228.112.36"
+    port: 3443
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "cdn.polina.lol"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B2hPRdH13moEXzVXSINTdTHCYkgaNO53lgCIhDx7cmg"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
+    type: "vless"
+    server: "94.228.112.60"
+    port: 27443
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "static.polina.mom"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "zIF5SLjmd3gzvGPhEBKjqLv8_-7MOHMpJciVEehL0C8"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
@@ -17242,7 +17356,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023/@v2rayng12023"
-  - name: "🇷🇺 Selectel — #71"
+  - name: "LTE/5G Все операторы 🇪🇺 #4"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -17254,7 +17368,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "LTE/5G Все операторы 🇪🇺 #3"
+  - name: "LTE/5G Все операторы 🇪🇺 #5"
     type: "vless"
     server: "swit.nnight.sbs"
     port: 443
@@ -17805,6 +17919,48 @@ proxies:
       short-id: "d2061bb1"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "SNi ya.ru 🇷🇺"
+    type: "vless"
+    server: "80.66.89.187"
+    port: 20443
+    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "SNi ya.ru 🇷🇺 #2"
+    type: "vless"
+    server: "80.66.89.187"
+    port: 22443
+    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "SNi ya.ru 🇷🇺 #3"
+    type: "vless"
+    server: "e1-cz.edgemedia.lol"
+    port: 22443
+    uuid: "9ebf4fda-7395-4800-b42f-b2dda649880a"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ"
+      short-id: "d2061bb1"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "俄罗斯联邦_102004196 | 134ms"
     type: "vless"
     server: "194.113.235.121"
@@ -18065,21 +18221,6 @@ proxies:
       public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
       short-id: "2f49bccf11150ef2"
     network: "tcp"
-  - name: "unknown | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "tg.riotvpn.eu"
-    port: 443
-    uuid: "a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    alpn:
-      - "channel@VPNine1-channel@VPNine1-channel@VPNine1-channel@VPNine1-channel@VPNine1-channel@VPNine1-channel@VPNine1-channel@VPNine1"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
-      short-id: "2f49bccf11150ef2"
-    network: "tcp"
   - name: "俄罗斯联邦_102004144 | 170ms"
     type: "vless"
     server: "82.202.182.21"
@@ -18191,6 +18332,20 @@ proxies:
       public-key: "F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo"
       short-id: "429499c03d4cc8a0"
     network: "tcp"
+  - name: "Russia | github.com | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.76.241.127"
+    port: 8448
+    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
+    udp: true
+    tls: true
+    servername: "github.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "GunService"
   - name: "telgram : Pruoxyi 3 | 9ms"
     type: "vless"
     server: "172.66.47.61"
@@ -18278,6 +18433,22 @@ proxies:
     reality-opts:
       public-key: "7ftU0SggASCqf9TsUminHpucXB1LEQ1dPrcYFV7Dny4"
     network: "tcp"
+  - name: "🇩🇪 Germany — #99"
+    type: "vless"
+    server: "185.141.227.223"
+    port: 443
+    uuid: "a443d7bf-f506-46ce-b64d-cf8891c0a9f7"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "random"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "🇷🇺_俄罗斯_175 t.me/rjsxrd"
     type: "vless"
     server: "z1q3pv4g78.rucdncomp.pro"
@@ -20142,19 +20313,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "LTE/5G Все операторы 🇪🇺 #4"
-    type: "vless"
-    server: "87.242.95.164"
-    port: 8445
-    uuid: "b5cbeffe-d7d0-49dd-a279-6b5a6a1aad0d"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "@Hope_Net-join-us-on-Telegram | 9ms #22"
     type: "vless"
     server: "172.66.47.12"
@@ -20297,7 +20455,7 @@ proxies:
       short-id: "1be482b8e08aa0ef"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇫🇷 [WL] Сервер 33"
+  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
     port: 443
@@ -25030,7 +25188,7 @@ proxies:
     reality-opts:
       public-key: "QrNs0ew7snHqLfpVXS9RAhlRzgAzzGZK9fXmDcx9xHI"
     network: "xhttp"
-  - name: "tg:VLESSFORU top ping 🇵🇱"
+  - name: "tg:VLESSFORU 🇵🇱 ⚡"
     type: "vless"
     server: "pl-b1.golangwikito.cfd"
     port: 61374
@@ -25315,20 +25473,6 @@ proxies:
     reality-opts:
       public-key: "uakxTTpl0pQZxA-wu_QEsyVDUlErAxEKmFcnQrzABXw"
       short-id: "c24b46e36cc6d6fa"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.85.251.93"
-    port: 8443
-    uuid: "fd1d80da-3b27-457a-810b-2b28a309edc1"
-    udp: true
-    tls: true
-    servername: "travel.yandex.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "my0kaAJFk3-xpoZNZ0i-a8SsX7Y9fUP8bHsQILUK6hk"
-      short-id: "18a1ed60"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "未知 VLESS-1079 | free-nodes | 31ms"
@@ -25637,36 +25781,7 @@ proxies:
       path: "/?ed=2560"
       headers:
         Host: "tro.baiyi.cloudns.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
-    type: "vmess"
-    server: "Rib9JXAYoqjGN2KW.v.3dns.vip"
-    port: 443
-    uuid: "9b31490d-190e-4ef1-af0a-7ccab3e7c3b5"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    network: "ws"
-    ws-opts:
-      path: "/ws-vmess"
-      headers:
-        Host: "Rib9JXAYoqjGN2KW.v.3dns.vip"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #4"
-    type: "vmess"
-    server: "rib9jxayoqjgn2kw.v.3dns.vip"
-    port: 443
-    uuid: "9b31490d-190e-4ef1-af0a-7ccab3e7c3b5"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "Rib9JXAYoqjGN2KW.v.3dns.vip"
-    network: "ws"
-    ws-opts:
-      path: "/ws-vmess"
-      headers:
-        Host: "Rib9JXAYoqjGN2KW.v.3dns.vip"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦"
     type: "vmess"
     server: "172.66.203.67"
     port: 443
@@ -25756,7 +25871,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd"
     type: "vmess"
     server: "cf.0sm.com"
     port: 443
@@ -25771,7 +25886,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #5"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
     type: "vmess"
     server: "node8.liudonghoe.com"
     port: 443
@@ -25824,7 +25939,7 @@ proxies:
     port: 8443
     password: "d65fb384-5029-4edf-bdc7-0f5960600e3d"
     sni: "speedtestmark.com"
-  - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -26313,6 +26428,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "LTE/5G Все операторы 🇪🇺"
       - "🇳🇱 [BL] Сервер 615 | 132ms"
       - "美国_102004181 | 29ms"
       - "4FreeIran-74f6cf0ac0 | 153ms"
@@ -26391,7 +26507,7 @@ proxy-groups:
       - "🫧56@oneclickvpnkeys | 157ms"
       - "Latvia Sia Veesp | 170ms"
       - "美国_1020042557 | 54ms"
-      - "🇬🇧 United Kingdom — #114"
+      - "🇬🇧 United Kingdom — #115"
       - "🔒 VL-WS-TLS 🏴☠️ NA-162.159.192.129:443 | 9ms"
       - "🔒 VL-WS-TLS 🏴☠️ NA-162.159.192.141:443 | 9ms"
       - "4Sarina-bdc92bd034 | 455ms"
@@ -26521,8 +26637,8 @@ proxy-groups:
       - "未知_1020041853 | 167ms"
       - "未知_1020041055 | 61ms"
       - "🇸🇨34826 | ⚡️Telegram = t.me/SOSkeyNET | 9ms"
-      - "🇫🇷 France — #109"
-      - "🇩🇪 [BL] Сервер 58"
+      - "🇫🇷 France — #108"
+      - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
       - "美国_1020042079 | 51ms"
       - "[1226][US][0][VLESS][None][lrnbymaa][2026-10-12][2026-10-19 02:08] | 178ms"
       - "德国_102004018 | 368ms"
@@ -26601,8 +26717,8 @@ proxy-groups:
       - "美国_1020043061 | 36ms"
       - "BUNKER Free × 73 ×"
       - "tg:VLESSFORU 🇷🇺"
+      - "tg:VLESSFORU top ping 🇩🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
       - "RU 🇷🇺 | @Raydikalx | 75C7C3 | 331ms"
       - "TR 🇹🇷 | @Raydikalx | C33205 | 164ms"
       - "美国_1020042541 | 50ms"
@@ -26788,7 +26904,6 @@ proxy-groups:
       - "🔒 VL-WS-TLS 🇺🇸 US-151.101.130.133:443 | 7ms"
       - "🔒 VL-WS-TLS 🇺🇸 US-151.101.66.133:443 | 9ms"
       - "👉🆔 | 39ms"
-      - "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "[2662][RU][0][VLESS][None][shh_proxy][2026-09-12][2026-10-19 02:08] | 165ms"
       - "美国_1020042055 | 32ms"
       - "伊朗_102004057 | 212ms"
@@ -26955,7 +27070,7 @@ proxy-groups:
       - "4Kian-0bd98d4690 | 59ms"
       - "瑞典_102004089 | 327ms"
       - "[3637][US][0][VLESS][None][Capital_NET][2023-08-15][2026-10-19 02:08] | 32ms"
-      - "🇪🇪 Estonia — #98"
+      - "🇷🇺 Timeweb — #74"
       - "@Hope_Net-join-us-on-Telegram | 78ms"
       - "🌰64@oneclickvpnkeys | 196ms"
       - "美国_1020043012 | 30ms"
@@ -26994,7 +27109,9 @@ proxy-groups:
       - "美国_1020042529 | 45ms"
       - "美国_1020043054 | 166ms"
       - "@Vip_Security join us - 811 | 207ms"
-      - "cool [LSO-LTE] 🇹🇷 |#10|"
+      - "SNi vk.com 🇹🇷"
+      - "SNi vk.com 🇩🇪"
+      - "SNi vk.com 🇩🇪 #2"
       - "美国_1020043053 | 107ms"
       - "未知_1020041179 | 245ms"
       - "未知_102004520 | 168ms"
@@ -27036,11 +27153,11 @@ proxy-groups:
       - "🇬🇧 [VL] Великобритания #2171 | РосТуннель t.me/rjsxrd"
       - "🇬🇧 [VL] Великобритания #3396 | РосТуннель t.me/rjsxrd"
       - "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd"
-      - "🇸🇪 Sweden — #118"
+      - "🇸🇪 Sweden — #120"
       - "捷克_102004012 | 153ms"
       - "德国_102004050 | 9ms"
       - "🇺🇸US_773|994KB/s|A004-260618 01 | 58ms"
-      - "🇫🇷 France — #108"
+      - "🇫🇷 France — #107"
       - "奥地利_102004003 | 136ms"
       - "奥地利_102004004 | 136ms"
       - "爱沙尼亚_102004039 | 158ms"
@@ -27069,6 +27186,7 @@ proxy-groups:
       - "🇵🇱 [BL] Сервер 221"
       - "俄罗斯联邦_102004178 | 184ms"
       - "美国_1020043089 | 29ms"
+      - "Бесплатный VPN tg:VLESSFORU 🇭🇰"
       - "🚩 CF | 🔒 VLESS | @vaiking_vpn [1] | 15ms"
       - "美国_1020043023 | 31ms"
       - "CF中转_1020046980 | 9ms"
@@ -27122,7 +27240,6 @@ proxy-groups:
       - "Ir-@V2ray_Alpha-12 | 9ms"
       - "@Hope_Net-join-us-on-Telegram | 9ms #14"
       - "🔒 VL-WS-TLS 🏴☠️ NA-172.67.178.64:443 | 9ms"
-      - "Russia | m.vk.com | unknown | [#LSO - #LinSpisokObhod]"
       - "美国_102004308 | 56ms"
       - "@Hope_Net-join-us-on-Telegram | 11ms"
       - "🔒 VL-SPLITHTTP-TLS 🇫🇷 FR-185.16.110.2:443 | 9ms"
@@ -27189,6 +27306,9 @@ proxy-groups:
       - "🇫🇮 [BL] Сервер 260 | 164ms"
       - "🇺🇸 [BL] Сервер 223"
       - "⚙️82@oneclickvpnkeys | 168ms"
+      - "Бесплатный VPN tg:VLESSFORU 🇸🇬"
+      - "Бесплатный VPN tg:VLESSFORU 🇸🇬 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
       - "🇸🇪 [BL] Сервер 140"
       - "[4911][SE][0][VLESS][None][shh_proxy][2026-09-28][2026-10-19 02:08] | 160ms"
       - "[4918][DE][0][VLESS][None][freeconfigv2][2023-10-22][2026-10-19 02:08] | 135ms"
@@ -27304,7 +27424,8 @@ proxy-groups:
       - "美国_1020042752 | 37ms"
       - "未知 VLESS-875 | free-nodes | 33ms"
       - "[5640][NL][0][VLESS][None][vless_vmess][2025-07-30][2026-10-19 02:08] | 140ms"
-      - "LTE/5G Все операторы 🇪🇺"
+      - "🇳🇱 The Netherlands — #119"
+      - "LTE/5G Все операторы 🇪🇺 #2"
       - "🇷🇺 [WL] Сервер 60"
       - "SG 🇸🇬 | @Raydikalx | F84D02 | 185ms"
       - "CF中转_1020042944 | 9ms"
@@ -27416,7 +27537,6 @@ proxy-groups:
       - "美国_1020042152 | 49ms"
       - "4Kian-202ba13eaa | 180ms"
       - "4Kian-4c0c1590a8 | 161ms"
-      - "SNi yandex.ru 🇺🇸"
       - "巴西_102004019 | 174ms"
       - "🔒 VL-WS-TLS 🏴☠️ NA-104.18.35.205:2096 | 9ms"
       - "🔒 VL-WS-TLS 🏴☠️ NA-172.64.152.51:2096 | 9ms"
@@ -27429,6 +27549,7 @@ proxy-groups:
       - "@Vip_Security join us - 1302 | 234ms"
       - "@Vip_Security join us - 1303 | 736ms"
       - "伊朗_102004131 | 528ms"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
       - "[6438][US][0][VLESS][None][lrnbymaa][2026-10-01][2026-10-19 02:08] | 48ms"
       - "俄罗斯联邦_102004053 | 132ms"
       - "[6455][SE][0][VLESS][None][lrnbymaa][2026-09-26][2026-10-19 02:08] | 168ms"
@@ -27470,12 +27591,14 @@ proxy-groups:
       - "[6672][NL][0][VLESS][None][proxy_mtm][2026-10-11][2026-10-19 02:08] | 136ms"
       - "伊拉克_102004003 | 691ms"
       - "PRX11 | @proxystore11 🇨🇦 VLESS 459ms | 253ms"
-      - "LTE/5G Все операторы 🇪🇺 #2"
+      - "LTE/5G Все операторы 🇪🇺 #3"
       - "4Sarina-96d90b20eb | 34ms"
       - "CF中转_1020042325 | 9ms"
       - "未知 VLESS-893 | free-nodes | 154ms"
       - "filembad-242 | 365ms"
       - "4Jadi-429ad4e73b | 200ms"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
       - "4FreeIran-4d71390e16 | 351ms"
       - "4Jadi-1c32fde392 | 319ms"
       - "土耳其_102004041 | 395ms"
@@ -27501,8 +27624,8 @@ proxy-groups:
       - "🇳🇱NL_185|421KB/s|M002-260618 [c4695c493dc2] | 160ms"
       - "[6846][DE][0][VLESS][None][CUSTOMVPNSERVER][2026-01-24][2026-10-19 02:08] | 481ms"
       - "[6848][CR][0][VLESS][None][Hope_Net][2026-09-16][2026-10-19 02:08] | 9ms"
-      - "🇷🇺 Selectel — #71"
-      - "LTE/5G Все операторы 🇪🇺 #3"
+      - "LTE/5G Все операторы 🇪🇺 #4"
+      - "LTE/5G Все операторы 🇪🇺 #5"
       - "CF中转_1020046954 | 10ms"
       - "🇺🇸 [BL] Сервер 213"
       - "4Sarina-65d57e84fb | 165ms"
@@ -27540,6 +27663,9 @@ proxy-groups:
       - "德国_102004387 | 290ms"
       - "cool [LSO-LTE] 🇺🇸 |#11|"
       - "cool [etoneya wl] 🇺🇸 |#5|"
+      - "SNi ya.ru 🇷🇺"
+      - "SNi ya.ru 🇷🇺 #2"
+      - "SNi ya.ru 🇷🇺 #3"
       - "俄罗斯联邦_102004196 | 134ms"
       - "🇬🇧 United Kingdom | TG: @HardVpn_robot t.me/rjsxrd"
       - "[7166][DE][0][VLESS][None][free1_vpn][2026-10-11][2026-10-19 02:08] | 590ms"
@@ -27559,7 +27685,6 @@ proxy-groups:
       - "@Vip_Security join us - 1546 | 358ms"
       - "@Vip_Security join us - 1547 | 210ms"
       - "👉🆔@v2ray_configs_pool📡🇵🇱®️Poland©️Wroclaw (Fabryczna)🅿️ping:55.47ms | 142ms"
-      - "unknown | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "俄罗斯联邦_102004144 | 170ms"
       - "@Vip_Security join us - 1555 | 30ms"
       - "CF中转_1020047350 | 10ms"
@@ -27568,12 +27693,14 @@ proxy-groups:
       - "🇫🇷 [VL] Франция #579 | РосТуннель t.me/rjsxrd"
       - "[7762][US][0][VLESS][None][ext_raw.githubusercontent.com][2026-10-19][2026-10-19 02:08] | 33ms"
       - "KR 🇰🇷 | @Raydikalx | C26A71 | 137ms"
+      - "Russia | github.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "telgram : Pruoxyi 3 | 9ms"
       - "4Jadi-a04900bb0a | 30ms"
       - "德国_102004287 | 179ms"
       - "@Vip_Security join us - 1567 | 181ms"
       - "@Vip_Security join us - 1568 | 195ms"
       - "4Sarina-c2be9086b2 | 131ms"
+      - "🇩🇪 Germany — #99"
       - "🇷🇺_俄罗斯_175 t.me/rjsxrd"
       - "4Mohsen-fddc9f3367 | 145ms"
       - "[7807][SC][0][VLESS][None][marambashi][2026-10-05][2026-10-19 02:08] | 145ms"
@@ -27703,7 +27830,6 @@ proxy-groups:
       - "[8686][FR][0][VLESS][None][shh_proxy][2026-08-29][2026-10-19 02:08] | 134ms"
       - "[8688][FR][0][VLESS][None][shh_proxy][2026-08-29][2026-10-19 02:08] | 132ms"
       - "YFZ 85 @Outline_Vpn | 167ms"
-      - "LTE/5G Все операторы 🇪🇺 #4"
       - "@Hope_Net-join-us-on-Telegram | 9ms #22"
       - "@Hope_Net-join-us-on-Telegram | 92ms"
       - "美国_1020043029 | 31ms"
@@ -27713,7 +27839,7 @@ proxy-groups:
       - "未知 VLESS-1016 | free-nodes | 28ms"
       - "未知 VLESS-1017 | free-nodes | 30ms"
       - "[8735][US][0][VLESS][None][free1_vpn][2026-10-04][2026-10-19 02:08] | 133ms"
-      - "🇫🇷 [WL] Сервер 33"
+      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "FI 🇫🇮 | @Raydikalx | 6F056F | 166ms"
       - "伊朗_102004111 | 212ms"
       - "🇩🇪 Германия 98 VPSPay Networks LTD t.me/rjsxrd"
@@ -28037,7 +28163,7 @@ proxy-groups:
       - "SNi yandex.ru 🇪🇸"
       - "[13616][DE][0][VLESS][None][kingofilter][2026-10-11][2026-10-19 02:08] | 135ms"
       - "BUNKER Free × 16 ×"
-      - "tg:VLESSFORU top ping 🇵🇱"
+      - "tg:VLESSFORU 🇵🇱 ⚡"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
       - "[13653][DE][0][VLESS][None][free1_vpn][2026-10-13][2026-10-19 02:08] | 765ms"
       - "🇸🇪 [BL] Сервер 246"
@@ -28057,7 +28183,6 @@ proxy-groups:
       - "美国_1020043002 | 42ms"
       - "美国_1020041079 | 147ms"
       - "🇸🇪 [BL] Сервер 218"
-      - "Finland | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "未知 VLESS-1079 | free-nodes | 31ms"
       - "日本_102004081 | 108ms"
       - "4Kian-a4ac7bc4f2 | 169ms"
@@ -28082,22 +28207,20 @@ proxy-groups:
       - "tg:VLESSFORU 🇳🇱 ⚡ t.me/rjsxrd"
       - "🇷🇺 Россия t.me/rjsxrd"
       - "🇷🇺 Россия t.me/rjsxrd #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd"
+      - "Бесплатный VPN tg:VLESSFORU 🇨🇦"
       - "🇸🇬 [VM] Сингапур #2756 | РосТуннель t.me/rjsxrd"
       - "🇭🇰 [VM] Гонконг #3985 | РосТуннель t.me/rjsxrd"
       - "🇭🇰 [VM] Гонконг #11219 | РосТуннель t.me/rjsxrd"
       - "🇭🇷 [VM] Хорватия #2659 | РосТуннель t.me/rjsxrd"
       - "🇹🇼 [VM] Тайвань #7088 | РосТуннель t.me/rjsxrd"
-      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 t.me/rjsxrd"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
       - "🌀 CYBERPORTAL | White Keys #190 t.me/rjsxrd"
       - "🇰🇷 Южная Корея 6 Oracle Corporation t.me/rjsxrd"
       - "🇧🇷 Бразилия 3 Oracle Corporation t.me/rjsxrd"
       - "🇦🇺 Австралия 5 Oracle Corporation t.me/rjsxrd"
       - "🇨🇿 Чехия 4 Alfahost LLC t.me/rjsxrd"
-      - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
       - "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd #2"
       - "🇿🇦 [SS] ЮАР #6116 | РосТуннель t.me/rjsxrd"
       - "🌀 CYBERPORTAL | White Keys #403 t.me/rjsxrd"
