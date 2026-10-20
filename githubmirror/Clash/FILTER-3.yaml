@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 12:45:32 UTC
+# 2026-10-20 13:01:00 UTC
 proxies:
-  - name: "🇫🇷 France — #103"
+  - name: "🇫🇷 France — #104"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,22 +15,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇸🇪 Sweden — #107"
-    type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "5473d93b-3cb2-4a10-9fd5-2b98459d9c53"
-    udp: true
-    tls: true
-    servername: "io.ozone.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #102"
+  - name: "🇫🇷 France — #103"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -44,7 +29,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #78"
+  - name: "🇷🇺 Beget — #79"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -52,7 +37,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -69,14 +54,30 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇩🇪 Germany — #102"
+    type: "vless"
+    server: "185.141.227.223"
+    port: 443
+    uuid: "a443d7bf-f506-46ce-b64d-cf8891c0a9f7"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "random"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇷 France — #104"
       - "🇫🇷 France — #103"
-      - "🇸🇪 Sweden — #107"
-      - "🇫🇷 France — #102"
-      - "🇷🇺 Beget — #78"
+      - "🇷🇺 Beget — #79"
       - "🇷🇺 Selectel — #80"
+      - "🇩🇪 Germany — #102"
 rules:
   - MATCH,PROXY

@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-20 12:45:32 UTC
+# 2026-10-20 13:01:00 UTC
 proxies:
   - name: "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,34 +15,6 @@ proxies:
       short-id: "7aac777b"
     network: "grpc"
     grpc-opts:
-  - name: "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "82.202.179.111"
-    port: 15443
-    uuid: "1ba0439d-384c-4a6e-9560-0439698beb2a"
-    udp: true
-    tls: true
-    servername: "smartcaptcha.yandexcloud.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "MNmqM2p3nUYZIqo0sTMXRXGzB5HquF-czSycvdqn3U4"
-      short-id: "b74f54b7"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "82.202.182.42"
-    port: 3443
-    uuid: "1ba0439d-384c-4a6e-9560-0439698beb2a"
-    udp: true
-    tls: true
-    servername: "smartcaptcha.yandexcloud.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "YIXOvwrCFxQYKOP_GwdhbzZLlwgBIVVISXDpFZQBt0c"
-      short-id: "a5bb22e6a41ff20a"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "144.31.50.236"
@@ -113,7 +85,7 @@ proxies:
       short-id: "b7cd177731793b1e"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod] #2"
+  - name: "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -162,7 +134,7 @@ proxies:
     udp: true
     tls: true
     servername: "www.rutube.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     reality-opts:
       public-key: "iywsgYk8P1mWMu9xBjwpJQnBNGSH43RKSaaRVVv75S0"
       short-id: "c342eb1745bbaefd"
@@ -246,14 +218,12 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | load.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | smartcaptcha.yandexcloud.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
