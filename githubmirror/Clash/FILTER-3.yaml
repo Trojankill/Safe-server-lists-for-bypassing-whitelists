@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-20 09:00:54 UTC
+# 2026-10-20 09:15:32 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #83"
+  - name: "🇬🇧 United Kingdom — #97"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -13,7 +13,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇷 France — #75"
+  - name: "🇫🇷 France — #89"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -27,7 +27,19 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇧🇬 Bulgaria — #59"
+  - name: "🇳🇱 The Netherlands — #101"
+    type: "vless"
+    server: "84.201.180.13"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #74"
     type: "vless"
     server: "78.159.246.179"
     port: 8443
@@ -40,20 +52,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 VK — #8"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇸🇪 Sweden — #87"
+  - name: "🇸🇪 Sweden — #107"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -68,7 +67,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #74"
+  - name: "🇫🇷 France — #88"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -82,46 +81,28 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #53"
+  - name: "🇷🇺 Selectel — #70"
     type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇩🇪 Germany — #68"
-    type: "vless"
-    server: "185.141.227.223"
+    server: "188.72.103.4"
     port: 443
-    uuid: "a443d7bf-f506-46ce-b64d-cf8891c0a9f7"
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
+    servername: "ru.nnight.cfd"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "random"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #83"
-      - "🇫🇷 France — #75"
-      - "🇧🇬 Bulgaria — #59"
-      - "🇷🇺 VK — #8"
-      - "🇸🇪 Sweden — #87"
-      - "🇫🇷 France — #74"
-      - "🇷🇺 Beget — #53"
-      - "🇩🇪 Germany — #68"
+      - "🇬🇧 United Kingdom — #97"
+      - "🇫🇷 France — #89"
+      - "🇳🇱 The Netherlands — #101"
+      - "🇧🇬 Bulgaria — #74"
+      - "🇸🇪 Sweden — #107"
+      - "🇫🇷 France — #88"
+      - "🇷🇺 Selectel — #70"
 rules:
   - MATCH,PROXY
