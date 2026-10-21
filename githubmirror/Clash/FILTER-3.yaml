@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-21 15:01:05 UTC
+# 2026-10-21 15:15:35 UTC
 proxies:
-  - name: "🇷🇺 Beget — #82"
+  - name: "🇷🇺 Timeweb — #87"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    udp: true
+    tls: true
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇷🇺 Beget — #81"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,12 +22,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #112"
+  - name: "🇩🇪 Germany — #126"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -34,7 +47,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #82"
-      - "🇩🇪 Germany — #112"
+      - "🇷🇺 Timeweb — #87"
+      - "🇷🇺 Beget — #81"
+      - "🇩🇪 Germany — #126"
 rules:
   - MATCH,PROXY
