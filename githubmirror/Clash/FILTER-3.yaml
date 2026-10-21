@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-21 03:45:29 UTC
+# 2026-10-21 04:00:52 UTC
 proxies:
-  - name: "🇫🇷 France — #116"
+  - name: "🇫🇷 France — #109"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,20 +15,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇵🇱 Poland — #121"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇸🇪 Sweden — #122"
+  - name: "🇸🇪 Sweden — #114"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -43,7 +30,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇫🇷 France — #115"
+  - name: "🇫🇷 France — #108"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -57,7 +44,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #76"
+  - name: "🇷🇺 Beget — #82"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -70,7 +57,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #100"
+  - name: "🇩🇪 Germany — #99"
     type: "vless"
     server: "185.141.227.201"
     port: 7445
@@ -84,7 +71,7 @@ proxies:
       short-id: "283f4b51fbe39ad9"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #120"
+  - name: "🇳🇱 The Netherlands — #113"
     type: "vless"
     server: "46.243.142.2"
     port: 443
@@ -100,7 +87,7 @@ proxies:
       path: "/cart/sync/g-jSjxyhq24P"
       headers:
         Host: "floweroom.vip"
-  - name: "🇩🇪 Germany — #105"
+  - name: "🇩🇪 Germany — #104"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -120,13 +107,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #116"
-      - "🇵🇱 Poland — #121"
-      - "🇸🇪 Sweden — #122"
-      - "🇫🇷 France — #115"
-      - "🇷🇺 Beget — #76"
-      - "🇩🇪 Germany — #100"
-      - "🇳🇱 The Netherlands — #120"
-      - "🇩🇪 Germany — #105"
+      - "🇫🇷 France — #109"
+      - "🇸🇪 Sweden — #114"
+      - "🇫🇷 France — #108"
+      - "🇷🇺 Beget — #82"
+      - "🇩🇪 Germany — #99"
+      - "🇳🇱 The Netherlands — #113"
+      - "🇩🇪 Germany — #104"
 rules:
   - MATCH,PROXY
