@@ -1,20 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-21 16:01:00 UTC
+# 2026-10-21 16:15:31 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #87"
+  - name: "🇳🇱 The Netherlands — #44"
     type: "vless"
-    server: "188.225.83.133"
+    server: "84.201.180.13"
     port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
     udp: true
     tls: true
+    servername: "api-maps.yandex.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇷🇺 Beget — #81"
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+    network: "xhttp"
+  - name: "🇷🇺 Beget — #24"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -22,33 +21,57 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #126"
+  - name: "🇪🇪 Estonia — #40"
     type: "vless"
-    server: "185.141.227.223"
-    port: 443
-    uuid: "a443d7bf-f506-46ce-b64d-cf8891c0a9f7"
+    server: "46.243.235.6"
+    port: 8445
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
     udp: true
     tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 VK — #19"
+    type: "vless"
+    server: "78.159.246.179"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
+    udp: true
+    tls: true
+    servername: "randomquaint.net"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "random"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
+      - "h2"
+      - "+http/1.1"
+    client-fingerprint: "chrome"
+    network: "xhttp"
+  - name: "🇷🇺 Selectel — #25"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #87"
-      - "🇷🇺 Beget — #81"
-      - "🇩🇪 Germany — #126"
+      - "🇳🇱 The Netherlands — #44"
+      - "🇷🇺 Beget — #24"
+      - "🇪🇪 Estonia — #40"
+      - "🇷🇺 VK — #19"
+      - "🇷🇺 Selectel — #25"
 rules:
   - MATCH,PROXY
