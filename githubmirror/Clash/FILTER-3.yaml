@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-21 09:45:29 UTC
+# 2026-10-21 10:00:55 UTC
 proxies:
-  - name: "🇫🇷 France — #62"
+  - name: "🇫🇷 France — #150"
     type: "vless"
     server: "82.202.179.111"
     port: 15443
@@ -15,19 +15,7 @@ proxies:
       short-id: "b74f54b7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #71"
-    type: "vless"
-    server: "84.201.180.13"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
-    network: "xhttp"
-  - name: "🇫🇷 France — #61"
+  - name: "🇫🇷 France — #149"
     type: "vless"
     server: "82.202.179.106"
     port: 11443
@@ -41,7 +29,7 @@ proxies:
       short-id: "044a5e06faf5"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #26"
+  - name: "🇷🇺 Beget — #109"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -49,37 +37,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #23"
-    type: "vless"
-    server: "78.159.246.179"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
-    udp: true
-    tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "h2"
-      - "+http/1.1"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇷🇺 Selectel — #28"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #49"
+  - name: "🇩🇪 Germany — #138"
     type: "vless"
     server: "185.141.227.223"
     port: 443
@@ -99,12 +62,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #62"
-      - "🇳🇱 The Netherlands — #71"
-      - "🇫🇷 France — #61"
-      - "🇷🇺 Beget — #26"
-      - "🇷🇺 VK — #23"
-      - "🇷🇺 Selectel — #28"
-      - "🇩🇪 Germany — #49"
+      - "🇫🇷 France — #150"
+      - "🇫🇷 France — #149"
+      - "🇷🇺 Beget — #109"
+      - "🇩🇪 Germany — #138"
 rules:
   - MATCH,PROXY
