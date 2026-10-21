@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-21 17:45:32 UTC
+# 2026-10-21 18:01:00 UTC
 proxies:
-  - name: "🇷🇺 Beget — #85"
+  - name: "🇷🇺 Beget — #78"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,15 +9,42 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "🇪🇪 Estonia — #95"
+    type: "vless"
+    server: "46.243.235.6"
+    port: 8445
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Selectel — #79"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #85"
+      - "🇷🇺 Beget — #78"
+      - "🇪🇪 Estonia — #95"
+      - "🇷🇺 Selectel — #79"
 rules:
   - MATCH,PROXY
