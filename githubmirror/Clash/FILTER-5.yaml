@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-21 17:30:49 UTC
+# 2026-10-21 17:45:32 UTC
 proxies:
+  - name: "Russia | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "213.171.24.54"
+    port: 8643
+    uuid: "0d55ea1d-5587-4c17-9e85-3ee9b279aa8f"
+    udp: true
+    tls: true
+    servername: "travel.yandex.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "kmLlM6u12bptp7icPOL3fkUJucwvYTRVMkXz2AGAN2A"
+      short-id: "ca6703afd42cadcd"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -13,6 +27,20 @@ proxies:
     reality-opts:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "178.92.205.63"
+    port: 11167
+    uuid: "1bad3c00-9aba-414d-96a5-fd7b83a64249"
+    udp: true
+    tls: true
+    servername: "www.tesla.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "zrwJjaWEAfAZ3QCgnLnLoPE-edB_3wvKCqIz9maP02g"
+      short-id: "ac"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
@@ -125,7 +153,21 @@ proxies:
       short-id: "7bbf811a"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "de.song69.fun"
+    port: 20268
+    uuid: "408c51e8-9246-483d-ba73-34ab4e202eb9"
+    udp: true
+    tls: true
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM"
+      short-id: "0c774b50"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "82.29.36.250"
     port: 443
@@ -133,26 +175,12 @@ proxies:
     udp: true
     tls: true
     servername: "aws.amazon.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g"
-      short-id: "ac3342a709db"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.92.205.63"
-    port: 11167
-    uuid: "451ca454-81d5-4bec-97d7-9b98c315957b"
-    udp: true
-    tls: true
-    servername: "www.tesla.com"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "zrwJjaWEAfAZ3QCgnLnLoPE-edB_3wvKCqIz9maP02g"
-      short-id: "ac"
+      public-key: "09XPceP705hC-5sEDXDSLeL2eMOrF-mFISK8JaJ7q2g"
+      short-id: "09353d6dc5b789"
     flow: "xtls-rprx-vision"
-    network: "tcp"
+    network: "raw"
   - name: "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "150.241.101.17"
@@ -236,6 +264,32 @@ proxies:
       public-key: "mWxcYeYE-M3iE0RBjTzG88QI9kj2wivJDoIYDu_aG3w"
       short-id: "29c2dd1e3ef7c4d4"
     network: "tcp"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "46.243.235.6"
+    port: 8445
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "87.242.95.164"
+    port: 8445
+    uuid: "92e135b9-4c04-4e7e-8b28-d8074a202cf8"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | www.ozon.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "158.160.165.126"
@@ -278,23 +332,9 @@ proxies:
       short-id: "c342eb1745bbaefd"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "161.97.160.224"
-    port: 443
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
-      short-id: "e6"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "193.223.107.107"
+    server: "193.223.107.106"
     port: 1932
     uuid: "b8f083b6-ae01-431f-9b41-9e2eb96f352b"
     udp: true
@@ -303,20 +343,6 @@ proxies:
     client-fingerprint: "qq"
     reality-opts:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Russia | ir-2.ozone.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "135.106.172.192"
-    port: 443
-    uuid: "bab5c9d1-dce7-4dc2-905c-caa983db6f30"
-    udp: true
-    tls: true
-    servername: "ir-2.ozone.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "ii7KJJgAWI45izIWYggcvwif4XFApDETGym_Fq-UEFc"
-      short-id: "364d3f8603b1504a"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
@@ -341,7 +367,7 @@ proxies:
     udp: true
     tls: true
     servername: "www.rutube.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "1kaGIHz5N3-UTemrcJIP6vGD6aEbTcAmxedDv2VTcSA"
       short-id: "c46d735d6444850f"
@@ -367,7 +393,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | travel.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Poland | browser.yandex.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
@@ -376,20 +404,20 @@ proxy-groups:
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Hong Kong | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Italy | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Hong Kong | aws.amazon.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Brazil | www.tesla.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Hong Kong | aws.amazon.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Estonia | yandex.net | RAW | [#LSO - #LinSpisokObhod] #2"
       - "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Arab Emirates | strm.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.ozon.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-      - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | ir-2.ozone.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Austria | zsat.eu-cdn294.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | www.rutube.ru | TCP | [#LSO - #LinSpisokObhod] #3"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
