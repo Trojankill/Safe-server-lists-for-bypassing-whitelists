@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-22 21:00:59 UTC
+# 2026-10-22 21:15:31 UTC
 proxies:
-  - name: "🇵🇱 Poland — #76"
+  - name: "🇵🇱 Poland — #115"
     type: "vless"
     server: "62.152.58.90"
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: "27e53bbcab7593d7"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Timeweb — #61"
+  - name: "🇷🇺 Timeweb — #78"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -28,7 +28,7 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #58"
+  - name: "🇷🇺 Beget — #76"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -36,30 +36,17 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #60"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #76"
-      - "🇷🇺 Timeweb — #61"
-      - "🇷🇺 Beget — #58"
-      - "🇷🇺 Selectel — #60"
+      - "🇵🇱 Poland — #115"
+      - "🇷🇺 Timeweb — #78"
+      - "🇷🇺 Beget — #76"
 rules:
   - MATCH,PROXY
