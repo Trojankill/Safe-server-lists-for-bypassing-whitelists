@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-22 06:46:06 UTC
+# 2026-10-22 07:01:01 UTC
 proxies:
-  - name: "🇵🇱 Poland — #83"
+  - name: "🇵🇱 Poland — #91"
     type: "vless"
     server: "62.152.58.90"
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: "27e53bbcab7593d7"
     network: "grpc"
     grpc-opts:
-  - name: "🇩🇪 Germany — #81"
+  - name: "🇩🇪 Germany — #89"
     type: "vless"
     server: "185.91.52.13"
     port: 30066
@@ -28,7 +28,7 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Timeweb — #78"
+  - name: "🇷🇺 Timeweb — #87"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -41,20 +41,32 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #75"
+  - name: "🇷🇺 VK — #4"
     type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    server: "78.159.246.179"
+    port: 2053
+    uuid: "6a2aff19-ff1f-4a13-96c8-a4d8986a9699"
     udp: true
     tls: true
-    servername: "ya.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇩🇪 Germany — #82"
+    servername: "randomquaint.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Selectel — #86"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #90"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -73,10 +85,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #83"
-      - "🇩🇪 Germany — #81"
-      - "🇷🇺 Timeweb — #78"
-      - "🇷🇺 Beget — #75"
-      - "🇩🇪 Germany — #82"
+      - "🇵🇱 Poland — #91"
+      - "🇩🇪 Germany — #89"
+      - "🇷🇺 Timeweb — #87"
+      - "🇷🇺 VK — #4"
+      - "🇷🇺 Selectel — #86"
+      - "🇩🇪 Germany — #90"
 rules:
   - MATCH,PROXY
