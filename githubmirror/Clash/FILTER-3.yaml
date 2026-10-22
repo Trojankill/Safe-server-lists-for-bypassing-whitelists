@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-22 10:45:33 UTC
+# 2026-10-22 11:01:00 UTC
 proxies:
-  - name: "🇵🇱 Poland — #71"
+  - name: "🇵🇱 Poland — #85"
     type: "vless"
     server: "62.152.58.90"
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: "27e53bbcab7593d7"
     network: "grpc"
     grpc-opts:
-  - name: "🇩🇪 Germany — #70"
+  - name: "🇩🇪 Germany — #84"
     type: "vless"
     server: "185.91.52.13"
     port: 30066
@@ -28,7 +28,7 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Timeweb — #39"
+  - name: "🇷🇺 Timeweb — #73"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -41,7 +41,7 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #35"
+  - name: "🇷🇺 Beget — #71"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -49,25 +49,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #28"
-    type: "vless"
-    server: "78.159.246.179"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
-    udp: true
-    tls: true
-    servername: "randomquaint.net"
-    alpn:
-      - "h2"
-      - "+http/1.1"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇷🇺 Selectel — #38"
+  - name: "🇷🇺 Selectel — #72"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -83,11 +70,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #71"
-      - "🇩🇪 Germany — #70"
-      - "🇷🇺 Timeweb — #39"
-      - "🇷🇺 Beget — #35"
-      - "🇷🇺 VK — #28"
-      - "🇷🇺 Selectel — #38"
+      - "🇵🇱 Poland — #85"
+      - "🇩🇪 Germany — #84"
+      - "🇷🇺 Timeweb — #73"
+      - "🇷🇺 Beget — #71"
+      - "🇷🇺 Selectel — #72"
 rules:
   - MATCH,PROXY
