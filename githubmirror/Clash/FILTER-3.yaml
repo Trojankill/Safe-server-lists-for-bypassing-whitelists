@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-23 21:00:58 UTC
+# 2026-10-23 21:15:31 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #61"
-    type: "vless"
-    server: "188.225.77.143"
-    port: 8468
-    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
-      short-id: "6ba85179e30d4fc2"
-    network: "xhttp"
-  - name: "🇵🇱 Poland — #81"
+  - name: "🇵🇱 Poland — #84"
     type: "vless"
     server: "217.19.122.194"
     port: 443
@@ -41,19 +28,33 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #60"
+  - name: "🇷🇺 LLC Smart Ape — #60"
     type: "vless"
-    server: "188.72.103.4"
+    server: "84.201.170.60"
     port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    uuid: "7072eeba-94fd-4fb3-92f2-a4506dd84cd8"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "KWltK5E_1XCj4H1zDpJqzrfhqb_PeVdZ4PCqedlBKG0"
+      short-id: "7760b69926f2e507"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇫🇷 France — #83"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "928a3079-7c20-40cc-9c92-e878ba959dcd"
+    udp: true
+    tls: true
+    servername: "smart.werfad.online"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #73"
+  - name: "🇩🇪 Germany — #75"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -69,7 +70,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #80"
+  - name: "🇩🇪 Germany — #82"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -83,7 +84,7 @@ proxies:
       short-id: "d29cbe24661f"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #79"
+  - name: "🇩🇪 Germany — #81"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -102,12 +103,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #61"
-      - "🇵🇱 Poland — #81"
+      - "🇵🇱 Poland — #84"
       - "🇷🇺 Beget — #56"
-      - "🇷🇺 Selectel — #60"
-      - "🇩🇪 Germany — #73"
-      - "🇩🇪 Germany — #80"
-      - "🇩🇪 Germany — #79"
+      - "🇷🇺 LLC Smart Ape — #60"
+      - "🇫🇷 France — #83"
+      - "🇩🇪 Germany — #75"
+      - "🇩🇪 Germany — #82"
+      - "🇩🇪 Germany — #81"
 rules:
   - MATCH,PROXY
