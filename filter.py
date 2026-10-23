@@ -103,7 +103,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-9-BASE64", "url": "https://raw.githubusercontent.com/Diversan313/apex-parser/main/subs/main/alive_bl.txt"},
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
     {"name": "FILTER-11", "url": "https://hub.mos.ru/akelladejavu/bunker/-/raw/main/WHITE_LIST.txt"},
-    {"name": "FILTER-12", "url": "https://p.kfwl.lol/https://tgmansion.fun/sub/3006966d1608d911"},
+    {"name": "FILTER-12", "url": "https://pozor.bond/sub/2sdfe56lna"},
     {"name": "FILTER-13", "url": "https://github.com/vessel-web/CoolSubs/raw/refs/heads/main/Cool-White.txt"},
 ]
 
