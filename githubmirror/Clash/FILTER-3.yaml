@@ -1,20 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-23 18:45:37 UTC
+# 2026-10-23 19:00:59 UTC
 proxies:
-  - name: "🇷🇺 VK — #51"
+  - name: "🇳🇱 The Netherlands — #71"
     type: "vless"
-    server: "81.94.148.232"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    server: "84.201.180.13"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
     udp: true
     tls: true
-    servername: "windytrout.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
     network: "xhttp"
-  - name: "🇷🇺 Beget — #55"
+  - name: "🇷🇺 Beget — #46"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -27,46 +26,34 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇧🇬 Bulgaria — #62"
+  - name: "🇳🇱 The Netherlands — #76"
+    type: "vless"
+    server: "188.225.27.229"
+    port: 443
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
+    udp: true
+    tls: true
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 VK — #38"
     type: "vless"
     server: "78.159.246.85"
-    port: 8443
-    uuid: "6a2aff19-ff1f-4a13-96c8-a4d8986a9699"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
     udp: true
     tls: true
     servername: "fitindoor.net"
     alpn:
+      - "h2"
       - "http/1.1"
-      - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 LLC Smart Ape — #59"
-    type: "vless"
-    server: "84.201.170.60"
-    port: 443
-    uuid: "7072eeba-94fd-4fb3-92f2-a4506dd84cd8"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "edge"
-    reality-opts:
-      public-key: "KWltK5E_1XCj4H1zDpJqzrfhqb_PeVdZ4PCqedlBKG0"
-      short-id: "7760b69926f2e507"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Selectel — #61"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #78"
+  - name: "🇩🇪 Germany — #58"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -82,7 +69,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #85"
+  - name: "🇩🇪 Germany — #65"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -96,7 +83,7 @@ proxies:
       short-id: "d29cbe24661f"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #84"
+  - name: "🇩🇪 Germany — #64"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -115,13 +102,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 VK — #51"
-      - "🇷🇺 Beget — #55"
-      - "🇧🇬 Bulgaria — #62"
-      - "🇷🇺 LLC Smart Ape — #59"
-      - "🇷🇺 Selectel — #61"
-      - "🇩🇪 Germany — #78"
-      - "🇩🇪 Germany — #85"
-      - "🇩🇪 Germany — #84"
+      - "🇳🇱 The Netherlands — #71"
+      - "🇷🇺 Beget — #46"
+      - "🇳🇱 The Netherlands — #76"
+      - "🇷🇺 VK — #38"
+      - "🇩🇪 Germany — #58"
+      - "🇩🇪 Germany — #65"
+      - "🇩🇪 Germany — #64"
 rules:
   - MATCH,PROXY

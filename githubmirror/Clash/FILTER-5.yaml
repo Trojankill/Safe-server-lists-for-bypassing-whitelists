@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-23 18:45:37 UTC
+# 2026-10-23 19:00:59 UTC
 proxies:
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "132.243.230.251"
+    port: 443
+    uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
+      short-id: "b2f9bb426426e0e7"
+    network: "xhttp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -29,20 +42,48 @@ proxies:
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Armenia | metrika.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
-    server: "88.218.92.41"
-    port: 24694
-    uuid: "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6"
+    server: "144.31.50.236"
+    port: 443
+    uuid: "1c332eae-7e02-4acd-996d-4eb3e652401c"
+    udp: true
+    tls: true
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM"
+      short-id: "bbe46bd8f6b96839"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "191.217.251.249"
+    port: 20268
+    uuid: "408c51e8-9246-483d-ba73-34ab4e202eb9"
     udp: true
     tls: true
     servername: "metrika.yandex.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "5H_MmyfvF4SkwS84wTbLmtcZDecXJIJtZ3uisiKQpSM"
+      short-id: "0c774b50"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.218.92.41"
+    port: 24694
+    uuid: "408c51e8-9246-483d-ba73-34ab4e202eb9"
+    udp: true
+    tls: true
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ"
       short-id: "58301280"
     flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.105.108.176"
@@ -93,26 +134,12 @@ proxies:
     udp: true
     tls: true
     servername: "smartcaptcha.yandexcloud.net"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "7VEbBMpg2DyUHU53a76muNrCES-g12FyRUvThr4lvy4"
       short-id: "b208"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | ads.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.24.209.39"
-    port: 443
-    uuid: "9c54d883-97a8-4b49-af23-fe052eff2c3a"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ti1bwJgCG1bf5Deg-W11xZsKRx5mqlFAG6mDUKJRkwU"
-      short-id: "62ce51a1"
-    network: "grpc"
-    grpc-opts:
   - name: "Sweden | se2.gderevievsvideos.fyi | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.58.115.62"
@@ -125,33 +152,6 @@ proxies:
     reality-opts:
       public-key: "13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ"
       short-id: "7271129440ade8fa"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
-    type: "vless"
-    server: "178.172.227.228"
-    port: 10444
-    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.81.129.197"
-    port: 443
-    uuid: "c31dc85a-747e-4dac-94b9-2d5ca7791367"
-    udp: true
-    tls: true
-    servername: "lites.3apes.online"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod] #2"
@@ -188,17 +188,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Armenia | metrika.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | ads.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | se2.gderevievsvideos.fyi | TCP | [#LSO - #LinSpisokObhod]"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
-      - "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
