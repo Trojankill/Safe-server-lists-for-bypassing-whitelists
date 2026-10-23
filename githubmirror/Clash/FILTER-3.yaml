@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-23 14:45:34 UTC
+# 2026-10-23 15:01:02 UTC
 proxies:
   - name: "🇷🇺 VK — #52"
     type: "vless"
@@ -14,7 +14,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Timeweb — #59"
+  - name: "🇷🇺 Timeweb — #61"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -35,12 +35,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 LLC Smart Ape — #58"
+  - name: "🇷🇺 LLC Smart Ape — #59"
     type: "vless"
     server: "84.201.170.60"
     port: 443
@@ -48,13 +48,25 @@ proxies:
     udp: true
     tls: true
     servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "KWltK5E_1XCj4H1zDpJqzrfhqb_PeVdZ4PCqedlBKG0"
       short-id: "7760b69926f2e507"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #73"
+  - name: "🇷🇺 Selectel — #60"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #68"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -70,7 +82,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #79"
+  - name: "🇩🇪 Germany — #74"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -89,10 +101,11 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 VK — #52"
-      - "🇷🇺 Timeweb — #59"
+      - "🇷🇺 Timeweb — #61"
       - "🇷🇺 Beget — #56"
-      - "🇷🇺 LLC Smart Ape — #58"
-      - "🇩🇪 Germany — #73"
-      - "🇩🇪 Germany — #79"
+      - "🇷🇺 LLC Smart Ape — #59"
+      - "🇷🇺 Selectel — #60"
+      - "🇩🇪 Germany — #68"
+      - "🇩🇪 Germany — #74"
 rules:
   - MATCH,PROXY
