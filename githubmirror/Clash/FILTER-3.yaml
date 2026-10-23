@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-23 22:00:53 UTC
+# 2026-10-23 22:15:30 UTC
 proxies:
-  - name: "🇵🇱 Poland — #84"
+  - name: "🇷🇺 Timeweb — #50"
+    type: "vless"
+    server: "188.225.77.143"
+    port: 8468
+    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
+      short-id: "6ba85179e30d4fc2"
+    network: "xhttp"
+  - name: "🇵🇱 Poland — #81"
     type: "vless"
     server: "217.19.122.194"
     port: 443
@@ -15,7 +28,7 @@ proxies:
       short-id: "38560e0003d69843"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #56"
+  - name: "🇷🇺 Beget — #46"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -28,21 +41,21 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 LLC Smart Ape — #60"
+  - name: "🇩🇪 Germany — #73"
     type: "vless"
-    server: "84.201.170.60"
+    server: "188.225.27.229"
     port: 443
-    uuid: "7072eeba-94fd-4fb3-92f2-a4506dd84cd8"
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
     udp: true
     tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "chrome"
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
     reality-opts:
-      public-key: "KWltK5E_1XCj4H1zDpJqzrfhqb_PeVdZ4PCqedlBKG0"
-      short-id: "7760b69926f2e507"
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇫🇷 France — #83"
+  - name: "🇫🇷 France — #76"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -54,7 +67,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #75"
+  - name: "🇷🇺 VK — #38"
+    type: "vless"
+    server: "78.159.246.85"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #67"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -70,7 +96,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #82"
+  - name: "🇩🇪 Germany — #75"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -84,7 +110,7 @@ proxies:
       short-id: "d29cbe24661f"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #81"
+  - name: "🇩🇪 Germany — #74"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -103,12 +129,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #84"
-      - "🇷🇺 Beget — #56"
-      - "🇷🇺 LLC Smart Ape — #60"
-      - "🇫🇷 France — #83"
+      - "🇷🇺 Timeweb — #50"
+      - "🇵🇱 Poland — #81"
+      - "🇷🇺 Beget — #46"
+      - "🇩🇪 Germany — #73"
+      - "🇫🇷 France — #76"
+      - "🇷🇺 VK — #38"
+      - "🇩🇪 Germany — #67"
       - "🇩🇪 Germany — #75"
-      - "🇩🇪 Germany — #82"
-      - "🇩🇪 Germany — #81"
+      - "🇩🇪 Germany — #74"
 rules:
   - MATCH,PROXY
