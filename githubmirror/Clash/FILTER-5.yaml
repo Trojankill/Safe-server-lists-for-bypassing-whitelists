@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-23 11:34:13 UTC
+# 2026-10-23 11:46:09 UTC
 proxies:
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "213.165.54.59"
+    port: 8443
+    uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
+      short-id: "2e6d668958829998"
+    network: "xhttp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -23,23 +36,24 @@ proxies:
     udp: true
     tls: true
     servername: "ads.x5.ru"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "France | de.ozon.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
-    server: "103.91.147.212"
+    server: "144.31.50.236"
     port: 443
-    uuid: "261160d5-0343-4b85-8c28-3d40dd681559"
+    uuid: "1c332eae-7e02-4acd-996d-4eb3e652401c"
     udp: true
     tls: true
-    servername: "de.ozon.ru"
-    client-fingerprint: "firefox"
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
     reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      public-key: "uitO4Z8t9TplwwYaqwLqh5rfxDh_X8bOBiNuPbzvaEM"
+      short-id: "bbe46bd8f6b96839"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | a3.eosapp.net | RAW | [#LSO - #LinSpisokObhod]"
@@ -69,7 +83,21 @@ proxies:
       short-id: "58301280"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.105.108.176"
+    port: 443
+    uuid: "689a62e4-37e7-41de-9e6a-f2a56368c9e2"
+    udp: true
+    tls: true
+    servername: "www.google.co.uk"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "U9O1sbuPwoTowF3Ka7CIgUZlRjokulxSwsYohEGCLA8"
+      short-id: "0d87fec579"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.17.178.125"
     port: 443
@@ -82,8 +110,64 @@ proxies:
       public-key: "jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE"
       short-id: "e0215064d8d1fd7c"
     flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Latvia | lites.3apes.online | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.202.182.41"
+    port: 2443
+    uuid: "928a3079-7c20-40cc-9c92-e878ba959dcd"
+    udp: true
+    tls: true
+    servername: "smartcaptcha.yandexcloud.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "7VEbBMpg2DyUHU53a76muNrCES-g12FyRUvThr4lvy4"
+      short-id: "b208"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Germany | ads.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.24.209.39"
+    port: 443
+    uuid: "9c54d883-97a8-4b49-af23-fe052eff2c3a"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "ti1bwJgCG1bf5Deg-W11xZsKRx5mqlFAG6mDUKJRkwU"
+      short-id: "62ce51a1"
+    network: "grpc"
+    grpc-opts:
+  - name: "Sweden | se2.gderevievsvideos.fyi | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.58.115.62"
+    port: 443
+    uuid: "9c794bb7-54fe-4acd-844a-a26209af36c3"
+    udp: true
+    tls: true
+    servername: "se2.gderevievsvideos.fyi"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "13nLTYkdBEFR-A4CfK2beOx-5LKEsXh1QHPq8Kt52BQ"
+      short-id: "7271129440ade8fa"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.81.129.197"
     port: 443
@@ -95,7 +179,7 @@ proxies:
     reality-opts:
       public-key: "q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ"
     flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -116,13 +200,19 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "France | de.ozon.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | a3.eosapp.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Latvia | lites.3apes.online | RAW | [#LSO - #LinSpisokObhod]"
+      - "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
+      - "Germany | cdn.tbank.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Germany | ads.x5.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Sweden | se2.gderevievsvideos.fyi | TCP | [#LSO - #LinSpisokObhod]"
+      - "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
