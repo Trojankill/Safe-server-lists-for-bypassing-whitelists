@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-23 13:45:31 UTC
+# 2026-10-23 14:00:59 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #49"
+  - name: "🇷🇺 VK — #52"
+    type: "vless"
+    server: "81.94.148.232"
+    port: 2053
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "windytrout.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Timeweb — #59"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -14,20 +27,7 @@ proxies:
       public-key: "Buy9pirx5Ih_LHwc6R3BCmvRL4g4Ljx6B3MEsZfIZhU"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #62"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇷🇺 Beget — #46"
+  - name: "🇷🇺 Beget — #56"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -35,37 +35,26 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #38"
+  - name: "🇷🇺 LLC Smart Ape — #58"
     type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 Selectel — #48"
-    type: "vless"
-    server: "188.72.103.4"
+    server: "84.201.170.60"
     port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    uuid: "7072eeba-94fd-4fb3-92f2-a4506dd84cd8"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #71"
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "KWltK5E_1XCj4H1zDpJqzrfhqb_PeVdZ4PCqedlBKG0"
+      short-id: "7760b69926f2e507"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #73"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -81,7 +70,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #77"
+  - name: "🇩🇪 Germany — #79"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -99,12 +88,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #49"
-      - "🇩🇪 Germany — #62"
-      - "🇷🇺 Beget — #46"
-      - "🇷🇺 VK — #38"
-      - "🇷🇺 Selectel — #48"
-      - "🇩🇪 Germany — #71"
-      - "🇩🇪 Germany — #77"
+      - "🇷🇺 VK — #52"
+      - "🇷🇺 Timeweb — #59"
+      - "🇷🇺 Beget — #56"
+      - "🇷🇺 LLC Smart Ape — #58"
+      - "🇩🇪 Germany — #73"
+      - "🇩🇪 Germany — #79"
 rules:
   - MATCH,PROXY
