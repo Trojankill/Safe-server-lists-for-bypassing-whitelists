@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-23 07:00:57 UTC
+# 2026-10-23 07:15:31 UTC
 proxies:
-  - name: "🇵🇱 Poland — #110"
+  - name: "🇵🇱 Poland — #121"
     type: "vless"
     server: "62.152.58.90"
     port: 443
@@ -15,7 +15,7 @@ proxies:
       short-id: "27e53bbcab7593d7"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Timeweb — #81"
+  - name: "🇷🇺 Timeweb — #83"
     type: "vless"
     server: "46.254.17.88"
     port: 30065
@@ -36,17 +36,30 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "🇷🇺 Selectel — #82"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #110"
-      - "🇷🇺 Timeweb — #81"
+      - "🇵🇱 Poland — #121"
+      - "🇷🇺 Timeweb — #83"
       - "🇷🇺 Beget — #79"
+      - "🇷🇺 Selectel — #82"
 rules:
   - MATCH,PROXY
