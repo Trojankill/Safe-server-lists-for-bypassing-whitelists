@@ -1,19 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-24 04:45:29 UTC
+# 2026-10-24 05:00:57 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #99"
+  - name: "🇷🇺 Timeweb — #60"
     type: "vless"
-    server: "84.201.180.13"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    server: "188.225.77.143"
+    port: 8468
+    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
     udp: true
     tls: true
-    servername: "api-maps.yandex.ru"
+    servername: "ads.x5.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
+      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
+      short-id: "6ba85179e30d4fc2"
     network: "xhttp"
-  - name: "🇵🇱 Poland — #107"
+  - name: "🇵🇱 Poland — #95"
     type: "vless"
     server: "217.19.122.194"
     port: 443
@@ -27,7 +28,7 @@ proxies:
       short-id: "38560e0003d69843"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇪🇪 Estonia — #88"
+  - name: "🇪🇪 Estonia — #85"
     type: "vless"
     server: "95.163.250.241"
     port: 8442
@@ -41,7 +42,21 @@ proxies:
       short-id: "a7f9106ba66e4796"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #86"
+  - name: "🇫🇷 France — #91"
+    type: "vless"
+    server: "95.163.250.241"
+    port: 8445
+    uuid: "5af23e36-62b7-4765-b27d-ed070f0535ed"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "V8tWqRolt7hnShpwxj_JMGtkeYcHzbIS2dxF4VStoD4"
+      short-id: "dcd3a19a9bfd8046"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #84"
     type: "vless"
     server: "95.163.250.241"
     port: 8447
@@ -55,7 +70,7 @@ proxies:
       short-id: "b59d33a750d35e66"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Beget — #57"
+  - name: "🇷🇺 Beget — #56"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -68,20 +83,34 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #105"
+  - name: "🇳🇱 The Netherlands — #92"
     type: "vless"
-    server: "188.225.44.50"
+    server: "188.225.27.229"
     port: 443
-    uuid: "736d08e1-27b0-4ec2-a5e0-4575e24da6b5"
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
     udp: true
     tls: true
-    servername: "edge.jagavps.ru"
-    client-fingerprint: "firefox"
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
     reality-opts:
-      public-key: "NiUsL7f8tuEUltpr9UC98fnZQs510PlQDCCi32WbgAA"
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇫🇷 France — #89"
+  - name: "🇧🇬 Bulgaria — #61"
+    type: "vless"
+    server: "78.159.246.85"
+    port: 8443
+    uuid: "6a2aff19-ff1f-4a13-96c8-a4d8986a9699"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇫🇷 France — #86"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -89,18 +118,6 @@ proxies:
     udp: true
     tls: true
     servername: "smart.werfad.online"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 Selectel — #61"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
@@ -154,14 +171,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #99"
-      - "🇵🇱 Poland — #107"
-      - "🇪🇪 Estonia — #88"
-      - "🇩🇪 Germany — #86"
-      - "🇷🇺 Beget — #57"
-      - "🇳🇱 The Netherlands — #105"
-      - "🇫🇷 France — #89"
-      - "🇷🇺 Selectel — #61"
+      - "🇷🇺 Timeweb — #60"
+      - "🇵🇱 Poland — #95"
+      - "🇪🇪 Estonia — #85"
+      - "🇫🇷 France — #91"
+      - "🇩🇪 Germany — #84"
+      - "🇷🇺 Beget — #56"
+      - "🇳🇱 The Netherlands — #92"
+      - "🇧🇬 Bulgaria — #61"
+      - "🇫🇷 France — #86"
       - "🇩🇪 Germany — #76"
       - "🇩🇪 Germany — #83"
       - "🇩🇪 Germany — #82"
