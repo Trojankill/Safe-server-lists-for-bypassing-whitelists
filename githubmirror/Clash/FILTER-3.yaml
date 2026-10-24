@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-24 12:45:30 UTC
+# 2026-10-24 13:00:55 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #69"
+  - name: "🇪🇪 Estonia — #71"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -14,7 +14,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #42"
+  - name: "🇷🇺 Beget — #47"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -27,7 +27,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #33"
+  - name: "🇷🇺 VK — #38"
     type: "vless"
     server: "78.159.246.85"
     port: 2053
@@ -40,7 +40,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #59"
+  - name: "🇩🇪 Germany — #62"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,28 +56,13 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #65"
-    type: "vless"
-    server: "82.202.179.110"
-    port: 14443
-    uuid: "ccd6419d-6943-4e7c-bc8c-7a157dadff80"
-    udp: true
-    tls: true
-    servername: "smartcaptcha.yandexcloud.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "JufPPJ3rmM2jvI9g98K87wgUHroz4C-30NHX21UoZns"
-      short-id: "d29cbe24661f"
-    flow: "xtls-rprx-vision"
-    network: "raw"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #69"
-      - "🇷🇺 Beget — #42"
-      - "🇷🇺 VK — #33"
-      - "🇩🇪 Germany — #59"
-      - "🇩🇪 Germany — #65"
+      - "🇪🇪 Estonia — #71"
+      - "🇷🇺 Beget — #47"
+      - "🇷🇺 VK — #38"
+      - "🇩🇪 Germany — #62"
 rules:
   - MATCH,PROXY
