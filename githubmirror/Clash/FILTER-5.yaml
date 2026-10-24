@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-24 18:30:47 UTC
+# 2026-10-24 18:45:31 UTC
 proxies:
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "178.172.227.124"
@@ -9,13 +23,13 @@ proxies:
     udp: true
     tls: true
     servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "144.31.50.236"
     port: 443
@@ -33,7 +47,7 @@ proxies:
     type: "vless"
     server: "88.218.92.41"
     port: 24694
-    uuid: "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6"
+    uuid: "408c51e8-9246-483d-ba73-34ab4e202eb9"
     udp: true
     tls: true
     servername: "metrika.yandex.ru"
@@ -41,6 +55,20 @@ proxies:
     reality-opts:
       public-key: "kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ"
       short-id: "58301280"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Russia | neero1.gorodokmedia.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.222.148.118"
+    port: 443
+    uuid: "569d1a08-a4b7-4751-89c9-ce57b4b6449f"
+    udp: true
+    tls: true
+    servername: "neero1.gorodokmedia.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "7TmWuqg4d5YLHzAT4me2YWFLI6Af7ysIxSEX2mnYhn0"
+      short-id: "ebb47e4bdf4085cf"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | eh.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -99,19 +127,6 @@ proxies:
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.81.129.197"
-    port: 443
-    uuid: "c31dc85a-747e-4dac-94b9-2d5ca7791367"
-    udp: true
-    tls: true
-    servername: "lites.3apes.online"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "q4_o7NvD6vQg4hYsyO29Q6PVufjTJHDUbQTqstre9EQ"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -132,14 +147,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | neero1.gorodokmedia.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | eh.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Sweden | se2.gderevievsvideos.fyi | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
-      - "Latvia | lites.3apes.online | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
