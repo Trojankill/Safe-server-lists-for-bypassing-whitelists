@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-24 00:45:30 UTC
+# 2026-10-24 01:00:57 UTC
 proxies:
-  - name: "🇵🇱 Poland — #91"
+  - name: "🇵🇱 Poland — #103"
     type: "vless"
     server: "217.19.122.194"
     port: 443
@@ -28,7 +28,48 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇫🇷 France — #86"
+  - name: "🇺🇸 United States — #104"
+    type: "vless"
+    server: "37.18.14.190"
+    port: 7445
+    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
+      short-id: "283f4b51fbe39ad9"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #91"
+    type: "vless"
+    server: "188.225.27.229"
+    port: 443
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
+    udp: true
+    tls: true
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇧🇬 Bulgaria — #61"
+    type: "vless"
+    server: "78.159.246.85"
+    port: 8443
+    uuid: "6a2aff19-ff1f-4a13-96c8-a4d8986a9699"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇫🇷 France — #94"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -52,7 +93,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #78"
+  - name: "🇩🇪 Germany — #83"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -68,7 +109,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #85"
+  - name: "🇩🇪 Germany — #90"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -82,7 +123,7 @@ proxies:
       short-id: "d29cbe24661f"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #84"
+  - name: "🇩🇪 Germany — #89"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -101,12 +142,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #91"
+      - "🇵🇱 Poland — #103"
       - "🇷🇺 Beget — #56"
-      - "🇫🇷 France — #86"
+      - "🇺🇸 United States — #104"
+      - "🇩🇪 Germany — #91"
+      - "🇧🇬 Bulgaria — #61"
+      - "🇫🇷 France — #94"
       - "🇷🇺 Selectel — #60"
-      - "🇩🇪 Germany — #78"
-      - "🇩🇪 Germany — #85"
-      - "🇩🇪 Germany — #84"
+      - "🇩🇪 Germany — #83"
+      - "🇩🇪 Germany — #90"
+      - "🇩🇪 Germany — #89"
 rules:
   - MATCH,PROXY
