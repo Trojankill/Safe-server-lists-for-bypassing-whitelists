@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-24 18:15:33 UTC
+# 2026-10-24 18:30:47 UTC
 proxies:
   - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
@@ -696,6 +696,50 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #7"
+    type: "vless"
+    server: "fi17-node.rumedia-cdn.com"
+    port: 2096
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "st4834a.rumedia-cdn.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    network: "ws"
+    ws-opts:
+      path: "/cdn/v3/live"
+      headers:
+        Host: "st4834a.rumedia-cdn.com"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #8"
+    type: "vless"
+    server: "fi17-node.rumedia-cdn.com"
+    port: 8443
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "www.nokia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "14YyFG_j2yPEUu-gO_G9GqCqRiZ0DIUgzReV9CZvOAk"
+      short-id: "0f47ff9aa15e3e30"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇪"
+    type: "vless"
+    server: "se13-node.rumedia-cdn.com"
+    port: 8443
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "www.wikipedia.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ndQzAcG4g-2OhvFb8EjFnZyxJ2lhawiulTLJOZrK8lY"
+      short-id: "c4359f3827231250"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇦🇹"
     type: "vless"
     server: "185.104.63.173"
@@ -820,6 +864,9 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #7"
       - "LTE/5G Все операторы 🇪🇺 #12"
       - "LTE/5G Все операторы 🇪🇺 #13"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #7"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #8"
+      - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇹"
       - "Бесплатный VPN tg:VLESSFORU 🇪🇸 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇪🇪 #2"

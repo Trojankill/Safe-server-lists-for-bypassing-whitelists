@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-24 18:15:33 UTC
+# 2026-10-24 18:30:48 UTC
 proxies:
   - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
@@ -3654,6 +3654,50 @@ proxies:
       short-id: "19296c9f1bf9c7b1"
     flow: "xtls-rprx-vision"
     network: "raw"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #6"
+    type: "vless"
+    server: "fi17-node.rumedia-cdn.com"
+    port: 2096
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "st4834a.rumedia-cdn.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    network: "ws"
+    ws-opts:
+      path: "/cdn/v3/live"
+      headers:
+        Host: "st4834a.rumedia-cdn.com"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #7"
+    type: "vless"
+    server: "fi17-node.rumedia-cdn.com"
+    port: 8443
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "www.nokia.com"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "14YyFG_j2yPEUu-gO_G9GqCqRiZ0DIUgzReV9CZvOAk"
+      short-id: "0f47ff9aa15e3e30"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇪"
+    type: "vless"
+    server: "se13-node.rumedia-cdn.com"
+    port: 8443
+    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
+    udp: true
+    tls: true
+    servername: "www.wikipedia.org"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "ndQzAcG4g-2OhvFb8EjFnZyxJ2lhawiulTLJOZrK8lY"
+      short-id: "c4359f3827231250"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "🇷🇴 [BL] Сервер 68"
     type: "vless"
     server: "46.28.67.55"
@@ -5395,6 +5439,9 @@ proxy-groups:
       - "LTE/5G Все операторы 🇪🇺 #11"
       - "LTE/5G Все операторы 🇪🇺 #12"
       - "🇺🇸 [BL] Сервер 144"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #6"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #7"
+      - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
       - "🇷🇴 [BL] Сервер 68"
       - "🇩🇪 Германия 111 FDCservers.net t.me/rjsxrd"
       - "🇮🇹 [BL] Сервер 148"
