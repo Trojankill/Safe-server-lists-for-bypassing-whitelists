@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-24 08:30:44 UTC
+# 2026-10-24 08:45:28 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -84,6 +84,19 @@ proxies:
       short-id: "0c774b50"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | ads.x5.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "188.225.77.143"
+    port: 8468
+    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
+      short-id: "6ba85179e30d4fc2"
+    network: "xhttp"
   - name: "Russia | bm1.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.194"
@@ -290,6 +303,7 @@ proxy-groups:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | ads.x5.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | bm1.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | eh.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | eh.vk.com | TCP | [#LSO - #LinSpisokObhod] #2"
