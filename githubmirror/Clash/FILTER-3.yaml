@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-24 19:00:53 UTC
+# 2026-10-24 19:15:30 UTC
 proxies:
-  - name: "🇪🇪 Estonia — #72"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    servername: "xnodtwx.artemida.live"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
   - name: "🇷🇺 Beget — #48"
     type: "vless"
     server: "45.12.75.242"
@@ -42,7 +28,7 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 VK — #37"
+  - name: "🇷🇺 VK — #38"
     type: "vless"
     server: "78.159.246.85"
     port: 2053
@@ -55,19 +41,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #50"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #65"
+  - name: "🇩🇪 Germany — #64"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -83,58 +57,61 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #75"
+  - name: "🇫🇷 France — #76"
     type: "vless"
-    server: "91.215.40.102"
+    server: "82.202.178.139"
     port: 443
-    uuid: "c99063b9-e86f-4320-bd45-f7e1acdc0f87"
+    uuid: "ccd6419d-6943-4e7c-bc8c-7a157dadff80"
     udp: true
     tls: true
-    servername: "plw-guard-1.harknmav.fun"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
+    servername: "h6.smart-life.agency"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0"
+      short-id: "316d0a3751f3122d"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "/v1/segment/8a3f1c5be24d2854/Tun|Fetch"
-  - name: "🇨🇦 Canada — #58"
+      grpc-service-name: "google.storage.v2.Storage"
+  - name: "🇩🇪 Germany — #75"
     type: "vless"
-    server: "91.215.40.234"
+    server: "82.202.178.145"
     port: 443
-    uuid: "c99063b9-e86f-4320-bd45-f7e1acdc0f87"
+    uuid: "ccd6419d-6943-4e7c-bc8c-7a157dadff80"
     udp: true
     tls: true
-    servername: "caw-guard-1.harknmav.fun"
-    alpn:
-      - "h2"
+    servername: "h12.smart-life.agency"
     client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇵🇱 Poland — #77"
-    type: "vless"
-    server: "91.215.40.30"
-    port: 443
-    uuid: "c99063b9-e86f-4320-bd45-f7e1acdc0f87"
-    udp: true
-    tls: true
-    servername: "plw-guard-1.harknmav.fun"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw"
+      short-id: "70c20a2f5a7d542e"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "/v1/segment/8a3f1c5be24d2854/Tun|Fetch"
+      grpc-service-name: "google.storage.v2.Storage"
+  - name: "🇩🇪 Germany — #70"
+    type: "vless"
+    server: "45.11.27.133"
+    port: 443
+    uuid: "f1087776-5077-4b2f-9338-687d2787c64e"
+    udp: true
+    tls: true
+    servername: "s3.t2.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_bEA-GWmkPW_YITfFaWHogq_5AsYX4zAqomlhRQouS4"
+      short-id: "1e853ef7fcad4788"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "UpdateService"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia — #72"
       - "🇷🇺 Beget — #48"
       - "🇩🇪 Germany — #71"
-      - "🇷🇺 VK — #37"
-      - "🇷🇺 Selectel — #50"
-      - "🇩🇪 Germany — #65"
-      - "🇵🇱 Poland — #75"
-      - "🇨🇦 Canada — #58"
-      - "🇵🇱 Poland — #77"
+      - "🇷🇺 VK — #38"
+      - "🇩🇪 Germany — #64"
+      - "🇫🇷 France — #76"
+      - "🇩🇪 Germany — #75"
+      - "🇩🇪 Germany — #70"
 rules:
   - MATCH,PROXY
