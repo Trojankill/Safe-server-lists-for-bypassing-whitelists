@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-24 19:45:29 UTC
+# 2026-10-24 20:00:54 UTC
 proxies:
-  - name: "🇷🇺 Beget — #48"
+  - name: "🇷🇺 Beget — #47"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,12 +9,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #71"
+  - name: "🇳🇱 The Netherlands — #68"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,7 +28,7 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 VK — #38"
+  - name: "🇷🇺 VK — #37"
     type: "vless"
     server: "78.159.246.85"
     port: 2053
@@ -41,7 +41,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #64"
+  - name: "🇩🇪 Germany — #60"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -57,7 +57,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇫🇷 France — #76"
+  - name: "🇫🇷 France — #67"
     type: "vless"
     server: "82.202.178.139"
     port: 443
@@ -72,7 +72,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇩🇪 Germany — #75"
+  - name: "🇩🇪 Germany — #66"
     type: "vless"
     server: "82.202.178.145"
     port: 443
@@ -87,31 +87,15 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇩🇪 Germany — #70"
-    type: "vless"
-    server: "45.11.27.133"
-    port: 443
-    uuid: "f1087776-5077-4b2f-9338-687d2787c64e"
-    udp: true
-    tls: true
-    servername: "s3.t2.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "_bEA-GWmkPW_YITfFaWHogq_5AsYX4zAqomlhRQouS4"
-      short-id: "1e853ef7fcad4788"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "UpdateService"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #48"
-      - "🇩🇪 Germany — #71"
-      - "🇷🇺 VK — #38"
-      - "🇩🇪 Germany — #64"
-      - "🇫🇷 France — #76"
-      - "🇩🇪 Germany — #75"
-      - "🇩🇪 Germany — #70"
+      - "🇷🇺 Beget — #47"
+      - "🇳🇱 The Netherlands — #68"
+      - "🇷🇺 VK — #37"
+      - "🇩🇪 Germany — #60"
+      - "🇫🇷 France — #67"
+      - "🇩🇪 Germany — #66"
 rules:
   - MATCH,PROXY
