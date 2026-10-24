@@ -1,6 +1,62 @@
 # clash/mihomo subscription
-# 2026-10-24 20:30:44 UTC
+# 2026-10-24 20:45:31 UTC
 proxies:
+  - name: "Russia | nl.sosun4ik.top | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.211.170.72"
+    port: 8444
+    uuid: "5d233135-d747-42cf-9d3a-64529b18549f"
+    udp: true
+    tls: true
+    servername: "nl.sosun4ik.top"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "q4tx1Z-993Fgn36lXDzX_JN-0-oqmn1weQUyOEMENiw"
+      short-id: "9c70cbbfe78c605b"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Sweden | se1.mycloud1.org | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "91.242.228.29"
+    port: 443
+    uuid: "605dea9b-b485-45c9-af9b-cc2b0195023c"
+    udp: true
+    tls: true
+    servername: "se1.mycloud1.org"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Su5ULcRQKF-0DJIHZeTNEnXHBpyQtizmUrcNIYhZI0E"
+      short-id: "afee962d"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Canada | can.kramiliantha.sbs | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.218.17.130"
+    port: 443
+    uuid: "73274f8c-ac7b-4d71-b67a-1ea200c9ed82"
+    udp: true
+    tls: true
+    servername: "can.kramiliantha.sbs"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "M-1qIKDnTxYsPbzZg4OSTBLiKv1Ec81FInDns45DyEk"
+      short-id: "26bf62b927c5ff1c"
+    network: "xhttp"
+  - name: "The Netherlands | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "5.129.234.167"
+    port: 12213
+    uuid: "7c464358-6c89-4623-bd20-7c7bcd51bc55"
+    udp: true
+    tls: true
+    servername: "music.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "kTKM-s7XF0s878Ydmq1KeZFiGT6k1Bw_rLE79s1l1jI"
+      short-id: "6a29a03b21"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -8,7 +64,7 @@ proxies:
     password: "trojan"
     udp: true
     sni: "trojan.lso"
-  - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -21,7 +77,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | nl.sosun4ik.top | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Sweden | se1.mycloud1.org | TCP | [#LSO - #LinSpisokObhod]"
+      - "Canada | can.kramiliantha.sbs | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
