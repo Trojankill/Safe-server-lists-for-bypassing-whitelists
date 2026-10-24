@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-24 00:00:58 UTC
+# 2026-10-24 00:15:29 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #61"
-    type: "vless"
-    server: "188.225.77.143"
-    port: 8468
-    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
-      short-id: "6ba85179e30d4fc2"
-    network: "xhttp"
-  - name: "🇵🇱 Poland — #131"
+  - name: "🇵🇱 Poland — #91"
     type: "vless"
     server: "217.19.122.194"
     port: 443
@@ -41,7 +28,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇫🇷 France — #93"
+  - name: "🇫🇷 France — #86"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -65,7 +52,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #85"
+  - name: "🇩🇪 Germany — #78"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -81,7 +68,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #92"
+  - name: "🇩🇪 Germany — #85"
     type: "vless"
     server: "82.202.179.110"
     port: 14443
@@ -95,7 +82,7 @@ proxies:
       short-id: "d29cbe24661f"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #91"
+  - name: "🇩🇪 Germany — #84"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -114,13 +101,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #61"
-      - "🇵🇱 Poland — #131"
+      - "🇵🇱 Poland — #91"
       - "🇷🇺 Beget — #56"
-      - "🇫🇷 France — #93"
+      - "🇫🇷 France — #86"
       - "🇷🇺 Selectel — #60"
+      - "🇩🇪 Germany — #78"
       - "🇩🇪 Germany — #85"
-      - "🇩🇪 Germany — #92"
-      - "🇩🇪 Germany — #91"
+      - "🇩🇪 Germany — #84"
 rules:
   - MATCH,PROXY
