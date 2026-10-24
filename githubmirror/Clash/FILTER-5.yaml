@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-24 04:30:42 UTC
+# 2026-10-24 04:45:29 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -71,6 +71,19 @@ proxies:
       short-id: "58301280"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | ads.x5.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "188.225.77.143"
+    port: 8468
+    uuid: "40c12ce6-b1c6-424e-862e-010a4585ff52"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "mLNQ8cirYSUCtYa5485RnCPzrmp2OfkI0ENmweDxJQc"
+      short-id: "6ba85179e30d4fc2"
+    network: "xhttp"
   - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.17.178.125"
@@ -206,6 +219,7 @@ proxy-groups:
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Armenia | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | ads.x5.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | smartcaptcha.yandexcloud.net | TCP | [#LSO - #LinSpisokObhod]"
