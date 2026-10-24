@@ -1,20 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-24 15:00:53 UTC
+# 2026-10-24 15:15:31 UTC
 proxies:
-  - name: "🇷🇺 Beget — #47"
+  - name: "🇷🇺 VK — #7"
     type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    server: "78.159.246.85"
+    port: 2053
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
     udp: true
     tls: true
-    servername: "ya.ru"
+    servername: "fitindoor.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #68"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #63"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,20 +28,32 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 VK — #37"
+  - name: "🇷🇺 Selectel — #46"
     type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "fitindoor.net"
+    servername: "ru.nnight.cfd"
     alpn:
       - "h2"
-      - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #61"
+  - name: "🇸🇪 Sweden — #64"
+    type: "vless"
+    server: "95.143.188.10"
+    port: 443
+    uuid: "9c5ad05d-d807-0029-bf48-cfad48af6dec"
+    udp: true
+    tls: true
+    servername: "git.medrocket.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "YHPoUNxsml4z6pYt-7djOb1lqnBjxCk4-2mk84pveyc"
+      short-id: "3b5b38669a1a51c0"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #56"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -57,7 +69,23 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Germany — #67"
+  - name: "🇺🇸 United States — #65"
+    type: "vless"
+    server: "185.86.145.142"
+    port: 443
+    uuid: "c8b3c1d7-4294-4f30-9e5b-e4693b64d518"
+    udp: true
+    tls: true
+    servername: "deliverya.online"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    network: "ws"
+    ws-opts:
+      path: "/adrws"
+      headers:
+        Host: "deliverya.online"
+  - name: "🇩🇪 Germany — #62"
     type: "vless"
     server: "45.11.27.133"
     port: 443
@@ -76,10 +104,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #47"
-      - "🇳🇱 The Netherlands — #68"
-      - "🇷🇺 VK — #37"
-      - "🇩🇪 Germany — #61"
-      - "🇩🇪 Germany — #67"
+      - "🇷🇺 VK — #7"
+      - "🇩🇪 Germany — #63"
+      - "🇷🇺 Selectel — #46"
+      - "🇸🇪 Sweden — #64"
+      - "🇩🇪 Germany — #56"
+      - "🇺🇸 United States — #65"
+      - "🇩🇪 Germany — #62"
 rules:
   - MATCH,PROXY
