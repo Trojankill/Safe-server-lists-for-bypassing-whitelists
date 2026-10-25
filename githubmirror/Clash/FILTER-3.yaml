@@ -1,20 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-25 11:00:55 UTC
+# 2026-10-25 11:15:28 UTC
 proxies:
-  - name: "🇪🇪 Estonia — #100"
+  - name: "🇷🇺 Beget — #62"
     type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
     udp: true
     tls: true
-    client-fingerprint: "chrome"
+    servername: "ya.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇩🇪 Germany — #94"
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
+  - name: "🇩🇪 Germany — #91"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,7 +28,7 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇬🇧 United Kingdom — #111"
+  - name: "🇬🇧 United Kingdom — #92"
     type: "vless"
     server: "188.225.72.122"
     port: 1443
@@ -41,19 +41,7 @@ proxies:
       public-key: "WBNom5f5q6BO4YVWzNbZ8FM5ZYmowxybY7bF6fNfzGk"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #64"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #87"
+  - name: "🇩🇪 Germany — #83"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -73,10 +61,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia — #100"
-      - "🇩🇪 Germany — #94"
-      - "🇬🇧 United Kingdom — #111"
-      - "🇷🇺 Selectel — #64"
-      - "🇩🇪 Germany — #87"
+      - "🇷🇺 Beget — #62"
+      - "🇩🇪 Germany — #91"
+      - "🇬🇧 United Kingdom — #92"
+      - "🇩🇪 Germany — #83"
 rules:
   - MATCH,PROXY
