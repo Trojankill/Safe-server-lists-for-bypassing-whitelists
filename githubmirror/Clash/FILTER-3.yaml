@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 05:45:30 UTC
+# 2026-10-25 06:00:54 UTC
 proxies:
-  - name: "🇷🇺 VK — #8"
+  - name: "🇷🇺 VK — #6"
     type: "vless"
     server: "78.159.246.85"
     port: 2053
@@ -14,7 +14,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 VK — #43"
+  - name: "🇷🇺 VK — #42"
     type: "vless"
     server: "81.94.148.232"
     port: 2053
@@ -27,23 +27,20 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇮 Finland — #68"
+  - name: "🇫🇷 France — #73"
     type: "vless"
-    server: "185.178.208.140"
+    server: "188.225.83.133"
     port: 443
-    uuid: "3d0a1a17-a0a4-41d5-8b6c-37f76ba3ed41"
+    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
     udp: true
     tls: true
-    servername: "cdn.cubeland.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/ws/generate/positions"
-      headers:
-        Host: "cdn.cubeland.top"
-  - name: "🇫🇷 France — #70"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇫🇷 France — #83"
     type: "vless"
     server: "82.202.178.141"
     port: 443
@@ -58,7 +55,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇫🇷 France — #69"
+  - name: "🇫🇷 France — #81"
     type: "vless"
     server: "82.202.178.142"
     port: 443
@@ -73,7 +70,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇷🇺 Beget — #48"
+  - name: "🇷🇺 Beget — #47"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -81,12 +78,38 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #60"
+  - name: "🇩🇪 Germany — #67"
+    type: "vless"
+    server: "188.225.27.229"
+    port: 443
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
+    udp: true
+    tls: true
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Selectel — #51"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #61"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -102,61 +125,18 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #74"
-    type: "vless"
-    server: "188.225.32.109"
-    port: 443
-    uuid: "e0216964-ffa1-4d39-82c4-0e40879a470d"
-    udp: true
-    tls: true
-    servername: "stable.nullo.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "XYkuP_Keu-yL7EQ8xZc4RTmcVAfp06Z1onV2ZNrlsHM"
-      short-id: "c31f187b"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇦🇹 Austria — #51"
-    type: "vless"
-    server: "188.225.32.109"
-    port: 8443
-    uuid: "e0216964-ffa1-4d39-82c4-0e40879a470d"
-    udp: true
-    tls: true
-    servername: "khv.nullo.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "RmupKPvBYZLYWRFJYimyxdrU5VRstnkHwXRw995DuSQ"
-      short-id: "15b43b2fe0cf2bc5"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #73"
-    type: "vless"
-    server: "188.225.32.73"
-    port: 2443
-    uuid: "e0216964-ffa1-4d39-82c4-0e40879a470d"
-    udp: true
-    tls: true
-    servername: "business-or.nullo.pro"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "EYWEfcxxVok3uqOpVnIlIwH7ds_rmpy5Mpovy5VtHlo"
-      short-id: "d042eccb9262a9af"
-    flow: "xtls-rprx-vision"
-    network: "raw"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 VK — #8"
-      - "🇷🇺 VK — #43"
-      - "🇫🇮 Finland — #68"
-      - "🇫🇷 France — #70"
-      - "🇫🇷 France — #69"
-      - "🇷🇺 Beget — #48"
-      - "🇩🇪 Germany — #60"
-      - "🇳🇱 The Netherlands — #74"
-      - "🇦🇹 Austria — #51"
-      - "🇳🇱 The Netherlands — #73"
+      - "🇷🇺 VK — #6"
+      - "🇷🇺 VK — #42"
+      - "🇫🇷 France — #73"
+      - "🇫🇷 France — #83"
+      - "🇫🇷 France — #81"
+      - "🇷🇺 Beget — #47"
+      - "🇩🇪 Germany — #67"
+      - "🇷🇺 Selectel — #51"
+      - "🇩🇪 Germany — #61"
 rules:
   - MATCH,PROXY
