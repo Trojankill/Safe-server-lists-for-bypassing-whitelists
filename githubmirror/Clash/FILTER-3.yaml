@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-25 20:45:28 UTC
+# 2026-10-25 21:00:54 UTC
 proxies:
   - name: "🇷🇺 Beget — #64"
     type: "vless"
@@ -9,12 +9,52 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇱🇹 Lithuania — #96"
+  - name: "🇳🇱 The Netherlands — #101"
+    type: "vless"
+    server: "188.225.27.229"
+    port: 443
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
+    udp: true
+    tls: true
+    servername: "bridge.rkitman.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 VK — #63"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #84"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇱🇹 Lithuania — #100"
     type: "vless"
     server: "45.11.27.130"
     port: 443
@@ -27,7 +67,7 @@ proxies:
       public-key: "mJkx2aIzeXMsdR38oCpeGX4r5Siq4__nb0I4gk1-wVM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #65"
+  - name: "🇷🇺 Selectel — #66"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -39,7 +79,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #86"
+  - name: "🇩🇪 Germany — #90"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -60,8 +100,11 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Beget — #64"
-      - "🇱🇹 Lithuania — #96"
-      - "🇷🇺 Selectel — #65"
-      - "🇩🇪 Germany — #86"
+      - "🇳🇱 The Netherlands — #101"
+      - "🇷🇺 VK — #63"
+      - "🇧🇬 Bulgaria — #84"
+      - "🇱🇹 Lithuania — #100"
+      - "🇷🇺 Selectel — #66"
+      - "🇩🇪 Germany — #90"
 rules:
   - MATCH,PROXY
