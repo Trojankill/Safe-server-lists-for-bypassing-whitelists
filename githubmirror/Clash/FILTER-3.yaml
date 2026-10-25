@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 19:45:28 UTC
+# 2026-10-25 20:00:55 UTC
 proxies:
-  - name: "🇷🇺 Beget — #63"
+  - name: "🇷🇺 Beget — #64"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,7 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇱🇹 Lithuania — #90"
+  - name: "🇱🇹 Lithuania — #96"
     type: "vless"
     server: "45.11.27.130"
     port: 443
@@ -27,7 +27,19 @@ proxies:
       public-key: "mJkx2aIzeXMsdR38oCpeGX4r5Siq4__nb0I4gk1-wVM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #82"
+  - name: "🇷🇺 Selectel — #65"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #86"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -47,8 +59,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #63"
-      - "🇱🇹 Lithuania — #90"
-      - "🇩🇪 Germany — #82"
+      - "🇷🇺 Beget — #64"
+      - "🇱🇹 Lithuania — #96"
+      - "🇷🇺 Selectel — #65"
+      - "🇩🇪 Germany — #86"
 rules:
   - MATCH,PROXY
