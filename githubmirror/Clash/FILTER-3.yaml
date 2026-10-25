@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-10-25 21:45:28 UTC
+# 2026-10-25 22:00:52 UTC
 proxies:
+  - name: "🇪🇪 Estonia — #99"
+    type: "vless"
+    server: "194.55.239.89"
+    port: 443
+    uuid: "073b7df7-5527-45a2-ba29-183b85c39071"
+    udp: true
+    tls: true
+    servername: "broadcast.liveflow.space"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/live.stream.v1.Broadcast/"
+      headers:
+        Host: "broadcast.liveflow.space"
   - name: "🇷🇺 Beget — #64"
     type: "vless"
     server: "45.12.75.242"
@@ -28,19 +44,6 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 VK — #63"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇧🇬 Bulgaria — #84"
     type: "vless"
     server: "37.18.14.43"
@@ -99,9 +102,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇪🇪 Estonia — #99"
       - "🇷🇺 Beget — #64"
       - "🇳🇱 The Netherlands — #101"
-      - "🇷🇺 VK — #63"
       - "🇧🇬 Bulgaria — #84"
       - "🇱🇹 Lithuania — #100"
       - "🇷🇺 Selectel — #66"
