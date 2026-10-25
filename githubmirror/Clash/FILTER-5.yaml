@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-25 05:30:40 UTC
+# 2026-10-25 05:45:30 UTC
 proxies:
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "178.172.227.124"
+    port: 10444
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | www.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "45.12.63.81"
@@ -12,20 +26,6 @@ proxies:
     client-fingerprint: "edge"
     reality-opts:
       public-key: "MN2XIVlIusdWaGwyyrGZ7Ti3jzqjDlpMmc12WcrV1nU"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "unknown | widgets.kinopoisk.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "farm.lf2.iki-servers.com"
-    port: 8443
-    uuid: "345e0ef7-6861-4722-ab44-799c37507b24"
-    udp: true
-    tls: true
-    servername: "widgets.kinopoisk.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZPOv9ovM61KHt39yIQStmKH3LBbMNt7piTeLAm42LXk"
-      short-id: "0c"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Germany | www.vk.com | RAW | [#LSO - #LinSpisokObhod]"
@@ -153,6 +153,34 @@ proxies:
       short-id: "6a29a03b21"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "United States | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "45.138.100.248"
+    port: 10444
+    uuid: "ae908ff5-f749-402c-af25-e6e9aef4d6bb"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -173,8 +201,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "unknown | widgets.kinopoisk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | www.vk.com | RAW | [#LSO - #LinSpisokObhod]"
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -184,6 +212,8 @@ proxy-groups:
       - "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
       - "Canada | can.kramiliantha.sbs | XHTTP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "United States | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
