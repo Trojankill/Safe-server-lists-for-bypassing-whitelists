@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-25 23:00:56 UTC
+# 2026-10-25 23:15:28 UTC
 proxies:
   - name: "🇪🇪 Estonia — #99"
     type: "vless"
@@ -25,39 +25,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #101"
-    type: "vless"
-    server: "188.225.27.229"
-    port: 443
-    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
-    udp: true
-    tls: true
-    servername: "bridge.rkitman.ru"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
-      short-id: "88d9dc52ef39c8bd"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇧🇬 Bulgaria — #84"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 8443
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇱🇹 Lithuania — #100"
+  - name: "🇱🇹 Lithuania — #101"
     type: "vless"
     server: "45.11.27.130"
     port: 443
@@ -70,7 +43,7 @@ proxies:
       public-key: "mJkx2aIzeXMsdR38oCpeGX4r5Siq4__nb0I4gk1-wVM"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #66"
+  - name: "🇷🇺 Selectel — #67"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -98,16 +71,45 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇳🇱 The Netherlands — #102"
+    type: "vless"
+    server: "81.163.22.35"
+    port: 8443
+    uuid: "cad0732d-21c2-4adf-9200-00995e67586a"
+    udp: true
+    tls: true
+    servername: "load.videostreamer.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
+      short-id: "b434ffe063bb60"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇸🇪 Sweden — #103"
+    type: "vless"
+    server: "188.225.77.254"
+    port: 8443
+    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
+    udp: true
+    tls: true
+    servername: "io.ozone.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
+      short-id: "4951a2313524dd8f"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "ozone"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇪🇪 Estonia — #99"
       - "🇷🇺 Beget — #64"
-      - "🇳🇱 The Netherlands — #101"
-      - "🇧🇬 Bulgaria — #84"
-      - "🇱🇹 Lithuania — #100"
-      - "🇷🇺 Selectel — #66"
+      - "🇱🇹 Lithuania — #101"
+      - "🇷🇺 Selectel — #67"
       - "🇩🇪 Germany — #90"
+      - "🇳🇱 The Netherlands — #102"
+      - "🇸🇪 Sweden — #103"
 rules:
   - MATCH,PROXY
