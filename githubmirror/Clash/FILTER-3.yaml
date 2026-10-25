@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 12:00:55 UTC
+# 2026-10-25 12:15:31 UTC
 proxies:
-  - name: "🇷🇺 Beget — #62"
+  - name: "🇷🇺 Beget — #65"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,7 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #91"
+  - name: "🇳🇱 The Netherlands — #97"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -22,13 +22,13 @@ proxies:
     udp: true
     tls: true
     servername: "bridge.rkitman.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     reality-opts:
       public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇬🇧 United Kingdom — #92"
+  - name: "🇬🇧 United Kingdom — #96"
     type: "vless"
     server: "188.225.72.122"
     port: 1443
@@ -41,7 +41,19 @@ proxies:
       public-key: "WBNom5f5q6BO4YVWzNbZ8FM5ZYmowxybY7bF6fNfzGk"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #83"
+  - name: "🇷🇺 Selectel — #66"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #88"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -61,9 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #62"
-      - "🇩🇪 Germany — #91"
-      - "🇬🇧 United Kingdom — #92"
-      - "🇩🇪 Germany — #83"
+      - "🇷🇺 Beget — #65"
+      - "🇳🇱 The Netherlands — #97"
+      - "🇬🇧 United Kingdom — #96"
+      - "🇷🇺 Selectel — #66"
+      - "🇩🇪 Germany — #88"
 rules:
   - MATCH,PROXY
