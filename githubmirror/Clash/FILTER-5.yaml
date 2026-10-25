@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-25 22:30:42 UTC
+# 2026-10-25 22:45:31 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -129,6 +129,18 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
+  - name: "Russia | static.bakarova-top.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "ea277838-a188-44f1-a2e8-94aa110c4f27"
+    udp: true
+    tls: true
+    servername: "static.bakarova-top.ru"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -158,6 +170,7 @@ proxy-groups:
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
       - "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | static.bakarova-top.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
