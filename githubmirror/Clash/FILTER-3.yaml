@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 14:45:32 UTC
+# 2026-10-25 15:00:54 UTC
 proxies:
-  - name: "🇫🇷 France — #98"
+  - name: "🇩🇪 Germany — #86"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -14,20 +14,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #64"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇬🇧 United Kingdom — #104"
+  - name: "🇬🇧 United Kingdom — #111"
     type: "vless"
     server: "188.225.72.122"
     port: 1443
@@ -40,7 +27,7 @@ proxies:
       public-key: "WBNom5f5q6BO4YVWzNbZ8FM5ZYmowxybY7bF6fNfzGk"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #84"
+  - name: "🇩🇪 Germany — #95"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -60,9 +47,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France — #98"
-      - "🇷🇺 Beget — #64"
-      - "🇬🇧 United Kingdom — #104"
-      - "🇩🇪 Germany — #84"
+      - "🇩🇪 Germany — #86"
+      - "🇬🇧 United Kingdom — #111"
+      - "🇩🇪 Germany — #95"
 rules:
   - MATCH,PROXY
