@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 15:45:30 UTC
+# 2026-10-25 16:00:56 UTC
 proxies:
-  - name: "🇩🇪 Germany — #86"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "4c346148-ece9-487a-bffb-ba5a399b2d71"
-    udp: true
-    tls: true
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇬🇧 United Kingdom — #111"
+  - name: "🇬🇧 United Kingdom — #93"
     type: "vless"
     server: "188.225.72.122"
     port: 1443
@@ -27,7 +14,7 @@ proxies:
       public-key: "WBNom5f5q6BO4YVWzNbZ8FM5ZYmowxybY7bF6fNfzGk"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #95"
+  - name: "🇩🇪 Germany — #84"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -47,8 +34,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #86"
-      - "🇬🇧 United Kingdom — #111"
-      - "🇩🇪 Germany — #95"
+      - "🇬🇧 United Kingdom — #93"
+      - "🇩🇪 Germany — #84"
 rules:
   - MATCH,PROXY
