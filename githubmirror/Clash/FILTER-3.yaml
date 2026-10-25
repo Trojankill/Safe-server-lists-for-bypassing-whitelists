@@ -1,33 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-25 07:00:57 UTC
+# 2026-10-25 07:15:29 UTC
 proxies:
-  - name: "🇷🇺 VK — #6"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 VK — #42"
-    type: "vless"
-    server: "81.94.148.232"
-    port: 2053
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "windytrout.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇫🇷 France — #73"
+  - name: "🇩🇪 Germany — #61"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -40,37 +14,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇫🇷 France — #83"
-    type: "vless"
-    server: "82.202.178.141"
-    port: 443
-    uuid: "54f22246-cc9c-4315-907a-6c94c901d20f"
-    udp: true
-    tls: true
-    servername: "h8.smart-life.agency"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0"
-      short-id: "316d0a3751f3122d"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇫🇷 France — #81"
-    type: "vless"
-    server: "82.202.178.142"
-    port: 443
-    uuid: "54f22246-cc9c-4315-907a-6c94c901d20f"
-    udp: true
-    tls: true
-    servername: "h9.smart-life.agency"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw"
-      short-id: "70c20a2f5a7d542e"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇷🇺 Beget — #47"
+  - name: "🇷🇺 Beget — #49"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -78,12 +22,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #67"
+  - name: "🇳🇱 The Netherlands — #85"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -91,25 +35,26 @@ proxies:
     udp: true
     tls: true
     servername: "bridge.rkitman.ru"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #51"
+  - name: "🇷🇺 VK — #38"
     type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    server: "78.159.246.85"
+    port: 2053
+    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "fitindoor.net"
     alpn:
       - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #61"
+  - name: "🇩🇪 Germany — #70"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -129,14 +74,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 VK — #6"
-      - "🇷🇺 VK — #42"
-      - "🇫🇷 France — #73"
-      - "🇫🇷 France — #83"
-      - "🇫🇷 France — #81"
-      - "🇷🇺 Beget — #47"
-      - "🇩🇪 Germany — #67"
-      - "🇷🇺 Selectel — #51"
       - "🇩🇪 Germany — #61"
+      - "🇷🇺 Beget — #49"
+      - "🇳🇱 The Netherlands — #85"
+      - "🇷🇺 VK — #38"
+      - "🇩🇪 Germany — #70"
 rules:
   - MATCH,PROXY
