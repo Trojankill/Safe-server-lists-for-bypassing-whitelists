@@ -1,32 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-26 08:00:54 UTC
+# 2026-10-26 08:15:31 UTC
 proxies:
-  - name: "LTE/5G Все операторы 🇪🇺"
+  - name: "SNi kinopoisk.ru 🇷🇺"
     type: "vless"
-    server: "se-cdn.fius.dev"
-    port: 443
-    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
-    udp: true
-    tls: true
-    servername: "se-cdn.fius.dev"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪"
-    type: "vless"
-    server: "178.17.52.234"
-    port: 443
+    server: "213.165.54.59"
+    port: 8443
     uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
     udp: true
     tls: true
-    servername: "static.blog-forme.ru"
-    client-fingerprint: "firefox"
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "CgbJG-9Wv2NW-cuS1ZIaCAenRUZbxGFt5EjLkFCUcWs"
-      short-id: "627da539c308202e"
-    network: "tcp"
+      public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
+      short-id: "2e6d668958829998"
+    network: "xhttp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇧🇷"
     type: "vless"
     server: "51.161.72.153"
@@ -42,6 +29,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc_common1"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇮🇳"
+    type: "vless"
+    server: "122.176.216.52"
+    port: 443
+    uuid: "16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88"
+    udp: true
+    tls: true
+    servername: "app-6ada5023.deploy.meerasolution.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "ws"
+    ws-opts:
+      path: "/ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88"
+      headers:
+        Host: "app-6ada5023.deploy.meerasolution.com"
   - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧"
     type: "vless"
     server: "62.233.33.51"
@@ -110,7 +113,7 @@ proxies:
       public-key: "XTX6Yvtj5B4HENQbNCS0MH3jDqq5vj5gWlg2nilTviE"
       short-id: "8ba02790a1480848"
     network: "xhttp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
+  - name: "tg:VLESSFORU 🇩🇪 ⚡"
     type: "vless"
     server: "144.31.166.55"
     port: 443
@@ -138,7 +141,7 @@ proxies:
       short-id: "b9e73a5f"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #2"
+  - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
     server: "81.94.148.232"
     port: 8443
@@ -151,47 +154,6 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "tg:VLESSFORU 🇷🇺"
-    type: "vless"
-    server: "de15.h1cloud.net"
-    port: 25362
-    uuid: "36fb6650-8a50-42b5-9f66-06538806f32c"
-    udp: true
-    tls: true
-    servername: "www.chip.de"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
-      short-id: "23732d14a527990d"
-    network: "tcp"
-  - name: "SNi vk-portal.net 🇭🇷"
-    type: "vless"
-    server: "2.56.175.91"
-    port: 443
-    uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
-    udp: true
-    tls: true
-    servername: "stats.vk-portal.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
-      short-id: "3c6fc84d"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "SNi vk-portal.net 🇰🇿"
-    type: "vless"
-    server: "31.130.153.101"
-    port: 443
-    uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
-    udp: true
-    tls: true
-    servername: "stats.vk-portal.net"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
-      short-id: "3c6fc84d"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "SNi yandex.ru 🇵🇱"
     type: "vless"
     server: "191.217.211.128"
@@ -276,35 +238,22 @@ proxies:
       short-id: "8fbefc33"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷"
     type: "vless"
-    server: "31.76.102.10"
-    port: 12801
-    uuid: "4ee88ef0-8922-48ce-9cd4-5f67ef201b35"
-    udp: true
-    tls: true
-    servername: "nldva.normbot.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "XvloQQpz3cKWJXdUdBwPUTfzeAwo7BwKJsvkG4e6ZxA"
-      short-id: "3a2f64e6e251"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #5"
-    type: "vless"
-    server: "179.254.111.86"
+    server: "95.182.82.14"
     port: 443
     uuid: "55c98c63-8e67-4750-a574-5f586782c1ab"
     udp: true
     tls: true
-    servername: "nl3.superpuper.cfd"
+    servername: "static.freeinternet.skin"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "EneZn6zFvvLllLp0qi2E3pZcuy6r3w9nqXquqgocZwI"
-      short-id: "4fb97d1ee1d1af4e"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #6"
+      public-key: "f2evGKO94_eMGIuWv7OXrcVXTnqJjSxoflPqb24DFg0"
+      short-id: "f362281040d91a1e"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #5"
     type: "vless"
     server: "nl3.superpuper.cfd"
     port: 443
@@ -346,7 +295,7 @@ proxies:
       short-id: "d18f4e"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #3"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪"
     type: "vless"
     server: "188.241.241.36"
     port: 8443
@@ -373,7 +322,7 @@ proxies:
       short-id: "25349b36802f"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #7"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #6"
     type: "vless"
     server: "140.225.199.133"
     port: 8443
@@ -388,7 +337,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #8"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #7"
     type: "vless"
     server: "nl1.fluxorvpn.net"
     port: 8443
@@ -403,7 +352,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #4"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
     type: "vless"
     server: "78.17.178.125"
     port: 443
@@ -417,6 +366,19 @@ proxies:
       short-id: "e0215064d8d1fd7c"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #8"
+    type: "vless"
+    server: "212.34.128.120"
+    port: 2083
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
+    udp: true
+    tls: true
+    servername: "podcasts.blog-forme.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "nalACuCZjV1sZx7QOH6yAIDio8mFI0FgVKYQvQHBKS4"
+      short-id: "fb3a5f2d4ca346ed"
+    network: "xhttp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #9"
     type: "vless"
     server: "podcasts.blog-forme.ru"
@@ -430,7 +392,60 @@ proxies:
       public-key: "nalACuCZjV1sZx7QOH6yAIDio8mFI0FgVKYQvQHBKS4"
       short-id: "fb3a5f2d4ca346ed"
     network: "xhttp"
+  - name: "LTE/5G Все операторы 🇪🇺 #2"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "LTE/5G Все операторы 🇪🇺 #3"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "LTE/5G Все операторы 🇪🇺 #4"
+    type: "vless"
+    server: "flatcrest.net"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸"
+    type: "vless"
+    server: "82.39.213.125"
+    port: 443
+    uuid: "821249fc-d4e8-4e4f-895f-53bd0f1227c8"
+    udp: true
+    tls: true
+    servername: "us1.xshoponline.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "LPxsw0pGD7kfIEF0RJlSVYA37S6KKxoy9G0rmtmJqUA"
+      short-id: "df0037688b5b6984"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "LTE/5G Все операторы 🇪🇺 #5"
     type: "vless"
     server: "newlisten.secondtest.shop"
     port: 443
@@ -451,14 +466,14 @@ proxies:
     udp: true
     tls: true
     servername: "up.ya-yandex.link"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "2C-oK3mN8pZ8jeTAVhgt6ubT-xqL7cklq9QmwtBY9mE"
       short-id: "7b86a01d952e8df4"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "sonya-grpc"
-  - name: "LTE/5G Все операторы 🇪🇺 #4"
+  - name: "LTE/5G Все операторы 🇪🇺 #6"
     type: "vless"
     server: "78.159.246.85"
     port: 2053
@@ -471,7 +486,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "LTE/5G Все операторы 🇪🇺 #5"
+  - name: "LTE/5G Все операторы 🇪🇺 #7"
     type: "vless"
     server: "randomquaint.net"
     port: 2053
@@ -484,21 +499,18 @@ proxies:
       - "http/1.1"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #3"
+  - name: "LTE/5G Все операторы 🇪🇺 #8"
     type: "vless"
-    server: "31.76.46.221"
-    port: 10851
-    uuid: "9b12b97f-e185-41a3-ad50-a31a092f35c9"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ap-author.led.samsung.com"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "nTNsyJaBeqGkLNk4lbqRiKQd993pRt2QSmYNfeUhRXs"
-      short-id: "aacd5d42a33b2a4e"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc_common1"
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
     type: "vless"
     server: "starshield.injlab.org"
@@ -527,7 +539,49 @@ proxies:
       short-id: "3190c903"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
+    type: "vless"
+    server: "167.104.223.215"
+    port: 443
+    uuid: "afbd410e-1663-4f40-9d3b-df5117aa23ca"
+    udp: true
+    tls: true
+    servername: "gb2.murainternet.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "fyfX-egDrRvXNW1Gt2P_8rH4jdupAcmhFLOCZCzCowo"
+      short-id: "fc36b4a584871aa5"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
+    type: "vless"
+    server: "213.159.209.66"
+    port: 443
+    uuid: "afbd410e-1663-4f40-9d3b-df5117aa23ca"
+    udp: true
+    tls: true
+    servername: "ru11.oshost.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "52fsWySqEpUvCt-jbEy2rYjVIZBYwoqsGfmSef8_UgI"
+      short-id: "97a15f5af85c4a30"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
+    type: "vless"
+    server: "gb2.murainternet.network"
+    port: 443
+    uuid: "afbd410e-1663-4f40-9d3b-df5117aa23ca"
+    udp: true
+    tls: true
+    servername: "gb2.murainternet.network"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "fyfX-egDrRvXNW1Gt2P_8rH4jdupAcmhFLOCZCzCowo"
+      short-id: "fc36b4a584871aa5"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #2"
     type: "vless"
     server: "143.246.211.163"
     port: 443
@@ -541,7 +595,19 @@ proxies:
       short-id: "3242cfd7"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #3"
+    type: "vless"
+    server: "143.246.211.163"
+    port: 8443
+    uuid: "b3d079ff-b775-4ffe-bac9-41228b08b15b"
+    udp: true
+    tls: true
+    servername: "fr.gorobsub.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_LNT4Kf7pPmeEBAnmJ7xsBu3y6Kih0Ew9AFVoDa3QSg"
+    network: "xhttp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
     type: "vless"
     server: "89.125.11.67"
     port: 443
@@ -554,20 +620,6 @@ proxies:
       public-key: "HPAsmJ8fjGYtSnMQ1XVunYrn7IbmC5Sx_hl6e7-OV3Y"
       short-id: "93799d80fc556bf0"
     network: "xhttp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #5"
-    type: "vless"
-    server: "31.59.216.141"
-    port: 443
-    uuid: "c6cfcc53-9271-4ef7-88c5-5141621c8db1"
-    udp: true
-    tls: true
-    servername: "193.23.216.239.cdn-one.org"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "7zsU1U-30jh-qqfmqZukMfoqHB75ksKFA5aQFi8LGW4"
-      short-id: "70b4ca"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇪🇪"
     type: "vless"
     server: "146.19.143.218"
@@ -610,36 +662,7 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #4"
-    type: "vless"
-    server: "fi17-node.rumedia-cdn.com"
-    port: 2096
-    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
-    udp: true
-    tls: true
-    servername: "st4834a.rumedia-cdn.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/cdn/v3/live"
-      headers:
-        Host: "st4834a.rumedia-cdn.com"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇮 #5"
-    type: "vless"
-    server: "fi17-node.rumedia-cdn.com"
-    port: 8443
-    uuid: "d1641bc6-3757-43db-815a-9b3f4d9b0d7e"
-    udp: true
-    tls: true
-    servername: "www.nokia.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "14YyFG_j2yPEUu-gO_G9GqCqRiZ0DIUgzReV9CZvOAk"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #6"
+  - name: "LTE/5G Все операторы 🇪🇺 #9"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -654,7 +677,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #7"
     type: "vless"
     server: "62.233.33.44"
     port: 443
@@ -669,7 +692,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "community.events.v1"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #8"
     type: "vless"
     server: "89.125.11.50"
     port: 443
@@ -683,7 +706,7 @@ proxies:
       short-id: "3cb2d38fbac380fa"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #4"
     type: "vless"
     server: "87.76.211.161"
     port: 443
@@ -696,7 +719,7 @@ proxies:
       public-key: "HRmmr0Ii4Tr9jPLwratvLhee3_VWFNK47T8AAo7kzww"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #3"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇫🇷 #5"
     type: "vless"
     server: "fastlinkdownload.song69.fun"
     port: 443
@@ -723,7 +746,7 @@ proxies:
       short-id: "296ba5bd68d56a8d"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #6"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #3"
     type: "vless"
     server: "2.27.120.53"
     port: 8443
@@ -737,20 +760,6 @@ proxies:
       short-id: "6350d1647a4880"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
-    type: "vless"
-    server: "94.228.173.227"
-    port: 443
-    uuid: "e0216964-ffa1-4d39-82c4-0e40879a470d"
-    udp: true
-    tls: true
-    servername: "stable.nullo.pro"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "XYkuP_Keu-yL7EQ8xZc4RTmcVAfp06Z1onV2ZNrlsHM"
-      short-id: "c31f187b"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "Бесплатный VPN tg:VLESSFORU 🇦🇹 #2"
     type: "vless"
     server: "185.104.63.173"
@@ -765,7 +774,7 @@ proxies:
       short-id: "8fbdc8d37cc76852"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #7"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #4"
     type: "vless"
     server: "76.164.203.135"
     port: 443
@@ -779,7 +788,7 @@ proxies:
       short-id: "6b4cf686eebb37b9"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #7"
+  - name: "LTE/5G Все операторы 🇪🇺 #10"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -805,17 +814,32 @@ proxies:
       short-id: "d18f4e"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #10"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #5"
     type: "vless"
-    server: "217.60.35.146"
-    port: 61374
-    uuid: "f8d52ece-fad4-478d-875d-df6eed3befa7"
+    server: "2.27.206.215"
+    port: 4444
+    uuid: "fafc7c16-f890-45ee-a856-02df225172dd"
     udp: true
     tls: true
-    servername: "fl.golangwikito.cfd"
+    servername: "yastatic.net"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "QrNs0ew7snHqLfpVXS9RAhlRzgAzzGZK9fXmDcx9xHI"
+      public-key: "3ds1sPK8MuZVr6IOAwjRx0h_2IZMZ2v_RzNGl3iYwno"
+      short-id: "93907e6811339813"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "LTE/5G Все операторы 🇪🇺 #11"
+    type: "vless"
+    server: "cdn-lv.subversevpn.space"
+    port: 443
+    uuid: "fccce7d4-87b8-4ce5-8bd5-5c6b39b32d5d"
+    udp: true
+    tls: true
+    servername: "cdn-lv.subversevpn.space"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
     network: "xhttp"
   - name: "SNi yandex.ru 🇫🇮"
     type: "vless"
@@ -838,7 +862,7 @@ proxies:
     password: "29086912-33e4-4e06-ba2b-60f1a195864f"
     udp: true
     sni: "tjtw.m2k699.com"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
     type: "trojan"
     server: "tjmg2.m2k699.com"
     port: 24999
@@ -852,6 +876,13 @@ proxies:
     password: "29086912-33e4-4e06-ba2b-60f1a195864f"
     udp: true
     sni: "tjtw.m2k699.com"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇦🇺"
+    type: "trojan"
+    server: "82164024@au.tronsg.com"
+    port: 443
+    password: "Trojan"
+    udp: true
+    sni: "au.tronsg.com"
   - name: "Бесплатный VPN tg:VLESSFORU 🇸🇨"
     type: "trojan"
     server: "45.128.76.242"
@@ -896,7 +927,7 @@ proxies:
       path: "/ws?ed=2048"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
     type: "vmess"
     server: "Rib9JXAYoqjGN2KW.v.3dns.vip"
     port: 443
@@ -925,7 +956,7 @@ proxies:
       path: "/ws?ed=2048"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #4"
     type: "vmess"
     server: "47.88.79.34"
     port: 443
@@ -940,36 +971,6 @@ proxies:
       path: "/ws-vmess"
       headers:
         Host: "rib9jxayoqjgn2kw.v.3dns.vip"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇬"
-    type: "vmess"
-    server: "8.219.97.17"
-    port: 443
-    uuid: "a9f4de8b-68f1-44b6-b6a2-1db60940503a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "wjofhsqteueywxeq.v.3dns.vip"
-    network: "ws"
-    ws-opts:
-      path: "/ws-vmess"
-      headers:
-        Host: "wjofhsqteueywxeq.v.3dns.vip"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇬 #2"
-    type: "vmess"
-    server: "wjofhsqteueywxeq.v.3dns.vip"
-    port: 443
-    uuid: "a9f4de8b-68f1-44b6-b6a2-1db60940503a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "wjofhsqteueywxeq.v.3dns.vip"
-    network: "ws"
-    ws-opts:
-      path: "/ws-vmess"
-      headers:
-        Host: "wjofhsqteueywxeq.v.3dns.vip"
   - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦 #4"
     type: "vmess"
     server: "www.gptcloudai.com"
@@ -985,7 +986,7 @@ proxies:
       path: "/truth"
       headers:
         Host: "www.gptcloudai.com"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #7"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #9"
     type: "vmess"
     server: "www.windowsmsidownloads.com"
     port: 443
@@ -1000,7 +1001,7 @@ proxies:
       path: "/truth"
       headers:
         Host: "www.windowsmsidownloads.com"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #8"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #5"
     type: "vmess"
     server: "www.windowssearchtools.com"
     port: 443
@@ -1015,7 +1016,7 @@ proxies:
       path: "/truth"
       headers:
         Host: "www.windowssearchtools.com"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇦 #5"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 #6"
     type: "vmess"
     server: "www.ubuntuupdates.com"
     port: 443
@@ -1034,80 +1035,81 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "LTE/5G Все операторы 🇪🇺"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
+      - "SNi kinopoisk.ru 🇷🇺"
       - "Бесплатный VPN tg:VLESSFORU 🇧🇷"
+      - "Бесплатный VPN tg:VLESSFORU 🇮🇳"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇫🇮"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
+      - "tg:VLESSFORU 🇩🇪 ⚡"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #3"
-      - "LTE/5G Все операторы 🇪🇺 #2"
-      - "tg:VLESSFORU 🇷🇺"
-      - "SNi vk-portal.net 🇭🇷"
-      - "SNi vk-portal.net 🇰🇿"
+      - "LTE/5G Все операторы 🇪🇺"
       - "SNi yandex.ru 🇵🇱"
       - "SNi yandex.ru 🇵🇱 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇱🇻"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇪 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇷"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #5"
-      - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #6"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇩"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #6"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #7"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #8"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #4"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #9"
+      - "LTE/5G Все операторы 🇪🇺 #2"
       - "LTE/5G Все операторы 🇪🇺 #3"
-      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
       - "LTE/5G Все операторы 🇪🇺 #4"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
       - "LTE/5G Все операторы 🇪🇺 #5"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
+      - "LTE/5G Все операторы 🇪🇺 #6"
+      - "LTE/5G Все операторы 🇪🇺 #7"
+      - "LTE/5G Все операторы 🇪🇺 #8"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇷"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
       - "Бесплатный VPN tg:VLESSFORU 🇪🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇮"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇮 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇮 #5"
-      - "LTE/5G Все операторы 🇪🇺 #6"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #3"
+      - "LTE/5G Все операторы 🇪🇺 #9"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #7"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #8"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #4"
+      - "Бесплатный VPN tg:VLESSFORU 🇫🇷 #5"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇹"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #6"
-      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #3"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇹 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #7"
-      - "LTE/5G Все операторы 🇪🇺 #7"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #4"
+      - "LTE/5G Все операторы 🇪🇺 #10"
       - "Бесплатный VPN tg:VLESSFORU 🇵🇱"
-      - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #10"
+      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #5"
+      - "LTE/5G Все операторы 🇪🇺 #11"
       - "SNi yandex.ru 🇫🇮"
       - "Бесплатный VPN tg:VLESSFORU 🇹🇼"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇹🇼 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇦🇺"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇨"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
-      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #3"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
-      - "Бесплатный VPN tg:VLESSFORU 🇸🇬"
-      - "Бесплатный VPN tg:VLESSFORU 🇸🇬 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #4"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #4"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #7"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #8"
-      - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #9"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #6"
 rules:
   - MATCH,PROXY
