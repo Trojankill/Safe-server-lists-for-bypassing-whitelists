@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-26 07:45:33 UTC
+# 2026-10-26 08:00:54 UTC
 proxies:
-  - name: "🇷🇺 Beget — #49"
+  - name: "🇷🇺 Beget — #65"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,34 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #88"
-    type: "vless"
-    server: "188.225.27.229"
-    port: 443
-    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
-    udp: true
-    tls: true
-    servername: "bridge.rkitman.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
-      short-id: "88d9dc52ef39c8bd"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 VK — #38"
-    type: "vless"
-    server: "78.159.246.85"
-    port: 2053
-    uuid: "95a608b6-bff1-4e10-bb61-0a39f221bb7d"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #77"
+  - name: "🇩🇪 Germany — #93"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -57,7 +30,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #93"
+  - name: "🇸🇪 Sweden — #110"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -72,7 +45,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #90"
+  - name: "🇵🇱 Poland — #105"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -88,11 +61,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #49"
-      - "🇳🇱 The Netherlands — #88"
-      - "🇷🇺 VK — #38"
-      - "🇩🇪 Germany — #77"
-      - "🇸🇪 Sweden — #93"
-      - "🇵🇱 Poland — #90"
+      - "🇷🇺 Beget — #65"
+      - "🇩🇪 Germany — #93"
+      - "🇸🇪 Sweden — #110"
+      - "🇵🇱 Poland — #105"
 rules:
   - MATCH,PROXY
