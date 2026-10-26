@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-26 01:45:29 UTC
+# 2026-10-26 02:00:52 UTC
 proxies:
-  - name: "🇷🇺 Beget — #63"
+  - name: "🇪🇪 Estonia — #103"
+    type: "vless"
+    server: "46.243.235.6"
+    port: 8445
+    uuid: "3a4f6204-472c-4c69-b7be-cca84de97148"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Beget — #64"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,25 +22,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇱🇹 Lithuania — #102"
-    type: "vless"
-    server: "45.11.27.130"
-    port: 443
-    uuid: "8c8a8681-5444-4e18-a427-54f19eea6a77"
-    udp: true
-    tls: true
-    servername: "litva2.ovhpride.shop"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mJkx2aIzeXMsdR38oCpeGX4r5Siq4__nb0I4gk1-wVM"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Selectel — #66"
+  - name: "🇷🇺 Selectel — #68"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -39,7 +39,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #89"
+  - name: "🇩🇪 Germany — #92"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -55,21 +55,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #103"
-    type: "vless"
-    server: "81.163.22.35"
-    port: 8443
-    uuid: "cad0732d-21c2-4adf-9200-00995e67586a"
-    udp: true
-    tls: true
-    servername: "load.videostreamer.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "e6rP8xM5lq0nZ_Ni7XRO3EXC3sJU_pEeDmzJC-3gPTA"
-      short-id: "b434ffe063bb60"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇸🇪 Sweden — #105"
+  - name: "🇸🇪 Sweden — #107"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -84,15 +70,27 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
+  - name: "🇵🇱 Poland — #106"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "ea277838-a188-44f1-a2e8-94aa110c4f27"
+    udp: true
+    tls: true
+    servername: "static.bakarova-top.ru"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #63"
-      - "🇱🇹 Lithuania — #102"
-      - "🇷🇺 Selectel — #66"
-      - "🇩🇪 Germany — #89"
-      - "🇳🇱 The Netherlands — #103"
-      - "🇸🇪 Sweden — #105"
+      - "🇪🇪 Estonia — #103"
+      - "🇷🇺 Beget — #64"
+      - "🇷🇺 Selectel — #68"
+      - "🇩🇪 Germany — #92"
+      - "🇸🇪 Sweden — #107"
+      - "🇵🇱 Poland — #106"
 rules:
   - MATCH,PROXY
