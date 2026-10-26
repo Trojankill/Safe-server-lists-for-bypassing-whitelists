@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-26 12:45:37 UTC
+# 2026-10-26 13:06:44 UTC
 proxies:
-  - name: "🇷🇺 Beget — #67"
+  - name: "🇷🇺 Beget — #65"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,33 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #65"
-    type: "vless"
-    server: "95.163.232.242"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇱🇹 Lithuania — #108"
-    type: "vless"
-    server: "45.11.27.130"
-    port: 443
-    uuid: "8c8a8681-5444-4e18-a427-54f19eea6a77"
-    udp: true
-    tls: true
-    servername: "litva2.ovhpride.shop"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "mJkx2aIzeXMsdR38oCpeGX4r5Siq4__nb0I4gk1-wVM"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Selectel — #70"
+  - name: "🇷🇺 Selectel — #68"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -52,7 +26,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #93"
+  - name: "🇩🇪 Germany — #89"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -68,7 +42,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #115"
+  - name: "🇸🇪 Sweden — #106"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -83,23 +57,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #104"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "d49f7cc7-0c15-4a49-9644-ef72e00d8e56"
-    udp: true
-    tls: true
-    servername: "dropstyle.lol"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/player/metrics/97662863db53/"
-      headers:
-        Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #110"
+  - name: "🇵🇱 Poland — #101"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -115,13 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #67"
-      - "🇷🇺 VK — #65"
-      - "🇱🇹 Lithuania — #108"
-      - "🇷🇺 Selectel — #70"
-      - "🇩🇪 Germany — #93"
-      - "🇸🇪 Sweden — #115"
-      - "🇪🇪 Estonia — #104"
-      - "🇵🇱 Poland — #110"
+      - "🇷🇺 Beget — #65"
+      - "🇷🇺 Selectel — #68"
+      - "🇩🇪 Germany — #89"
+      - "🇸🇪 Sweden — #106"
+      - "🇵🇱 Poland — #101"
 rules:
   - MATCH,PROXY
