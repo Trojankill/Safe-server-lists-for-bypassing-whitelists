@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-26 03:30:43 UTC
+# 2026-10-26 03:45:27 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -27,6 +27,20 @@ proxies:
       public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
       short-id: "2e6d668958829998"
     network: "xhttp"
+  - name: "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "37.18.14.168"
+    port: 444
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "92.118.9.166"
@@ -39,6 +53,19 @@ proxies:
     reality-opts:
       public-key: "Re0aWbYgk775QZ2eiIzh9fwPANq8HfLlrp9vbTC8vXQ"
       short-id: "60e64f9f8724c0"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "87.242.95.164"
+    port: 8445
+    uuid: "3a4f6204-472c-4c69-b7be-cca84de97148"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "unknown | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -230,7 +257,9 @@ proxy-groups:
     proxies:
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "unknown | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"

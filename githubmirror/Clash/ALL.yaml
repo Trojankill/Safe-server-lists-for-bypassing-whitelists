@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-26 03:30:44 UTC
+# 2026-10-26 03:45:28 UTC
 proxies:
   - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
@@ -922,6 +922,20 @@ proxies:
       short-id: "ffd16b1033cad66d"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "37.18.14.168"
+    port: 444
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "81.94.148.232"
@@ -6789,6 +6803,7 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱"
       - "🇳🇱 [BL] Сервер 139"
       - "🇩🇪 Германия 12 Hetzner Online GmbH t.me/rjsxrd"
+      - "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "LTE/5G Все операторы 🇪🇺 #3"
       - "🇸🇬 [BL] Сервер 67"
       - "🇸🇬 [BL] Сервер 66"
