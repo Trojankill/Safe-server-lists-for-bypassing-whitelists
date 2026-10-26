@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-26 16:45:32 UTC
+# 2026-10-26 17:01:00 UTC
 proxies:
-  - name: "🇷🇺 Beget — #65"
+  - name: "🇷🇺 Beget — #69"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,26 +9,51 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #99"
+  - name: "🇷🇺 VK — #65"
     type: "vless"
-    server: "188.225.27.229"
-    port: 443
-    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
+    server: "37.18.14.43"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
     udp: true
     tls: true
-    servername: "bridge.rkitman.ru"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
-      short-id: "88d9dc52ef39c8bd"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇩🇪 Germany — #89"
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 VK — #66"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #93"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #100"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -44,22 +69,23 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #106"
+  - name: "🇪🇪 Estonia — #109"
     type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "d49f7cc7-0c15-4a49-9644-ef72e00d8e56"
     udp: true
     tls: true
-    servername: "io.ozone.ru"
+    servername: "dropstyle.lol"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #101"
+    network: "ws"
+    ws-opts:
+      path: "/player/metrics/97662863db53/"
+      headers:
+        Host: "dropstyle.lol"
+  - name: "🇵🇱 Poland — #113"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -75,10 +101,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #65"
-      - "🇳🇱 The Netherlands — #99"
-      - "🇩🇪 Germany — #89"
-      - "🇸🇪 Sweden — #106"
-      - "🇵🇱 Poland — #101"
+      - "🇷🇺 Beget — #69"
+      - "🇷🇺 VK — #65"
+      - "🇷🇺 VK — #66"
+      - "🇧🇬 Bulgaria — #93"
+      - "🇩🇪 Germany — #100"
+      - "🇪🇪 Estonia — #109"
+      - "🇵🇱 Poland — #113"
 rules:
   - MATCH,PROXY
