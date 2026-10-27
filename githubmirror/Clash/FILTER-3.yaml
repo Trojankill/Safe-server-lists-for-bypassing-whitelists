@@ -1,7 +1,23 @@
 # clash/mihomo subscription
-# 2026-10-27 13:45:31 UTC
+# 2026-10-27 14:00:57 UTC
 proxies:
-  - name: "🇷🇺 Beget — #70"
+  - name: "🇪🇪 Estonia — #96"
+    type: "vless"
+    server: "194.55.239.89"
+    port: 443
+    uuid: "073b7df7-5527-45a2-ba29-183b85c39071"
+    udp: true
+    tls: true
+    servername: "broadcast.liveflow.space"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/live.stream.v1.Broadcast/"
+      headers:
+        Host: "broadcast.liveflow.space"
+  - name: "🇷🇺 Beget — #64"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,12 +25,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #113"
+  - name: "🇳🇱 The Netherlands — #106"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,38 +44,7 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #99"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #125"
-    type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
-    udp: true
-    tls: true
-    servername: "io.ozone.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #106"
+  - name: "🇪🇪 Estonia — #103"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -69,13 +54,13 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     network: "ws"
     ws-opts:
       path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #115"
+  - name: "🇵🇱 Poland — #108"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -91,11 +76,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #70"
-      - "🇳🇱 The Netherlands — #113"
-      - "🇩🇪 Germany — #99"
-      - "🇸🇪 Sweden — #125"
-      - "🇪🇪 Estonia — #106"
-      - "🇵🇱 Poland — #115"
+      - "🇪🇪 Estonia — #96"
+      - "🇷🇺 Beget — #64"
+      - "🇳🇱 The Netherlands — #106"
+      - "🇪🇪 Estonia — #103"
+      - "🇵🇱 Poland — #108"
 rules:
   - MATCH,PROXY
