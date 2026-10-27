@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-26 23:45:32 UTC
+# 2026-10-27 00:00:58 UTC
 proxies:
   - name: "🇷🇺 Beget — #65"
     type: "vless"
@@ -13,20 +13,6 @@ proxies:
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #106"
-    type: "vless"
-    server: "188.225.27.229"
-    port: 443
-    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
-    udp: true
-    tls: true
-    servername: "bridge.rkitman.ru"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
-      short-id: "88d9dc52ef39c8bd"
-    flow: "xtls-rprx-vision"
     network: "raw"
   - name: "🇷🇺 Selectel — #69"
     type: "vless"
@@ -56,7 +42,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #117"
+  - name: "🇸🇪 Sweden — #114"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -71,7 +57,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #101"
+  - name: "🇪🇪 Estonia — #103"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -81,13 +67,13 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #109"
+  - name: "🇵🇱 Poland — #106"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -104,11 +90,10 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Beget — #65"
-      - "🇳🇱 The Netherlands — #106"
       - "🇷🇺 Selectel — #69"
       - "🇩🇪 Germany — #93"
-      - "🇸🇪 Sweden — #117"
-      - "🇪🇪 Estonia — #101"
-      - "🇵🇱 Poland — #109"
+      - "🇸🇪 Sweden — #114"
+      - "🇪🇪 Estonia — #103"
+      - "🇵🇱 Poland — #106"
 rules:
   - MATCH,PROXY
