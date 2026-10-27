@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-27 04:00:54 UTC
+# 2026-10-27 04:15:30 UTC
 proxies:
-  - name: "🇪🇪 Estonia — #99"
-    type: "vless"
-    server: "46.243.235.6"
-    port: 8445
-    uuid: "3a4f6204-472c-4c69-b7be-cca84de97148"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "SPok5V2FC3pM6iTP7j2gpPQRqreGx73qvlWG1F2Efy0"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "🇷🇺 Beget — #65"
     type: "vless"
     server: "45.12.75.242"
@@ -27,7 +14,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #92"
+  - name: "🇷🇺 Selectel — #69"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #93"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -43,7 +42,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #119"
+  - name: "🇸🇪 Sweden — #115"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -58,7 +57,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #103"
+  - name: "🇪🇪 Estonia — #101"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -68,13 +67,13 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     network: "ws"
     ws-opts:
-      path: "/player/metrics/97662863db53/"
+      path: "/service/metrics/51dec2df3071/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #110"
+  - name: "🇵🇱 Poland — #106"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -90,11 +89,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia — #99"
       - "🇷🇺 Beget — #65"
-      - "🇩🇪 Germany — #92"
-      - "🇸🇪 Sweden — #119"
-      - "🇪🇪 Estonia — #103"
-      - "🇵🇱 Poland — #110"
+      - "🇷🇺 Selectel — #69"
+      - "🇩🇪 Germany — #93"
+      - "🇸🇪 Sweden — #115"
+      - "🇪🇪 Estonia — #101"
+      - "🇵🇱 Poland — #106"
 rules:
   - MATCH,PROXY
