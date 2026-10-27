@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-27 08:45:30 UTC
+# 2026-10-27 09:00:55 UTC
 proxies:
   - name: "🇷🇺 Beget — #65"
     type: "vless"
@@ -14,7 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #105"
+  - name: "🇳🇱 The Netherlands — #104"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,6 +28,19 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
+  - name: "🇧🇬 Bulgaria — #89"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇷🇺 Selectel — #69"
     type: "vless"
     server: "188.72.103.4"
@@ -40,7 +53,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #93"
+  - name: "🇩🇪 Germany — #94"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,7 +69,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #120"
+  - name: "🇸🇪 Sweden — #118"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -71,23 +84,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #99"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "d49f7cc7-0c15-4a49-9644-ef72e00d8e56"
-    udp: true
-    tls: true
-    servername: "dropstyle.lol"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    network: "ws"
-    ws-opts:
-      path: "/service/metrics/51dec2df3071/"
-      headers:
-        Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #110"
+  - name: "🇵🇱 Poland — #108"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -104,11 +101,11 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Beget — #65"
-      - "🇳🇱 The Netherlands — #105"
+      - "🇳🇱 The Netherlands — #104"
+      - "🇧🇬 Bulgaria — #89"
       - "🇷🇺 Selectel — #69"
-      - "🇩🇪 Germany — #93"
-      - "🇸🇪 Sweden — #120"
-      - "🇪🇪 Estonia — #99"
-      - "🇵🇱 Poland — #110"
+      - "🇩🇪 Germany — #94"
+      - "🇸🇪 Sweden — #118"
+      - "🇵🇱 Poland — #108"
 rules:
   - MATCH,PROXY
