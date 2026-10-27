@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-27 21:30:45 UTC
+# 2026-10-27 21:45:33 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -84,46 +84,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "google.storage.v2.Storage"
-  - name: "Russia | ya.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.233.112.125"
-    port: 35021
-    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "randomized"
-    reality-opts:
-      public-key: "8Psrf1KEB56yBqaxcNhwcVWJ0_t6in3UP-QVkmVobVw"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.233.112.125"
-    port: 4321
-    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "randomized"
-    reality-opts:
-      public-key: "bkQ2euy5Ls1EELvms1JGr4Bwey673s5CAvSs6b3XzwA"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "193.233.112.125"
-    port: 8321
-    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "bkQ2euy5Ls1EELvms1JGr4Bwey673s5CAvSs6b3XzwA"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.126.67.8"
@@ -205,9 +165,6 @@ proxy-groups:
       - "Germany | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | yandex.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | strm.yandex.net | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
