@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-27 05:00:52 UTC
+# 2026-10-27 05:14:36 UTC
 proxies:
   - name: "🇷🇺 Beget — #65"
     type: "vless"
@@ -14,19 +14,21 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #69"
+  - name: "🇳🇱 The Netherlands — #103"
     type: "vless"
-    server: "188.72.103.4"
+    server: "188.225.27.229"
     port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    uuid: "66dc1927-8528-4f1e-bb74-5a9c7aa8ea8c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
+    servername: "bridge.rkitman.ru"
     client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #93"
+    reality-opts:
+      public-key: "8C7evg_SSrJbxMTaUqJoylqB9HSNsmBvmUlgs_c5EiU"
+      short-id: "88d9dc52ef39c8bd"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #92"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -42,7 +44,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #115"
+  - name: "🇸🇪 Sweden — #116"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -67,13 +69,13 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     network: "ws"
     ws-opts:
-      path: "/service/metrics/51dec2df3071/"
+      path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #106"
+  - name: "🇵🇱 Poland — #107"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -90,10 +92,10 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Beget — #65"
-      - "🇷🇺 Selectel — #69"
-      - "🇩🇪 Germany — #93"
-      - "🇸🇪 Sweden — #115"
+      - "🇳🇱 The Netherlands — #103"
+      - "🇩🇪 Germany — #92"
+      - "🇸🇪 Sweden — #116"
       - "🇪🇪 Estonia — #101"
-      - "🇵🇱 Poland — #106"
+      - "🇵🇱 Poland — #107"
 rules:
   - MATCH,PROXY
