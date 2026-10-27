@@ -1,19 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-20 08:00:57 UTC
+# 2026-10-27 23:30:51 UTC
 proxies:
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "45.139.27.63"
-    port: 443
-    uuid: "7fc953d6-ae75-46fb-a970-10b57d513487"
+    server: "81.94.148.232"
+    port: 8443
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
     udp: true
     tls: true
-    servername: "emerge-01.uiu.fyi"
+    servername: "windytrout.net"
     alpn:
       - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "81.17.154.97"
     port: 443
@@ -25,32 +26,6 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "147.45.148.6"
-    port: 443
-    uuid: "8a9c586c-4b2c-49e5-9e78-97408bf58500"
-    udp: true
-    tls: true
-    servername: "yoy-api.bachidze.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
-    type: "vless"
-    server: "85.193.85.231"
-    port: 443
-    uuid: "8a9c586c-4b2c-49e5-9e78-97408bf58500"
-    udp: true
-    tls: true
-    servername: "yoy-api.bachidze.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "81.17.154.181"
@@ -65,7 +40,7 @@ proxies:
     network: "xhttp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "z1q3pv4g78.rucdncomp.pro"
+    server: "217.19.122.156"
     port: 443
     uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
@@ -79,15 +54,27 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "193.233.91.94"
+    port: 443
+    uuid: "c9c219dc-50da-4135-8e5b-67020291f0ec"
+    udp: true
+    tls: true
+    servername: "a93t3jdl.cachecore.space"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
-      - "🇷🇺 Россия [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
