@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-27 17:45:33 UTC
+# 2026-10-27 18:00:58 UTC
 proxies:
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "213.165.54.59"
+    port: 8443
+    uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
+      short-id: "2e6d668958829998"
+    network: "xhttp"
   - name: "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.76.241.51"
@@ -56,6 +69,61 @@ proxies:
       public-key: "6oCWCXq4HxFGjXifLQ6hpOPDmdrRMEAosjVFHABCZyo"
       short-id: "5b55d68bd08e64e6"
     network: "xhttp"
+  - name: "The Netherlands | strm.yandex.net | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "140.225.199.136"
+    port: 8443
+    uuid: "6c713691-3ca2-002b-ad25-113d1bed6b03"
+    udp: true
+    tls: true
+    servername: "strm.yandex.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "86EUYgrS7mazQ-GsiMnStyHSx9AlG8B_-KgXluNdWXI"
+      short-id: "d3ab13e9c496c399"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "google.storage.v2.Storage"
+  - name: "Russia | ya.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.233.112.125"
+    port: 35021
+    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "randomized"
+    reality-opts:
+      public-key: "8Psrf1KEB56yBqaxcNhwcVWJ0_t6in3UP-QVkmVobVw"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.233.112.125"
+    port: 4321
+    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "randomized"
+    reality-opts:
+      public-key: "bkQ2euy5Ls1EELvms1JGr4Bwey673s5CAvSs6b3XzwA"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "193.233.112.125"
+    port: 8321
+    uuid: "888f2af0-a5d2-4562-9893-c125d2d1f131"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bkQ2euy5Ls1EELvms1JGr4Bwey673s5CAvSs6b3XzwA"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.126.67.8"
@@ -131,10 +199,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | yandex.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | strm.yandex.net | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | ya.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | ya.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Germany | www.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
