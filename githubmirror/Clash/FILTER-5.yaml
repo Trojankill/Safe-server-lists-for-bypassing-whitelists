@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-27 04:30:42 UTC
+# 2026-10-27 04:45:28 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -93,6 +93,19 @@ proxies:
       public-key: "2P7D_IkxXWre3YziEe2tkF9L_gUbdZE_WCu9_SQq4hE"
       short-id: "2b5b1ffa8a6a1a68"
     network: "xhttp"
+  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.180.211.245"
+    port: 8443
+    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.105.108.176"
@@ -149,19 +162,6 @@ proxies:
       short-id: "6a29a03b21"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | vh7fqpnbp.static-hub.space | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "46.149.66.8"
-    port: 443
-    uuid: "878f7de7-b69a-4ed4-b7be-a96b2735b368"
-    udp: true
-    tls: true
-    servername: "vh7fqpnbp.static-hub.space"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -193,7 +193,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -230,14 +230,14 @@ proxy-groups:
       - "Russia | cdn.hostleak.space | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
+      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Serbia | www.google.co.uk | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | music.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | vh7fqpnbp.static-hub.space | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
