@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-27 09:45:31 UTC
+# 2026-10-27 10:00:56 UTC
 proxies:
-  - name: "🇷🇺 Beget — #65"
+  - name: "🇷🇺 Beget — #68"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,12 +9,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #104"
+  - name: "🇳🇱 The Netherlands — #110"
     type: "vless"
     server: "188.225.27.229"
     port: 443
@@ -28,10 +28,10 @@ proxies:
       short-id: "88d9dc52ef39c8bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇧🇬 Bulgaria — #89"
+  - name: "🇷🇺 VK — #64"
     type: "vless"
     server: "37.18.14.43"
-    port: 8443
+    port: 2053
     uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
     udp: true
     tls: true
@@ -41,15 +41,16 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #69"
+  - name: "🇧🇬 Bulgaria — #85"
     type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    server: "37.18.14.43"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "flatcrest.net"
     alpn:
+      - "http/1.1"
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
@@ -69,7 +70,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #118"
+  - name: "🇸🇪 Sweden — #124"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -84,7 +85,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #108"
+  - name: "🇪🇪 Estonia — #101"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "d49f7cc7-0c15-4a49-9644-ef72e00d8e56"
+    udp: true
+    tls: true
+    servername: "dropstyle.lol"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    network: "ws"
+    ws-opts:
+      path: "/service/metrics/51dec2df3071/"
+      headers:
+        Host: "dropstyle.lol"
+  - name: "🇵🇱 Poland — #114"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -100,12 +117,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #65"
-      - "🇳🇱 The Netherlands — #104"
-      - "🇧🇬 Bulgaria — #89"
-      - "🇷🇺 Selectel — #69"
+      - "🇷🇺 Beget — #68"
+      - "🇳🇱 The Netherlands — #110"
+      - "🇷🇺 VK — #64"
+      - "🇧🇬 Bulgaria — #85"
       - "🇩🇪 Germany — #94"
-      - "🇸🇪 Sweden — #118"
-      - "🇵🇱 Poland — #108"
+      - "🇸🇪 Sweden — #124"
+      - "🇪🇪 Estonia — #101"
+      - "🇵🇱 Poland — #114"
 rules:
   - MATCH,PROXY
