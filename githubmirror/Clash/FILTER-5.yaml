@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-28 20:30:58 UTC
+# 2026-10-28 20:45:33 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -26,6 +26,34 @@ proxies:
     reality-opts:
       public-key: "snNVYSFAGMHIRMnzBZoFFTcu6KowqSFLSyRgmI9NSRU"
       short-id: "5308d9ab"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.76.14.21"
+    port: 443
+    uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
+    udp: true
+    tls: true
+    servername: "stats.vk-portal.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
+      short-id: "3c6fc84d"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "82.148.6.146"
+    port: 443
+    uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
+    udp: true
+    tls: true
+    servername: "stats.vk-portal.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
+      short-id: "3c6fc84d"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -87,6 +115,20 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.76.241.20"
+    port: 8443
+    uuid: "cbe986af-d8f1-48b1-9889-42a367bf7c6e"
+    udp: true
+    tls: true
+    servername: "msk1.nexfile.net"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY"
+      short-id: "edc4c30c"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "88.216.69.253"
@@ -124,7 +166,7 @@ proxies:
     port: 8443
     password: "d6b45ef9-61d1-4057-a270-f1673c74e8ce"
     sni: "ih.itg.bot"
-  - name: "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 2 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -139,14 +181,17 @@ proxy-groups:
     proxies:
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | cdns2.wyre-file.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 19 [#LSO - #LinSpisokObhod]"
       - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ih.itg.bot | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 2 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
