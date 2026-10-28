@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-28 20:45:33 UTC
+# 2026-10-28 21:00:56 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #114"
+  - name: "🇺🇸 United States — #129"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇳🇱 The Netherlands — #113"
     type: "vless"
     server: "84.201.180.13"
     port: 443
@@ -9,11 +22,11 @@ proxies:
     udp: true
     tls: true
     servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "DuxQy3KWEZTU_sBhXSfeo_1Q0-0lMcSnx21bWvUi5hQ"
     network: "xhttp"
-  - name: "🇷🇺 Beget — #73"
+  - name: "🇷🇺 Beget — #72"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -21,37 +34,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇧🇬 Bulgaria — #100"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 8443
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇨🇿 Czechia — #101"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #105"
+  - name: "🇩🇪 Germany — #103"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -67,22 +55,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #130"
-    type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
-    udp: true
-    tls: true
-    servername: "io.ozone.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #116"
+  - name: "🇵🇱 Poland — #115"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -98,12 +71,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #114"
-      - "🇷🇺 Beget — #73"
-      - "🇧🇬 Bulgaria — #100"
-      - "🇨🇿 Czechia — #101"
-      - "🇩🇪 Germany — #105"
-      - "🇸🇪 Sweden — #130"
-      - "🇵🇱 Poland — #116"
+      - "🇺🇸 United States — #129"
+      - "🇳🇱 The Netherlands — #113"
+      - "🇷🇺 Beget — #72"
+      - "🇩🇪 Germany — #103"
+      - "🇵🇱 Poland — #115"
 rules:
   - MATCH,PROXY
