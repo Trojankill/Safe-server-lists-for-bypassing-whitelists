@@ -1,7 +1,23 @@
 # clash/mihomo subscription
-# 2026-10-28 05:45:29 UTC
+# 2026-10-28 06:00:54 UTC
 proxies:
-  - name: "🇷🇺 Beget — #72"
+  - name: "🇪🇪 Estonia — #140"
+    type: "vless"
+    server: "194.55.239.89"
+    port: 443
+    uuid: "073b7df7-5527-45a2-ba29-183b85c39071"
+    udp: true
+    tls: true
+    servername: "broadcast.liveflow.space"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/live.stream.v1.Broadcast/"
+      headers:
+        Host: "broadcast.liveflow.space"
+  - name: "🇷🇺 Beget — #84"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,12 +25,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇨🇿 Czechia — #101"
+  - name: "🇨🇿 Czechia — #126"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -26,7 +42,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #105"
+  - name: "🇩🇪 Germany — #130"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -42,7 +58,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #135"
+  - name: "🇸🇪 Sweden — #175"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -57,7 +73,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #115"
+  - name: "🇪🇪 Estonia — #142"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -70,10 +86,10 @@ proxies:
     client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
-      path: "/service/metrics/51dec2df3071/"
+      path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #121"
+  - name: "🇵🇱 Poland — #162"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -89,11 +105,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #72"
-      - "🇨🇿 Czechia — #101"
-      - "🇩🇪 Germany — #105"
-      - "🇸🇪 Sweden — #135"
-      - "🇪🇪 Estonia — #115"
-      - "🇵🇱 Poland — #121"
+      - "🇪🇪 Estonia — #140"
+      - "🇷🇺 Beget — #84"
+      - "🇨🇿 Czechia — #126"
+      - "🇩🇪 Germany — #130"
+      - "🇸🇪 Sweden — #175"
+      - "🇪🇪 Estonia — #142"
+      - "🇵🇱 Poland — #162"
 rules:
   - MATCH,PROXY
