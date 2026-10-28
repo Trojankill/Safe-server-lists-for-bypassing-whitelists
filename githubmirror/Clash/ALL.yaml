@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-28 01:45:31 UTC
+# 2026-10-28 02:00:54 UTC
 proxies:
+  - name: "🇺🇸 United States — #146"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
     server: "167.17.69.171"
@@ -524,7 +537,7 @@ proxies:
       public-key: "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU"
       short-id: "9980e0609b0d3891"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #120"
+  - name: "🇳🇱 The Netherlands — #123"
     type: "vless"
     server: "84.201.169.241"
     port: 443
@@ -2481,7 +2494,7 @@ proxies:
       short-id: "d574526d"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇺🇸 United States — #140"
+  - name: "🇺🇸 United States — #143"
     type: "vless"
     server: "37.18.14.190"
     port: 7445
@@ -3312,18 +3325,6 @@ proxies:
       short-id: "c9677d3b7dea"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇨🇿 Czechia — #100"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇩🇪 DE | VLESS t.me/rjsxrd #2"
     type: "vless"
     server: "de166.mech-pro.online"
@@ -4640,7 +4641,7 @@ proxies:
       short-id: "3cb2d38fbac380fa"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #137"
+  - name: "🇸🇪 Sweden — #140"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -4697,7 +4698,7 @@ proxies:
       short-id: "5c56a4cfea5866c0"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇪🇪 Estonia | [*CIDR] t.me/rjsxrd"
+  - name: "🇪🇪 Estonia — #115"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -4707,10 +4708,10 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
-      path: "/service/metrics/51dec2df3071/"
+      path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
   - name: "🇪🇪 Estonia [*CIDR] t.me/rjsxrd"
@@ -6645,6 +6646,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 United States — #146"
       - "🇺🇸 [BL] Сервер 40"
       - "🇩🇪 [BL] Сервер 363"
       - "Бесплатный VPN tg:VLESSFORU 🇱🇻"
@@ -6683,7 +6685,7 @@ proxy-groups:
       - "巴西_102807092 t.me/rjsxrd"
       - "🇫🇮 [BL] Сервер 30"
       - "🇮🇳 [BL] Сервер 275"
-      - "🇳🇱 The Netherlands — #120"
+      - "🇳🇱 The Netherlands — #123"
       - "🇸🇬 Singapore | TG: @HardVpn_robot t.me/rjsxrd"
       - "🇱🇻 [BL] Сервер 64"
       - "🇺🇸 [WL] Сервер 70"
@@ -6826,7 +6828,7 @@ proxy-groups:
       - "🇧🇬 [BL] Сервер 355"
       - "🇩🇪 [BL] Сервер 202"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd"
-      - "🇺🇸 United States — #140"
+      - "🇺🇸 United States — #143"
       - "🇷🇴 [BL] Сервер 32"
       - "🇺🇸 [BL] Сервер 261"
       - "🇫🇮 [BL] Сервер 245"
@@ -6886,7 +6888,6 @@ proxy-groups:
       - "🇬🇧 [BL] Сервер 211"
       - "LTE/5G Все операторы 🇪🇺 #3"
       - "🇳🇱 [BL] Сервер 330"
-      - "🇨🇿 Czechia — #100"
       - "🇩🇪 DE | VLESS t.me/rjsxrd #2"
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
@@ -6984,11 +6985,11 @@ proxy-groups:
       - "🇷🇴 [BL] Сервер 307"
       - "🇺🇸 [BL] Сервер 139"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #7"
-      - "🇸🇪 Sweden — #137"
+      - "🇸🇪 Sweden — #140"
       - "🇳🇱 Нидерланды 42 HOSTKEY B.V. t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇵🇱"
-      - "🇪🇪 Estonia | [*CIDR] t.me/rjsxrd"
+      - "🇪🇪 Estonia — #115"
       - "🇪🇪 Estonia [*CIDR] t.me/rjsxrd"
       - "🇮🇹 [BL] Сервер 220"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #8"
