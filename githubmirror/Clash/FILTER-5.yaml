@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-28 20:00:58 UTC
+# 2026-10-28 20:15:34 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -55,76 +55,20 @@ proxies:
       public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
       short-id: "b2f9bb426426e0e7"
     network: "xhttp"
-  - name: "Russia | cdns2.wyre-file.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.86.145.183"
-    port: 443
-    uuid: "872a2c34-23f4-4dc8-89c8-79e8817415c5"
-    udp: true
-    tls: true
-    servername: "cdns2.wyre-file.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "cdns2.wyre-file.ru"
-  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "88.216.69.253"
-    port: 443
-    password: "humanity"
-    udp: true
-    sni: "www.pleadcourt.org"
-    alpn:
-      - "http/1.1"
-    network: "ws"
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.pleadcourt.org"
-  - name: "Подписка #LSO© Trojan: 19 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
     password: "trojan"
     udp: true
     sni: "trojan.lso"
-  - name: "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vmess"
-    server: "158.160.180.165"
-    port: 24212
-    uuid: "c58c1205-b308-416f-8503-c04557abf93d"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    network: "tcp"
   - name: "Russia | ih.itg.bot | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "185.22.234.91"
     port: 8443
     password: "d6b45ef9-61d1-4057-a270-f1673c74e8ce"
     sni: "ih.itg.bot"
-  - name: "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 2 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -141,12 +85,8 @@ proxy-groups:
       - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | cdns2.wyre-file.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 19 [#LSO - #LinSpisokObhod]"
-      - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Russia | ih.itg.bot | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 2 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
