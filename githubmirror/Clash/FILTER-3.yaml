@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-28 03:00:57 UTC
+# 2026-10-28 03:15:30 UTC
 proxies:
-  - name: "🇺🇸 United States — #146"
+  - name: "🇺🇸 United States — #156"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -14,20 +14,23 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #123"
+  - name: "🇪🇪 Estonia — #115"
     type: "vless"
-    server: "84.201.169.241"
+    server: "194.55.239.89"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "073b7df7-5527-45a2-ba29-183b85c39071"
     udp: true
     tls: true
-    servername: "api-maps.yandex.ru"
+    servername: "broadcast.liveflow.space"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Beget — #70"
+    network: "ws"
+    ws-opts:
+      path: "/live.stream.v1.Broadcast/"
+      headers:
+        Host: "broadcast.liveflow.space"
+  - name: "🇷🇺 Beget — #71"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -40,21 +43,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇺🇸 United States — #143"
-    type: "vless"
-    server: "37.18.14.190"
-    port: 7445
-    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "random"
-    reality-opts:
-      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
-      short-id: "283f4b51fbe39ad9"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇩🇪 Germany — #104"
+  - name: "🇩🇪 Germany — #105"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -70,7 +59,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #140"
+  - name: "🇸🇪 Sweden — #151"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -85,7 +74,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #115"
+  - name: "🇪🇪 Estonia — #124"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -95,13 +84,39 @@ proxies:
     servername: "dropstyle.lol"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     network: "ws"
     ws-opts:
       path: "/player/metrics/97662863db53/"
       headers:
         Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #126"
+  - name: "🇳🇱 The Netherlands — #134"
+    type: "vless"
+    server: "188.225.45.99"
+    port: 8443
+    uuid: "e1efdede-93d6-4ce4-8ca8-077aeb5e94a8"
+    udp: true
+    tls: true
+    servername: "luckyping.mcufa.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #109"
+    type: "vless"
+    server: "188.225.56.39"
+    port: 444
+    uuid: "e1efdede-93d6-4ce4-8ca8-077aeb5e94a8"
+    udp: true
+    tls: true
+    servername: "statics.mcufa.pro"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇵🇱 Poland — #137"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -117,13 +132,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #146"
-      - "🇳🇱 The Netherlands — #123"
-      - "🇷🇺 Beget — #70"
-      - "🇺🇸 United States — #143"
-      - "🇩🇪 Germany — #104"
-      - "🇸🇪 Sweden — #140"
+      - "🇺🇸 United States — #156"
       - "🇪🇪 Estonia — #115"
-      - "🇵🇱 Poland — #126"
+      - "🇷🇺 Beget — #71"
+      - "🇩🇪 Germany — #105"
+      - "🇸🇪 Sweden — #151"
+      - "🇪🇪 Estonia — #124"
+      - "🇳🇱 The Netherlands — #134"
+      - "🇩🇪 Germany — #109"
+      - "🇵🇱 Poland — #137"
 rules:
   - MATCH,PROXY
