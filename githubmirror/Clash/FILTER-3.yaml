@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-28 01:00:53 UTC
+# 2026-10-28 01:15:35 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #120"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
+    flow: "xtls-rprx-vision"
+    network: "raw"
   - name: "🇷🇺 Beget — #70"
     type: "vless"
     server: "45.12.75.242"
@@ -14,6 +27,32 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "🇺🇸 United States — #140"
+    type: "vless"
+    server: "37.18.14.190"
+    port: 7445
+    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
+      short-id: "283f4b51fbe39ad9"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇨🇿 Czechia — #100"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "czech.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇩🇪 Germany — #104"
     type: "vless"
     server: "217.19.122.156"
@@ -30,7 +69,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #135"
+  - name: "🇸🇪 Sweden — #137"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -45,23 +84,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇪🇪 Estonia — #114"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "d49f7cc7-0c15-4a49-9644-ef72e00d8e56"
-    udp: true
-    tls: true
-    servername: "dropstyle.lol"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    network: "ws"
-    ws-opts:
-      path: "/service/metrics/51dec2df3071/"
-      headers:
-        Host: "dropstyle.lol"
-  - name: "🇵🇱 Poland — #123"
+  - name: "🇵🇱 Poland — #124"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -77,10 +100,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #120"
       - "🇷🇺 Beget — #70"
+      - "🇺🇸 United States — #140"
+      - "🇨🇿 Czechia — #100"
       - "🇩🇪 Germany — #104"
-      - "🇸🇪 Sweden — #135"
-      - "🇪🇪 Estonia — #114"
-      - "🇵🇱 Poland — #123"
+      - "🇸🇪 Sweden — #137"
+      - "🇵🇱 Poland — #124"
 rules:
   - MATCH,PROXY
