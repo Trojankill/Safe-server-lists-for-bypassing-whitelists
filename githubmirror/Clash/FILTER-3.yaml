@@ -1,33 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-29 10:45:29 UTC
+# 2026-10-29 11:00:57 UTC
 proxies:
-  - name: "🇺🇸 United States — #98"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
-    udp: true
-    tls: true
-    servername: "ch-cdn.fius.dev"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇧🇬 Bulgaria — #54"
-    type: "vless"
-    server: "81.94.148.232"
-    port: 8443
-    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
-    udp: true
-    tls: true
-    servername: "windytrout.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 Beget — #48"
+  - name: "🇷🇺 Beget — #50"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -35,12 +9,24 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #64"
+  - name: "🇨🇿 Czechia — #67"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "czech.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #71"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,7 +42,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #95"
+  - name: "🇸🇪 Sweden — #102"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -71,7 +57,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #79"
+  - name: "🇵🇱 Poland — #100"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -81,17 +67,16 @@ proxies:
     servername: "static.bakarova-top.ru"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     network: "xhttp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #98"
-      - "🇧🇬 Bulgaria — #54"
-      - "🇷🇺 Beget — #48"
-      - "🇩🇪 Germany — #64"
-      - "🇸🇪 Sweden — #95"
-      - "🇵🇱 Poland — #79"
+      - "🇷🇺 Beget — #50"
+      - "🇨🇿 Czechia — #67"
+      - "🇩🇪 Germany — #71"
+      - "🇸🇪 Sweden — #102"
+      - "🇵🇱 Poland — #100"
 rules:
   - MATCH,PROXY
