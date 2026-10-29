@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-29 19:00:58 UTC
+# 2026-10-29 19:15:32 UTC
 proxies:
-  - name: "🇷🇺 Beget — #5"
+  - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,25 +9,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #2"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇨🇿 Czechia — #11"
+  - name: "🇨🇿 Czechia — #5"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -39,7 +26,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #14"
+  - name: "🇩🇪 Germany — #9"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -49,13 +36,28 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #46"
+  - name: "🇸🇪 Sweden — #45"
+    type: "vless"
+    server: "188.225.77.254"
+    port: 8443
+    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
+    udp: true
+    tls: true
+    servername: "io.ozone.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
+      short-id: "4951a2313524dd8f"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "ozone"
+  - name: "🇵🇱 Poland — #40"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -71,10 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #5"
-      - "🇷🇺 VK — #2"
-      - "🇨🇿 Czechia — #11"
-      - "🇩🇪 Germany — #14"
-      - "🇵🇱 Poland — #46"
+      - "🇷🇺 Beget — #1"
+      - "🇨🇿 Czechia — #5"
+      - "🇩🇪 Germany — #9"
+      - "🇸🇪 Sweden — #45"
+      - "🇵🇱 Poland — #40"
 rules:
   - MATCH,PROXY
