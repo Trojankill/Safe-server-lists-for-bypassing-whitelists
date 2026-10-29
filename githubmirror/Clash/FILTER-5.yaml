@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-29 01:00:52 UTC
+# 2026-10-29 01:15:32 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "132.243.230.251"
+    port: 443
+    uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
+      short-id: "b2f9bb426426e0e7"
+    network: "xhttp"
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "213.165.54.59"
     port: 8443
@@ -27,19 +40,6 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "132.243.230.251"
-    port: 443
-    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
-    udp: true
-    tls: true
-    servername: "www.kinopoisk.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
-      short-id: "b2f9bb426426e0e7"
-    network: "xhttp"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -113,7 +113,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.pleadcourt.org"
-  - name: "Подписка #LSO© Trojan: 19 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 15 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -144,14 +144,14 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | msk1.nexfile.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 19 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 15 [#LSO - #LinSpisokObhod]"
       - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
