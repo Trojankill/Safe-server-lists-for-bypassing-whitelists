@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-29 12:00:57 UTC
+# 2026-10-29 12:15:36 UTC
 proxies:
-  - name: "🇷🇺 Beget — #50"
+  - name: "🇷🇺 Beget — #2"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -14,7 +14,20 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇨🇿 Czechia — #67"
+  - name: "🇷🇺 VK — #1"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "xhttp"
+  - name: "🇨🇿 Czechia — #3"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -26,7 +39,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #71"
+  - name: "🇩🇪 Germany — #7"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -42,7 +55,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #102"
+  - name: "🇸🇪 Sweden — #40"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -57,7 +70,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #100"
+  - name: "🇵🇱 Poland — #38"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -73,10 +86,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #50"
-      - "🇨🇿 Czechia — #67"
-      - "🇩🇪 Germany — #71"
-      - "🇸🇪 Sweden — #102"
-      - "🇵🇱 Poland — #100"
+      - "🇷🇺 Beget — #2"
+      - "🇷🇺 VK — #1"
+      - "🇨🇿 Czechia — #3"
+      - "🇩🇪 Germany — #7"
+      - "🇸🇪 Sweden — #40"
+      - "🇵🇱 Poland — #38"
 rules:
   - MATCH,PROXY
