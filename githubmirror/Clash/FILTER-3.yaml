@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-29 14:01:02 UTC
+# 2026-10-29 14:15:35 UTC
 proxies:
-  - name: "🇺🇸 United States — #47"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
-    udp: true
-    tls: true
-    servername: "ch-cdn.fius.dev"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #19"
+  - name: "🇩🇪 Germany — #37"
     type: "vless"
     server: "185.86.145.174"
     port: 9444
@@ -27,7 +14,7 @@ proxies:
       public-key: "kFbLiztysJGEnqzWRH1JLbPzDUZyaI1eglpD4ORSOyA"
       short-id: "309975573a744b32"
     network: "raw"
-  - name: "🇷🇺 Beget — #3"
+  - name: "🇷🇺 Beget — #10"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -35,41 +22,38 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇫🇮 Finland — #21"
+  - name: "🇷🇺 Aeza Group — #9"
     type: "vless"
-    server: "217.150.197.67"
+    server: "188.225.76.182"
+    port: 15443
+    uuid: "7ae5205f-e6c2-45bd-b393-b42c4e1d54f6"
+    udp: true
+    tls: true
+    servername: "ru.cdn390.whitenw.net"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "4MtUhO_0Dmi7u8ETp_eaNZSTTgQrbY2q2NBDfR2-USE"
+      short-id: "f055e516ca1a57b4"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇨🇿 Czechia — #23"
+    type: "vless"
+    server: "188.72.103.4"
     port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "cdn2.rucdncomp.pro"
+    servername: "czech.nnight.cfd"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    network: "ws"
-    ws-opts:
-      path: "/player/metrics/e9e65ce193c2/"
-      headers:
-        Host: "cdn2.rucdncomp.pro"
-  - name: "🇷🇺 VK — #1"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #9"
+  - name: "🇩🇪 Germany — #26"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -79,13 +63,13 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "chrome"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #44"
+  - name: "🇸🇪 Sweden — #57"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -100,7 +84,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #42"
+  - name: "🇵🇱 Poland — #55"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -116,13 +100,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #47"
-      - "🇩🇪 Germany — #19"
-      - "🇷🇺 Beget — #3"
-      - "🇫🇮 Finland — #21"
-      - "🇷🇺 VK — #1"
-      - "🇩🇪 Germany — #9"
-      - "🇸🇪 Sweden — #44"
-      - "🇵🇱 Poland — #42"
+      - "🇩🇪 Germany — #37"
+      - "🇷🇺 Beget — #10"
+      - "🇷🇺 Aeza Group — #9"
+      - "🇨🇿 Czechia — #23"
+      - "🇩🇪 Germany — #26"
+      - "🇸🇪 Sweden — #57"
+      - "🇵🇱 Poland — #55"
 rules:
   - MATCH,PROXY
