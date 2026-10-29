@@ -1,7 +1,33 @@
 # clash/mihomo subscription
-# 2026-10-29 12:45:35 UTC
+# 2026-10-29 13:01:00 UTC
 proxies:
-  - name: "🇷🇺 Beget — #2"
+  - name: "🇺🇸 United States — #47"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #19"
+    type: "vless"
+    server: "185.86.145.174"
+    port: 9444
+    uuid: "202ab4e9-d944-49af-8dae-72541f227734"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "kFbLiztysJGEnqzWRH1JLbPzDUZyaI1eglpD4ORSOyA"
+      short-id: "309975573a744b32"
+    network: "raw"
+  - name: "🇷🇺 Beget — #3"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,11 +35,27 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "🇫🇮 Finland — #21"
+    type: "vless"
+    server: "217.150.197.67"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "cdn2.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    network: "ws"
+    ws-opts:
+      path: "/player/metrics/e9e65ce193c2/"
+      headers:
+        Host: "cdn2.rucdncomp.pro"
   - name: "🇷🇺 VK — #1"
     type: "vless"
     server: "37.18.14.43"
@@ -25,21 +67,9 @@ proxies:
     alpn:
       - "http/1.1"
       - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇨🇿 Czechia — #3"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #7"
+  - name: "🇩🇪 Germany — #9"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -49,13 +79,13 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #40"
+  - name: "🇸🇪 Sweden — #44"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -70,7 +100,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #38"
+  - name: "🇵🇱 Poland — #42"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -86,11 +116,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #2"
+      - "🇺🇸 United States — #47"
+      - "🇩🇪 Germany — #19"
+      - "🇷🇺 Beget — #3"
+      - "🇫🇮 Finland — #21"
       - "🇷🇺 VK — #1"
-      - "🇨🇿 Czechia — #3"
-      - "🇩🇪 Germany — #7"
-      - "🇸🇪 Sweden — #40"
-      - "🇵🇱 Poland — #38"
+      - "🇩🇪 Germany — #9"
+      - "🇸🇪 Sweden — #44"
+      - "🇵🇱 Poland — #42"
 rules:
   - MATCH,PROXY

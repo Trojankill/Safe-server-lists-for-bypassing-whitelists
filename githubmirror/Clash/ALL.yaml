@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-29 12:45:36 UTC
+# 2026-10-29 13:01:02 UTC
 proxies:
+  - name: "🇺🇸 United States — #47"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
     server: "167.17.69.171"
@@ -531,6 +544,19 @@ proxies:
       public-key: "a2shpTGkqr-nkclTg-GlDIk2WG2aEOHtDsiG3m68xlg"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "🇩🇪 Germany — #19"
+    type: "vless"
+    server: "185.86.145.174"
+    port: 9444
+    uuid: "202ab4e9-d944-49af-8dae-72541f227734"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "kFbLiztysJGEnqzWRH1JLbPzDUZyaI1eglpD4ORSOyA"
+      short-id: "309975573a744b32"
+    network: "raw"
   - name: "🇳🇱 [BL] Сервер 200"
     type: "vless"
     server: "108.61.164.217"
@@ -2437,7 +2463,7 @@ proxies:
       short-id: "eecfe76af97a6132"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇷🇺 Beget — #2"
+  - name: "🇷🇺 Beget — #3"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -2445,7 +2471,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -2809,7 +2835,7 @@ proxies:
       public-key: "C-e3vasFC42zQmJblol4foZozTe6j1c7TJMGqjvRm2U"
       short-id: "77479eaf"
     network: "tcp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+  - name: "🇫🇮 Finland — #21"
     type: "vless"
     server: "217.150.197.67"
     port: 443
@@ -2819,7 +2845,7 @@ proxies:
     servername: "cdn2.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     network: "ws"
     ws-opts:
       path: "/player/metrics/e9e65ce193c2/"
@@ -3015,7 +3041,7 @@ proxies:
     alpn:
       - "http/1.1"
       - "h2"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     network: "xhttp"
   - name: "🇸🇬 [BL] Сервер 80"
     type: "vless"
@@ -3373,18 +3399,6 @@ proxies:
       short-id: "c9677d3b7dea"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇨🇿 Czechia — #3"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "LTE/5G Все операторы 🇪🇺 #4"
     type: "vless"
     server: "poland.nnight.cfd"
@@ -4336,7 +4350,7 @@ proxies:
       public-key: "HPAsmJ8fjGYtSnMQ1XVunYrn7IbmC5Sx_hl6e7-OV3Y"
       short-id: "93799d80fc556bf0"
     network: "xhttp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "188.225.25.170"
     port: 443
@@ -4554,7 +4568,7 @@ proxies:
       short-id: "14fbf992"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇩🇪 Germany — #7"
+  - name: "🇩🇪 [WL] Сервер 72"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -4847,7 +4861,7 @@ proxies:
       short-id: "3cb2d38fbac380fa"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #40"
+  - name: "🇸🇪 Sweden — #44"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -6888,6 +6902,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 United States — #47"
       - "🇺🇸 [BL] Сервер 40"
       - "🇩🇪 [BL] Сервер 363"
       - "英国_102919359 t.me/rjsxrd"
@@ -6927,6 +6942,7 @@ proxy-groups:
       - "🇺🇸 США 80 Baykov Ilya Sergeevich t.me/rjsxrd"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "Germany | m4.mincreaft.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "🇩🇪 Germany — #19"
       - "🇳🇱 [BL] Сервер 200"
       - "🇩🇪 [BL] Сервер 298"
       - "🇺🇸 [BL] Сервер 367"
@@ -7066,7 +7082,7 @@ proxy-groups:
       - "🇯🇵 [BL] Сервер 49"
       - "tg:VLESSFORU top ping 🇵🇱"
       - "🇳🇱 Нидерланды 127 NetCrafters OU t.me/rjsxrd"
-      - "🇷🇺 Beget — #2"
+      - "🇷🇺 Beget — #3"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
       - "🇧🇬 [BL] Сервер 355"
       - "🇩🇪 [BL] Сервер 202"
@@ -7093,7 +7109,7 @@ proxy-groups:
       - "🇭🇰 [BL] Сервер 53"
       - "🇭🇰 [BL] Сервер 54"
       - "🇬🇧 [BL] Сервер 281"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Finland — #21"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
       - "🇬🇧 Великобритания 16 Akenai Products LTD t.me/rjsxrd"
       - "🇩🇪 Германия 85 Akenai Products LTD t.me/rjsxrd"
@@ -7134,7 +7150,6 @@ proxy-groups:
       - "🇩🇪 Германия 98 UAB Cherry Servers t.me/rjsxrd"
       - "[776ms Швеция SE 🇸🇪 @vlesstrojan] t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 330"
-      - "🇨🇿 Czechia — #3"
       - "LTE/5G Все операторы 🇪🇺 #4"
       - "🇺🇸 США 62 Alibaba US Technology Co., Ltd. t.me/rjsxrd"
       - "🇩🇪 DE | VLESS t.me/rjsxrd"
@@ -7206,7 +7221,7 @@ proxy-groups:
       - "🌐 [BL] Сервер 6"
       - "🌐 [BL] Сервер 23"
       - "🇺🇸 [BL] Сервер 101"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇮🇹 Италия | 🔗 Каскад [#РКП]"
       - "Russia | id.pervye.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "🇬🇧 [BL] Сервер 260"
@@ -7222,7 +7237,7 @@ proxy-groups:
       - "🇷🇺 [BL] Сервер 14"
       - "🇩🇪 DE | VLESS t.me/rjsxrd #2"
       - "🇺🇸 [BL] Сервер 286"
-      - "🇩🇪 Germany — #7"
+      - "🇩🇪 [WL] Сервер 72"
       - "19 | WS+TLS | SNI: z1q3pv4g78.rucdncomp.pro | IN: RU OUT: DE | RATING: 4/10 t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 403"
       - "🇱🇻 [WL] Сервер 116"
@@ -7243,7 +7258,7 @@ proxy-groups:
       - "🇷🇴 [BL] Сервер 307"
       - "🇬🇧 Великобритания 6 WEYRO LTD t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 141"
-      - "🇸🇪 Sweden — #40"
+      - "🇸🇪 Sweden — #44"
       - "🇮🇹 Италия 1 OVH SAS t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 163"
       - "cool [RKP-WL] 🇷🇺 |#115|"
