@@ -1,7 +1,33 @@
 # clash/mihomo subscription
-# 2026-10-29 10:00:56 UTC
+# 2026-10-29 10:15:35 UTC
 proxies:
-  - name: "🇷🇺 Beget — #51"
+  - name: "🇺🇸 United States — #98"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #54"
+    type: "vless"
+    server: "81.94.148.232"
+    port: 8443
+    uuid: "2c634977-584e-4e1f-b501-1b70c77a6743"
+    udp: true
+    tls: true
+    servername: "windytrout.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 Beget — #48"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -9,50 +35,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #48"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇧🇬 Bulgaria — #61"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 8443
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇨🇿 Czechia — #64"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #68"
+  - name: "🇩🇪 Germany — #64"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -99,11 +87,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Beget — #51"
-      - "🇷🇺 VK — #48"
-      - "🇧🇬 Bulgaria — #61"
-      - "🇨🇿 Czechia — #64"
-      - "🇩🇪 Germany — #68"
+      - "🇺🇸 United States — #98"
+      - "🇧🇬 Bulgaria — #54"
+      - "🇷🇺 Beget — #48"
+      - "🇩🇪 Germany — #64"
       - "🇸🇪 Sweden — #95"
       - "🇵🇱 Poland — #79"
 rules:
