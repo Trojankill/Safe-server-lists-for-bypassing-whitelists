@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-29 02:00:57 UTC
+# 2026-10-29 02:15:30 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -78,27 +78,13 @@ proxies:
     udp: true
     tls: true
     servername: "io.ozone.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     reality-opts:
       public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
       short-id: "4951a2313524dd8f"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "217.16.31.218"
-    port: 5003
-    uuid: "ddc27ad2-631e-4431-b380-0045547acef4"
-    udp: true
-    tls: true
-    servername: "de1.frost-api.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "media.playback.v1.SessionGateway"
   - name: "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "88.216.69.253"
@@ -149,7 +135,6 @@ proxy-groups:
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | msk1.nexfile.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "Lithuania | www.pleadcourt.org | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 15 [#LSO - #LinSpisokObhod]"
       - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
