@@ -1,18 +1,17 @@
 # clash/mihomo subscription
-# 2026-10-30 13:00:59 UTC
+# 2026-10-30 13:15:32 UTC
 proxies:
-  - name: "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.249.155.130"
+    server: "88.216.70.92"
     port: 443
-    uuid: "3fd63ca9-0813-407d-a3aa-53552c0f3487"
+    uuid: "5254c281-3bc1-40ee-ba89-1aaf8c251402"
     udp: true
     tls: true
-    servername: "www.evovpn.pro"
+    servername: "nl-modx-prime.storagedirectguide.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4"
-      short-id: "b4c823"
+      public-key: "node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
@@ -92,22 +91,6 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "tcp"
-  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "161.97.160.224"
-    port: 443
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
-      short-id: "e6"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -118,7 +101,7 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "safari"
+    client-fingerprint: "random"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
@@ -194,7 +177,14 @@ proxies:
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     udp: true
     sni: "www.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
-  - name: "Подписка #LSO© Trojan: 2 [#LSO - #LinSpisokObhod]"
+  - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.238.116.204"
+    port: 39533
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "br001.zestapp778.com"
+  - name: "Подписка #LSO© Trojan: 3 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -214,14 +204,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
+      - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
-      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | video.gifmems.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
@@ -229,7 +218,8 @@ proxy-groups:
       - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
       - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 2 [#LSO - #LinSpisokObhod]"
+      - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 3 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
