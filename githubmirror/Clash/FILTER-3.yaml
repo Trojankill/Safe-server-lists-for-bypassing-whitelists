@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-30 15:01:01 UTC
+# 2026-10-30 15:15:38 UTC
 proxies:
   - name: "🇷🇺 Beget — #1"
     type: "vless"
@@ -14,19 +14,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #15"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "swit.nnight.sbs"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #7"
+  - name: "🇩🇪 Germany — #6"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -36,13 +24,13 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "chrome"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #41"
+  - name: "🇵🇱 Poland — #48"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -59,8 +47,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Beget — #1"
-      - "🇩🇪 Germany — #15"
-      - "🇩🇪 Germany — #7"
-      - "🇵🇱 Poland — #41"
+      - "🇩🇪 Germany — #6"
+      - "🇵🇱 Poland — #48"
 rules:
   - MATCH,PROXY
