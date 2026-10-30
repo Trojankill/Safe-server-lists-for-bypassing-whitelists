@@ -1,35 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-30 10:45:30 UTC
+# 2026-10-30 11:01:00 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #33"
-    type: "vless"
-    server: "82.202.183.9"
-    port: 443
-    uuid: "1ba0439d-384c-4a6e-9560-0439698beb2a"
-    udp: true
-    tls: true
-    servername: "h4.smart-life.agency"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "1A9loATtqTbKfErpj24clMebWdbmBRDgUIADwtlvtAw"
-      short-id: "70c20a2f5a7d542e"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "google.storage.v2.Storage"
-  - name: "🇷🇺 Beget — #4"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #36"
+  - name: "🇳🇱 The Netherlands — #38"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -41,23 +13,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #25"
+  - name: "🇷🇺 VK — #1"
     type: "vless"
-    server: "188.225.57.220"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    server: "37.18.14.43"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
     udp: true
     tls: true
-    servername: "r02q7fmndn.rucdncomp.pro"
+    servername: "flatcrest.net"
     alpn:
       - "http/1.1"
+      - "h2"
     client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/collect/1b0df6f70c37/"
-      headers:
-        Host: "r02q7fmndn.rucdncomp.pro"
-  - name: "🇧🇬 Bulgaria — #10"
+    network: "xhttp"
+  - name: "🇧🇬 Bulgaria — #5"
     type: "vless"
     server: "37.18.14.43"
     port: 8443
@@ -68,9 +37,9 @@ proxies:
     alpn:
       - "http/1.1"
       - "h2"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #7"
+  - name: "🇷🇺 IHC — #3"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -83,7 +52,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #16"
+  - name: "🇩🇪 Germany — #10"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -99,7 +68,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #54"
+  - name: "🇵🇱 Poland — #56"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -115,13 +84,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #33"
-      - "🇷🇺 Beget — #4"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇩🇪 Germany — #25"
-      - "🇧🇬 Bulgaria — #10"
-      - "🇷🇺 IHC — #7"
-      - "🇩🇪 Germany — #16"
-      - "🇵🇱 Poland — #54"
+      - "🇳🇱 The Netherlands — #38"
+      - "🇷🇺 VK — #1"
+      - "🇧🇬 Bulgaria — #5"
+      - "🇷🇺 IHC — #3"
+      - "🇩🇪 Germany — #10"
+      - "🇵🇱 Poland — #56"
 rules:
   - MATCH,PROXY

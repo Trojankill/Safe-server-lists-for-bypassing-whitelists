@@ -1,18 +1,6 @@
 # clash/mihomo subscription
-# 2026-10-30 10:45:30 UTC
+# 2026-10-30 11:01:00 UTC
 proxies:
-  - name: "Luxembourg | img.jsdelivr.com | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "92.223.84.84"
-    port: 443
-    uuid: "3fccf1f5-dd4b-4527-a0e6-392719d6aa0d"
-    udp: true
-    tls: true
-    servername: "img.jsdelivr.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.249.155.130"
@@ -103,20 +91,6 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "United Kingdom | gb.srv.dvzh.net | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.237.13.58"
-    port: 443
-    uuid: "9ab3a362-1518-496d-b08d-eced45cec936"
-    udp: true
-    tls: true
-    servername: "gb.srv.dvzh.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9GEc6lOjnGQyyE1951OZSBMWt4uCXsOjKyj9fysxHH0"
-      short-id: "d30f9d846a7c8cba"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "46.254.19.164"
@@ -187,33 +161,6 @@ proxies:
       public-key: "dlhoLMdfvgjSVzSuT0PPhomRdNcy8_qtnky0kKflqGI"
       short-id: "a1b2c3d4"
     network: "tcp"
-  - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "194.55.237.30"
-    port: 443
-    uuid: "eca1246a-358f-4ad5-be4c-849755ac6f14"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xklZVcSla9QcuZsbNMjb1wbbpoRI-GuCzKxvVzEzKmE"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Poland | cinema.kinopolka.net | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "217.12.207.38"
-    port: 443
-    uuid: "f9dbae3f-973b-4e3d-88f6-c959388ac5a9"
-    udp: true
-    tls: true
-    servername: "cinema.kinopolka.net"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "B4jHpXdZG8clbVnJSGPo9iprONMdj_f1WOa1qYpbJhk"
-      short-id: "8c856e3b0e81e282"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "147.45.187.188"
@@ -243,21 +190,7 @@ proxies:
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     udp: true
     sni: "www.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
-  - name: "Mexico | connectwithtopemployersandfindidealjobs.com | unknown | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "216.238.80.100"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
-    udp: true
-    sni: "connectwithtopemployersandfindidealjobs.com"
-  - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "216.238.116.204"
-    port: 39533
-    password: "5t6i121em5lkmsmk"
-    udp: true
-    sni: "br001.zestapp778.com"
-  - name: "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 2 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -277,7 +210,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Luxembourg | img.jsdelivr.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | regr.luarity.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
@@ -285,20 +217,15 @@ proxy-groups:
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | czech.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "United Kingdom | gb.srv.dvzh.net | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | video.gifmems.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "Poland | www.ya.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Poland | cinema.kinopolka.net | unknown | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vedomosti.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
       - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Mexico | connectwithtopemployersandfindidealjobs.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 2 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
