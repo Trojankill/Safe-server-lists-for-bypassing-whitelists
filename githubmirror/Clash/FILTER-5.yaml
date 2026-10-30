@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-30 16:45:30 UTC
+# 2026-10-30 17:00:59 UTC
 proxies:
   - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -28,6 +28,19 @@ proxies:
       public-key: "node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
   - name: "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "201.58.181.132"
@@ -92,6 +105,22 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "tcp"
+  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.16.31.218"
@@ -149,11 +178,13 @@ proxy-groups:
     proxies:
       - "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | de1.frost-api.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
       - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
