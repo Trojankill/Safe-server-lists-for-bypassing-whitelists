@@ -1,18 +1,30 @@
 # clash/mihomo subscription
-# 2026-10-30 01:00:55 UTC
+# 2026-10-30 01:15:30 UTC
 proxies:
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "132.243.230.251"
     port: 443
-    uuid: "0bf8538b-6299-46b0-9775-8b00939dccb5"
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
     udp: true
     tls: true
     servername: "www.kinopoisk.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
       short-id: "b2f9bb426426e0e7"
+    network: "xhttp"
+  - name: "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "yandex.lent.pro"
+    port: 443
+    uuid: "721e0fec-e964-4b21-a59e-3eb26288e18f"
+    udp: true
+    tls: true
+    servername: "yandex.lent.pro"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     network: "xhttp"
   - name: "Russia | czech.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -36,27 +48,33 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "188.225.77.254"
-    port: 8443
-    uuid: "d1f0c6cb-0d8b-4f13-8104-b7c8e8c57110"
+  - name: "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.152.155.131"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     udp: true
-    tls: true
-    servername: "io.ozone.ru"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
+    sni: "www.nextjobopportunityandclaimyouridealrole.com"
+  - name: "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.152.156.81"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "www.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
+  - name: "Mexico | connectwithtopemployersandfindidealjobs.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.238.80.100"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "connectwithtopemployersandfindidealjobs.com"
   - name: "Hungary | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "185.225.68.232"
@@ -69,23 +87,13 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
     password: "trojan"
     udp: true
     sni: "trojan.lso"
-  - name: "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vmess"
-    server: "158.160.180.165"
-    port: 24212
-    uuid: "c58c1205-b308-416f-8503-c04557abf93d"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    network: "tcp"
   - name: "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -100,12 +108,14 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | czech.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | io.ozone.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Mexico | connectwithtopemployersandfindidealjobs.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Hungary | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
-      - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
