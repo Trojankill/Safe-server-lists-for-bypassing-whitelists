@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-30 18:45:32 UTC
+# 2026-10-30 19:00:58 UTC
 proxies:
   - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,7 +15,7 @@ proxies:
       short-id: "4326"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.92"
     port: 443
@@ -41,19 +41,6 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "201.58.181.132"
-    port: 2027
-    uuid: "6a6ac9b3-b336-44f7-a1c4-a03d6c2fae9e"
-    udp: true
-    tls: true
-    servername: "2gis.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "EApxy12MeXpqt-78odxizwcXT6hX9f8XeAcbMDVRAV0"
-      short-id: "6ba7b8109dad11d1"
-    network: "xhttp"
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "132.243.230.251"
@@ -161,9 +148,8 @@ proxy-groups:
     type: select
     proxies:
       - "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
