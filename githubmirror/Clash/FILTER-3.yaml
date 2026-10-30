@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-30 05:45:30 UTC
+# 2026-10-30 06:00:56 UTC
 proxies:
   - name: "🇫🇮 Finland — #20"
-    type: "vless"
-    server: "45.10.246.154"
-    port: 443
-    uuid: "52ac5582-5718-457c-b6e8-8d372d9795cc"
-    udp: true
-    tls: true
-    servername: "rusvd.luarity.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "UglOQ6lT0FWTb3NMsD6L_P_uCk8DDvbJqJcc2Nb4znA"
-      short-id: "5cc8834656489bbc"
-    network: "xhttp"
-  - name: "🇫🇮 Finland — #19"
     type: "vless"
     server: "95.163.232.11"
     port: 443
@@ -35,7 +22,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -54,14 +41,14 @@ proxies:
       short-id: "20a048ac5dcb34bd"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇩🇪 Germany — #11"
+  - name: "🇨🇿 Czechia — #7"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "swit.nnight.sbs"
+    servername: "czech.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
@@ -79,7 +66,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #8"
+  - name: "🇩🇪 Germany — #9"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -95,7 +82,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #39"
+  - name: "🇵🇱 Poland — #42"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -112,12 +99,11 @@ proxy-groups:
     type: select
     proxies:
       - "🇫🇮 Finland — #20"
-      - "🇫🇮 Finland — #19"
       - "🇷🇺 Beget — #1"
       - "🇨🇭 Switzerland — #6"
-      - "🇩🇪 Germany — #11"
+      - "🇨🇿 Czechia — #7"
       - "🇷🇺 IHC — #5"
-      - "🇩🇪 Germany — #8"
-      - "🇵🇱 Poland — #39"
+      - "🇩🇪 Germany — #9"
+      - "🇵🇱 Poland — #42"
 rules:
   - MATCH,PROXY
