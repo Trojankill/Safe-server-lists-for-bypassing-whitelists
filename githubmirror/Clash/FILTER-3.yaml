@@ -1,7 +1,62 @@
 # clash/mihomo subscription
-# 2026-10-30 11:45:32 UTC
+# 2026-10-30 12:00:57 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #38"
+  - name: "🇵🇱 Poland — #51"
+    type: "vless"
+    server: "188.225.46.199"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xtw3x.artemida.digital"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇪🇪 Estonia — #21"
+    type: "vless"
+    server: "188.225.75.96"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtw2x.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇫🇷 France — #22"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇷🇺 Beget — #1"
+    type: "vless"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
+  - name: "🇳🇱 The Netherlands — #27"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -13,33 +68,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 VK — #1"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇧🇬 Bulgaria — #5"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 8443
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 IHC — #3"
+  - name: "🇷🇺 IHC — #4"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -52,7 +81,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #10"
+  - name: "🇩🇪 Germany — #9"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -68,7 +97,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #56"
+  - name: "🇵🇱 Poland — #45"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -84,11 +113,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #38"
-      - "🇷🇺 VK — #1"
-      - "🇧🇬 Bulgaria — #5"
-      - "🇷🇺 IHC — #3"
-      - "🇩🇪 Germany — #10"
-      - "🇵🇱 Poland — #56"
+      - "🇵🇱 Poland — #51"
+      - "🇪🇪 Estonia — #21"
+      - "🇫🇷 France — #22"
+      - "🇷🇺 Beget — #1"
+      - "🇳🇱 The Netherlands — #27"
+      - "🇷🇺 IHC — #4"
+      - "🇩🇪 Germany — #9"
+      - "🇵🇱 Poland — #45"
 rules:
   - MATCH,PROXY
