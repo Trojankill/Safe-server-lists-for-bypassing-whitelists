@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-30 14:01:02 UTC
+# 2026-10-30 14:15:34 UTC
 proxies:
+  - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "sub-edge-14-1g.whitenw.net"
+    port: 10454
+    uuid: "1c1ee84d-3409-443c-9723-25dd61a10a89"
+    udp: true
+    tls: true
+    servername: "onf.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
+      short-id: "4326"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.92"
@@ -57,7 +71,7 @@ proxies:
     type: "vless"
     server: "213.165.54.59"
     port: 8443
-    uuid: "70a43052-8d45-45c1-b9da-ec745890790a"
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
     udp: true
     tls: true
     servername: "www.kinopoisk.ru"
@@ -74,6 +88,18 @@ proxies:
     udp: true
     tls: true
     servername: "yandex.lent.pro"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "Russia | czech.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "czech.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
@@ -101,7 +127,7 @@ proxies:
     servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "random"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
@@ -204,12 +230,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | yandex.lent.pro | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Russia | czech.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | video.gifmems.com | unknown | [#LSO - #LinSpisokObhod]"
