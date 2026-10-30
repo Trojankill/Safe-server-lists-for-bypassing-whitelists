@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-10-30 21:00:56 UTC
+# 2026-10-30 21:15:31 UTC
 proxies:
+  - name: "🇵🇱 Poland — #82"
+    type: "vless"
+    server: "188.225.46.199"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xtw3x.artemida.digital"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇵🇱 Poland — #79"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
   - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
@@ -14,19 +42,32 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #16"
+  - name: "🇷🇺 Selectel — #12"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "swit.nnight.sbs"
+    servername: "ru.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #11"
+  - name: "🇷🇺 IHC — #8"
+    type: "vless"
+    server: "46.254.19.164"
+    port: 443
+    uuid: "a5212bcb-ab85-459a-bec6-9f259eeeebfa"
+    udp: true
+    tls: true
+    servername: "wtb.tems.bet"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
+      short-id: "8937c9ed2d470352"
+    network: "raw"
+  - name: "🇩🇪 Germany — #17"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -42,7 +83,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #66"
+  - name: "🇵🇱 Poland — #73"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -58,9 +99,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇵🇱 Poland — #82"
+      - "🇵🇱 Poland — #79"
       - "🇷🇺 Beget — #1"
-      - "🇩🇪 Germany — #16"
-      - "🇩🇪 Germany — #11"
-      - "🇵🇱 Poland — #66"
+      - "🇷🇺 Selectel — #12"
+      - "🇷🇺 IHC — #8"
+      - "🇩🇪 Germany — #17"
+      - "🇵🇱 Poland — #73"
 rules:
   - MATCH,PROXY
