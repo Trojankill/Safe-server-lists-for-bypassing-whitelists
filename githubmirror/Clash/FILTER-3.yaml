@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-30 01:45:31 UTC
+# 2026-10-30 02:01:05 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #22"
+  - name: "🇺🇸 United States — #54"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇳🇱 The Netherlands — #24"
     type: "vless"
     server: "158.160.162.185"
     port: 443
@@ -12,6 +25,19 @@ proxies:
     client-fingerprint: "ios"
     reality-opts:
       public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇳🇱 The Netherlands — #22"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
     flow: "xtls-rprx-vision"
     network: "raw"
   - name: "🇷🇺 Beget — #1"
@@ -27,7 +53,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇺🇸 United States — #50"
+  - name: "🇺🇸 United States — #53"
     type: "vless"
     server: "37.18.14.190"
     port: 7445
@@ -41,18 +67,6 @@ proxies:
       short-id: "283f4b51fbe39ad9"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇨🇿 Czechia — #7"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "czech.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇩🇪 Germany — #11"
     type: "vless"
     server: "217.19.122.156"
@@ -69,7 +83,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #47"
+  - name: "🇸🇪 Sweden — #50"
     type: "vless"
     server: "188.225.77.254"
     port: 8443
@@ -84,7 +98,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "ozone"
-  - name: "🇵🇱 Poland — #40"
+  - name: "🇵🇱 Poland — #43"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -100,12 +114,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 United States — #54"
+      - "🇳🇱 The Netherlands — #24"
       - "🇳🇱 The Netherlands — #22"
       - "🇷🇺 Beget — #1"
-      - "🇺🇸 United States — #50"
-      - "🇨🇿 Czechia — #7"
+      - "🇺🇸 United States — #53"
       - "🇩🇪 Germany — #11"
-      - "🇸🇪 Sweden — #47"
-      - "🇵🇱 Poland — #40"
+      - "🇸🇪 Sweden — #50"
+      - "🇵🇱 Poland — #43"
 rules:
   - MATCH,PROXY
