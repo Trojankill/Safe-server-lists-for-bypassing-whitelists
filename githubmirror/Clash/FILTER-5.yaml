@@ -1,20 +1,18 @@
 # clash/mihomo subscription
-# 2026-10-30 09:00:57 UTC
+# 2026-10-30 09:15:31 UTC
 proxies:
-  - name: "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Luxembourg | img.jsdelivr.com | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.249.155.130"
+    server: "92.223.84.84"
     port: 443
-    uuid: "3fd63ca9-0813-407d-a3aa-53552c0f3487"
+    uuid: "3fccf1f5-dd4b-4527-a0e6-392719d6aa0d"
     udp: true
     tls: true
-    servername: "www.evovpn.pro"
+    servername: "img.jsdelivr.com"
+    alpn:
+      - "h2"
     client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4"
-      short-id: "b4c823"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
+    network: "xhttp"
   - name: "Russia | regr.luarity.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "95.163.232.11"
@@ -238,6 +236,13 @@ proxies:
     password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
     udp: true
     sni: "connectwithtopemployersandfindidealjobs.com"
+  - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.238.116.204"
+    port: 39533
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "br001.zestapp778.com"
   - name: "Hungary | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "185.225.68.232"
@@ -250,7 +255,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.calmlunch.com"
-  - name: "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -270,7 +275,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
+      - "Luxembourg | img.jsdelivr.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | regr.luarity.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Poland | 2gis.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
@@ -289,8 +294,9 @@ proxy-groups:
       - "United States | www.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
       - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Mexico | connectwithtopemployersandfindidealjobs.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Hungary | www.calmlunch.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
