@@ -1,47 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-31 14:00:53 UTC
+# 2026-10-31 14:15:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #37"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #36"
-    type: "vless"
-    server: "158.160.162.185"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇧🇷 Brazil — #20"
-    type: "vless"
-    server: "178.250.242.209"
-    port: 18443
-    uuid: "6036c28a-8db2-432e-8118-ff0c16641ad0"
-    udp: true
-    tls: true
-    servername: "formatflow.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "oo2BXh-enbxxGXJcEzT3lgP26ru2rVnU5RP7PVUO0Sk"
-      short-id: "43dcff53849b81e6"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇷🇺 Beget — #3"
+  - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -49,53 +9,24 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #18"
+  - name: "🇩🇪 Germany — #10"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #13"
-    type: "vless"
-    server: "46.254.19.164"
-    port: 443
-    uuid: "a5212bcb-ab85-459a-bec6-9f259eeeebfa"
-    udp: true
-    tls: true
-    servername: "wtb.tems.bet"
-    client-fingerprint: "safari"
-    reality-opts:
-      public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
-      short-id: "8937c9ed2d470352"
-    network: "raw"
-  - name: "🇩🇪 Germany — #25"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #39"
+  - name: "🇳🇱 The Netherlands — #11"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -111,7 +42,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #59"
+  - name: "🇵🇱 Poland — #31"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -127,14 +58,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #37"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇧🇷 Brazil — #20"
-      - "🇷🇺 Beget — #3"
-      - "🇷🇺 Selectel — #18"
-      - "🇷🇺 IHC — #13"
-      - "🇩🇪 Germany — #25"
-      - "🇳🇱 The Netherlands — #39"
-      - "🇵🇱 Poland — #59"
+      - "🇷🇺 Beget — #1"
+      - "🇩🇪 Germany — #10"
+      - "🇳🇱 The Netherlands — #11"
+      - "🇵🇱 Poland — #31"
 rules:
   - MATCH,PROXY
