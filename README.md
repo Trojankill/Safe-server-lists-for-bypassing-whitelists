@@ -222,7 +222,7 @@
 |---|---|---|
 | **GitHub** | [Trojankill/Safe-server-lists-for-bypassing-whitelists](https://github.com/Trojankill/Safe-server-lists-for-bypassing-whitelists) | `https://raw.githubusercontent.com/Trojankill/Safe-server-lists-for-bypassing-whitelists/main/githubmirror` |
 | **Bitbucket** | [trojankill/safe-server-lists](https://bitbucket.org/trojankill/safe-server-lists) | `https://bitbucket.org/trojankill/safe-server-lists/raw/main/githubmirror` |
-| **Mos.Hub (работает при БС)** | [Trojankill/safe-server-list](https://hub.mos.ru/Trojankill/safe-server-list) | `https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror` |
+| **Mos.Hub (работает при БС) АККАУНТ СНЕСЁН ИЗ-ЗА НАРУШЕНИЯ ПРАВИЛ СЫЛЛКА НЕ РАБОТАЕТ** | [Trojankill/safe-server-list](https://hub.mos.ru/Trojankill/safe-server-list) | `https://hub.mos.ru/Trojankill/safe-server-list/-/raw/main/githubmirror` |
 
 > [!NOTE]
 > QR-коды в папке `QR-CODE/` генерируются переменной окружения `RAW_BASE`.
