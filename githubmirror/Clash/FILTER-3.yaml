@@ -1,6 +1,35 @@
 # clash/mihomo subscription
-# 2026-10-31 07:45:29 UTC
+# 2026-10-31 08:00:54 UTC
 proxies:
+  - name: "🇫🇷 France — #31"
+    type: "vless"
+    server: "82.202.178.140"
+    port: 443
+    uuid: "3eb47299-50cd-46ee-9511-49115c56ed37"
+    udp: true
+    tls: true
+    servername: "h7.smart-life.agency"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0"
+      short-id: "316d0a3751f3122d"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "google.storage.v2.Storage"
+  - name: "🇪🇪 Estonia — #28"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
   - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
@@ -9,24 +38,24 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #16"
+  - name: "🇩🇪 Germany — #22"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #11"
+  - name: "🇷🇺 IHC — #9"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -39,7 +68,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #21"
+  - name: "🇩🇪 Germany — #17"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -55,23 +84,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #47"
-    type: "vless"
-    server: "91.185.83.45"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "nguyxejonb.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #48"
+  - name: "🇳🇱 The Netherlands — #32"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -87,7 +100,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #66"
+  - name: "🇵🇱 Poland — #51"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -103,12 +116,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇷 France — #31"
+      - "🇪🇪 Estonia — #28"
       - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #16"
-      - "🇷🇺 IHC — #11"
-      - "🇩🇪 Germany — #21"
-      - "🇳🇱 The Netherlands — #47"
-      - "🇳🇱 The Netherlands — #48"
-      - "🇵🇱 Poland — #66"
+      - "🇩🇪 Germany — #22"
+      - "🇷🇺 IHC — #9"
+      - "🇩🇪 Germany — #17"
+      - "🇳🇱 The Netherlands — #32"
+      - "🇵🇱 Poland — #51"
 rules:
   - MATCH,PROXY
