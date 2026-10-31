@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-10-31 03:45:30 UTC
+# 2026-10-31 04:00:54 UTC
 proxies:
   - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -69,32 +69,6 @@ proxies:
       short-id: "f70764f8"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.216.70.92"
-    port: 443
-    uuid: "5254c281-3bc1-40ee-ba89-1aaf8c251402"
-    udp: true
-    tls: true
-    servername: "nl-modx-prime.storagedirectguide.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Turkey | google.com | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.255.95.226"
-    port: 443
-    uuid: "55ad002b-6cdf-4d76-81bb-91f3f605afc5"
-    udp: true
-    tls: true
-    servername: "google.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "zXVHrcMf6I3SWOybEG42fNtVlL5Wv8m-rur1xSVubQI"
-      short-id: "6e8a5b8428df2c7b"
-    network: "xhttp"
   - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "45.12.75.242"
@@ -108,32 +82,6 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.86.145.55"
-    port: 10455
-    uuid: "6ef26bed-933c-4ef2-b00c-90473bf8cb30"
-    udp: true
-    tls: true
-    servername: "max.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "kDEc42JBZxig3BrLD3V1ofs3oJZk15-ANWN-rM0JW10"
-      short-id: "f28145401b4f633a"
-    network: "xhttp"
-  - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "185.86.147.85"
-    port: 10459
-    uuid: "6ef26bed-933c-4ef2-b00c-90473bf8cb30"
-    udp: true
-    tls: true
-    servername: "max.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "kDEc42JBZxig3BrLD3V1ofs3oJZk15-ANWN-rM0JW10"
-      short-id: "f28145401b4f633a"
-    network: "xhttp"
   - name: "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "46.254.19.164"
@@ -163,6 +111,36 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
+    udp: true
+    tls: true
+    servername: "ara.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "ara.rtkdvbr.cc"
+  - name: "Albania | yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "157.22.240.172"
+    port: 443
+    uuid: "f28ce4eb-62cd-45f5-b3b3-be1c1a95e335"
+    udp: true
+    tls: true
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "216.238.116.204"
@@ -170,7 +148,7 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "br001.zestapp778.com"
-  - name: "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -195,15 +173,13 @@ proxy-groups:
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Poland | yandex.izzzyvpn.space | unknown | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
-      - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Turkey | google.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Albania | yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
