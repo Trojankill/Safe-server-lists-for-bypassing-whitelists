@@ -1,18 +1,17 @@
 # clash/mihomo subscription
-# 2026-10-31 21:30:42 UTC
+# 2026-10-31 21:45:30 UTC
 proxies:
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | de01-edge.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "178.172.227.124"
-    port: 10444
-    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    server: "178.248.236.21"
+    port: 50443
+    uuid: "07d0b603-7955-47b9-a913-12e6208062cb"
     udp: true
     tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "safari"
+    servername: "de01-edge.atlanta-games.com"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
+      public-key: "r-_zNu0BrD8PgGzg-KQSes06Si83txHWYPH-o8xXihk"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | apple.com | TCP | [#LSO - #LinSpisokObhod]"
@@ -69,25 +68,50 @@ proxies:
       short-id: "e7"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Turkey | google.com | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "78.17.178.125"
+    server: "185.255.95.226"
     port: 443
-    uuid: "6c713691-3ca2-4446-ad25-113d1bed6b03"
+    uuid: "55ad002b-6cdf-4d76-81bb-91f3f605afc5"
     udp: true
     tls: true
-    servername: "cdn.tbank.ru"
+    servername: "google.com"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "zXVHrcMf6I3SWOybEG42fNtVlL5Wv8m-rur1xSVubQI"
+      short-id: "6e8a5b8428df2c7b"
+    network: "xhttp"
+  - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    udp: true
+    tls: true
+    servername: "ya.ru"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "jcp4Lj_qYzxtkalm_XFjrmvqEMGRG7sb19yMwLe16WE"
-      short-id: "e0215064d8d1fd7c"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
   - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "132.243.230.251"
+    port: 443
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
+      short-id: "b2f9bb426426e0e7"
+    network: "xhttp"
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "213.165.54.59"
     port: 8443
-    uuid: "70a43052-8d45-45c1-b9da-ec745890790a"
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
     udp: true
     tls: true
     servername: "www.kinopoisk.ru"
@@ -107,20 +131,6 @@ proxies:
     alpn:
       - "h2"
     network: "xhttp"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "95.128.71.79"
-    port: 10444
-    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "188.72.103.4"
@@ -146,6 +156,20 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "tcp"
+  - name: "Russia | www.sun6-21.userapi.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.218.170.236"
+    port: 443
+    uuid: "b872771d-e9d1-42d7-ad29-a9acff49ea2d"
+    udp: true
+    tls: true
+    servername: "www.sun6-21.userapi.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "qC4VE5jv0q0ALYAfCNtAHU-kN32OdA-cqJmXpL4Y2VY"
+      short-id: "3199b70105c62ce0"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -162,6 +186,22 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
+    udp: true
+    tls: true
+    servername: "business.lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "business.lesotorg-kirov.ru"
   - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.145.37"
@@ -178,20 +218,6 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "138.124.125.193"
-    port: 10444
-    uuid: "e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "216.238.116.204"
@@ -199,6 +225,18 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "br001.zestapp778.com"
+  - name: "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "185.234.114.165"
+    port: 443
+    password: "humanity"
+    udp: true
+    sni: "www.cordweave.com"
+    network: "ws"
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.cordweave.com"
   - name: "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "88.218.92.205"
@@ -223,7 +261,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.cordweave.com"
-  - name: "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -243,24 +281,27 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | de01-edge.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | apple.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | eh.vk.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Germany | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Turkey | google.com | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "Luxembourg | gcore.com | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | www.sun6-21.userapi.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
