@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-31 02:00:54 UTC
+# 2026-10-31 02:15:31 UTC
 proxies:
+  - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "sub-edge-14-1g.whitenw.net"
@@ -13,6 +26,19 @@ proxies:
     reality-opts:
       public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
       short-id: "4326"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.180.211.245"
+    port: 8443
+    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
@@ -56,7 +82,7 @@ proxies:
       short-id: "f70764f8"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.92"
     port: 443
@@ -97,19 +123,6 @@ proxies:
     network: "raw"
   - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.86.145.190"
-    port: 10452
-    uuid: "6ef26bed-933c-4ef2-b00c-90473bf8cb30"
-    udp: true
-    tls: true
-    servername: "max.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "kDEc42JBZxig3BrLD3V1ofs3oJZk15-ANWN-rM0JW10"
-      short-id: "f28145401b4f633a"
-    network: "xhttp"
-  - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
     server: "185.86.145.55"
     port: 10455
     uuid: "6ef26bed-933c-4ef2-b00c-90473bf8cb30"
@@ -121,7 +134,7 @@ proxies:
       public-key: "kDEc42JBZxig3BrLD3V1ofs3oJZk15-ANWN-rM0JW10"
       short-id: "f28145401b4f633a"
     network: "xhttp"
-  - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #3"
+  - name: "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "185.86.147.85"
     port: 10459
@@ -134,20 +147,6 @@ proxies:
       public-key: "kDEc42JBZxig3BrLD3V1ofs3oJZk15-ANWN-rM0JW10"
       short-id: "f28145401b4f633a"
     network: "xhttp"
-  - name: "Kazakhstan | kookas.fi | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.91.126.252"
-    port: 443
-    uuid: "8df28c55-5c2e-48ab-84aa-24c7a4530115"
-    udp: true
-    tls: true
-    servername: "kookas.fi"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "qB_eMu3ZO_wGITnyIqJ7Kt39-h9oHFnHlQQEqA-r3VA"
-      short-id: "43dcff52289b81e6"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "46.254.19.164"
@@ -161,61 +160,22 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "tcp"
-  - name: "Luxembourg | gcore.com | XHTTP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "92.223.84.84"
+    server: "217.19.122.156"
     port: 443
-    uuid: "d16adb04-d2f4-40c5-a573-19248b9b7662"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    servername: "gcore.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "194.55.237.30"
-    port: 443
-    uuid: "eca1246a-358f-4ad5-be4c-849755ac6f14"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xklZVcSla9QcuZsbNMjb1wbbpoRI-GuCzKxvVzEzKmE"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Russia | r53b5d3xco.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.22.234.129"
-    port: 443
-    uuid: "fc3a9f6e-4b97-4b26-b9ce-2d58a307e7b5"
-    udp: true
-    tls: true
-    servername: "r53b5d3xco.rucdncomp.pro"
+    servername: "z1q3pv4g78.rucdncomp.pro"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
-      path: "/service/metrics/926e76b42bac/"
+      path: "/useraction/events/b892639b7195/"
       headers:
-        Host: "r53b5d3xco.rucdncomp.pro"
-  - name: "Russia | watch.cs2-major.online | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "46.243.233.228"
-    port: 8443
-    uuid: "fc3a9f6e-4b97-4b26-b9ce-2d58a307e7b5"
-    udp: true
-    tls: true
-    servername: "watch.cs2-major.online"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc.health.v1.Health"
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "216.238.116.204"
@@ -223,20 +183,14 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "br001.zestapp778.com"
-  - name: "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
     password: "trojan"
     udp: true
     sni: "trojan.lso"
-  - name: "United States | promo3.goonars.com | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-    type: "hysteria2"
-    server: "88.216.195.144"
-    port: 443
-    password: "63e1b9462d708b56d5d5a0267cffecdc"
-    sni: "promo3.goonars.com"
-  - name: "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -249,25 +203,21 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Poland | yandex.izzzyvpn.space | unknown | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
-      - "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Germany | nl-modx-prime.storagedirectguide.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Turkey | google.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #3"
-      - "Kazakhstan | kookas.fi | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | unknown | [#LSO - #LinSpisokObhod]"
-      - "Luxembourg | gcore.com | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Russia | r53b5d3xco.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | watch.cs2-major.online | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 5 [#LSO - #LinSpisokObhod]"
-      - "United States | promo3.goonars.com | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 7 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
