@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-31 16:00:55 UTC
+# 2026-10-31 16:15:29 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #23"
+  - name: "🇳🇱 The Netherlands — #19"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -28,19 +28,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #8"
+  - name: "🇩🇪 Germany — #13"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #13"
+  - name: "🇩🇪 Germany — #8"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,7 +56,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #24"
+  - name: "🇳🇱 The Netherlands — #20"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -72,7 +72,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #43"
+  - name: "🇵🇱 Poland — #41"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -88,11 +88,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #23"
+      - "🇳🇱 The Netherlands — #19"
       - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #8"
       - "🇩🇪 Germany — #13"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇵🇱 Poland — #43"
+      - "🇩🇪 Germany — #8"
+      - "🇳🇱 The Netherlands — #20"
+      - "🇵🇱 Poland — #41"
 rules:
   - MATCH,PROXY
