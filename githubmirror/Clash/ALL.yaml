@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-10-31 09:00:57 UTC
+# 2026-10-31 09:15:34 UTC
 proxies:
+  - name: "🇺🇸 United States — #70"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    udp: true
+    tls: true
+    servername: "ch-cdn.fius.dev"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
     server: "167.17.69.171"
@@ -1572,21 +1585,6 @@ proxies:
       public-key: "7jPluypHwPilf_Mq7JOY96SwKkbK35WuIlN1HwGQ_0A"
       short-id: "974f7f8f"
     network: "tcp"
-  - name: "🇫🇷 France — #31"
-    type: "vless"
-    server: "82.202.178.140"
-    port: 443
-    uuid: "3eb47299-50cd-46ee-9511-49115c56ed37"
-    udp: true
-    tls: true
-    servername: "h7.smart-life.agency"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "w_hrubefrDzoh5rEB3jFTx4j-t7o1HMyyo1bAE1a8D0"
-      short-id: "316d0a3751f3122d"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "google.storage.v2.Storage"
   - name: "🇩🇪 [WL] Сервер 96"
     type: "vless"
     server: "146.103.42.248"
@@ -2470,20 +2468,6 @@ proxies:
       short-id: "bb472a184677af64"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇪🇪 Estonia — #28"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
-    udp: true
-    tls: true
-    servername: "xnodtwx.artemida.live"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
   - name: "🇳🇱 AetrisVPN t.me/rjsxrd"
     type: "vless"
     server: "178.250.242.64"
@@ -2540,7 +2524,7 @@ proxies:
       short-id: "63071c79f2227636"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇷🇺 Beget — #1"
+  - name: "🇷🇺 Beget — #2"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -2548,7 +2532,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -3498,18 +3482,6 @@ proxies:
       short-id: "c9677d3b7dea"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇩🇪 DE | VLESS t.me/rjsxrd"
     type: "vless"
     server: "de166.mech-pro.online"
@@ -3882,7 +3854,7 @@ proxies:
       short-id: "90265b4bea0f563a"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇷🇺 IHC — #9"
+  - name: "🇷🇺 IHC — #10"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -4605,7 +4577,7 @@ proxies:
       short-id: "14fbf992"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇩🇪 Germany — #17"
+  - name: "🇩🇪 Germany — #23"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -5167,7 +5139,7 @@ proxies:
       short-id: "c31f187b"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #32"
+  - name: "🇳🇱 The Netherlands — #41"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -6901,6 +6873,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 United States — #70"
       - "🇺🇸 [BL] Сервер 40"
       - "🇩🇪 [BL] Сервер 363"
       - "Бесплатный VPN tg:VLESSFORU 🇱🇻"
@@ -7016,7 +6989,6 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱"
       - "Бесплатный VPN tg:VLESSFORU 🇵🇱"
       - "🇪🇸 [BL] Сервер 37"
-      - "🇫🇷 France — #31"
       - "🇩🇪 [WL] Сервер 96"
       - "🇩🇪 [WL] Сервер 97"
       - "🇵🇱 [BL] Сервер 303"
@@ -7081,12 +7053,11 @@ proxy-groups:
       - "🇺🇦 [BL] Сервер 216"
       - "🇮🇳 [BL] Сервер 89"
       - "🇯🇵 [BL] Сервер 49"
-      - "🇪🇪 Estonia — #28"
       - "🇳🇱 AetrisVPN t.me/rjsxrd"
       - "🇩🇪 Германия 103 Timeweb, LLP t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
-      - "🇷🇺 Beget — #1"
+      - "🇷🇺 Beget — #2"
       - "🇧🇬 [BL] Сервер 355"
       - "🇩🇪 [BL] Сервер 202"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
@@ -7156,7 +7127,6 @@ proxy-groups:
       - "🇬🇧 [BL] Сервер 211"
       - "🇳🇱 Нидерланды 159 MVPS LTD t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 330"
-      - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 DE | VLESS t.me/rjsxrd"
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
@@ -7184,7 +7154,7 @@ proxy-groups:
       - "🇹🇷 Турция 15 GLOBAL CONNECTIVITY SOLUTIONS LLP t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 254"
       - "🇭🇰 [BL] Сервер 348"
-      - "🇷🇺 IHC — #9"
+      - "🇷🇺 IHC — #10"
       - "Бесплатный VPN tg:VLESSFORU 🇫🇷"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇬"
       - "cool [igareck-WL] 🇷🇺 |#72|"
@@ -7237,7 +7207,7 @@ proxy-groups:
       - "🏴 Неизвестный [#РКП]"
       - "tg:VLESSFORU 🇷🇺 #2"
       - "🇺🇸 [BL] Сервер 286"
-      - "🇩🇪 Germany — #17"
+      - "🇩🇪 Germany — #23"
       - "🇺🇸 [BL] Сервер 403"
       - "🇱🇻 [WL] Сервер 116"
       - "🇦🇹 [BL] Сервер 196"
@@ -7278,7 +7248,7 @@ proxy-groups:
       - "🇸🇮 Словения Pipe Networks GmbH t.me/rjsxrd"
       - "🌐 [BL] Сервер 10"
       - "🇳🇱 [BL] Сервер 77"
-      - "🇳🇱 The Netherlands — #32"
+      - "🇳🇱 The Netherlands — #41"
       - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "🇮🇷 [BL] Сервер 207"
