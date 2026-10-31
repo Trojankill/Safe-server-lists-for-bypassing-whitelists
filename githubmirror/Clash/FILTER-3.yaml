@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-31 10:45:31 UTC
+# 2026-10-31 11:01:06 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #28"
+  - name: "🇳🇱 The Netherlands — #29"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -15,20 +15,6 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇧🇷 Brazil — #14"
-    type: "vless"
-    server: "178.250.242.64"
-    port: 18443
-    uuid: "6036c28a-8db2-432e-8118-ff0c16641ad0"
-    udp: true
-    tls: true
-    servername: "formatflow.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "oo2BXh-enbxxGXJcEzT3lgP26ru2rVnU5RP7PVUO0Sk"
-      short-id: "43dcff53849b81e6"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
@@ -37,24 +23,24 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #13"
+  - name: "🇩🇪 Germany — #22"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #8"
+  - name: "🇷🇺 IHC — #6"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -67,7 +53,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #18"
+  - name: "🇩🇪 Germany — #17"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -83,7 +69,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #29"
+  - name: "🇳🇱 The Netherlands — #31"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -99,7 +85,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #48"
+  - name: "🇵🇱 Poland — #50"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -115,13 +101,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #28"
-      - "🇧🇷 Brazil — #14"
-      - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #13"
-      - "🇷🇺 IHC — #8"
-      - "🇩🇪 Germany — #18"
       - "🇳🇱 The Netherlands — #29"
-      - "🇵🇱 Poland — #48"
+      - "🇷🇺 Beget — #1"
+      - "🇩🇪 Germany — #22"
+      - "🇷🇺 IHC — #6"
+      - "🇩🇪 Germany — #17"
+      - "🇳🇱 The Netherlands — #31"
+      - "🇵🇱 Poland — #50"
 rules:
   - MATCH,PROXY
