@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-31 20:45:32 UTC
+# 2026-10-31 21:00:54 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #6"
+  - name: "🇷🇺 Timeweb — #11"
     type: "vless"
     server: "95.163.215.8"
     port: 5003
@@ -15,7 +15,7 @@ proxies:
       short-id: "e7"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇪🇪 Estonia — #20"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -42,7 +42,7 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #5"
+  - name: "🇷🇺 Selectel — #10"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -54,7 +54,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #10"
+  - name: "🇷🇺 IHC — #5"
+    type: "vless"
+    server: "46.254.19.164"
+    port: 443
+    uuid: "a5212bcb-ab85-459a-bec6-9f259eeeebfa"
+    udp: true
+    tls: true
+    servername: "wtb.tems.bet"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
+      short-id: "8937c9ed2d470352"
+    network: "raw"
+  - name: "🇩🇪 Germany — #14"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -70,7 +83,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #21"
+  - name: "🇳🇱 The Netherlands — #31"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -86,7 +99,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #43"
+  - name: "🇵🇱 Poland — #55"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -102,12 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #6"
-      - "🇪🇪 Estonia — #20"
+      - "🇷🇺 Timeweb — #11"
+      - "🇳🇱 The Netherlands — #30"
       - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #5"
-      - "🇩🇪 Germany — #10"
-      - "🇳🇱 The Netherlands — #21"
-      - "🇵🇱 Poland — #43"
+      - "🇷🇺 Selectel — #10"
+      - "🇷🇺 IHC — #5"
+      - "🇩🇪 Germany — #14"
+      - "🇳🇱 The Netherlands — #31"
+      - "🇵🇱 Poland — #55"
 rules:
   - MATCH,PROXY
