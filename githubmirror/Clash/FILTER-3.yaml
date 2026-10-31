@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-10-31 00:45:30 UTC
+# 2026-10-31 01:00:51 UTC
 proxies:
-  - name: "🇺🇸 United States — #79"
+  - name: "🇺🇸 United States — #88"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -14,6 +14,59 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇳🇱 The Netherlands — #51"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇳🇱 The Netherlands — #52"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇳🇱 The Netherlands — #49"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇵🇱 Poland — #82"
+    type: "vless"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
   - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
@@ -26,6 +79,20 @@ proxies:
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
+    network: "raw"
+  - name: "🇺🇸 United States — #87"
+    type: "vless"
+    server: "37.18.14.190"
+    port: 7445
+    uuid: "66217279-de40-4b62-b2bb-9c33b8fb7a01"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "random"
+    reality-opts:
+      public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
+      short-id: "283f4b51fbe39ad9"
+    flow: "xtls-rprx-vision"
     network: "raw"
   - name: "🇷🇺 IHC — #8"
     type: "vless"
@@ -56,7 +123,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #50"
+  - name: "🇳🇱 The Netherlands — #55"
     type: "vless"
     server: "91.185.83.45"
     port: 443
@@ -72,7 +139,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #68"
+  - name: "🇵🇱 Poland — #75"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -88,11 +155,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #79"
+      - "🇺🇸 United States — #88"
+      - "🇳🇱 The Netherlands — #51"
+      - "🇳🇱 The Netherlands — #52"
+      - "🇳🇱 The Netherlands — #49"
+      - "🇵🇱 Poland — #82"
       - "🇷🇺 Beget — #1"
+      - "🇺🇸 United States — #87"
       - "🇷🇺 IHC — #8"
       - "🇩🇪 Germany — #17"
-      - "🇳🇱 The Netherlands — #50"
-      - "🇵🇱 Poland — #68"
+      - "🇳🇱 The Netherlands — #55"
+      - "🇵🇱 Poland — #75"
 rules:
   - MATCH,PROXY
