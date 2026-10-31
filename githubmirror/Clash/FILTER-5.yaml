@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-31 15:30:44 UTC
+# 2026-10-31 15:45:31 UTC
 proxies:
+  - name: "Russia | api-maps.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.91.52.60"
+    port: 443
+    uuid: "00d80782-13bb-4e45-82b6-4c21747eabd6"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "mvaKH3l8-oq7ZAS2Nf2bOaRtKIT_es06DAgTZUqO1VM"
+      short-id: "18abe35232d7d316"
+    network: "grpc"
+    grpc-opts:
   - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "178.172.227.124"
@@ -234,6 +248,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | api-maps.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | apple.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
