@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-10-31 19:00:51 UTC
+# 2026-10-31 19:15:33 UTC
 proxies:
+  - name: "🇷🇺 Timeweb — #6"
+    type: "vless"
+    server: "95.163.215.8"
+    port: 5003
+    uuid: "4f4e8129-56ae-4b6e-baeb-ebdd07d8b2c5"
+    udp: true
+    tls: true
+    servername: "eh.vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "SHIYN7zN9aFVxwKK-bIvDbhUgtHvlBhDi1qSl2sWwRw"
+      short-id: "e7"
+    flow: "xtls-rprx-vision"
+    network: "raw"
   - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
@@ -9,24 +23,40 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 Selectel — #2"
+  - name: "🇩🇪 Germany — #19"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #5"
+  - name: "🇩🇪 Germany — #10"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇳🇱 The Netherlands — #20"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -42,7 +72,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #27"
+  - name: "🇵🇱 Poland — #43"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -58,9 +88,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇷🇺 Timeweb — #6"
       - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #2"
-      - "🇳🇱 The Netherlands — #5"
-      - "🇵🇱 Poland — #27"
+      - "🇩🇪 Germany — #19"
+      - "🇩🇪 Germany — #10"
+      - "🇳🇱 The Netherlands — #20"
+      - "🇵🇱 Poland — #43"
 rules:
   - MATCH,PROXY
