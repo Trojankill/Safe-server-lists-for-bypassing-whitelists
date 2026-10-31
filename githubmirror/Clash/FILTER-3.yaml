@@ -1,20 +1,35 @@
 # clash/mihomo subscription
-# 2026-10-31 10:00:52 UTC
+# 2026-10-31 10:15:29 UTC
 proxies:
-  - name: "🇺🇸 United States — #70"
+  - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
-    server: "188.72.103.4"
+    server: "188.225.83.133"
     port: 443
-    uuid: "000187a2-924b-8be4-b475-485a4699c80d"
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
     udp: true
     tls: true
-    servername: "ch-cdn.fius.dev"
-    alpn:
-      - "h2"
-      - "http/1.1"
+    servername: "xnodtwx.artemida.live"
     client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇷🇺 Beget — #2"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇧🇷 Brazil — #14"
+    type: "vless"
+    server: "178.250.242.64"
+    port: 18443
+    uuid: "6036c28a-8db2-432e-8118-ff0c16641ad0"
+    udp: true
+    tls: true
+    servername: "formatflow.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "oo2BXh-enbxxGXJcEzT3lgP26ru2rVnU5RP7PVUO0Sk"
+      short-id: "43dcff53849b81e6"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -27,7 +42,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 IHC — #10"
+  - name: "🇷🇺 Selectel — #13"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇷🇺 IHC — #8"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -40,7 +67,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #23"
+  - name: "🇩🇪 Germany — #18"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,7 +83,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #41"
+  - name: "🇳🇱 The Netherlands — #29"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -72,7 +99,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #60"
+  - name: "🇵🇱 Poland — #48"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -88,11 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #70"
-      - "🇷🇺 Beget — #2"
-      - "🇷🇺 IHC — #10"
-      - "🇩🇪 Germany — #23"
-      - "🇳🇱 The Netherlands — #41"
-      - "🇵🇱 Poland — #60"
+      - "🇳🇱 The Netherlands — #28"
+      - "🇧🇷 Brazil — #14"
+      - "🇷🇺 Beget — #1"
+      - "🇷🇺 Selectel — #13"
+      - "🇷🇺 IHC — #8"
+      - "🇩🇪 Germany — #18"
+      - "🇳🇱 The Netherlands — #29"
+      - "🇵🇱 Poland — #48"
 rules:
   - MATCH,PROXY
