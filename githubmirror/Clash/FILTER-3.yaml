@@ -1,7 +1,60 @@
 # clash/mihomo subscription
-# 2026-11-01 13:00:53 UTC
+# 2026-11-01 13:15:29 UTC
 proxies:
-  - name: "🇷🇺 VK — #1"
+  - name: "🇳🇱 The Netherlands — #30"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇩🇪 Germany — #27"
+    type: "vless"
+    server: "51.250.89.125"
+    port: 443
+    uuid: "48eb49ce-38b5-4ed1-b6ab-8eaf37cde710"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "jOmP_dqNqx6SDQ6Orso5rKGkTQhrFSSgGaq39I2siE4"
+      short-id: "6c61720cfed28f1a"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇷🇺 Beget — #12"
+    type: "vless"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    udp: true
+    tls: true
+    servername: "ya.ru"
+    client-fingerprint: "chrome"
+    reality-opts:
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
+    network: "raw"
+  - name: "🇧🇬 Bulgaria — #23"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "ios"
+    network: "xhttp"
+  - name: "🇷🇺 VK — #2"
     type: "vless"
     server: "95.163.232.242"
     port: 2053
@@ -12,21 +65,21 @@ proxies:
     alpn:
       - "http/1.1"
       - "h2"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #14"
+  - name: "🇩🇪 Germany — #26"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #9"
+  - name: "🇷🇺 IHC — #16"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -34,12 +87,12 @@ proxies:
     udp: true
     tls: true
     servername: "wtb.tems.bet"
-    client-fingerprint: "ios"
+    client-fingerprint: "firefox"
     reality-opts:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇵🇱 Poland — #47"
+  - name: "🇵🇱 Poland — #48"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -55,9 +108,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 VK — #1"
-      - "🇷🇺 Selectel — #14"
-      - "🇷🇺 IHC — #9"
-      - "🇵🇱 Poland — #47"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇩🇪 Germany — #27"
+      - "🇷🇺 Beget — #12"
+      - "🇧🇬 Bulgaria — #23"
+      - "🇷🇺 VK — #2"
+      - "🇩🇪 Germany — #26"
+      - "🇷🇺 IHC — #16"
+      - "🇵🇱 Poland — #48"
 rules:
   - MATCH,PROXY
