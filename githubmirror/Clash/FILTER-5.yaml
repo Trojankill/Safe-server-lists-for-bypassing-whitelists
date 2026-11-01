@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 09:45:31 UTC
+# 2026-11-01 10:00:52 UTC
 proxies:
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -27,20 +27,6 @@ proxies:
     client-fingerprint: "firefox"
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.216.70.39"
-    port: 443
-    uuid: "4ce73e66-1337-466b-8308-2abb812f9682"
-    udp: true
-    tls: true
-    servername: "tickets.betust.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "TRaUsnzFf-AhWUuW4RQUQOBYTdM-qJdLDTTkzQNkcRw"
-      short-id: "f70764f8"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod]"
@@ -114,6 +100,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.236.22.34"
+    port: 443
+    uuid: "902e7be9-d0a8-42a6-994f-8320916a9d9e"
+    udp: true
+    tls: true
+    servername: "amber.gaznw.my"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "oKG1EhkfIvBM6xLEk7ck51ZbjvUKDR22RNjTJR_7sTU"
+      short-id: "46da9a2868751b85"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "83.166.237.167"
@@ -152,21 +152,6 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "tcp"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "79.141.164.81"
-    port: 443
-    uuid: "ab9324ba-0415-4cf8-a40c-e4b493d3d939"
-    udp: true
-    tls: true
-    servername: "nla.kosmosapp.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
-      short-id: "27350908de933e09"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "neurex"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -183,6 +168,19 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "re-rus.koska.pro"
+    port: 443
+    uuid: "d529fe2a-44cc-4d4b-b764-834ab60c8a6d"
+    udp: true
+    tls: true
+    servername: "vk.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "6OOa1D_Yrkt0k9VXpuDC6j0qtqwtfV7-P-KsqAJyrks"
+      short-id: "8580939eb8d1ca17"
+    network: "xhttp"
   - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.229.9.135"
@@ -215,6 +213,20 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
+  - name: "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "157.22.240.20"
+    port: 443
+    uuid: "f28ce4eb-62cd-45f5-b3b3-be1c1a95e335"
+    udp: true
+    tls: true
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "216.238.116.204"
@@ -291,19 +303,20 @@ proxy-groups:
     proxies:
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | TCP | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
