@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-01 06:45:31 UTC
+# 2026-11-01 07:00:51 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #31"
+  - name: "🇬🇧 United Kingdom — #37"
     type: "vless"
     server: "78.159.245.15"
     port: 1505
@@ -16,7 +16,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇫🇷 France — #30"
+  - name: "🇪🇪 Estonia — #35"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -30,7 +30,7 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #3"
+  - name: "🇷🇺 Beget — #5"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -56,7 +56,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #12"
+  - name: "🇷🇺 Selectel — #17"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -68,7 +68,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #20"
+  - name: "🇷🇺 IHC — #13"
+    type: "vless"
+    server: "46.254.19.164"
+    port: 443
+    uuid: "a5212bcb-ab85-459a-bec6-9f259eeeebfa"
+    udp: true
+    tls: true
+    servername: "wtb.tems.bet"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
+      short-id: "8937c9ed2d470352"
+    network: "raw"
+  - name: "🇩🇪 Germany — #25"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -84,7 +97,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇷🇺 Delta — #7"
+  - name: "🇷🇺 Delta — #8"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -100,7 +113,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #32"
+  - name: "🇳🇱 The Netherlands — #38"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -116,7 +129,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #60"
+  - name: "🇵🇱 Poland — #66"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -132,14 +145,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #31"
-      - "🇫🇷 France — #30"
-      - "🇷🇺 Beget — #3"
+      - "🇬🇧 United Kingdom — #37"
+      - "🇪🇪 Estonia — #35"
+      - "🇷🇺 Beget — #5"
       - "🇷🇺 VK — #1"
-      - "🇷🇺 Selectel — #12"
-      - "🇩🇪 Germany — #20"
-      - "🇷🇺 Delta — #7"
-      - "🇳🇱 The Netherlands — #32"
-      - "🇵🇱 Poland — #60"
+      - "🇷🇺 Selectel — #17"
+      - "🇷🇺 IHC — #13"
+      - "🇩🇪 Germany — #25"
+      - "🇷🇺 Delta — #8"
+      - "🇳🇱 The Netherlands — #38"
+      - "🇵🇱 Poland — #66"
 rules:
   - MATCH,PROXY
