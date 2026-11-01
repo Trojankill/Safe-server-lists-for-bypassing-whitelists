@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 21:45:31 UTC
+# 2026-11-01 22:00:54 UTC
 proxies:
   - name: "Russia | api-maps.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -88,19 +88,6 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
   - name: "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "95.163.232.242"
@@ -206,7 +193,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -226,6 +213,13 @@ proxies:
       short-id: "8debcf36f1cc69ff"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.238.116.204"
+    port: 39533
+    password: "5t6i121em5lkmsmk"
+    udp: true
+    sni: "br001.zestapp778.com"
   - name: "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "88.218.92.205"
@@ -250,7 +244,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.cordweave.com"
-  - name: "Подписка #LSO© Trojan: 10 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 11 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -276,7 +270,6 @@ proxy-groups:
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
@@ -286,9 +279,10 @@ proxy-groups:
       - "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 10 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 11 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
