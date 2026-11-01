@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-01 23:00:56 UTC
+# 2026-11-01 23:15:33 UTC
 proxies:
-  - name: "🇱🇹 Lithuania — #11"
+  - name: "🇱🇹 Lithuania — #13"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -46,7 +46,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇵🇱 Poland — #37"
+  - name: "🇷🇺 Selectel — #10"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇵🇱 Poland — #47"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -62,9 +74,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇱🇹 Lithuania — #11"
+      - "🇱🇹 Lithuania — #13"
       - "🇷🇺 Delta — #5"
       - "🇷🇺 Beget — #1"
-      - "🇵🇱 Poland — #37"
+      - "🇷🇺 Selectel — #10"
+      - "🇵🇱 Poland — #47"
 rules:
   - MATCH,PROXY
