@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-11-01 08:30:43 UTC
+# 2026-11-01 08:45:33 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "103.88.242.98"
+    port: 18443
+    uuid: "260c3225-67b4-4d36-ac56-fef94aaef311"
+    udp: true
+    tls: true
+    servername: "5.42.118.163"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "safari"
+    network: "xhttp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -59,6 +72,31 @@ proxies:
       path: "/stream/updates/c4b65c89"
       headers:
         Host: "cdn.pixelrelay.top"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "193.233.216.43"
+    port: 24127
+    uuid: "69158986-cfae-4567-8391-0f96d9d985bd"
+    udp: true
+    tls: true
+    servername: "uk.neuroniko.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "193.233.216.43"
+    port: 24128
+    uuid: "69158986-cfae-4567-8391-0f96d9d985bd"
+    udp: true
+    tls: true
+    servername: "uk.neuroniko.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc"
+    network: "xhttp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "186.246.9.97"
@@ -160,7 +198,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -208,7 +246,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "185.126.93.225"
     port: 443
@@ -230,10 +268,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
@@ -242,10 +283,10 @@ proxy-groups:
       - "🇦🇹 Австрия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
