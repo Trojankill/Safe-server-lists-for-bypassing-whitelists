@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-01 20:45:31 UTC
+# 2026-11-01 21:00:57 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #17"
-    type: "vless"
-    server: "158.160.162.185"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇱🇹 Lithuania — #11"
+  - name: "🇱🇹 Lithuania — #12"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -30,20 +17,6 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇳🇱 The Netherlands — #16"
-    type: "vless"
-    server: "51.250.89.125"
-    port: 443
-    uuid: "48eb49ce-38b5-4ed1-b6ab-8eaf37cde710"
-    udp: true
-    tls: true
-    servername: "ya.ru"
-    client-fingerprint: "chrome"
-    reality-opts:
-      public-key: "jOmP_dqNqx6SDQ6Orso5rKGkTQhrFSSgGaq39I2siE4"
-      short-id: "6c61720cfed28f1a"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "🇷🇺 Delta — #5"
     type: "vless"
     server: "185.229.9.135"
@@ -60,7 +33,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇩🇪 Germany — #9"
+  - name: "🇵🇱 Poland — #49"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -68,7 +41,7 @@ proxies:
     udp: true
     tls: true
     servername: "xnodtwx.artemida.live"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     reality-opts:
       public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
       short-id: "a1b2c3d4e5f6a7b8"
@@ -87,6 +60,18 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "🇷🇺 Selectel — #10"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇵🇱 Poland — #40"
     type: "vless"
     server: "185.178.208.140"
@@ -99,7 +84,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #21"
+  - name: "🇳🇱 The Netherlands — #17"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -119,13 +104,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #17"
-      - "🇱🇹 Lithuania — #11"
-      - "🇳🇱 The Netherlands — #16"
+      - "🇱🇹 Lithuania — #12"
       - "🇷🇺 Delta — #5"
-      - "🇩🇪 Germany — #9"
+      - "🇵🇱 Poland — #49"
       - "🇷🇺 Beget — #1"
+      - "🇷🇺 Selectel — #10"
       - "🇵🇱 Poland — #40"
-      - "🇳🇱 The Netherlands — #21"
+      - "🇳🇱 The Netherlands — #17"
 rules:
   - MATCH,PROXY
