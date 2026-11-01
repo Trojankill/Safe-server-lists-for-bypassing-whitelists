@@ -1,19 +1,47 @@
 # clash/mihomo subscription
-# 2026-11-01 06:00:52 UTC
+# 2026-11-01 06:15:30 UTC
 proxies:
-  - name: "🇩🇪 Germany — #23"
+  - name: "🇬🇧 United Kingdom — #31"
     type: "vless"
-    server: "51.250.89.125"
+    server: "78.159.245.15"
+    port: 1505
+    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
+    udp: true
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇫🇷 France — #30"
+    type: "vless"
+    server: "188.225.83.133"
     port: 443
-    uuid: "48eb49ce-38b5-4ed1-b6ab-8eaf37cde710"
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    udp: true
+    tls: true
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "edge"
+    reality-opts:
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇷🇺 Beget — #3"
+    type: "vless"
+    server: "45.12.75.242"
+    port: 26424
+    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
     udp: true
     tls: true
     servername: "ya.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "jOmP_dqNqx6SDQ6Orso5rKGkTQhrFSSgGaq39I2siE4"
-      short-id: "6c61720cfed28f1a"
-    flow: "xtls-rprx-vision"
+      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
+      short-id: "23103e1e"
     network: "raw"
   - name: "🇷🇺 VK — #1"
     type: "vless"
@@ -28,19 +56,19 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #18"
+  - name: "🇷🇺 Selectel — #12"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "swit.nnight.sbs"
+    servername: "ru.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇩🇪 Germany — #13"
+  - name: "🇩🇪 Germany — #20"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -56,7 +84,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇷🇺 Delta — #3"
+  - name: "🇷🇺 Delta — #7"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -72,7 +100,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #27"
+  - name: "🇳🇱 The Netherlands — #32"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -88,7 +116,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #55"
+  - name: "🇵🇱 Poland — #60"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -104,12 +132,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #23"
+      - "🇬🇧 United Kingdom — #31"
+      - "🇫🇷 France — #30"
+      - "🇷🇺 Beget — #3"
       - "🇷🇺 VK — #1"
-      - "🇩🇪 Germany — #18"
-      - "🇩🇪 Germany — #13"
-      - "🇷🇺 Delta — #3"
-      - "🇳🇱 The Netherlands — #27"
-      - "🇵🇱 Poland — #55"
+      - "🇷🇺 Selectel — #12"
+      - "🇩🇪 Germany — #20"
+      - "🇷🇺 Delta — #7"
+      - "🇳🇱 The Netherlands — #32"
+      - "🇵🇱 Poland — #60"
 rules:
   - MATCH,PROXY
