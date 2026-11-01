@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-01 08:45:31 UTC
+# 2026-11-01 09:00:52 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #22"
+  - name: "🇬🇧 United Kingdom — #18"
     type: "vless"
     server: "46.243.233.157"
     port: 1505
@@ -16,37 +16,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇬🇧 United Kingdom — #21"
-    type: "vless"
-    server: "78.159.245.15"
-    port: 1505
-    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇬🇧 United Kingdom — #23"
-    type: "vless"
-    server: "78.159.246.7"
-    port: 1505
-    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇷🇺 Beget — #6"
+  - name: "🇷🇺 Beget — #1"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -54,25 +24,12 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇷🇺 VK — #1"
-    type: "vless"
-    server: "95.163.232.242"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇩🇪 Germany — #20"
+  - name: "🇩🇪 Germany — #16"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -84,7 +41,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #12"
+  - name: "🇷🇺 IHC — #11"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -97,7 +54,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇷🇺 Delta — #7"
+  - name: "🇷🇺 Delta — #5"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -113,7 +70,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #24"
+  - name: "🇳🇱 The Netherlands — #23"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -129,7 +86,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #52"
+  - name: "🇵🇱 Poland — #55"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -145,15 +102,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #22"
-      - "🇬🇧 United Kingdom — #21"
-      - "🇬🇧 United Kingdom — #23"
-      - "🇷🇺 Beget — #6"
-      - "🇷🇺 VK — #1"
-      - "🇩🇪 Germany — #20"
-      - "🇷🇺 IHC — #12"
-      - "🇷🇺 Delta — #7"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇵🇱 Poland — #52"
+      - "🇬🇧 United Kingdom — #18"
+      - "🇷🇺 Beget — #1"
+      - "🇩🇪 Germany — #16"
+      - "🇷🇺 IHC — #11"
+      - "🇷🇺 Delta — #5"
+      - "🇳🇱 The Netherlands — #23"
+      - "🇵🇱 Poland — #55"
 rules:
   - MATCH,PROXY

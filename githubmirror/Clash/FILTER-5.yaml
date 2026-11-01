@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 08:45:32 UTC
+# 2026-11-01 09:00:53 UTC
 proxies:
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -167,6 +167,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "neurex"
+  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.229.9.135"
@@ -199,20 +215,25 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "United States | www.nextjobopportunityandclaimyouridealrole.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
-    server: "216.152.155.131"
-    port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    server: "216.238.116.204"
+    port: 39533
+    password: "5t6i121em5lkmsmk"
     udp: true
-    sni: "www.nextjobopportunityandclaimyouridealrole.com"
-  - name: "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | TCP | [#LSO - #LinSpisokObhod]"
+    sni: "br001.zestapp778.com"
+  - name: "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
-    server: "216.152.156.81"
+    server: "185.234.114.165"
     port: 443
-    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    password: "humanity"
     udp: true
-    sni: "www.healthcarejobshubenhancemedicalprofessionalskillstoday.com"
+    sni: "www.cordweave.com"
+    network: "ws"
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.cordweave.com"
   - name: "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "88.218.92.205"
@@ -237,7 +258,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.cordweave.com"
-  - name: "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 9 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -280,13 +301,14 @@ proxy-groups:
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "United States | www.nextjobopportunityandclaimyouridealrole.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 9 [#LSO - #LinSpisokObhod]"
       - "Russia | 158.160.180.165 | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
