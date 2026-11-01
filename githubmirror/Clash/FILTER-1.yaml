@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 08:00:53 UTC
+# 2026-11-01 08:15:32 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -27,31 +27,7 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "45.132.179.50"
-    port: 5003
-    uuid: "4f4e8129-56ae-4b6e-baeb-ebdd07d8b2c5"
-    udp: true
-    tls: true
-    servername: "brr.centermass.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "87.242.94.1"
-    port: 6003
-    uuid: "4f4e8129-56ae-4b6e-baeb-ebdd07d8b2c5"
-    udp: true
-    tls: true
-    servername: "finn.centermass.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "158.160.146.45"
     port: 443
@@ -67,7 +43,7 @@ proxies:
       path: "/stream/updates/c4b65c89"
       headers:
         Host: "cdn.pixelrelay.top"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "158.160.172.181"
     port: 443
@@ -83,33 +59,9 @@ proxies:
       path: "/stream/updates/c4b65c89"
       headers:
         Host: "cdn.pixelrelay.top"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "89.208.210.53"
-    port: 24128
-    uuid: "69158986-cfae-4567-8391-0f96d9d985bd"
-    udp: true
-    tls: true
-    servername: "uk.neuroniko.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc"
-    network: "xhttp"
-  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "89.208.210.53"
-    port: 38963
-    uuid: "69158986-cfae-4567-8391-0f96d9d985bd"
-    udp: true
-    tls: true
-    servername: "lv.neuroniko.com"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "ud15DX-emDBS7QsLMabJ7CjgIteK61jxwSp1v0Fewxc"
-    network: "xhttp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "5.129.193.17"
+    server: "186.246.9.97"
     port: 443
     uuid: "75b517db-1f97-4bda-a479-863d988c31a0"
     udp: true
@@ -122,7 +74,7 @@ proxies:
     network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
-    server: "5.129.198.96"
+    server: "5.129.193.17"
     port: 443
     uuid: "75b517db-1f97-4bda-a479-863d988c31a0"
     udp: true
@@ -208,12 +160,66 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
-    type: "hysteria2"
-    server: "45.11.26.99"
-    port: 2053
-    password: "0f8c0e93-1b91-456c-b0a0-58568ac0f690"
-    sni: "api.unio.finance"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
+    udp: true
+    tls: true
+    servername: "business.lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "business.lesotorg-kirov.ru"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
+    udp: true
+    tls: true
+    servername: "ara.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "ara.rtkdvbr.cc"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.126.93.225"
+    port: 443
+    uuid: "f04cc810-aaf2-4a7b-8cad-356cdd30d394"
+    udp: true
+    tls: true
+    servername: "tg1.cdnphotos.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "87.242.119.253"
@@ -226,12 +232,8 @@ proxy-groups:
     proxies:
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
-      - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
@@ -240,7 +242,10 @@ proxy-groups:
       - "🇦🇹 Австрия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY

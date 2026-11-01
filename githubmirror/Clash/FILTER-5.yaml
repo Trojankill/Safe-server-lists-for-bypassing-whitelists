@@ -1,20 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-01 08:00:52 UTC
+# 2026-11-01 08:15:30 UTC
 proxies:
-  - name: "Russia | apple.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.98.63.6"
-    port: 8443
-    uuid: "2771954b-3f7f-49cb-90fd-32616e90a2f3"
+    server: "78.159.245.15"
+    port: 1505
+    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
     udp: true
     tls: true
-    servername: "apple.com"
-    client-fingerprint: "firefox"
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
     port: 443
@@ -26,7 +28,7 @@ proxies:
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.39"
@@ -99,6 +101,19 @@ proxies:
       public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
       short-id: "2e6d668958829998"
     network: "xhttp"
+  - name: "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "83.166.237.167"
@@ -152,6 +167,38 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "neurex"
+  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
+    udp: true
+    tls: true
+    servername: "business.lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "business.lesotorg-kirov.ru"
+  - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
+    udp: true
+    tls: true
+    servername: "ara.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "ara.rtkdvbr.cc"
   - name: "United States | www.nextjobopportunityandclaimyouridealrole.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "216.152.155.131"
@@ -197,6 +244,17 @@ proxies:
     password: "trojan"
     udp: true
     sni: "trojan.lso"
+  - name: "Russia | 158.160.180.165 | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vmess"
+    server: "158.160.180.165"
+    port: 24212
+    uuid: "c58c1205-b308-416f-8503-c04557abf93d"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "158.160.180.165"
+    network: "raw"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -210,22 +268,26 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | apple.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | wtb.tems.bet | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "United States | www.nextjobopportunityandclaimyouridealrole.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.healthcarejobshubenhancemedicalprofessionalskillstoday.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 4 [#LSO - #LinSpisokObhod]"
+      - "Russia | 158.160.180.165 | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
