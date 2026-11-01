@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 04:45:30 UTC
+# 2026-11-01 05:00:52 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -51,6 +51,38 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "158.160.146.45"
+    port: 443
+    uuid: "57939f22-314a-556a-b991-26aaeedc654a"
+    udp: true
+    tls: true
+    servername: "cdn.pixelrelay.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/stream/updates/c4b65c89"
+      headers:
+        Host: "cdn.pixelrelay.top"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "158.160.172.181"
+    port: 443
+    uuid: "57939f22-314a-556a-b991-26aaeedc654a"
+    udp: true
+    tls: true
+    servername: "cdn.pixelrelay.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/stream/updates/c4b65c89"
+      headers:
+        Host: "cdn.pixelrelay.top"
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "89.208.210.53"
@@ -176,7 +208,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
     type: "hysteria2"
     server: "45.11.26.99"
     port: 2053
@@ -196,6 +228,8 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #2"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
@@ -206,7 +240,7 @@ proxy-groups:
       - "🇦🇹 Австрия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
