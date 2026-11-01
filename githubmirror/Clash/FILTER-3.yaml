@@ -1,7 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-01 07:45:32 UTC
+# 2026-11-01 08:00:52 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom — #37"
+  - name: "🇬🇧 United Kingdom — #22"
+    type: "vless"
+    server: "46.243.233.157"
+    port: 1505
+    uuid: "1f803531-9ee0-49b0-8354-70680c39099c"
+    udp: true
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇬🇧 United Kingdom — #21"
     type: "vless"
     server: "78.159.245.15"
     port: 1505
@@ -16,21 +31,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇪🇪 Estonia — #35"
+  - name: "🇬🇧 United Kingdom — #23"
     type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    server: "78.159.246.7"
+    port: 1505
+    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
     udp: true
     tls: true
-    servername: "xnodtwx.artemida.live"
-    client-fingerprint: "edge"
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
     reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
     network: "grpc"
     grpc-opts:
-  - name: "🇷🇺 Beget — #5"
+      grpc-service-name: "grpc"
+  - name: "🇷🇺 Beget — #6"
     type: "vless"
     server: "45.12.75.242"
     port: 26424
@@ -38,7 +54,7 @@ proxies:
     udp: true
     tls: true
     servername: "ya.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     reality-opts:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
@@ -56,19 +72,19 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #17"
+  - name: "🇩🇪 Germany — #20"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #13"
+  - name: "🇷🇺 IHC — #12"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -81,23 +97,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇩🇪 Germany — #25"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇷🇺 Delta — #8"
+  - name: "🇷🇺 Delta — #7"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -113,7 +113,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #38"
+  - name: "🇳🇱 The Netherlands — #24"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -129,7 +129,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #66"
+  - name: "🇵🇱 Poland — #52"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -145,15 +145,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom — #37"
-      - "🇪🇪 Estonia — #35"
-      - "🇷🇺 Beget — #5"
+      - "🇬🇧 United Kingdom — #22"
+      - "🇬🇧 United Kingdom — #21"
+      - "🇬🇧 United Kingdom — #23"
+      - "🇷🇺 Beget — #6"
       - "🇷🇺 VK — #1"
-      - "🇷🇺 Selectel — #17"
-      - "🇷🇺 IHC — #13"
-      - "🇩🇪 Germany — #25"
-      - "🇷🇺 Delta — #8"
-      - "🇳🇱 The Netherlands — #38"
-      - "🇵🇱 Poland — #66"
+      - "🇩🇪 Germany — #20"
+      - "🇷🇺 IHC — #12"
+      - "🇷🇺 Delta — #7"
+      - "🇳🇱 The Netherlands — #24"
+      - "🇵🇱 Poland — #52"
 rules:
   - MATCH,PROXY
