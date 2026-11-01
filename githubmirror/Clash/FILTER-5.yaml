@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 15:45:31 UTC
+# 2026-11-01 16:00:53 UTC
 proxies:
   - name: "Russia | api-maps.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -74,19 +74,6 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.216.70.92"
-    port: 443
-    uuid: "5254c281-3bc1-40ee-ba89-1aaf8c251402"
-    udp: true
-    tls: true
-    servername: "nl-modx-prime.storagedirectguide.com"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "45.12.75.242"
@@ -100,6 +87,32 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "132.243.230.251"
+    port: 443
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "Uz1UbBDf84n7oNfFIhFvXbuFcj1nbNEroiKC_Ud4ajg"
+      short-id: "b2f9bb426426e0e7"
+    network: "xhttp"
+  - name: "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "213.165.54.59"
+    port: 8443
+    uuid: "6da2c981-8c77-4340-bda3-93399b7aea26"
+    udp: true
+    tls: true
+    servername: "www.kinopoisk.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "CI4hMTvVsem9mloOgRCW9A6WC-srPPwu3jlylwOnd3A"
+      short-id: "2e6d668958829998"
+    network: "xhttp"
   - name: "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "95.163.232.242"
@@ -125,20 +138,6 @@ proxies:
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.236.22.34"
-    port: 443
-    uuid: "902e7be9-d0a8-42a6-994f-8320916a9d9e"
-    udp: true
-    tls: true
-    servername: "amber.gaznw.my"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "oKG1EhkfIvBM6xLEk7ck51ZbjvUKDR22RNjTJR_7sTU"
-      short-id: "46da9a2868751b85"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
@@ -190,7 +189,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -208,20 +207,6 @@ proxies:
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
-  - name: "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "157.22.240.20"
-    port: 443
-    uuid: "f28ce4eb-62cd-45f5-b3b3-be1c1a95e335"
-    udp: true
-    tls: true
-    servername: "yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
-      short-id: "6ad3c0f1e9b2478a"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
@@ -256,17 +241,16 @@ proxy-groups:
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Russia | www.kinopoisk.ru | XHTTP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"

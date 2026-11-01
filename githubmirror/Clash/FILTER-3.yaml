@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 15:45:31 UTC
+# 2026-11-01 16:00:53 UTC
 proxies:
   - name: "🇱🇹 Lithuania — #14"
     type: "vless"
@@ -17,21 +17,23 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇩🇪 Germany — #11"
+  - name: "🇷🇺 Delta — #5"
     type: "vless"
-    server: "51.250.89.125"
+    server: "185.229.9.135"
     port: 443
-    uuid: "48eb49ce-38b5-4ed1-b6ab-8eaf37cde710"
+    uuid: "4df3e06b-85e9-4b69-b38a-be37bad2fe9d"
     udp: true
     tls: true
-    servername: "ya.ru"
-    client-fingerprint: "ios"
-    reality-opts:
-      public-key: "jOmP_dqNqx6SDQ6Orso5rKGkTQhrFSSgGaq39I2siE4"
-      short-id: "6c61720cfed28f1a"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇪🇪 Estonia — #13"
+    servername: "business.lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "business.lesotorg-kirov.ru"
+  - name: "🇳🇱 The Netherlands — #15"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -58,19 +60,19 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
-  - name: "🇩🇪 Germany — #10"
+  - name: "🇷🇺 Selectel — #11"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "swit.nnight.sbs"
+    servername: "ru.nnight.cfd"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇷🇺 IHC — #5"
+  - name: "🇷🇺 IHC — #6"
     type: "vless"
     server: "46.254.19.164"
     port: 443
@@ -83,7 +85,7 @@ proxies:
       public-key: "3qgZ9UlB-y1i9jx_zQQBgiNgFHz6fPQdP9gMMl4zXiM"
       short-id: "8937c9ed2d470352"
     network: "raw"
-  - name: "🇵🇱 Poland — #33"
+  - name: "🇵🇱 Poland — #35"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -95,7 +97,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #15"
+  - name: "🇳🇱 The Netherlands — #17"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -116,12 +118,12 @@ proxy-groups:
     type: select
     proxies:
       - "🇱🇹 Lithuania — #14"
-      - "🇩🇪 Germany — #11"
-      - "🇪🇪 Estonia — #13"
-      - "🇷🇺 Beget — #1"
-      - "🇩🇪 Germany — #10"
-      - "🇷🇺 IHC — #5"
-      - "🇵🇱 Poland — #33"
+      - "🇷🇺 Delta — #5"
       - "🇳🇱 The Netherlands — #15"
+      - "🇷🇺 Beget — #1"
+      - "🇷🇺 Selectel — #11"
+      - "🇷🇺 IHC — #6"
+      - "🇵🇱 Poland — #35"
+      - "🇳🇱 The Netherlands — #17"
 rules:
   - MATCH,PROXY
