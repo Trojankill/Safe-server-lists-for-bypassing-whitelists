@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-11-01 13:45:30 UTC
+# 2026-11-01 14:00:50 UTC
 proxies:
+  - name: "Russia | api-maps.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    flow: "xtls-rprx-vision"
+    network: "raw"
   - name: "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.178.208.167"
@@ -128,19 +141,6 @@ proxies:
       short-id: "46da9a2868751b85"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "83.166.237.167"
-    port: 52251
-    uuid: "902e7be9-d0a8-42a6-994f-8320916a9d9e"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "1A6Rv3MjIbi_0B2WchTlrS2k2IkDw-UxmTuV6A6S3Ew"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "188.72.103.4"
@@ -153,6 +153,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "re-rus.koska.pro"
@@ -182,6 +196,20 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
+  - name: "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "138.124.125.193"
+    port: 10444
+    uuid: "e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "157.22.240.20"
@@ -223,6 +251,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | api-maps.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
@@ -232,10 +261,11 @@ proxy-groups:
       - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
