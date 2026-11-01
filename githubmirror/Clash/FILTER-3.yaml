@@ -1,39 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-01 05:00:51 UTC
+# 2026-11-01 05:15:31 UTC
 proxies:
-  - name: "🇷🇺 Timeweb — #9"
+  - name: "🇩🇪 Germany — #23"
     type: "vless"
-    server: "45.11.26.99"
+    server: "51.250.89.125"
     port: 443
-    uuid: "0f240308-5771-4636-9315-f3259ff87f98"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "KlybaLW0-grtjEATyTVFIYoWIaoW-Duxi4lcM54_t2U"
-    network: "xhttp"
-  - name: "🇷🇺 Beget — #1"
-    type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    uuid: "48eb49ce-38b5-4ed1-b6ab-8eaf37cde710"
     udp: true
     tls: true
     servername: "ya.ru"
     client-fingerprint: "chrome"
     reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
+      public-key: "jOmP_dqNqx6SDQ6Orso5rKGkTQhrFSSgGaq39I2siE4"
+      short-id: "6c61720cfed28f1a"
+    flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇷🇺 Selectel — #6"
+  - name: "🇷🇺 VK — #1"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "xhttp"
+  - name: "🇩🇪 Germany — #18"
     type: "vless"
     server: "188.72.103.4"
     port: 443
     uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
+    servername: "swit.nnight.sbs"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
@@ -54,7 +56,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇷🇺 Delta — #5"
+  - name: "🇷🇺 Delta — #3"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -70,7 +72,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #39"
+  - name: "🇳🇱 The Netherlands — #27"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -86,7 +88,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇵🇱 Poland — #67"
+  - name: "🇵🇱 Poland — #55"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -102,12 +104,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Timeweb — #9"
-      - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #6"
+      - "🇩🇪 Germany — #23"
+      - "🇷🇺 VK — #1"
+      - "🇩🇪 Germany — #18"
       - "🇩🇪 Germany — #13"
-      - "🇷🇺 Delta — #5"
-      - "🇳🇱 The Netherlands — #39"
-      - "🇵🇱 Poland — #67"
+      - "🇷🇺 Delta — #3"
+      - "🇳🇱 The Netherlands — #27"
+      - "🇵🇱 Poland — #55"
 rules:
   - MATCH,PROXY
