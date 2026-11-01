@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-01 12:45:33 UTC
+# 2026-11-01 13:00:53 UTC
 proxies:
+  - name: "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    servername: "lorettmay.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "ws"
+    ws-opts:
+      path: "/blog/posts"
+      headers:
+        Host: "lorettmay.top"
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.159.245.15"
@@ -29,38 +45,35 @@ proxies:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "158.160.146.45"
+    server: "185.229.9.135"
     port: 443
-    uuid: "57939f22-314a-556a-b991-26aaeedc654a"
+    uuid: "4df3e06b-85e9-4b69-b38a-be37bad2fe9d"
     udp: true
     tls: true
-    servername: "cdn.pixelrelay.top"
+    servername: "business.lesotorg-kirov.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "qq"
     network: "ws"
     ws-opts:
-      path: "/stream/updates/c4b65c89"
+      path: "/chws"
       headers:
-        Host: "cdn.pixelrelay.top"
-  - name: "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod] #2"
+        Host: "business.lesotorg-kirov.ru"
+  - name: "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "158.160.172.181"
+    server: "88.216.70.92"
     port: 443
-    uuid: "57939f22-314a-556a-b991-26aaeedc654a"
+    uuid: "5254c281-3bc1-40ee-ba89-1aaf8c251402"
     udp: true
     tls: true
-    servername: "cdn.pixelrelay.top"
-    alpn:
-      - "http/1.1"
+    servername: "nl-modx-prime.storagedirectguide.com"
     client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/stream/updates/c4b65c89"
-      headers:
-        Host: "cdn.pixelrelay.top"
+    reality-opts:
+      public-key: "node0aB_7yyVADkeieiBBpxqIlxNLQcvgotRClh0QXQ"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "45.12.75.242"
@@ -87,6 +100,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.236.22.34"
@@ -126,22 +153,6 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "re-rus.koska.pro"
@@ -155,22 +166,6 @@ proxies:
       public-key: "6OOa1D_Yrkt0k9VXpuDC6j0qtqwtfV7-P-KsqAJyrks"
       short-id: "8580939eb8d1ca17"
     network: "xhttp"
-  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.229.9.135"
-    port: 443
-    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
-    udp: true
-    tls: true
-    servername: "business.lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "business.lesotorg-kirov.ru"
   - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.145.37"
@@ -181,7 +176,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "qq"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -208,43 +203,7 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "br001.zestapp778.com"
-  - name: "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "185.234.114.165"
-    port: 443
-    password: "humanity"
-    udp: true
-    sni: "www.cordweave.com"
-    network: "ws"
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.cordweave.com"
-  - name: "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "88.218.92.205"
-    port: 443
-    password: "humanity"
-    udp: true
-    sni: "www.cordweave.com"
-    network: "ws"
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.cordweave.com"
-  - name: "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "91.250.248.151"
-    port: 443
-    password: "humanity"
-    udp: true
-    sni: "www.cordweave.com"
-    network: "ws"
-    ws-opts:
-      path: "/assignment"
-      headers:
-        Host: "www.cordweave.com"
-  - name: "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -264,25 +223,22 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | cdn.pixelrelay.top | WebSocket | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ya.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Latvia | amber.gaznw.my | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "unknown | vk.com | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
