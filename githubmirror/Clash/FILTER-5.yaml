@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-01 11:45:33 UTC
+# 2026-11-01 12:00:52 UTC
 proxies:
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -220,6 +220,18 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.cordweave.com"
+  - name: "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "88.218.92.205"
+    port: 443
+    password: "humanity"
+    udp: true
+    sni: "www.cordweave.com"
+    network: "ws"
+    ws-opts:
+      path: "/assignment"
+      headers:
+        Host: "www.cordweave.com"
   - name: "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "91.250.248.151"
@@ -232,7 +244,7 @@ proxies:
       path: "/assignment"
       headers:
         Host: "www.cordweave.com"
-  - name: "Подписка #LSO© Trojan: 12 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -268,8 +280,9 @@ proxy-groups:
       - "Albania | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Armenia | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Greece | www.cordweave.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 12 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
