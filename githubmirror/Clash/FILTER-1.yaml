@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-02 02:30:50 UTC
+# 2026-11-02 02:45:33 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -12,6 +12,19 @@ proxies:
     client-fingerprint: "firefox"
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.108.246.180"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    servername: "apsnl.yandex-api.com"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
@@ -46,7 +59,7 @@ proxies:
       path: "/jx-o4e0xzvx0107se"
       headers:
         Host: "jyfrj1cims.dev.onappjet.com"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "85.192.42.198"
     port: 443
@@ -88,6 +101,19 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "87.239.106.24"
+    port: 53571
+    uuid: "4d8132cb-f4e3-428c-91ff-2b4f7a868551"
+    udp: true
+    tls: true
+    servername: "xnl.chick-team.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    network: "xhttp"
   - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "185.229.9.135"
@@ -98,25 +124,12 @@ proxies:
     servername: "business.lesotorg-kirov.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "87.239.106.24"
-    port: 53571
-    uuid: "553929aa-ae34-46ce-9045-054133776b62"
-    udp: true
-    tls: true
-    servername: "xnl.chick-team.ru"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "185.86.145.37"
@@ -133,7 +146,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "45.139.27.63"
     port: 443
@@ -173,7 +186,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "194.26.229.246"
     port: 2053
@@ -187,7 +200,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #4"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "81.17.154.97"
     port: 443
@@ -253,6 +266,20 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "194.26.229.112"
+    port: 3443
+    uuid: "eb17901c-9a6f-473c-bede-d2c25981dd3f"
+    udp: true
+    tls: true
+    servername: "cdn.polina.lol"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B2hPRdH13moEXzVXSINTdTHCYkgaNO53lgCIhDx7cmg"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "194.26.229.245"
@@ -303,23 +330,25 @@ proxy-groups:
     type: select
     proxies:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #4"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #5"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #4"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
