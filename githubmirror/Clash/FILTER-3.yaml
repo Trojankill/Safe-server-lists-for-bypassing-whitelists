@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-02 07:00:59 UTC
+# 2026-11-02 07:15:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #22"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇱🇹 Lithuania — #11"
+  - name: "🇱🇹 Lithuania — #6"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -30,7 +17,7 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇷🇺 Delta — #6"
+  - name: "🇷🇺 Delta — #1"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -40,42 +27,29 @@ proxies:
     servername: "business.lesotorg-kirov.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "qq"
     network: "ws"
     ws-opts:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #23"
+  - name: "🇳🇱 The Netherlands — #19"
     type: "vless"
-    server: "185.86.145.37"
+    server: "91.185.83.44"
     port: 443
-    uuid: "769cc55c-7ed6-4f3a-a77c-92e1c5c137ba"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    servername: "ara.rtkdvbr.cc"
+    servername: "nguyxejonb.rucdncomp.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
-      path: "/amws"
+      path: "/service/telemetry/0294da469190/"
       headers:
-        Host: "ara.rtkdvbr.cc"
-  - name: "🇷🇺 VK — #1"
-    type: "vless"
-    server: "95.163.232.242"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇵🇱 Poland — #48"
+        Host: "nguyxejonb.rucdncomp.pro"
+  - name: "🇵🇱 Poland — #37"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -91,11 +65,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #22"
-      - "🇱🇹 Lithuania — #11"
-      - "🇷🇺 Delta — #6"
-      - "🇳🇱 The Netherlands — #23"
-      - "🇷🇺 VK — #1"
-      - "🇵🇱 Poland — #48"
+      - "🇱🇹 Lithuania — #6"
+      - "🇷🇺 Delta — #1"
+      - "🇳🇱 The Netherlands — #19"
+      - "🇵🇱 Poland — #37"
 rules:
   - MATCH,PROXY
