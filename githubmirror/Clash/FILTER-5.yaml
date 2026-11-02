@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-02 17:01:05 UTC
+# 2026-11-02 17:15:33 UTC
 proxies:
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -14,47 +14,35 @@ proxies:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
+  - name: "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "95.163.232.242"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "188.72.103.4"
+    server: "82.148.6.146"
     port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
     udp: true
     tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    servername: "stats.vk-portal.net"
+    client-fingerprint: "safari"
+    reality-opts:
+      public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
+      short-id: "3c6fc84d"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
+  - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.229.9.135"
+    server: "qtir1.dnetsolutions.ru"
     port: 443
-    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
+    uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
     udp: true
     tls: true
-    servername: "business.lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
+    servername: "max.ru"
     client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "business.lesotorg-kirov.ru"
+    reality-opts:
+      public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
+      short-id: "cbc638acc8ac87"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-90"
   - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.145.37"
@@ -65,7 +53,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -78,6 +66,17 @@ proxies:
     password: "trojan"
     udp: true
     sni: "trojan.lso"
+  - name: "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vmess"
+    server: "158.160.180.165"
+    port: 24212
+    uuid: "c58c1205-b308-416f-8503-c04557abf93d"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "158.160.180.165"
+    network: "tcp"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -92,11 +91,11 @@ proxy-groups:
     type: select
     proxies:
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "Russia | fitindoor.net | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Uzbekistan | stats.vk-portal.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
+      - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY

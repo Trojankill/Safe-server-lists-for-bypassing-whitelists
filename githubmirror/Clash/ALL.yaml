@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-02 17:01:08 UTC
+# 2026-11-02 17:15:34 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -2134,6 +2134,21 @@ proxies:
       public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
       short-id: "23103e1e"
     network: "raw"
+  - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "qtir1.dnetsolutions.ru"
+    port: 443
+    uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
+    udp: true
+    tls: true
+    servername: "max.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
+      short-id: "cbc638acc8ac87"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-90"
   - name: "🇧🇬 [BL] Сервер 355"
     type: "vless"
     server: "195.123.226.21"
@@ -2821,18 +2836,6 @@ proxies:
       short-id: "c9677d3b7dea"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
     type: "vless"
     server: "47.251.108.158"
@@ -3977,22 +3980,6 @@ proxies:
       short-id: "2a2ce9e42980"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.229.9.135"
-    port: 443
-    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
-    udp: true
-    tls: true
-    servername: "business.lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "business.lesotorg-kirov.ru"
   - name: "🇺🇦 [BL] Сервер 420"
     type: "vless"
     server: "31.222.235.81"
@@ -4112,7 +4099,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -4607,7 +4594,7 @@ proxies:
     password: "trojan"
     udp: true
     sni: "trojan.lso"
-  - name: "🇷🇺 [WL] Сервер 73"
+  - name: "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
     type: "vmess"
     server: "158.160.180.165"
     port: 24212
@@ -5643,6 +5630,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: net.formatgo.ru ┃ 🇳🇱 Нидерланды t.me/rjsxrd"
       - "🇷🇺 Россия 4 SERV.HOST GROUP LTD t.me/rjsxrd"
       - "🇷🇺 [WL] Сервер 23"
+      - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "🇧🇬 [BL] Сервер 355"
       - "🇩🇪 [BL] Сервер 202"
       - "🇷🇴 [BL] Сервер 32"
@@ -5693,7 +5681,6 @@ proxy-groups:
       - "🇳🇱 Нидерланды 133 UAB Cherry Servers t.me/rjsxrd"
       - "🇱🇹 Литва UAB Cherry Servers t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 330"
-      - "Russia | ru.nnight.cfd | XHTTP | [#LSO - #LinSpisokObhod]"
       - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
       - "🇩🇪 DE | VLESS t.me/rjsxrd"
       - "🇮🇷 [BL] Сервер 244"
@@ -5777,7 +5764,6 @@ proxy-groups:
       - "🇵🇱 [BL] Сервер 258"
       - "🇬🇧 [BL] Сервер 345"
       - "🇳🇱 [BL] Сервер 226"
-      - "Russia | business.lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "🇺🇦 [BL] Сервер 420"
       - "🇺🇸 [BL] Сервер 24"
       - "🇳🇱 [BL] Сервер 82"
@@ -5825,7 +5811,7 @@ proxy-groups:
       - "[515ms PH PH @vlesstrojan] t.me/rjsxrd"
       - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd #3"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
-      - "🇷🇺 [WL] Сервер 73"
+      - "Russia | 158.160.180.165 | TCP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 Германия 59 Paul Sagov t.me/rjsxrd"
       - "🇳🇱 Нидерланды 73 SERVERS TECH FZCO t.me/rjsxrd"
       - "🌐 Anycast-IP | 🇵🇱 🇷🇺 [*CIDR] t.me/rjsxrd"
