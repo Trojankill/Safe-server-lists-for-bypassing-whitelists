@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-02 15:01:02 UTC
+# 2026-11-02 15:15:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #30"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇱🇹 Lithuania — #17"
+  - name: "🇱🇹 Lithuania — #2"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -30,47 +17,7 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇵🇱 Poland — #62"
-    type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
-    udp: true
-    tls: true
-    servername: "xnodtwx.artemida.live"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-  - name: "🇧🇬 Bulgaria — #13"
-    type: "vless"
-    server: "37.18.14.43"
-    port: 8443
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "flatcrest.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇷🇺 VK — #1"
-    type: "vless"
-    server: "95.163.232.242"
-    port: 2053
-    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
-    udp: true
-    tls: true
-    servername: "fitindoor.net"
-    alpn:
-      - "http/1.1"
-      - "h2"
-    client-fingerprint: "chrome"
-    network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #32"
+  - name: "🇳🇱 The Netherlands — #18"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -86,7 +33,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #50"
+  - name: "🇵🇱 Poland — #36"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -102,12 +49,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #30"
-      - "🇱🇹 Lithuania — #17"
-      - "🇵🇱 Poland — #62"
-      - "🇧🇬 Bulgaria — #13"
-      - "🇷🇺 VK — #1"
-      - "🇳🇱 The Netherlands — #32"
-      - "🇵🇱 Poland — #50"
+      - "🇱🇹 Lithuania — #2"
+      - "🇳🇱 The Netherlands — #18"
+      - "🇵🇱 Poland — #36"
 rules:
   - MATCH,PROXY
