@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-02 21:00:59 UTC
+# 2026-11-02 21:15:35 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #1"
+  - name: "🇳🇱 The Netherlands — #23"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -14,7 +14,19 @@ proxies:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #3"
+  - name: "🇷🇺 Selectel — #1"
+    type: "vless"
+    server: "188.72.112.1"
+    port: 443
+    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
+    udp: true
+    tls: true
+    servername: "ru.nnight.cfd"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    network: "xhttp"
+  - name: "🇳🇱 The Netherlands — #25"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -30,7 +42,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #21"
+  - name: "🇵🇱 Poland — #43"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -46,8 +58,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #1"
-      - "🇳🇱 The Netherlands — #3"
-      - "🇵🇱 Poland — #21"
+      - "🇳🇱 The Netherlands — #23"
+      - "🇷🇺 Selectel — #1"
+      - "🇳🇱 The Netherlands — #25"
+      - "🇵🇱 Poland — #43"
 rules:
   - MATCH,PROXY
