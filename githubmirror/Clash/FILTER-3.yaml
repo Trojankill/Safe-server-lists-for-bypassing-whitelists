@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-02 03:45:30 UTC
+# 2026-11-02 04:00:54 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #26"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "🇱🇹 Lithuania — #17"
     type: "vless"
     server: "185.178.208.167"
@@ -46,7 +33,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #27"
+  - name: "🇳🇱 The Netherlands — #33"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -75,19 +62,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇷🇺 Selectel — #12"
-    type: "vless"
-    server: "188.72.103.4"
-    port: 443
-    uuid: "9737cc16-7266-45ce-94d9-6e05a45e0b9c"
-    udp: true
-    tls: true
-    servername: "ru.nnight.cfd"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇵🇱 Poland — #46"
+  - name: "🇵🇱 Poland — #52"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -103,12 +78,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #26"
       - "🇱🇹 Lithuania — #17"
       - "🇷🇺 Delta — #7"
-      - "🇳🇱 The Netherlands — #27"
+      - "🇳🇱 The Netherlands — #33"
       - "🇷🇺 VK — #1"
-      - "🇷🇺 Selectel — #12"
-      - "🇵🇱 Poland — #46"
+      - "🇵🇱 Poland — #52"
 rules:
   - MATCH,PROXY
