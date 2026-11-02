@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-11-02 20:00:58 UTC
+# 2026-11-02 20:15:35 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #1"
+    type: "vless"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    udp: true
+    tls: true
+    servername: "hb.ru-msk.vkcloud-storage.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    flow: "xtls-rprx-vision"
+    network: "raw"
   - name: "🇳🇱 The Netherlands — #3"
     type: "vless"
     server: "91.185.83.44"
@@ -33,6 +46,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #1"
       - "🇳🇱 The Netherlands — #3"
       - "🇵🇱 Poland — #21"
 rules:
