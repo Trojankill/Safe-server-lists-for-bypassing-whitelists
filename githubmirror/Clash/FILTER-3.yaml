@@ -1,20 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-02 14:01:06 UTC
+# 2026-11-02 14:15:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #31"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #34"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -27,20 +14,7 @@ proxies:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     flow: "xtls-rprx-vision"
     network: "raw"
-  - name: "🇳🇱 The Netherlands — #29"
-    type: "vless"
-    server: "84.201.169.241"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇱🇹 Lithuania — #16"
+  - name: "🇱🇹 Lithuania — #17"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -56,7 +30,7 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇵🇱 Poland — #63"
+  - name: "🇵🇱 Poland — #62"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -70,6 +44,19 @@ proxies:
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
+  - name: "🇧🇬 Bulgaria — #13"
+    type: "vless"
+    server: "37.18.14.43"
+    port: 8443
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "flatcrest.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "xhttp"
   - name: "🇷🇺 VK — #1"
     type: "vless"
     server: "95.163.232.242"
@@ -83,7 +70,7 @@ proxies:
       - "h2"
     client-fingerprint: "chrome"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #36"
+  - name: "🇳🇱 The Netherlands — #32"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -99,7 +86,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #54"
+  - name: "🇵🇱 Poland — #50"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -115,13 +102,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #31"
-      - "🇳🇱 The Netherlands — #34"
-      - "🇳🇱 The Netherlands — #29"
-      - "🇱🇹 Lithuania — #16"
-      - "🇵🇱 Poland — #63"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇱🇹 Lithuania — #17"
+      - "🇵🇱 Poland — #62"
+      - "🇧🇬 Bulgaria — #13"
       - "🇷🇺 VK — #1"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇵🇱 Poland — #54"
+      - "🇳🇱 The Netherlands — #32"
+      - "🇵🇱 Poland — #50"
 rules:
   - MATCH,PROXY
