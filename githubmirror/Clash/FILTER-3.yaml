@@ -1,7 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-02 00:01:00 UTC
+# 2026-11-02 00:15:31 UTC
 proxies:
-  - name: "🇱🇹 Lithuania — #13"
+  - name: "🇳🇱 The Netherlands — #18"
+    type: "vless"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    udp: true
+    tls: true
+    servername: "hb.ru-msk.vkcloud-storage.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇱🇹 Lithuania — #8"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -17,7 +30,7 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇷🇺 Delta — #5"
+  - name: "🇷🇺 Delta — #1"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -33,20 +46,21 @@ proxies:
       path: "/chws"
       headers:
         Host: "business.lesotorg-kirov.ru"
-  - name: "🇷🇺 Beget — #1"
+  - name: "🇵🇱 Poland — #44"
     type: "vless"
-    server: "45.12.75.242"
-    port: 26424
-    uuid: "633f424e-2b11-48da-a6b3-a849dd71456f"
+    server: "188.225.83.133"
+    port: 443
+    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
     udp: true
     tls: true
-    servername: "ya.ru"
-    client-fingerprint: "chrome"
+    servername: "xnodtwx.artemida.live"
+    client-fingerprint: "firefox"
     reality-opts:
-      public-key: "l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0"
-      short-id: "23103e1e"
-    network: "raw"
-  - name: "🇷🇺 Selectel — #10"
+      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+  - name: "🇷🇺 Selectel — #5"
     type: "vless"
     server: "188.72.103.4"
     port: 443
@@ -58,7 +72,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇵🇱 Poland — #47"
+  - name: "🇵🇱 Poland — #36"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -74,10 +88,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇱🇹 Lithuania — #13"
-      - "🇷🇺 Delta — #5"
-      - "🇷🇺 Beget — #1"
-      - "🇷🇺 Selectel — #10"
-      - "🇵🇱 Poland — #47"
+      - "🇳🇱 The Netherlands — #18"
+      - "🇱🇹 Lithuania — #8"
+      - "🇷🇺 Delta — #1"
+      - "🇵🇱 Poland — #44"
+      - "🇷🇺 Selectel — #5"
+      - "🇵🇱 Poland — #36"
 rules:
   - MATCH,PROXY
