@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-02 07:45:31 UTC
+# 2026-11-02 08:01:07 UTC
 proxies:
   - name: "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -17,21 +17,6 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "78.159.245.15"
-    port: 1505
-    uuid: "2c5f0cce-18a3-4a66-9cac-a24304da29a0"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
@@ -224,7 +209,6 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | lorettmay.top | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Germany | nl-modx-prime.storagedirectguide.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
