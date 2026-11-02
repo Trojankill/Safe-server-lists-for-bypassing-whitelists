@@ -1,7 +1,33 @@
 # clash/mihomo subscription
-# 2026-11-02 10:00:58 UTC
+# 2026-11-02 10:15:43 UTC
 proxies:
-  - name: "🇱🇹 Lithuania — #7"
+  - name: "🇳🇱 The Netherlands — #26"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇳🇱 The Netherlands — #28"
+    type: "vless"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    udp: true
+    tls: true
+    servername: "hb.ru-msk.vkcloud-storage.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    flow: "xtls-rprx-vision"
+    network: "raw"
+  - name: "🇱🇹 Lithuania — #14"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -11,29 +37,13 @@ proxies:
     servername: "lorettmay.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     network: "ws"
     ws-opts:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇷🇺 Delta — #1"
-    type: "vless"
-    server: "185.229.9.135"
-    port: 443
-    uuid: "4df3e06b-85e9-4b69-b38a-be37bad2fe9d"
-    udp: true
-    tls: true
-    servername: "business.lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "business.lesotorg-kirov.ru"
-  - name: "🇵🇱 Poland — #53"
+  - name: "🇵🇱 Poland — #58"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -41,29 +51,39 @@ proxies:
     udp: true
     tls: true
     servername: "xnodtwx.artemida.live"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     reality-opts:
       public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
-  - name: "🇳🇱 The Netherlands — #16"
+  - name: "🇷🇺 VK — #3"
     type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "769cc55c-7ed6-4f3a-a77c-92e1c5c137ba"
+    server: "37.18.14.43"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
     udp: true
     tls: true
-    servername: "ara.rtkdvbr.cc"
+    servername: "flatcrest.net"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "ara.rtkdvbr.cc"
-  - name: "🇳🇱 The Netherlands — #24"
+      - "h2"
+    client-fingerprint: "safari"
+    network: "xhttp"
+  - name: "🇷🇺 VK — #1"
+    type: "vless"
+    server: "95.163.232.242"
+    port: 2053
+    uuid: "7dd69047-047e-422e-a2ba-ed773c34fd1a"
+    udp: true
+    tls: true
+    servername: "fitindoor.net"
+    alpn:
+      - "http/1.1"
+      - "h2"
+    client-fingerprint: "chrome"
+    network: "xhttp"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -79,7 +99,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #42"
+  - name: "🇵🇱 Poland — #48"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -95,11 +115,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇱🇹 Lithuania — #7"
-      - "🇷🇺 Delta — #1"
-      - "🇵🇱 Poland — #53"
-      - "🇳🇱 The Netherlands — #16"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇵🇱 Poland — #42"
+      - "🇳🇱 The Netherlands — #26"
+      - "🇳🇱 The Netherlands — #28"
+      - "🇱🇹 Lithuania — #14"
+      - "🇵🇱 Poland — #58"
+      - "🇷🇺 VK — #3"
+      - "🇷🇺 VK — #1"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇵🇱 Poland — #48"
 rules:
   - MATCH,PROXY
