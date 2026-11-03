@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-11-03 10:15:32 UTC
+# 2026-11-03 10:30:47 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "31.130.151.160"
+    port: 18443
+    uuid: "2effe34c-028b-4422-bcea-49b2664218ea"
+    udp: true
+    tls: true
+    servername: "193.160.208.240"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "safari"
+    network: "xhttp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -63,6 +76,19 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "178.159.94.248"
+    port: 5555
+    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    udp: true
+    tls: true
+    servername: "de1-site.kartamira.cc"
+    client-fingerprint: "qq"
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "81.17.154.181"
@@ -119,7 +145,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "185.126.93.225"
     port: 443
@@ -147,16 +173,18 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция [#РКП]"
 rules:
