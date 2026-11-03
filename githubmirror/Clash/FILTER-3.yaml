@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 22:45:37 UTC
+# 2026-11-03 23:00:57 UTC
 proxies:
-  - name: "🇵🇱 Poland — #78"
+  - name: "🇵🇱 Poland — #76"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #27"
+  - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -30,22 +30,23 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "🇵🇱 Poland — #54"
+  - name: "🇩🇪 Germany — #7"
     type: "vless"
-    server: "188.225.83.133"
+    server: "185.178.208.140"
     port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    servername: "xnodtwx.artemida.live"
-    client-fingerprint: "firefox"
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "safari"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
+    network: "ws"
+    ws-opts:
+      path: "/static/events/900598fa7500/"
+      headers:
+        Host: "gran-game.pro"
   - name: "🇩🇪 Germany — #5"
     type: "vless"
     server: "217.19.122.156"
@@ -63,7 +64,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #29"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -80,7 +81,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #82"
+  - name: "🇸🇪 Sweden — #80"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -95,7 +96,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #83"
+  - name: "🇸🇪 Sweden — #81"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -114,12 +115,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #78"
-      - "🇳🇱 The Netherlands — #27"
-      - "🇵🇱 Poland — #54"
+      - "🇵🇱 Poland — #76"
+      - "🇳🇱 The Netherlands — #28"
+      - "🇩🇪 Germany — #7"
       - "🇩🇪 Germany — #5"
-      - "🇳🇱 The Netherlands — #29"
-      - "🇸🇪 Sweden — #82"
-      - "🇸🇪 Sweden — #83"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇸🇪 Sweden — #80"
+      - "🇸🇪 Sweden — #81"
 rules:
   - MATCH,PROXY
