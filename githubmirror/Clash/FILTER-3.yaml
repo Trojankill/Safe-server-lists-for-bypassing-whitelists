@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 13:00:58 UTC
+# 2026-11-03 13:15:31 UTC
 proxies:
-  - name: "🇵🇱 Poland — #75"
+  - name: "🇵🇱 Poland — #77"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #24"
+  - name: "🇳🇱 The Netherlands — #27"
     type: "vless"
     server: "84.201.158.195"
     port: 443
@@ -30,23 +30,49 @@ proxies:
     reality-opts:
       public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
     network: "tcp"
-  - name: "🇵🇱 Poland — #52"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
-    server: "188.225.83.133"
-    port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
     udp: true
     tls: true
-    servername: "xnodtwx.artemida.live"
+    flow: "xtls-rprx-vision"
+    servername: "hb.ru-msk.vkcloud-storage.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇳🇱 The Netherlands — #28"
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #25"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #26"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #29"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -63,7 +89,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #76"
+  - name: "🇸🇪 Sweden — #80"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -78,7 +104,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #77"
+  - name: "🇸🇪 Sweden — #81"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -97,11 +123,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #75"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇵🇱 Poland — #52"
-      - "🇳🇱 The Netherlands — #28"
-      - "🇸🇪 Sweden — #76"
-      - "🇸🇪 Sweden — #77"
+      - "🇵🇱 Poland — #77"
+      - "🇳🇱 The Netherlands — #27"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇳🇱 The Netherlands — #25"
+      - "🇳🇱 The Netherlands — #26"
+      - "🇳🇱 The Netherlands — #29"
+      - "🇸🇪 Sweden — #80"
+      - "🇸🇪 Sweden — #81"
 rules:
   - MATCH,PROXY
