@@ -1,41 +1,50 @@
 # clash/mihomo subscription
-# 2026-11-03 22:15:34 UTC
+# 2026-11-03 22:30:45 UTC
 proxies:
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
     type: "vless"
-    server: "185.229.9.135"
+    server: "84.252.101.6"
     port: 443
-    uuid: "03c478b6-93fb-43aa-9fa1-73ced8a13caf"
+    uuid: "03248cf9-cbcb-4718-a11d-35b499978d27"
     udp: true
     tls: true
-    servername: "lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "ru-node.vopn.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+    reality-opts:
+      public-key: "lBCt9m_PzWWdm1HvyZtJyCupmcySkfphwArSyPLPKXk"
+      short-id: "ec65c264313fd33b"
+    network: "tcp"
+  - name: "🇪🇸 Spain [*CIDR]"
     type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "135aa7e5-87af-4df2-a9f0-0c4eaea0c492"
+    server: "es3.h1cloud.net"
+    port: 25150
+    uuid: "056405e8-de9f-4d0d-8145-956f13cc34da"
     udp: true
     tls: true
-    servername: "rar.rtkdvbr.cc"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
+    servername: "www.samsung.com"
+    client-fingerprint: "ios"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "rar.rtkdvbr.cc"
-  - name: "🇩🇪 Germany | [*CIDR]"
+    reality-opts:
+      public-key: "Qvn7tV54mdqxJ40LmmoI1PRM1QKXEbfFOZS-omPKhGY"
+      short-id: "4301a484cc762aa6"
+    network: "tcp"
+  - name: "🇨🇭 Switzerland | [*CIDR]"
+    type: "vless"
+    server: "ch2.h1cloud.net"
+    port: 25879
+    uuid: "241306b3-9f27-4ed3-9524-6c0792c55856"
+    udp: true
+    tls: true
+    servername: "www.bing.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "XuI492LMe1OPIwQH5TQlIo33JRqMM3kfnto62tbx5FU"
+      short-id: "f1a7a14461a3f389"
+    network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
     server: "de15.h1cloud.net"
     port: 25362
@@ -43,80 +52,59 @@ proxies:
     udp: true
     tls: true
     servername: "www.chip.de"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
       short-id: "23732d14a527990d"
     network: "tcp"
-  - name: "🇮🇩 Indonesia | 🌐 [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
-    server: "213.176.19.216"
+    server: "95.182.110.17"
     port: 443
-    uuid: "4460652a-ac34-454d-a119-afe8f4dde1a0"
+    uuid: "4a0812f0-f9d7-4afd-9ae3-6c38e1e59485"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ru-in-ind-4vp.fast-cdn24.com"
+    servername: "promo-digital.wb.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "NUjWUMNrcZKkvXmnK--E7wn_YyhEH6c-YOqjDMHWAxA"
-      short-id: "686b3e179573a80a"
+      public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
+      short-id: "d3f314d0b692f63d"
     network: "tcp"
-  - name: "🇮🇩 Indonesia | 🌐 | [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "ru-in-ind-4vp.fast-cdn24.com"
+    server: "185.178.208.140"
     port: 443
-    uuid: "4460652a-ac34-454d-a119-afe8f4dde1a0"
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-in-ind-4vp.fast-cdn24.com"
-    client-fingerprint: "edge"
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "NUjWUMNrcZKkvXmnK--E7wn_YyhEH6c-YOqjDMHWAxA"
-      short-id: "686b3e179573a80a"
-    network: "tcp"
-  - name: "🇷🇺 Russia | 🌐 | [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/static/events/900598fa7500/"
+      headers:
+        Host: "gran-game.pro"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "ru-manager.nodexphere.net"
+    server: "185.207.66.160"
     port: 443
-    uuid: "f935f257-1878-4656-8149-4e7737e2ff7d"
+    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-manager.nodexphere.net"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "lDbTuU4-pEAkxizbdrurcjz3eXq0AgECd0hEh0sL0zM"
-    network: "tcp"
-  - name: "🇵🇱 Poland | [*CIDR]"
-    type: "trojan"
-    server: "45.146.131.92"
-    port: 443
-    password: "NesTjEDLXnCeVn0ZLb2hsE3oeZWHHaKR"
-    udp: true
-    sni: "ar-d-s-290.freedomcdnhelloworld.com"
+    servername: "basterdym.asia"
     alpn:
       - "h2"
-      - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-  - name: "🇵🇱 Poland [*CIDR]"
-    type: "trojan"
-    server: "153.76.161.159"
-    port: 443
-    password: "zViIBNyzxX1SgY8aOTMM72-Oy8O4PS89"
-    udp: true
-    sni: "stoic-ridge.freedomcdnhelloworld.com"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
   - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
     type: "hysteria2"
     server: "84.38.184.87"
@@ -141,14 +129,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
+      - "🇪🇸 Spain [*CIDR]"
+      - "🇨🇭 Switzerland | [*CIDR]"
+      - "🇩🇪 Germany [*CIDR]"
       - "🇷🇺 Russia | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
       - "🇩🇪 Germany | [*CIDR]"
-      - "🇮🇩 Indonesia | 🌐 [*CIDR]"
-      - "🇮🇩 Indonesia | 🌐 | [*CIDR]"
-      - "🇷🇺 Russia | 🌐 | [*CIDR]"
-      - "🇵🇱 Poland | [*CIDR]"
-      - "🇵🇱 Poland [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇭🇺 Hungary | 🌐 [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
 rules:
