@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 10:45:34 UTC
+# 2026-11-03 11:00:59 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -40,6 +40,54 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "95.129.236.117"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: "🇷🇺 Россия [#РКП] #4"
+    type: "vless"
+    server: "95.129.236.216"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "crm.hourtley.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/stream/video/ffmpeg"
+      headers:
+        Host: "crm.hourtley.com"
+  - name: "🇷🇺 Россия [#РКП] #5"
+    type: "vless"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    network: "ws"
+    ws-opts:
+      path: "/sock/relay/007f9c12e265"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "45.139.27.63"
@@ -176,6 +224,9 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #4"
+      - "🇷🇺 Россия [#РКП] #5"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
