@@ -1,24 +1,36 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v6.0 (Karing / NekoBox / v2rayNG + Clash/Mihomo)
+Фильтр прокси-конфигураций v6.1 (Karing / NekoBox / v2rayNG + Clash/Mihomo)
 
-Что нового по сравнению с v5.3 (по итогам сверки с Cleaner.py):
-  * Каждая ссылка теперь РАЗБИРАЕТСЯ (с раскодированием процентов, &amp;,
-    синонимов параметров), а не проверяется регулярками по сырой строке.
-    Из-за этого закрыты обходы: &amp;allowInsecure=1, allowlnsecure=1,
-    skip-cert-verify=1, insecure=yes, vmess-JSON с "tls":"none" и т.д.
-  * Адрес сервера проверяется через модуль ipaddress: 169.254/16, 100.64/10,
-    198.18/15, мультикаст, обфусцированные IP (0x7f000001, 2130706433,
-    ведущие нули), публичные DNS-резолверы, порты < 22.
-  * UUID проверяется у vless/vmess/tuic, пустые/служебные UUID отбрасываются.
-  * Reality: pbk — строго 32 байта base64url; sid НЕ вырезается.
-  * SS: legacy-формат, ss2022-ключи по частям, плагины, реклама в пароле.
-  * Дубликаты схлопываются ДО подсчёта лимитов PBK/UUID/SID/host:port.
-  * Clash: безопасное YAML-квотирование, уникальные имена, исправлены
-    TUIC/SS-плагины/IPv6/serviceName; skip-cert-verify больше не теряется.
-  * SSR удалён (его не поддерживают ни NekoBox, ни v2rayNG, ни ядро sing-box).
-  * Источники с 3+ провалами больше не банятся навсегда (cooldown).
+Цель: в выход не должна попасть ссылка, через которую трафик можно прочитать или
+подменить по дороге: туннель без TLS, отключённая проверка сертификата, свой CA,
+слабый шифр. Что нового по сравнению с v6.0:
+  * Проверяется ровно та строка, которая публикуется: preprocess доводится до
+    неподвижной точки (P(P(x)) == P(x)), ненормализованные строки отбраковываются.
+    Закрыты обходы через \\u200b, \\u0026amp;, \\u005cu0026.
+  * «Обязательные» параметры читаются так же буквально, как в клиентах: security —
+    только точный ключ и точное значение tls/reality (без синонима sec, без
+    регистра/процентов и «починок» ';' и '%3D'); повтор любого ключа — отбраковка;
+    trojan с пустым security= — отбраковка; пустой флаг insecure — отбраковка.
+  * vmess JSON: повторяющиеся ключи (в т.ч. TLS/tls) — отбраковка; TLS только "tls".
+  * Свой CA/сертификат (ca=, cert=, certificates, disableSystemRoot…) и xhttp extra
+    с downloadSettings/allowInsecure — отбраковка.
+  * В каждую TLS-ссылку явно дописывается allowInsecure=0 / insecure=0: v2rayNG без
+    этого параметра берёт глобальную настройку «Allow insecure».
+  * Clash строится из того же разбора, что и проверка (второго парсера на
+    регулярках больше нет); skip-cert-verify: false явно; зарезервированные имена
+    Mihomo; финальная проверка «нет TLS — нет прокси».
+  * Адреса: IPv6 только в [скобках]; is_global + 6to4/Teredo/NAT64; 127.0.0.1.nip.io
+    и подобные — по встроенному IP.
+  * Устойчивость: лимит длины строки, YAML-«бомбы» через алиасы, общий дедлайн
+    загрузки, только https без даунгрейда на редиректе, url-safe base64, атомарная
+    запись файлов, при сбое источника — перепроверенный прошлый файл вместо пустого,
+    rejected.txt по умолчанию не публикуется, код выхода 1, если не скачалось ничего.
+  * Один файл, без внешних тестов. Каждый запуск начинается с самопроверки защиты
+    (доли секунды, без сети): если правка кода или другая версия Python пропускает
+    известный обход TLS, подписки не перезаписываются и код выхода 2.
+    Полные тесты: python filter.py --selftest
 """
 
 import re
@@ -32,6 +44,7 @@ import calendar
 import ipaddress
 import threading
 import subprocess
+import urllib.error
 import urllib.request
 import urllib.parse
 import uuid as uuidlib
@@ -45,8 +58,10 @@ try:
     import yaml
     HAS_YAML = True
 except ImportError:
+    # Лучше поставить зависимость в workflow (pip install "pyyaml>=6,<7") и удалить этот блок
     try:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyyaml', '--quiet'])
+        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--quiet',
+                               '--disable-pip-version-check', 'pyyaml>=6.0.1,<7'])
         import yaml
         HAS_YAML = True
     except Exception:
@@ -72,9 +87,17 @@ os.makedirs(QR_DIR, exist_ok=True)
 os.makedirs(CLASH_DIR, exist_ok=True)
 
 MAX_CONSECUTIVE_FAILURES = 3
-RETRY_AFTER_SECONDS = 12 * 3600          # через сколько повторить «мёртвый» источник
+RETRY_AFTER_SECONDS = 3600              # пауза «мёртвого» источника (3 провала подряд);
+                                        # при запуске раз в 15 мин — 1 попытка в час
 FETCH_TIMEOUT = 30
 MAX_FETCH_BYTES = 64 * 1024 * 1024       # защита памяти от гигантских/бесконечных ответов
+FETCH_DEADLINE = 120                     # общий лимит на скачивание одного источника, сек
+MAX_LINE_LEN = 8192                      # длиннее — не ссылка, а мусор/атака (раздувание выхода)
+MAX_NAME_LEN = 200                       # имя прокси в Clash
+MAX_CLASH_PROXIES = 50000                # максимум прокси из одного YAML-источника
+PUBLISH_REJECTED = False                 # rejected.txt — готовая подписка из НЕБЕЗОПАСНЫХ узлов
+FORCE_VERIFY_FLAG = True                 # дописывать allowInsecure=0 / insecure=0 в TLS-ссылки
+STALE_MAX_HOURS = 72                     # сколько часов при сбое источника отдавать прошлый файл
 
 RAW_BASE = os.environ.get(
     'RAW_BASE',
@@ -118,14 +141,20 @@ BANNED_DOMAINS = [
     'boot-lee.ru', 'locklance.lol',
     'xenovpn.top', 'towersflowerss.com',
     'cloudconsole.ru', 'moscow-neversleep.digital', 'amnesia.pw', 'magicvpssub.ru',
-    'fromblancwithlove.com', 'koma-yt.pages.dev', 'ripaojiedian',
+    'fromblancwithlove.com', 'koma-yt.pages.dev',
 ]
 
 # Имена, которые не бывают публичными серверами (внутренние зоны)
 NON_PUBLIC_SUFFIXES = (
     '.local', '.localhost', '.internal', '.lan', '.home.arpa', '.intranet',
     '.invalid', '.test', '.example', '.arpa', '.onion',
+    # публичные домены, которые всегда резолвятся в 127.0.0.1
+    '.localtest.me', '.lvh.me', '.vcap.me', '.lacolhost.com', '.localhost.direct', '.local.gd',
 )
+
+# Wildcard-DNS: 10.0.0.1.nip.io -> 10.0.0.1. Публичный IP через них — законный приём
+# (сертификат для VPS без домена), поэтому проверяется встроенный IP, а не весь домен.
+WILDCARD_IP_DOMAINS = ('nip.io', 'sslip.io', 'xip.io', 'traefik.me')
 
 SAFE_SS_METHODS = {
     'aes-128-gcm', 'aes-256-gcm',
@@ -145,7 +174,9 @@ WEAK_SS_METHODS = {
     'idea-cfb', 'rc2-cfb', 'seed-cfb', 'table', 'plain', 'none', '',
 }
 
-SAFE_SS_CANON = {m.replace('chacha20-poly1305', 'chacha20-ietf-poly1305') for m in SAFE_SS_METHODS}
+# Канонические имена — как после нормализации в _parse_ss. (В v6.0 replace() портил
+# '2022-blake3-chacha20-poly1305' в '...-ietf-...', и рабочий SS-2022 отбраковывался.)
+SAFE_SS_CANON = {m for m in SAFE_SS_METHODS if m not in ('chacha20-poly1305', 'xchacha20-poly1305')}
 
 SS_2022_KEY_LENGTHS = {
     '2022-blake3-aes-128-gcm': 16,
@@ -162,10 +193,17 @@ SAFE_FINGERPRINTS = {
     'edge', '360', 'qq', 'random', 'randomized',
 }
 
-TRUSTED_DNS = {
-    '1.1.1.1', '8.8.8.8', '8.8.4.4', '94.140.14.14', '9.9.9.9',
-    'cloudflare-dns.com', 'dns.google', 'dns.adguard.com',
+# Параметры, которые подменяют доверие к сертификату сервера (свой CA, отключение
+# системных корней). С ними «проверенный» TLS может оказаться под MITM.
+TRUST_OVERRIDE_KEYS = {
+    'ca', 'ca-str', 'ca_str', 'castr', 'cacert', 'ca-cert', 'ca_cert',
+    'cert', 'certificate', 'certificates', 'cert-path', 'cert_path', 'certpath',
+    'disablesystemroot', 'disable-system-root', 'disable_system_root',
 }
+
+# Ключи, наличие/значение которых фильтр ТРЕБУЕТ. Клиенты читают их буквально
+# (регистр, проценты), поэтому любое другое написание — отбраковка.
+STRICT_KEYS = {'security', 'sni', 'pbk', 'sid', 'fp', 'type', 'flow', 'encryption', 'alpn'}
 
 TUIC_CC_WHITELIST = {'bbr', 'cubic', 'new_reno'}
 TUIC_UDP_MODES = {'native', 'quic'}
@@ -217,11 +255,14 @@ IP_BLACKLIST = {
 }
 BAD_V4 = [ipaddress.ip_network(x) for x in (
     '0.0.0.0/8', '10.0.0.0/8', '100.64.0.0/10', '127.0.0.0/8', '169.254.0.0/16',
-    '172.16.0.0/12', '192.0.0.0/29', '192.0.2.0/24', '192.168.0.0/16', '198.18.0.0/15',
-    '198.51.100.0/24', '203.0.113.0/24', '224.0.0.0/4', '240.0.0.0/4')]
+    '172.16.0.0/12', '192.0.0.0/24', '192.0.2.0/24', '192.88.99.0/24', '192.168.0.0/16',
+    '198.18.0.0/15', '198.51.100.0/24', '203.0.113.0/24', '224.0.0.0/4', '240.0.0.0/4')]
+# 2002::/16 (6to4), 2001::/23 (Teredo и др.), 64:ff9b:1::/48 (локальный NAT64) могут
+# прятать внутри 127.0.0.1/10.x; is_global в старых Python их не ловит — список явный.
 BAD_V6 = [ipaddress.ip_network(x) for x in (
-    '::/128', '::1/128', '::ffff:0:0/96', '64:ff9b::/96', '100::/64', '2001:db8::/32',
-    'fc00::/7', 'fe80::/10', 'ff00::/8')]
+    '::/96', '::ffff:0:0/96', '64:ff9b::/96', '64:ff9b:1::/48', '100::/64',
+    '2001::/23', '2001:db8::/32', '2002::/16', '3fff::/20', '5f00::/16',
+    'fc00::/7', 'fe80::/10', 'fec0::/10', 'ff00::/8')]
 
 # =====================================================================
 #  ПОТОКОБЕЗОПАСНОСТЬ
@@ -249,27 +290,33 @@ def _is_host_banned(host: str) -> bool:
 class Reject(Exception):
     """Конфиг отбракован; текст — причина (идёт в статистику)."""
 
-_INVISIBLE_RE = re.compile('[\u200b\u200c\u200d\u2060\ufeff]')
+# Невидимые и «переворачивающие» символы (zero-width, bidi-override, soft hyphen):
+# ими прячут параметр от глаз и от наивных проверок.
+_INVISIBLE_RE = re.compile('[\u00ad\u061c\u180e\u200b-\u200f\u202a-\u202e\u2060-\u2064\u2066-\u2069\ufeff]')
 _CTRL_RE = re.compile(r'[\x00-\x1f\x7f-\x9f\u2028\u2029]')
+_UESC_RE = re.compile(r'\\u([0-9a-fA-F]{4})')
 
 def preprocess(s: str) -> str:
     """Чинит типовые поломки ссылок ДО проверки.
 
-    &amp; (бывает двойное), \\u0026, %5Cu0026, '¬' -> '&'. Невидимые символы и
-    управляющие символы (в т.ч. \\n из \\u000a) вырезаются — иначе их можно
-    использовать, чтобы спрятать параметр или вставить лишнюю строку в выход.
+    &amp; (в т.ч. многократное), \\u0026, %5Cu0026, '¬' -> '&'; невидимые и
+    управляющие символы вырезаются. Все шаги повторяются до неподвижной точки:
+    повторный вызов результат не меняет, поэтому в выход попадает ровно та строка,
+    которую проверили. (В v6.0 \\u200b раскодировался ПОСЛЕ удаления невидимых
+    символов и доезжал до клиента внутри имени параметра.)
     Схема приводится к нижнему регистру (VLESS:// -> vless://).
     """
-    s = _INVISIBLE_RE.sub('', s)
-    prev = None
-    while prev != s:
+    for _ in range(64):
         prev = s
-        s = re.sub(r'&amp;', '&', s, flags=re.I)
-    if '\\u' in s:
-        s = re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m.group(1), 16)), s)
-    s = re.sub(r'(?i)%5cu0026', '&', s)
-    s = s.replace('¬', '&')
-    s = _CTRL_RE.sub('', s)
+        s = _INVISIBLE_RE.sub('', s)
+        s = re.sub(r'(?i)&amp;', '&', s)
+        if '\\u' in s:
+            s = _UESC_RE.sub(lambda m: chr(int(m.group(1), 16)), s)
+        s = re.sub(r'(?i)%5cu0026', '&', s)
+        s = s.replace('¬', '&')
+        s = _CTRL_RE.sub('', s)
+        if s == prev:
+            break
     m = SCHEME_RE.match(s)
     if m:
         s = m.group(1).lower() + s[m.end(1):]
@@ -293,33 +340,33 @@ def b64d(s):
     return None
 
 class Q(dict):
-    """Параметры запроса: первый ключ выигрывает (как в клиентах); .pairs — все пары."""
-    pairs: list = []
+    """Параметры запроса: ключ в нижнем регистре -> значение; .pairs — все пары.
+
+    Повтор ключа — отбраковка (в v6.0 побеждал первый, а v2rayNG берёт последний:
+    security=tls&security= проходил фильтр, а клиент ехал без TLS).
+    """
+    def __init__(self):
+        super().__init__()
+        self.pairs: list = []
 
 def parse_query(qs: str) -> Q:
+    """Разбор как у клиентов: split('&'), затем по первому '='. Никаких «починок»:
+    ';security=tls' и 'security%3Dtls' клиенты security не считают — фильтр тоже."""
     q = Q()
-    pairs = []
     for part in qs.split('&'):
         if not part:
             continue
-        part = part.lstrip(';')
-        if '=' not in part:
-            try:
-                dec = unquote(part)
-            except Exception:
-                dec = part
-            if '=' in dec:
-                part = dec
-        k, _, v = part.partition('=')
-        try:
-            k, v = unquote(k).strip().lower(), unquote(v)
-        except Exception:
+        rk, _, v = part.partition('=')
+        k = unquote(rk).strip().lower()
+        if not k:
             continue
-        if k:
-            pairs.append((k, v))
-            if k not in q:
-                q[k] = v
-    q.pairs = pairs
+        if k in q:
+            raise Reject(f'повторяющийся параметр: {k[:20]}')
+        if k in STRICT_KEYS and rk != k:
+            raise Reject(f'нестандартное написание ключа {rk[:20]!r}')
+        v = unquote(v)
+        q.pairs.append((k, v))
+        q[k] = v
     return q
 
 def qget(q, *names, default=''):
@@ -343,6 +390,38 @@ def _flag_on(v: str) -> bool:
 #  ПРОВЕРКА АДРЕСА (порт check_host / parse_hostport из Cleaner.py)
 # =====================================================================
 
+def _check_ip(ip) -> str:
+    s = str(ip)
+    if REJECT_DNS and s in IP_BLACKLIST:
+        raise Reject(f'публичный DNS как сервер: {s}')
+    if REJECT_PRIVATE:
+        nets = BAD_V6 if ip.version == 6 else BAD_V4
+        if any(ip in net for net in nets) or ip.is_multicast or not ip.is_global:
+            raise Reject(f'локальный/зарезервированный IP {s}')
+    return s
+
+def _wildcard_ip(d: str) -> Optional[str]:
+    """IP, «зашитый» в wildcard-DNS имя: 10.0.0.1.nip.io, 10-0-0-1.sslip.io,
+    app-0a000001.nip.io, --1.sslip.io (::1). None — имя не из этих сервисов."""
+    for wd in WILDCARD_IP_DOMAINS:
+        if d != wd and not d.endswith('.' + wd):
+            continue
+        prefix = d[:-len(wd)].rstrip('.')
+        m = re.search(r'(?:^|[.-])(\d{1,3})[.-](\d{1,3})[.-](\d{1,3})[.-](\d{1,3})$', prefix)
+        if m:
+            return '.'.join(m.groups())
+        m = re.search(r'(?:^|[.-])([0-9a-f]{8})$', prefix)
+        if m:
+            return str(ipaddress.IPv4Address(int(m.group(1), 16)))
+        label = prefix.rsplit('.', 1)[-1]
+        if '-' in label:                         # sslip.io: IPv6 через '-', '::' = '--'
+            try:
+                return str(ipaddress.IPv6Address(label.replace('-', ':')))
+            except ValueError:
+                pass
+        return None
+    return None
+
 def check_host(raw: str) -> str:
     h = (raw or '').strip()
     if not h:
@@ -356,16 +435,7 @@ def check_host(raw: str) -> str:
             raise Reject(f'неверный IPv6: {raw[:60]!r}')
         if REJECT_IPV6:
             raise Reject('IPv6-адрес отбракован настройкой REJECT_IPV6')
-        s = str(ip)
-        if REJECT_DNS and s in IP_BLACKLIST:
-            raise Reject(f'публичный DNS как сервер: {s}')
-        if REJECT_PRIVATE:
-            for net in BAD_V6:
-                if ip in net:
-                    raise Reject(f'локальный/зарезервированный IPv6 {ip}')
-            if ip.ipv4_mapped is not None:
-                raise Reject(f'IPv4-mapped IPv6 {ip}')
-        return s
+        return _check_ip(ip)
     if re.fullmatch(r'(?:\d{1,3}\.){3}\d{1,3}', h):
         if any(len(o) > 1 and o[0] == '0' for o in h.split('.')):
             raise Reject('обфусцированный IP (ведущие нули)')
@@ -373,14 +443,7 @@ def check_host(raw: str) -> str:
             ip = ipaddress.IPv4Address(h)
         except ValueError:
             raise Reject(f'неверный IPv4: {h[:40]!r}')
-        s = str(ip)
-        if REJECT_DNS and s in IP_BLACKLIST:
-            raise Reject(f'публичный DNS как сервер: {s}')
-        if REJECT_PRIVATE:
-            for net in BAD_V4:
-                if ip in net:
-                    raise Reject(f'локальный/зарезервированный IP {ip}')
-        return s
+        return _check_ip(ip)
     if re.fullmatch(r'[0-9.]+', h) or re.fullmatch(r'0[xX][0-9a-fA-F.]+', h):
         raise Reject('обфусцированный числовой IP (decimal/hex)')
     d = h.rstrip('.').lower()
@@ -394,6 +457,10 @@ def check_host(raw: str) -> str:
         raise Reject(f'невалидный домен: {raw[:60]!r}')
     if REJECT_PRIVATE and ('.' + d).endswith(NON_PUBLIC_SUFFIXES):
         raise Reject(f'внутренний/непубличный домен: {d}')
+    if REJECT_PRIVATE:
+        emb = _wildcard_ip(d)
+        if emb is not None:
+            check_host(emb)                      # Reject, если внутри локальный/служебный IP
     return d
 
 def parse_hostport(s: str) -> Tuple[str, int]:
@@ -412,10 +479,9 @@ def parse_hostport(s: str) -> Tuple[str, int]:
         if host == '':
             raise Reject(f'битый authority: {s[:70]!r}')
         if ':' in host:
-            try:
-                ipaddress.IPv6Address(host)
-            except ValueError:
-                raise Reject(f'битый authority: {s[:70]!r}')
+            # 2001:db8::1:443 — это адрес без порта или адрес + порт? Клиенты понимают
+            # по-разному, поэтому IPv6 — только в [скобках] (RFC 3986)
+            raise Reject(f'IPv6 без квадратных скобок: {s[:70]!r}')
     p = int(port)
     if not MIN_PORT <= p <= 65535:
         raise Reject(f'порт вне диапазона: {p} (допустимо {MIN_PORT}–65535)')
@@ -484,35 +550,80 @@ def _host_param_banned(v: str) -> bool:
     return False
 
 def _check_pairs(q: Q):
-    """Флаги небезопасности и «плохие» значения — по ВСЕМ парам, с синонимами."""
+    """Флаги небезопасности и «плохие» значения — по ВСЕМ парам, с синонимами.
+
+    Здесь нормализация (регистр, синонимы) работает НА безопасность: чем больше
+    написаний запрещающего флага ловим, тем лучше.
+    """
     for k, v in q.pairs:
-        if k in INSECURE_KEYS and _flag_on(v):
+        vs = v.strip().lower()
+        if k in INSECURE_KEYS and (not vs or _flag_on(v)):
+            # пустое значение тоже нельзя: часть клиентов считает «флаг есть» = включён,
+            # а v2rayNG при пустом подставляет глобальную настройку «Allow insecure»
             raise Reject(f'небезопасный параметр: {k}={v[:12]}')
         if k in ('disable_sni', 'disablesni') and _flag_on(v):
             raise Reject('disable_sni включён')
-        if k in ('verify', 'tls13') and v.strip().lower() in FALSE_SET:
+        if k in ('verify', 'tls13') and vs in FALSE_SET:
             raise Reject(f'небезопасный параметр: {k}={v[:12]}')
-        if k in ('security', 'sec') and v.strip().lower() in ('none', 'false', '0', 'off', 'no'):
-            raise Reject('нет TLS (security=none)')
+        if k in ('security', 'sec') and vs in ('', 'none', 'false', '0', 'off', 'no'):
+            raise Reject('нет TLS (security=none или пусто)')
+        if k in TRUST_OVERRIDE_KEYS and vs and vs not in FALSE_SET:
+            raise Reject(f'свой CA/сертификат в ссылке ({k}=) — возможен MITM')
+        if k in ('extra', 'xhttpextra', 'xhttp-extra'):
+            _check_xhttp_extra(v)
         if k in ('sni', 'peer', 'servername', 'host', 'authority') and _host_param_banned(v):
             raise Reject(f'домен из чёрного списка в параметре {k}')
 
-def _check_suspicious_params(q: Q):
-    """Параметры, которых нет в честных ссылках (оставлено из v5.3)."""
-    ca = q.get('ca', '')
-    if ca and (ca.startswith('http') or len(ca) > 50):
-        raise Reject('подозрительный ca= (MITM)')
-    for k in ('dns', 'doh', 'dns-server'):
-        v = q.get(k)
-        if v:
-            host = re.sub(r'^https?://', '', v.lower())
-            host = host.split('/')[0].split('#')[0].split(':')[0].strip('.')
-            if host and host not in TRUSTED_DNS:
-                raise Reject('подмена DNS в параметрах')
-    for k in ('sniffing', 'destoverride'):
-        v = q.get(k, '').lower()
-        if v and 'localhost' not in v and re.search(r'[a-z0-9-]+\.[a-z]{2,}', v):
-            raise Reject('подозрительный sniffing/destOverride')
+_EXTRA_TLS = ('tls', 'reality')
+_NOT_JSON = object()
+
+def _extra_off(v) -> bool:
+    return v is None or v is False or (isinstance(v, (str, list, dict)) and not v) or \
+        str(v).strip().lower() in FALSE_SET
+
+def _check_xhttp_extra(raw: str):
+    """xhttp extra (JSON) может содержать downloadSettings — второй сервер со своим
+    security/tlsSettings, то есть «без TLS» или allowInsecure мимо проверок ссылки.
+    Xray читает ключи JSON без учёта регистра, поэтому и здесь регистр не важен."""
+    if not raw.strip():
+        return
+    j = _NOT_JSON
+    for cand in (raw, unquote(raw)):                 # бывает закодировано дважды
+        try:
+            j = json.loads(cand)                     # 'null' -> None — это валидно
+            break
+        except Exception:
+            continue
+    if j is _NOT_JSON:
+        raise Reject('xhttp extra: не JSON')
+    stack = [j]
+    while stack:
+        x = stack.pop()
+        if isinstance(x, list):
+            stack.extend(x)
+            continue
+        if not isinstance(x, dict):
+            continue
+        for k, v in x.items():
+            kl = str(k).lower()
+            if kl == 'downloadsettings':
+                if v is None:                        # полный дамп настроек: "downloadSettings": null
+                    continue
+                if not isinstance(v, dict):
+                    raise Reject('xhttp extra: downloadSettings не объект')
+                secs = [s for kk, s in v.items() if str(kk).lower() == 'security']
+                if not secs:                         # без security Xray поднимет второй канал БЕЗ TLS
+                    raise Reject('xhttp extra: downloadSettings без TLS')
+                for kk, vv in v.items():
+                    if str(kk).lower() == 'address' and vv not in (None, ''):
+                        check_host(str(vv))
+            elif kl in TRUST_OVERRIDE_KEYS and not _extra_off(v):
+                raise Reject(f'xhttp extra: {kl} не допускается')
+            elif kl in INSECURE_KEYS and not _extra_off(v) and _flag_on(str(v)):
+                raise Reject(f'xhttp extra: небезопасный {kl}')
+            elif kl == 'security' and str(v).strip().lower() not in _EXTRA_TLS:
+                raise Reject('xhttp extra: security без TLS')
+            stack.append(v)
 
 def _read_net(q: Q) -> str:
     net = qget(q, 'type', 'network', 'net').strip().lower()
@@ -576,14 +687,18 @@ def _is_trojan_public_pool(core: str, q: Q) -> bool:
 # =====================================================================
 
 class Cfg:
-    """Результат разбора: только поля, нужные политике, лимитам и дедупликации."""
-    __slots__ = ('proto', 'host', 'port', 'uuid', 'password', 'pbk', 'sid', 'key')
+    """Результат разбора. Из него же строится Clash — второго парсера больше нет."""
+    __slots__ = ('proto', 'host', 'port', 'uuid', 'password', 'pbk', 'sid', 'key',
+                 'q', 'j', 'method', 'plugin', 'ports')
 
     def __init__(self, proto):
         self.proto = proto
         self.host, self.port = '', 0
         self.uuid = self.password = self.pbk = self.sid = ''
+        self.method = self.plugin = self.ports = ''
         self.key = ()
+        self.q = Q()
+        self.j = None
 
 _KEY_IGNORE = {'fp', 'fingerprint', 'spx', 'spiderx', 'ps', 'remarks', 'remark', 'name',
                'mux', 'tfo', 'fastopen', 'tcp-fast-open', 'fm'}
@@ -603,10 +718,15 @@ def _split_authority_uri(core: str):
     return unquote(userinfo).strip(), hostport, q
 
 def _common(c: Cfg, q: Q, core: str):
+    c.q = q
     _check_pairs(q)
-    _check_suspicious_params(q)
     if _is_host_banned(c.host):
         raise Reject(f'сервер в чёрном списке доменов: {c.host}')
+
+def _tls_mode(q: Q) -> str:
+    """security — буквально, как читают клиенты: без синонима sec, strip() и lower().
+    (v6.0 принимал sec=tls, Security=tls, TLS, ' tls' — а клиент видел «без TLS».)"""
+    return q.get('security', '')
 
 def _parse_vless(core: str) -> Cfg:
     userinfo, hostport, q = _split_authority_uri(core)
@@ -614,7 +734,7 @@ def _parse_vless(core: str) -> Cfg:
     c.uuid = _check_uuid(userinfo)
     c.host, c.port = parse_hostport(hostport)
     _common(c, q, core)
-    sec = qget(q, 'security', 'sec').strip().lower()
+    sec = _tls_mode(q)
     if sec not in ('tls', 'reality'):
         raise Reject(f'vless без TLS/Reality (security={sec[:12] or "нет"})')
     net = _read_net(q)
@@ -645,9 +765,10 @@ def _parse_trojan(core: str) -> Cfg:
     enc = qget(q, 'encryption').strip().lower()
     if enc.startswith('ss'):
         raise Reject('trojan-go (encryption=ss;…) не поддерживается клиентами')
-    sec = qget(q, 'security', 'sec').strip().lower()
-    if sec not in ('', 'tls'):
-        raise Reject(f'trojan с security={sec[:12]}')
+    # Ключа security нет -> клиенты сами включают TLS. Любое другое значение, включая
+    # пустое security= (v2rayNG подставляет tls только при ОТСУТСТВИИ ключа), — отбраковка.
+    if 'security' in q and q['security'] != 'tls':
+        raise Reject(f'trojan с security={q["security"][:12] or "пусто"}')
     if _flag_on(qget(q, 'ws')) and not qget(q, 'type', 'network', 'net'):
         q['type'] = 'ws'                       # форма ws=1&wspath=… (как в Cleaner)
     _read_net(q)
@@ -696,7 +817,7 @@ def _parse_vmess(core: str) -> Cfg:
         aid = qget(q, 'alterid', 'aid') or '0'
         if not aid.isdigit() or int(aid) != 0:
             raise Reject('vmess alterId != 0')
-        sec = qget(q, 'security', 'sec').strip().lower()
+        sec = _tls_mode(q)
         net = _read_net(q)
         if sec not in ('tls', 'reality'):
             raise Reject('vmess без TLS')
@@ -710,15 +831,30 @@ def _parse_vmess(core: str) -> Cfg:
         return c
 
     text = data_noq if data_noq.lstrip().startswith('{') else _decode_vmess_body(data_noq)
+
+    def _no_dup_keys(pairs):
+        d = {}
+        for k, v in pairs:
+            if k in d:
+                raise Reject(f'vmess JSON: повторяющийся ключ {str(k)[:20]!r}')
+            d[k] = v
+        return d
+
     try:
-        j = json.loads(text)
+        j = json.loads(text, object_pairs_hook=_no_dup_keys)
+    except Reject:
+        raise
     except Exception as e:
         raise Reject(f'vmess JSON невалиден: {str(e)[:40]}')
     if not isinstance(j, dict):
         raise Reject('vmess JSON — не объект')
     low = {}
     for k, v in j.items():
-        low.setdefault(str(k).lower(), v)
+        lk = str(k).lower()
+        if lk in low:
+            # {"TLS":"tls","tls":""}: фильтр видел бы одно, клиент (ключи с учётом регистра) — другое
+            raise Reject(f'vmess JSON: ключи различаются только регистром ({lk[:20]})')
+        low[lk] = v
 
     def g(*keys, d=''):
         for k in keys:
@@ -727,6 +863,9 @@ def _parse_vmess(core: str) -> Cfg:
                 return str(v).strip()
         return d
 
+    # параметры после '?' у base64-формы часть клиентов тоже читает — проверяем их
+    if '?' in data and not data_noq.lstrip().startswith('{'):
+        _check_pairs(parse_query(data.split('?', 1)[1]))
     c.host, c.port = parse_hostport(f"{_bracket(g('add', 'address', 'server'))}:{g('port', 'p')}")
     c.uuid = _check_uuid(g('id', 'uuid', 'user'))
     aid = g('aid', 'alterid', 'alter_id') or '0'
@@ -737,14 +876,16 @@ def _parse_vmess(core: str) -> Cfg:
     scy = (g('scy', 'security', 'cipher') or 'auto').lower()
     if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305'):
         raise Reject(f'vmess: шифр {scy[:20]!r} не разрешён')
-    # tls: "tls"/1/true — ок; "none", "", "false", "auto", "xtls" — НЕ ок
-    # (раньше "none" считалась непустой строкой и проходила как TLS!)
-    if g('tls').lower() not in ('tls', '1', 'true'):
+    # TLS — только буквально "tls" в точном ключе "tls", как читает v2rayNG.
+    # "TLS", "1", "true" клиент TLS-ом не считает — туннель ушёл бы открытым.
+    if j.get('tls') != 'tls':
         raise Reject('vmess без TLS')
-    for kk in INSECURE_KEYS:
-        v = low.get(kk)
-        if v is not None and _flag_on(str(v)):
+    for kk, v in low.items():
+        sv = '' if v is None else str(v).strip()
+        if kk in INSECURE_KEYS and (_flag_on(sv) or (v is not None and not sv)):
             raise Reject(f'небезопасный параметр: {kk}')
+        if kk in TRUST_OVERRIDE_KEYS and sv and sv.lower() not in FALSE_SET:
+            raise Reject(f'свой CA/сертификат в vmess ({kk}) — возможен MITM')
     net = {'h2': 'http', 'websocket': 'ws', 'splithttp': 'xhttp', 'raw': 'tcp', 'none': 'tcp',
            '': 'tcp'}.get((g('net', 'network') or 'tcp').lower(), (g('net', 'network') or 'tcp').lower())
     if net == 'quic':
@@ -762,6 +903,7 @@ def _parse_vmess(core: str) -> Cfg:
             raise Reject(f'домен из чёрного списка в поле {fld}')
     if _is_host_banned(c.host):
         raise Reject(f'сервер в чёрном списке доменов: {c.host}')
+    c.j = j
     items = tuple(sorted((k, str(v)) for k, v in low.items() if k not in _KEY_IGNORE))
     c.key = ('vmess', c.host, c.port, c.uuid, items)
     return c
@@ -859,10 +1001,12 @@ def _parse_ss(core: str) -> Cfg:
     if method in SS_2022_KEY_LENGTHS:
         _check_ss2022_password(method, password)
     _check_pairs(q)
-    _check_suspicious_params(q)
     if _is_host_banned(c.host):
         raise Reject(f'сервер в чёрном списке доменов: {c.host}')
+    c.q = q
+    c.method = method
     c.password = password
+    c.plugin = plugin
     c.key = ('ss', c.host, c.port, method, password, plugin)
     return c
 
@@ -887,6 +1031,7 @@ def _parse_hy2(core: str) -> Cfg:
         c.port = int(pr)
     elif RANGE_RE.match(pr) and ports_in_range(pr):
         c.port = int(re.match(r'\d{1,5}', pr).group(0))
+        c.ports = pr
     else:
         raise Reject(f'неверный порт: {pr[:30]!r}')
     c.host = check_host(host)
@@ -950,43 +1095,88 @@ def is_supported_protocol(line: str) -> bool:
     low = line.strip()[:12].lower()
     return any(low.startswith(p) for p in SUPPORTED_PROTOCOLS)
 
-@lru_cache(maxsize=131072)
-def analyze_config(line: str):
-    """-> (причина_отбраковки | '', ids). Пустая причина = конфиг прошёл.
-
-    ids = (key, pbk, vless_uuid, sid, trojan_pass, tuic_cred, 'host:port:proto')
-    — всё, что нужно для дедупликации и лимитов «публичного пула».
-    """
+@lru_cache(maxsize=65536)
+def _parse_line(line: str):
+    """-> (причина_отбраковки | '', Cfg | None). Пустая причина = конфиг прошёл."""
     try:
-        line = preprocess(line)
+        if len(line) > MAX_LINE_LEN:
+            raise Reject(f'слишком длинная строка (> {MAX_LINE_LEN})')
+        if preprocess(line) != line:
+            # проверяем только то, что опубликуем: строка обязана быть уже нормализована
+            raise Reject('ссылка не нормализована')
         if not line or not is_supported_protocol(line):
             raise Reject('протокол не поддерживается')
         m = SCHEME_RE.match(line)
         proto = SCHEME_ALIAS.get(m.group(1).lower(), m.group(1).lower())
         if proto not in ACCEPTED:
             raise Reject(f'протокол {proto} не поддерживается')
-        c = _PARSERS[proto](_core(line))
-        tcred = f'{c.uuid}:{c.password}' if proto == 'tuic' else ''
-        ids = (
-            c.key,
-            c.pbk,
-            c.uuid if proto == 'vless' else '',
-            c.sid,
-            c.password if proto == 'trojan' else '',
-            tcred,
-            f'{c.host}:{c.port}:{proto}',
-        )
-        return '', ids
+        return '', _PARSERS[proto](_core(line))
     except Reject as e:
         return str(e), None
     except Exception as e:
         return f'внутренняя ошибка: {type(e).__name__}', None
 
+def _ids(c: Cfg) -> tuple:
+    """(key, pbk, vless_uuid, sid, trojan_pass, tuic_cred, 'host:port:proto') —
+    всё, что нужно для дедупликации и лимитов «публичного пула»."""
+    p = c.proto
+    return (
+        c.key,
+        c.pbk,
+        c.uuid if p == 'vless' else '',
+        c.sid,
+        c.password if p == 'trojan' else '',
+        f'{c.uuid}:{c.password}' if p == 'tuic' else '',
+        f'{c.host}:{c.port}:{p}',
+    )
+
+def analyze_config(line: str):
+    """-> (причина_отбраковки | '', ids). Строка должна быть после preprocess()."""
+    reason, c = _parse_line(line)
+    return (reason, None) if reason else ('', _ids(c))
+
+# Явный «проверять сертификат»: v2rayNG при отсутствии allowInsecure/insecure берёт
+# глобальную настройку «Allow insecure», а её нередко включают «чтобы всё работало».
+_VERIFY_FLAG = {'vless': 'allowInsecure', 'trojan': 'allowInsecure', 'vmess': 'allowInsecure',
+                'hysteria2': 'insecure', 'tuic': 'allow_insecure'}
+
+def _with_verify_flag(line: str, c: Cfg) -> str:
+    """Дописывает/нормализует флаг проверки сертификата в точном написании клиента.
+    allowinsecure=0 или только insecure=0 v2rayNG не видит и берёт глобальную настройку."""
+    flag = _VERIFY_FLAG.get(c.proto)
+    if not FORCE_VERIFY_FLAG or not flag or c.j is not None:
+        return line                              # vmess JSON-форму не трогаем
+    core, sep, frag = line.partition('#')
+    base, _, qs = core.partition('?')
+    out, found = [], False
+    for part in qs.split('&'):
+        if not part:
+            continue
+        if unquote(part.partition('=')[0]).strip().lower() == flag.lower():
+            # значение уже проверено (иначе ссылку отбраковали бы) — пишем канонически
+            found, part = True, f'{flag}=0'
+        out.append(part)
+    if not found:
+        out.append(f'{flag}=0')
+    return f"{base}?{'&'.join(out)}{sep}{frag}"
+
+def prepare_config(line: str):
+    """Проверка + усиление. -> (причина | '', ids | None, строка_для_публикации)."""
+    reason, c = _parse_line(line)
+    if reason:
+        return reason, None, line
+    pub = _with_verify_flag(line, c)
+    if pub != line:
+        reason, c = _parse_line(pub)
+        if reason:
+            return f'после добавления флага проверки: {reason}', None, line
+    return '', _ids(c), pub
+
 def get_reject_reason(line: str) -> str:
-    return analyze_config(line)[0]
+    return analyze_config(preprocess(line))[0]
 
 def is_safe_config_base(line: str) -> bool:
-    return analyze_config(line)[0] == ''
+    return analyze_config(preprocess(line))[0] == ''
 
 def reason_bucket(reason: str) -> str:
     """Укрупняет причину для статистики (без переменных значений)."""
@@ -997,6 +1187,9 @@ def reason_bucket(reason: str) -> str:
 # =====================================================================
 
 def parse_multiline_configs(lines: List[str]) -> List[str]:
+    """Одна ссылка — одна строка. Продолжение приклеивается, только если это явно
+    продолжение запроса: предыдущая строка кончается на '?'/'&' или новая начинается
+    с '?'/'&'. (В v6.0 приклеивалась любая строка с '=', например base64 с паддингом.)"""
     configs = []
     current = ""
     for line in lines:
@@ -1007,19 +1200,16 @@ def parse_multiline_configs(lines: List[str]) -> List[str]:
             if current:
                 configs.append(current)
             current = stripped
-        else:
-            if current and ('?' in stripped or '&' in stripped or '=' in stripped):
-                if '?' in current and stripped.startswith('?'):
-                    current += stripped[1:]
-                elif '&' in current and stripped.startswith('&'):
-                    current += stripped[1:]
-                elif '?' in current and '&' not in stripped:
-                    current += '&' + stripped
-                else:
-                    current += stripped
-            elif current:
-                configs.append(current)
-                current = ""
+        elif current and '#' not in current and (
+                current.endswith(('?', '&')) or stripped.startswith(('?', '&'))):
+            if current.endswith(('?', '&')) and stripped.startswith(('?', '&')):
+                stripped = stripped[1:]
+            elif stripped.startswith('?') and '?' in current:
+                stripped = '&' + stripped[1:]
+            current += stripped
+        elif current:
+            configs.append(current)
+            current = ""
     if current:
         configs.append(current)
     return configs
@@ -1047,645 +1237,540 @@ def is_clash_content(content: str) -> bool:
         return True
     return False
 
+# YAML читается ТОЛЬКО чистым SafeLoader: CSafeLoader падает с SIGSEGV на [[[[…]]]]
+# глубиной ~1e5 (файл в 200 КБ ронял бы весь процесс), чистый даёт RecursionError.
+_YAML_LOADER = getattr(yaml, 'SafeLoader', None) if HAS_YAML else None
+
+def _pq(s: str) -> str:
+    return urllib.parse.quote(s, safe='')
+
+def _ys(v, limit: int = 4096) -> str:
+    """Скаляр YAML -> строка. Списки/словари -> '': str() от alias-«бомбы»
+    (&a [*b,*b,…]) строит гигабайты, поэтому вложенное никогда не превращается в текст."""
+    if isinstance(v, bool):
+        return 'true' if v else 'false'
+    if isinstance(v, (str, int, float)):
+        s = str(v).strip()
+        return s if len(s) <= limit else ''
+    return ''
+
+def _yl(v, limit: int = 16) -> List[str]:
+    """Список скаляров или строка 'a,b' -> список строк; всё прочее -> []."""
+    items = [_ys(x, 256) for x in v[:limit]] if isinstance(v, list) else _ys(v, 1024).split(',')
+    return [x.strip() for x in items if x and x.strip()]
+
+def _yd(v) -> dict:
+    return v if isinstance(v, dict) else {}
+
+def _clash_flag(v) -> bool:
+    """Флаг небезопасности: всё, кроме явного «выключено», считается ВКЛЮЧЁННЫМ."""
+    if v is None or v is False:
+        return False
+    if v is True:
+        return True
+    if isinstance(v, (int, float)):
+        return v != 0
+    if isinstance(v, str):
+        return v.strip().lower() not in FALSE_SET     # пустая строка тоже «включено»
+    return True                                       # список/словарь — подозрительно
+
+def _clash_true(v) -> bool:
+    """tls включён только явным true — как в Mihomo."""
+    if isinstance(v, bool):
+        return v
+    if isinstance(v, int):
+        return v == 1
+    return isinstance(v, str) and v.strip().lower() in TRUE_SET
+
 def clash_to_uris(content: str) -> List[str]:
+    """Clash/Mihomo YAML -> ссылки. Берутся только proxies (proxy-providers с чужими
+    URL не скачиваются). Каждая ссылка потом проходит ТУ ЖЕ проверку, что и обычная."""
     if not HAS_YAML:
         return []
     try:
-        data = yaml.safe_load(content)
-        if not isinstance(data, dict) or 'proxies' not in data:
-            return []
-        uris = []
-        for p in data.get('proxies') or []:
-            if not isinstance(p, dict):
-                continue
-            u = _clash_proxy_to_uri(p)
-            if u:
-                uris.append(u)
-        return uris
-    except Exception:
+        data = yaml.load(content, Loader=_YAML_LOADER)
+    except Exception:                                 # в т.ч. RecursionError
         return []
-
-def _clash_flag(p: dict, *keys) -> bool:
-    for k in keys:
-        v = p.get(k)
-        if v is not None and _flag_on(str(v)):
-            return True
-    return False
-
-def _clash_alpn(p: dict) -> str:
-    al = p.get('alpn')
-    if isinstance(al, list):
-        return ','.join(str(x) for x in al)
-    return str(al) if al else ''
+    proxies = data.get('proxies') if isinstance(data, dict) else None
+    if not isinstance(proxies, list):
+        return []
+    uris = []
+    for p in proxies[:MAX_CLASH_PROXIES]:
+        if not isinstance(p, dict):
+            continue
+        try:
+            u = _clash_proxy_to_uri(p)
+        except Exception:
+            u = None
+        if u:
+            uris.append(u)
+    return uris
 
 def _clash_qs(params: dict) -> str:
-    return '&'.join(f'{k}={urllib.parse.quote(str(v), safe="")}'
-                    for k, v in params.items() if v not in (None, ''))
+    return '&'.join(f'{k}={_pq(v)}' for k, v in params.items() if v)
 
-def _clash_transport(p: dict, params: dict, net: str):
-    """ws/grpc/h2/http-опции Clash -> параметры ссылки."""
+def _clash_trust(p: dict, params: dict, insecure_key: str):
+    """Небезопасность НЕ теряется при конверсии — такой узел увидит и отбракует фильтр.
+    fingerprint (пин сертификата) отбрасывается: без него клиент проверяет цепочку
+    обычным образом, а сервер с самоподписанным сертификатом просто не подключится."""
+    if _clash_flag(p.get('skip-cert-verify')):
+        params[insecure_key] = '1'
+    if p.get('ca') or p.get('ca-str'):
+        params['ca'] = 'custom'
+    if _clash_flag(p.get('disable-sni')):
+        params['disable_sni'] = '1'
+
+def _clash_tls_params(p: dict, params: dict):
+    params['sni'] = _ys(p.get('servername')) or _ys(p.get('sni'))
+    params['alpn'] = ','.join(_yl(p.get('alpn')))
+    params['fp'] = _ys(p.get('client-fingerprint'))
+
+def _clash_transport(p: dict, params: dict) -> bool:
+    """network + *-opts Clash -> type/path/host/serviceName ссылки. False — не умеем."""
+    net = _ys(p.get('network')).lower() or 'tcp'
     if net == 'ws':
-        wo = p.get('ws-opts') or {}
-        if isinstance(wo, dict):
-            if wo.get('path'):
-                params['path'] = str(wo['path'])
-            wh = wo.get('headers') or {}
-            if isinstance(wh, dict):
-                hv = wh.get('Host') or wh.get('host')
-                if hv:
-                    params['host'] = str(hv)
+        wo = _yd(p.get('ws-opts'))
+        hdr = _yd(wo.get('headers'))
+        params['type'] = 'httpupgrade' if _clash_true(wo.get('v2ray-http-upgrade')) else 'ws'
+        params['path'] = _ys(wo.get('path'))
+        params['host'] = _ys(hdr.get('Host')) or _ys(hdr.get('host'))
     elif net == 'grpc':
-        go = p.get('grpc-opts') or {}
-        if isinstance(go, dict) and go.get('grpc-service-name'):
-            params['serviceName'] = str(go['grpc-service-name'])
-    elif net in ('h2', 'http'):
-        ho = p.get('h2-opts') or p.get('http-opts') or {}
-        if isinstance(ho, dict):
-            for key, dst in (('path', 'path'), ('host', 'host')):
-                v = ho.get(key)
-                if isinstance(v, list) and v:
-                    v = v[0]
-                if v:
-                    params[dst] = str(v)
+        params['type'] = 'grpc'
+        params['serviceName'] = _ys(_yd(p.get('grpc-opts')).get('grpc-service-name'))
+    elif net == 'h2':                                 # HTTP/2 = «http» в терминах Xray-ссылок
+        ho = _yd(p.get('h2-opts'))
+        params['type'] = 'http'
+        params['path'] = _ys(ho.get('path'))
+        params['host'] = ','.join(_yl(ho.get('host')))
+    elif net == 'http':                               # HTTP/1.1-маскировка поверх TCP (не h2!)
+        ho = _yd(p.get('http-opts'))
+        hdr = _yd(ho.get('headers'))
+        params['type'] = 'tcp'
+        params['headerType'] = 'http'
+        params['path'] = ','.join(_yl(ho.get('path')))
+        params['host'] = ','.join(_yl(hdr.get('Host') if 'Host' in hdr else hdr.get('host')))
+    elif net == 'tcp':
+        params['type'] = 'tcp'
+    else:
+        return False                                  # xhttp/kcp/quic и прочее
+    return True
 
 def _clash_proxy_to_uri(p: dict) -> Optional[str]:
-    t = str(p.get('type', '')).lower()
-    name = str(p.get('name', ''))
-    host = str(p.get('server', ''))
-    try:
-        port = int(p.get('port', 0))
-    except (ValueError, TypeError):
+    t = _ys(p.get('type')).lower()
+    host = _ys(p.get('server'), 255)
+    port = p.get('port')
+    if (not host or isinstance(port, bool) or not isinstance(port, (int, str))
+            or not str(port).strip().isdigit()):
         return None
-    if not host:
-        return None
-    frag = urllib.parse.quote(name)
-    hp = f"{_bracket(host)}:{port}"
-    # skip-cert-verify НЕ теряем: превращаем в allowInsecure=1, и фильтр такой узел отбракует
-    # (раньше флаг пропадал, и небезопасный узел выглядел «чистым»)
-    insecure = _clash_flag(p, 'skip-cert-verify')
+    port = int(str(port).strip())
+    hp = f'{_bracket(host)}:{port}'
+    name = _sanitize_name(_ys(p.get('name'), 1024))[:MAX_NAME_LEN]
+    frag = '#' + _pq(name) if name else ''
+    params: Dict[str, str] = {}
 
     if t == 'vless':
-        params = {}
-        if p.get('reality-opts'):
-            params['security'] = 'reality'
-            ro = p['reality-opts'] if isinstance(p['reality-opts'], dict) else {}
-            if ro.get('public-key'):
-                params['pbk'] = ro['public-key']
-            if ro.get('short-id'):
-                params['sid'] = ro['short-id']
-        elif p.get('tls'):
+        ro = _yd(p.get('reality-opts'))
+        if not _clash_true(p.get('tls')):
+            params['security'] = 'none'               # -> «нет TLS», отбраковка с причиной
+        elif _ys(ro.get('public-key')):
+            params.update(security='reality', pbk=_ys(ro.get('public-key')),
+                          sid=_ys(ro.get('short-id')))
+        else:
             params['security'] = 'tls'
-        else:
-            params['security'] = 'none'
-        params['sni'] = p.get('servername') or p.get('sni')
-        params['fp'] = p.get('client-fingerprint')
-        params['flow'] = p.get('flow')
-        params['alpn'] = _clash_alpn(p)
-        if insecure:
-            params['allowInsecure'] = '1'
-        net = str(p.get('network', 'tcp'))
-        params['type'] = 'http' if net == 'h2' else net
-        _clash_transport(p, params, net)
-        return f"vless://{p.get('uuid', '')}@{hp}?{_clash_qs(params)}#{frag}"
-    if t == 'vmess':
-        return _clash_vmess_to_uri(p, name, host, port, insecure)
-    if t == 'trojan':
-        params = {'sni': p.get('sni') or p.get('servername'), 'alpn': _clash_alpn(p)}
-        if insecure:
-            params['allowInsecure'] = '1'
-        net = str(p.get('network', 'tcp'))
-        if net != 'tcp':
-            params['type'] = 'http' if net == 'h2' else net
-            _clash_transport(p, params, net)
-        return f"trojan://{urllib.parse.quote(str(p.get('password', '')), safe='')}@{hp}?{_clash_qs(params)}#{frag}"
-    if t in ('hysteria2', 'hy2'):
-        params = {'sni': p.get('sni'), 'alpn': _clash_alpn(p),
-                  'obfs': p.get('obfs'), 'obfs-password': p.get('obfs-password'),
-                  'mport': p.get('ports') or p.get('mport')}
-        if insecure:
-            params['insecure'] = '1'
-        qs = _clash_qs(params)
-        return (f"hysteria2://{urllib.parse.quote(str(p.get('password', '')), safe='')}@{hp}"
-                + (f"?{qs}" if qs else '') + f"#{frag}")
-    if t == 'tuic':
-        # Clash/Mihomo TUIC v5 хранит uuid + password; token — это v4 (не поддерживается)
-        if p.get('uuid'):
-            cred = f"{p['uuid']}:{urllib.parse.quote(str(p.get('password', '')), safe='')}"
-        else:
-            cred = urllib.parse.quote(str(p.get('token', '')), safe='')
-        params = {'sni': p.get('sni'), 'alpn': _clash_alpn(p),
-                  'congestion_control': p.get('congestion-controller'),
-                  'udp_relay_mode': p.get('udp-relay-mode')}
-        if insecure:
-            params['allow_insecure'] = '1'
-        qs = _clash_qs(params)
-        return f"tuic://{cred}@{hp}" + (f"?{qs}" if qs else '') + f"#{frag}"
-    if t == 'ss':
-        try:
-            userinfo = f"{p.get('cipher', '')}:{p.get('password', '')}"
-            ub = base64.urlsafe_b64encode(userinfo.encode()).decode().rstrip('=')
-        except Exception:
+        _clash_tls_params(p, params)
+        params['flow'] = _ys(p.get('flow'))
+        params['encryption'] = _ys(p.get('encryption'))
+        if not _clash_transport(p, params):
             return None
-        qs = ''
-        plug = str(p.get('plugin') or '')
-        if plug:
-            po = p.get('plugin-opts') or {}
-            if not isinstance(po, dict):
-                po = {}
-            if plug in ('obfs', 'obfs-local', 'simple-obfs'):
-                s = f"obfs-local;obfs={po.get('mode', 'http')}"
-                if po.get('host'):
-                    s += f";obfs-host={po['host']}"
-            else:
-                s = plug
-                if po.get('mode'):
-                    s += f";mode={po['mode']}"
-                if po.get('tls'):
-                    s += ';tls'
-                if po.get('host'):
-                    s += f";host={po['host']}"
-                if po.get('path'):
-                    s += f";path={po['path']}"
-            qs = '?plugin=' + urllib.parse.quote(s, safe='')
-        return f"ss://{ub}@{hp}{qs}#{frag}"
-    return None                       # ssr и прочее — не поддерживаются
+        _clash_trust(p, params, 'allowInsecure')
+        return f"vless://{_pq(_ys(p.get('uuid')))}@{hp}?{_clash_qs(params)}{frag}"
+    if t == 'vmess':
+        return _clash_vmess_to_uri(p, name, host, port)
+    if t == 'trojan':
+        so = _yd(p.get('ss-opts'))
+        if so and _clash_flag(so.get('enabled')):
+            return None                               # trojan-go + shadowsocks: клиенты не умеют
+        if _ys(_yd(p.get('reality-opts')).get('public-key')):
+            params['security'] = 'reality'            # -> отбраковка (trojan только с tls)
+        _clash_tls_params(p, params)
+        if not _clash_transport(p, params):
+            return None
+        _clash_trust(p, params, 'allowInsecure')
+        return f"trojan://{_pq(_ys(p.get('password')))}@{hp}?{_clash_qs(params)}{frag}"
+    if t in ('hysteria2', 'hy2'):
+        params.update(sni=_ys(p.get('sni')), alpn=','.join(_yl(p.get('alpn'))),
+                      obfs=_ys(p.get('obfs')), mport=_ys(p.get('ports')))
+        params['obfs-password'] = _ys(p.get('obfs-password'))
+        _clash_trust(p, params, 'insecure')
+        return f"hysteria2://{_pq(_ys(p.get('password')))}@{hp}?{_clash_qs(params)}{frag}"
+    if t == 'tuic':
+        uuid = _ys(p.get('uuid'))
+        if not uuid:
+            return None                               # TUIC v4 (token) клиенты не поддерживают
+        params.update(sni=_ys(p.get('sni')), alpn=','.join(_yl(p.get('alpn'))),
+                      congestion_control=_ys(p.get('congestion-controller')),
+                      udp_relay_mode=_ys(p.get('udp-relay-mode')))
+        _clash_trust(p, params, 'allow_insecure')
+        return (f"tuic://{_pq(uuid)}:{_pq(_ys(p.get('password')))}@{hp}"
+                f"?{_clash_qs(params)}{frag}")
+    if t == 'ss':
+        cipher, pwd = _ys(p.get('cipher')).lower(), _ys(p.get('password'))
+        if not cipher or not pwd:
+            return None
+        ub = base64.urlsafe_b64encode(f'{cipher}:{pwd}'.encode('utf-8')).decode('ascii').rstrip('=')
+        plug = _ys(p.get('plugin')).lower()
+        if plug in ('obfs', 'obfs-local', 'simple-obfs'):
+            po = _yd(p.get('plugin-opts'))
+            plug = f"obfs-local;obfs={_ys(po.get('mode')) or 'http'}"
+            if _ys(po.get('host')):
+                plug += f";obfs-host={_ys(po.get('host'))}"
+        # прочие плагины передаются одним именем: фильтр отбракует их с понятной причиной
+        return f"ss://{ub}@{hp}" + (f'?plugin={_pq(plug)}' if plug else '') + frag
+    return None                                       # ssr и прочее — не поддерживаются
 
-def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int,
-                        insecure: bool = False) -> Optional[str]:
-    net = str(p.get('network', 'tcp'))
+def _clash_vmess_to_uri(p: dict, name: str, host: str, port: int) -> Optional[str]:
+    if _ys(_yd(p.get('reality-opts')).get('public-key')):
+        return None                                   # vmess+reality в JSON-форме не выражается
+    tp: Dict[str, str] = {}
+    if not _clash_transport(p, tp):
+        return None
     cfg = {
-        'v': '2',
-        'ps': name,
-        'add': host,
-        'port': str(port),
-        'id': str(p.get('uuid', '')),
-        'aid': str(p.get('alterId', 0)),
-        'scy': str(p.get('cipher', 'auto')),
-        'net': net,
-        'tls': 'tls' if p.get('tls') else '',
-        'type': 'none',
+        'v': '2', 'ps': name, 'add': host, 'port': str(port),
+        'id': _ys(p.get('uuid')), 'aid': _ys(p.get('alterId')) or '0',
+        'scy': _ys(p.get('cipher')) or 'auto',
+        'net': {'http': 'h2'}.get(tp['type'], tp['type']),
+        'type': tp.get('headerType', 'none'), 'host': tp.get('host', ''),
+        'path': tp.get('serviceName') or tp.get('path', ''),
+        'tls': 'tls' if _clash_true(p.get('tls')) else '',
+        'sni': _ys(p.get('servername')) or _ys(p.get('sni')),
+        'alpn': ','.join(_yl(p.get('alpn'))), 'fp': _ys(p.get('client-fingerprint')),
     }
-    sni = p.get('servername') or p.get('sni')
-    if sni:
-        cfg['sni'] = str(sni)
-    if _clash_alpn(p):
-        cfg['alpn'] = _clash_alpn(p)
-    if insecure:
-        cfg['allowInsecure'] = 1
-    tmp = {}
-    _clash_transport(p, tmp, net)
-    if tmp.get('path'):
-        cfg['path'] = tmp['path']
-    if tmp.get('host'):
-        cfg['host'] = tmp['host']
-    if tmp.get('serviceName'):
-        cfg['path'] = tmp['serviceName']
-    j = json.dumps(cfg, separators=(',', ':'), ensure_ascii=False)
-    return 'vmess://' + base64.b64encode(j.encode()).decode()
+    if _clash_flag(p.get('skip-cert-verify')):
+        cfg['allowInsecure'] = '1'                    # -> отбраковка
+    if p.get('ca') or p.get('ca-str'):
+        cfg['ca'] = 'custom'                          # -> отбраковка
+    j = json.dumps({k: v for k, v in cfg.items() if v != ''},
+                   ensure_ascii=False, separators=(',', ':'))
+    return 'vmess://' + base64.b64encode(j.encode('utf-8')).decode('ascii')
 
 # =====================================================================
 #  CLASH OUTPUT (URI -> YAML)
 # =====================================================================
 
+# Встроенные политики/группа Mihomo: прокси с именем «DIRECT» в группе выглядел бы как
+# узел, а повтор имени группы ломает загрузку всего файла.
+_RESERVED_CLASH_NAMES = {'direct', 'reject', 'reject-drop', 'pass', 'compatible', 'global', 'proxy'}
+
+# Символы, из-за которых go-yaml/PyYAML отвергают ВЕСЬ файл, или ломающие строку.
+_YAML_UNSAFE_RE = re.compile('[\x00-\x1f\x7f-\x9f\u2028\u2029\ud800-\udfff\ufffe\uffff]')
+
 def _sanitize_name(s) -> str:
-    """Убирает переносы строк, табы, control characters из имени прокси."""
-    s = str(s)
-    # Убираем newline, carriage return, tab и control characters
-    s = re.sub(r'[\x00-\x1f\x7f-\x9f\u2028\u2029]', ' ', s)
-    # Убираем множественные пробелы
-    s = re.sub(r'\s+', ' ', s).strip()
-    return s
+    """Имя прокси: без переносов, управляющих, невидимых и недопустимых в YAML символов."""
+    s = _INVISIBLE_RE.sub('', str(s))
+    s = _YAML_UNSAFE_RE.sub(' ', s)
+    return re.sub(r'\s+', ' ', s).strip()
 
 def _q(s) -> str:
-    """Любая строка -> валидный YAML double-quoted скаляр (через json.dumps).
-
-    Старая версия не экранировала '\\' и использовала bare-скаляры, из-за чего имя вида
-    foo'\\ ломало весь YAML, а пароль 123456/yes/null превращался в число/bool/null.
-    """
+    """Имя -> YAML double-quoted скаляр (JSON-строка — валидный YAML)."""
     return json.dumps(_sanitize_name(s), ensure_ascii=False)
 
-def uri_to_clash(uri: str) -> Optional[dict]:
-    name = ''
-    if '#' in uri:
-        uri, _, frag = uri.partition('#')
-        try:
-            name = urllib.parse.unquote(frag)
-        except Exception:
-            name = frag
-    name = _sanitize_name(name)
-    proto = uri.split('://')[0].lower()
-    if proto == 'vless':
-        return _vless_to_clash(uri, name)
-    if proto == 'vmess':
-        return _vmess_to_clash(uri, name)
-    if proto == 'trojan':
-        return _trojan_to_clash(uri, name)
-    if proto in ('hysteria2', 'hy2'):
-        return _hy2_to_clash(uri, name)
-    if proto == 'tuic':
-        return _tuic_to_clash(uri, name)
-    if proto == 'ss':
-        return _ss_to_clash(uri, name)
-    return None
+def _qv(v) -> str:
+    """Значение (пароль, путь…) -> YAML-строка; пробелы не трогаются."""
+    return json.dumps(_YAML_UNSAFE_RE.sub('', str(v)), ensure_ascii=False)
 
-def _getparams(uri: str) -> dict:
-    """Параметры ссылки с раскодированными значениями; ключи в нижнем регистре."""
-    if '?' not in uri:
-        return {}
-    return dict(parse_query(uri.split('?', 1)[1]))
+def _clash_tls_fields(q: Q, out: dict, sni_key: str = 'servername'):
+    sni = qget(q, 'sni', 'peer', 'servername').strip()
+    if sni:
+        out[sni_key] = sni
+    alpn = _norm_alpn(qget(q, 'alpn'))
+    if alpn:
+        out['alpn'] = alpn
+    fp = qget(q, 'fp', 'fingerprint').strip().lower()
+    if fp in SAFE_FINGERPRINTS:
+        out['client-fingerprint'] = fp
+    out['skip-cert-verify'] = False                   # явно: сертификат проверяется
 
-def _vless_to_clash(uri: str, name: str) -> Optional[dict]:
-    # IPv6 bracket
-    m6 = re.search(r'vless://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
-    if m6:
-        uuid, host, port = m6.group(1), m6.group(2), int(m6.group(3))
-    else:
-        m = re.search(r'vless://([^@]+)@([^:/?#]+):(\d+)', uri)
-        if not m:
-            return None
-        uuid, host, port = m.group(1), m.group(2), int(m.group(3))
-    p = _getparams(uri)
-    out = {
-        'name': name or f"{host}:{port}",
-        'type': 'vless',
-        'server': host,
-        'port': port,
-        'uuid': uuid,
-        'udp': True,
-    }
-    sec = p.get('security', '')
-    if sec in ('tls', 'reality'):
-        out['tls'] = True
-        if p.get('sni'):
-            out['servername'] = p['sni']
-        if p.get('alpn'):
-            out['alpn'] = p['alpn'].split(',')
-        if p.get('fp'):
-            out['client-fingerprint'] = p['fp']
-        if sec == 'reality':
-            ro = {}
-            if p.get('pbk'):
-                ro['public-key'] = p['pbk']
-            if p.get('sid'):
-                ro['short-id'] = p['sid']
-            out['reality-opts'] = ro
-        if p.get('flow'):
-            out['flow'] = p['flow']
-    net = p.get('type', 'tcp')
-    out['network'] = net
-    if net == 'ws':
-        wo = {}
-        if p.get('path'):
-            wo['path'] = p['path']
-        if p.get('host'):
-            wo['headers'] = {'Host': p['host']}
-        out['ws-opts'] = wo
-    elif net == 'grpc':
-        go = {}
-        if p.get('servicename'):
-            go['grpc-service-name'] = p['servicename']
-        out['grpc-opts'] = go
-    elif net in ('http', 'h2'):
-        ho = {}
-        if p.get('path'):
-            ho['path'] = [p['path']]
-        if p.get('host'):
-            ho['host'] = [p['host']]
-        out['h2-opts'] = ho
-        out['network'] = 'h2'
-    return out
+_CLASH_TLS_NETS = ('tcp', 'tcp-http', 'ws', 'httpupgrade', 'grpc', 'http')
 
-def _vmess_to_clash(uri: str, name: str) -> Optional[dict]:
-    body = uri.replace('vmess://', '', 1)
-    if '@' in body.split('?')[0]:
-        # IPv6 bracket
-        m6 = re.search(r'vmess://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
-        if m6:
-            uuid, host, port = m6.group(1), m6.group(2), int(m6.group(3))
-        else:
-            m = re.search(r'vmess://([^@]+)@([^:/?#]+):(\d+)', uri)
-            if not m:
-                return None
-            uuid, host, port = m.group(1), m.group(2), int(m.group(3))
-        p = _getparams(uri)
-        try:
-            aid = int(p.get('alterid', '0'))
-        except ValueError:
-            aid = 0
-        out = {
-            'name': name or f"{host}:{port}",
-            'type': 'vmess',
-            'server': host,
-            'port': port,
-            'uuid': uuid,
-            'alterId': aid,
-            'cipher': p.get('encryption', 'auto'),
-            'udp': True,
-        }
-        sec = p.get('security', '')
-        if sec in ('tls', 'reality'):
-            out['tls'] = True
-            if p.get('sni'):
-                out['servername'] = p['sni']
-            if p.get('alpn'):
-                out['alpn'] = p['alpn'].split(',')
-        net = p.get('type', 'tcp')
-        out['network'] = net if net != 'h2' else 'h2'
-        if net == 'ws':
-            wo = {}
-            if p.get('path'):
-                wo['path'] = p['path']
-            if p.get('host'):
-                wo['headers'] = {'Host': p['host']}
-            out['ws-opts'] = wo
-        elif net == 'grpc':
-            go = {}
-            if p.get('servicename'):
-                go['grpc-service-name'] = p['servicename']
-            out['grpc-opts'] = go
-        return out
-    else:
-        b64 = body.split('#')[0].split('?')[0]
-        try:
-            missing = len(b64) % 4
-            if missing:
-                b64 += '=' * (4 - missing)
-            decoded = base64.b64decode(b64).decode('utf-8')
-            cfg = json.loads(decoded)
-            try:
-                aid = int(cfg.get('aid', 0))
-            except (ValueError, TypeError):
-                aid = 0
-            name_val = name or cfg.get('ps', f"{cfg.get('add')}:{cfg.get('port')}")
-            out = {
-                'name': _sanitize_name(name_val),
-                'type': 'vmess',
-                'server': str(cfg.get('add', '')),
-                'port': int(cfg.get('port', 443)),
-                'uuid': str(cfg.get('id', '')),
-                'alterId': aid,
-                'cipher': str(cfg.get('scy', 'auto')),
-                'udp': True,
-            }
-            if cfg.get('tls') in ('tls', True, 'true'):
-                out['tls'] = True
-            if cfg.get('sni'):
-                out['servername'] = str(cfg['sni'])
-            net = str(cfg.get('net', 'tcp')).lower()
-            out['network'] = net
-            if net == 'ws':
-                wo = {}
-                if cfg.get('path'):
-                    wo['path'] = str(cfg['path'])
-                if cfg.get('host'):
-                    wo['headers'] = {'Host': str(cfg['host'])}
-                out['ws-opts'] = wo
-            elif net == 'grpc':
-                go = {}
-                if cfg.get('path'):
-                    go['grpc-service-name'] = str(cfg['path'])
-                out['grpc-opts'] = go
-            return out
-        except Exception:
-            return None
-
-def _trojan_to_clash(uri: str, name: str) -> Optional[dict]:
-    m6 = re.search(r'trojan://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
-    if m6:
-        pwd, host, port = m6.group(1), m6.group(2), int(m6.group(3))
-    else:
-        m = re.search(r'trojan://([^@]+)@([^:/?#]+):(\d+)', uri)
-        if not m:
-            return None
-        pwd, host, port = m.group(1), m.group(2), int(m.group(3))
-    p = _getparams(uri)
-    out = {
-        'name': name or f"{host}:{port}",
-        'type': 'trojan',
-        'server': host,
-        'port': port,
-        'password': pwd,
-        'udp': True,
-    }
-    if p.get('sni'):
-        out['sni'] = p['sni']
-    if p.get('alpn'):
-        out['alpn'] = p['alpn'].split(',')
-    net = p.get('type', 'tcp')
-    if net == 'ws':
+def _clash_net(q: Q, out: dict, allowed: tuple) -> bool:
+    """type/path/host ссылки -> network + *-opts. False — Mihomo так не умеет (xhttp, kcp)."""
+    net = _read_net(q)
+    if net == 'tcp' and q.get('headertype', '').strip().lower() == 'http':
+        net = 'tcp-http'
+    if net not in allowed:
+        return False
+    path = q.get('path') or q.get('wspath', '')
+    hosts = [h.strip() for h in q.get('host', '').split(',') if h.strip()]
+    if net == 'tcp':
+        out['network'] = 'tcp'
+    elif net == 'tcp-http':
+        ho = {'method': 'GET', 'path': [x.strip() for x in path.split(',') if x.strip()] or ['/']}
+        if hosts:
+            ho['headers'] = {'Host': hosts}
+        out['network'] = 'http'
+        out['http-opts'] = ho
+    elif net in ('ws', 'httpupgrade'):
+        wo = {'path': path or '/'}
+        if hosts:
+            wo['headers'] = {'Host': hosts[0]}
+        if net == 'httpupgrade':
+            wo['v2ray-http-upgrade'] = True
         out['network'] = 'ws'
-        wo = {}
-        if p.get('path'):
-            wo['path'] = p['path']
-        if p.get('host'):
-            wo['headers'] = {'Host': p['host']}
         out['ws-opts'] = wo
     elif net == 'grpc':
         out['network'] = 'grpc'
-        go = {}
-        if p.get('servicename'):
-            go['grpc-service-name'] = p['servicename']
-        out['grpc-opts'] = go
-    return out
+        out['grpc-opts'] = {'grpc-service-name': qget(q, 'servicename', 'service_name')}
+    elif net == 'http':                               # «http» в Xray = HTTP/2
+        ho = {'path': path or '/'}
+        if hosts:
+            ho['host'] = hosts
+        out['network'] = 'h2'
+        out['h2-opts'] = ho
+    return True
 
-def _hy2_to_clash(uri: str, name: str) -> Optional[dict]:
-    m6 = re.search(r'(?:hysteria2|hy2)://([^@]*)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
-    if m6:
-        pwd, host, port = m6.group(1), m6.group(2), int(m6.group(3))
-    else:
-        m = re.search(r'(?:hysteria2|hy2)://([^@]*)@([^:/?#]+):(\d+)', uri)
-        if not m:
+def _mlkem768_key_ok(b: bytes) -> bool:
+    """FIPS 203: ключ инкапсуляции ML-KEM-768 = 768 коэффициентов по 12 бит (< 3329) + 32 байта."""
+    if len(b) != 1184:
+        return False
+    for i in range(0, 1152, 3):
+        x = b[i] | (b[i + 1] << 8) | (b[i + 2] << 16)
+        if (x & 0xFFF) >= 3329 or (x >> 12) >= 3329:
+            return False
+    return True
+
+def _vless_enc_ok(enc: str) -> bool:
+    """Ключи VLESS Encryption — как их проверяет Mihomo: один битый ключ ломает
+    загрузку ВСЕГО YAML (все узлы подписки), поэтому такой узел в Clash не пишется."""
+    keys = 0
+    for part in enc.split('.')[3:]:
+        if re.fullmatch(r'\d+-\d+-\d+', part):
+            continue                                  # блок padding
+        raw = b64d(part) if re.fullmatch(r'[A-Za-z0-9_-]+', part) else None
+        if raw is None or not (len(raw) == 32 or _mlkem768_key_ok(raw)):
+            return False
+        keys += 1
+    return keys > 0
+
+def _clash_vless(c: Cfg) -> Optional[dict]:
+    q = c.q
+    out = {'type': 'vless', 'uuid': c.uuid, 'udp': True, 'tls': True}
+    flow = q.get('flow', '').strip().lower()
+    if flow == 'xtls-rprx-vision':
+        out['flow'] = flow
+    elif flow not in ('', 'none'):
+        return None                                   # неизвестный flow Mihomo не грузит
+    enc = q.get('encryption', '').strip()
+    if enc and enc.lower() != 'none':
+        if not _vless_enc_ok(enc):
             return None
-        pwd, host, port = m.group(1), m.group(2), int(m.group(3))
-    p = _getparams(uri)
-    out = {
-        'name': name or f"{host}:{port}",
-        'type': 'hysteria2',
-        'server': host,
-        'port': port,
-        'password': pwd,
-    }
-    if p.get('sni'):
-        out['sni'] = p['sni']
-    if p.get('insecure'):
-        out['skip-cert-verify'] = p['insecure'] in ('1', 'true', 'True')
-    if p.get('obfs'):
-        out['obfs'] = p['obfs']
-    if p.get('obfs-password'):
-        out['obfs-password'] = p['obfs-password']
+        out['encryption'] = enc
+    _clash_tls_fields(q, out)
+    if q.get('security') == 'reality':
+        ro = {'public-key': c.pbk.rstrip('=')}       # Mihomo читает ключ строго без '='
+        if c.sid:
+            ro['short-id'] = c.sid
+        out['reality-opts'] = ro
+    return out if _clash_net(q, out, _CLASH_TLS_NETS) else None
+
+def _vmess_json_q(j: dict) -> Q:
+    """Поля vmess JSON -> параметры как у ссылки (для общего построения Clash)."""
+    low = {str(k).lower(): ('' if v is None else str(v).strip()) for k, v in j.items()}
+
+    def g(*keys):
+        return next((low[k] for k in keys if low.get(k)), '')
+
+    q = Q()
+    net = (g('net', 'network') or 'tcp').lower()
+    q['type'] = net
+    if g('type').lower() == 'http':
+        q['headertype'] = 'http'
+    q['host'], q['path'] = g('host'), g('path')
+    if net == 'grpc':
+        q['servicename'] = g('path')
+    q['sni'], q['alpn'], q['fp'] = g('sni', 'sn', 'servername'), g('alpn'), g('fp', 'fingerprint')
+    q['scy'] = g('scy', 'security', 'cipher').lower()
+    return q
+
+def _clash_vmess(c: Cfg) -> Optional[dict]:
+    if c.j is None:                                   # URL-форма vmess://uuid@host:port?…
+        q = c.q
+        if q.get('security') != 'tls':
+            return None                               # vmess+reality Mihomo не поддерживает
+        scy = q.get('encryption', '').strip().lower()
+    else:
+        q = _vmess_json_q(c.j)
+        scy = q['scy']
+    out = {'type': 'vmess', 'uuid': c.uuid, 'alterId': 0,
+           'cipher': scy if scy in ('aes-128-gcm', 'chacha20-poly1305') else 'auto',
+           'udp': True, 'tls': True}
+    _clash_tls_fields(q, out)
+    return out if _clash_net(q, out, _CLASH_TLS_NETS) else None
+
+def _clash_trojan(c: Cfg) -> Optional[dict]:
+    q = c.q
+    out = {'type': 'trojan', 'password': c.password, 'udp': True}
+    _clash_tls_fields(q, out, 'sni')
+    if not _clash_net(q, out, ('tcp', 'ws', 'grpc')):
+        return None
+    if out.get('network') == 'tcp':
+        del out['network']
     return out
 
-def _tuic_to_clash(uri: str, name: str) -> Optional[dict]:
-    m6 = re.search(r'tuic://([^@]+)@\[([0-9a-fA-F:]+)\]:(\d+)', uri)
-    if m6:
-        cred, host, port = m6.group(1), m6.group(2), int(m6.group(3))
-    else:
-        m = re.search(r'tuic://([^@]+)@([^:/?#]+):(\d+)', uri)
-        if not m:
-            return None
-        cred, host, port = m.group(1), m.group(2), int(m.group(3))
-    p = _getparams(uri)
-    out = {
-        'name': name or f"{host}:{port}",
-        'type': 'tuic',
-        'server': host,
-        'port': port,
-    }
-    if ':' in cred:
-        tok, _, pwd = cred.partition(':')
-        out['uuid'] = tok
-        out['password'] = urllib.parse.unquote(pwd)
-    else:
-        out['token'] = cred
-    if p.get('sni'):
-        out['sni'] = p['sni']
-    if p.get('congestion_control'):
-        out['congestion-controller'] = p['congestion_control']
-    if p.get('udp_relay_mode'):
-        out['udp-relay-mode'] = p['udp_relay_mode']
-    if p.get('alpn'):
-        out['alpn'] = p['alpn'].split(',')
+def _clash_hy2(c: Cfg) -> Optional[dict]:
+    q = c.q
+    out = {'type': 'hysteria2', 'password': c.password, 'udp': True,
+           'sni': qget(q, 'sni', 'peer').strip()}
+    alpn = _norm_alpn(qget(q, 'alpn'))
+    if alpn:
+        out['alpn'] = alpn
+    ob = qget(q, 'obfs').strip().lower()
+    if ob:
+        out['obfs'] = ob
+        out['obfs-password'] = qget(q, 'obfs-password', 'obfspassword', 'obfs-param', 'obfsparam')
+    ports = qget(q, 'mport', 'ports').strip() or c.ports
+    if ports:
+        out['ports'] = ports
+    out['skip-cert-verify'] = False
     return out
 
-def _ss_to_clash(uri: str, name: str) -> Optional[dict]:
+def _clash_tuic(c: Cfg) -> Optional[dict]:
+    q = c.q
+    out = {'type': 'tuic', 'uuid': c.uuid, 'password': c.password, 'udp': True,
+           'sni': qget(q, 'sni', 'peer').strip(),
+           'alpn': _norm_alpn(qget(q, 'alpn')) or ['h3']}
+    cc = qget(q, 'congestion_control', 'congestioncontrol', 'cc').strip().lower()
+    if cc:
+        out['congestion-controller'] = cc
+    urm = qget(q, 'udp_relay_mode', 'udprelaymode').strip().lower()
+    if urm:
+        out['udp-relay-mode'] = urm
+    out['skip-cert-verify'] = False
+    return out
+
+def _clash_ss(c: Cfg) -> Optional[dict]:
+    out = {'type': 'ss', 'cipher': c.method, 'password': c.password, 'udp': True}
+    if c.plugin:                                      # фильтр пропускает только obfs-local + obfs=http
+        plug = unquote(c.plugin)
+        if '%3b' in plug.partition(';')[0].lower():
+            plug = unquote(plug)
+        kv = {}
+        for part in plug.partition(';')[2].split(';'):
+            k, _, v = part.partition('=')
+            if k.strip():
+                kv[k.strip().lower()] = v.strip()
+        po = {'mode': kv.get('obfs') or 'http'}
+        if kv.get('obfs-host'):
+            po['host'] = kv['obfs-host']
+        out['plugin'] = 'obfs'
+        out['plugin-opts'] = po
+    return out
+
+_CLASH_BUILDERS = {'vless': _clash_vless, 'vmess': _clash_vmess, 'trojan': _clash_trojan,
+                   'hysteria2': _clash_hy2, 'tuic': _clash_tuic, 'ss': _clash_ss}
+
+def _clash_proxy_is_safe(p: dict) -> bool:
+    """Последний рубеж перед записью YAML: без TLS / без проверки сертификата — не пишем."""
+    t = p.get('type')
+    if t not in ('vless', 'vmess', 'trojan', 'hysteria2', 'tuic', 'ss'):
+        return False
+    if any(k in p for k in ('fingerprint', 'ca', 'ca-str', 'disable-sni')):
+        return False
+    if t == 'ss':
+        return p.get('cipher') in SAFE_SS_CANON and p.get('plugin') in (None, 'obfs')
+    if p.get('skip-cert-verify') is not False:
+        return False
+    if t in ('vless', 'vmess') and p.get('tls') is not True:
+        return False
+    ro = p.get('reality-opts')
+    return ro is None or (isinstance(ro, dict) and bool(ro.get('public-key')))
+
+def uri_to_clash(uri: str) -> Optional[dict]:
+    """Clash-прокси из ТОГО ЖЕ разбора (_parse_line), что прошёл проверку. В v6.0 второй
+    парсер на регулярках по-своему читал IPv6, пароли и транспорт."""
+    reason, c = _parse_line(uri)
+    if reason or c is None:
+        return None
     try:
-        after = uri.split('://', 1)[1].split('#')[0].split('?')[0]
-        if '@' not in after:
-            return None
-        userinfo, hostport = after.rsplit('@', 1)
-        hostport = hostport.split('/', 1)[0]
-        userinfo = unquote(userinfo)
-        dec = b64d(userinfo)             # url-safe/std, с паддингом и без
-        if dec is not None and b':' in dec:
-            t = dec.decode('utf-8', errors='ignore')
-            if t.partition(':')[0].lower() in (SAFE_SS_METHODS | WEAK_SS_METHODS):
-                userinfo = t
-        if ':' not in userinfo:
-            return None
-        method, password = userinfo.split(':', 1)
-        if hostport.startswith('['):
-            m6 = re.match(r'\[([0-9a-fA-F:]+)\]:(\d+)', hostport)
-            if not m6:
-                return None
-            host, port = m6.group(1), m6.group(2)
-        else:
-            if ':' not in hostport:
-                return None
-            host, port = hostport.rsplit(':', 1)
-        out = {
-            'name': name or f"{host}:{port}",
-            'type': 'ss',
-            'server': host,
-            'port': int(port),
-            'cipher': method,
-            'password': password,
-            'udp': True,
-        }
-        p = _getparams(uri)
-        if p.get('plugin'):
-            plugin = p['plugin'].split(';')
-            kv = {}
-            for opt in plugin[1:]:
-                k, _, v = opt.partition('=')
-                kv[k.strip().lower()] = v
-            pname = SS_PLUGIN_ALIAS.get(plugin[0].strip().lower(), plugin[0].strip().lower())
-            if pname == 'obfs-local':
-                out['plugin'] = 'obfs'
-                po = {'mode': kv.get('obfs', 'http')}
-                if kv.get('obfs-host'):
-                    po['host'] = kv['obfs-host']
-                out['plugin-opts'] = po
-            elif pname == 'v2ray-plugin':
-                out['plugin'] = 'v2ray-plugin'
-                po = {'mode': 'websocket'}
-                if 'tls' in kv:
-                    po['tls'] = True
-                if kv.get('host'):
-                    po['host'] = kv['host']
-                if kv.get('path'):
-                    po['path'] = kv['path']
-                out['plugin-opts'] = po
-        return out
+        body = _CLASH_BUILDERS[c.proto](c)
     except Exception:
         return None
+    if not body:
+        return None
+    name = unquote(uri.partition('#')[2])
+    if not name and c.j is not None:
+        ps = next((v for k, v in c.j.items() if str(k).lower() in ('ps', 'remarks')), '')
+        name = ps if isinstance(ps, str) else ''
+    name = _sanitize_name(name)[:MAX_NAME_LEN].strip() or f'{c.host}:{c.port}'
+    p = {'name': name, 'type': body.pop('type'), 'server': c.host, 'port': c.port}
+    p.update(body)
+    return p if _clash_proxy_is_safe(p) else None
 
-def _dump_clash_yaml(proxies: List[dict], filepath: str, title: str = 'clash'):
-    lines = ['# clash/mihomo subscription']
-    lines.append(f'# {time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())}')
-    lines.append('proxies:')
+def _yaml_value(v) -> str:
+    if isinstance(v, bool):
+        return 'true' if v else 'false'
+    if isinstance(v, int):
+        return str(v)
+    return _qv(v)
+
+def _dump_kv(lines: List[str], k: str, v, ind: str):
+    if isinstance(v, dict):
+        if not v:
+            lines.append(f'{ind}{k}: {{}}')
+            return
+        lines.append(f'{ind}{k}:')
+        for kk, vv in v.items():
+            _dump_kv(lines, kk, vv, ind + '  ')
+    elif isinstance(v, list):
+        if not v:
+            lines.append(f'{ind}{k}: []')
+            return
+        lines.append(f'{ind}{k}:')
+        lines.extend(f'{ind}  - {_yaml_value(x)}' for x in v)
+    else:
+        lines.append(f'{ind}{k}: {_yaml_value(v)}')
+
+def _dump_clash_yaml(proxies: List[dict], filepath: str):
+    lines = ['# clash/mihomo subscription',
+             f'# {time.strftime("%Y-%m-%d %H:%M:%S UTC", time.gmtime())}',
+             'proxies:']
     for p in proxies:
         lines.append(f'  - name: {_q(p["name"])}')
-        lines.append(f'    type: {_q(p["type"])}')
-        lines.append(f'    server: {_q(p["server"])}')
-        lines.append(f'    port: {p["port"]}')
         for k, v in p.items():
-            if k in ('name', 'type', 'server', 'port'):
-                continue
-            if isinstance(v, dict):
-                lines.append(f'    {k}:')
-                _dump_nested(v, lines, '      ')
-            elif isinstance(v, list):
-                lines.append(f'    {k}:')
-                for item in v:
-                    lines.append(f'      - {_q(item)}')
-            elif isinstance(v, bool):
-                lines.append(f'    {k}: {str(v).lower()}')
-            elif isinstance(v, int):
-                lines.append(f'    {k}: {v}')
-            else:
-                lines.append(f'    {k}: {_q(v)}')
-    lines.append('proxy-groups:')
-    lines.append('  - name: PROXY')
-    lines.append('    type: select')
-    lines.append('    proxies:')
-    for p in proxies:
-        lines.append(f'      - {_q(p["name"])}')
-    lines.append('rules:')
-    lines.append('  - MATCH,PROXY')
-    with open(filepath, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(lines) + '\n')
-
-def _dump_nested(d: dict, lines: List[str], indent: str):
-    for k, v in d.items():
-        if isinstance(v, dict):
-            lines.append(f'{indent}{k}:')
-            _dump_nested(v, lines, indent + '  ')
-        elif isinstance(v, list):
-            lines.append(f'{indent}{k}:')
-            for item in v:
-                lines.append(f'{indent}  - {_q(item)}')
-        elif isinstance(v, bool):
-            lines.append(f'{indent}{k}: {str(v).lower()}')
-        else:
-            lines.append(f'{indent}{k}: {_q(v)}')
+            if k != 'name':
+                _dump_kv(lines, k, v, '    ')
+    lines += ['proxy-groups:', '  - name: PROXY', '    type: select', '    proxies:']
+    lines += [f'      - {_q(p["name"])}' for p in proxies]
+    lines += ['rules:', '  - MATCH,PROXY']
+    _atomic_write(filepath, '\n'.join(lines) + '\n')
 
 def convert_to_clash_and_save(configs: List[str], filename: str) -> int:
-    clash_proxies = []
-    seen_servers = set()
-    used_names = set()
+    outpath = os.path.join(CLASH_DIR, f"{filename}.yaml")
+    proxies, seen, used = [], set(), set()
     for uri in configs:
         cp = uri_to_clash(uri)
         if not cp:
             continue
-        # Дедупликация по тип+server:port (UDP hy2/tuic и TCP vless на одном порту — разные узлы)
-        server_key = f"{cp['type']}:{cp['server']}:{cp['port']}"
-        if server_key in seen_servers:
+        # дедупликация по тип+server:port (UDP hy2/tuic и TCP vless на одном порту — разные узлы)
+        sk = (cp['type'], cp['server'], cp['port'])
+        if sk in seen:
             continue
-        seen_servers.add(server_key)
-        # Mihomo отвергает ВЕСЬ файл при повторяющихся именах прокси — делаем имена уникальными
-        base = cp['name'] or f"{cp['server']}:{cp['port']}"
+        seen.add(sk)
+        base = cp['name']
+        if base.lower() in _RESERVED_CLASH_NAMES:
+            base = f'{base} ({cp["type"]})'
         nm, i = base, 2
-        while nm in used_names:
-            nm = f"{base} #{i}"
+        while nm.lower() in used:                     # Mihomo отвергает ВЕСЬ файл при повторе имени
+            nm = f'{base} #{i}'
             i += 1
-        used_names.add(nm)
+        used.add(nm.lower())
         cp['name'] = nm
-        clash_proxies.append(cp)
-    if not clash_proxies:
+        proxies.append(cp)
+    if not proxies:
+        if os.path.exists(outpath):
+            os.remove(outpath)                        # не оставляем устаревший YAML
         return 0
-    outpath = os.path.join(CLASH_DIR, f"{filename}.yaml")
-    _dump_clash_yaml(clash_proxies, outpath, filename)
-    return len(clash_proxies)
+    _dump_clash_yaml(proxies, outpath)
+    return len(proxies)
 
 # =====================================================================
 #  URL HEALTH
@@ -1700,29 +1785,37 @@ def load_health() -> Dict:
             pass
     return {}
 
+def _atomic_write(path: str, text: str):
+    """Временный файл + os.replace: при сбое не остаётся обрезанного/пустого файла."""
+    os.makedirs(os.path.dirname(path) or '.', exist_ok=True)
+    tmp = f'{path}.tmp{os.getpid()}-{threading.get_ident()}'
+    try:
+        with open(tmp, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(text)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.remove(tmp)
+
 def save_health(health: Dict):
-    with open(HEALTH_FILE, 'w', encoding='utf-8') as f:
-        json.dump(health, f, indent=2, ensure_ascii=False)
+    with _health_lock:
+        text = json.dumps(health, indent=2, ensure_ascii=False)
+    _atomic_write(HEALTH_FILE, text)
 
 def _try_b64_decode(s: str) -> Optional[str]:
-    def single(x: str) -> Optional[str]:
-        try:
-            return base64.b64decode(x + '=' * (-len(x) % 4)).decode('utf-8', errors='ignore')
-        except Exception:
-            try:
-                return base64.urlsafe_b64decode(x + '=' * (-len(x) % 4)).decode('utf-8', errors='ignore')
-            except Exception:
-                return None
-    first = single(s)
-    if first is None:
-        return None
-    if any(p in first for p in SUPPORTED_PROTOCOLS):
-        return first
-    stripped2 = re.sub(r'\s+', '', first)
-    if re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped2):
-        second = single(stripped2)
-        if second and any(p in second for p in SUPPORTED_PROTOCOLS):
-            return second
+    """Подписка целиком в base64: std или url-safe, с паддингом и без, в т.ч. дважды.
+    (В v6.0 b64decode без validate молча выкидывал '-'/'_', и url-safe не читался.)"""
+    text = s
+    for _ in range(2):
+        raw = b64d(text)
+        if raw is None:
+            return None
+        dec = raw.decode('utf-8', errors='ignore').lstrip('\ufeff')
+        if any(p in dec for p in SUPPORTED_PROTOCOLS):
+            return dec
+        text = re.sub(r'\s+', '', dec)
+        if not re.fullmatch(r'[A-Za-z0-9+/_=-]+', text):
+            return None
     return None
 
 # =====================================================================
@@ -1815,71 +1908,145 @@ def _cooldown_passed(entry: dict) -> bool:
         return True
     return time.time() - ts >= RETRY_AFTER_SECONDS
 
-def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
-    with _health_lock:
-        entry = health.get(url, {"failures": 0, "last_status": None, "last_check": None})
-        failure_count = entry.get("failures", 0)
+class _HttpsOnlyRedirect(urllib.request.HTTPRedirectHandler):
+    """Редирект только на https: иначе https-источник могли бы увести на http и
+    подменить подписку по дороге."""
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if not newurl.lower().startswith('https://'):
+            raise urllib.error.HTTPError(newurl, code, 'редирект не на https', headers, fp)
+        return super().redirect_request(req, fp, code, msg, headers, newurl)
 
-    if failure_count >= MAX_CONSECUTIVE_FAILURES and not _cooldown_passed(entry):
-        print(f"  ⚠️  {url} — {failure_count} провалов подряд, пауза до повторной попытки")
-        return None, False
+_OPENER = urllib.request.build_opener(_HttpsOnlyRedirect)
 
+def _http_get_inner(url: str) -> bytes:
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0',
+                                               'Accept-Encoding': 'identity'})
+    deadline = time.monotonic() + FETCH_DEADLINE
+    chunks, total = [], 0
+    with _OPENER.open(req, timeout=FETCH_TIMEOUT) as resp:
+        read = getattr(resp, 'read1', resp.read)
+        while True:
+            if time.monotonic() > deadline:
+                raise TimeoutError(f'загрузка дольше {FETCH_DEADLINE} с')
+            chunk = read(65536)
+            if not chunk:
+                break
+            total += len(chunk)
+            if total > MAX_FETCH_BYTES:
+                raise ValueError(f'ответ больше {MAX_FETCH_BYTES // (1024 * 1024)} МБ')
+            chunks.append(chunk)
+    return b''.join(chunks)
+
+def _http_get(url: str) -> bytes:
+    """GET только по https, с лимитом размера и ОБЩИМ дедлайном. timeout в urllib —
+    на каждую операцию чтения, и «капающий» по байту сервер держал бы загрузку часами,
+    поэтому загрузка идёт в фоновом потоке, который ждут не дольше FETCH_DEADLINE."""
+    if not url.lower().startswith('https://'):
+        raise ValueError('разрешён только https')
+    box: Dict[str, object] = {}
+
+    def run():
+        try:
+            box['data'] = _http_get_inner(url)
+        except BaseException as e:                    # noqa: BLE001 — передаём в вызывающий поток
+            box['err'] = e
+
+    t = threading.Thread(target=run, daemon=True)
+    t.start()
+    t.join(FETCH_DEADLINE + 2)
+    if t.is_alive():
+        raise TimeoutError(f'загрузка дольше {FETCH_DEADLINE} с')
+    if 'err' in box:
+        raise box['err']
+    return box['data']
+
+def _decode_subscription(content: str) -> Tuple[str, bool]:
+    """Clash YAML -> ссылки; base64 -> текст; иначе как есть. -> (текст, был_base64)."""
+    if is_clash_content(content):
+        uris = clash_to_uris(content)
+        if uris:
+            return '\n'.join(uris), False
+    stripped = re.sub(r'\s+', '', content)
+    if stripped and re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped):
+        decoded = _try_b64_decode(stripped)
+        if decoded is not None:
+            return decoded, True
+    return content, False
+
+def _now_utc() -> str:
+    return time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())
+
+def _stale_allowed(entry) -> bool:
+    """Прошлый файл можно отдать, только если источник отвечал не позже STALE_MAX_HOURS назад."""
     try:
-        if not url.lower().startswith(('http://', 'https://')):
-            raise ValueError('разрешены только http/https')
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=FETCH_TIMEOUT) as resp:
-            raw = resp.read(MAX_FETCH_BYTES + 1)
-        if len(raw) > MAX_FETCH_BYTES:
-            raise ValueError(f'ответ больше {MAX_FETCH_BYTES // (1024 * 1024)} МБ')
-        content = raw.decode('utf-8', errors='ignore').lstrip('\ufeff')
+        ts = calendar.timegm(time.strptime(str((entry or {}).get('last_ok')).replace(' UTC', ''),
+                                           '%Y-%m-%d %H:%M:%S'))
+    except Exception:
+        return False
+    return time.time() - ts <= STALE_MAX_HOURS * 3600
 
-        with _health_lock:
-            entry["failures"] = 0
-            entry["last_status"] = "ok"
-            entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())
-            health[url] = entry
+def _read_previous_output(name: str) -> Optional[Tuple[str, bool]]:
+    """Прошлый опубликованный файл источника -> (текст, был_base64). Его строки
+    проходят полную проверку заново, как свежие."""
+    try:
+        with open(os.path.join(OUTPUT_DIR, f'{name}.txt'), 'r', encoding='utf-8',
+                  errors='ignore') as f:
+            text = f.read(MAX_FETCH_BYTES + 1)
+    except OSError:
+        return None
+    if not text.strip() or len(text) > MAX_FETCH_BYTES:
+        return None
+    return _decode_subscription(text)
 
-        if is_clash_content(content):
-            clash_uris = clash_to_uris(content)
-            if clash_uris:
-                return '\n'.join(clash_uris), False
-
-        stripped = re.sub(r'\s+', '', content.strip())
-        if re.fullmatch(r'[A-Za-z0-9+/_=-]+', stripped):
-            decoded = _try_b64_decode(stripped)
-            if decoded is not None:
-                return decoded, True
-
-        return content, False
-
-    except Exception as e:
-        with _health_lock:
-            entry["failures"] = entry.get("failures", 0) + 1
-            entry["last_status"] = str(e)
-            entry["last_check"] = time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())
-            health[url] = entry
-            fail_num = entry["failures"]
-        print(f"  ❌ {url}: {e} (провал #{fail_num})")
+def fetch_url_with_health(url: str, health: Dict) -> Tuple[Optional[str], bool]:
+    """-> (текст подписки | None, был_base64). None — не скачалось или источник на паузе."""
+    with _health_lock:
+        entry = dict(health.get(url) or {})
+    try:
+        failures = int(entry.get('failures') or 0)
+    except (TypeError, ValueError):
+        failures = 0
+    if failures >= MAX_CONSECUTIVE_FAILURES and not _cooldown_passed(entry):
+        print(f"  ⚠️  {url} — {failures} провалов подряд, пауза до повторной попытки")
         return None, False
+    try:
+        raw = _http_get(url)
+    except Exception as e:
+        entry.update(failures=failures + 1, last_status=str(e)[:200], last_check=_now_utc())
+        with _health_lock:
+            health[url] = entry
+        print(f"  ❌ {url}: {e} (провал #{failures + 1})")
+        return None, False
+    now = _now_utc()
+    entry.update(failures=0, last_status='ok', last_check=now, last_ok=now)
+    with _health_lock:
+        health[url] = entry
+    return _decode_subscription(raw.decode('utf-8', errors='ignore').lstrip('\ufeff'))
 
 def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
     report_path = os.path.join(OUTPUT_DIR, "URL_HEALTH_REPORT.md")
-    with open(report_path, 'w', encoding='utf-8') as f:
-        f.write("# URL Health Report\n")
-        f.write(f"Generated: {time.strftime('%Y-%m-%d %H:%M:%S UTC', time.gmtime())}\n\n")
-        f.write("| Source | Status | Fails | Raw | Filtered | Rejected | Duplicates | Last Check |\n")
-        f.write("|---|---|---|---|---|---|---|---|\n")
-        for src in SOURCES_CONFIG:
-            url = src['url']
-            entry = health.get(url, {})
-            status = "✅" if entry.get("last_status") == "ok" else "❌"
-            st = source_stats.get(url, {})
-            f.write(f"| {src['name']} | {status} | {entry.get('failures', 0)} | "
-                    f"{st.get('raw', '-')} | {st.get('filtered', '-')} | {st.get('rejected', '-')} | "
-                    f"{st.get('duplicates', '-')} | {entry.get('last_check', 'N/A')} |\n")
-        f.write(f"\n**Авто-очистка:** источник с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд "
-                f"ставится на паузу {RETRY_AFTER_SECONDS // 3600} ч и затем пробуется снова.\n")
+    out = ["# URL Health Report\n",
+           f"Generated: {_now_utc()}\n\n",
+           "| Source | Status | Fails | Raw | Filtered | Rejected | Duplicates | Last Check |\n",
+           "|---|---|---|---|---|---|---|---|\n"]
+    for src in SOURCES_CONFIG:
+        url = src['url']
+        entry = health.get(url, {})
+        st = source_stats.get(url, {})
+        if st.get('stale'):
+            status = "♻️ прошлый файл"
+        elif entry.get("last_status") == "ok":
+            status = "✅"
+        else:
+            status = "❌"
+        out.append(f"| {src['name']} | {status} | {entry.get('failures', 0)} | "
+                   f"{st.get('raw', '-')} | {st.get('filtered', '-')} | {st.get('rejected', '-')} | "
+                   f"{st.get('duplicates', '-')} | {entry.get('last_check', 'N/A')} |\n")
+    out.append(f"\n**Авто-очистка:** источник с {MAX_CONSECUTIVE_FAILURES}+ провалами подряд "
+               f"ставится на паузу {RETRY_AFTER_SECONDS // 3600} ч и затем пробуется снова. "
+               f"Пока источник недоступен (до {STALE_MAX_HOURS} ч), публикуется его прошлый "
+               f"файл, перепроверенный текущими правилами.\n")
+    _atomic_write(report_path, ''.join(out))
 
 def write_reject_reasons(reasons: Counter):
     path = os.path.join(REJECT_DIR, "reasons.md")
@@ -1898,34 +2065,49 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
     print(f"  [{name}] Загрузка...")
 
     content, was_base64 = fetch_url_with_health(url, health)
-
-    if not content:
-        return set(), [], {"raw": 0, "filtered": 0, "rejected": 0, "duplicates": 0,
-                           "reasons": Counter()}, False
-
-    lines = content.splitlines()
-    lines = [l.strip() for l in lines if l.strip() and not l.strip().startswith('#')]
-    # preprocess чинит &amp; / \u0026 / невидимые символы: в выход попадает уже исправленная ссылка
-    raw_configs = [preprocess(c) for c in parse_multiline_configs(lines)]
-    raw_count = len(raw_configs)
+    fetched, stale = content is not None, False
+    if content is None:
+        with _health_lock:
+            entry = dict(health.get(url) or {})
+        prev = _read_previous_output(name) if _stale_allowed(entry) else None
+        if prev is not None:
+            (content, was_base64), stale = prev, True
+            print(f"  ♻️  [{name}] источник недоступен — перепроверяю прошлый файл")
 
     reasons: Counter = Counter()
+    stats = {"raw": 0, "filtered": 0, "rejected": 0, "duplicates": 0, "reasons": reasons,
+             "fetched": fetched, "stale": stale}
+    if not content:
+        return set(), [], stats, was_base64
+
+    lines = [l.strip() for l in content.splitlines()]
+    lines = [l for l in lines if l and not l.startswith('#')]
     rejected: List[str] = []
+    raw_configs: List[str] = []
+    parsed = parse_multiline_configs(lines)
+    for cfg in parsed:
+        if len(cfg) > MAX_LINE_LEN:                   # до preprocess: мегабайтная строка — мусор
+            reasons[f'слишком длинная строка (> {MAX_LINE_LEN})'] += 1
+            continue
+        # preprocess чинит &amp; / \u0026 / невидимые символы; проверяется и публикуется
+        # ровно эта строка (с добавленным allowInsecure=0)
+        raw_configs.append(preprocess(cfg))
+    raw_count = len(parsed)
+
     unique: Dict[tuple, Tuple[str, tuple]] = {}
     duplicates = 0
-
     for cfg in raw_configs:
-        reason, ids = analyze_config(cfg)
+        reason, ids, pub = prepare_config(cfg)
         if reason:
             rejected.append(cfg)
             reasons[reason_bucket(reason)] += 1
             continue
-        # Дубликаты схлопываем ДО подсчёта лимитов: раньше один и тот же узел с разными
-        # именами/порядком параметров раздувал счётчики и выбивал весь легитимный узел.
+        # Дубликаты схлопываем ДО подсчёта лимитов: один и тот же узел с разными
+        # именами/порядком параметров не должен раздувать счётчики.
         if ids[0] in unique:
             duplicates += 1
             continue
-        unique[ids[0]] = (cfg, ids)
+        unique[ids[0]] = (pub, ids)
 
     pbk_count, uuid_count, sid_count = defaultdict(int), defaultdict(int), defaultdict(int)
     tpass_count, tuic_count, hp_count = defaultdict(int), defaultdict(int), defaultdict(int)
@@ -1963,8 +2145,9 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             continue
         final_filtered.add(cfg)
 
-    stats = {"raw": raw_count, "filtered": len(final_filtered), "rejected": len(rejected),
-             "duplicates": duplicates, "reasons": reasons}
+    stats.update(raw=raw_count, filtered=len(final_filtered),
+                 rejected=len(rejected) + sum(1 for c in parsed if len(c) > MAX_LINE_LEN),
+                 duplicates=duplicates)
     return final_filtered, rejected, stats, was_base64
 
 # =====================================================================
@@ -1999,17 +2182,29 @@ def dedupe_by_key(configs) -> List[str]:
 #  MAIN
 # =====================================================================
 
-def main():
-    print("=== Фильтр прокси v6.0 (NekoBox / v2rayNG / Karing + Clash/Mihomo, hardened) ===")
-    if not HAS_YAML:
-        print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
+def _write_output(path: str, configs: List[str], as_base64: bool):
+    text = '\n'.join(configs) + ('\n' if configs else '')
+    if as_base64 and configs:
+        text = base64.b64encode(text.encode('utf-8')).decode('ascii')
+    _atomic_write(path, text)
+
+def main() -> int:
+    print("=== Фильтр прокси v6.1 (NekoBox / v2rayNG / Karing + Clash/Mihomo, hardened) ===")
+    try:
+        problems = _selftest()
+    except Exception as e:                        # noqa: BLE001 — сломанная проверка = стоп
+        problems = [f'самопроверка упала: {type(e).__name__}: {e}']
+    if problems:
+        print("❌ Самопроверка защиты не пройдена — подписки НЕ обновлены:")
+        for p in problems[:30]:
+            print(f"   • {p}")
+        return 2
     health = load_health()
-    all_filtered = set()
-    all_rejected = []
+    all_filtered: Set[str] = set()
+    all_rejected: List[str] = []
     all_reasons: Counter = Counter()
-    source_stats = {}
-    file_counts = {}
-    clash_counts = {}
+    source_stats, file_counts, clash_counts = {}, {}, {}
+    fetched_ok = 0
 
     with ThreadPoolExecutor(max_workers=5) as ex:
         futures = {ex.submit(load_and_filter, src, health): src for src in SOURCES_CONFIG}
@@ -2018,63 +2213,43 @@ def main():
             name = src['name']
             try:
                 configs, rejected, stats, was_base64 = future.result()
+                source_stats[src['url']] = stats
                 all_rejected.extend(rejected)
                 all_reasons.update(stats.get('reasons', {}))
-                source_stats[src['url']] = stats
+                fetched_ok += bool(stats.get('fetched'))
 
-                out = os.path.join(OUTPUT_DIR, f"{name}.txt")
                 sorted_cfg = sort_configs(configs)
+                _write_output(os.path.join(OUTPUT_DIR, f"{name}.txt"), sorted_cfg, was_base64)
+                tags = (' [base64]' if was_base64 and sorted_cfg else '') + \
+                       (' [прошлый файл]' if stats.get('stale') else '')
+                print(f"  ✅ {name}.txt → {len(sorted_cfg)} конфигов{tags} "
+                      f"(отброшено: {stats['rejected']}, дублей: {stats['duplicates']})")
 
-                if was_base64 and sorted_cfg:
-                    plaintext = '\n'.join(sorted_cfg) + '\n'
-                    encoded = base64.b64encode(plaintext.encode('utf-8')).decode('ascii')
-                    with open(out, 'w', encoding='utf-8', newline='\n') as f:
-                        f.write(encoded)
-                    print(f"  ✅ {name}.txt → {len(configs)} конфигов [base64] "
-                          f"(отброшено: {stats['rejected']}, дублей: {stats['duplicates']})")
-                else:
-                    with open(out, 'w', encoding='utf-8', newline='\n') as f:
-                        f.write('\n'.join(sorted_cfg))
-                        if sorted_cfg:
-                            f.write('\n')
-                    print(f"  ✅ {name}.txt → {len(configs)} конфигов "
-                          f"(отброшено: {stats['rejected']}, дублей: {stats['duplicates']})")
-
-                if sorted_cfg:
-                    clash_n = convert_to_clash_and_save(sorted_cfg, name)
-                    clash_counts[name] = clash_n
-                    if clash_n > 0:
-                        print(f"  🔄 Clash: {os.path.join(CLASH_DIR, name + '.yaml')} → {clash_n} прокси")
-                else:
-                    clash_counts[name] = 0
+                clash_n = convert_to_clash_and_save(sorted_cfg, name)
+                clash_counts[name] = clash_n
+                if clash_n:
+                    print(f"  🔄 Clash: {os.path.join(CLASH_DIR, name + '.yaml')} → {clash_n} прокси")
 
                 all_filtered.update(configs)
-                file_counts[name] = len(configs)
-
+                file_counts[name] = len(sorted_cfg)
             except Exception as e:
-                print(f"  ❌ [{name}] Ошибка: {e}")
+                print(f"  ❌ [{name}] Ошибка: {type(e).__name__}: {e}")
                 file_counts[name] = 0
                 clash_counts[name] = 0
 
-    all_file = os.path.join(OUTPUT_DIR, "ALL.txt")
     sorted_all = dedupe_by_key(all_filtered)
-    with open(all_file, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(sorted_all))
-        if sorted_all:
-            f.write('\n')
+    _write_output(os.path.join(OUTPUT_DIR, "ALL.txt"), sorted_all, False)
     file_counts["ALL"] = len(sorted_all)
+    clash_counts["ALL"] = convert_to_clash_and_save(sorted_all, "ALL")
+    if clash_counts["ALL"]:
+        print(f"  🔄 Clash ALL: {os.path.join(CLASH_DIR, 'ALL.yaml')} → {clash_counts['ALL']} прокси")
 
-    if sorted_all:
-        clash_all_n = convert_to_clash_and_save(sorted_all, "ALL")
-        clash_counts["ALL"] = clash_all_n
-        if clash_all_n > 0:
-            print(f"  🔄 Clash ALL: {os.path.join(CLASH_DIR, 'ALL.yaml')} → {clash_all_n} прокси")
-
+    # rejected.txt — готовая подписка из НЕБЕЗОПАСНЫХ узлов; публикуется только по флагу
     reject_file = os.path.join(REJECT_DIR, "rejected.txt")
-    with open(reject_file, 'w', encoding='utf-8', newline='\n') as f:
-        f.write('\n'.join(all_rejected))
-        if all_rejected:
-            f.write('\n')
+    if PUBLISH_REJECTED:
+        _write_output(reject_file, all_rejected, False)
+    elif os.path.exists(reject_file):
+        os.remove(reject_file)
     write_reject_reasons(all_reasons)
 
     save_health(health)
@@ -2084,10 +2259,479 @@ def main():
     print(f"\n✅ ALL.txt: {len(sorted_all)} уникальных конфигов")
     if clash_counts.get("ALL"):
         print(f"🔄 Clash ALL.yaml: {clash_counts['ALL']} прокси → {CLASH_DIR}/")
-    print(f"⚠️  Отброшено: {len(all_rejected)} (rejected/rejected.txt, причины — rejected/reasons.md)")
+    print(f"⚠️  Отброшено: {len(all_rejected)} (причины — rejected/reasons.md)")
     print(f"📊 URL Health: {os.path.join(OUTPUT_DIR, 'URL_HEALTH_REPORT.md')}")
     print(f"📱 QR-коды: {QR_DIR}/")
-    print(f"🔄 Clash подписки: {CLASH_DIR}/")
+    if fetched_ok == 0:
+        print("❌ Ни один источник не скачался — проверьте сеть и список источников")
+        return 1
+    return 0
+
+
+# =====================================================================
+#  САМОПРОВЕРКА ЗАЩИТЫ
+#  main() начинает каждый запуск с быстрой проверки (доли секунды, без сети):
+#  известные обходы проверки сертификата должны отбраковываться, а пропущенные
+#  TLS-ссылки — публиковаться с включённой проверкой. Если правка кода или другая
+#  версия Python это сломала, подписки НЕ перезаписываются (код выхода 2).
+#  Полные регрессионные тесты: python filter.py --selftest
+# =====================================================================
+
+def _selftest(full: bool = False) -> List[str]:
+    """full=False — быстрая проверка защиты (без сети и без записи файлов);
+    full=True — все тесты во временном каталоге. -> список проблем (пусто — всё в порядке)."""
+    import contextlib, io, random, shutil, string, tempfile
+    f = sys.modules[__name__]
+
+    U, H = 'a3482e88-686a-4a58-8126-99c9df64b7bf', 'node1.mydomain.de'
+    T = f'sni={H}&fp=chrome&alpn=h2&type=tcp'
+    PBK = base64.urlsafe_b64encode(bytes(range(32))).decode().rstrip('=')
+    SS16 = base64.b64encode(bytes(range(16))).decode()
+    SS32 = base64.b64encode(bytes(range(32))).decode()
+
+    def vm(**kw):
+        j = {"v": "2", "ps": "vm", "add": H, "port": "443", "id": U, "aid": "0", "scy": "auto",
+             "net": "ws", "type": "none", "host": H, "path": "/vm", "tls": "tls", "sni": H}
+        j.update(kw)
+        return 'vmess://' + base64.b64encode(json.dumps(j).encode()).decode()
+
+    def vm_raw(text):
+        return 'vmess://' + base64.b64encode(text.encode()).decode()
+
+    def ss(method, pw, tail=''):
+        ub = base64.urlsafe_b64encode(f'{method}:{pw}'.encode()).decode().rstrip('=')
+        return f'ss://{ub}@{H}:8388{tail}#ss'
+
+    def XH(u, extra):
+        h = f'x{u[-2:]}.mydomain.de'                     # свой host: лимит HP_MAX на host:port
+        return (f'vless://{u}@{h}:443?security=tls&sni={h}&fp=chrome&alpn=h2&type=xhttp&path=%2Fx&extra='
+                + urllib.parse.quote(json.dumps(extra), safe=''))
+
+    def prep(raw):
+        """Как в load_and_filter: preprocess -> prepare_config. -> (причина, публикуемая строка)."""
+        reason, _, pub = f.prepare_config(f.preprocess(raw))
+        return reason, pub
+
+    def passes(raw):
+        return prep(raw)[0] == ''
+
+    def uid(i):
+        return f'a3482e88-686a-4a58-8126-{i:012d}'   # у каждого узла свой UUID (лимит UUID_MAX)
+
+    TPW = 'p@ss:w/rd?#&=% x'
+    GOOD = {
+        'vless_tls_ws':  f'vless://{uid(1)}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2,http/1.1&type=ws&host={H}&path=%2Fws#good',
+        'vless_reality': f'vless://{uid(2)}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&pbk={PBK}&sid=6ba85179&type=tcp&flow=xtls-rprx-vision#r',
+        'vless_ipv6':    f'vless://{uid(3)}@[2a01:4f8:c17:1::1]:443?security=tls&{T}#v6',
+        'vless_nip_pub': f'vless://{uid(4)}@1.2.3.4.nip.io:443?security=tls&sni=1.2.3.4.nip.io&fp=chrome&alpn=h2&type=tcp#nip',
+        'vless_flag0':   f'vless://{uid(5)}@{H}:443?security=tls&{T}&allowInsecure=0#f0',
+        'vless_lc_flag': f'vless://{uid(11)}@n11.mydomain.de:443?security=tls&sni=n11.mydomain.de&fp=chrome&alpn=h2&type=tcp&allowinsecure=false#lc',
+        'vless_ins_only': f'vless://{uid(12)}@n12.mydomain.de:443?security=tls&sni=n12.mydomain.de&fp=chrome&alpn=h2&type=tcp&insecure=0#io',
+        'vless_trail_amp': f'vless://{uid(13)}@n13.mydomain.de:443/?security=tls&sni=n13.mydomain.de&fp=chrome&alpn=h2&type=tcp&#ta',
+        'trojan_ws':     f'trojan://{urllib.parse.quote(TPW, safe="")}@{H}:443?sni={H}&alpn=h2&type=ws&host={H}&path=%2Ft#t',
+        'vmess_json':    vm(),
+        'hy2_obfs':      f'hysteria2://pw123@{H}:443?sni={H}&obfs=salamander&obfs-password=xyz#h',
+        'tuic':          f'tuic://{U}:pw@{H}:443?sni={H}&alpn=h3&congestion_control=bbr#tu',
+        'ss_2022_aes':   ss('2022-blake3-aes-128-gcm', SS16),
+        'ss_2022_chacha': ss('2022-blake3-chacha20-poly1305', SS32),
+        'ss_aes_gcm':    ss('aes-256-gcm', 'Str0ngPassw0rd'),
+        'xhttp_dl_null': XH(uid(9), {"xPaddingBytes": "100-1000", "downloadSettings": None, "xmux": {"maxConcurrency": "16-32"}}),
+        'xhttp_dl_tls':  XH(uid(10), {"downloadSettings": {"address": "cdn.example.de", "port": 443, "network": "xhttp",
+                                                           "security": "tls", "tlsSettings": {"serverName": "cdn.example.de"}}}),
+    }
+
+    # Фильтр видит «TLS с проверкой сертификата», клиент — нет (или сертификат не проверяется).
+    BYPASSES = {
+        # --- 12 обходов v6.0 (ещё 3 — в ESCAPES)
+        'sec_synonym':   f'vless://{U}@{H}:443?sec=tls&{T}',
+        'key_case':      f'vless://{U}@{H}:443?Security=tls&{T}',
+        'key_encoded':   f'vless://{U}@{H}:443?secur%69ty=tls&{T}',
+        'eq_encoded':    f'vless://{U}@{H}:443?security%3Dtls&{T}',
+        'semicolon':     f'vless://{U}@{H}:443?;security=tls&{T}',
+        'dup_empty':     f'vless://{U}@{H}:443?security=tls&{T}&security=',
+        'dup_other':     f'vless://{U}@{H}:443?security=tls&{T}&security=x',
+        'trojan_empty':  f'trojan://Xk29fLq81pZ@{H}:443?security=&sni={H}&alpn=h2',
+        'ipv6_nobrackets': f'vless://{U}@2a01:4f8:c17:1::1:443?security=tls&{T}',
+        'ipv6_6to4_loopback': f'vless://{U}@[2002:7f00:1::1]:443?security=tls&{T}',
+        'ipv6_nat64_loopback': f'vless://{U}@[64:ff9b:1::7f00:1]:443?security=tls&{T}',
+        'huge_name':     f'vless://{U}@{H}:443?security=tls&{T}#' + 'A' * 100_000,
+        # --- значение security не буквально
+        'security_upper': f'vless://{U}@{H}:443?security=TLS&{T}',
+        'security_space': f'vless://{U}@{H}:443?security=%20tls&{T}',
+        'trojan_none':   f'trojan://Xk29fLq81pZ@{H}:443?security=none&sni={H}',
+        'trojan_reality': f'trojan://Xk29fLq81pZ@{H}:443?security=reality&sni={H}&pbk={PBK}&fp=chrome',
+        # --- отключённая/подменённая проверка сертификата
+        'insecure_empty': f'vless://{U}@{H}:443?security=tls&{T}&allowInsecure=',
+        'insecure_1':    f'vless://{U}@{H}:443?security=tls&{T}&allowInsecure=1',
+        'insecure_typo': f'vless://{U}@{H}:443?security=tls&{T}&allowlnsecure=true',
+        'skip_cert':     f'trojan://Xk29fLq81pZ@{H}:443?sni={H}&skip-cert-verify=true',
+        'hy2_insecure':  f'hysteria2://pw123@{H}:443?sni={H}&insecure=1',
+        'tuic_insecure': f'tuic://{U}:pw@{H}:443?sni={H}&alpn=h3&allow_insecure=1',
+        'custom_ca':     f'vless://{U}@{H}:443?security=tls&{T}&ca=-----BEGIN%20CERTIFICATE-----',
+        'certificates':  f'trojan://Xk29fLq81pZ@{H}:443?sni={H}&certificates=MIIB',
+        'no_sys_root':   f'vless://{U}@{H}:443?security=tls&{T}&disableSystemRoot=true',
+        'xhttp_download': (f'vless://{U}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2&type=xhttp&path=%2Fx&extra='
+                           + urllib.parse.quote('{"downloadSettings":{"address":"x.de","security":"none"}}', safe='')),
+        'xhttp_insecure': (f'vless://{U}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2&type=xhttp&path=%2Fx&extra='
+                           + urllib.parse.quote('{"tlsSettings":{"allowInsecure":true}}', safe='')),
+        'xhttp_dl_nosec': XH(uid(20), {"downloadSettings": {"address": "cdn.example.de", "port": 443, "network": "xhttp"}}),
+        'xhttp_dl_case':  XH(uid(21), {"downloadSettings": {"address": "cdn.example.de", "Security": "none", "security": "tls"}}),
+        'xhttp_dl_local': XH(uid(22), {"downloadSettings": {"address": "10.0.0.1", "security": "tls"}}),
+        'xhttp_dl_ca':    XH(uid(23), {"downloadSettings": {"address": "cdn.example.de", "security": "tls",
+                                                             "tlsSettings": {"certificates": [{"usage": "verify"}]}}}),
+        'xhttp_double_enc': (f'vless://{uid(24)}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2&type=xhttp&path=%2Fx&extra='
+                             + urllib.parse.quote(urllib.parse.quote('{"tlsSettings":{"allowInsecure":true}}', safe=''), safe='')),
+        'xhttp_broken':   f'vless://{uid(25)}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2&type=xhttp&path=%2Fx&extra=%7B',
+        # --- vmess JSON
+        'vmess_TLS_value': vm(tls='TLS'),
+        'vmess_tls_1':   vm(tls='1'),
+        'vmess_case_dup': vm(TLS=''),
+        'vmess_dup_key': vm_raw(json.dumps(json.loads(base64.b64decode(vm()[8:])))[:-1] + ', "tls": ""}'),
+        'vmess_insecure': vm(allowInsecure=True),
+        'vmess_skipcert': vm(**{'skip-cert-verify': 'true'}),
+        'vmess_ca':      vm(ca='-----BEGIN'),
+        # --- адреса, ведущие во внутреннюю сеть
+        'nip_private':   f'vless://{U}@10.0.0.1.nip.io:443?security=tls&{T}',
+        'sslip_private': f'vless://{U}@192-168-1-1.sslip.io:443?security=tls&{T}',
+        'nip_loopback':  f'vless://{U}@127.0.0.1.nip.io:443?security=tls&{T}',
+        'nip_hex':       f'vless://{U}@app-7f000001.nip.io:443?security=tls&{T}',
+        'localtest':     f'vless://{U}@x.localtest.me:443?security=tls&{T}',
+        # --- прочее
+        'reality_no_pbk': f'vless://{U}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&type=tcp',
+        'ss_weak':       ss('aes-256-cfb', 'pw'),
+    }
+
+    # В v6.0 публиковалась P(raw), а проверялась P(P(raw)). В v6.1 preprocess доводится до
+    # неподвижной точки: такие ссылки либо отбраковываются, либо публикуются уже исправленными.
+    ESCAPES = {
+        'zwsp_escape':   f'vless://{uid(6)}@{H}:443?secur\\u200bity=tls&{T}',
+        'amp_escape':    f'vless://{uid(7)}@{H}:443?sni={H}\\u0026amp;security=tls&fp=chrome&alpn=h2',
+        'bslash_escape': f'vless://{uid(8)}@{H}:443?sni={H}\\u005cu0026security=tls&fp=chrome&alpn=h2',
+    }
+
+    PROTO_FLAG = {'vless': 'allowInsecure', 'trojan': 'allowInsecure', 'hysteria2': 'insecure',
+                  'tuic': 'allow_insecure'}
+
+    def test_good_pass_with_verify_flag():
+        for name, raw in GOOD.items():
+            reason, pub = prep(raw)
+            assert reason == '', f'{name}: {reason}'
+            proto = pub.split('://')[0]
+            if proto in PROTO_FLAG:
+                qs = urllib.parse.parse_qs(urllib.parse.urlsplit(pub).query, keep_blank_values=True)
+                assert qs.get(PROTO_FLAG[proto]) == ['0'], f'{name}: нет {PROTO_FLAG[proto]}=0: {pub[:120]}'
+
+    def test_client_view_of_published_links():
+        """Так ссылку читает клиент (Go url.ParseQuery / parse_qs): ровно один security=tls|reality."""
+        for name, raw in GOOD.items():
+            pub = prep(raw)[1]
+            if pub.startswith('vless://'):
+                qs = urllib.parse.parse_qs(urllib.parse.urlsplit(pub).query, keep_blank_values=True)
+                assert qs.get('security') in (['tls'], ['reality']), name
+
+    def test_escapes_rejected_or_published_safely():
+        for name, raw in ESCAPES.items():
+            reason, pub = prep(raw)
+            if reason:
+                continue
+            assert f.preprocess(pub) == pub, name
+            qs = urllib.parse.parse_qs(urllib.parse.urlsplit(pub).query, keep_blank_values=True)
+            assert qs.get('security') == ['tls'] and qs.get('allowInsecure') == ['0'], f'{name}: {pub}'
+            assert all(k == k.strip().lower() or k == 'allowInsecure' for k in qs), f'{name}: {list(qs)}'
+
+    def test_bypasses_rejected():
+        leaked = [name for name, raw in BYPASSES.items() if passes(raw)]
+        assert not leaked, f'проходят фильтр: {leaked}'
+
+    def test_publish_is_idempotent():
+        for name, raw in {**GOOD, **BYPASSES, **ESCAPES}.items():
+            once = f.preprocess(raw)
+            assert f.preprocess(once) == once, name
+        for name, raw in GOOD.items():
+            pub = prep(raw)[1]
+            assert prep(pub) == ('', pub), f'{name}: повторная обработка меняет ссылку'
+
+    def test_clash_output_is_verified_tls():
+        for name, raw in GOOD.items():
+            pub = prep(raw)[1]
+            cp = f.uri_to_clash(pub)
+            if 'type=xhttp' in pub:
+                assert cp is None, name                  # Mihomo не умеет xhttp — в YAML не пишем
+                continue
+            assert cp, f'{name}: нет Clash-прокси'
+            if cp['type'] != 'ss':
+                assert cp.get('skip-cert-verify') is False, name
+            if cp['type'] in ('vless', 'vmess'):
+                assert cp.get('tls') is True, name
+        tr = f.uri_to_clash(prep(GOOD['trojan_ws'])[1])
+        assert tr['password'] == TPW, tr['password']
+        v6 = f.uri_to_clash(prep(GOOD['vless_ipv6'])[1])
+        assert (v6['server'], v6['port']) == ('2a01:4f8:c17:1::1', 443), v6
+
+    def test_clash_proxy_is_safe_guard():
+        base = {'name': 'x', 'type': 'vless', 'server': H, 'port': 443, 'uuid': U, 'tls': True,
+                'skip-cert-verify': False}
+        assert f._clash_proxy_is_safe(base)
+        for bad in ({'skip-cert-verify': True}, {'tls': False}, {'fingerprint': 'aa'},
+                    {'ca-str': 'x'}, {'reality-opts': {}}):
+            assert not f._clash_proxy_is_safe({**base, **bad}), bad
+
+    def test_clash_yaml_valid_unique_reserved():
+        names = ['DIRECT', 'direct', 'PROXY', 'emoji 🇩🇪', 'q"uo\\te: #x & *a !b', 'bad\uffffchar', 'same', 'same']
+        links = []
+        for i, nm in enumerate(names):
+            h = f'n{i}.mydomain.de'
+            links.append(prep(f'vless://{U}@{h}:443?security=tls&sni={h}&fp=chrome&alpn=h2&type=tcp#'
+                              + urllib.parse.quote(nm, safe=''))[1])
+        links += [prep(r)[1] for r in GOOD.values()]
+        n = f.convert_to_clash_and_save(links, 'T_NAMES')
+        data = yaml.safe_load(open(os.path.join(f.CLASH_DIR, 'T_NAMES.yaml'), encoding='utf-8'))
+        got = [p['name'] for p in data['proxies']]
+        keys = {(c['type'], c['server'], c['port']) for c in map(f.uri_to_clash, links) if c}
+        assert n == len(got) == len(keys), (n, len(got), len(keys))     # дедупликация тип+server:port
+        assert len({g.lower() for g in got}) == len(got), got
+        assert not ({g.lower() for g in got} & f._RESERVED_CLASH_NAMES), got
+        assert data['proxy-groups'][0]['proxies'] == got
+        for p in data['proxies']:
+            if p['type'] != 'ss':
+                assert p['skip-cert-verify'] is False, p['name']
+        assert f.convert_to_clash_and_save([], 'T_NAMES') == 0
+        assert not os.path.exists(os.path.join(f.CLASH_DIR, 'T_NAMES.yaml'))
+
+    def test_clash_input_converts_and_keeps_insecure():
+        y = f"""proxies:
+      - {{name: ok-vless, type: vless, server: {H}, port: 443, uuid: {U}, tls: true, servername: {H},
+          client-fingerprint: chrome, alpn: [h2], network: ws, ws-opts: {{path: /ws, headers: {{Host: {H}}}}}}}
+      - {{name: ok-trojan, type: trojan, server: {H}, port: 443, password: "a:b@c", sni: {H}}}
+      - {{name: ok-hy2, type: hysteria2, server: {H}, port: 443, password: pw, sni: {H}, obfs: salamander, obfs-password: x}}
+      - {{name: ok-ss, type: ss, server: {H}, port: 8388, cipher: aes-256-gcm, password: "p:w@"}}
+      - {{name: ok-vmess, type: vmess, server: {H}, port: 443, uuid: {U}, alterId: 0, cipher: auto, tls: true,
+          servername: {H}, network: ws, ws-opts: {{path: /v, headers: {{Host: {H}}}}}}}
+      - {{name: bad1, type: trojan, server: {H}, port: 443, password: x, sni: {H}, skip-cert-verify: true}}
+      - {{name: bad2, type: trojan, server: {H}, port: 443, password: x, sni: {H}, skip-cert-verify: ""}}
+      - {{name: bad3, type: trojan, server: {H}, port: 443, password: x, sni: {H}, skip-cert-verify: [1]}}
+      - {{name: bad4, type: trojan, server: {H}, port: 443, password: x, sni: {H}, ca-str: "-----BEGIN"}}
+      - {{name: bad5, type: vless, server: {H}, port: 443, uuid: {U}, tls: false, servername: {H}, alpn: [h2]}}
+      - {{name: bad6, type: vmess, server: {H}, port: 443, uuid: {U}, alterId: 0, cipher: auto, tls: true,
+          servername: {H}, network: ws, ws-opts: {{headers: {{Host: {H}}}}}, skip-cert-verify: true}}
+      - {{name: bad7, type: hysteria2, server: {H}, port: 443, password: pw, sni: {H}, skip-cert-verify: yes}}
+    """
+        uris = f.clash_to_uris(y)
+        res = {urllib.parse.unquote(u.partition('#')[2]) or json.loads(base64.b64decode(u[8:]))['ps']: passes(u)
+               for u in uris}
+        for k, ok in res.items():
+            assert ok == k.startswith('ok-'), (k, ok)
+        assert sum(res.values()) == 5, res
+
+    def test_urlsafe_base64_subscription():
+        random.seed(1)
+        for i in range(300):
+            pw = ''.join(random.choice(string.ascii_letters + '~?>') for _ in range(24))
+            plain = f'trojan://{pw}@{H}:443?sni={H}#n{i}\n' * 3
+            enc = base64.urlsafe_b64encode(plain.encode()).decode().rstrip('=')
+            assert f._try_b64_decode(enc) == plain, enc[:40]
+
+    def test_yaml_alias_bomb_and_deep_nesting():
+        y = 'a0: &a0 [x,x,x,x,x,x,x,x,x]\n' + ''.join(
+            f"a{i}: &a{i} [{','.join(['*a%d' % (i - 1)] * 9)}]\n" for i in range(1, 8))
+        y += f'proxies:\n  - {{name: *a7, type: vless, server: {H}, port: 443, uuid: {U}, tls: true, alpn: *a7}}\n'
+        t = time.time()
+        assert all(len(u) < 8192 for u in f.clash_to_uris(y))
+        assert time.time() - t < 5
+        assert f.clash_to_uris('proxies: ' + '[' * 100000 + ']' * 100000) == []   # раньше — SIGSEGV в C-парсере
+
+    def test_https_only_fetch():
+        for url in ('http://example.com/sub', 'file:///etc/passwd', 'ftp://x/y'):
+            try:
+                f._http_get(url)
+                assert False, url
+            except ValueError:
+                pass
+        h = f._HttpsOnlyRedirect()
+        req = urllib.request.Request('https://example.com/a')
+        try:
+            h.redirect_request(req, None, 302, 'Found', {}, 'http://evil.example/sub')
+            assert False, 'редирект на http разрешён'
+        except urllib.error.HTTPError:
+            pass
+        assert h.redirect_request(req, None, 302, 'Found', {}, 'https://ok.example/sub') is not None
+
+    def test_fetch_total_deadline():
+        old_inner, old_dl = f._http_get_inner, f.FETCH_DEADLINE
+        f._http_get_inner, f.FETCH_DEADLINE = (lambda url: time.sleep(30)), 0.3
+        t = time.time()
+        try:
+            f._http_get('https://slow.example/')
+            assert False
+        except TimeoutError:
+            pass
+        finally:
+            f._http_get_inner, f.FETCH_DEADLINE = old_inner, old_dl
+        assert time.time() - t < 5
+
+    def _down(url):
+        raise OSError('source down')
+
+    def test_stale_fallback_refilters_previous_file():
+        old = f._http_get
+        f._http_get = _down
+        try:
+            src = {'name': 'T_STALE', 'url': 'https://down.example/sub'}
+            bad = BYPASSES['insecure_1']
+            prev = GOOD['vless_tls_ws'] + '\n' + bad + '\n'
+            with open(os.path.join(f.OUTPUT_DIR, 'T_STALE.txt'), 'w', encoding='utf-8') as fh:
+                fh.write(base64.b64encode(prev.encode()).decode())
+            health = {src['url']: {'failures': 0, 'last_ok': f._now_utc()}}
+            cfgs, _, st, was_b64 = f.load_and_filter(src, health)
+            assert st['stale'] and not st['fetched'] and was_b64
+            assert cfgs == {prep(GOOD['vless_tls_ws'])[1]}, cfgs
+            health = {src['url']: {'failures': 0, 'last_ok': '2000-01-01 00:00:00 UTC'}}
+            cfgs, _, st, _ = f.load_and_filter(src, health)
+            assert not cfgs and not st['stale']
+        finally:
+            f._http_get = old
+
+    def test_main_end_to_end():
+        plain = '\n'.join(list(GOOD.values()) + list(BYPASSES.values())) + '\n'
+        clash = (f'proxies:\n  - {{name: c1, type: trojan, server: {H}, port: 443, password: pw1, sni: {H}}}\n'
+                 f'  - {{name: c2, type: trojan, server: {H}, port: 444, password: pw2, sni: {H}, skip-cert-verify: true}}\n')
+        content = {'https://s.example/plain': plain,
+                   'https://s.example/b64': base64.b64encode(plain.encode()).decode(),
+                   'https://s.example/clash': clash}
+        old_src, old_get, old_pub = f.SOURCES_CONFIG, f._http_get, f.PUBLISH_REJECTED
+        f.SOURCES_CONFIG = [{'name': 'E_PLAIN', 'url': 'https://s.example/plain'},
+                            {'name': 'E_B64', 'url': 'https://s.example/b64'},
+                            {'name': 'E_CLASH', 'url': 'https://s.example/clash'}]
+        f._http_get = lambda url: content[url].encode()
+        f.PUBLISH_REJECTED = False
+        open(os.path.join(f.REJECT_DIR, 'rejected.txt'), 'w').write('old')
+        try:
+            assert f.main() == 0
+            out = lambda n: open(os.path.join(f.OUTPUT_DIR, n), encoding='utf-8').read()
+            good_pub = {prep(r)[1] for r in GOOD.values()}
+            assert set(out('E_PLAIN.txt').split()) == good_pub
+            assert set(base64.b64decode(out('E_B64.txt')).decode().split()) == good_pub
+            assert out('E_CLASH.txt').count('://') == 1 and 'pw1@' in out('E_CLASH.txt')
+            assert not os.path.exists(os.path.join(f.REJECT_DIR, 'rejected.txt'))
+            allp = yaml.safe_load(open(os.path.join(f.CLASH_DIR, 'ALL.yaml'), encoding='utf-8'))['proxies']
+            assert allp and all(p['skip-cert-verify'] is False for p in allp if p['type'] != 'ss')
+            f._http_get = _down
+            f.SOURCES_CONFIG = [{'name': 'E_DOWN', 'url': 'https://down2.example/x'}]
+            assert f.main() == 1                         # ничего не скачалось -> код 1
+        finally:
+            f.SOURCES_CONFIG, f._http_get, f.PUBLISH_REJECTED = old_src, old_get, old_pub
+
+    def qs_of(link):
+        return urllib.parse.parse_qs(urllib.parse.urlsplit(link).query, keep_blank_values=True)
+
+    CLASH_BAD = (f'proxies:\n'
+                 f'  - {{name: b1, type: trojan, server: {H}, port: 443, password: x, sni: {H}, skip-cert-verify: true}}\n'
+                 f'  - {{name: b2, type: trojan, server: {H}, port: 443, password: x, sni: {H}, ca-str: "-----BEGIN"}}\n'
+                 f'  - {{name: b3, type: vless, server: {H}, port: 443, uuid: {U}, tls: false, servername: {H}, alpn: [h2]}}\n'
+                 f'  - {{name: b4, type: hysteria2, server: {H}, port: 443, password: pw, sni: {H}, skip-cert-verify: yes}}\n')
+
+    def security_problems() -> List[str]:
+        """Проверяет только безопасность, а не политику: если более строгие правила
+        отбросят эталонную хорошую ссылку, это не ошибка."""
+        problems = [f'обход проходит фильтр: {n}' for n, raw in BYPASSES.items() if passes(raw)]
+        for n, raw in ESCAPES.items():
+            reason, pub = prep(raw)
+            if reason:
+                continue
+            qs = qs_of(pub)
+            if (f.preprocess(pub) != pub or qs.get('security') != ['tls']
+                    or (f.FORCE_VERIFY_FLAG and qs.get('allowInsecure') != ['0'])
+                    or not all(k == k.strip().lower() or k == 'allowInsecure' for k in qs)):
+                problems.append(f'escape-ссылка публикуется небезопасно: {n}')
+        for n, raw in GOOD.items():
+            reason, pub = prep(raw)
+            if reason:
+                continue
+            proto, qs = pub.split('://')[0], qs_of(pub)
+            flag = PROTO_FLAG.get(proto)
+            if f.FORCE_VERIFY_FLAG and flag and qs.get(flag) != ['0']:
+                problems.append(f'нет {flag}=0: {n}')
+            if proto == 'vless' and qs.get('security') not in (['tls'], ['reality']):
+                problems.append(f'vless без tls/reality: {n}')
+            cp = f.uri_to_clash(pub)
+            if cp is not None and not f._clash_proxy_is_safe(cp):
+                problems.append(f'Clash-прокси без проверки сертификата: {n}')
+        if f.HAS_YAML:
+            problems += [f'Clash: небезопасный прокси проходит фильтр: {u[:60]}'
+                         for u in f.clash_to_uris(CLASH_BAD) if passes(u)]
+        return problems
+
+    if not full:
+        return security_problems()
+
+    def test_security_guard_clean():
+        assert security_problems() == [], security_problems()
+
+    def test_guard_ignores_stricter_policy():
+        old = f.prepare_config
+        f.prepare_config = lambda line: ('политика', None, line)     # отбросить всё — безопасно
+        try:
+            assert security_problems() == []
+        finally:
+            f.prepare_config = old
+
+    def test_guard_blocks_broken_filter():
+        old = f.prepare_config
+        f.prepare_config = lambda line: ('', None, line)             # «сломанный» фильтр
+        marker = os.path.join(f.OUTPUT_DIR, 'ALL.txt')
+        with open(marker, 'w', encoding='utf-8') as fh:
+            fh.write('old')
+        try:
+            assert security_problems(), 'самопроверка не заметила сломанный фильтр'
+            assert f.main() == 2
+            with open(marker, encoding='utf-8') as fh:
+                assert fh.read() == 'old', 'подписка перезаписана сломанным фильтром'
+        finally:
+            f.prepare_config = old
+
+    tests = [test_good_pass_with_verify_flag, test_client_view_of_published_links,
+             test_escapes_rejected_or_published_safely, test_bypasses_rejected,
+             test_publish_is_idempotent, test_clash_output_is_verified_tls,
+             test_clash_proxy_is_safe_guard, test_clash_yaml_valid_unique_reserved,
+             test_clash_input_converts_and_keeps_insecure,
+             test_urlsafe_base64_subscription, test_yaml_alias_bomb_and_deep_nesting,
+             test_https_only_fetch, test_fetch_total_deadline,
+             test_stale_fallback_refilters_previous_file, test_main_end_to_end,
+             test_security_guard_clean, test_guard_ignores_stricter_policy,
+             test_guard_blocks_broken_filter]
+    paths = ('OUTPUT_DIR', 'HEALTH_FILE', 'REJECT_DIR', 'CLASH_DIR', 'QR_DIR')
+    saved, cwd = {k: getattr(f, k) for k in paths}, os.getcwd()
+    tmp = tempfile.mkdtemp(prefix='filter-selftest-')
+    failures: List[str] = []
+    try:                                  # настоящие подписки тесты не трогают
+        f.OUTPUT_DIR = os.path.join(tmp, 'githubmirror')
+        f.HEALTH_FILE = os.path.join(f.OUTPUT_DIR, 'url_health.json')
+        f.REJECT_DIR = os.path.join(f.OUTPUT_DIR, 'rejected')
+        f.CLASH_DIR = os.path.join(f.OUTPUT_DIR, 'Clash')
+        f.QR_DIR = os.path.join(tmp, 'QR-CODE')
+        for d in (f.REJECT_DIR, f.CLASH_DIR, f.QR_DIR):
+            os.makedirs(d, exist_ok=True)
+        os.chdir(tmp)
+        for fn in tests:
+            try:
+                with contextlib.redirect_stdout(io.StringIO()):
+                    fn()
+                print('PASS', fn.__name__)
+            except Exception as e:                    # noqa: BLE001
+                kind = 'FAIL' if isinstance(e, AssertionError) else 'ERROR'
+                msg = f'{kind} {fn.__name__} — {type(e).__name__}: {e}'[:300]
+                failures.append(msg)
+                print(msg)
+    finally:
+        os.chdir(cwd)
+        for k, v in saved.items():
+            setattr(f, k, v)
+        shutil.rmtree(tmp, ignore_errors=True)
+    return failures
 
 if __name__ == "__main__":
-    main()
+    if '--selftest' in sys.argv[1:]:
+        _failed = _selftest(full=True)
+        print('\n✅ Все тесты пройдены' if not _failed else f'\n❌ Не пройдено тестов: {len(_failed)}')
+        sys.exit(1 if _failed else 0)
+    sys.exit(main())
