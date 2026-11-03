@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 16:15:36 UTC
+# 2026-11-03 16:30:50 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -83,36 +83,6 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.243.235"
-    port: 9570
-    uuid: "9a8e6575-0564-4c3a-8b46-8f723828daf6"
-    udp: true
-    tls: true
-    servername: "cz.ahuel.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "catalog-sync"
-  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "45.132.176.239"
-    port: 9552
-    uuid: "9a8e6575-0564-4c3a-8b46-8f723828daf6"
-    udp: true
-    tls: true
-    servername: "lt.ahuel.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "catalog-sync"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "91.185.83.44"
@@ -130,6 +100,20 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "147.45.110.236"
+    port: 443
+    uuid: "f935f257-1878-4656-8149-4e7737e2ff7d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru-manager.nodexphere.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lDbTuU4-pEAkxizbdrurcjz3eXq0AgECd0hEh0sL0zM"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "trojan"
     server: "153.76.161.159"
@@ -171,9 +155,8 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия [#РКП]"
-      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
-      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇸 Испания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
