@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-03 07:15:34 UTC
+# 2026-11-03 07:30:47 UTC
 proxies:
-  - name: "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "46.243.233.157"
@@ -44,19 +31,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.180.211.245"
-    port: 8443
-    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
-    flow: "xtls-rprx-vision"
-    network: "tcp"
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
@@ -87,21 +61,6 @@ proxies:
   - name: "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "195.123.189.221"
-    port: 443
-    uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
-    udp: true
-    tls: true
-    servername: "max.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
-      short-id: "cbc638acc8ac87"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-90"
-  - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "qtir1.dnetsolutions.ru"
     port: 443
     uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
     udp: true
@@ -183,7 +142,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -204,21 +163,6 @@ proxies:
     udp: true
     sni: "trojan.lso"
   - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vmess"
-    server: "37.220.161.247"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
     type: "vmess"
     server: "37.220.161.249"
     port: 443
@@ -246,14 +190,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
-      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Uzbekistan | stats.vk-portal.net | RAW | [#LSO - #LinSpisokObhod]"
       - "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Czechia | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nlb.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
@@ -262,7 +203,6 @@ proxy-groups:
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 9 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
