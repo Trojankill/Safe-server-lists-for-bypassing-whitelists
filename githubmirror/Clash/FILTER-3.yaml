@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 14:45:35 UTC
+# 2026-11-03 15:01:03 UTC
 proxies:
-  - name: "🇵🇱 Poland — #73"
+  - name: "🇵🇱 Poland — #82"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #24"
+  - name: "🇳🇱 The Netherlands — #31"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -30,22 +30,58 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "🇷🇺 Aeza Group — #1"
+  - name: "🇬🇧 United Kingdom — #28"
     type: "vless"
-    server: "91.185.83.99"
-    port: 15443
-    uuid: "48df2dd2-ec63-472e-bc1b-bdfb7fc5c8bb"
+    server: "95.129.236.117"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "matchtv.ru"
-    client-fingerprint: "qq"
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "4MtUhO_0Dmi7u8ETp_eaNZSTTgQrbY2q2NBDfR2-USE"
-      short-id: "f055e516ca1a57b4"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands — #26"
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: "🇳🇱 The Netherlands — #34"
+    type: "vless"
+    server: "95.129.236.216"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "crm.hourtley.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/stream/video/ffmpeg"
+      headers:
+        Host: "crm.hourtley.com"
+  - name: "🇩🇪 Germany — #4"
+    type: "vless"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/sock/relay/007f9c12e265"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
+  - name: "🇳🇱 The Netherlands — #33"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -62,7 +98,22 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #76"
+  - name: "🇸🇪 Sweden — #85"
+    type: "vless"
+    server: "81.163.22.143"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "join.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
+      short-id: "351224a7"
+    network: "tcp"
+  - name: "🇸🇪 Sweden — #86"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -81,10 +132,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #73"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇷🇺 Aeza Group — #1"
-      - "🇳🇱 The Netherlands — #26"
-      - "🇸🇪 Sweden — #76"
+      - "🇵🇱 Poland — #82"
+      - "🇳🇱 The Netherlands — #31"
+      - "🇬🇧 United Kingdom — #28"
+      - "🇳🇱 The Netherlands — #34"
+      - "🇩🇪 Germany — #4"
+      - "🇳🇱 The Netherlands — #33"
+      - "🇸🇪 Sweden — #85"
+      - "🇸🇪 Sweden — #86"
 rules:
   - MATCH,PROXY
