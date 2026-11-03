@@ -1,17 +1,17 @@
 # clash/mihomo subscription
-# 2026-11-03 03:01:01 UTC
+# 2026-11-03 03:15:33 UTC
 proxies:
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    server: "176.108.246.180"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
     udp: true
     tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
+    servername: "apsnl.yandex-api.com"
     client-fingerprint: "firefox"
     reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
     flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
@@ -52,6 +52,20 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.26.229.198"
+    port: 3443
+    uuid: "81717e41-df63-4908-9546-d409b044b372"
+    udp: true
+    tls: true
+    servername: "cdn.polina.lol"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "B2hPRdH13moEXzVXSINTdTHCYkgaNO53lgCIhDx7cmg"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "81.17.154.97"
@@ -157,10 +171,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🏴 Неизвестный [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия [#РКП]"

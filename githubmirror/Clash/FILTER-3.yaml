@@ -1,33 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 03:01:00 UTC
+# 2026-11-03 03:15:31 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #18"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "qq"
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇳🇱 The Netherlands — #21"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
-  - name: "🇱🇹 Lithuania — #3"
+  - name: "🇱🇹 Lithuania — #23"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -43,7 +17,7 @@ proxies:
       path: "/blog/posts"
       headers:
         Host: "lorettmay.top"
-  - name: "🇳🇱 The Netherlands — #19"
+  - name: "🇵🇱 Poland — #65"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -70,7 +44,7 @@ proxies:
       public-key: "0omtLHQHyKnV7w05maiOqvL5PvxdCQKw_zDqqgR28X8"
       short-id: "8d0ff3d6ec629371"
     network: "xhttp"
-  - name: "🇳🇱 The Netherlands — #23"
+  - name: "🇳🇱 The Netherlands — #40"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -86,7 +60,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇵🇱 Poland — #41"
+  - name: "🇵🇱 Poland — #58"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -102,12 +76,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #18"
-      - "🇳🇱 The Netherlands — #21"
-      - "🇱🇹 Lithuania — #3"
-      - "🇳🇱 The Netherlands — #19"
+      - "🇱🇹 Lithuania — #23"
+      - "🇵🇱 Poland — #65"
       - "🇩🇪 Germany — #2"
-      - "🇳🇱 The Netherlands — #23"
-      - "🇵🇱 Poland — #41"
+      - "🇳🇱 The Netherlands — #40"
+      - "🇵🇱 Poland — #58"
 rules:
   - MATCH,PROXY
