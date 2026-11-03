@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 17:01:25 UTC
+# 2026-11-03 17:15:34 UTC
 proxies:
   - name: "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -159,57 +159,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-90"
-  - name: "Russia | cdn.dash.gearmonster.org | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.129.236.117"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "cdn.dash.gearmonster.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/edge/node8/push"
-      headers:
-        Host: "cdn.dash.gearmonster.org"
-  - name: "Russia | crm.hourtley.com | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
-  - name: "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.129.236.239"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "content-iv1k.login.opendns.stream"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/sock/relay/007f9c12e265"
-      headers:
-        Host: "content-iv1k.login.opendns.stream"
   - name: "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.178.208.140"
@@ -258,6 +207,20 @@ proxies:
     reality-opts:
       public-key: "e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY"
       short-id: "edc4c30c"
+    network: "tcp"
+  - name: "Lithuania | lt-modx.nodexphere.net | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.127.115"
+    port: 443
+    uuid: "f935f257-1878-4656-8149-4e7737e2ff7d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "lt-modx.nodexphere.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cc2mDH9C31IlAwrn1eEhbuzZ3l4Ijw3mKl7rF75GUDo"
     network: "tcp"
   - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -324,6 +287,23 @@ proxies:
         Host: "renderer-stream-2-129.mirra.now"
   - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
     type: "vmess"
+    server: "37.220.161.249"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #3"
+    type: "vmess"
     server: "93.93.89.99"
     port: 443
     uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
@@ -366,18 +346,17 @@ proxy-groups:
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | cdn.dash.gearmonster.org | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | crm.hourtley.com | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Lithuania | lt-modx.nodexphere.net | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 11 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #3"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
