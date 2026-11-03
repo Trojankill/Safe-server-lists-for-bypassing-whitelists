@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 16:01:19 UTC
+# 2026-11-03 16:15:36 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -49,72 +49,7 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #3"
-    type: "vless"
-    server: "85.193.85.231"
-    port: 443
-    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yoy-api.bachidze.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #4"
-    type: "vless"
-    server: "95.129.236.117"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "cdn.dash.gearmonster.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/edge/node8/push"
-      headers:
-        Host: "cdn.dash.gearmonster.org"
-  - name: "🇷🇺 Россия [#РКП] #5"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
-  - name: "🇷🇺 Россия [#РКП] #6"
-    type: "vless"
-    server: "95.129.236.239"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "content-iv1k.login.opendns.stream"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/sock/relay/007f9c12e265"
-      headers:
-        Host: "content-iv1k.login.opendns.stream"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -148,20 +83,36 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "178.159.94.248"
-    port: 5555
-    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    server: "176.108.243.235"
+    port: 9570
+    uuid: "9a8e6575-0564-4c3a-8b46-8f723828daf6"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "de1-site.kartamira.cc"
-    client-fingerprint: "qq"
+    servername: "cz.ahuel.net"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "catalog-sync"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.132.176.239"
+    port: 9552
+    uuid: "9a8e6575-0564-4c3a-8b46-8f723828daf6"
+    udp: true
+    tls: true
+    servername: "lt.ahuel.net"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "catalog-sync"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "91.185.83.44"
@@ -181,34 +132,6 @@ proxies:
         Host: "nguyxejonb.rucdncomp.pro"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "trojan"
-    server: "45.146.131.92"
-    port: 443
-    password: "NesTjEDLXnCeVn0ZLb2hsE3oeZWHHaKR"
-    udp: true
-    sni: "ar-d-s-290.freedomcdnhelloworld.com"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП]"
-    type: "trojan"
-    server: "185.231.204.81"
-    port: 443
-    password: "a9VcMkn2DwEQRxxoxDDhg1eopm2Ff5dY"
-    udp: true
-    sni: "app.alder.sanriodevgroup.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/notes/alder/sync-48560603"
-      headers:
-        Host: "app.alder.sanriodevgroup.org"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
-    type: "trojan"
     server: "153.76.161.159"
     port: 443
     password: "zViIBNyzxX1SgY8aOTMM72-Oy8O4PS89"
@@ -219,7 +142,7 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП] #2"
+  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "185.231.204.193"
     port: 443
@@ -229,7 +152,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП] #3"
+  - name: "🇳🇱 Нидерланды [#РКП]"
     type: "hysteria2"
     server: "185.231.204.81"
     port: 443
@@ -246,18 +169,13 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇷🇺 Россия [#РКП] #3"
-      - "🇷🇺 Россия [#РКП] #4"
-      - "🇷🇺 Россия [#РКП] #5"
-      - "🇷🇺 Россия [#РКП] #6"
-      - "🏴 Неизвестный [#РКП]"
-      - "🇩🇪 Германия [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия [#РКП]"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇸 Испания | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
-      - "🇪🇸 Испания | 🔗 Каскад [#РКП] #2"
-      - "🇪🇸 Испания | 🔗 Каскад [#РКП] #3"
+      - "🇳🇱 Нидерланды [#РКП]"
 rules:
   - MATCH,PROXY

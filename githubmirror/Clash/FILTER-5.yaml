@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 16:01:17 UTC
+# 2026-11-03 16:15:36 UTC
 proxies:
   - name: "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -111,6 +111,38 @@ proxies:
       public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
       short-id: "3c6fc84d"
     network: "tcp"
+  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "79.141.164.125"
+    port: 443
+    uuid: "52a7c001-4c6f-4ae5-8098-01991dfb7ff6"
+    udp: true
+    tls: true
+    servername: "nla.kosmosapp.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
+      short-id: "27350908de933e09"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "neurex"
+  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "79.141.164.81"
+    port: 443
+    uuid: "52a9eb94-bbf7-4037-b939-c298a1860a1f"
+    udp: true
+    tls: true
+    servername: "nla.kosmosapp.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
+      short-id: "27350908de933e09"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "neurex"
   - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "qtir1.dnetsolutions.ru"
@@ -290,6 +322,25 @@ proxies:
       path: "/api/v1/gpu-stream/socket"
       headers:
         Host: "renderer-stream-2-129.mirra.now"
+  - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
+    type: "vmess"
+    server: "93.93.89.99"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -312,6 +363,8 @@ proxy-groups:
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Uzbekistan | stats.vk-portal.net | RAW | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.dash.gearmonster.org | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | crm.hourtley.com | WebSocket | [#LSO - #LinSpisokObhod]"
@@ -324,6 +377,7 @@ proxy-groups:
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 11 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
