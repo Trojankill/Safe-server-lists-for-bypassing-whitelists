@@ -1,6 +1,19 @@
 # clash/mihomo subscription
-# 2026-11-03 00:15:41 UTC
+# 2026-11-03 00:30:47 UTC
 proxies:
+  - name: "🏴 Неизвестный [#РКП]"
+    type: "vless"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    udp: true
+    tls: true
+    servername: "hb.ru-msk.vkcloud-storage.ru"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -27,7 +40,7 @@ proxies:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "45.139.27.63"
     port: 443
@@ -39,7 +52,7 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "81.17.154.97"
     port: 443
@@ -63,6 +76,19 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     network: "xhttp"
+  - name: "🇫🇮 Финляндия [#РКП]"
+    type: "vless"
+    server: "217.144.188.185"
+    port: 443
+    uuid: "8d954cbe-7ca9-402d-bfaf-aca6c92c04c3"
+    udp: true
+    tls: true
+    servername: "www.nordea.fi"
+    client-fingerprint: "firefox"
+    reality-opts:
+      public-key: "_ZRqqX7UVPTq--m8Lk8YHhrfElad2dIIpTh3D59f8zk"
+    flow: "xtls-rprx-vision"
+    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "81.17.154.181"
@@ -131,11 +157,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🏴 Неизвестный [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🏴 Неизвестный [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
