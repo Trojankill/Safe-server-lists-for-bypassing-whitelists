@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 19:15:58 UTC
+# 2026-11-03 19:30:55 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -49,6 +49,20 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "85.193.85.231"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.140"
@@ -83,6 +97,21 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.207.66.160"
+    port: 443
+    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    udp: true
+    tls: true
+    servername: "basterdym.asia"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "91.185.83.44"
@@ -100,21 +129,19 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇷🇺 Россия [#РКП] #3"
-    type: "vless"
-    server: "147.45.110.236"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "45.146.131.92"
     port: 443
-    uuid: "f935f257-1878-4656-8149-4e7737e2ff7d"
+    password: "NesTjEDLXnCeVn0ZLb2hsE3oeZWHHaKR"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-manager.nodexphere.net"
+    sni: "ar-d-s-290.freedomcdnhelloworld.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "lDbTuU4-pEAkxizbdrurcjz3eXq0AgECd0hEh0sL0zM"
-    network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "trojan"
     server: "153.76.161.159"
     port: 443
@@ -126,26 +153,6 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "185.231.204.193"
-    port: 443
-    password: "4536b7a7-eb90-42ce-b45d-5190dfc83701"
-    udp: true
-    sni: "rowan.sanriodevgroup.org"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇳🇱 Нидерланды [#РКП]"
-    type: "hysteria2"
-    server: "185.231.204.81"
-    port: 443
-    password: "4536b7a7-eb90-42ce-b45d-5190dfc83701"
-    udp: true
-    sni: "alder.sanriodevgroup.org"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -153,12 +160,12 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-      - "🇷🇺 Россия [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇪🇸 Испания | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
