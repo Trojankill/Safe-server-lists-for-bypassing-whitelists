@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 20:15:36 UTC
+# 2026-11-03 20:30:56 UTC
 proxies:
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -11,59 +11,14 @@ proxies:
     servername: "lesotorg-kirov.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/chws"
       headers:
         Host: "lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "157.22.197.56"
-    port: 443
-    uuid: "05e7c58f-4d16-4821-ba50-5cedbc735e16"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.okko.tv"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pbO31C8T53OfUhnw152DBaQ0qRPPcStHth61s5OYdV4"
-      short-id: "aabbccdd"
-    network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "vless"
-    server: "213.183.41.226"
-    port: 443
-    uuid: "05e7c58f-4d16-4821-ba50-5cedbc735e16"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pbO31C8T53OfUhnw152DBaQ0qRPPcStHth61s5OYdV4"
-      short-id: "aabbccdd"
-    network: "tcp"
-  - name: "🇸🇪 Sweden [*CIDR]"
-    type: "vless"
-    server: "83.222.13.131"
-    port: 443
-    uuid: "05e7c58f-4d16-4821-ba50-5cedbc735e16"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "amedia-vod.cdnvideo.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pbO31C8T53OfUhnw152DBaQ0qRPPcStHth61s5OYdV4"
-      short-id: "aabbccdd"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] VK"
+  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -80,21 +35,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "rar.rtkdvbr.cc"
-  - name: "🇨🇭 Switzerland [*CIDR]"
-    type: "vless"
-    server: "ch2.h1cloud.net"
-    port: 25879
-    uuid: "241306b3-9f27-4ed3-9524-6c0792c55856"
-    udp: true
-    tls: true
-    servername: "www.bing.com"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "XuI492LMe1OPIwQH5TQlIo33JRqMM3kfnto62tbx5FU"
-      short-id: "f1a7a14461a3f389"
-    network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
     server: "de15.h1cloud.net"
     port: 25362
@@ -102,13 +43,13 @@ proxies:
     udp: true
     tls: true
     servername: "www.chip.de"
-    client-fingerprint: "chrome"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     reality-opts:
       public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
       short-id: "23732d14a527990d"
     network: "tcp"
-  - name: "🇮🇩 Indonesia | 🌐 | [*CIDR]"
+  - name: "🇮🇩 Indonesia | 🌐 [*CIDR]"
     type: "vless"
     server: "213.176.19.216"
     port: 443
@@ -123,7 +64,7 @@ proxies:
       public-key: "NUjWUMNrcZKkvXmnK--E7wn_YyhEH6c-YOqjDMHWAxA"
       short-id: "686b3e179573a80a"
     network: "tcp"
-  - name: "🇮🇩 Indonesia | 🌐 [*CIDR]"
+  - name: "🇮🇩 Indonesia | 🌐 | [*CIDR]"
     type: "vless"
     server: "ru-in-ind-4vp.fast-cdn24.com"
     port: 443
@@ -132,7 +73,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ru-in-ind-4vp.fast-cdn24.com"
-    client-fingerprint: "safari"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "NUjWUMNrcZKkvXmnK--E7wn_YyhEH6c-YOqjDMHWAxA"
@@ -140,64 +81,31 @@ proxies:
     network: "tcp"
   - name: "🇷🇺 Russia | 🌐 | [*CIDR]"
     type: "vless"
-    server: "91.185.83.99"
-    port: 15443
-    uuid: "48df2dd2-ec63-472e-bc1b-bdfb7fc5c8bb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "matchtv.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "4MtUhO_0Dmi7u8ETp_eaNZSTTgQrbY2q2NBDfR2-USE"
-      short-id: "f055e516ca1a57b4"
-    network: "tcp"
-  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
-    type: "vless"
-    server: "cdn389.whitenw.net"
-    port: 15443
-    uuid: "48df2dd2-ec63-472e-bc1b-bdfb7fc5c8bb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "matchtv.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "4MtUhO_0Dmi7u8ETp_eaNZSTTgQrbY2q2NBDfR2-USE"
-      short-id: "f055e516ca1a57b4"
-    network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "77.221.151.106"
-    port: 443
-    uuid: "5c32201a-6c0e-451b-8f0a-24b4bd40df59"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "images.porsche.com"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk"
-      short-id: "1a2b3c4d"
-    network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "147.45.110.236"
+    server: "ru-manager.nodexphere.net"
     port: 443
     uuid: "f935f257-1878-4656-8149-4e7737e2ff7d"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ru-manager.nodexphere.net"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
       public-key: "lDbTuU4-pEAkxizbdrurcjz3eXq0AgECd0hEh0sL0zM"
     network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇵🇱 Poland | [*CIDR]"
+    type: "trojan"
+    server: "45.146.131.92"
+    port: 443
+    password: "NesTjEDLXnCeVn0ZLb2hsE3oeZWHHaKR"
+    udp: true
+    sni: "ar-d-s-290.freedomcdnhelloworld.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+  - name: "🇵🇱 Poland [*CIDR]"
     type: "trojan"
     server: "153.76.161.159"
     port: 443
@@ -209,72 +117,6 @@ proxies:
       - "http/1.1"
     client-fingerprint: "android"
     skip-cert-verify: false
-  - name: "🇩🇪 Germany | [*CIDR]"
-    type: "vmess"
-    server: "93.93.89.99"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "🇩🇪 Germany | [*CIDR] #2"
-    type: "vmess"
-    server: "37.220.161.247"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "🇩🇪 Germany | [*CIDR] #3"
-    type: "vmess"
-    server: "37.220.161.249"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "🇩🇪 Germany | [*CIDR] #4"
-    type: "vmess"
-    server: "renderer-stream-2-129.mirra.now"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
   - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
     type: "hysteria2"
     server: "84.38.184.87"
@@ -299,24 +141,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
-      - "🇸🇪 Sweden [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] VK"
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🇩🇪 Germany [*CIDR]"
-      - "🇮🇩 Indonesia | 🌐 | [*CIDR]"
-      - "🇮🇩 Indonesia | 🌐 [*CIDR]"
-      - "🇷🇺 Russia | 🌐 | [*CIDR]"
-      - "🇷🇺 Russia | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇷🇺 Russia | [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] VK"
       - "🇩🇪 Germany | [*CIDR]"
-      - "🇩🇪 Germany | [*CIDR] #2"
-      - "🇩🇪 Germany | [*CIDR] #3"
-      - "🇩🇪 Germany | [*CIDR] #4"
+      - "🇮🇩 Indonesia | 🌐 [*CIDR]"
+      - "🇮🇩 Indonesia | 🌐 | [*CIDR]"
+      - "🇷🇺 Russia | 🌐 | [*CIDR]"
+      - "🇵🇱 Poland | [*CIDR]"
+      - "🇵🇱 Poland [*CIDR]"
       - "🇭🇺 Hungary | 🌐 [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
 rules:
