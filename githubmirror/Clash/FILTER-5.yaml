@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 12:45:34 UTC
+# 2026-11-03 12:51:33 UTC
 proxies:
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -10,6 +10,7 @@ proxies:
     tls: true
     servername: "iv.kommersant.ru"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
       public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
       short-id: "a5bd715862513387"
@@ -25,6 +26,7 @@ proxies:
     tls: true
     servername: "iv.kommersant.ru"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
       public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
       short-id: "a5bd715862513387"
@@ -38,11 +40,12 @@ proxies:
     uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "smart.bachidze.com"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Uzbekistan | stats.vk-portal.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -51,13 +54,14 @@ proxies:
     uuid: "3cd95e58-9f0a-47e1-9937-64a58e949aa5"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "stats.vk-portal.net"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
       short-id: "3c6fc84d"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "195.123.189.221"
@@ -67,6 +71,7 @@ proxies:
     tls: true
     servername: "max.ru"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
       short-id: "cbc638acc8ac87"
@@ -82,6 +87,7 @@ proxies:
     tls: true
     servername: "max.ru"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
       short-id: "cbc638acc8ac87"
@@ -99,6 +105,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/edge/node8/push"
@@ -115,6 +122,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/stream/video/ffmpeg"
@@ -131,6 +139,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/sock/relay/007f9c12e265"
@@ -143,12 +152,13 @@ proxies:
     uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "storage.yandex.net"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk"
       short-id: "99fe1ec015fde70c"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "Czechia | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -157,12 +167,13 @@ proxies:
     uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "storage.yandex.net"
     client-fingerprint: "edge"
+    skip-cert-verify: false
     reality-opts:
       public-key: "MJTR5hWXg_OJ472i09Dk8MLct_MbQfPqYwtP2k4viEA"
       short-id: "3b7d0a91ce46f28a"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -171,15 +182,16 @@ proxies:
     uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "passport.yandex.ru"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.156"
@@ -191,6 +203,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
@@ -207,6 +220,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/amws"
@@ -219,6 +233,8 @@ proxies:
     password: "5t6i121em5lkmsmk"
     udp: true
     sni: "br001.zestapp778.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
   - name: "Подписка #LSO© Trojan: 9 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -226,6 +242,7 @@ proxies:
     password: "trojan"
     udp: true
     sni: "trojan.lso"
+    skip-cert-verify: false
   - name: "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vmess"
     server: "37.220.161.249"
@@ -236,6 +253,8 @@ proxies:
     udp: true
     tls: true
     servername: "renderer-stream-2-129.mirra.now"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/v1/gpu-stream/socket"
@@ -246,10 +265,12 @@ proxies:
     server: "hy2.about.lso"
     port: 443
     password: "hy2"
+    udp: true
     sni: "hy2.lso"
-    skip-cert-verify: false
     obfs: "salamander"
     obfs-password: "hy2"
+    ports: "67,1488,69,52,42,1337,228,25"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select

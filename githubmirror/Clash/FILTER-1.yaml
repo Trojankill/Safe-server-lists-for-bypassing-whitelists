@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-03 12:45:35 UTC
+# 2026-11-03 12:51:34 UTC
 proxies:
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "31.130.151.160"
-    port: 18443
-    uuid: "2effe34c-028b-4422-bcea-49b2664218ea"
-    udp: true
-    tls: true
-    servername: "193.160.208.240"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "safari"
-    network: "xhttp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -21,11 +8,12 @@ proxies:
     uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "yoy-api.bachidze.com"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
@@ -34,11 +22,12 @@ proxies:
     uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "yoy-api.bachidze.com"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    flow: "xtls-rprx-vision"
     network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
@@ -51,6 +40,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/edge/node8/push"
@@ -67,6 +57,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/stream/video/ffmpeg"
@@ -83,84 +74,26 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/sock/relay/007f9c12e265"
       headers:
         Host: "content-iv1k.login.opendns.stream"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "45.139.27.63"
-    port: 443
-    uuid: "7fc953d6-ae75-46fb-a970-10b57d513487"
-    udp: true
-    tls: true
-    servername: "emerge-01.uiu.fyi"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "81.17.154.97"
-    port: 443
-    uuid: "88281d02-b387-4fe3-918e-26ed331e6d08"
-    udp: true
-    tls: true
-    servername: "is-tw-relay.cdn.cachefleet.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "95.129.234.113"
-    port: 8443
-    uuid: "88281d02-b387-4fe3-918e-26ed331e6d08"
-    udp: true
-    tls: true
-    servername: "sorrel-gate.cdn.cachefleet.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "178.159.94.248"
     port: 5555
     uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "de1-site.kartamira.cc"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "81.17.154.181"
-    port: 443
-    uuid: "b229d38c-35ec-4a0b-9c86-8fceba243d6c"
-    udp: true
-    tls: true
-    servername: "fafeqdhlett2p5la6d.cdn.cachefleet.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "95.129.234.108"
-    port: 8443
-    uuid: "b229d38c-35ec-4a0b-9c86-8fceba243d6c"
-    udp: true
-    tls: true
-    servername: "hazel-beacon.cdn.cachefleet.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇩🇪 Германия [#РКП]"
     type: "vless"
     server: "217.19.122.156"
@@ -172,6 +105,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/useraction/events/b892639b7195/"
@@ -188,54 +122,40 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "185.126.93.225"
-    port: 443
-    uuid: "f04cc810-aaf2-4a7b-8cad-356cdd30d394"
-    udp: true
-    tls: true
-    servername: "tg1.cdnphotos.org"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    network: "xhttp"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "94.228.163.122"
     port: 1935
-    password: "austria_hysteria2_fastlane_2400aehw4%3ARWnDZi17ezmKLVZpnSr81AXwDDcA6YaK"
+    password: "austria_hysteria2_fastlane_2400aehw4:RWnDZi17ezmKLVZpnSr81AXwDDcA6YaK"
+    udp: true
     sni: "at4.h.fastlanehosting.ru"
+    skip-cert-verify: false
   - name: "🇫🇷 Франция [#РКП]"
     type: "hysteria2"
     server: "109.120.179.197"
     port: 1935
-    password: "france_2_hysteria2_fastlane_ta9m8kofg%3AOUnReI0uOy3RuPiPsImkgfKNav48UKxw"
+    password: "france_2_hysteria2_fastlane_ta9m8kofg:OUnReI0uOy3RuPiPsImkgfKNav48UKxw"
+    udp: true
     sni: "fr3.h.fastlanehosting.ru"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
       - "🇷🇺 Россия [#РКП] #5"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция [#РКП]"
 rules:

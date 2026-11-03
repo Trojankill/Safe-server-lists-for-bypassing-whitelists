@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-03 12:45:34 UTC
+# 2026-11-03 12:51:33 UTC
 proxies:
   - name: "🇵🇱 Poland — #75"
     type: "vless"
@@ -8,13 +8,14 @@ proxies:
     uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "bm8.hat.onl"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "🇳🇱 The Netherlands — #24"
     type: "vless"
     server: "84.201.158.195"
@@ -22,12 +23,13 @@ proxies:
     uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "api-maps.yandex.ru"
     client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
       public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "🇵🇱 Poland — #52"
     type: "vless"
     server: "188.225.83.133"
@@ -37,11 +39,13 @@ proxies:
     tls: true
     servername: "xnodtwx.artemida.live"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
       short-id: "a1b2c3d4e5f6a7b8"
     network: "grpc"
     grpc-opts:
+      grpc-service-name: ""
   - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
     server: "91.185.83.44"
@@ -53,6 +57,7 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/0294da469190/"
@@ -65,13 +70,14 @@ proxies:
     uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "join.betust.net"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
   - name: "🇸🇪 Sweden — #77"
     type: "vless"
     server: "81.163.22.194"
@@ -79,13 +85,14 @@ proxies:
     uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
     udp: true
     tls: true
+    flow: "xtls-rprx-vision"
     servername: "apply.betust.net"
     client-fingerprint: "firefox"
+    skip-cert-verify: false
     reality-opts:
       public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
       short-id: "b20168a5"
-    flow: "xtls-rprx-vision"
-    network: "raw"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
