@@ -1,0 +1,83 @@
+# clash/mihomo subscription
+# 2026-11-03 13:00:58 UTC
+proxies:
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vmess"
+    server: "93.93.89.99"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "🇩🇪 Germany | [*CIDR] #2"
+    type: "vmess"
+    server: "37.220.161.247"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "🇩🇪 Germany | [*CIDR] #3"
+    type: "vmess"
+    server: "37.220.161.249"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "🇩🇪 Germany | [*CIDR] #4"
+    type: "vmess"
+    server: "renderer-stream-2-129.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇩🇪 Germany | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] #2"
+      - "🇩🇪 Germany | [*CIDR] #3"
+      - "🇩🇪 Germany | [*CIDR] #4"
+rules:
+  - MATCH,PROXY

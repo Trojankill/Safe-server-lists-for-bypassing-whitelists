@@ -1,7 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-03 12:51:34 UTC
+# 2026-11-03 13:00:59 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "03c478b6-93fb-43aa-9fa1-73ced8a13caf"
+    udp: true
+    tls: true
+    servername: "lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "lesotorg-kirov.ru"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "135aa7e5-87af-4df2-a9f0-0c4eaea0c492"
+    udp: true
+    tls: true
+    servername: "rar.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "rar.rtkdvbr.cc"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "147.45.148.6"
     port: 443
@@ -15,7 +49,7 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "85.193.85.231"
     port: 443
@@ -29,7 +63,7 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #3"
+  - name: "🇷🇺 Россия [#РКП] #4"
     type: "vless"
     server: "95.129.236.117"
     port: 443
@@ -46,7 +80,7 @@ proxies:
       path: "/edge/node8/push"
       headers:
         Host: "cdn.dash.gearmonster.org"
-  - name: "🇷🇺 Россия [#РКП] #4"
+  - name: "🇷🇺 Россия [#РКП] #5"
     type: "vless"
     server: "95.129.236.216"
     port: 443
@@ -63,7 +97,7 @@ proxies:
       path: "/stream/video/ffmpeg"
       headers:
         Host: "crm.hourtley.com"
-  - name: "🇷🇺 Россия [#РКП] #5"
+  - name: "🇷🇺 Россия [#РКП] #6"
     type: "vless"
     server: "95.129.236.239"
     port: 443
@@ -80,6 +114,40 @@ proxies:
       path: "/sock/relay/007f9c12e265"
       headers:
         Host: "content-iv1k.login.opendns.stream"
+  - name: "🏴 Неизвестный [#РКП]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/events/900598fa7500/"
+      headers:
+        Host: "gran-game.pro"
+  - name: "🇩🇪 Германия [#РКП]"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "178.159.94.248"
@@ -94,24 +162,7 @@ proxies:
     reality-opts:
       public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
     network: "tcp"
-  - name: "🇩🇪 Германия [#РКП]"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -128,35 +179,85 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "94.228.163.122"
-    port: 1935
-    password: "austria_hysteria2_fastlane_2400aehw4:RWnDZi17ezmKLVZpnSr81AXwDDcA6YaK"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "45.146.131.92"
+    port: 443
+    password: "NesTjEDLXnCeVn0ZLb2hsE3oeZWHHaKR"
     udp: true
-    sni: "at4.h.fastlanehosting.ru"
+    sni: "ar-d-s-290.freedomcdnhelloworld.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-  - name: "🇫🇷 Франция [#РКП]"
-    type: "hysteria2"
-    server: "109.120.179.197"
-    port: 1935
-    password: "france_2_hysteria2_fastlane_ta9m8kofg:OUnReI0uOy3RuPiPsImkgfKNav48UKxw"
+  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "185.231.204.81"
+    port: 443
+    password: "a9VcMkn2DwEQRxxoxDDhg1eopm2Ff5dY"
     udp: true
-    sni: "fr3.h.fastlanehosting.ru"
+    sni: "app.alder.sanriodevgroup.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/notes/alder/sync-48560603"
+      headers:
+        Host: "app.alder.sanriodevgroup.org"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+    type: "trojan"
+    server: "153.76.161.159"
+    port: 443
+    password: "zViIBNyzxX1SgY8aOTMM72-Oy8O4PS89"
+    udp: true
+    sni: "stoic-ridge.freedomcdnhelloworld.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "185.231.204.193"
+    port: 443
+    password: "4536b7a7-eb90-42ce-b45d-5190dfc83701"
+    udp: true
+    sni: "rowan.sanriodevgroup.org"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП] #3"
+    type: "hysteria2"
+    server: "185.231.204.81"
+    port: 443
+    password: "4536b7a7-eb90-42ce-b45d-5190dfc83701"
+    udp: true
+    sni: "alder.sanriodevgroup.org"
+    alpn:
+      - "h3"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Россия [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
       - "🇷🇺 Россия [#РКП] #5"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #6"
+      - "🏴 Неизвестный [#РКП]"
       - "🇩🇪 Германия [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-      - "🇫🇷 Франция [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇪🇸 Испания | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇪🇸 Испания | 🔗 Каскад [#РКП] #2"
+      - "🇪🇸 Испания | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY
