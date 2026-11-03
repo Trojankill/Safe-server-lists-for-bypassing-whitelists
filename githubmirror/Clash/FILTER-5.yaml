@@ -1,19 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-03 11:45:30 UTC
+# 2026-11-03 12:01:01 UTC
 proxies:
-  - name: "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    flow: "xtls-rprx-vision"
-    network: "raw"
   - name: "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "46.243.233.157"
@@ -177,21 +164,6 @@ proxies:
       short-id: "3b7d0a91ce46f28a"
     flow: "xtls-rprx-vision"
     network: "tcp"
-  - name: "The Netherlands | nlb.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "79.141.164.83"
-    port: 443
-    uuid: "810a32e0-2318-4d0a-bd67-4f84270013a6"
-    udp: true
-    tls: true
-    servername: "nlb.kosmosapp.net"
-    client-fingerprint: "firefox"
-    reality-opts:
-      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
-      short-id: "27350908de933e09"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "neurex"
   - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
@@ -282,7 +254,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
@@ -294,7 +265,6 @@ proxy-groups:
       - "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Czechia | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | nlb.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
