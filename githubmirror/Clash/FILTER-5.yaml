@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-03 14:15:33 UTC
+# 2026-11-03 14:30:51 UTC
 proxies:
+  - name: "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "217.19.122.170"
+    port: 2096
+    uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "bm8.hat.onl"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
+      short-id: "2a096f7b298d0aba"
+    network: "tcp"
   - name: "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.229.9.135"
@@ -18,20 +33,6 @@ proxies:
       path: "/chws"
       headers:
         Host: "lesotorg-kirov.ru"
-  - name: "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    network: "tcp"
   - name: "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.145.37"
@@ -81,21 +82,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.172.227.124"
-    port: 10444
-    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
@@ -125,6 +111,22 @@ proxies:
       public-key: "6eN2NciEaZis5J4muRRqpfLQ1OglI3A8lNSTmAGo6Do"
       short-id: "3c6fc84d"
     network: "tcp"
+  - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "qtir1.dnetsolutions.ru"
+    port: 443
+    uuid: "63959ed7-d26f-48dd-8c7b-ebdb6ea68535"
+    udp: true
+    tls: true
+    servername: "max.ru"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "9X-tgXeFaqxURY0nGxFNdz9bpNIo7DTXHoWXpBqiOj0"
+      short-id: "cbc638acc8ac87"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-90"
   - name: "Russia | cdn.dash.gearmonster.org | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "95.129.236.117"
@@ -210,82 +212,20 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "212.127.91.79"
-    port: 443
-    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
+    server: "185.76.241.52"
+    port: 9601
+    uuid: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "storage.yandex.net"
+    servername: "msk1.nexfile.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk"
-      short-id: "99fe1ec015fde70c"
-    network: "tcp"
-  - name: "Czechia | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "5.39.202.66"
-    port: 443
-    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "storage.yandex.net"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "MJTR5hWXg_OJ472i09Dk8MLct_MbQfPqYwtP2k4viEA"
-      short-id: "3b7d0a91ce46f28a"
-    network: "tcp"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "95.128.71.79"
-    port: 10444
-    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
-    type: "vless"
-    server: "178.172.227.228"
-    port: 10444
-    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "161.97.160.224"
-    port: 443
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
-      short-id: "e6"
+      public-key: "e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY"
+      short-id: "edc4c30c"
     network: "tcp"
   - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -365,24 +305,20 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | iv.kommersant.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Uzbekistan | stats.vk-portal.net | RAW | [#LSO - #LinSpisokObhod]"
+      - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | cdn.dash.gearmonster.org | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | crm.hourtley.com | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
-      - "Czechia | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #3"
-      - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | msk1.nexfile.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
