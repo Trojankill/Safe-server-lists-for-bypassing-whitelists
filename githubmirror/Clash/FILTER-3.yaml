@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 21:45:39 UTC
+# 2026-11-03 22:00:59 UTC
 proxies:
-  - name: "🇵🇱 Poland — #77"
+  - name: "🇵🇱 Poland — #78"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -48,23 +48,6 @@ proxies:
       grpc-service-name: ""
   - name: "🇩🇪 Germany — #5"
     type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
-  - name: "🇩🇪 Germany — #4"
-    type: "vless"
     server: "217.19.122.156"
     port: 443
     uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
@@ -97,7 +80,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #81"
+  - name: "🇸🇪 Sweden — #82"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -112,7 +95,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #82"
+  - name: "🇸🇪 Sweden — #83"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -131,13 +114,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #77"
+      - "🇵🇱 Poland — #78"
       - "🇳🇱 The Netherlands — #27"
       - "🇵🇱 Poland — #54"
       - "🇩🇪 Germany — #5"
-      - "🇩🇪 Germany — #4"
       - "🇳🇱 The Netherlands — #29"
-      - "🇸🇪 Sweden — #81"
       - "🇸🇪 Sweden — #82"
+      - "🇸🇪 Sweden — #83"
 rules:
   - MATCH,PROXY
