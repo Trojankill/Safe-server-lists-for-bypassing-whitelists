@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-03 17:45:35 UTC
+# 2026-11-03 18:01:09 UTC
 proxies:
-  - name: "🇵🇱 Poland — #81"
+  - name: "🇵🇱 Poland — #79"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇷🇺 Delta — #3"
+  - name: "🇷🇺 Delta — #1"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -33,7 +33,7 @@ proxies:
       path: "/chws"
       headers:
         Host: "lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #33"
+  - name: "🇳🇱 The Netherlands — #29"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -47,7 +47,7 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #34"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -64,22 +64,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "rar.rtkdvbr.cc"
-  - name: "🇷🇺 Aeza Group — #1"
-    type: "vless"
-    server: "91.185.83.99"
-    port: 15443
-    uuid: "48df2dd2-ec63-472e-bc1b-bdfb7fc5c8bb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "matchtv.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "4MtUhO_0Dmi7u8ETp_eaNZSTTgQrbY2q2NBDfR2-USE"
-      short-id: "f055e516ca1a57b4"
-    network: "tcp"
-  - name: "🇩🇪 Germany — #7"
+  - name: "🇵🇱 Poland — #61"
     type: "vless"
     server: "188.225.83.133"
     port: 443
@@ -87,7 +72,7 @@ proxies:
     udp: true
     tls: true
     servername: "xnodtwx.artemida.live"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
@@ -95,7 +80,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇳🇱 The Netherlands — #32"
+  - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -112,7 +97,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #84"
+  - name: "🇸🇪 Sweden — #83"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -127,7 +112,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #85"
+  - name: "🇸🇪 Sweden — #84"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -146,14 +131,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #81"
-      - "🇷🇺 Delta — #3"
-      - "🇳🇱 The Netherlands — #33"
-      - "🇳🇱 The Netherlands — #34"
-      - "🇷🇺 Aeza Group — #1"
-      - "🇩🇪 Germany — #7"
-      - "🇳🇱 The Netherlands — #32"
+      - "🇵🇱 Poland — #79"
+      - "🇷🇺 Delta — #1"
+      - "🇳🇱 The Netherlands — #29"
+      - "🇳🇱 The Netherlands — #30"
+      - "🇵🇱 Poland — #61"
+      - "🇳🇱 The Netherlands — #28"
+      - "🇸🇪 Sweden — #83"
       - "🇸🇪 Sweden — #84"
-      - "🇸🇪 Sweden — #85"
 rules:
   - MATCH,PROXY
