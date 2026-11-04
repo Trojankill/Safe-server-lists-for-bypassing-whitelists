@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-04 04:15:32 UTC
+# 2026-11-04 04:30:45 UTC
 proxies:
+  - name: "🇪🇸 Spain [*CIDR]"
+    type: "vless"
+    server: "es3.h1cloud.net"
+    port: 25150
+    uuid: "056405e8-de9f-4d0d-8145-956f13cc34da"
+    udp: true
+    tls: true
+    servername: "www.samsung.com"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Qvn7tV54mdqxJ40LmmoI1PRM1QKXEbfFOZS-omPKhGY"
+      short-id: "4301a484cc762aa6"
+    network: "tcp"
   - name: "🇮🇪 Ireland [*CIDR]"
     type: "vless"
     server: "45.132.176.61"
@@ -18,6 +32,21 @@ proxies:
     network: "tcp"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
+    server: "200.169.184.140"
+    port: 443
+    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    udp: true
+    tls: true
+    servername: "basterdym.asia"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+    type: "vless"
     server: "basterdym.asia"
     port: 443
     uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
@@ -26,31 +55,18 @@ proxies:
     servername: "basterdym.asia"
     alpn:
       - "h2"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🇳🇱 The Netherlands | 🌐 [*CIDR]"
-    type: "vless"
-    server: "91.186.198.169"
-    port: 443
-    uuid: "a7c8cd64-ee86-49a1-925a-f359ff2b57c6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rutube.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Fatl2jnU5cyp5jwnMSX3FQeCluRfD-UJ6yDFfK49YnY"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇪🇸 Spain [*CIDR]"
       - "🇮🇪 Ireland [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
 rules:
   - MATCH,PROXY
