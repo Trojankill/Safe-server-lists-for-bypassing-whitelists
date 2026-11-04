@@ -1,36 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 00:15:34 UTC
+# 2026-11-04 00:30:48 UTC
 proxies:
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
-    type: "vless"
-    server: "84.252.101.6"
-    port: 443
-    uuid: "03248cf9-cbcb-4718-a11d-35b499978d27"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-node.vopn.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "lBCt9m_PzWWdm1HvyZtJyCupmcySkfphwArSyPLPKXk"
-      short-id: "ec65c264313fd33b"
-    network: "tcp"
-  - name: "🇪🇸 Spain [*CIDR]"
-    type: "vless"
-    server: "es3.h1cloud.net"
-    port: 25150
-    uuid: "056405e8-de9f-4d0d-8145-956f13cc34da"
-    udp: true
-    tls: true
-    servername: "www.samsung.com"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Qvn7tV54mdqxJ40LmmoI1PRM1QKXEbfFOZS-omPKhGY"
-      short-id: "4301a484cc762aa6"
-    network: "tcp"
-  - name: "🇨🇭 Switzerland | [*CIDR]"
+  - name: "🇨🇭 Switzerland [*CIDR]"
     type: "vless"
     server: "ch2.h1cloud.net"
     port: 25879
@@ -58,41 +29,9 @@ proxies:
       public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
       short-id: "23732d14a527990d"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "95.182.110.17"
-    port: 443
-    uuid: "4a0812f0-f9d7-4afd-9ae3-6c38e1e59485"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "promo-digital.wb.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
-      short-id: "d3f314d0b692f63d"
-    network: "tcp"
-  - name: "🇩🇪 Germany | [*CIDR]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "185.207.66.160"
+    server: "basterdym.asia"
     port: 443
     uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
     udp: true
@@ -105,38 +44,27 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "84.38.184.87"
-    port: 36116
-    password: "1793747701:04cbffa7-bd2c-4a51-bf32-2253f4fbc1ab:98Va5kVHKW06htuFKRbjrX7rWPTNQI4Jlee5xTFNAW0"
+  - name: "🌐 Anycast-IP | 🇨🇦 🇩🇪 🇮🇪 🇮🇶 🇳🇱 [*CIDR]"
+    type: "trojan"
+    server: "171.22.130.89"
+    port: 443
+    password: "8deb189a-3aed-4865-843b-b72dae954c46"
     udp: true
-    sni: "hu.lumacache.com"
-    alpn:
-      - "h3"
+    sni: "api.85s.me"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "84.38.184.87"
-    port: 36118
-    password: "1793747701:04cbffa7-bd2c-4a51-bf32-2253f4fbc1ab:EKksNGKEBp8PXC1msSPh-Nfurs0VeCN0xPSnf1UsVH8"
-    udp: true
-    sni: "us2.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "api.85s.me"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
-      - "🇪🇸 Spain [*CIDR]"
-      - "🇨🇭 Switzerland | [*CIDR]"
+      - "🇨🇭 Switzerland [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
-      - "🇩🇪 Germany | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇭🇺 Hungary | 🌐 [*CIDR]"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇦 🇩🇪 🇮🇪 🇮🇶 🇳🇱 [*CIDR]"
 rules:
   - MATCH,PROXY
