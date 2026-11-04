@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 01:00:57 UTC
+# 2026-11-04 01:15:30 UTC
 proxies:
-  - name: "🇵🇱 Poland — #78"
+  - name: "🇵🇱 Poland — #73"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,21 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #29"
+  - name: "🇳🇱 The Netherlands — #25"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #27"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -30,24 +44,7 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "🇩🇪 Germany — #6"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
-  - name: "🇩🇪 Germany — #5"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -64,24 +61,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #31"
-    type: "vless"
-    server: "91.185.83.44"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "nguyxejonb.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #82"
+  - name: "🇸🇪 Sweden — #77"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -96,7 +76,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #83"
+  - name: "🇸🇪 Sweden — #78"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -115,12 +95,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #78"
-      - "🇳🇱 The Netherlands — #29"
-      - "🇩🇪 Germany — #6"
-      - "🇩🇪 Germany — #5"
-      - "🇳🇱 The Netherlands — #31"
-      - "🇸🇪 Sweden — #82"
-      - "🇸🇪 Sweden — #83"
+      - "🇵🇱 Poland — #73"
+      - "🇳🇱 The Netherlands — #25"
+      - "🇳🇱 The Netherlands — #27"
+      - "🇩🇪 Germany — #3"
+      - "🇸🇪 Sweden — #77"
+      - "🇸🇪 Sweden — #78"
 rules:
   - MATCH,PROXY

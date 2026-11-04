@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 01:00:57 UTC
+# 2026-11-04 01:15:30 UTC
 proxies:
   - name: "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -91,6 +91,23 @@ proxies:
     reality-opts:
       public-key: "qyVTRBNzBF7TwtkzeB_Q9jN9aYhGWX7F4SUCOjxK9VU"
     network: "tcp"
+  - name: "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "217.19.122.156"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.39"
@@ -137,6 +154,23 @@ proxies:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     network: "tcp"
+  - name: "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/events/900598fa7500/"
+      headers:
+        Host: "gran-game.pro"
   - name: "Bulgaria | bg1.fox-lisa.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.246.131.55"
@@ -162,7 +196,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -256,9 +290,11 @@ proxy-groups:
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | bezlimitapi-bm-s1517.reverseenge.sbs | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | rutube.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Bulgaria | bg1.fox-lisa.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
