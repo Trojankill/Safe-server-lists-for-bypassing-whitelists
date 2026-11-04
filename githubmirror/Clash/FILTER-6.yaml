@@ -1,27 +1,59 @@
 # clash/mihomo subscription
-# 2026-11-04 12:30:47 UTC
+# 2026-11-04 12:45:32 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇭🇺 Hungary | [*CIDR] VK"
     type: "vless"
-    server: "91.185.83.44"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    server: "217.16.26.34"
+    port: 2081
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
     udp: true
     tls: true
-    servername: "nguyxejonb.rucdncomp.pro"
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇭🇺 Hungary | [*CIDR] VK #2"
+    type: "vless"
+    server: "connect.accessgate.link"
+    port: 2081
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇱🇹 Lithuania | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    servername: "marshalltmp.top"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/service/telemetry/0294da469190/"
+      path: "/shop/catalog"
       headers:
-        Host: "nguyxejonb.rucdncomp.pro"
+        Host: "marshalltmp.top"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇭🇺 Hungary | [*CIDR] VK"
+      - "🇭🇺 Hungary | [*CIDR] VK #2"
+      - "🇱🇹 Lithuania | [*CIDR]"
 rules:
   - MATCH,PROXY
