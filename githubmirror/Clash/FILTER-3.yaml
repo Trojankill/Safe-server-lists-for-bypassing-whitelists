@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 02:45:33 UTC
+# 2026-11-04 03:01:00 UTC
 proxies:
-  - name: "🇵🇱 Poland — #55"
+  - name: "🇵🇱 Poland — #74"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇵🇱 Poland — #59"
+  - name: "🇵🇱 Poland — #78"
     type: "vless"
     server: "31.177.111.236"
     port: 443
@@ -30,7 +30,7 @@ proxies:
     reality-opts:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #9"
+  - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
     server: "178.250.243.45"
     port: 2444
@@ -44,23 +44,6 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "🇩🇪 Germany — #4"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
   - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "217.19.122.156"
@@ -78,7 +61,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #60"
+  - name: "🇸🇪 Sweden — #79"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -93,7 +76,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #61"
+  - name: "🇸🇪 Sweden — #80"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -112,12 +95,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #55"
-      - "🇵🇱 Poland — #59"
-      - "🇳🇱 The Netherlands — #9"
-      - "🇩🇪 Germany — #4"
+      - "🇵🇱 Poland — #74"
+      - "🇵🇱 Poland — #78"
+      - "🇳🇱 The Netherlands — #28"
       - "🇩🇪 Germany — #3"
-      - "🇸🇪 Sweden — #60"
-      - "🇸🇪 Sweden — #61"
+      - "🇸🇪 Sweden — #79"
+      - "🇸🇪 Sweden — #80"
 rules:
   - MATCH,PROXY
