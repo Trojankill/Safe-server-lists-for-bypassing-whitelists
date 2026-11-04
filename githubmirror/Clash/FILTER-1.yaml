@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 08:45:33 UTC
+# 2026-11-04 09:01:00 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -74,21 +74,23 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
-    server: "200.169.184.140"
+    server: "91.185.83.44"
     port: 443
-    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    servername: "basterdym.asia"
+    servername: "nguyxejonb.rucdncomp.pro"
     alpn:
-      - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de1.v1"
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.rucdncomp.pro"
   - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.140"
@@ -115,7 +117,7 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
