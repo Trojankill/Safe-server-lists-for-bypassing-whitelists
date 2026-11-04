@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 05:15:32 UTC
+# 2026-11-04 05:30:47 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,34 +16,6 @@ proxies:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    network: "tcp"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.246.180"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "apsnl.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
-    network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "31.130.155.212"
     port: 443
@@ -102,7 +74,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "200.169.184.140"
     port: 443
@@ -117,68 +89,15 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "91.186.198.169"
-    port: 443
-    uuid: "a7c8cd64-ee86-49a1-925a-f359ff2b57c6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rutube.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Fatl2jnU5cyp5jwnMSX3FQeCluRfD-UJ6yDFfK49YnY"
-    network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
-    type: "vless"
-    server: "91.185.83.44"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "nguyxejonb.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "nguyxejonb.rucdncomp.pro"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+      - "🏴 Неизвестный [#РКП]"
 rules:
   - MATCH,PROXY
