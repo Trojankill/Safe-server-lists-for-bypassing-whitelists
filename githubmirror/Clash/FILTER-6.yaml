@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 16:45:37 UTC
+# 2026-11-04 17:01:01 UTC
 proxies:
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
     type: "vless"
     server: "84.252.101.6"
     port: 443
@@ -10,13 +10,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ru-node.vopn.net"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "lBCt9m_PzWWdm1HvyZtJyCupmcySkfphwArSyPLPKXk"
       short-id: "ec65c264313fd33b"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "185.229.9.135"
     port: 443
@@ -33,7 +33,37 @@ proxies:
       path: "/chws"
       headers:
         Host: "lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+  - name: "🇪🇪 Estonia | [*CIDR] VK"
+    type: "vless"
+    server: "217.16.26.28"
+    port: 2880
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR] VK"
+    type: "vless"
+    server: "217.16.26.28"
+    port: 3088
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdnjs.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR] VK"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -50,22 +80,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "rar.rtkdvbr.cc"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "200.169.184.140"
-    port: 443
-    uuid: "e2441ec8-2ad3-4d20-8056-3c74195dc1b5"
-    udp: true
-    tls: true
-    servername: "basterdym.asia"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de1.v1"
-  - name: "🇱🇹 Lithuania | [*CIDR]"
+  - name: "🇱🇹 Lithuania [*CIDR]"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -75,7 +90,7 @@ proxies:
     servername: "marshalltmp.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -86,10 +101,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇱🇹 Lithuania | [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇪🇪 Estonia | [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR] VK"
+      - "🇳🇱 The Netherlands [*CIDR] VK"
+      - "🇱🇹 Lithuania [*CIDR]"
 rules:
   - MATCH,PROXY
