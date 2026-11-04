@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 08:00:57 UTC
+# 2026-11-04 08:15:31 UTC
 proxies:
-  - name: "🇵🇱 Poland — #70"
+  - name: "🇵🇱 Poland — #85"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -16,7 +16,7 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
-  - name: "🇵🇱 Poland — #74"
+  - name: "🇵🇱 Poland — #89"
     type: "vless"
     server: "31.177.111.236"
     port: 443
@@ -30,7 +30,53 @@ proxies:
     reality-opts:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
-  - name: "🇩🇪 Germany — #3"
+  - name: "🇳🇱 The Netherlands — #37"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    network: "tcp"
+  - name: "🇭🇺 Hungary — #36"
+    type: "vless"
+    server: "217.16.26.34"
+    port: 2081
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇩🇪 Germany — #15"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/events/900598fa7500/"
+      headers:
+        Host: "gran-game.pro"
+  - name: "🇩🇪 Germany — #13"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -47,7 +93,39 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #75"
+  - name: "🇳🇱 The Netherlands — #39"
+    type: "vless"
+    server: "91.185.83.44"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "nguyxejonb.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.rucdncomp.pro"
+  - name: "🇸🇪 Sweden — #90"
+    type: "vless"
+    server: "81.163.22.143"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "join.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
+      short-id: "351224a7"
+    network: "tcp"
+  - name: "🇸🇪 Sweden — #91"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -66,9 +144,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #70"
-      - "🇵🇱 Poland — #74"
-      - "🇩🇪 Germany — #3"
-      - "🇸🇪 Sweden — #75"
+      - "🇵🇱 Poland — #85"
+      - "🇵🇱 Poland — #89"
+      - "🇳🇱 The Netherlands — #37"
+      - "🇭🇺 Hungary — #36"
+      - "🇩🇪 Germany — #15"
+      - "🇩🇪 Germany — #13"
+      - "🇳🇱 The Netherlands — #39"
+      - "🇸🇪 Sweden — #90"
+      - "🇸🇪 Sweden — #91"
 rules:
   - MATCH,PROXY
