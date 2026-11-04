@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 13:01:03 UTC
+# 2026-11-04 13:15:33 UTC
 proxies:
   - name: "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -16,6 +16,23 @@ proxies:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
     network: "tcp"
+  - name: "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "2f4de908-b22e-48e9-9e57-fc86acf02c56"
+    udp: true
+    tls: true
+    servername: "lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "lesotorg-kirov.ru"
   - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
@@ -30,6 +47,23 @@ proxies:
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     network: "tcp"
+  - name: "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "40945325-a133-41ef-8fc3-2e726678ad52"
+    udp: true
+    tls: true
+    servername: "rar.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "rar.rtkdvbr.cc"
   - name: "The Netherlands | bezlimitapi-bm-s1517.reverseenge.sbs | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.13.65"
@@ -107,23 +141,6 @@ proxies:
       public-key: "NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs"
       short-id: "027af64166562b09"
     network: "tcp"
-  - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
-    udp: true
-    tls: true
-    servername: "ara.rtkdvbr.cc"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "ara.rtkdvbr.cc"
   - name: "Russia | marshalltmp.top | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.178.208.140"
@@ -223,13 +240,14 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | bezlimitapi-bm-s1517.reverseenge.sbs | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Bulgaria | bg1.fox-lisa.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | marshalltmp.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
