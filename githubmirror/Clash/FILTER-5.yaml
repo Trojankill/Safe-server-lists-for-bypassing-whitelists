@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 13:15:33 UTC
+# 2026-11-04 13:30:48 UTC
 proxies:
   - name: "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,6 +15,20 @@ proxies:
     reality-opts:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
+    network: "tcp"
+  - name: "Russia | hb.ru-msk.vkcloud-storage.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "178.250.243.45"
+    port: 2444
+    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "hb.ru-msk.vkcloud-storage.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
   - name: "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -240,6 +254,7 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | hb.ru-msk.vkcloud-storage.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
