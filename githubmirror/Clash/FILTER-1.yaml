@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-04 21:45:35 UTC
+# 2026-11-04 22:00:56 UTC
 proxies:
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -61,6 +47,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.185.83.44"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    udp: true
+    tls: true
+    servername: "nguyxejonb.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.rucdncomp.pro"
   - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.140"
@@ -122,10 +125,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇩🇪 Германия [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
