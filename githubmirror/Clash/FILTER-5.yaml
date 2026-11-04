@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-04 17:45:33 UTC
+# 2026-11-04 18:01:01 UTC
 proxies:
-  - name: "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -30,20 +30,20 @@ proxies:
     reality-opts:
       public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
-  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "193.163.203.170"
-    port: 443
-    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    server: "85.202.192.131"
+    port: 34033
+    uuid: "2cb6a5d1-0165-4bc2-aff2-832672160c56"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "yandex.ru"
+    servername: "splitter.wb.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
-      short-id: "b28db60d77c50b4f"
+      public-key: "I7s_V_6XHD2As0H5Ok2GV2a2M7o9RDCrH2USpCZPy0A"
+      short-id: "a1fdf7b7bebade41"
     network: "tcp"
   - name: "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -172,6 +172,20 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     network: "tcp"
+  - name: "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "31.76.251.23"
+    port: 443
+    uuid: "db4f6c31-ae15-43f1-811e-4ec34768952f"
+    udp: true
+    tls: true
+    servername: "www.ya.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "dlhoLMdfvgjSVzSuT0PPhomRdNcy8_qtnky0kKflqGI"
+      short-id: "a1b2c3d4"
+    network: "tcp"
   - name: "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "138.124.125.193"
@@ -186,68 +200,6 @@ proxies:
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "Kazakhstan | splitter.wb.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "213.155.23.70"
-    port: 17789
-    uuid: "ebfe9aa7-990f-4d30-9105-2c6b25817194"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "splitter.wb.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "uXwlj6V8_F5RLwqw8C25GIsNP99AGv_Vvb_XmRuo1UU"
-      short-id: "487cff0425b4e006"
-    network: "tcp"
-  - name: "Russia | marshalltmp.top | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    servername: "marshalltmp.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/shop/catalog"
-      headers:
-        Host: "marshalltmp.top"
-  - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "81.163.22.143"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "join.betust.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
-      short-id: "351224a7"
-    network: "tcp"
-  - name: "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "81.163.22.194"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "apply.betust.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
-      short-id: "b20168a5"
     network: "tcp"
   - name: "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "trojan"
@@ -300,9 +252,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | bm8.hat.onl | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | hb.ru-msk.vkcloud-storage.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | lesotorg-kirov.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | rar.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
@@ -311,11 +263,8 @@ proxy-groups:
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Kazakhstan | splitter.wb.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | marshalltmp.top | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Brazil | br001.zestapp778.com | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 11 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
