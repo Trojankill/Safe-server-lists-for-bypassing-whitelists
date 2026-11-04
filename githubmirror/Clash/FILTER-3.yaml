@@ -1,36 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-04 19:45:34 UTC
+# 2026-11-04 20:00:58 UTC
 proxies:
-  - name: "🇦🇪 United Arab Emirates — #7"
-    type: "vless"
-    server: "217.19.122.170"
-    port: 2053
-    uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "bm1.hat.onl"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "GyYuIjccJJRQZM72MGdBQEwGwGR9e0UMNlJxw0sQR2M"
-      short-id: "38560e0003d69843"
-    network: "tcp"
-  - name: "🇵🇱 Poland — #89"
-    type: "vless"
-    server: "217.19.122.170"
-    port: 2096
-    uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "bm8.hat.onl"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
-      short-id: "2a096f7b298d0aba"
-    network: "tcp"
   - name: "🇷🇺 Yandex — #1"
     type: "vless"
     server: "84.201.145.167"
@@ -46,55 +16,24 @@ proxies:
       public-key: "PfSDTeA5VEg8LgrpBG5zf2kDU3P2wc9c9bA_9SbCeVY"
       short-id: "6ba85179e30d4fc2"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #36"
+  - name: "🇩🇪 Germany — #10"
     type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hb.ru-msk.vkcloud-storage.ru"
+    servername: "gran-game.pro"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
-    network: "tcp"
-  - name: "🇷🇺 Delta — #2"
-    type: "vless"
-    server: "185.229.9.135"
-    port: 443
-    uuid: "2f4de908-b22e-48e9-9e57-fc86acf02c56"
-    udp: true
-    tls: true
-    servername: "lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/chws"
+      path: "/static/events/900598fa7500/"
       headers:
-        Host: "lesotorg-kirov.ru"
-  - name: "🇳🇱 The Netherlands — #40"
-    type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "40945325-a133-41ef-8fc3-2e726678ad52"
-    udp: true
-    tls: true
-    servername: "rar.rtkdvbr.cc"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "rar.rtkdvbr.cc"
-  - name: "🇩🇪 Germany — #10"
+        Host: "gran-game.pro"
+  - name: "🇩🇪 Germany — #7"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -111,7 +50,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #38"
+  - name: "🇳🇱 The Netherlands — #31"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -128,7 +67,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇷🇺 Selectel — #6"
+  - name: "🇷🇺 Selectel — #2"
     type: "vless"
     server: "188.225.79.22"
     port: 443
@@ -144,7 +83,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-baf3bc8498"
-  - name: "🇸🇪 Sweden — #94"
+  - name: "🇸🇪 Sweden — #85"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -159,7 +98,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #95"
+  - name: "🇸🇪 Sweden — #86"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -178,16 +117,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇪 United Arab Emirates — #7"
-      - "🇵🇱 Poland — #89"
       - "🇷🇺 Yandex — #1"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇷🇺 Delta — #2"
-      - "🇳🇱 The Netherlands — #40"
       - "🇩🇪 Germany — #10"
-      - "🇳🇱 The Netherlands — #38"
-      - "🇷🇺 Selectel — #6"
-      - "🇸🇪 Sweden — #94"
-      - "🇸🇪 Sweden — #95"
+      - "🇩🇪 Germany — #7"
+      - "🇳🇱 The Netherlands — #31"
+      - "🇷🇺 Selectel — #2"
+      - "🇸🇪 Sweden — #85"
+      - "🇸🇪 Sweden — #86"
 rules:
   - MATCH,PROXY
