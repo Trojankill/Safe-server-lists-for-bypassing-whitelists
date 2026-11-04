@@ -1,61 +1,25 @@
 # clash/mihomo subscription
-# 2026-11-04 20:45:36 UTC
+# 2026-11-04 21:00:58 UTC
 proxies:
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR] YA"
     type: "vless"
-    server: "185.229.9.135"
-    port: 443
-    uuid: "2f4de908-b22e-48e9-9e57-fc86acf02c56"
-    udp: true
-    tls: true
-    servername: "lesotorg-kirov.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/chws"
-      headers:
-        Host: "lesotorg-kirov.ru"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "connect3.accessgate.link"
-    port: 2080
-    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    server: "84.201.145.167"
+    port: 51191
+    uuid: "0408e624-0d2a-49bc-8c1c-cbcf5fb75328"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "unpkg.com"
-    client-fingerprint: "edge"
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
-      short-id: "b0d8c9a285c70f6f"
+      public-key: "PfSDTeA5VEg8LgrpBG5zf2kDU3P2wc9c9bA_9SbCeVY"
+      short-id: "6ba85179e30d4fc2"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] VK"
-    type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "40945325-a133-41ef-8fc3-2e726678ad52"
-    udp: true
-    tls: true
-    servername: "rar.rtkdvbr.cc"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "rar.rtkdvbr.cc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR] YA"
 rules:
   - MATCH,PROXY
