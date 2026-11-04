@@ -1,7 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-04 17:15:36 UTC
+# 2026-11-04 17:30:52 UTC
 proxies:
   - name: "LTE/5G Все операторы 🇪🇺"
+    type: "vless"
+    server: "217.19.122.170"
+    port: 2053
+    uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "bm1.hat.onl"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GyYuIjccJJRQZM72MGdBQEwGwGR9e0UMNlJxw0sQR2M"
+      short-id: "38560e0003d69843"
+    network: "tcp"
+  - name: "LTE/5G Все операторы 🇪🇺 #2"
     type: "vless"
     server: "217.19.122.170"
     port: 2096
@@ -61,7 +76,7 @@ proxies:
       public-key: "lBCt9m_PzWWdm1HvyZtJyCupmcySkfphwArSyPLPKXk"
       short-id: "7c0c26ca3f7537c4"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #2"
+  - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "31.177.111.236"
     port: 443
@@ -225,7 +240,7 @@ proxies:
       public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
       short-id: "23732d14a527990d"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #3"
+  - name: "LTE/5G Все операторы 🇪🇺 #4"
     type: "vless"
     server: "185.86.145.37"
     port: 443
@@ -867,10 +882,11 @@ proxy-groups:
     type: select
     proxies:
       - "LTE/5G Все операторы 🇪🇺"
+      - "LTE/5G Все операторы 🇪🇺 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱"
       - "Бесплатный VPN tg:VLESSFORU 🇫🇮"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
-      - "LTE/5G Все операторы 🇪🇺 #2"
+      - "LTE/5G Все операторы 🇪🇺 #3"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
       - "Бесплатный VPN tg:VLESSFORU 🇰🇿"
@@ -881,7 +897,7 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇷🇴"
       - "LTE/5G MTS Beeline Tele2 🇪🇺"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
-      - "LTE/5G Все операторы 🇪🇺 #3"
+      - "LTE/5G Все операторы 🇪🇺 #4"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"

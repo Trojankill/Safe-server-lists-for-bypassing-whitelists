@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 17:15:37 UTC
+# 2026-11-04 17:30:53 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -15,6 +15,21 @@ proxies:
     reality-opts:
       public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
       short-id: "0990d22f"
+    network: "tcp"
+  - name: "LTE/5G Все операторы 🇪🇺"
+    type: "vless"
+    server: "217.19.122.170"
+    port: 2053
+    uuid: "00d09ead-4080-4c39-a75d-be7dcabe77f4"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "bm1.hat.onl"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GyYuIjccJJRQZM72MGdBQEwGwGR9e0UMNlJxw0sQR2M"
+      short-id: "38560e0003d69843"
     network: "tcp"
   - name: "🇵🇱 Poland — #82 [Verified RU] t.me/rjsxrd"
     type: "vless"
@@ -6361,6 +6376,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇺🇸 [BL] Сервер 40"
+      - "LTE/5G Все операторы 🇪🇺"
       - "🇵🇱 Poland — #82 [Verified RU] t.me/rjsxrd"
       - "🇩🇪 [BL] Сервер 363"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱"
