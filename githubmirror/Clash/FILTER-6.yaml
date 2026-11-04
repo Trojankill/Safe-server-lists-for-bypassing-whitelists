@@ -1,25 +1,52 @@
 # clash/mihomo subscription
-# 2026-11-04 22:45:41 UTC
+# 2026-11-04 23:00:58 UTC
 proxies:
-  - name: "🇷🇺 Russia | [*CIDR] YA"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "84.201.145.167"
-    port: 51191
-    uuid: "0408e624-0d2a-49bc-8c1c-cbcf5fb75328"
+    server: "200.169.184.140"
+    port: 443
+    uuid: "7feec880-56f0-4425-9313-e2e340206284"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yandex.ru"
-    client-fingerprint: "chrome"
+    servername: "basterdym.asia"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "PfSDTeA5VEg8LgrpBG5zf2kDU3P2wc9c9bA_9SbCeVY"
-      short-id: "6ba85179e30d4fc2"
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+  - name: "🇬🇧 United Kingdom [*CIDR]"
+    type: "hysteria2"
+    server: "193.233.245.205"
+    port: 443
+    password: "e5573253-44fc-4502-ba06-96e4742bb448"
+    udp: true
+    sni: "podcasts.radiopult.net"
+    skip-cert-verify: false
+  - name: "🇫🇷 France [*CIDR]"
+    type: "hysteria2"
+    server: "45.151.101.188"
+    port: 443
+    password: "e5573253-44fc-4502-ba06-96e4742bb448"
+    udp: true
+    sni: "radiopult.net"
+    skip-cert-verify: false
+  - name: "🇯🇵 Japan [*CIDR]"
+    type: "hysteria2"
+    server: "45.151.101.32"
+    port: 443
+    password: "e5573253-44fc-4502-ba06-96e4742bb448"
+    udp: true
+    sni: "live.kinopolka.net"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia | [*CIDR] YA"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR]"
+      - "🇫🇷 France [*CIDR]"
+      - "🇯🇵 Japan [*CIDR]"
 rules:
   - MATCH,PROXY

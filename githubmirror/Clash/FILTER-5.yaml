@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 22:45:41 UTC
+# 2026-11-04 23:00:58 UTC
 proxies:
   - name: "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,20 +15,6 @@ proxies:
     reality-opts:
       public-key: "26eRxOLahaWymVv1f33Za0Cw56VDNJ8BN2bEKznW-m4"
       short-id: "2a096f7b298d0aba"
-    network: "tcp"
-  - name: "Russia | hb.ru-msk.vkcloud-storage.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "178.250.243.45"
-    port: 2444
-    uuid: "0d070b9c-64a2-49dd-8c26-d9cbb6cc225c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hb.ru-msk.vkcloud-storage.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LJsl2DgOqknCTlIUAJ9RIp5-2L5chl_sOycmWzmeWgY"
     network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -89,7 +75,7 @@ proxies:
       public-key: "zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE"
       short-id: "a25d0f"
     network: "tcp"
-  - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
     port: 443
@@ -210,23 +196,6 @@ proxies:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     network: "tcp"
-  - name: "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
-    udp: true
-    tls: true
-    servername: "gran-game.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/events/900598fa7500/"
-      headers:
-        Host: "gran-game.pro"
   - name: "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "31.76.251.23"
@@ -325,12 +294,11 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | bm8.hat.onl | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | hb.ru-msk.vkcloud-storage.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Ukraine | play.google.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]"
@@ -338,7 +306,6 @@ proxy-groups:
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "unknown | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
