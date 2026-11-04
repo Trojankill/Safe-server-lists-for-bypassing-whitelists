@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 05:01:03 UTC
+# 2026-11-04 05:15:30 UTC
 proxies:
   - name: "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -43,38 +43,6 @@ proxies:
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     network: "tcp"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "79.141.164.125"
-    port: 443
-    uuid: "52a7c001-4c6f-4ae5-8098-01991dfb7ff6"
-    udp: true
-    tls: true
-    servername: "nla.kosmosapp.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
-      short-id: "27350908de933e09"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "neurex"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "79.141.164.81"
-    port: 443
-    uuid: "52a9eb94-bbf7-4037-b939-c298a1860a1f"
-    udp: true
-    tls: true
-    servername: "nla.kosmosapp.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
-      short-id: "27350908de933e09"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "neurex"
   - name: "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "qtir1.dnetsolutions.ru"
@@ -168,6 +136,22 @@ proxies:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     network: "tcp"
+  - name: "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "195.123.189.129"
+    port: 443
+    uuid: "c6ac29f4-41d5-492a-a3d0-6582d620aba7"
+    udp: true
+    tls: true
+    servername: "max.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ijDPaDKzsKkpYj9lEpBatS-FKdmYaGP3aUO2MThuLmU"
+      short-id: "e56ea883b092f3"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-82"
   - name: "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.178.208.140"
@@ -185,7 +169,7 @@ proxies:
       path: "/static/events/900598fa7500/"
       headers:
         Host: "gran-game.pro"
-  - name: "Bulgaria | bg1.fox-lisa.ru | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Bulgaria | bg1.fox-lisa.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.246.131.55"
     port: 443
@@ -210,7 +194,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -301,16 +285,15 @@ proxy-groups:
       - "Russia | hb.ru-msk.vkcloud-storage.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "unknown | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | bezlimitapi-bm-s1517.reverseenge.sbs | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | rutube.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "France | max.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | gran-game.pro | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Bulgaria | bg1.fox-lisa.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Bulgaria | bg1.fox-lisa.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
