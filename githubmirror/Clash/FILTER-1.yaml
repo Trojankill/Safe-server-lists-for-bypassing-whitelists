@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-04 06:15:34 UTC
+# 2026-11-04 06:30:48 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -89,6 +89,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    servername: "marshalltmp.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/shop/catalog"
+      headers:
+        Host: "marshalltmp.top"
 proxy-groups:
   - name: PROXY
     type: select
@@ -99,5 +116,6 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия [#РКП]"
       - "🏴 Неизвестный [#РКП]"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
