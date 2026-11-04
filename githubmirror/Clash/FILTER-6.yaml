@@ -1,55 +1,27 @@
 # clash/mihomo subscription
-# 2026-11-04 08:15:31 UTC
+# 2026-11-04 08:30:47 UTC
 proxies:
-  - name: "🇨🇭 Switzerland [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
-    server: "ch2.h1cloud.net"
-    port: 25879
-    uuid: "241306b3-9f27-4ed3-9524-6c0792c55856"
-    udp: true
-    tls: true
-    servername: "www.bing.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "XuI492LMe1OPIwQH5TQlIo33JRqMM3kfnto62tbx5FU"
-      short-id: "f1a7a14461a3f389"
-    network: "tcp"
-  - name: "🇩🇪 Germany | [*CIDR]"
-    type: "vless"
-    server: "de15.h1cloud.net"
-    port: 25362
-    uuid: "36fb6650-8a50-42b5-9f66-06538806f32c"
-    udp: true
-    tls: true
-    servername: "www.chip.de"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "hFee7zTreqlv_wccK_8zxN5v23hj9u-DshByvGf-KAA"
-      short-id: "23732d14a527990d"
-    network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "200.169.184.140"
+    server: "91.185.83.44"
     port: 443
-    uuid: "a292fd7d-d4ab-4441-aae3-69784202b321"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    servername: "basterdym.asia"
+    servername: "nguyxejonb.rucdncomp.pro"
     alpn:
-      - "h2"
-    client-fingerprint: "edge"
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de1.v1"
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.rucdncomp.pro"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🇩🇪 Germany | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
