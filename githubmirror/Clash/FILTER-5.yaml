@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 07:15:31 UTC
+# 2026-11-05 07:30:48 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -16,6 +16,22 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     network: "tcp"
+  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "79.141.164.124"
+    port: 443
+    uuid: "14f3543e-6136-47a2-9bc0-eea1dac73d07"
+    udp: true
+    tls: true
+    servername: "nla.kosmosapp.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
+      short-id: "27350908de933e09"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "neurex"
   - name: "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.95.231.156"
@@ -60,7 +76,7 @@ proxies:
       public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
       short-id: "6b196d2f190f32b3"
     network: "tcp"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "79.141.164.125"
     port: 443
@@ -76,7 +92,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "neurex"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
+  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #3"
     type: "vless"
     server: "79.141.164.81"
     port: 443
@@ -132,6 +148,8 @@ proxies:
     udp: true
     tls: true
     servername: "ads.x5.ru"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
@@ -257,11 +275,12 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
+      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #3"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
