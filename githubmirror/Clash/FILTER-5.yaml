@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 16:01:04 UTC
+# 2026-11-05 16:30:48 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,6 +15,36 @@ proxies:
     reality-opts:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.147.184"
+    port: 9449
+    uuid: "12fd3a3e-31dd-49bc-91df-44834c58e1b2"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SsPslLCfw2CGDmCs17gTLRSUOsOfv0KgnuLnkyTqCzA"
+      short-id: "62002c0a685ac208"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "91.185.83.105"
+    port: 9443
+    uuid: "12fd3a3e-31dd-49bc-91df-44834c58e1b2"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU"
+      short-id: "91d2d3db690f4b59"
     network: "tcp"
   - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -92,6 +122,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
+  - name: "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "195.58.55.18"
+    port: 2088
+    uuid: "7c602328-d732-41d9-b94a-bcf28a5f7f8f"
+    udp: true
+    tls: true
+    servername: "www.yandex.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg"
+      short-id: "b1ad165f903c62fe"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "astracat"
   - name: "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.128"
@@ -176,7 +222,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -237,11 +283,14 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod] #2"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | skskks.top | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nl01.proxmoxguidline.forum | RAW | [#LSO - #LinSpisokObhod]"
