@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-05 01:45:33 UTC
+# 2026-11-05 02:00:57 UTC
 proxies:
-  - name: "🇵🇱 Poland — #90"
+  - name: "🇵🇱 Poland — #87"
     type: "vless"
     server: "31.177.111.236"
     port: 443
@@ -15,49 +15,7 @@ proxies:
     reality-opts:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #36"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands — #35"
-    type: "vless"
-    server: "84.201.169.241"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
-    network: "tcp"
-  - name: "🇵🇱 Poland — #95"
-    type: "vless"
-    server: "188.225.32.76"
-    port: 443
-    uuid: "aa09ada3-ad33-0002-9c1a-6af275272567"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yabro-wbplugin.edadeal.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands — #40"
+  - name: "🇳🇱 The Netherlands — #37"
     type: "vless"
     server: "46.182.24.15"
     port: 443
@@ -88,7 +46,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #38"
+  - name: "🇳🇱 The Netherlands — #35"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -121,7 +79,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-baf3bc8498"
-  - name: "🇸🇪 Sweden — #97"
+  - name: "🇸🇪 Sweden — #92"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -136,7 +94,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #98"
+  - name: "🇸🇪 Sweden — #93"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -155,15 +113,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #90"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇳🇱 The Netherlands — #35"
-      - "🇵🇱 Poland — #95"
-      - "🇳🇱 The Netherlands — #40"
+      - "🇵🇱 Poland — #87"
+      - "🇳🇱 The Netherlands — #37"
       - "🇩🇪 Germany — #8"
-      - "🇳🇱 The Netherlands — #38"
+      - "🇳🇱 The Netherlands — #35"
       - "🇷🇺 Selectel — #1"
-      - "🇸🇪 Sweden — #97"
-      - "🇸🇪 Sweden — #98"
+      - "🇸🇪 Sweden — #92"
+      - "🇸🇪 Sweden — #93"
 rules:
   - MATCH,PROXY
