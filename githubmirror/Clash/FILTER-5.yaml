@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 06:00:56 UTC
+# 2026-11-05 06:15:31 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -30,20 +30,6 @@ proxies:
     reality-opts:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
-    network: "tcp"
-  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.180.211.245"
-    port: 8443
-    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
     network: "tcp"
   - name: "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -156,7 +142,7 @@ proxies:
     type: "vless"
     server: "46.182.24.15"
     port: 443
-    uuid: "aa09ada3-ad33-0004-9c1a-6af275272567"
+    uuid: "aa09ada3-ad33-0005-9c1a-6af275272567"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
@@ -198,6 +184,36 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
+  - name: "Russia | join.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.143"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "join.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
+      short-id: "351224a7"
+    network: "tcp"
+  - name: "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.194"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "apply.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
+      short-id: "b20168a5"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -242,7 +258,6 @@ proxy-groups:
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
-      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | RAW | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
@@ -253,6 +268,8 @@ proxy-groups:
       - "Russia | yabro-wbplugin.edadeal.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | join.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | apply.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
