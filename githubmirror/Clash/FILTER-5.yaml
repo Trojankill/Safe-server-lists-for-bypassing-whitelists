@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 04:00:54 UTC
+# 2026-11-05 04:15:30 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -46,7 +46,21 @@ proxies:
       public-key: "I7s_V_6XHD2As0H5Ok2GV2a2M7o9RDCrH2USpCZPy0A"
       short-id: "a1fdf7b7bebade41"
     network: "tcp"
-  - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.180.211.245"
+    port: 8443
+    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
+    network: "tcp"
+  - name: "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.223.100"
     port: 443
@@ -153,6 +167,20 @@ proxies:
       public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
       short-id: "2f49bccf11150ef2"
     network: "tcp"
+  - name: "Russia | yabro-wbplugin.edadeal.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "46.182.24.15"
+    port: 443
+    uuid: "aa09ada3-ad33-0004-9c1a-6af275272567"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yabro-wbplugin.edadeal.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA"
+    network: "tcp"
   - name: "The Netherlands | nl03-gos.everycom.store | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.13.248"
@@ -213,7 +241,7 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -240,22 +268,6 @@ proxies:
       path: "/api/v1/gpu-stream/socket"
       headers:
         Host: "renderer-stream-2-129.mirra.now"
-  - name: "Germany | westtransit.comparecarprices.org | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-    type: "hysteria2"
-    server: "185.99.96.102"
-    port: 443
-    password: "e3adcd92-7f84-47cf-9be7-a9676f0465db"
-    udp: true
-    sni: "westtransit.comparecarprices.org"
-    skip-cert-verify: false
-  - name: "Finland | suboard.net | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-    type: "hysteria2"
-    server: "185.99.98.160"
-    port: 443
-    password: "e5573253-44fc-4502-ba06-96e4742bb448"
-    udp: true
-    sni: "suboard.net"
-    skip-cert-verify: false
   - name: "Poland | cinema.kinopolka.net | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "217.12.207.38"
@@ -264,7 +276,7 @@ proxies:
     udp: true
     sni: "cinema.kinopolka.net"
     skip-cert-verify: false
-  - name: "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
     port: 443
@@ -282,22 +294,22 @@ proxy-groups:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "Sweden | smart.bachidze.com | unknown | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | yabro-wbplugin.edadeal.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nl03-gos.everycom.store | unknown | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 13 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 14 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-2-129.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Germany | westtransit.comparecarprices.org | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-      - "Finland | suboard.net | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
       - "Poland | cinema.kinopolka.net | HYSTERIA2 | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Hy2: 3 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Hy2: 1 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
