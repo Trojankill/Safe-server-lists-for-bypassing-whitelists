@@ -1,0 +1,25 @@
+# clash/mihomo subscription
+# 2026-11-05 20:30:48 UTC
+proxies:
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "falmero.store"
+    port: 443
+    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+rules:
+  - MATCH,PROXY
