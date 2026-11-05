@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-05 06:45:35 UTC
+# 2026-11-05 07:01:07 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #38"
-    type: "vless"
-    server: "46.182.24.15"
-    port: 443
-    uuid: "aa09ada3-ad33-0004-9c1a-6af275272567"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yabro-wbplugin.edadeal.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA"
-    network: "tcp"
   - name: "🇩🇪 Germany — #10"
     type: "vless"
     server: "217.19.122.156"
@@ -32,7 +18,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #36"
+  - name: "🇳🇱 The Netherlands — #33"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -49,23 +35,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇷🇺 Selectel — #1"
-    type: "vless"
-    server: "188.225.79.22"
-    port: 443
-    uuid: "d16f7276-b967-440d-88b7-76945654ed55"
-    udp: true
-    tls: true
-    servername: "quartzops.blog"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LqyEitRDFcMxFuH45Vx1551cOqrI6UHYvkKgs7gNaho"
-      short-id: "e347493990237143"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-baf3bc8498"
-  - name: "🇸🇪 Sweden — #94"
+  - name: "🇸🇪 Sweden — #90"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -80,7 +50,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #95"
+  - name: "🇸🇪 Sweden — #91"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -99,11 +69,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #38"
       - "🇩🇪 Germany — #10"
-      - "🇳🇱 The Netherlands — #36"
-      - "🇷🇺 Selectel — #1"
-      - "🇸🇪 Sweden — #94"
-      - "🇸🇪 Sweden — #95"
+      - "🇳🇱 The Netherlands — #33"
+      - "🇸🇪 Sweden — #90"
+      - "🇸🇪 Sweden — #91"
 rules:
   - MATCH,PROXY
