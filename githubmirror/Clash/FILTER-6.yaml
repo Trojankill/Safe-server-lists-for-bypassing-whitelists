@@ -1,7 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-05 04:45:30 UTC
+# 2026-11-05 05:00:56 UTC
 proxies:
-  - name: "🇮🇪 Ireland | [*CIDR]"
+  - name: "🇮🇪 Ireland [*CIDR]"
+    type: "vless"
+    server: "45.132.176.61"
+    port: 443
+    uuid: "0a370611-e27e-4338-a88f-89deb2fa9075"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "sopelka.yandex-api.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇮🇪 Ireland [*CIDR] #2"
     type: "vless"
     server: "sopelka.yandex-api.com"
     port: 443
@@ -10,43 +25,28 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "sopelka.yandex-api.com"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
       short-id: "a9dc98a7dc87a7dc"
     network: "tcp"
-  - name: "🇮🇪 Ireland | [*CIDR] #2"
+  - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
-    server: "45.132.176.61"
+    server: "189.74.115.22"
     port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    uuid: "2f9ff2af-d0c5-4d40-bca0-cb1fbf1cc4bf"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "sopelka.yandex-api.com"
-    client-fingerprint: "chrome"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
-  - name: "🇳🇴 Norway | [*CIDR]"
-    type: "vless"
-    server: "connect2.accessgate.link"
-    port: 2086
-    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "unpkg.com"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
-      short-id: "b0d8c9a285c70f6f"
-    network: "tcp"
-  - name: "🇦🇹 Austria | [*CIDR]"
+  - name: "🇦🇹 Austria [*CIDR] #2"
     type: "vless"
     server: "api.mediaroshcha.cc"
     port: 443
@@ -55,13 +55,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "api.mediaroshcha.cc"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
     server: "200.169.184.140"
     port: 443
@@ -76,14 +76,31 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
+  - name: "🇮🇹 Italy [*CIDR]"
+    type: "vless"
+    server: "84.38.184.87"
+    port: 2092
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "G16EKGpV35sUVK9pkuLvnWd2IGX2tcajNnV7w5bI4ig"
+      short-id: "2423df4e"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-it"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇪 Ireland | [*CIDR]"
-      - "🇮🇪 Ireland | [*CIDR] #2"
-      - "🇳🇴 Norway | [*CIDR]"
-      - "🇦🇹 Austria | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇮🇪 Ireland [*CIDR]"
+      - "🇮🇪 Ireland [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR]"
+      - "🇦🇹 Austria [*CIDR] #2"
+      - "🇩🇪 Germany [*CIDR]"
+      - "🇮🇹 Italy [*CIDR]"
 rules:
   - MATCH,PROXY
