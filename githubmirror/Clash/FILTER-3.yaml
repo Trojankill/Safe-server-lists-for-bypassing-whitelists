@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 10:45:34 UTC
+# 2026-11-05 11:00:58 UTC
 proxies:
   - name: "🇵🇱 Poland — #72"
     type: "vless"
@@ -15,21 +15,24 @@ proxies:
     reality-opts:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #24"
+  - name: "🇩🇪 Germany — #1"
     type: "vless"
-    server: "46.182.24.15"
+    server: "46.243.235.98"
     port: 443
-    uuid: "aa09ada3-ad33-0004-9c1a-6af275272567"
+    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yabro-wbplugin.edadeal.yandex.ru"
-    client-fingerprint: "firefox"
+    servername: "z1q3pv4g78.rucdncomp.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "random"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands — #22"
+    network: "ws"
+    ws-opts:
+      path: "/useraction/events/b892639b7195/"
+      headers:
+        Host: "z1q3pv4g78.rucdncomp.pro"
+  - name: "🇳🇱 The Netherlands — #23"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -46,23 +49,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇷🇺 Selectel — #1"
-    type: "vless"
-    server: "188.225.79.22"
-    port: 443
-    uuid: "d16f7276-b967-440d-88b7-76945654ed55"
-    udp: true
-    tls: true
-    servername: "quartzops.blog"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LqyEitRDFcMxFuH45Vx1551cOqrI6UHYvkKgs7gNaho"
-      short-id: "e347493990237143"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-baf3bc8498"
-  - name: "🇸🇪 Sweden — #79"
+  - name: "🇸🇪 Sweden — #75"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -71,13 +58,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "join.betust.net"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #75"
+  - name: "🇸🇪 Sweden — #76"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -97,10 +84,9 @@ proxy-groups:
     type: select
     proxies:
       - "🇵🇱 Poland — #72"
-      - "🇳🇱 The Netherlands — #24"
-      - "🇳🇱 The Netherlands — #22"
-      - "🇷🇺 Selectel — #1"
-      - "🇸🇪 Sweden — #79"
+      - "🇩🇪 Germany — #1"
+      - "🇳🇱 The Netherlands — #23"
       - "🇸🇪 Sweden — #75"
+      - "🇸🇪 Sweden — #76"
 rules:
   - MATCH,PROXY
