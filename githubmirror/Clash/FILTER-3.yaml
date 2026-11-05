@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-05 16:45:34 UTC
+# 2026-11-05 17:01:01 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #7"
+  - name: "🇳🇱 The Netherlands — #8"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #9"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -18,42 +32,11 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇸🇪 Sweden — #57"
-    type: "vless"
-    server: "81.163.22.143"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "join.betust.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
-      short-id: "351224a7"
-    network: "tcp"
-  - name: "🇸🇪 Sweden — #58"
-    type: "vless"
-    server: "81.163.22.194"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "apply.betust.net"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
-      short-id: "b20168a5"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #7"
-      - "🇸🇪 Sweden — #57"
-      - "🇸🇪 Sweden — #58"
+      - "🇳🇱 The Netherlands — #8"
+      - "🇳🇱 The Netherlands — #9"
 rules:
   - MATCH,PROXY
