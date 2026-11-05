@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-05 07:30:50 UTC
+# 2026-11-05 07:45:41 UTC
 proxies:
+  - name: "🇫🇷 Франция [#РКП]"
+    type: "vless"
+    server: "109.120.178.57"
+    port: 443
+    uuid: "1ec1bf05-c02c-40f0-bb11-92fba859de00"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "elbrus.kavkazsvyaz.best"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "IDEqV3X9YmtJL5tcKbKROOFl28yTV0eQAtiQfqtAnQU"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
@@ -77,6 +91,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇷 Франция [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия [#РКП]"
