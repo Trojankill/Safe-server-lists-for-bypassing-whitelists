@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 02:15:31 UTC
+# 2026-11-05 02:30:45 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,21 +15,6 @@ proxies:
     reality-opts:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
-    network: "tcp"
-  - name: "Hungary | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "2.26.139.69"
-    port: 443
-    uuid: "1d7427ab-8a5d-4317-9335-2e48d50be4fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cdn.tbank.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "HmnsKa6Mmm34gALomXBKB7d8UMIM33hhItp2z43VCkQ"
-      short-id: "a1d8f3b6c2e59407"
     network: "tcp"
   - name: "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -168,6 +153,20 @@ proxies:
       public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
       short-id: "2f49bccf11150ef2"
     network: "tcp"
+  - name: "The Netherlands | nl03-gos.everycom.store | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.13.248"
+    port: 443
+    uuid: "b1e4bfe2-2b12-11f1-92cb-12ba70109d32"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl03-gos.everycom.store"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "qyVTRBNzBF7TwtkzeB_Q9jN9aYhGWX7F4SUCOjxK9VU"
+    network: "tcp"
   - name: "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "161.97.160.224"
@@ -281,7 +280,6 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Hungary | cdn.tbank.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
@@ -291,6 +289,7 @@ proxy-groups:
       - "Russia | z1q3pv4g78.rucdncomp.pro | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | nl03-gos.everycom.store | unknown | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
