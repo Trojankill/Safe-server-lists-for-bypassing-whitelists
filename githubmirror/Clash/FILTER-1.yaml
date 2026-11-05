@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 11:00:59 UTC
+# 2026-11-05 11:15:33 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -29,23 +29,6 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
-  - name: "🇩🇪 Германия [#РКП]"
-    type: "vless"
-    server: "217.19.122.156"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "z1q3pv4g78.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/useraction/events/b892639b7195/"
-      headers:
-        Host: "z1q3pv4g78.rucdncomp.pro"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "91.185.83.44"
@@ -63,24 +46,12 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "193.233.89.130"
-    port: 20000
-    password: "7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe"
-    udp: true
-    sni: "g.play2go.gay"
-    obfs: "salamander"
-    obfs-password: "-bgbhGhG9yC-MCAQ6pJCHuycKqC7y9V5gXw_mKv8qpE"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇩🇪 Германия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
