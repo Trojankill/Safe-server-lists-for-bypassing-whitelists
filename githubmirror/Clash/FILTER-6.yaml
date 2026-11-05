@@ -1,0 +1,73 @@
+# clash/mihomo subscription
+# 2026-11-05 23:45:30 UTC
+proxies:
+  - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "hudson.glowbreeze.online"
+    port: 443
+    uuid: "255a8044-3337-473e-af26-46a37208adcc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "hudson.glowbreeze.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "qqvs2x0N1F5WgXvC7PB9wmO5RxcVgCHS1hYHYOxdBk4"
+      short-id: "5f3fd060c992bb2e"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "vless"
+    server: "piston.kachow.ink"
+    port: 443
+    uuid: "255a8044-3337-473e-af26-46a37208adcc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "piston.kachow.ink"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "wl48cP9KpZxoAqUAePYqVmjNHO2gOzW_QCm3okkiLks"
+      short-id: "87ac946b53bb52f5"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "147.45.104.86"
+    port: 7443
+    uuid: "5d978525-bfa5-4b1e-b807-c4e2ac2db56d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "max.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "KbjX7IJnVtwq2USeRmLgXzACOtFCiA5lnsXhIFOX3ho"
+      short-id: "a7eb8a4e"
+    network: "tcp"
+  - name: "🇺🇸 United States | [*CIDR]"
+    type: "vless"
+    server: "37.153.65.137"
+    port: 8443
+    uuid: "e07a6d05-f665-4811-91f0-9b3dc1094e4d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tradingview.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38"
+      short-id: "8f3c6e2a1b5d4f09"
+    network: "tcp"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇺🇸 United States [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇺🇸 United States | [*CIDR]"
+rules:
+  - MATCH,PROXY
