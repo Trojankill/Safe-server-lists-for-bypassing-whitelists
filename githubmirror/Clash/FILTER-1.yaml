@@ -1,27 +1,24 @@
 # clash/mihomo subscription
-# 2026-11-05 17:45:35 UTC
+# 2026-11-05 18:01:00 UTC
 proxies:
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
-    server: "91.185.83.44"
+    server: "83.147.246.12"
     port: 443
-    uuid: "c720cb74-4c84-4fce-b8ae-637dbaa16199"
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
     tls: true
-    servername: "nguyxejonb.rucdncomp.pro"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "nguyxejonb.rucdncomp.pro"
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
