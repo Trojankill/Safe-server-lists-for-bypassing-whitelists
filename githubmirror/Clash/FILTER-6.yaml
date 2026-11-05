@@ -1,36 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-05 06:15:31 UTC
+# 2026-11-05 06:45:35 UTC
 proxies:
-  - name: "🇮🇪 Ireland [*CIDR]"
-    type: "vless"
-    server: "45.132.176.61"
-    port: 443
-    uuid: "0a370611-e27e-4338-a88f-89deb2fa9075"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "sopelka.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇮🇪 Ireland [*CIDR] #2"
-    type: "vless"
-    server: "sopelka.yandex-api.com"
-    port: 443
-    uuid: "0a370611-e27e-4338-a88f-89deb2fa9075"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "sopelka.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
   - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
     server: "189.74.115.22"
@@ -61,7 +31,7 @@ proxies:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "200.169.184.140"
     port: 443
@@ -71,7 +41,7 @@ proxies:
     servername: "basterdym.asia"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -96,11 +66,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇪 Ireland [*CIDR]"
-      - "🇮🇪 Ireland [*CIDR] #2"
       - "🇦🇹 Austria [*CIDR]"
       - "🇦🇹 Austria [*CIDR] #2"
-      - "🇩🇪 Germany [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇮🇹 Italy [*CIDR]"
 rules:
   - MATCH,PROXY
