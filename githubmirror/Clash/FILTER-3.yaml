@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-05 08:45:32 UTC
+# 2026-11-05 09:01:01 UTC
 proxies:
-  - name: "🇵🇱 Poland — #95"
+  - name: "🇵🇱 Poland — #89"
     type: "vless"
     server: "31.177.111.236"
     port: 443
@@ -15,7 +15,22 @@ proxies:
     reality-opts:
       public-key: "Kamryj_IUYECmozGabqUqauA0k0QpVUEPSBSEKi-ED0"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #45"
+  - name: "🇲🇰 North Macedonia — #34"
+    type: "vless"
+    server: "94.156.181.72"
+    port: 2084
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #39"
     type: "vless"
     server: "46.182.24.15"
     port: 443
@@ -29,7 +44,7 @@ proxies:
     reality-opts:
       public-key: "V-wRiXvhBx01utmXJbrThJ_DE4tNJfK6mnzo9EB3fVA"
     network: "tcp"
-  - name: "🇩🇪 Germany — #20"
+  - name: "🇩🇪 Germany — #11"
     type: "vless"
     server: "217.19.122.156"
     port: 443
@@ -46,7 +61,7 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands — #43"
+  - name: "🇳🇱 The Netherlands — #37"
     type: "vless"
     server: "91.185.83.44"
     port: 443
@@ -63,7 +78,7 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.rucdncomp.pro"
-  - name: "🇷🇺 Selectel — #9"
+  - name: "🇷🇺 Selectel — #3"
     type: "vless"
     server: "188.225.79.22"
     port: 443
@@ -79,7 +94,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-baf3bc8498"
-  - name: "🇸🇪 Sweden — #103"
+  - name: "🇸🇪 Sweden — #97"
     type: "vless"
     server: "81.163.22.143"
     port: 443
@@ -94,7 +109,7 @@ proxies:
       public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
       short-id: "351224a7"
     network: "tcp"
-  - name: "🇸🇪 Sweden — #104"
+  - name: "🇸🇪 Sweden — #98"
     type: "vless"
     server: "81.163.22.194"
     port: 443
@@ -113,12 +128,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland — #95"
-      - "🇳🇱 The Netherlands — #45"
-      - "🇩🇪 Germany — #20"
-      - "🇳🇱 The Netherlands — #43"
-      - "🇷🇺 Selectel — #9"
-      - "🇸🇪 Sweden — #103"
-      - "🇸🇪 Sweden — #104"
+      - "🇵🇱 Poland — #89"
+      - "🇲🇰 North Macedonia — #34"
+      - "🇳🇱 The Netherlands — #39"
+      - "🇩🇪 Germany — #11"
+      - "🇳🇱 The Netherlands — #37"
+      - "🇷🇺 Selectel — #3"
+      - "🇸🇪 Sweden — #97"
+      - "🇸🇪 Sweden — #98"
 rules:
   - MATCH,PROXY
