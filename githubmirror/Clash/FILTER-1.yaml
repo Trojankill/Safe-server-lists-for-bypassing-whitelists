@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-05 18:01:00 UTC
+# 2026-11-05 18:15:41 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "213.171.12.100"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "83.147.246.12"
     port: 443
@@ -15,10 +29,26 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "213.108.21.173"
+    port: 443
+    uuid: "c1fdf1e6-6370-4bad-a866-f80f27f5e785"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl1.kids-games.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "oSbyJBoI2JTEva2ks51kmUCA7z-iFUcoGYCk-ciEaDU"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
+      - "🇳🇱 Нидерланды [#РКП]"
 rules:
   - MATCH,PROXY
