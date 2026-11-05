@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-05 03:45:32 UTC
+# 2026-11-05 04:00:56 UTC
 proxies:
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -109,6 +109,16 @@ proxies:
       path: "/shop/catalog"
       headers:
         Host: "marshalltmp.top"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "193.233.89.130"
+    port: 20000
+    password: "7bd7c4aa-52c4-482c-bdcc-e7380fa6b5fe"
+    udp: true
+    sni: "g.play2go.gay"
+    obfs: "salamander"
+    obfs-password: "-bgbhGhG9yC-MCAQ6pJCHuycKqC7y9V5gXw_mKv8qpE"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -120,5 +130,6 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
