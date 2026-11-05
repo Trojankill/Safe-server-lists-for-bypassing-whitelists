@@ -1,9 +1,37 @@
 # clash/mihomo subscription
-# 2026-11-05 02:45:50 UTC
+# 2026-11-05 03:01:02 UTC
 proxies:
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.108.246.180"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "apsnl.yandex-api.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "147.45.148.6"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "85.193.85.231"
     port: 443
     uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
@@ -81,59 +109,16 @@ proxies:
       path: "/shop/catalog"
       headers:
         Host: "marshalltmp.top"
-  - name: "🇸🇪 Швеция [#РКП]"
-    type: "hysteria2"
-    server: "213.165.35.216"
-    port: 443
-    password: "e3adcd92-7f84-47cf-9be7-a9676f0465db"
-    udp: true
-    sni: "usersilver.comparecarprices.org"
-    skip-cert-verify: false
-  - name: "🇷🇺 Россия [#РКП] #2"
-    type: "hysteria2"
-    server: "109.120.152.169"
-    port: 443
-    password: "e5573253-44fc-4502-ba06-96e4742bb448"
-    udp: true
-    sni: "ru.radiopult.net"
-    skip-cert-verify: false
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "193.233.245.205"
-    port: 443
-    password: "e5573253-44fc-4502-ba06-96e4742bb448"
-    udp: true
-    sni: "podcasts.radiopult.net"
-    skip-cert-verify: false
-  - name: "🇮🇳 Индия | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "45.151.101.188"
-    port: 443
-    password: "e5573253-44fc-4502-ba06-96e4742bb448"
-    udp: true
-    sni: "radiopult.net"
-    skip-cert-verify: false
-  - name: "🇯🇵 Япония | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "45.151.101.32"
-    port: 443
-    password: "e5573253-44fc-4502-ba06-96e4742bb448"
-    udp: true
-    sni: "live.kinopolka.net"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
-      - "🇸🇪 Швеция [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇮🇳 Индия | 🔗 Каскад [#РКП]"
-      - "🇯🇵 Япония | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
