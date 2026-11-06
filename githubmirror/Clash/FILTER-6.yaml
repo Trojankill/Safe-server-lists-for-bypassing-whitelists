@@ -1,73 +1,43 @@
 # clash/mihomo subscription
-# 2026-11-06 16:30:47 UTC
+# 2026-11-06 16:45:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
+  - name: "🇺🇸 United States | 🌐 [*CIDR]"
     type: "vless"
-    server: "ru.galacticworld.online"
-    port: 443
-    uuid: "8850dcb3-3978-488e-899c-18def71e1ad9"
+    server: "82.146.32.120"
+    port: 8443
+    uuid: "93969894-5156-472b-9534-5fad18768e50"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ru.galacticworld.online"
+    servername: "us2.cloudvienta.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "RAfUjx8zBhp0gpSALr09Myq_lpqqjE3hBVXlUUodVAs"
+      public-key: "WwDK-bG5qji91Cqw6F_VSW1MWygTYrqjsuoN6Pyvzlg"
+      short-id: "b68ef2733ce64fe2"
     network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
+    servername: "marshalltmp.top"
     alpn:
-      - "h2"
       - "http/1.1"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36116
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:1AFR2jdtV3O5h9P33KpcvgfkSiFIqiXSuFxXwBcY3FY"
-    udp: true
-    sni: "us2.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇬🇧 United Kingdom | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36104
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:CTIsdSVtro0BDR9MTUEuiYpjN3F5BN169ytiJfmMR6c"
-    udp: true
-    sni: "gb2.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36114
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:b3p2nL5JrfHoKJi4q7v_yIfCipsgduAtb9m1cdt0B-A"
-    udp: true
-    sni: "hu.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/shop/catalog"
+      headers:
+        Host: "marshalltmp.top"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇬🇧 United Kingdom | 🌐 [*CIDR]"
-      - "🇭🇺 Hungary | 🌐 [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
 rules:
   - MATCH,PROXY
