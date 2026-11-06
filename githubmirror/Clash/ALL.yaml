@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 13:01:01 UTC
+# 2026-11-06 13:15:35 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -995,6 +995,21 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI"
+    network: "tcp"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "vless"
+    server: "connect1.accessgate.link"
+    port: 2880
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
     network: "tcp"
   - name: "🇺🇸 [BL] Сервер 421"
     type: "vless"
@@ -3663,6 +3678,21 @@ proxies:
       public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
       short-id: "69984b9e02545831"
     network: "tcp"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
+    type: "vless"
+    server: "168.113.128.70"
+    port: 20105
+    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ripelever.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇫🇮 [BL] Сервер 176"
     type: "vless"
     server: "31.76.46.221"
@@ -4242,6 +4272,21 @@ proxies:
       public-key: "vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8"
       short-id: "15affa0af66dfc79"
     network: "tcp"
+  - name: "🇨🇿 Czechia | [*CIDR]"
+    type: "vless"
+    server: "api.mediapolden.cc"
+    port: 443
+    uuid: "bec30a74-89f3-412f-923a-8f9e338f1429"
+    udp: true
+    tls: true
+    servername: "api.mediapolden.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "r7Kp4mN9tQ2v"
   - name: "🇫🇷 [BL] Сервер 241"
     type: "vless"
     server: "51.77.217.70"
@@ -4375,7 +4420,7 @@ proxies:
       public-key: "fSVfR9NB-6J6smrZlavi0GWd8JfDh0aXuEkKbtuFzUI"
       short-id: "3cbc3d737fb9c4af"
     network: "tcp"
-  - name: "tg:VLESSFORU 🇷🇺"
+  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
     type: "vless"
     server: "92.243.66.79"
     port: 443
@@ -4384,7 +4429,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ru-mow.probe.geomyip.com"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "siD4oj2gdtLLEphV6fUXb8ueIc2WHVn7msOUhNGPf2o"
@@ -5443,6 +5488,37 @@ proxies:
       public-key: "nWQ7b9l9X6N3PrXLgIzOvMM8iSYrqjVHEb9ikWxqYSg"
       short-id: "0e"
     network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8443
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8444
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd"
     type: "vless"
     server: "fr.golangwikito.cfd"
@@ -6608,13 +6684,15 @@ proxies:
     udp: true
     sni: "nl.vip-get.ru"
     skip-cert-verify: false
-  - name: "🇩🇪 Германия 5 netcup GmbH t.me/rjsxrd"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "hysteria2"
     server: "84.252.100.138"
     port: 2443
     password: "snR6OL9rudFpqTAo2OZ6hhvZxf0lat7n4BAey84fatA"
     udp: true
     sni: "de.vip-get.ru"
+    alpn:
+      - "h3"
     skip-cert-verify: false
   - name: "🇹🇷 [BL] Сервер 423"
     type: "ss"
@@ -7135,6 +7213,7 @@ proxy-groups:
       - "BUNKER 🖤 | Нидерланды 🇳🇱 #88"
       - "🇩🇪 Германия 11 SOULFUL HOSTING LTD t.me/rjsxrd"
       - "🇸🇬 [BL] Сервер 228"
+      - "🇪🇪 Estonia [*CIDR]"
       - "🇺🇸 [BL] Сервер 421"
       - "BUNKER 🖤 | США 🇺🇸 #161"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇳 #2"
@@ -7313,6 +7392,7 @@ proxy-groups:
       - "🇩🇪 DE | VLESS t.me/rjsxrd"
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
+      - "🇧🇬 Bulgaria | [*CIDR]"
       - "🇫🇮 [BL] Сервер 176"
       - "🇺🇸 [BL] Сервер 332"
       - "🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd"
@@ -7352,6 +7432,7 @@ proxy-groups:
       - "🌐 [BL] Сервер 6"
       - "🌐 [BL] Сервер 23"
       - "🇬🇧 [BL] Сервер 260"
+      - "🇨🇿 Czechia | [*CIDR]"
       - "🇫🇷 [BL] Сервер 241"
       - "🇺🇸 [BL] Сервер 295"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #5"
@@ -7361,7 +7442,7 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 251"
       - "🇷🇺 [BL] Сервер 14"
       - "BUNKER 🖤 | Россия 🇷🇺 #27"
-      - "tg:VLESSFORU 🇷🇺"
+      - "🇷🇺 Russia | 🌐 [*CIDR]"
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
       - "🇺🇸 [BL] Сервер 286"
       - "BUNKER 🖤 | Россия 🇷🇺 #117"
@@ -7433,6 +7514,8 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd"
       - "🇸🇬 [BL] Сервер 45"
       - "🇦🇲 [BL] Сервер 35"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd"
       - "🇪🇪 [BL] Сервер 417"
       - "cool [white] 🇷🇺 |#19|"
@@ -7526,7 +7609,7 @@ proxy-groups:
       - "Нейро Лёха C-1 #6 🪐 🇸🇪"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
       - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
-      - "🇩🇪 Германия 5 netcup GmbH t.me/rjsxrd"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
       - "🇹🇷 [BL] Сервер 423"
       - "🇬🇧 [BL] Сервер 422"
       - "🇫🇷 [BL] Сервер 424"

@@ -1,6 +1,171 @@
 # clash/mihomo subscription
-# 2026-11-06 13:01:00 UTC
+# 2026-11-06 13:15:34 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/client/report/04c88cca7509/"
+      headers:
+        Host: "stechnostore.life"
+  - name: "🇳🇱 The Netherlands | [*CIDR] #2"
+    type: "vless"
+    server: "stechnostore.life"
+    port: 443
+    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/client/report/04c88cca7509/"
+      headers:
+        Host: "stechnostore.life"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "vless"
+    server: "connect1.accessgate.link"
+    port: 2880
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
+    type: "vless"
+    server: "168.113.128.70"
+    port: 20105
+    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ripelever.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇨🇿 Czechia | [*CIDR]"
+    type: "vless"
+    server: "api.mediapolden.cc"
+    port: 443
+    uuid: "bec30a74-89f3-412f-923a-8f9e338f1429"
+    udp: true
+    tls: true
+    servername: "api.mediapolden.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "r7Kp4mN9tQ2v"
+  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
+    type: "vless"
+    server: "92.243.66.79"
+    port: 443
+    uuid: "c5f59ef3-9540-49fa-bd1e-c6c2f79df49a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru-mow.probe.geomyip.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "siD4oj2gdtLLEphV6fUXb8ueIc2WHVn7msOUhNGPf2o"
+      short-id: "8d03c10b6a874a9c"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8443
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8444
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
+  - name: "🇺🇸 United States | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36116
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:1AFR2jdtV3O5h9P33KpcvgfkSiFIqiXSuFxXwBcY3FY"
+    udp: true
+    sni: "us2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 United Kingdom | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36104
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:CTIsdSVtro0BDR9MTUEuiYpjN3F5BN169ytiJfmMR6c"
+    udp: true
+    sni: "gb2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36114
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:b3p2nL5JrfHoKJi4q7v_yIfCipsgduAtb9m1cdt0B-A"
+    udp: true
+    sni: "hu.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 United Kingdom | 🌐 [*CIDR] CDN"
+    type: "hysteria2"
+    server: "37.18.15.116"
+    port: 5555
+    password: "72dc58e9-2583-4905-9a32-0635217a0ad9"
+    udp: true
+    sni: "wl11.white-dns.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
   - name: "🇳🇱 The Netherlands | 🌐 [*CIDR]"
     type: "hysteria2"
     server: "84.252.100.138"
@@ -9,19 +174,33 @@ proxies:
     udp: true
     sni: "nl.vip-get.ru"
     skip-cert-verify: false
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "hysteria2"
     server: "84.252.100.138"
     port: 2443
-    password: "zWqQKhzHQOeuIcQleiAC2Ld8j0eZSjZXEAgTKwGaP9c"
+    password: "snR6OL9rudFpqTAo2OZ6hhvZxf0lat7n4BAey84fatA"
     udp: true
     sni: "de.vip-get.ru"
+    alpn:
+      - "h3"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] #2"
+      - "🇪🇪 Estonia [*CIDR]"
+      - "🇧🇬 Bulgaria | [*CIDR]"
+      - "🇨🇿 Czechia | [*CIDR]"
+      - "🇷🇺 Russia | 🌐 [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇺🇸 United States | 🌐 [*CIDR]"
+      - "🇬🇧 United Kingdom | 🌐 [*CIDR]"
+      - "🇭🇺 Hungary | 🌐 [*CIDR]"
+      - "🇬🇧 United Kingdom | 🌐 [*CIDR] CDN"
+      - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
 rules:
   - MATCH,PROXY
