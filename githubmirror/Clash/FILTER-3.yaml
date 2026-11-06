@@ -1,23 +1,24 @@
 # clash/mihomo subscription
-# 2026-11-06 14:45:33 UTC
+# 2026-11-06 15:01:00 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #10"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
-    server: "158.160.162.185"
+    server: "188.225.78.228"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "bb190cdb-82ae-4212-b6cd-8ae9e6b768dd"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "ios"
+    servername: "music.yandex.ru"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+      public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
+      short-id: "e202a94ad1711af2"
     network: "tcp"
   - name: "🇩🇪 Germany — #2"
     type: "vless"
-    server: "31.129.42.252"
+    server: "46.254.19.138"
     port: 30055
     uuid: "c97c95c8-41c8-4dc7-be21-c745c9dbd6c1"
     udp: true
@@ -34,7 +35,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #10"
+      - "🇩🇪 Germany — #3"
       - "🇩🇪 Germany — #2"
 rules:
   - MATCH,PROXY
