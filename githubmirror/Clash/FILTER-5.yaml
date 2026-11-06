@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 12:00:59 UTC
+# 2026-11-06 12:15:34 UTC
 proxies:
   - name: "Russia | stechnostore.life | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -35,6 +35,21 @@ proxies:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
+  - name: "Russia | apply.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "81.163.22.194"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "apply.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
+      short-id: "b20168a5"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -60,6 +75,7 @@ proxy-groups:
     proxies:
       - "Russia | stechnostore.life | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | apply.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:

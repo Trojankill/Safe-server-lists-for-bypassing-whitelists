@@ -1,0 +1,25 @@
+# clash/mihomo subscription
+# 2026-11-06 12:15:34 UTC
+proxies:
+  - name: "🇫🇷 France — #9"
+    type: "vless"
+    server: "95.163.250.241"
+    port: 8445
+    uuid: "4575f71d-d32f-4d73-aae6-6b464bd230da"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "eh.vk.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "V8tWqRolt7hnShpwxj_JMGtkeYcHzbIS2dxF4VStoD4"
+      short-id: "dcd3a19a9bfd8046"
+    network: "tcp"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇫🇷 France — #9"
+rules:
+  - MATCH,PROXY
