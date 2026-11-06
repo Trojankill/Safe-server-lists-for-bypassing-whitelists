@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-06 01:00:57 UTC
+# 2026-11-06 01:15:33 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #11"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
+    network: "tcp"
   - name: "🇩🇪 Germany — #1"
     type: "vless"
     server: "37.9.4.182"
@@ -16,7 +30,7 @@ proxies:
       public-key: "BGe-GOf-JkNWNay9--36nR4ZFHYNjGmpzVTQcXthR2A"
       short-id: "647547b8f895f9b9"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #10"
+  - name: "🇳🇱 The Netherlands — #12"
     type: "vless"
     server: "81.94.148.112"
     port: 443
@@ -31,11 +45,28 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇬🇷 Greece — #9"
+    type: "vless"
+    server: "160.5.219.101"
+    port: 2081
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #11"
       - "🇩🇪 Germany — #1"
-      - "🇳🇱 The Netherlands — #10"
+      - "🇳🇱 The Netherlands — #12"
+      - "🇬🇷 Greece — #9"
 rules:
   - MATCH,PROXY
