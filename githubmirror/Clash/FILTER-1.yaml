@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 15:45:33 UTC
+# 2026-11-06 16:01:00 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vmess"
@@ -47,16 +47,6 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
-    type: "hysteria2"
-    server: "37.18.15.116"
-    port: 5555
-    password: "72dc58e9-2583-4905-9a32-0635217a0ad9"
-    udp: true
-    sni: "wl11.white-dns.cloud"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -65,6 +55,5 @@ proxy-groups:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY

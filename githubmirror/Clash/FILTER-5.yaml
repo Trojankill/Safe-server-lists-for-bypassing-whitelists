@@ -1,23 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-06 15:45:32 UTC
+# 2026-11-06 16:00:59 UTC
 proxies:
-  - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.86.145.37"
-    port: 443
-    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
-    udp: true
-    tls: true
-    servername: "ara.rtkdvbr.cc"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/amws"
-      headers:
-        Host: "ara.rtkdvbr.cc"
   - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "81.163.22.143"
@@ -56,7 +39,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
