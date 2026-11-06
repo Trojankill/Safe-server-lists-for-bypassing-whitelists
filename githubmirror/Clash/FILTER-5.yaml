@@ -1,35 +1,51 @@
 # clash/mihomo subscription
-# 2026-11-06 19:45:32 UTC
+# 2026-11-06 20:01:02 UTC
 proxies:
-  - name: "Russia | music.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Austria | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "188.225.78.228"
-    port: 443
-    uuid: "bb190cdb-82ae-4212-b6cd-8ae9e6b768dd"
+    server: "147.45.71.104"
+    port: 8444
+    uuid: "7b8ad3a1-fc0a-4fe4-8844-56e606b6eabb"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "music.yandex.ru"
+    servername: "360.yandex.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
-      short-id: "e202a94ad1711af2"
+      public-key: "_vlpU9DnN8dz3FZ7Uifl3DPmi1o2vq2qhyZ8KKPvESM"
+      short-id: "6d956f726b46010a"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
+  - name: "The Netherlands | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "144.31.225.239"
+    port: 28150
+    uuid: "92b79c22-f68b-4713-8b21-52f264cb92f5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HRmmr0Ii4Tr9jPLwratvLhee3_VWFNK47T8AAo7kzww"
+      short-id: "dcb858da"
     network: "tcp"
-  - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "81.163.22.143"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "join.betust.net"
+    servername: "ads.x5.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
-      short-id: "351224a7"
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
     network: "tcp"
   - name: "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
     type: "trojan"
@@ -54,8 +70,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | music.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
+      - "Austria | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
