@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 00:45:32 UTC
+# 2026-11-06 01:00:59 UTC
 proxies:
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -43,6 +43,23 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "31.177.111.185"
+    port: 443
+    uuid: "8c194452-6d5d-4c5c-a91a-eda47ec95916"
+    udp: true
+    tls: true
+    servername: "100gramm.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/client/report/7a0ba0ac5155/"
+      headers:
+        Host: "100gramm.pro"
   - name: "🇳🇱 Нидерланды [#РКП]"
     type: "vless"
     server: "213.108.21.173"
@@ -64,6 +81,7 @@ proxy-groups:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды [#РКП]"
 rules:
   - MATCH,PROXY
