@@ -1,23 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-06 14:15:34 UTC
+# 2026-11-06 14:30:52 UTC
 proxies:
-  - name: "Russia | stechnostore.life | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
-    udp: true
-    tls: true
-    servername: "stechnostore.life"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/client/report/04c88cca7509/"
-      headers:
-        Host: "stechnostore.life"
   - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.145.37"
@@ -28,27 +11,27 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/amws"
       headers:
         Host: "ara.rtkdvbr.cc"
-  - name: "Russia | apply.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "81.163.22.194"
+    server: "81.163.22.143"
     port: 443
     uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "apply.betust.net"
+    servername: "join.betust.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "T98nmnCp0qrmkH1Oq92Tk94sCYa5RuuEjp8bDDbdVxk"
-      short-id: "b20168a5"
+      public-key: "GQul8Ak0VO_z4FW_m_R-xsQbwd2e1rWZO-XfMmKmpQE"
+      short-id: "351224a7"
     network: "tcp"
   - name: "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
     type: "trojan"
@@ -73,9 +56,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | stechnostore.life | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | apply.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
