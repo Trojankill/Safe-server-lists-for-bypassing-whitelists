@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 10:00:58 UTC
+# 2026-11-06 10:15:32 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -44,6 +44,23 @@ proxies:
       public-key: "DbL9RJFvJrnxBu6fFhWkHF8nsD6cK_DKMuMV00RmlWg"
       short-id: "4d3d8e15"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/client/report/04c88cca7509/"
+      headers:
+        Host: "stechnostore.life"
   - name: "🇵🇱 [BL] Сервер 338"
     type: "vless"
     server: "82.118.22.161"
@@ -159,23 +176,6 @@ proxies:
       public-key: "XQB2zIgrhD8AtxgYFM8UiiWYt1sLVBLhMg1M4-sGMAY"
       short-id: "296f27de82dad7ff"
     network: "tcp"
-  - name: "Russia | librarycenter.net | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "0ac8792c-236d-4085-9e12-af8ffd998162"
-    udp: true
-    tls: true
-    servername: "librarycenter.net"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/catalog/live/inventory"
-      headers:
-        Host: "librarycenter.net"
   - name: "BUNKER 🖤 | Россия 🇷🇺 #166"
     type: "vless"
     server: "188.225.62.73"
@@ -785,7 +785,7 @@ proxies:
       public-key: "BGe-GOf-JkNWNay9--36nR4ZFHYNjGmpzVTQcXthR2A"
       short-id: "647547b8f895f9b9"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #19"
+  - name: "🇳🇱 The Netherlands — #25"
     type: "vless"
     server: "81.94.148.112"
     port: 443
@@ -2120,7 +2120,7 @@ proxies:
     reality-opts:
       public-key: "mDDDyruO33nuqcTS7pZOjd9oOpDHUf0aEv2TQ1DFGV4"
     network: "tcp"
-  - name: "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "🇳🇱 [BL] Сервер 55"
     type: "vless"
     server: "87.199.205.28"
     port: 443
@@ -2490,22 +2490,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "TunService"
-  - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "79.141.164.125"
-    port: 443
-    uuid: "5d129837-43b0-42be-b80f-d50e8578aedd"
-    udp: true
-    tls: true
-    servername: "nla.kosmosapp.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pR39Vv5qhk8r6akOicoy6mMs4-ppSWUez8MyAXG7wwQ"
-      short-id: "27350908de933e09"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "neurex"
   - name: "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "147.45.104.86"
@@ -2671,7 +2655,7 @@ proxies:
       public-key: "jeS6Zu-p1Gf6GtraIAbpgQoSeT26Xq3GqgqVxccbVhY"
       short-id: "4d14da19b19cfc8c"
     network: "tcp"
-  - name: "🇩🇪 Germany | [*CIDR] t.me/rjsxrd"
+  - name: "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "176.123.162.102"
     port: 8443
@@ -2680,7 +2664,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "vk.ru"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "5J8IRlEEy8vuB2NArH15h9EVV--wwDUdq-_9HXoy9FM"
@@ -3568,21 +3552,6 @@ proxies:
       public-key: "oAX7soFKfN3xURgCD26trmjeF-e-eEjW3pBVXuuvW0k"
       short-id: "77a8c8c8"
     network: "tcp"
-  - name: "Lithuania | admin.betust.net | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.216.127.165"
-    port: 443
-    uuid: "95d0e214-eab0-4701-93ed-fea4f1b56062"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "admin.betust.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zZjrHRzULoXKVccVdPqtrtXLEUPJXwqdE1138vu5x3w"
-      short-id: "3e137406"
-    network: "tcp"
   - name: "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "88.216.70.128"
@@ -3704,7 +3673,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc_common1"
-  - name: "Bulgaria | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇧🇬"
     type: "vless"
     server: "2.27.105.13"
     port: 31238
@@ -3867,34 +3836,6 @@ proxies:
     reality-opts:
       public-key: "-YTGWg5DjsLDyaDfr1D83kiUK22LVcrK3yC53lqqigs"
       short-id: "feedbacc"
-    network: "tcp"
-  - name: "Poland | ads.x5.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "83.168.71.216"
-    port: 443
-    uuid: "a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
-      short-id: "2f49bccf11150ef2"
-    network: "tcp"
-  - name: "unknown | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "tg.riotvpn.eu"
-    port: 443
-    uuid: "a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a"
-    udp: true
-    tls: true
-    servername: "ads.x5.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
-      short-id: "2f49bccf11150ef2"
     network: "tcp"
   - name: "cool [white] 🌐 |#137|"
     type: "vless"
@@ -5383,22 +5324,6 @@ proxies:
       public-key: "jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k"
       short-id: "a73f0410d728c823"
     network: "tcp"
-  - name: "Russia | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "104.171.134.135"
-    port: 8444
-    uuid: "f9f70641-667b-46f2-a37e-e3858acbcd9b"
-    udp: true
-    tls: true
-    servername: "360.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "AMOBkNsSbIM8YBI6uosUBioGJSOp8eliEpW7vTZ4Mks"
-      short-id: "8fd699a1c79e360d"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-reality"
   - name: "🇩🇪 [BL] Сервер 273"
     type: "vless"
     server: "31.77.10.167"
@@ -6509,6 +6434,36 @@ proxies:
     udp: true
     sni: "nl1.obxodvpn.us"
     skip-cert-verify: false
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36116
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:1AFR2jdtV3O5h9P33KpcvgfkSiFIqiXSuFxXwBcY3FY"
+    udp: true
+    sni: "us2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36104
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:CTIsdSVtro0BDR9MTUEuiYpjN3F5BN169ytiJfmMR6c"
+    udp: true
+    sni: "gb2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36114
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:b3p2nL5JrfHoKJi4q7v_yIfCipsgduAtb9m1cdt0B-A"
+    udp: true
+    sni: "hu.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
   - name: "立陶宛_110612063 t.me/rjsxrd"
     type: "hysteria2"
     server: "88.216.195.188"
@@ -6524,6 +6479,16 @@ proxies:
     password: "63e1b9462d708b56d5d5a0267cffecdc"
     udp: true
     sni: "promo3.goonars.com"
+    skip-cert-verify: false
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "37.18.15.116"
+    port: 5555
+    password: "72dc58e9-2583-4905-9a32-0635217a0ad9"
+    udp: true
+    sni: "wl11.white-dns.cloud"
+    alpn:
+      - "h3"
     skip-cert-verify: false
   - name: "🇯🇵 Japan (сервер) | 🇯🇵 Japan (выход 45.32.10.7) | @RaViraNet t.me/rjsxrd"
     type: "hysteria2"
@@ -6982,6 +6947,7 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 40"
       - "🇩🇪 [BL] Сервер 363"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇵🇱 [BL] Сервер 338"
       - "🇵🇱 [BL] Сервер 416"
       - "🇳🇱 The Netherlands — #28 t.me/rjsxrd"
@@ -6990,7 +6956,6 @@ proxy-groups:
       - "🇫🇷 [BL] Сервер 344"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
       - "🇩🇪 [BL] Сервер 304"
-      - "Russia | librarycenter.net | WebSocket | [#LSO - #LinSpisokObhod]"
       - "BUNKER 🖤 | Россия 🇷🇺 #166"
       - "BUNKER 🖤 | Россия 🇷🇺 #178"
       - "BUNKER 🖤 | Россия 🇷🇺 #223"
@@ -7032,7 +6997,7 @@ proxy-groups:
       - "Lithuania | app26.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "[429ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd"
       - "🇩🇪 Germany — #1"
-      - "🇳🇱 The Netherlands — #19"
+      - "🇳🇱 The Netherlands — #25"
       - "🇺🇸 United States [*CIDR]"
       - "🇺🇸 United States [*CIDR] #2"
       - "🇹🇷 [BL] Сервер 201"
@@ -7121,7 +7086,7 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 402"
       - "🇫🇮 [BL] Сервер 323"
       - "🇸🇪 [BL] Сервер 333"
-      - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "🇳🇱 [BL] Сервер 55"
       - "🇫🇮 [BL] Сервер 277"
       - "🇺🇸 [BL] Сервер 192"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
@@ -7146,7 +7111,6 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 340"
       - "🇷🇺 [WL] Сервер 125"
       - "🇷🇺 [WL] Сервер 134"
-      - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇺🇦 [BL] Сервер 216"
       - "🇮🇳 [BL] Сервер 89"
@@ -7158,7 +7122,7 @@ proxy-groups:
       - "🇷🇺 [WL] Сервер 23"
       - "🇧🇬 [BL] Сервер 355"
       - "🇩🇪 [BL] Сервер 202"
-      - "🇩🇪 Germany | [*CIDR] t.me/rjsxrd"
+      - "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇷🇴 [BL] Сервер 32"
       - "🇺🇸 [BL] Сервер 261"
       - "🇫🇮 [BL] Сервер 245"
@@ -7218,7 +7182,6 @@ proxy-groups:
       - "🇬🇧 [BL] Сервер 211"
       - "🇬🇧 Великобритания 8 WEYRO LTD t.me/rjsxrd"
       - "🇳🇱 Нидерланды 1 FDCservers.net t.me/rjsxrd"
-      - "Lithuania | admin.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "[526ms Литва LT 🇱🇹 @vlesstrojan] t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 330"
@@ -7227,7 +7190,7 @@ proxy-groups:
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
       - "🇫🇮 [BL] Сервер 176"
-      - "Bulgaria | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Бесплатный VPN tg:VLESSFORU 🇧🇬"
       - "🇺🇸 [BL] Сервер 332"
       - "🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd #2"
       - "🇫🇷 [BL] Сервер 76"
@@ -7238,8 +7201,6 @@ proxy-groups:
       - "🇸🇬 [BL] Сервер 114"
       - "🇦🇺 [BL] Сервер 389"
       - "🇸🇬 [BL] Сервер 317"
-      - "Poland | ads.x5.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "unknown | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "cool [white] 🌐 |#137|"
       - "🇰🇷 [BL] Сервер 309"
       - "🇩🇰 [BL] Сервер 391"
@@ -7340,7 +7301,6 @@ proxy-groups:
       - "🇩🇪 Germany [*CIDR]"
       - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇪🇪 [BL] Сервер 417"
-      - "Russia | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 273"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #3"
       - "BUNKER 🖤 | Россия 🇷🇺 #125"
@@ -7425,8 +7385,12 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #200"
       - "BUNKER 🖤 | Россия 🇷🇺 #43"
       - "🇳🇱 Нидерланды 9 Paul Sagov t.me/rjsxrd"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
       - "立陶宛_110612063 t.me/rjsxrd"
       - "立陶宛_110612064 t.me/rjsxrd"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
       - "🇯🇵 Japan (сервер) | 🇯🇵 Japan (выход 45.32.10.7) | @RaViraNet t.me/rjsxrd"
       - "Нейро Лёха C-1 #2 🝰 🇫🇮"
       - "Нейро Лёха C-1 #7 🛰️ 🇸🇪"

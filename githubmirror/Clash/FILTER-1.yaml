@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-06 10:00:58 UTC
+# 2026-11-06 10:15:32 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/client/report/04c88cca7509/"
+      headers:
+        Host: "stechnostore.life"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "213.171.12.100"
@@ -57,13 +74,58 @@ proxies:
     reality-opts:
       public-key: "oSbyJBoI2JTEva2ks51kmUCA7z-iFUcoGYCk-ciEaDU"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36116
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:1AFR2jdtV3O5h9P33KpcvgfkSiFIqiXSuFxXwBcY3FY"
+    udp: true
+    sni: "us2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36104
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:CTIsdSVtro0BDR9MTUEuiYpjN3F5BN169ytiJfmMR6c"
+    udp: true
+    sni: "gb2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.8.76"
+    port: 36114
+    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:b3p2nL5JrfHoKJi4q7v_yIfCipsgduAtb9m1cdt0B-A"
+    udp: true
+    sni: "hu.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "37.18.15.116"
+    port: 5555
+    password: "72dc58e9-2583-4905-9a32-0635217a0ad9"
+    udp: true
+    sni: "wl11.white-dns.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇹🇷 Турция | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
