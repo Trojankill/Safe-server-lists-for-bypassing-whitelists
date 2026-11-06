@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-06 20:45:31 UTC
+# 2026-11-06 21:00:58 UTC
 proxies:
+  - name: "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "194.156.26.125"
+    port: 443
+    uuid: "86c7af80-c9cf-4265-ab77-da12b0bf8bb6"
+    udp: true
+    tls: true
+    servername: "186.baklajann.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "186.baklajann.ru"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -24,6 +41,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
