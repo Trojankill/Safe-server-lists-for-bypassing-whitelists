@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-06 00:30:48 UTC
+# 2026-11-06 00:45:32 UTC
 proxies:
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.108.253.204"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rumos.yandex-api.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "aacc3j_mijcn5WdrrUcMRlTV7IhTgTVawR6oK_3cJGI"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "213.171.12.100"
@@ -47,6 +61,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды [#РКП]"
