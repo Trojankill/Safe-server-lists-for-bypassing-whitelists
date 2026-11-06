@@ -1,7 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-06 02:45:32 UTC
+# 2026-11-06 03:01:02 UTC
 proxies:
-  - name: "🇩🇪 Germany — #1"
+  - name: "🇵🇱 Poland — #22"
+    type: "vless"
+    server: "37.9.4.108"
+    port: 8443
+    uuid: "02e7f01e-c9cf-4f96-816d-3b7cb97b289b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "warthunder.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "-IKhpLdY0Xp8whf5GIZ8nLro_uDz9czGtkj1l2KWLVI"
+      short-id: "ced56b8e28517367"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #21"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    network: "tcp"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "37.9.4.182"
     port: 443
@@ -16,7 +45,7 @@ proxies:
       public-key: "BGe-GOf-JkNWNay9--36nR4ZFHYNjGmpzVTQcXthR2A"
       short-id: "647547b8f895f9b9"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #11"
+  - name: "🇳🇱 The Netherlands — #18"
     type: "vless"
     server: "81.94.148.112"
     port: 443
@@ -31,7 +60,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇺🇸 United States — #62"
+  - name: "🇺🇸 United States — #71"
     type: "vless"
     server: "188.225.45.170"
     port: 443
@@ -45,7 +74,7 @@ proxies:
     reality-opts:
       public-key: "P0P_zFJU0jUz97JutgEUfbjGOyplGFrn6YN232yBR2Y"
     network: "tcp"
-  - name: "🇬🇷 Greece — #9"
+  - name: "🇬🇷 Greece — #15"
     type: "vless"
     server: "160.5.219.101"
     port: 2081
@@ -60,13 +89,47 @@ proxies:
       public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
       short-id: "b0d8c9a285c70f6f"
     network: "tcp"
+  - name: "🇫🇮 Finland — #14"
+    type: "vless"
+    server: "185.91.52.223"
+    port: 444
+    uuid: "8dddc313-e588-478b-9175-8702da3235bf"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cloudcdn-m9-7.cdn.yandex.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1LZZtcrX3Ig02PXnKLMAmLlL3r6lRhlGB_4XkegFUTo"
+      short-id: "e8670a141b31d45f"
+    network: "tcp"
+  - name: "🇩🇪 Germany — #6"
+    type: "vless"
+    server: "95.163.232.249"
+    port: 443
+    uuid: "8dddc313-e588-478b-9175-8702da3235bf"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "m1.vk.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "OHfEGwz8NTDDXdsjPoaCeeP5McKkq9GfxwYBTpywKXA"
+      short-id: "e8670a141b31d45f"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #1"
-      - "🇳🇱 The Netherlands — #11"
-      - "🇺🇸 United States — #62"
-      - "🇬🇷 Greece — #9"
+      - "🇵🇱 Poland — #22"
+      - "🇳🇱 The Netherlands — #21"
+      - "🇩🇪 Germany — #3"
+      - "🇳🇱 The Netherlands — #18"
+      - "🇺🇸 United States — #71"
+      - "🇬🇷 Greece — #15"
+      - "🇫🇮 Finland — #14"
+      - "🇩🇪 Germany — #6"
 rules:
   - MATCH,PROXY
