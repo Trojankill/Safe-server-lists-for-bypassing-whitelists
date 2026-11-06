@@ -1,37 +1,38 @@
 # clash/mihomo subscription
-# 2026-11-06 03:30:44 UTC
+# 2026-11-06 03:45:31 UTC
 proxies:
-  - name: "🇺🇸 United States | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "95.213.245.84"
-    port: 443
-    uuid: "255a8044-3337-473e-af26-46a37208adcc"
+    server: "155.212.161.144"
+    port: 8443
+    uuid: "27c8be8c-878d-4541-bf5f-3d8cffcf5c18"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "hudson.glowbreeze.online"
-    client-fingerprint: "android"
+    servername: "360.yandex.ru"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "qqvs2x0N1F5WgXvC7PB9wmO5RxcVgCHS1hYHYOxdBk4"
-      short-id: "5f3fd060c992bb2e"
+      public-key: "R45Yzi8VdbJi7qT-o5NYUpYCDfG7SSpFfSJGEQXAgWA"
+      short-id: "06d22eb12a38a8a6"
     network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] #2"
+    type: "vless"
+    server: "155.212.161.144"
+    port: 8445
+    uuid: "27c8be8c-878d-4541-bf5f-3d8cffcf5c18"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "R45Yzi8VdbJi7qT-o5NYUpYCDfG7SSpFfSJGEQXAgWA"
+      short-id: "06d22eb12a38a8a6"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "🇺🇸 United States [*CIDR]"
-    type: "vless"
-    server: "hudson.glowbreeze.online"
-    port: 443
-    uuid: "255a8044-3337-473e-af26-46a37208adcc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hudson.glowbreeze.online"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "qqvs2x0N1F5WgXvC7PB9wmO5RxcVgCHS1hYHYOxdBk4"
-      short-id: "5f3fd060c992bb2e"
-    network: "tcp"
-  - name: "🇺🇸 United States | [*CIDR] #2"
     type: "vless"
     server: "188.225.45.170"
     port: 443
@@ -40,12 +41,42 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "static.rutube.ru"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "P0P_zFJU0jUz97JutgEUfbjGOyplGFrn6YN232yBR2Y"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇳🇴 Norway [*CIDR]"
+    type: "vless"
+    server: "connect2.accessgate.link"
+    port: 2086
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇸🇪 Sweden [*CIDR]"
+    type: "vless"
+    server: "connect4.accessgate.link"
+    port: 1085
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "random"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] #3"
     type: "vless"
     server: "5.42.105.63"
     port: 25443
@@ -53,7 +84,7 @@ proxies:
     udp: true
     tls: true
     servername: "cdvid.gamescloud.uk"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "ohYKVa5uVRwqzZndETnytrSXE63zaUFVNN1_T4eTHnc"
@@ -61,7 +92,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR] #4"
     type: "vless"
     server: "147.45.104.86"
     port: 7443
@@ -76,7 +107,7 @@ proxies:
       public-key: "KbjX7IJnVtwq2USeRmLgXzACOtFCiA5lnsXhIFOX3ho"
       short-id: "a7eb8a4e"
     network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
     type: "vless"
     server: "176.123.162.102"
     port: 8443
@@ -91,15 +122,132 @@ proxies:
       public-key: "5J8IRlEEy8vuB2NArH15h9EVV--wwDUdq-_9HXoy9FM"
       short-id: "dcc04e7520"
     network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "168.113.177.225"
+    port: 8443
+    uuid: "b01288a3-ff50-4649-ac55-88d0bb400126"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0ZMKfmqtGilv6vfOvZEnMnpysRFEqtYW5r8OOmwE-Qk"
+      short-id: "69d427cb0badfe22"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+    type: "vless"
+    server: "168.113.177.225"
+    port: 8444
+    uuid: "b01288a3-ff50-4649-ac55-88d0bb400126"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0ZMKfmqtGilv6vfOvZEnMnpysRFEqtYW5r8OOmwE-Qk"
+      short-id: "69d427cb0badfe22"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
+  - name: "🌐 Anycast-IP | 🇳🇱 🇺🇸 [*CIDR]"
+    type: "vless"
+    server: "37.153.65.137"
+    port: 8443
+    uuid: "e07a6d05-f665-4811-91f0-9b3dc1094e4d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tradingview.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38"
+      short-id: "8f3c6e2a1b5d4f09"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8443
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #4"
+    type: "vless"
+    server: "46.8.19.126"
+    port: 8444
+    uuid: "f67f1548-c958-45e4-a7f4-194b90ccd99f"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pjRu70aycBq_sodRHf_BDYUXVjmi0wofQNQXTTXQfDU"
+      short-id: "cb1733a12d48629b"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
+  - name: "🇫🇮 Finland [*CIDR]"
+    type: "vless"
+    server: "104.171.134.135"
+    port: 8443
+    uuid: "f9f70641-667b-46f2-a37e-e3858acbcd9b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "AMOBkNsSbIM8YBI6uosUBioGJSOp8eliEpW7vTZ4Mks"
+      short-id: "8fd699a1c79e360d"
+    network: "tcp"
+  - name: "🇫🇮 Finland [*CIDR] #2"
+    type: "vless"
+    server: "104.171.134.135"
+    port: 8444
+    uuid: "f9f70641-667b-46f2-a37e-e3858acbcd9b"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "AMOBkNsSbIM8YBI6uosUBioGJSOp8eliEpW7vTZ4Mks"
+      short-id: "8fd699a1c79e360d"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | [*CIDR]"
-      - "🇺🇸 United States [*CIDR]"
-      - "🇺🇸 United States | [*CIDR] #2"
-      - "🇷🇺 Russia | [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
-      - "🇩🇪 Germany [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇺🇸 United States [*CIDR]"
+      - "🇳🇴 Norway [*CIDR]"
+      - "🇸🇪 Sweden [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #3"
+      - "🇷🇺 Russia [*CIDR] #4"
+      - "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇳🇱 🇺🇸 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #4"
+      - "🇫🇮 Finland [*CIDR]"
+      - "🇫🇮 Finland [*CIDR] #2"
 rules:
   - MATCH,PROXY
