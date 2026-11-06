@@ -1,6 +1,35 @@
 # clash/mihomo subscription
-# 2026-11-06 22:45:33 UTC
+# 2026-11-06 23:00:57 UTC
 proxies:
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    network: "tcp"
+  - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.223.100"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "smart.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
+    network: "tcp"
   - name: "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "194.156.26.125"
@@ -56,6 +85,22 @@ proxies:
     udp: true
     sni: "trojan.lso"
     skip-cert-verify: false
+  - name: "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vmess"
+    server: "195.208.65.155"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-1-871.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
+      headers:
+        Host: "renderer-stream-1-871.mirra.now"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -71,10 +116,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | music.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+      - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
