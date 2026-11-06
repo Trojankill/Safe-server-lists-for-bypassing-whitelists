@@ -1,6 +1,34 @@
 # clash/mihomo subscription
-# 2026-11-06 12:45:32 UTC
+# 2026-11-06 13:01:00 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #14"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands — #15"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    network: "tcp"
   - name: "🇫🇷 France — #9"
     type: "vless"
     server: "95.163.250.241"
@@ -20,6 +48,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #14"
+      - "🇳🇱 The Netherlands — #15"
       - "🇫🇷 France — #9"
 rules:
   - MATCH,PROXY
