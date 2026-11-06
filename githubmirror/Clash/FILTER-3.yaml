@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-06 23:00:57 UTC
+# 2026-11-06 23:15:30 UTC
 proxies:
+  - name: "🇳🇱 The Netherlands — #16"
+    type: "vless"
+    server: "158.160.162.185"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
+    network: "tcp"
   - name: "🇩🇪 Germany — #4"
     type: "vless"
     server: "188.225.78.228"
@@ -16,14 +30,14 @@ proxies:
       public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
       short-id: "e202a94ad1711af2"
     network: "tcp"
-  - name: "🇰🇿 Kazakhstan — #14"
+  - name: "🇺🇿 Uzbekistan — #67"
     type: "vless"
     server: "95.143.188.113"
     port: 443
     uuid: "c47159bb-2c15-440d-b239-8594d7e7efbb"
     udp: true
     tls: true
-    servername: "tz5gtjwlki.j.cloudfront.hls.hlsnode.net"
+    servername: "ar5v3uc2o9.j.cloudfront.hls.hlsnode.net"
     alpn:
       - "h2"
     client-fingerprint: "safari"
@@ -50,8 +64,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 The Netherlands — #16"
       - "🇩🇪 Germany — #4"
-      - "🇰🇿 Kazakhstan — #14"
+      - "🇺🇿 Uzbekistan — #67"
       - "🇩🇪 Germany — #3"
 rules:
   - MATCH,PROXY
