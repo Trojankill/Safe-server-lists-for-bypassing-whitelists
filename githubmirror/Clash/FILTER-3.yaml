@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-06 01:45:30 UTC
+# 2026-11-06 02:00:58 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #11"
-    type: "vless"
-    server: "84.201.169.241"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
-    network: "tcp"
   - name: "🇩🇪 Germany — #1"
     type: "vless"
     server: "37.9.4.182"
@@ -30,7 +16,7 @@ proxies:
       public-key: "BGe-GOf-JkNWNay9--36nR4ZFHYNjGmpzVTQcXthR2A"
       short-id: "647547b8f895f9b9"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #12"
+  - name: "🇳🇱 The Netherlands — #11"
     type: "vless"
     server: "81.94.148.112"
     port: 443
@@ -44,6 +30,20 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
+    network: "tcp"
+  - name: "🇺🇸 United States — #62"
+    type: "vless"
+    server: "188.225.45.170"
+    port: 443
+    uuid: "29c46e15-5adc-461a-add7-4c8e834bb488"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "static.rutube.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "P0P_zFJU0jUz97JutgEUfbjGOyplGFrn6YN232yBR2Y"
     network: "tcp"
   - name: "🇬🇷 Greece — #9"
     type: "vless"
@@ -64,9 +64,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #11"
       - "🇩🇪 Germany — #1"
-      - "🇳🇱 The Netherlands — #12"
+      - "🇳🇱 The Netherlands — #11"
+      - "🇺🇸 United States — #62"
       - "🇬🇷 Greece — #9"
 rules:
   - MATCH,PROXY
