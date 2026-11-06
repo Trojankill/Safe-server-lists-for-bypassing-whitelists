@@ -1,7 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-06 16:45:33 UTC
+# 2026-11-06 17:01:00 UTC
 proxies:
-  - name: "🇩🇪 Germany — #3"
+  - name: "🇳🇱 The Netherlands — #13"
+    type: "vless"
+    server: "84.201.158.195"
+    port: 443
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
+    network: "tcp"
+  - name: "🇩🇪 Germany — #2"
     type: "vless"
     server: "188.225.78.228"
     port: 443
@@ -16,7 +30,22 @@ proxies:
       public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
       short-id: "e202a94ad1711af2"
     network: "tcp"
-  - name: "🇩🇪 Germany — #2"
+  - name: "🇰🇿 Kazakhstan — #12"
+    type: "vless"
+    server: "95.143.188.113"
+    port: 443
+    uuid: "c47159bb-2c15-440d-b239-8594d7e7efbb"
+    udp: true
+    tls: true
+    servername: "tz5gtjwlki.j.cloudfront.hls.hlsnode.net"
+    alpn:
+      - "h2"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "sync.v1"
+  - name: "🇩🇪 Germany — #1"
     type: "vless"
     server: "46.254.19.138"
     port: 30055
@@ -35,7 +64,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #3"
+      - "🇳🇱 The Netherlands — #13"
       - "🇩🇪 Germany — #2"
+      - "🇰🇿 Kazakhstan — #12"
+      - "🇩🇪 Germany — #1"
 rules:
   - MATCH,PROXY
