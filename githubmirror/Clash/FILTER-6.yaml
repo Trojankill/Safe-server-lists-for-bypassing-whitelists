@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 20:15:31 UTC
+# 2026-11-06 20:30:48 UTC
 proxies:
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
@@ -16,21 +16,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "185.86.147.191"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    server: "168.113.128.70"
+    port: 20105
+    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "qq"
+    servername: "ripelever.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "176.57.215.54"
     port: 37508
@@ -51,7 +52,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
-      - "🇷🇺 Russia | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
 rules:
   - MATCH,PROXY
