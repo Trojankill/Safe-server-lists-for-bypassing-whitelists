@@ -1,51 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-06 09:30:52 UTC
+# 2026-11-06 09:45:33 UTC
 proxies:
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "0ac8792c-236d-4085-9e12-af8ffd998162"
-    udp: true
-    tls: true
-    servername: "librarycenter.net"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/catalog/live/inventory"
-      headers:
-        Host: "librarycenter.net"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.246.180"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "apsnl.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
-    network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.253.204"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rumos.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "aacc3j_mijcn5WdrrUcMRlTV7IhTgTVawR6oK_3cJGI"
-    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "213.171.12.100"
@@ -106,9 +61,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇹🇷 Турция | 🔗 Каскад [#РКП]"
