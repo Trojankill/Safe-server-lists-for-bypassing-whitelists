@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-06 17:45:32 UTC
+# 2026-11-06 18:00:59 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #13"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    network: "tcp"
-  - name: "🇩🇪 Germany — #2"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "188.225.78.228"
     port: 443
@@ -45,7 +31,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "sync.v1"
-  - name: "🇩🇪 Germany — #1"
+  - name: "🇩🇪 Germany — #2"
     type: "vless"
     server: "46.254.19.138"
     port: 30055
@@ -64,9 +50,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #13"
-      - "🇩🇪 Germany — #2"
+      - "🇩🇪 Germany — #3"
       - "🇰🇿 Kazakhstan — #12"
-      - "🇩🇪 Germany — #1"
+      - "🇩🇪 Germany — #2"
 rules:
   - MATCH,PROXY

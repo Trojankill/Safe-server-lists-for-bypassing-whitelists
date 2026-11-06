@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 17:45:33 UTC
+# 2026-11-06 18:01:00 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vmess"
@@ -17,43 +17,10 @@ proxies:
       path: "/truth"
       headers:
         Host: "www.gptcloudai.com"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36116
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:1AFR2jdtV3O5h9P33KpcvgfkSiFIqiXSuFxXwBcY3FY"
-    udp: true
-    sni: "us2.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36104
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:CTIsdSVtro0BDR9MTUEuiYpjN3F5BN169ytiJfmMR6c"
-    udp: true
-    sni: "gb2.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "212.41.8.76"
-    port: 36114
-    password: "1794082870:063fff3c-d6dd-43e3-b2fb-124785f13029:b3p2nL5JrfHoKJi4q7v_yIfCipsgduAtb9m1cdt0B-A"
-    udp: true
-    sni: "hu.lumacache.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
