@@ -1,58 +1,57 @@
 # clash/mihomo subscription
-# 2026-11-06 22:00:55 UTC
+# 2026-11-06 22:15:30 UTC
 proxies:
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "falmero.store"
+    server: "147.45.153.134"
     port: 443
-    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
     udp: true
     tls: true
-    servername: "falmero.store"
+    servername: "renderer-bridge-2-133.mirra.now"
     alpn:
       - "h2"
-    client-fingerprint: "chrome"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "glush.de1.v1"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      grpc-service-name: "VideoRenderer"
+  - name: "🇩🇪 Germany | [*CIDR] #2"
     type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    server: "renderer-bridge-2-133.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "188.130.209.204"
+    port: 443
+    uuid: "4a0812f0-f9d7-4afd-9ae3-6c38e1e59485"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR]"
-    type: "vless"
-    server: "176.57.215.54"
-    port: 37508
-    uuid: "ef02c262-77a0-429f-8b8f-9eb6ad18f8c0"
-    udp: true
-    tls: true
-    servername: "www.oracle.com"
-    client-fingerprint: "chrome"
+    servername: "promo-digital.wb.ru"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
-      public-key: "_Iqh4SUi85b59zoNhLWVZrSGMNa45OTgK3fWrjZI0l8"
-      short-id: "d3"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
+      public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
+      short-id: "d3f314d0b692f63d"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇷🇺 Russia [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] #2"
+      - "🇷🇺 Russia | [*CIDR]"
 rules:
   - MATCH,PROXY

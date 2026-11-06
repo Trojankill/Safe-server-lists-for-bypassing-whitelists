@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 22:00:56 UTC
+# 2026-11-06 22:15:31 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -32,11 +32,22 @@ proxies:
       path: "/truth"
       headers:
         Host: "www.gptcloudai.com"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19455
+    password: "190edece-2750-454c-b766-0570fc32deca"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY

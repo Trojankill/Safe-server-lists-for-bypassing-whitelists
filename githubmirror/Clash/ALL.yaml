@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 22:00:56 UTC
+# 2026-11-06 22:15:31 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -775,6 +775,21 @@ proxies:
     alpn:
       - "h2"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "renderer-bridge-2-133.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -3086,21 +3101,6 @@ proxies:
       public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
       short-id: "94acb54627612d43"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
-    type: "vless"
-    server: "falmero.store"
-    port: 443
-    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
-    udp: true
-    tls: true
-    servername: "falmero.store"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de1.v1"
   - name: "🇩🇪 [BL] Сервер 310"
     type: "vless"
     server: "144.31.125.60"
@@ -3311,21 +3311,6 @@ proxies:
     reality-opts:
       public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
       short-id: "69984b9e02545831"
-    network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇮 [BL] Сервер 176"
     type: "vless"
@@ -4022,7 +4007,7 @@ proxies:
       public-key: "Y0zCjvOLHuHWgv4HUyqb9O0lSMnTrl26XO8qwnWoQXw"
       short-id: "b85875a13da4"
     network: "tcp"
-  - name: "🇰🇿 Kazakhstan — #13"
+  - name: "🇰🇿 Kazakhstan — #14"
     type: "vless"
     server: "95.143.188.113"
     port: 443
@@ -4112,7 +4097,7 @@ proxies:
     reality-opts:
       public-key: "7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI"
     network: "tcp"
-  - name: "🇩🇪 Germany — #2"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "46.254.19.138"
     port: 30055
@@ -4867,22 +4852,6 @@ proxies:
       public-key: "oTsYnjjxzyoBI2rJn0TjihgaOcNMPa9bNwHhp4RdDkg"
       short-id: "be7d0c9dda4dd4e6"
     network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR]"
-    type: "vless"
-    server: "176.57.215.54"
-    port: 37508
-    uuid: "ef02c262-77a0-429f-8b8f-9eb6ad18f8c0"
-    udp: true
-    tls: true
-    servername: "www.oracle.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_Iqh4SUi85b59zoNhLWVZrSGMNa45OTgK3fWrjZI0l8"
-      short-id: "d3"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
   - name: "🇸🇬 [BL] Сервер 321"
     type: "vless"
     server: "172.237.88.103"
@@ -6184,6 +6153,16 @@ proxies:
     udp: true
     sni: "nl1.obxodvpn.us"
     skip-cert-verify: false
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19455
+    password: "190edece-2750-454c-b766-0570fc32deca"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
   - name: "cool [white] 🇺🇸 |#85|"
     type: "hysteria2"
     server: "201.8.71.59"
@@ -6835,6 +6814,7 @@ proxy-groups:
       - "🇹🇷 [BL] Сервер 201"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "BUNKER 🖤 | Россия 🇷🇺 #66"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🇰🇿 [BL] Сервер 369"
       - "🇩🇪 [BL] Сервер 119"
       - "🇳🇱 [BL] Сервер 154"
@@ -6989,7 +6969,6 @@ proxy-groups:
       - "🇫🇮 [BL] Сервер 118"
       - "🇬🇧 [BL] Сервер 324"
       - "🇬🇷 [BL] Сервер 67"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇩🇪 [BL] Сервер 310"
       - "BUNKER 🖤 | Россия 🇷🇺 #71"
       - "BUNKER 🖤 | Россия 🇷🇺 #94"
@@ -7004,7 +6983,6 @@ proxy-groups:
       - "🇩🇪 DE | VLESS t.me/rjsxrd"
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇫🇮 [BL] Сервер 176"
       - "🇺🇸 [BL] Сервер 332"
       - "🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd"
@@ -7052,13 +7030,13 @@ proxy-groups:
       - "🇳🇱 The Netherlands (сервер) | 🇳🇱 The Netherlands (выход 5.182.86.84) | @RaViraNet t.me/rjsxrd"
       - "🇷🇴 [BL] Сервер 126"
       - "🇺🇸 [BL] Сервер 251"
-      - "🇰🇿 Kazakhstan — #13"
+      - "🇰🇿 Kazakhstan — #14"
       - "🇷🇺 [BL] Сервер 14"
       - "BUNKER 🖤 | Россия 🇷🇺 #27"
       - "🇺🇸 [BL] Сервер 286"
       - "BUNKER 🖤 | Россия 🇷🇺 #117"
       - "🇺🇸 [BL] Сервер 403"
-      - "🇩🇪 Germany — #2"
+      - "🇩🇪 Germany — #3"
       - "🇱🇻 [WL] Сервер 116"
       - "🇦🇹 [BL] Сервер 196"
       - "🇨🇦 [BL] Сервер 232"
@@ -7109,7 +7087,6 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #160"
       - "🇨🇦 Канада ZhouyiSat Communications t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦"
-      - "🇷🇺 Russia [*CIDR]"
       - "🇸🇬 [BL] Сервер 321"
       - "🇮🇱 [BL] Сервер 250"
       - "🇳🇱 [BL] Сервер 311"
@@ -7207,6 +7184,7 @@ proxy-groups:
       - "cool [white] 🌐 |#27|"
       - "BUNKER 🖤 | Россия 🇷🇺 #43"
       - "🇳🇱 The Netherlands (сервер) | 🇳🇱 The Netherlands (выход 9.247.54.188) | @RaViraNet t.me/rjsxrd"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "cool [white] 🇺🇸 |#85|"
       - "cool [white] 🇺🇸 |#66|"
       - "🇷🇺 Russia (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
