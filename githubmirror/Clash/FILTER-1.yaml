@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-06 08:00:57 UTC
+# 2026-11-06 08:15:32 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "0ac8792c-236d-4085-9e12-af8ffd998162"
+    udp: true
+    tls: true
+    servername: "librarycenter.net"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/live/inventory"
+      headers:
+        Host: "librarycenter.net"
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.246.180"
@@ -89,6 +106,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"

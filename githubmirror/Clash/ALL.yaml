@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 08:00:58 UTC
+# 2026-11-06 08:15:43 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -73,20 +73,6 @@ proxies:
       public-key: "LY0H47MWx87_L_JBzxFAuTzKZB53U7MrZQK8-dNnMxM"
       short-id: "6c5c7900406a1ae7"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #28"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    network: "tcp"
   - name: "🇲🇰 [BL] Сервер 33"
     type: "vless"
     server: "89.185.82.151"
@@ -145,6 +131,23 @@ proxies:
       public-key: "XQB2zIgrhD8AtxgYFM8UiiWYt1sLVBLhMg1M4-sGMAY"
       short-id: "296f27de82dad7ff"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "0ac8792c-236d-4085-9e12-af8ffd998162"
+    udp: true
+    tls: true
+    servername: "librarycenter.net"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/live/inventory"
+      headers:
+        Host: "librarycenter.net"
   - name: "BUNKER 🖤 | Россия 🇷🇺 #166"
     type: "vless"
     server: "188.225.62.73"
@@ -646,20 +649,6 @@ proxies:
       public-key: "PuAGLfJy6cu1TNoHuKIKSxPetCbZI41fc8hQDjWPIAU"
       short-id: "9980e0609b0d3891"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #30"
-    type: "vless"
-    server: "158.160.162.185"
-    port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
-    network: "tcp"
   - name: "🇸🇬 [BL] Сервер 86"
     type: "vless"
     server: "206.206.76.75"
@@ -797,7 +786,7 @@ proxies:
       public-key: "xNzdfy4hPv-IgM_MSn64FNQdb-UPu78pmM-GBE1HhSo"
       short-id: "ef5d4ad5"
     network: "tcp"
-  - name: "🇩🇪 Germany — #4"
+  - name: "Russia | anvil.kachow.ink | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "37.9.4.182"
     port: 443
@@ -812,7 +801,7 @@ proxies:
       public-key: "BGe-GOf-JkNWNay9--36nR4ZFHYNjGmpzVTQcXthR2A"
       short-id: "647547b8f895f9b9"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #31"
+  - name: "🇳🇱 The Netherlands — #20"
     type: "vless"
     server: "81.94.148.112"
     port: 443
@@ -1006,6 +995,21 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "GvvkY8xYb9QjvwvzYq_uNC4tOGd0DCxRnz6770-xgkI"
+    network: "tcp"
+  - name: "🇬🇷 Greece — #18"
+    type: "vless"
+    server: "160.5.219.191"
+    port: 2081
+    uuid: "2f6c70f3-206a-4bc1-ac1f-6b70153f9c73"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "unpkg.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CQBmePak1QN5SsSmK_KTOSLjsCTaiaM4Jtxt7jLheko"
+      short-id: "b0d8c9a285c70f6f"
     network: "tcp"
   - name: "🇬🇷 Greece [*CIDR] t.me/rjsxrd"
     type: "vless"
@@ -7136,11 +7140,11 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
       - "🇵🇱 [BL] Сервер 338"
       - "🇵🇱 [BL] Сервер 416"
-      - "🇳🇱 The Netherlands — #28"
       - "🇲🇰 [BL] Сервер 33"
       - "🇫🇷 [BL] Сервер 344"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
       - "🇩🇪 [BL] Сервер 304"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "BUNKER 🖤 | Россия 🇷🇺 #166"
       - "BUNKER 🖤 | Россия 🇷🇺 #178"
       - "BUNKER 🖤 | Россия 🇷🇺 #223"
@@ -7175,7 +7179,6 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇬🇧 t.me/rjsxrd"
       - "🇫🇮 [BL] Сервер 30"
       - "🇮🇳 [BL] Сервер 275"
-      - "🇳🇱 The Netherlands — #30"
       - "🇸🇬 [BL] Сервер 86"
       - "🇱🇻 [BL] Сервер 64"
       - "BUNKER 🖤 | Россия 🇷🇺 #36"
@@ -7185,8 +7188,8 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 367"
       - "Lithuania | app26.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "[476ms Нидерланды NL 🇳🇱 @vlesstrojan] t.me/rjsxrd"
-      - "🇩🇪 Germany — #4"
-      - "🇳🇱 The Netherlands — #31"
+      - "Russia | anvil.kachow.ink | RAW | [#LSO - #LinSpisokObhod]"
+      - "🇳🇱 The Netherlands — #20"
       - "🇺🇸 United States [*CIDR]"
       - "cool [white] 🇷🇺 |#28|"
       - "🇹🇷 [BL] Сервер 201"
@@ -7199,6 +7202,7 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 154"
       - "BUNKER 🖤 | Нидерланды 🇳🇱 #88"
       - "🇸🇬 [BL] Сервер 228"
+      - "🇬🇷 Greece — #18"
       - "🇬🇷 Greece [*CIDR] t.me/rjsxrd"
       - "🇳🇴 Norway [*CIDR] t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 421"
