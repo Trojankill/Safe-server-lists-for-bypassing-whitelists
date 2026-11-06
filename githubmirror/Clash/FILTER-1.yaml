@@ -1,51 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-06 13:45:35 UTC
+# 2026-11-06 14:01:06 UTC
 proxies:
-  - name: "🏴 Неизвестный [#РКП]"
-    type: "vless"
-    server: "185.178.208.167"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vmess"
+    server: "91.184.240.196"
     port: 443
-    uuid: "043b6cd2-fad5-461c-ae58-31d40ea7073f"
+    uuid: "e70a5b70-f63c-4450-af8b-94990cdf80c0"
+    alterId: 0
+    cipher: "auto"
     udp: true
     tls: true
-    servername: "stechnostore.life"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "www.gptcloudai.com"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/client/report/04c88cca7509/"
+      path: "/truth"
       headers:
-        Host: "stechnostore.life"
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "83.147.246.12"
-    port: 443
-    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "yoy-api.bachidze.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
-    network: "tcp"
-  - name: "🇳🇱 Нидерланды [#РКП]"
-    type: "vless"
-    server: "213.108.21.173"
-    port: 443
-    uuid: "c1fdf1e6-6370-4bad-a866-f80f27f5e785"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "nl1.kids-games.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "oSbyJBoI2JTEva2ks51kmUCA7z-iFUcoGYCk-ciEaDU"
-    network: "tcp"
+        Host: "www.gptcloudai.com"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "212.41.8.76"
@@ -90,9 +61,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🏴 Неизвестный [#РКП]"
-      - "🇷🇺 Россия [#РКП]"
-      - "🇳🇱 Нидерланды [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"

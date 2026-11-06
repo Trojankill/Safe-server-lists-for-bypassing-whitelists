@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-06 13:45:33 UTC
+# 2026-11-06 14:01:05 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #14"
-    type: "vless"
-    server: "84.201.158.195"
-    port: 443
-    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "W4k2NnQJBHQciIPcm5TdpPOv_rqKhoUUyU3nGewoCjg"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands — #15"
+  - name: "🇳🇱 The Netherlands — #10"
     type: "vless"
     server: "158.160.162.185"
     port: 443
@@ -29,27 +15,26 @@ proxies:
     reality-opts:
       public-key: "xLN7q9XBRYSrIAc10TyEGupgDbCqSuZRQILMw5nqrns"
     network: "tcp"
-  - name: "🇫🇷 France — #9"
+  - name: "🇩🇪 Germany — #2"
     type: "vless"
-    server: "95.163.250.241"
-    port: 8445
-    uuid: "4575f71d-d32f-4d73-aae6-6b464bd230da"
+    server: "31.129.42.252"
+    port: 30055
+    uuid: "c97c95c8-41c8-4dc7-be21-c745c9dbd6c1"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "eh.vk.com"
-    client-fingerprint: "qq"
+    servername: "de2.frnet.space"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "V8tWqRolt7hnShpwxj_JMGtkeYcHzbIS2dxF4VStoD4"
-      short-id: "dcd3a19a9bfd8046"
+      public-key: "Dj93DPhAYHy9WEFC6UwxgGGPGF0Hrdhv3_kkoTcy0SM"
+      short-id: "7b9d0309"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #14"
-      - "🇳🇱 The Netherlands — #15"
-      - "🇫🇷 France — #9"
+      - "🇳🇱 The Netherlands — #10"
+      - "🇩🇪 Germany — #2"
 rules:
   - MATCH,PROXY
