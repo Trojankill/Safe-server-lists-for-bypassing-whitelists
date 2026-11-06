@@ -1,22 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-06 19:00:57 UTC
+# 2026-11-06 19:15:34 UTC
 proxies:
-  - name: "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | music.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "195.58.55.18"
-    port: 2088
-    uuid: "7c602328-d732-41d9-b94a-bcf28a5f7f8f"
+    server: "188.225.78.228"
+    port: 443
+    uuid: "bb190cdb-82ae-4212-b6cd-8ae9e6b768dd"
     udp: true
     tls: true
-    servername: "www.yandex.ru"
-    client-fingerprint: "ios"
+    flow: "xtls-rprx-vision"
+    servername: "music.yandex.ru"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "Eq3c19Y0WGB1APWMADQB-oxCvZFSVFAQxG5L6b8EkUg"
-      short-id: "b1ad165f903c62fe"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "astracat"
+      public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
+      short-id: "e202a94ad1711af2"
+    network: "tcp"
   - name: "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "81.163.22.143"
@@ -55,7 +54,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | www.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | music.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | join.betust.net | RAW | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
