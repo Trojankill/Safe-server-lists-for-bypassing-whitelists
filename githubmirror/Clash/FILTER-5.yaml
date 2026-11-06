@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-06 09:00:58 UTC
+# 2026-11-06 09:15:31 UTC
 proxies:
+  - name: "Russia | librarycenter.net | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "0ac8792c-236d-4085-9e12-af8ffd998162"
+    udp: true
+    tls: true
+    servername: "librarycenter.net"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/live/inventory"
+      headers:
+        Host: "librarycenter.net"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -93,6 +110,21 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-reality"
+  - name: "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "87.199.205.28"
+    port: 443
+    uuid: "501a2da5-cb22-4a3f-915e-e3b821d1d62d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "vkvd754.okcdn.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
+      short-id: "6b196d2f190f32b3"
+    network: "tcp"
   - name: "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "79.141.164.125"
@@ -133,7 +165,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "vk.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     reality-opts:
       public-key: "5J8IRlEEy8vuB2NArH15h9EVV--wwDUdq-_9HXoy9FM"
@@ -237,7 +269,7 @@ proxies:
     servername: "ara.rtkdvbr.cc"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -283,12 +315,14 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | librarycenter.net | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
       - "Lithuania | app26.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | anvil.kachow.ink | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
