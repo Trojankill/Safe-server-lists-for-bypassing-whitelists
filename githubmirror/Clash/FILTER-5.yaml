@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-06 06:00:57 UTC
+# 2026-11-06 06:15:32 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -31,6 +31,37 @@ proxies:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
     network: "tcp"
+  - name: "Lithuania | app26.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.127.42"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "app26.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5pR15ATlWW3tVzfnMN3xoiN56LjIUbhnOMp37ZvTFUc"
+      short-id: "d44d6d46"
+    network: "tcp"
+  - name: "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "95.163.152.232"
+    port: 8444
+    uuid: "314bfcda-ea36-494d-9522-aa0f6d40a340"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "feCpmxhNdrVkZ2ggjKY_vjHI6buLtGM8mUccpy0blSI"
+      short-id: "81059ecb5a20112d"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "87.199.205.28"
@@ -62,6 +93,51 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "neurex"
+  - name: "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "147.45.104.86"
+    port: 7443
+    uuid: "5d978525-bfa5-4b1e-b807-c4e2ac2db56d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "max.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "KbjX7IJnVtwq2USeRmLgXzACOtFCiA5lnsXhIFOX3ho"
+      short-id: "a7eb8a4e"
+    network: "tcp"
+  - name: "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "176.123.162.102"
+    port: 8443
+    uuid: "65e7a6ab-84b4-4202-a951-7d2afe2aa352"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "vk.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5J8IRlEEy8vuB2NArH15h9EVV--wwDUdq-_9HXoy9FM"
+      short-id: "dcc04e7520"
+    network: "tcp"
+  - name: "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.70.128"
+    port: 443
+    uuid: "95d0e214-eab0-4701-93ed-fea4f1b56062"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tickets.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TRaUsnzFf-AhWUuW4RQUQOBYTdM-qJdLDTTkzQNkcRw"
+      short-id: "f70764f8"
+    network: "tcp"
   - name: "Bulgaria | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "2.27.105.13"
@@ -107,6 +183,23 @@ proxies:
       public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
       short-id: "67ece882d65d0f1a"
     network: "tcp"
+  - name: "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
+    udp: true
+    tls: true
+    servername: "ara.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "ara.rtkdvbr.cc"
   - name: "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -132,11 +225,17 @@ proxy-groups:
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "Lithuania | app26.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | nla.kosmosapp.net | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
       - "Bulgaria | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | ara.rtkdvbr.cc | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 8 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
