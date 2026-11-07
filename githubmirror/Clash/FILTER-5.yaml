@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 11:45:32 UTC
+# 2026-11-07 12:00:54 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -29,20 +29,6 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
-    network: "tcp"
-  - name: "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "rapira-dof.whitenw.net"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
     network: "tcp"
   - name: "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -100,25 +86,6 @@ proxies:
       path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
       headers:
         Host: "renderer-stream-1-871.mirra.now"
-  - name: "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #3"
-    type: "vmess"
-    server: "93.93.89.118"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-1-871.mirra.now"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
-      headers:
-        Host: "renderer-stream-1-871.mirra.now"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -136,12 +103,10 @@ proxy-groups:
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #3"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
