@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 23:00:56 UTC
+# 2026-11-07 23:15:31 UTC
 proxies:
   - name: "🇨🇿 Czechia | 🌐 [*CIDR]"
     type: "vless"
@@ -15,21 +15,23 @@ proxies:
     reality-opts:
       public-key: "J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "188.130.209.201"
+    server: "lorettmay.top"
     port: 443
-    uuid: "12fd091e-a68a-4f9b-9def-777a2f5b5c0c"
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "thumbs.mycdn-io.ru"
-    client-fingerprint: "chrome"
+    servername: "lorettmay.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
-      short-id: "d3f314d0b692f63d"
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/blog/posts"
+      headers:
+        Host: "lorettmay.top"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "falmero.store"
@@ -45,7 +47,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
     type: "vless"
     server: "168.113.128.70"
     port: 20105
@@ -57,22 +59,36 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
     type: "vless"
-    server: "selek3.gamma-kvn.com"
-    port: 443
-    uuid: "e37b223d-c602-4be9-8ce0-eca27841ec8b"
+    server: "185.86.145.106"
+    port: 8445
+    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "selek3.gamma-kvn.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "android"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK #2"
+    type: "vless"
+    server: "rapira-dof.whitenw.net"
+    port: 8445
+    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
     network: "tcp"
   - name: "🇨🇭 Switzerland [*CIDR]"
     type: "vless"
@@ -83,7 +99,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "codifyr.ru"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
@@ -105,23 +121,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-reality"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    servername: "lorettmay.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "hysteria2"
     server: "89.125.214.221"
@@ -129,21 +128,19 @@ proxies:
     password: "190edece-2750-454c-b766-0570fc32deca"
     udp: true
     sni: "mshvpn.online"
-    alpn:
-      - "h3"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇨🇿 Czechia | 🌐 [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK #2"
       - "🇨🇭 Switzerland [*CIDR]"
       - "🇨🇭 Switzerland [*CIDR] #2"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
