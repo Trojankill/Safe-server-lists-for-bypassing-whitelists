@@ -1,72 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-07 15:15:31 UTC
+# 2026-11-07 15:30:47 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "lorettmay.top"
+    server: "renderer-bridge-2-133.mirra.now"
     port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
     udp: true
     tls: true
-    servername: "lorettmay.top"
+    servername: "renderer-bridge-2-133.mirra.now"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "vless"
-    server: "45.143.94.91"
-    port: 8443
-    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "us1.cloudvienta.com"
+      - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
-      short-id: "0c37b64d1935ebc1"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
-    type: "vless"
-    server: "185.86.147.175"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK #2"
-    type: "vless"
-    server: "bhjolq0d0l.flowersgood.top"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
   - name: "🇧🇬 Bulgaria [*CIDR]"
     type: "vless"
     server: "168.113.128.70"
@@ -79,23 +28,26 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
     type: "vless"
-    server: "185.86.145.112"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    server: "content-iv1k.login.opendns.stream"
+    port: 443
+    uuid: "b4c190fb-e77e-4aff-8545-6067ba70e54d"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/ws/events/961a89255e00"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
   - name: "🇨🇭 Switzerland [*CIDR]"
     type: "vless"
     server: "87.242.87.165"
@@ -127,17 +79,25 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-reality"
+  - name: "🇫🇮 Finland [*CIDR]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19455
+    password: "190edece-2750-454c-b766-0570fc32deca"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands | [*CIDR] VK #2"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🇧🇬 Bulgaria [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
       - "🇨🇭 Switzerland [*CIDR]"
       - "🇨🇭 Switzerland | [*CIDR]"
+      - "🇫🇮 Finland [*CIDR]"
 rules:
   - MATCH,PROXY

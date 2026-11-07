@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 15:15:32 UTC
+# 2026-11-07 15:30:48 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -724,23 +724,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "lorettmay.top"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
-    udp: true
-    tls: true
-    servername: "lorettmay.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
   - name: "🇹🇷 [BL] Сервер 201"
     type: "vless"
     server: "78.135.73.47"
@@ -767,6 +750,21 @@ proxies:
     alpn:
       - "h2"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "renderer-bridge-2-133.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -1244,21 +1242,6 @@ proxies:
       public-key: "dCaQHVtwEPBeiH3ivVU9ycGJZ8uCO2JaIVjYBnfaTWY"
       short-id: "c13c9bd7bd45847d"
     network: "tcp"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "vless"
-    server: "45.143.94.91"
-    port: 8443
-    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "us1.cloudvienta.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
-      short-id: "0c37b64d1935ebc1"
-    network: "tcp"
   - name: "🇨🇭 [BL] Сервер 4"
     type: "vless"
     server: "45.90.59.15"
@@ -1721,40 +1704,6 @@ proxies:
       public-key: "lmT0SFJL1A8_ariRWL65dhShaqFbpitjGanv7EFnoR0"
       short-id: "725e6ea0"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧"
-    type: "vless"
-    server: "cdn-ams.edgeptr.org"
-    port: 443
-    uuid: "48120acb-044a-4391-8f3e-ab4b8ca94a41"
-    udp: true
-    tls: true
-    servername: "cdn-ams.edgeptr.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "cdn-ams.edgeptr.org"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #2"
-    type: "vless"
-    server: "cdn-waw.edgeptr.org"
-    port: 443
-    uuid: "48120acb-044a-4391-8f3e-ab4b8ca94a41"
-    udp: true
-    tls: true
-    servername: "cdn-waw.edgeptr.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "cdn-waw.edgeptr.org"
   - name: "🇱🇺 [BL] Сервер 242"
     type: "vless"
     server: "107.189.7.176"
@@ -2636,7 +2585,7 @@ proxies:
     reality-opts:
       public-key: "5B83otQ5ZQwtBFhR7xzsGJRXflkFKRJpQguYbE5JWGI"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧"
     type: "vless"
     server: "5.104.74.22"
     port: 8443
@@ -2725,23 +2674,6 @@ proxies:
       public-key: "C-e3vasFC42zQmJblol4foZozTe6j1c7TJMGqjvRm2U"
       short-id: "77479eaf"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
-    type: "vless"
-    server: "185.86.147.175"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
   - name: "BUNKER 🖤 | Германия 🇩🇪 #233"
     type: "vless"
     server: "217.19.122.156"
@@ -2759,23 +2691,6 @@ proxies:
       path: "/useraction/events/b892639b7195/"
       headers:
         Host: "z1q3pv4g78.rucdncomp.pro"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK #2"
-    type: "vless"
-    server: "bhjolq0d0l.flowersgood.top"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
   - name: "BUNKER 🖤 | Россия 🇷🇺 #112"
     type: "vless"
     server: "31.76.34.146"
@@ -3437,7 +3352,7 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇮 [BL] Сервер 176"
@@ -3634,7 +3549,7 @@ proxies:
       public-key: "F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo"
       short-id: "429499c03d4cc8a0"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #2"
     type: "vless"
     server: "5.104.74.121"
     port: 8443
@@ -3920,6 +3835,23 @@ proxies:
       path: "/ws/events/961a89255e00"
       headers:
         Host: "content-iv1k.login.opendns.stream"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "content-iv1k.login.opendns.stream"
+    port: 443
+    uuid: "b4c190fb-e77e-4aff-8545-6067ba70e54d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws/events/961a89255e00"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
   - name: "🇬🇧 [BL] Сервер 214"
     type: "vless"
     server: "46.250.250.149"
@@ -4169,7 +4101,7 @@ proxies:
       public-key: "KcI3PoYu2yF7whv-e0C7JnRyUoUiUDu6tOlUBPYYbCk"
       short-id: "2e96bf6afa823abb"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
     type: "vless"
     server: "5.104.74.69"
     port: 8443
@@ -4332,7 +4264,7 @@ proxies:
       public-key: "A826RSu-yeVM_t6v7kwHKasHSdfI9KOzUw3WaIa9SWc"
       short-id: "65149fc5ba"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK t.me/rjsxrd"
     type: "vless"
     server: "185.86.145.112"
     port: 8445
@@ -5672,7 +5604,7 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
-  - name: "tg:VLESSFORU top speed 🇸🇪"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇸🇪 #7"
     type: "vmess"
     server: "138.199.55.230"
     port: 1270
@@ -5720,7 +5652,7 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
     type: "vmess"
     server: "149.7.16.228"
     port: 1270
@@ -5944,13 +5876,15 @@ proxies:
     udp: true
     sni: "nl1.obxodvpn.us"
     skip-cert-verify: false
-  - name: "🇫🇮 Финляндия 1 Inios Oy t.me/rjsxrd"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "89.125.214.221"
     port: 19455
     password: "190edece-2750-454c-b766-0570fc32deca"
     udp: true
     sni: "mshvpn.online"
+    alpn:
+      - "h3"
     skip-cert-verify: false
   - name: "cool [white] 🇺🇸 |#26|"
     type: "hysteria2"
@@ -6584,9 +6518,9 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 200"
       - "🇩🇪 [BL] Сервер 298"
       - "🇺🇸 [BL] Сервер 367"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇹🇷 [BL] Сервер 201"
       - "BUNKER 🖤 | Россия 🇷🇺 #66"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🇰🇿 [BL] Сервер 369"
       - "🇩🇪 [BL] Сервер 119"
       - "🇳🇱 [BL] Сервер 154"
@@ -6619,7 +6553,6 @@ proxy-groups:
       - "🇳🇱 [WL] Сервер 95"
       - "🇷🇺 [WL] Сервер 128"
       - "🇫🇮 [BL] Сервер 293"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
       - "🇨🇭 [BL] Сервер 4"
       - "🇭🇰 [WL] Сервер 6"
       - "🇭🇰 [WL] Сервер 7"
@@ -6651,8 +6584,6 @@ proxy-groups:
       - "🇸🇪 [BL] Сервер 375"
       - "🇳🇱 [BL] Сервер 97"
       - "🇬🇧 [BL] Сервер 1"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #2"
       - "🇱🇺 [BL] Сервер 242"
       - "🇸🇬 [BL] Сервер 88"
       - "BUNKER 🖤 | Канада 🇨🇦 #202"
@@ -6712,15 +6643,13 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 262"
       - "🇳🇱 Нидерланды 16 ALEXHOST S.R.L. t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 217"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧"
       - "🇸🇬 [WL] Сервер 11"
       - "🇭🇰 [BL] Сервер 52"
       - "🇭🇰 [BL] Сервер 53"
       - "🇭🇰 [BL] Сервер 54"
       - "🇬🇧 [BL] Сервер 281"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
       - "BUNKER 🖤 | Германия 🇩🇪 #233"
-      - "🇳🇱 The Netherlands | [*CIDR] VK #2"
       - "BUNKER 🖤 | Россия 🇷🇺 #112"
       - "🇨🇿 [BL] Сервер 63"
       - "🇳🇱 [WL] Сервер 108"
@@ -6778,7 +6707,7 @@ proxy-groups:
       - "🇦🇺 [BL] Сервер 389"
       - "🇸🇬 [BL] Сервер 317"
       - "🇰🇷 [BL] Сервер 309"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #2"
       - "🇩🇰 [BL] Сервер 391"
       - "🇹🇷 [BL] Сервер 36"
       - "🇳🇱 [BL] Сервер 254"
@@ -6797,6 +6726,7 @@ proxy-groups:
       - "🇪🇸 [BL] Сервер 34"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #2"
       - "🇳🇱 The Netherlands — #7"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
       - "🇬🇧 [BL] Сервер 214"
       - "🇰🇿 [BL] Сервер 227"
       - "🇫🇷 [WL] Сервер 22"
@@ -6814,7 +6744,7 @@ proxy-groups:
       - "🇷🇺 [BL] Сервер 14"
       - "BUNKER 🖤 | Россия 🇷🇺 #27"
       - "🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd #3"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #5"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #3"
       - "🇺🇸 [BL] Сервер 286"
       - "BUNKER 🖤 | Россия 🇷🇺 #117"
       - "🇺🇸 [BL] Сервер 403"
@@ -6825,7 +6755,7 @@ proxy-groups:
       - "🇸🇬 [BL] Сервер 70"
       - "🇺🇸 [BL] Сервер 318"
       - "🇫🇮 [BL] Сервер 393"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR] VK t.me/rjsxrd"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия t.me/rjsxrd"
       - "BUNKER 🖤 | Россия 🇷🇺 #141"
       - "🇺🇸 [BL] Сервер 44"
@@ -6921,11 +6851,11 @@ proxy-groups:
       - "BUNKER 🖤 | Россия 🇷🇺 #44"
       - "Бесплатный VPN tg:VLESSFORU 🇧🇷"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #6"
-      - "tg:VLESSFORU top speed 🇸🇪"
+      - "Бесплатный VPN tg:VLESSFORU 🇸🇪 #7"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #8"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇹 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇹 #3"
-      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #6"
+      - "Бесплатный VPN tg:VLESSFORU 🇬🇧 #4"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #4"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇹"
       - "Бесплатный VPN tg:VLESSFORU 🇨🇦 #7"
@@ -6942,7 +6872,7 @@ proxy-groups:
       - "BUNKER 🖤 | Россия 🇷🇺 #43"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #13"
       - "🇳🇱 The Netherlands (сервер) | 🇳🇱 The Netherlands (выход 9.247.54.188) | @RaViraNet t.me/rjsxrd"
-      - "🇫🇮 Финляндия 1 Inios Oy t.me/rjsxrd"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "cool [white] 🇺🇸 |#26|"
       - "cool [white] 🇺🇸 |#18|"
       - "🇷🇺 Russia (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
