@@ -1,22 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-07 04:00:56 UTC
+# 2026-11-07 04:15:34 UTC
 proxies:
-  - name: "🇺🇿 Uzbekistan — #67"
-    type: "vless"
-    server: "95.143.188.113"
-    port: 443
-    uuid: "c47159bb-2c15-440d-b239-8594d7e7efbb"
-    udp: true
-    tls: true
-    servername: "ar5v3uc2o9.j.cloudfront.hls.hlsnode.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "sync.v1"
-  - name: "🇩🇪 Germany — #2"
+  - name: "🇩🇪 Germany — #1"
     type: "vless"
     server: "46.254.19.138"
     port: 30055
@@ -35,7 +20,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇿 Uzbekistan — #67"
-      - "🇩🇪 Germany — #2"
+      - "🇩🇪 Germany — #1"
 rules:
   - MATCH,PROXY
