@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 01:00:53 UTC
+# 2026-11-07 01:15:31 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -71,6 +71,22 @@ proxies:
       path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
       headers:
         Host: "renderer-stream-1-871.mirra.now"
+  - name: "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
+    type: "vmess"
+    server: "93.93.88.22"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-1-871.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
+      headers:
+        Host: "renderer-stream-1-871.mirra.now"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -91,6 +107,7 @@ proxy-groups:
       - "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
