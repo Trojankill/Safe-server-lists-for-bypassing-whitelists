@@ -1,21 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-07 08:45:33 UTC
+# 2026-11-07 09:00:59 UTC
 proxies:
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "147.45.153.134"
+    server: "176.108.246.180"
     port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
     udp: true
     tls: true
-    servername: "renderer-bridge-2-133.mirra.now"
-    alpn:
-      - "h2"
+    flow: "xtls-rprx-vision"
+    servername: "apsnl.yandex-api.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "VideoRenderer"
+    reality-opts:
+      public-key: "bI1SEAWZtr6q-fHL3mxwpU0ki8DdLcR7vOItA15eA24"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "217.25.93.165"
@@ -44,7 +43,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
