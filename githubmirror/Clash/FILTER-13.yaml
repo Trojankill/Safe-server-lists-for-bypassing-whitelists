@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-07 19:30:44 UTC
+# 2026-11-07 19:45:31 UTC
 proxies:
-  - name: "cool [white] 🌐 |#15|"
+  - name: "cool [white] 🌐 |#26|"
     type: "vless"
     server: "104.16.0.1"
     port: 443
@@ -18,7 +18,7 @@ proxies:
       path: "/tyxyws"
       headers:
         Host: "jp3.yohototo.top"
-  - name: "cool [white] 🇺🇸 |#25|"
+  - name: "cool [white] 🇺🇸 |#16|"
     type: "trojan"
     server: "199.68.156.121"
     port: 2087
@@ -27,14 +27,14 @@ proxies:
     sni: "nexoshop.netvia.ir"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/wss"
       headers:
         Host: "nexoshop.netvia.ir"
-  - name: "cool [white] 🌐 |#2|"
+  - name: "cool [white] 🌐 |#6|"
     type: "vmess"
     server: "vipccc.cc"
     port: 443
@@ -49,17 +49,57 @@ proxies:
       path: "/ray_proxy"
       headers:
         Host: "vipccc.cc"
-  - name: "cool [white] 🇺🇸 |#26|"
+  - name: "cool [white] 🌐 |#27|"
+    type: "vmess"
+    server: "172.64.229.21"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "cool [white] 🌐 |#4|"
+    type: "vmess"
+    server: "cf.0sm.com"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "cool [white] 🌐 |#21|"
+    type: "vmess"
+    server: "172.66.203.67"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "cool [white] 🇺🇸 |#19|"
     type: "hysteria2"
     server: "201.8.71.59"
-    port: 443
-    password: "23c82941-70f4-4381-90db-bd28e9a902e9"
-    udp: true
-    sni: "steel7.hadsvpn.com"
-    skip-cert-verify: false
-  - name: "cool [white] 🇺🇸 |#18|"
-    type: "hysteria2"
-    server: "steel7.hadsvpn.com"
     port: 443
     password: "23c82941-70f4-4381-90db-bd28e9a902e9"
     udp: true
@@ -69,10 +109,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "cool [white] 🌐 |#15|"
-      - "cool [white] 🇺🇸 |#25|"
-      - "cool [white] 🌐 |#2|"
-      - "cool [white] 🇺🇸 |#26|"
-      - "cool [white] 🇺🇸 |#18|"
+      - "cool [white] 🌐 |#26|"
+      - "cool [white] 🇺🇸 |#16|"
+      - "cool [white] 🌐 |#6|"
+      - "cool [white] 🌐 |#27|"
+      - "cool [white] 🌐 |#4|"
+      - "cool [white] 🌐 |#21|"
+      - "cool [white] 🇺🇸 |#19|"
 rules:
   - MATCH,PROXY
