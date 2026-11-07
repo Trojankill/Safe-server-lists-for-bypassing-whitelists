@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 04:45:31 UTC
+# 2026-11-07 05:00:58 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -15,20 +15,6 @@ proxies:
     reality-opts:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
-    network: "tcp"
-  - name: "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "193.180.211.245"
-    port: 8443
-    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
     network: "tcp"
   - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -48,7 +34,7 @@ proxies:
     type: "vless"
     server: "194.156.26.125"
     port: 443
-    uuid: "86c7af80-c9cf-4265-ab77-da12b0bf8bb6"
+    uuid: "b2b05b34-153e-494f-8bcb-31e6a2a20cb6"
     udp: true
     tls: true
     servername: "186.baklajann.ru"
@@ -133,7 +119,6 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Denmark | api-maps.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
