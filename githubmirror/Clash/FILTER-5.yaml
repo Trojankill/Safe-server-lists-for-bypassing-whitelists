@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 13:00:57 UTC
+# 2026-11-07 13:15:31 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -16,36 +16,51 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     network: "tcp"
-  - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "88.216.223.100"
-    port: 443
-    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    server: "178.172.227.124"
+    port: 10444
+    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "smart.bachidze.com"
-    client-fingerprint: "firefox"
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     reality-opts:
-      public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
     network: "tcp"
-  - name: "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
-    server: "83.141.67.164"
-    port: 8444
-    uuid: "f4ef1d6a-8f01-4ccd-8547-5b5a2a572d00"
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
     udp: true
     tls: true
-    servername: "360.yandex.ru"
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "qUq7a-iukyszVvH-5C74VBujzYAMC_shfv8O-1crZlY"
-      short-id: "09fd8f6666eec544"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-reality"
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
+  - name: "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "downloadchache1.song69.fun"
+    port: 28150
+    uuid: "92b79c22-f68b-4713-8b21-52f264cb92f5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HRmmr0Ii4Tr9jPLwratvLhee3_VWFNK47T8AAo7kzww"
+      short-id: "dcb858da"
+    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -54,38 +69,6 @@ proxies:
     udp: true
     sni: "trojan.lso"
     skip-cert-verify: false
-  - name: "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vmess"
-    server: "195.208.65.155"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-1-871.mirra.now"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
-      headers:
-        Host: "renderer-stream-1-871.mirra.now"
-  - name: "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
-    type: "vmess"
-    server: "93.93.88.22"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-1-871.mirra.now"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
-      headers:
-        Host: "renderer-stream-1-871.mirra.now"
   - name: "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
     type: "hysteria2"
     server: "hy2.about.lso"
@@ -102,11 +85,10 @@ proxy-groups:
     type: select
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "unknown | metrika.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
-      - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
