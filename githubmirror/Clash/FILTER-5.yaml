@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 19:00:57 UTC
+# 2026-11-07 19:15:32 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -30,6 +30,37 @@ proxies:
     reality-opts:
       public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
     network: "tcp"
+  - name: "France | 360.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.148.255.201"
+    port: 8443
+    uuid: "49fdd350-6ffb-4343-b467-14e269bb95de"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ"
+      short-id: "2bf10fc0a85601e5"
+    network: "tcp"
+  - name: "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.148.255.201"
+    port: 8444
+    uuid: "49fdd350-6ffb-4343-b467-14e269bb95de"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ"
+      short-id: "2bf10fc0a85601e5"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "213.165.39.134"
@@ -60,23 +91,6 @@ proxies:
       public-key: "5e2q9Lwp3fM6O43ltelPnh8LqKS351BufHG9RJfMjSc"
       short-id: "b5a6832232b712b7"
     network: "tcp"
-  - name: "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.86.147.175"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
   - name: "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "85.202.192.131"
@@ -92,23 +106,6 @@ proxies:
       public-key: "a7pyyCqFCfWKtsr-Umm5g_Ii5XzhFznIrOtg_U3V2RI"
       short-id: "f1eb436223e1a36a"
     network: "tcp"
-  - name: "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "95.129.236.239"
-    port: 443
-    uuid: "b4c190fb-e77e-4aff-8545-6067ba70e54d"
-    udp: true
-    tls: true
-    servername: "content-iv1k.login.opendns.stream"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/ws/events/961a89255e00"
-      headers:
-        Host: "content-iv1k.login.opendns.stream"
   - name: "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod] #3"
     type: "vless"
     server: "85.202.192.182"
@@ -164,11 +161,11 @@ proxy-groups:
     proxies:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "France | 360.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | content-iv1k.login.opendns.stream | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Kazakhstan | splitter.wb.ru | TCP | [#LSO - #LinSpisokObhod] #3"
       - "United States | subscribe.goonars.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"

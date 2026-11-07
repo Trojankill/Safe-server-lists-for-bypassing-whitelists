@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 19:00:58 UTC
+# 2026-11-07 19:15:33 UTC
 proxies:
   - name: "🇺🇸 [BL] Сервер 40"
     type: "vless"
@@ -1707,6 +1707,37 @@ proxies:
       path: "/carbon"
       headers:
         Host: "loctc.goldcitynode-tobi.sbs"
+  - name: "France | 360.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.148.255.201"
+    port: 8443
+    uuid: "49fdd350-6ffb-4343-b467-14e269bb95de"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ"
+      short-id: "2bf10fc0a85601e5"
+    network: "tcp"
+  - name: "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "82.148.255.201"
+    port: 8444
+    uuid: "49fdd350-6ffb-4343-b467-14e269bb95de"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DvNpCmas0_0MO91s70vlkAxZxnnIt1NE0zqCC4trURQ"
+      short-id: "2bf10fc0a85601e5"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "🇺🇸 США 15 Zenixcloud Inc t.me/rjsxrd"
     type: "vless"
     server: "156.238.224.252"
@@ -3134,6 +3165,21 @@ proxies:
       public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
       short-id: "94acb54627612d43"
     network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "falmero.store"
+    port: 443
+    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
   - name: "🇩🇪 [BL] Сервер 310"
     type: "vless"
     server: "144.31.125.60"
@@ -3298,7 +3344,7 @@ proxies:
       public-key: "8NkTRxC5Q7bptx-8ADobkuhPK-ZN0kEEbzv6tCFGMzE"
       short-id: "69984b9e02545831"
     network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
     type: "vless"
     server: "168.113.128.70"
     port: 20105
@@ -3310,7 +3356,7 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇮 [BL] Сервер 176"
@@ -5076,37 +5122,6 @@ proxies:
       public-key: "jOVKSP-bS9OkILJ8Epz8hadh6qhavCrOiJYeF0NCn0k"
       short-id: "a73f0410d728c823"
     network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR]"
-    type: "vless"
-    server: "87.242.87.165"
-    port: 8443
-    uuid: "fa8c52f8-d800-4ddd-bdc3-4f8a24b073c6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "codifyr.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
-      short-id: "d16860c57700c886"
-    network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR] #2"
-    type: "vless"
-    server: "87.242.87.165"
-    port: 8445
-    uuid: "fa8c52f8-d800-4ddd-bdc3-4f8a24b073c6"
-    udp: true
-    tls: true
-    servername: "codifyr.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
-      short-id: "d16860c57700c886"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-reality"
   - name: "🇩🇪 [BL] Сервер 273"
     type: "vless"
     server: "31.77.10.167"
@@ -6849,6 +6864,8 @@ proxy-groups:
       - "🇱🇺 [BL] Сервер 242"
       - "🇸🇬 Join+Telegram:@SolVPN 🇸🇬 t.me/rjsxrd"
       - "BUNKER 🖤 | Канада 🇨🇦 #202"
+      - "France | 360.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "France | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "🇺🇸 США 15 Zenixcloud Inc t.me/rjsxrd"
       - "🇭🇰 [BL] Сервер 19"
       - "🇹🇷 [BL] Сервер 73"
@@ -6944,6 +6961,7 @@ proxy-groups:
       - "🇫🇮 [BL] Сервер 118"
       - "🇬🇧 [BL] Сервер 324"
       - "🇬🇷 [BL] Сервер 67"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇩🇪 [BL] Сервер 310"
       - "BUNKER 🖤 | Россия 🇷🇺 #71"
       - "BUNKER 🖤 | Россия 🇷🇺 #94"
@@ -6955,7 +6973,7 @@ proxy-groups:
       - "🇩🇪 DE | VLESS t.me/rjsxrd #2"
       - "🇮🇷 [BL] Сервер 244"
       - "🇮🇷 [BL] Сервер 387"
-      - "🇧🇬 Bulgaria [*CIDR]"
+      - "🇧🇬 Bulgaria | [*CIDR]"
       - "🇫🇮 [BL] Сервер 176"
       - "🇺🇸 [BL] Сервер 332"
       - "🇸🇬 [BL] Сервер 87"
@@ -7075,8 +7093,6 @@ proxy-groups:
       - "🇦🇲 [BL] Сервер 35"
       - "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd"
       - "🇪🇪 [BL] Сервер 417"
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR] #2"
       - "🇩🇪 [BL] Сервер 273"
       - "🇳🇱 Нидерланды 4 UAB Cherry Servers t.me/rjsxrd"
       - "United States | subscribe.goonars.com | TCP | [#LSO - #LinSpisokObhod]"

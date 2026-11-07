@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-07 19:00:57 UTC
+# 2026-11-07 19:15:32 UTC
 proxies:
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "188.130.209.201"
+    port: 443
+    uuid: "12fd091e-a68a-4f9b-9def-777a2f5b5c0c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "thumbs.mycdn-io.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
+      short-id: "d3f314d0b692f63d"
+    network: "tcp"
   - name: "🇺🇸 United States | 🌐 [*CIDR]"
     type: "vless"
     server: "45.143.94.91"
@@ -16,7 +31,22 @@ proxies:
       public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
       short-id: "0c37b64d1935ebc1"
     network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "falmero.store"
+    port: 443
+    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
     type: "vless"
     server: "168.113.128.70"
     port: 20105
@@ -28,47 +58,16 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR]"
-    type: "vless"
-    server: "87.242.87.165"
-    port: 8443
-    uuid: "fa8c52f8-d800-4ddd-bdc3-4f8a24b073c6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "codifyr.ru"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
-      short-id: "d16860c57700c886"
     network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR] #2"
-    type: "vless"
-    server: "87.242.87.165"
-    port: 8445
-    uuid: "fa8c52f8-d800-4ddd-bdc3-4f8a24b073c6"
-    udp: true
-    tls: true
-    servername: "codifyr.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
-      short-id: "d16860c57700c886"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-reality"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇷🇺 Russia | [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇧🇬 Bulgaria | [*CIDR]"
 rules:
   - MATCH,PROXY
