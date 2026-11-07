@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 00:15:33 UTC
+# 2026-11-07 00:30:46 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,22 +16,20 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-    type: "vmess"
-    server: "91.184.240.196"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "83.147.246.12"
     port: 443
-    uuid: "e70a5b70-f63c-4450-af8b-94990cdf80c0"
-    alterId: 0
-    cipher: "auto"
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
     udp: true
     tls: true
-    servername: "www.gptcloudai.com"
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/truth"
-      headers:
-        Host: "www.gptcloudai.com"
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "89.125.214.221"
@@ -47,7 +45,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
