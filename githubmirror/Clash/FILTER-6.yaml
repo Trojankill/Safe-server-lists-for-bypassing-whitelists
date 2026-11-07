@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-07 00:00:58 UTC
+# 2026-11-07 00:15:32 UTC
 proxies:
-  - name: "🇩🇪 Germany | [*CIDR]"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
     server: "147.45.153.134"
     port: 443
@@ -11,12 +11,12 @@ proxies:
     servername: "renderer-bridge-2-133.mirra.now"
     alpn:
       - "h2"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇩🇪 Germany | [*CIDR] #2"
+  - name: "🇩🇪 Germany [*CIDR] #2"
     type: "vless"
     server: "renderer-bridge-2-133.mirra.now"
     port: 443
@@ -26,12 +26,27 @@ proxies:
     servername: "renderer-bridge-2-133.mirra.now"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇺🇸 United States | 🌐 [*CIDR]"
+    type: "vless"
+    server: "45.143.94.91"
+    port: 8443
+    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us1.cloudvienta.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
+      short-id: "0c37b64d1935ebc1"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "188.130.209.204"
     port: 443
@@ -40,18 +55,86 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "promo-digital.wb.ru"
-    client-fingerprint: "ios"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     reality-opts:
       public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
       short-id: "d3f314d0b692f63d"
     network: "tcp"
+  - name: "🇧🇬 Bulgaria [*CIDR]"
+    type: "vless"
+    server: "168.113.128.70"
+    port: 20105
+    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ripelever.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "188.225.78.228"
+    port: 443
+    uuid: "bb190cdb-82ae-4212-b6cd-8ae9e6b768dd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "music.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
+      short-id: "e202a94ad1711af2"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR]"
+    type: "vless"
+    server: "rapira-dof.whitenw.net"
+    port: 8445
+    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vmess"
+    server: "renderer-stream-1-871.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-1-871.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
+      headers:
+        Host: "renderer-stream-1-871.mirra.now"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Germany [*CIDR]"
+      - "🇩🇪 Germany [*CIDR] #2"
+      - "🇺🇸 United States | 🌐 [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇧🇬 Bulgaria [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR]"
       - "🇩🇪 Germany | [*CIDR]"
-      - "🇩🇪 Germany | [*CIDR] #2"
-      - "🇷🇺 Russia | [*CIDR]"
 rules:
   - MATCH,PROXY
