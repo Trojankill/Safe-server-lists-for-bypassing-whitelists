@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 15:30:47 UTC
+# 2026-11-07 15:45:31 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -15,6 +15,23 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "95.129.236.239"
@@ -47,6 +64,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Россия [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
