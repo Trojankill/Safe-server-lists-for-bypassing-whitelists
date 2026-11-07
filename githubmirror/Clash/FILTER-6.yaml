@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-07 01:45:32 UTC
+# 2026-11-07 02:00:55 UTC
 proxies:
+  - name: "🇷🇺 Russia | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "ru1.aoyou.stream"
+    port: 443
+    uuid: "1d2392a0-1713-4ea9-be88-8a1e5ddab6bd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "news.apple.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "7ZOPr8Vbg0jSLw91-ONdvxGzGfen9sRz1VMpmau72RY"
+      short-id: "31a2cc"
+    network: "tcp"
   - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
     server: "147.45.153.134"
@@ -16,7 +31,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇩🇪 Germany [*CIDR] #2"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
     server: "renderer-bridge-2-133.mirra.now"
     port: 443
@@ -31,21 +46,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "vless"
-    server: "45.143.94.91"
-    port: 8443
-    uuid: "3837e7a5-d40e-4b85-8700-5f9725a5a2cb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "us1.cloudvienta.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "3Kgy_0tHtOzEn9_mEylNsBVlAHNngT6S4AuYy5wEOSU"
-      short-id: "0c37b64d1935ebc1"
-    network: "tcp"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "188.130.209.204"
@@ -55,12 +55,44 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "promo-digital.wb.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "3p6W4rMBh1HCwbjq4lcbWO0KjkqTshJU5lkTix5nwTc"
       short-id: "d3f314d0b692f63d"
     network: "tcp"
+  - name: "🇨🇿 Czechia | [*CIDR]"
+    type: "vless"
+    server: "189.74.118.9"
+    port: 443
+    uuid: "7585e2a8-42a5-45b2-b706-3189938f90d0"
+    udp: true
+    tls: true
+    servername: "api.mediapolden.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "r7Kp4mN9tQ2v"
+  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+    type: "vless"
+    server: "bhjolq0d0l.flowersgood.top"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇧🇬 Bulgaria [*CIDR]"
     type: "vless"
     server: "168.113.128.70"
@@ -73,9 +105,41 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "104.171.132.129"
+    port: 443
+    uuid: "ba86b5dd-76c5-4155-be30-dbf0ca09e849"
+    udp: true
+    tls: true
+    servername: "dash.vir2albridge.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_ybgLUNB3qPx8rWvAZLxVv60iUCR0bhVhfnqEdHXtHI"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vir2albridge.net.v1.StreamService"
+  - name: "🇱🇹 Lithuania | [*CIDR]"
+    type: "vless"
+    server: "www.skelmoridianservice.com"
+    port: 443
+    uuid: "ba86b5dd-76c5-4155-be30-dbf0ca09e849"
+    udp: true
+    tls: true
+    servername: "velunatrixes.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "C6nh6hqFTbtizgSH8vGmw2XUxsQAbAW3jPylpgGvfl4"
+      short-id: "a1b2c3d4e5f6a7b8"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "moktana.net.v1.StreamService"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "188.225.78.228"
@@ -91,7 +155,7 @@ proxies:
       public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
       short-id: "e202a94ad1711af2"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
     type: "vless"
     server: "rapira-dof.whitenw.net"
     port: 8445
@@ -100,14 +164,14 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
     network: "tcp"
-  - name: "🇩🇪 Germany | [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR] #2"
     type: "vmess"
-    server: "renderer-stream-1-871.mirra.now"
+    server: "93.93.88.22"
     port: 443
     uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
     alterId: 0
@@ -115,26 +179,55 @@ proxies:
     udp: true
     tls: true
     servername: "renderer-stream-1-871.mirra.now"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
       headers:
         Host: "renderer-stream-1-871.mirra.now"
+  - name: "🇩🇪 Germany | [*CIDR] #3"
+    type: "vmess"
+    server: "195.208.65.155"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-1-871.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/o36ecpsebqjq/socket"
+      headers:
+        Host: "renderer-stream-1-871.mirra.now"
+  - name: "🇫🇮 Finland [*CIDR]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19455
+    password: "190edece-2750-454c-b766-0570fc32deca"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇷🇺 Russia | 🌐 | [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
-      - "🇩🇪 Germany [*CIDR] #2"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR]"
       - "🇩🇪 Germany | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇨🇿 Czechia | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] VK"
+      - "🇧🇬 Bulgaria [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇱🇹 Lithuania | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] #2"
+      - "🇩🇪 Germany | [*CIDR] #3"
+      - "🇫🇮 Finland [*CIDR]"
 rules:
   - MATCH,PROXY
