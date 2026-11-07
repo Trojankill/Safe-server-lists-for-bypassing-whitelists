@@ -1,0 +1,27 @@
+# clash/mihomo subscription
+# 2026-11-07 15:15:30 UTC
+proxies:
+  - name: "🇳🇱 The Netherlands — #7"
+    type: "vless"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "b4c190fb-e77e-4aff-8545-6067ba70e54d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws/events/961a89255e00"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇳🇱 The Netherlands — #7"
+rules:
+  - MATCH,PROXY
