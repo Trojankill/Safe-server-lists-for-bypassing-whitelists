@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-07 02:00:55 UTC
+# 2026-11-07 02:15:32 UTC
 proxies:
-  - name: "🇩🇪 Germany — #4"
+  - name: "🇩🇪 Germany — #3"
     type: "vless"
     server: "188.225.78.228"
     port: 443
@@ -31,7 +31,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "sync.v1"
-  - name: "🇩🇪 Germany — #3"
+  - name: "🇩🇪 Germany — #2"
     type: "vless"
     server: "46.254.19.138"
     port: 30055
@@ -50,8 +50,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany — #4"
-      - "🇺🇿 Uzbekistan — #68"
       - "🇩🇪 Germany — #3"
+      - "🇺🇿 Uzbekistan — #68"
+      - "🇩🇪 Germany — #2"
 rules:
   - MATCH,PROXY

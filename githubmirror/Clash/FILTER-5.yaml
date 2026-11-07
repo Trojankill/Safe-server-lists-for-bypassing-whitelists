@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-07 02:00:55 UTC
+# 2026-11-07 02:15:32 UTC
 proxies:
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -47,6 +47,22 @@ proxies:
       path: "/"
       headers:
         Host: "186.baklajann.ru"
+  - name: "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "83.141.67.164"
+    port: 8444
+    uuid: "f4ef1d6a-8f01-4ccd-8547-5b5a2a572d00"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "qUq7a-iukyszVvH-5C74VBujzYAMC_shfv8O-1crZlY"
+      short-id: "09fd8f6666eec544"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-reality"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -105,6 +121,7 @@ proxy-groups:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Germany | 186.baklajann.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Sweden | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | renderer-stream-1-871.mirra.now | WebSocket | [#LSO - #LinSpisokObhod] #2"
