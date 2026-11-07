@@ -1,0 +1,39 @@
+# clash/mihomo subscription
+# 2026-11-07 11:00:54 UTC
+proxies:
+  - name: "🇳🇱 The Netherlands — #10"
+    type: "vless"
+    server: "84.201.169.241"
+    port: 443
+    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
+    network: "tcp"
+  - name: "🇪🇪 Estonia — #8"
+    type: "vless"
+    server: "185.86.145.112"
+    port: 8445
+    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+    network: "tcp"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇳🇱 The Netherlands — #10"
+      - "🇪🇪 Estonia — #8"
+rules:
+  - MATCH,PROXY
