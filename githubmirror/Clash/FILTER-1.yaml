@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-08 00:30:44 UTC
+# 2026-11-08 00:45:30 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -42,16 +42,6 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19455
-    password: "190edece-2750-454c-b766-0570fc32deca"
-    udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -59,6 +49,5 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
