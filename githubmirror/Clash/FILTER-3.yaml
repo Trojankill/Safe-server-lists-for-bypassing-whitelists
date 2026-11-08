@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-08 21:00:56 UTC
+# 2026-11-08 21:15:31 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #9"
+  - name: "🇳🇱 The Netherlands — #11"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,10 +18,26 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
+  - name: "🇧🇬 Bulgaria — #1"
+    type: "vless"
+    server: "46.243.232.71"
+    port: 444
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #9"
+      - "🇳🇱 The Netherlands — #11"
+      - "🇧🇬 Bulgaria — #1"
 rules:
   - MATCH,PROXY
