@@ -1,7 +1,89 @@
 # clash/mihomo subscription
-# 2026-11-08 20:30:45 UTC
+# 2026-11-08 20:45:34 UTC
 proxies:
-  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "46.243.232.71"
+    port: 444
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.223.100"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "smart.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vzRgIP8Mvd9V6krwKxw5EwwzvC4uiaW3wo0Y2ri2_Wc"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.216"
+    port: 32944
+    uuid: "6d026a0f-32a0-427c-9080-8b68d31eaf16"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU"
+      short-id: "91d2d3db690f4b59"
+    network: "tcp"
+  - name: "Estonia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "196.196.148.67"
+    port: 25310
+    uuid: "8af1ac56-283b-4fc5-bb33-6892498a0592"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cabinet.evotor.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TTRwt0Zvu8OWBLFTI3VQv7m8w01VAmRxtghhLIKuXXc"
+      short-id: "69ca1a9ff751056f"
+    network: "tcp"
+  - name: "United States | cdn.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.152.155.50"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "cdn.nextjobopportunityandclaimyouridealrole.com"
+    skip-cert-verify: false
+  - name: "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -24,7 +106,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Sweden | smart.bachidze.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Estonia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "United States | cdn.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
