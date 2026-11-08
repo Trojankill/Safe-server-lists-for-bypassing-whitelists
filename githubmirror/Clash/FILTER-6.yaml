@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-08 17:45:29 UTC
+# 2026-11-08 18:00:56 UTC
 proxies:
-  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
     type: "vless"
     server: "91.192.158.121"
     port: 443
@@ -10,29 +10,12 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "fi1.xshoponline.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "kQA6OoK-g7DGi-4mmo4MtDUJM0QQ8G2IJgEpmslIrUU"
       short-id: "b867ba36380610c0"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
-    udp: true
-    tls: true
-    servername: "stechnostore.life"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "stechnostore.life"
   - name: "🇨🇭 Switzerland | 🌐 [*CIDR]"
     type: "vless"
     server: "157.22.185.58"
@@ -48,45 +31,45 @@ proxies:
       public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
       short-id: "937255313d6ce673"
     network: "tcp"
-  - name: "🇳🇴 Norway | 🌐 [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
-    server: "185.186.143.76"
+    server: "185.178.208.167"
     port: 443
-    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
+    uuid: "8a4fe9f3-4da3-4004-b721-cae64ff0d018"
     udp: true
     tls: true
-    servername: "ru-kitchen.ru"
-    client-fingerprint: "edge"
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
-      short-id: "f74c6a18133e2e72"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇧🇬 Bulgaria | [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "stechnostore.life"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    server: "node2.shakalchk.ru"
+    port: 443
+    uuid: "c3734677-b690-42b6-ab76-84cc7dd14c22"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
+    servername: "node2.shakalchk.ru"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
+      short-id: "a132a3"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
       - "🇨🇭 Switzerland | 🌐 [*CIDR]"
-      - "🇳🇴 Norway | 🌐 [*CIDR]"
-      - "🇧🇬 Bulgaria | [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇩🇪 Germany [*CIDR]"
 rules:
   - MATCH,PROXY
