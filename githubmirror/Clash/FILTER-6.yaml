@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-08 01:00:55 UTC
+# 2026-11-08 01:15:31 UTC
 proxies:
   - name: "🇨🇿 Czechia | 🌐 [*CIDR]"
     type: "vless"
@@ -15,23 +15,51 @@ proxies:
     reality-opts:
       public-key: "J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4"
     network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇸🇪 Sweden [*CIDR]"
     type: "vless"
-    server: "lorettmay.top"
+    server: "168.113.188.144"
     port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    uuid: "45ef6d0c-df92-4328-afa3-d6af1806fb3c"
     udp: true
     tls: true
-    servername: "lorettmay.top"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "31.76.3.187.sslip.io"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
+    reality-opts:
+      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
+      short-id: "db71028aeb67289c"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "vless"
+    server: "168.113.190.113"
+    port: 443
+    uuid: "45ef6d0c-df92-4328-afa3-d6af1806fb3c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "13.143.195.113.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
+    network: "tcp"
+  - name: "🇫🇷 France [*CIDR]"
+    type: "vless"
+    server: "82.146.48.225"
+    port: 443
+    uuid: "45ef6d0c-df92-4328-afa3-d6af1806fb3c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "213.176.73.4.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
+      short-id: "a5fe10fba46b8613"
+    network: "tcp"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "falmero.store"
@@ -47,7 +75,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+  - name: "🇧🇬 Bulgaria [*CIDR]"
     type: "vless"
     server: "168.113.128.70"
     port: 20105
@@ -59,7 +87,7 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "edge"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "tcp"
   - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
@@ -99,7 +127,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "codifyr.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "WCGVWrqI3t-c5ZIbUEmwjN3wiFFT7xV09PIio-OQGHU"
@@ -121,26 +149,30 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-reality"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇪🇪 Estonia [*CIDR]"
     type: "hysteria2"
     server: "89.125.214.221"
-    port: 19455
+    port: 19453
     password: "190edece-2750-454c-b766-0570fc32deca"
     udp: true
     sni: "mshvpn.online"
+    alpn:
+      - "h3"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇨🇿 Czechia | 🌐 [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇸🇪 Sweden [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇫🇷 France [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+      - "🇧🇬 Bulgaria [*CIDR]"
       - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
       - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK #2"
       - "🇨🇭 Switzerland [*CIDR]"
       - "🇨🇭 Switzerland [*CIDR] #2"
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
 rules:
   - MATCH,PROXY
