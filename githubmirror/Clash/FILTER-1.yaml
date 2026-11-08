@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-08 12:45:35 UTC
+# 2026-11-08 13:00:56 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "stechnostore.life"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "217.25.93.165"
@@ -32,7 +49,17 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19453
+    password: "190edece-2750-454c-b766-0570fc32deca"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "89.125.214.221"
     port: 19455
@@ -46,8 +73,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
