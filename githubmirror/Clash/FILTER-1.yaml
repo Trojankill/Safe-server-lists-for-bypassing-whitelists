@@ -1,37 +1,51 @@
 # clash/mihomo subscription
-# 2026-11-08 19:15:32 UTC
+# 2026-11-08 19:30:51 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "185.22.234.209"
+    server: "194.87.190.163"
     port: 443
-    uuid: "0894db40-59c1-41b7-baa5-173c16f5c70d"
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "213.171.26.214"
+    port: 80
+    uuid: "30b99882-86ca-46a2-8aad-6f1b97407d22"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ihc15.maxleshax.icu"
+    servername: "de.drom-buy.help"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "46.243.232.71"
+    port: 444
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "vZ22ThhkpXUd5-tY-v5TTrouLHjgYYmeQgqeLt7HRz0"
-    network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
-    udp: true
-    tls: true
-    servername: "stechnostore.life"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "stechnostore.life"
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "217.25.93.165"
@@ -46,41 +60,60 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+  - name: "🇱🇻 Латвия [#РКП]"
     type: "vless"
-    server: "185.86.147.175"
+    server: "31.130.151.97"
     port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    uuid: "3f5e89d5-591f-4ac9-b071-b05680b573c3"
     udp: true
     tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "addons.mozilla.org"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19455
-    password: "190edece-2750-454c-b766-0570fc32deca"
+    reality-opts:
+      public-key: "0GBR6DwsCQEYEa7QZHnOqbwmEMr8moms1sFU-wT-bHE"
+    network: "tcp"
+  - name: "🇱🇻 Латвия [#РКП] #2"
+    type: "vless"
+    server: "78.17.98.192"
+    port: 443
+    uuid: "4d079fbe-33ac-4a80-8441-b0e1818b286a"
     udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "direct.vpndoctor.top"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "QPmrizvOUCOOIvlupGnt1reR5bui3U8EZl00VHU4GRA"
+      short-id: "3f9537eb0626292b"
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП]"
+    type: "vless"
+    server: "90.156.230.179"
+    port: 443
+    uuid: "dc95c1dd-2cd3-414c-8cf1-71ae86dad666"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "kz-cdn-prsv-forum.keno.su"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Au1rmQdDRjlEJk17IfLQv5PBUEEosMWNhAlrWZj6mnY"
+      short-id: "14324280"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇱🇻 Латвия [#РКП]"
+      - "🇱🇻 Латвия [#РКП] #2"
+      - "🏴 Неизвестный [#РКП]"
 rules:
   - MATCH,PROXY
