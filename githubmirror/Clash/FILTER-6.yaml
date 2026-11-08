@@ -1,124 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-08 07:15:32 UTC
+# 2026-11-08 07:30:44 UTC
 proxies:
-  - name: "🇨🇿 Czechia | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "194.26.229.241"
+    server: "89.223.125.45"
     port: 443
-    uuid: "0aa6bee3-cfa1-0004-9a76-19f231d1681f"
+    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "aeza1.maxtelemost.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "J0SK1ic3YJvP1gac5m3KSVaUuK_bxFtqz0fh0uEdEw4"
-    network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "168.113.188.144"
-    port: 443
-    uuid: "45ef6d0c-df92-4328-afa3-d6af1806fb3c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.3.187.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "168.113.190.113"
-    port: 443
-    uuid: "45ef6d0c-df92-4328-afa3-d6af1806fb3c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
-    type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
+    servername: "falmero.store"
     alpn:
       - "h2"
-      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "vless"
-    server: "185.86.145.106"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
+    server: "falmero.store"
+    port: 443
+    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK #2"
-    type: "vless"
-    server: "rapira-dof.whitenw.net"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
-    network: "tcp"
-  - name: "🇪🇪 Estonia [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19453
-    password: "190edece-2750-454c-b766-0570fc32deca"
-    udp: true
-    sni: "mshvpn.online"
+    servername: "falmero.store"
     alpn:
-      - "h3"
+      - "h2"
+    client-fingerprint: "ios"
     skip-cert-verify: false
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19455
-    password: "190edece-2750-454c-b766-0570fc32deca"
-    udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇨🇿 Czechia | 🌐 [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 [*CIDR] VK #2"
-      - "🇪🇪 Estonia [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
 rules:
   - MATCH,PROXY
