@@ -1,88 +1,25 @@
 # clash/mihomo subscription
-# 2026-11-08 13:45:29 UTC
+# 2026-11-08 14:00:56 UTC
 proxies:
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
+  - name: "🇨🇭 Switzerland | 🌐 | [*CIDR]"
     type: "vless"
-    server: "45.151.102.236"
-    port: 443
-    uuid: "3152e78d-4aa1-4323-a1cb-692d01258f01"
-    udp: true
-    tls: true
-    servername: "quay.io"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "YSut2mLCEtheI-OLQcUla_QQNTSY6esUf9KjBhu06kU"
-      short-id: "5c212fcc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇳🇴 Norway | 🌐 [*CIDR]"
-    type: "vless"
-    server: "185.186.143.76"
-    port: 443
-    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
-    udp: true
-    tls: true
-    servername: "ru-kitchen.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
-      short-id: "f74c6a18133e2e72"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "168.113.128.70"
-    port: 20105
-    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    server: "157.22.185.58"
+    port: 2058
+    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ripelever.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
-    type: "vless"
-    server: "rapira-dof.whitenw.net"
-    port: 8445
-    uuid: "cd138479-c87a-4d4c-b6ea-4beeb6ef2b47"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "l06r0clkHjHk7HRGpkDBJwZ1JJscSqfwHUQOrV3v3hQ"
+      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
+      short-id: "937255313d6ce673"
     network: "tcp"
-  - name: "🇱🇹 Lithuania [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    servername: "lorettmay.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
-  - name: "🇪🇪 Estonia [*CIDR]"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "hysteria2"
     server: "89.125.214.221"
-    port: 19453
+    port: 19455
     password: "190edece-2750-454c-b766-0570fc32deca"
     udp: true
     sni: "mshvpn.online"
@@ -93,11 +30,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇳🇴 Norway | 🌐 [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
-      - "🇱🇹 Lithuania [*CIDR]"
-      - "🇪🇪 Estonia [*CIDR]"
+      - "🇨🇭 Switzerland | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany [*CIDR]"
 rules:
   - MATCH,PROXY
