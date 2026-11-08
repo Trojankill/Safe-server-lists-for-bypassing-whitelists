@@ -1,41 +1,60 @@
 # clash/mihomo subscription
-# 2026-11-08 09:15:33 UTC
+# 2026-11-08 09:30:43 UTC
 proxies:
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "89.223.125.45"
+    server: "185.186.140.69"
     port: 443
-    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    uuid: "3152e78d-4aa1-4323-a1cb-692d01258f01"
     udp: true
     tls: true
-    servername: "falmero.store"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
+    servername: "ea.com"
+    client-fingerprint: "android"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "D_wVvCZGOUWDp1-TscOXN6MnTqcHmhZyGxc8hL_A1n8"
+      short-id: "89e6091d"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "glush.de1.v1"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      grpc-service-name: "grpc"
+  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
     type: "vless"
-    server: "falmero.store"
+    server: "45.151.102.236"
     port: 443
-    uuid: "8fb19a9e-ca2b-433a-8469-e4c7796033b2"
+    uuid: "3152e78d-4aa1-4323-a1cb-692d01258f01"
     udp: true
     tls: true
-    servername: "falmero.store"
-    alpn:
-      - "h2"
-    client-fingerprint: "ios"
+    servername: "quay.io"
+    client-fingerprint: "android"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "YSut2mLCEtheI-OLQcUla_QQNTSY6esUf9KjBhu06kU"
+      short-id: "5c212fcc"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "glush.de1.v1"
+      grpc-service-name: "grpc"
+  - name: "🇳🇴 Norway | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "185.186.143.76"
+    port: 443
+    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
+    udp: true
+    tls: true
+    servername: "ru-kitchen.ru"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
+      short-id: "f74c6a18133e2e72"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇺🇸 United States | 🌐 | [*CIDR]"
+      - "🇳🇴 Norway | 🌐 | [*CIDR]"
 rules:
   - MATCH,PROXY
