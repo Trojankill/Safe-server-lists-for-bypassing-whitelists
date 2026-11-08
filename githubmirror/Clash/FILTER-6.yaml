@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-08 22:00:53 UTC
+# 2026-11-08 22:15:30 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -33,76 +33,44 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "VideoRenderer"
-  - name: "🇳🇴 Norway | 🌐 [*CIDR]"
+  - name: "🇱🇻 Latvia | [*CIDR]"
     type: "vless"
-    server: "185.186.143.76"
+    server: "direct.vpndoctor.top"
     port: 443
-    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
+    uuid: "4d079fbe-33ac-4a80-8441-b0e1818b286a"
     udp: true
     tls: true
-    servername: "ru-kitchen.ru"
-    client-fingerprint: "ios"
+    flow: "xtls-rprx-vision"
+    servername: "direct.vpndoctor.top"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
-      short-id: "f74c6a18133e2e72"
+      public-key: "QPmrizvOUCOOIvlupGnt1reR5bui3U8EZl00VHU4GRA"
+      short-id: "3f9537eb0626292b"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇱🇹 🇺🇸 | [*CIDR] CDN"
+    type: "vless"
+    server: "6b9iw.guardora.pro"
+    port: 10018
+    uuid: "d9cc5c37-b53c-1131-b4e1-1b9f7fbea1b1"
+    udp: true
+    tls: true
+    servername: "6b9iw.guardora.pro"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
-    type: "vless"
-    server: "168.113.190.113"
-    port: 443
-    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "vless"
-    server: "82.146.59.28"
-    port: 443
-    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.7.128.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR] #2"
-    type: "vless"
-    server: "node2.shakalchk.ru"
-    port: 443
-    uuid: "c3734677-b690-42b6-ab76-84cc7dd14c22"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
-      - "🇳🇴 Norway | 🌐 [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
-      - "🇨🇿 Czechia [*CIDR]"
-      - "🇩🇪 Germany [*CIDR] #2"
+      - "🇱🇻 Latvia | [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇹 🇺🇸 | [*CIDR] CDN"
 rules:
   - MATCH,PROXY
