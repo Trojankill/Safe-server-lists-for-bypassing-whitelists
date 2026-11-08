@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-08 10:15:30 UTC
+# 2026-11-08 10:30:47 UTC
 proxies:
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
@@ -32,16 +32,6 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🏴 Неизвестный [#РКП]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19453
-    password: "190edece-2750-454c-b766-0570fc32deca"
-    udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "89.125.214.221"
@@ -58,7 +48,6 @@ proxy-groups:
     proxies:
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
