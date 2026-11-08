@@ -1,36 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-08 15:45:34 UTC
+# 2026-11-08 16:00:54 UTC
 proxies:
-  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "87.242.127.51"
-    port: 7452
-    uuid: "bc578ed4-f507-4183-8a24-4f9a46c1b63d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0w339GBhpDiYwa9Wgqu3z3epu8dHAzeYUFXPtvzK8To"
-      short-id: "190c27ae5f2e4d2c"
-    network: "tcp"
-  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "91.185.83.105"
-    port: 9443
-    uuid: "bc578ed4-f507-4183-8a24-4f9a46c1b63d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Te3ZcFFTilb6_j4hdotSvXaRYBzGuNiRxuBh8n1NezU"
-      short-id: "91d2d3db690f4b59"
-    network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -54,8 +24,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod] #2"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:

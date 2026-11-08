@@ -1,0 +1,27 @@
+# clash/mihomo subscription
+# 2026-11-08 16:00:54 UTC
+proxies:
+  - name: "🇳🇱 The Netherlands — #14"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "stechnostore.life"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇳🇱 The Netherlands — #14"
+rules:
+  - MATCH,PROXY
