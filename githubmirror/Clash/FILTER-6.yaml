@@ -1,41 +1,11 @@
 # clash/mihomo subscription
-# 2026-11-08 19:45:31 UTC
+# 2026-11-08 20:00:55 UTC
 proxies:
-  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
-    type: "vless"
-    server: "91.192.158.121"
-    port: 443
-    uuid: "16f5041e-7a72-44a0-afbf-744ec2bf1cc9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "fi1.xshoponline.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "kQA6OoK-g7DGi-4mmo4MtDUJM0QQ8G2IJgEpmslIrUU"
-      short-id: "b867ba36380610c0"
-    network: "tcp"
-  - name: "🇨🇭 Switzerland | 🌐 [*CIDR]"
-    type: "vless"
-    server: "157.22.185.58"
-    port: 2058
-    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
-      short-id: "937255313d6ce673"
-    network: "tcp"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
-    uuid: "8a4fe9f3-4da3-4004-b721-cae64ff0d018"
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
     udp: true
     tls: true
     servername: "stechnostore.life"
@@ -49,6 +19,67 @@ proxies:
       headers:
         Host: "stechnostore.life"
   - name: "🇩🇪 Germany [*CIDR]"
+    type: "vless"
+    server: "renderer-bridge-2-133.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇳🇴 Norway | 🌐 [*CIDR]"
+    type: "vless"
+    server: "185.186.143.76"
+    port: 443
+    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
+    udp: true
+    tls: true
+    servername: "ru-kitchen.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
+      short-id: "f74c6a18133e2e72"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
+    type: "vless"
+    server: "168.113.190.113"
+    port: 443
+    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "13.143.195.113.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
+    network: "tcp"
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "82.146.59.28"
+    port: 443
+    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "31.76.7.128.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
+    network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR] #2"
     type: "vless"
     server: "node2.shakalchk.ru"
     port: 443
@@ -67,9 +98,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
-      - "🇨🇭 Switzerland | 🌐 [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
+      - "🇳🇴 Norway | 🌐 [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇩🇪 Germany [*CIDR] #2"
 rules:
   - MATCH,PROXY
