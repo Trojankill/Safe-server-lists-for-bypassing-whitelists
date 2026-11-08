@@ -1,6 +1,20 @@
 # clash/mihomo subscription
-# 2026-11-08 14:00:57 UTC
+# 2026-11-08 14:15:31 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.22.234.209"
+    port: 443
+    uuid: "0894db40-59c1-41b7-baa5-173c16f5c70d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ihc15.maxleshax.icu"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vZ22ThhkpXUd5-tY-v5TTrouLHjgYYmeQgqeLt7HRz0"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.167"
@@ -73,6 +87,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
