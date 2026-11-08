@@ -1,7 +1,39 @@
 # clash/mihomo subscription
-# 2026-11-08 15:30:48 UTC
+# 2026-11-08 15:45:34 UTC
 proxies:
-  - name: "🇨🇭 Switzerland | 🌐 | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
+    type: "vless"
+    server: "91.192.158.121"
+    port: 443
+    uuid: "16f5041e-7a72-44a0-afbf-744ec2bf1cc9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fi1.xshoponline.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "kQA6OoK-g7DGi-4mmo4MtDUJM0QQ8G2IJgEpmslIrUU"
+      short-id: "b867ba36380610c0"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "stechnostore.life"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "stechnostore.life"
+  - name: "🇨🇭 Switzerland | 🌐 [*CIDR]"
     type: "vless"
     server: "157.22.185.58"
     port: 2058
@@ -10,27 +42,51 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.cloudflare.com"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
       short-id: "937255313d6ce673"
     network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19455
-    password: "190edece-2750-454c-b766-0570fc32deca"
+  - name: "🇳🇴 Norway | 🌐 [*CIDR]"
+    type: "vless"
+    server: "185.186.143.76"
+    port: 443
+    uuid: "528c9248-7b50-45fb-9188-e46d889dafe6"
     udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
+    tls: true
+    servername: "ru-kitchen.ru"
+    client-fingerprint: "edge"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "6vDdlh4aAipoRQ-IXDjzTUtKpZS09xtNXIisCa__2CM"
+      short-id: "f74c6a18133e2e72"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
+    type: "vless"
+    server: "168.113.128.70"
+    port: 20105
+    uuid: "9aff658c-1f80-4c82-9213-48ca26996142"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ripelever.net"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇨🇭 Switzerland | 🌐 | [*CIDR]"
-      - "🇩🇪 Germany [*CIDR]"
+      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇨🇭 Switzerland | 🌐 [*CIDR]"
+      - "🇳🇴 Norway | 🌐 [*CIDR]"
+      - "🇧🇬 Bulgaria | [*CIDR]"
 rules:
   - MATCH,PROXY
