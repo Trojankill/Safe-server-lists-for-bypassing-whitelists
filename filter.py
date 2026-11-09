@@ -1,11 +1,41 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Фильтр прокси-конфигураций v6.1 (Karing / NekoBox / v2rayNG + Clash/Mihomo)
+Фильтр прокси-конфигураций v6.2 (Karing / NekoBox / v2rayNG + Clash/Mihomo)
 
 Цель: в выход не должна попасть ссылка, через которую трафик можно прочитать или
 подменить по дороге: туннель без TLS, отключённая проверка сертификата, свой CA,
-слабый шифр. Что нового по сравнению с v6.0:
+слабый шифр.
+
+Границы защиты (важно понимать): всё ниже защищает туннель от ТРЕТЬИХ ЛИЦ на пути
+(провайдер, ТСПУ). Владелец сервера терминирует туннель и видит SNI, IP, DNS и
+открытый HTTP — это не изменит ни один фильтр ссылок. HTTPS-содержимое он не
+прочитает, пока пользователь сам не установит чужой корневой сертификат.
+
+Что нового в v6.2:
+  * Shadowsocks по умолчанию отбраковывается (ALLOW_SS = False): пароль SS/PSK SS-2022
+    — это ключ шифрования, а в публичной подписке он публичен, то есть трафик SS
+    читает любой, у кого есть та же подписка. У vless/trojan/hy2/tuic секрет из
+    ссылки — только аутентификация, туннель защищён TLS/Reality.
+  * vmess JSON-форма публикуется как стандартная ссылка vmess://uuid@host:port?…
+    с allowInsecure=0 (VMESS_JSON_MODE = 'std'): в JSON-форме нет поля allowInsecure,
+    и v2rayNG брал для неё глобальную настройку «Allow insecure». Повреждённый base64
+    (мусорный хвост, двойное кодирование) больше не публикуется «как есть» —
+    публикуется только канонический, заново проверенный вид.
+  * «Обязательные» поля ещё буквальнее: sni/pbk/sid — только точные ключи (без
+    peer/servername/publickey), иначе клиент их не увидит; sni не может быть IP.
+  * flow проверяется и в TLS-режиме (мусорный flow — отбраковка); разрешён
+    xtls-rprx-vision-udp443; vision только с type=tcp; Reality только с
+    tcp/grpc/http/xhttp (ws/httpupgrade/kcp под Reality Xray не умеет).
+  * trojan: транспорт только из TLS-набора (kcp/quic — отбраковка); легаси
+    ws=1&wspath= больше не трактуется как ws (клиенты его не понимают).
+  * pbk публикуется без '=' (Xray/sing-box читают base64url без паддинга).
+  * Лимиты «публичного пула» применяются и к объединённому ALL.txt.
+  * Clash: дедупликация по полному ключу узла (как в txt), а не по host:port.
+  * pyyaml обязателен: без него YAML-источники давали пустые файлы — теперь код
+    выхода 2 без перезаписи подписок.
+
+Что нового в v6.1 по сравнению с v6.0:
   * Проверяется ровно та строка, которая публикуется: preprocess доводится до
     неподвижной точки (P(P(x)) == P(x)), ненормализованные строки отбраковываются.
     Закрыты обходы через \\u200b, \\u0026amp;, \\u005cu0026.
@@ -50,7 +80,7 @@ import urllib.parse
 import uuid as uuidlib
 from urllib.parse import unquote
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from collections import defaultdict, Counter
+from collections import Counter
 from functools import lru_cache
 from typing import Set, Dict, Optional, List, Tuple
 
@@ -69,7 +99,11 @@ except ImportError:
         HAS_YAML = False
 
 if not HAS_YAML:
-    print("  ⚠️  pyyaml недоступен — Clash подписки не парсятся")
+    # Без YAML Clash-источник «декодируется» как пустой текст и его файл перезаписался бы
+    # пустым. Это не деградация, а поломка — останавливаемся до записи чего-либо.
+    print("❌ pyyaml недоступен (PEP 668 / нет сети). Установите в workflow: "
+          "pip install 'pyyaml>=6,<7'. Подписки НЕ обновлены.")
+    sys.exit(2)
 
 # =====================================================================
 #  КОНСТАНТЫ
@@ -98,6 +132,19 @@ MAX_CLASH_PROXIES = 50000                # максимум прокси из о
 PUBLISH_REJECTED = False                 # rejected.txt — готовая подписка из НЕБЕЗОПАСНЫХ узлов
 FORCE_VERIFY_FLAG = True                 # дописывать allowInsecure=0 / insecure=0 в TLS-ссылки
 STALE_MAX_HOURS = 72                     # сколько часов при сбое источника отдавать прошлый файл
+
+# Shadowsocks: пароль (PSK) = ключ шифрования. В ПУБЛИЧНОЙ подписке он публичен, и любой,
+# кто читает ту же подписку (ТСПУ в том числе), расшифровывает SS-трафик целиком —
+# в отличие от TLS-протоколов, где секрет из ссылки только аутентифицирует клиента.
+ALLOW_SS = False
+
+# vmess JSON (vmess://base64{...}) не умеет нести allowInsecure, и v2rayNG берёт для неё
+# глобальную настройку «Allow insecure». Режимы публикации:
+#   'std'    — стандартная ссылка vmess://uuid@host:port?security=tls&…&allowInsecure=0
+#              (её читают v2rayNG, NekoBox/sing-box-клиенты; узел проверяется заново)
+#   'json'   — канонически перекодированный base64-JSON (без защиты от глобальной настройки)
+#   'reject' — vmess JSON не публиковать вовсе
+VMESS_JSON_MODE = 'std'
 
 RAW_BASE = os.environ.get(
     'RAW_BASE',
@@ -214,6 +261,11 @@ NETS = {'tcp', 'ws', 'http', 'kcp', 'grpc', 'httpupgrade', 'xhttp'}
 # Для TLS-режима (kcp с TLS не бывает). Раньше список был ws/grpc/http/tcp —
 # httpupgrade и xhttp (законные транспорты) отбрасывались зря.
 TLS_ALLOWED_NETS = {'tcp', 'ws', 'http', 'grpc', 'httpupgrade', 'xhttp'}
+# Reality в Xray работает только поверх этих транспортов (ws/httpupgrade — нет).
+REALITY_NETS = {'tcp', 'grpc', 'http', 'xhttp'}
+# flow читается клиентами буквально (регистр важен); vision требует type=tcp.
+VLESS_FLOWS = {'', 'none', 'xtls-rprx-vision', 'xtls-rprx-vision-udp443'}
+VMESS_CIPHERS = {'auto', 'aes-128-gcm', 'chacha20-poly1305'}
 
 # --- политика (как в v5.3; можно ослабить/ужесточить) -----------------
 REQUIRE_ALPN_FOR_TLS = True      # vless+tls без alpn — отбраковка (как было)
@@ -504,7 +556,12 @@ def ports_in_range(spec: str) -> bool:
     return True
 
 def valid_sni(s: str) -> bool:
-    return bool(s) and len(s) <= 253 and bool(SNI_RE.fullmatch(s))
+    # IP-литерал в SNI запрещён RFC 6066; клиенты либо не шлют его, либо сервер молчит
+    return (bool(s) and len(s) <= 253 and bool(SNI_RE.fullmatch(s))
+            and not re.fullmatch(r'[\d.]+', s))
+
+def _is_ip_literal(host: str) -> bool:
+    return ':' in host or bool(re.fullmatch(r'[\d.]+', host))
 
 def _norm_alpn(raw: str) -> List[str]:
     """Глубокий unquote (http%252F1.1), синонимы; остаются только h2/h3/http/1.1."""
@@ -739,16 +796,21 @@ def _parse_vless(core: str) -> Cfg:
         raise Reject(f'vless без TLS/Reality (security={sec[:12] or "нет"})')
     net = _read_net(q)
     _check_vless_encryption(qget(q, 'encryption'))
-    sni = qget(q, 'sni', 'peer', 'servername').strip()
+    # sni/pbk/sid/fp — только точные ключи: синоним (peer=, servername=, publickey=)
+    # фильтр бы «увидел», а v2rayNG — нет.
+    sni = q.get('sni', '').strip()
     hhost = qget(q, 'host').strip()
+    flow = q.get('flow', '')
+    if flow not in VLESS_FLOWS:
+        raise Reject(f'неизвестный flow: {flow[:30]!r}')
+    if flow.startswith('xtls') and net != 'tcp':
+        raise Reject(f'flow {flow} только с type=tcp (у ссылки type={net})')
     if sec == 'reality':
-        c.pbk = qget(q, 'pbk', 'publickey').strip()
-        c.sid = qget(q, 'sid', 'shortid').strip()
-        fp = qget(q, 'fp', 'fingerprint').strip().lower()
-        _check_reality(c.pbk, c.sid, fp)
-        flow = qget(q, 'flow').strip().lower()
-        if flow not in ('xtls-rprx-vision', 'none', ''):
-            raise Reject(f'неизвестный flow: {flow[:30]!r}')
+        if net not in REALITY_NETS:
+            raise Reject(f'Reality поверх {net} Xray не поддерживает')
+        c.pbk = q.get('pbk', '').strip()
+        c.sid = q.get('sid', '').strip()
+        _check_reality(c.pbk, c.sid, q.get('fp', '').strip().lower())
     else:
         _check_tls_block(net, sni, hhost, qget(q, 'alpn'))
     c.key = ('vless', c.host, c.port, c.uuid, _qkey(q))
@@ -769,12 +831,13 @@ def _parse_trojan(core: str) -> Cfg:
     # пустое security= (v2rayNG подставляет tls только при ОТСУТСТВИИ ключа), — отбраковка.
     if 'security' in q and q['security'] != 'tls':
         raise Reject(f'trojan с security={q["security"][:12] or "пусто"}')
-    if _flag_on(qget(q, 'ws')) and not qget(q, 'type', 'network', 'net'):
-        q['type'] = 'ws'                       # форма ws=1&wspath=… (как в Cleaner)
-    _read_net(q)
-    if not qget(q, 'sni', 'peer', 'servername').strip():
+    net = _read_net(q)
+    if net not in TLS_ALLOWED_NETS:
+        raise Reject(f'trojan: транспорт {net} не разрешён')
+    sni = q.get('sni', '').strip()
+    if not sni:
         raise Reject('trojan без sni')
-    if not valid_sni(qget(q, 'sni', 'peer', 'servername').strip()):
+    if not valid_sni(sni):
         raise Reject('невалидный sni')
     if _is_trojan_public_pool(core, q):
         raise Reject('trojan из публичного пула (маркеры)')
@@ -782,7 +845,9 @@ def _parse_trojan(core: str) -> Cfg:
     return c
 
 def _decode_vmess_body(data: str):
-    """base64 -> (json-текст). Лечит мусорный хвост (…fQ==2) и двойной base64."""
+    """base64 -> (json-текст). Лечит мусорный хвост (…fQ==2) и двойной base64 — это
+    безопасно только потому, что публикуется канонический вид (см. _publish_form),
+    а не исходная строка, которую клиентский декодер «вылечил» бы иначе."""
     for attempt in range(2):
         dec = b64d(data)
         if dec is None:
@@ -805,11 +870,14 @@ def _decode_vmess_body(data: str):
         raise Reject('формат vmess не распознан')
     raise Reject('формат vmess не распознан')
 
+_VMESS_NET_ALIAS = {'h2': 'http', 'websocket': 'ws', 'splithttp': 'xhttp', 'raw': 'tcp',
+                    'none': 'tcp', '': 'tcp'}
+
 def _parse_vmess(core: str) -> Cfg:
     data = core.split('://', 1)[1]
     data_noq = data.split('?', 1)[0].strip().strip('/')
     c = Cfg('vmess')
-    if '@' in data_noq:                         # редкая URL-форма vmess://uuid@host:port?…
+    if '@' in data_noq:                         # стандартная URL-форма vmess://uuid@host:port?…
         userinfo, hostport, q = _split_authority_uri(core)
         c.uuid = _check_uuid(userinfo)
         c.host, c.port = parse_hostport(hostport)
@@ -817,19 +885,26 @@ def _parse_vmess(core: str) -> Cfg:
         aid = qget(q, 'alterid', 'aid') or '0'
         if not aid.isdigit() or int(aid) != 0:
             raise Reject('vmess alterId != 0')
+        scy = qget(q, 'encryption').strip().lower() or 'auto'
+        if scy not in VMESS_CIPHERS:
+            raise Reject(f'vmess: шифр {scy[:20]!r} не разрешён')
         sec = _tls_mode(q)
         net = _read_net(q)
         if sec not in ('tls', 'reality'):
             raise Reject('vmess без TLS')
         if sec == 'reality':
-            _check_reality(qget(q, 'pbk', 'publickey').strip(), qget(q, 'sid', 'shortid').strip(),
-                           qget(q, 'fp', 'fingerprint').strip().lower())
+            if net not in REALITY_NETS:
+                raise Reject(f'Reality поверх {net} Xray не поддерживает')
+            _check_reality(q.get('pbk', '').strip(), q.get('sid', '').strip(),
+                           q.get('fp', '').strip().lower())
         else:
-            _check_tls_block(net, qget(q, 'sni', 'peer', 'servername').strip(),
-                             qget(q, 'host').strip(), qget(q, 'alpn') or 'h2')
+            _check_tls_block(net, q.get('sni', '').strip(), qget(q, 'host').strip(),
+                             qget(q, 'alpn') or 'h2')
         c.key = ('vmess', c.host, c.port, c.uuid, _qkey(q))
         return c
 
+    if VMESS_JSON_MODE == 'reject':
+        raise Reject('vmess JSON-форма отключена (VMESS_JSON_MODE)')
     text = data_noq if data_noq.lstrip().startswith('{') else _decode_vmess_body(data_noq)
 
     def _no_dup_keys(pairs):
@@ -874,7 +949,7 @@ def _parse_vmess(core: str) -> Cfg:
     if g('v', d='2') not in ('1', '2'):
         raise Reject('vmess: неизвестная версия формата')
     scy = (g('scy', 'security', 'cipher') or 'auto').lower()
-    if scy not in ('auto', 'aes-128-gcm', 'chacha20-poly1305'):
+    if scy not in VMESS_CIPHERS:
         raise Reject(f'vmess: шифр {scy[:20]!r} не разрешён')
     # TLS — только буквально "tls" в точном ключе "tls", как читает v2rayNG.
     # "TLS", "1", "true" клиент TLS-ом не считает — туннель ушёл бы открытым.
@@ -886,16 +961,23 @@ def _parse_vmess(core: str) -> Cfg:
             raise Reject(f'небезопасный параметр: {kk}')
         if kk in TRUST_OVERRIDE_KEYS and sv and sv.lower() not in FALSE_SET:
             raise Reject(f'свой CA/сертификат в vmess ({kk}) — возможен MITM')
-    net = {'h2': 'http', 'websocket': 'ws', 'splithttp': 'xhttp', 'raw': 'tcp', 'none': 'tcp',
-           '': 'tcp'}.get((g('net', 'network') or 'tcp').lower(), (g('net', 'network') or 'tcp').lower())
+    net_raw = (g('net', 'network') or 'tcp').lower()
+    net = _VMESS_NET_ALIAS.get(net_raw, net_raw)
     if net == 'quic':
         raise Reject('транспорт quic не поддерживается v2rayNG (станет tcp)')
     if net not in TLS_ALLOWED_NETS:
         raise Reject(f'vmess: транспорт {net[:20]!r} не разрешён')
     if REQUIRE_HOST_FOR_WS and net in ('ws', 'http') and not g('host'):
         raise Reject(f'vmess {net} без host')
-    sni = g('sni', 'sn', 'servername')
-    if sni and not valid_sni(sni):
+    # sni — только точный ключ "sni" (v2rayNG другие не читает); без него клиент берёт
+    # host (ws/h2/…) или адрес-домен — ровно это и проверяем/публикуем.
+    sni = g('sni')
+    if not sni:
+        hh = g('host').split(',')[0].strip() if net in ('ws', 'http', 'httpupgrade', 'xhttp') else ''
+        sni = hh or ('' if _is_ip_literal(c.host) else c.host)
+    if not sni:
+        raise Reject('vmess tls без sni (адрес — IP, host пуст)')
+    if not valid_sni(sni):
         raise Reject(f'невалидный sni: {sni[:40]!r}')
     for fld in ('sni', 'sn', 'servername', 'host'):
         val = g(fld)
@@ -907,6 +989,43 @@ def _parse_vmess(core: str) -> Cfg:
     items = tuple(sorted((k, str(v)) for k, v in low.items() if k not in _KEY_IGNORE))
     c.key = ('vmess', c.host, c.port, c.uuid, items)
     return c
+
+def _vmess_json_to_std(c: Cfg) -> str:
+    """vmess JSON -> стандартная ссылка vmess://uuid@host:port?…&allowInsecure=0.
+    Поля переносятся так, как их трактует v2rayNG при импорте JSON (grpc: path ->
+    serviceName, host -> authority, type -> mode). Результат проверяется заново."""
+    low = {str(k).lower(): ('' if v is None else str(v).strip()) for k, v in c.j.items()}
+
+    def g(*keys):
+        return next((low[k] for k in keys if low.get(k)), '')
+
+    net_raw = (g('net', 'network') or 'tcp').lower()
+    net = _VMESS_NET_ALIAS.get(net_raw, net_raw)
+    htype, host, path = g('type').lower(), g('host'), g('path')
+    params = [('encryption', (g('scy', 'security', 'cipher') or 'auto').lower()),
+              ('security', 'tls'), ('type', net)]
+    if net == 'grpc':
+        params += [('serviceName', path), ('authority', host),
+                   ('mode', htype if htype not in ('', 'none') else '')]
+    else:
+        if net == 'tcp' and htype == 'http':
+            params.append(('headerType', 'http'))
+        params += [('host', host), ('path', path)]
+    sni = g('sni')
+    if not sni:
+        hh = host.split(',')[0].strip() if net in ('ws', 'http', 'httpupgrade', 'xhttp') else ''
+        sni = hh or ('' if _is_ip_literal(c.host) else c.host)
+    params += [('sni', sni), ('alpn', g('alpn')), ('fp', g('fp', 'fingerprint').lower()),
+               ('allowInsecure', '0')]
+    name = _sanitize_name(g('ps', 'remarks'))[:MAX_NAME_LEN]
+    qs = '&'.join(f'{k}={_pq(v)}' for k, v in params if v)
+    return f'vmess://{c.uuid}@{_bracket(c.host)}:{c.port}?{qs}' + (f'#{_pq(name)}' if name else '')
+
+def _vmess_json_canonical(c: Cfg) -> str:
+    """vmess JSON -> тот же JSON, но в каноническом base64 (без мусорного хвоста и
+    двойного кодирования): клиент декодирует ровно то, что проверил фильтр."""
+    j = json.dumps(c.j, ensure_ascii=False, separators=(',', ':'))
+    return 'vmess://' + base64.b64encode(j.encode('utf-8')).decode('ascii')
 
 def _bracket(h: str) -> str:
     return f'[{h}]' if ':' in h and not h.startswith('[') else h
@@ -950,6 +1069,8 @@ def _check_ss2022_password(method: str, password: str):
             raise Reject(f'ss2022: ключ {len(raw)} байт, нужно {want}')
 
 def _parse_ss(core: str) -> Cfg:
+    if not ALLOW_SS:
+        raise Reject('shadowsocks отключён: пароль = ключ шифрования, в публичной подписке он публичен')
     body = core.split('://', 1)[1]
     body, _, qs = body.partition('?')
     q = parse_query(qs)
@@ -1036,7 +1157,7 @@ def _parse_hy2(core: str) -> Cfg:
         raise Reject(f'неверный порт: {pr[:30]!r}')
     c.host = check_host(host)
     _common(c, q, core)
-    sni = qget(q, 'sni', 'peer').strip()
+    sni = q.get('sni', '').strip()                   # только точный ключ (URI-схема hy2)
     if not sni:
         raise Reject('hysteria2 без sni')
     if not valid_sni(sni):
@@ -1065,7 +1186,7 @@ def _parse_tuic(core: str) -> Cfg:
         raise Reject('tuic: пустой пароль')
     c.host, c.port = parse_hostport(hostport)
     _common(c, q, core)
-    sni = qget(q, 'sni', 'peer').strip()
+    sni = q.get('sni', '').strip()
     if not sni:
         raise Reject('tuic без sni')
     if not valid_sni(sni):
@@ -1140,36 +1261,50 @@ def analyze_config(line: str):
 _VERIFY_FLAG = {'vless': 'allowInsecure', 'trojan': 'allowInsecure', 'vmess': 'allowInsecure',
                 'hysteria2': 'insecure', 'tuic': 'allow_insecure'}
 
-def _with_verify_flag(line: str, c: Cfg) -> str:
-    """Дописывает/нормализует флаг проверки сертификата в точном написании клиента.
-    allowinsecure=0 или только insecure=0 v2rayNG не видит и берёт глобальную настройку."""
-    flag = _VERIFY_FLAG.get(c.proto)
-    if not FORCE_VERIFY_FLAG or not flag or c.j is not None:
-        return line                              # vmess JSON-форму не трогаем
+def _rewrite_query(line: str, c: Cfg) -> str:
+    """Канонизация параметров ссылки (не vmess-JSON): флаг проверки сертификата в точном
+    написании клиента (allowinsecure=0 или только insecure=0 v2rayNG не видит и берёт
+    глобальную настройку) и pbk без '=' (Xray/sing-box читают base64url без паддинга)."""
+    flag = _VERIFY_FLAG.get(c.proto) if FORCE_VERIFY_FLAG else None
     core, sep, frag = line.partition('#')
     base, _, qs = core.partition('?')
     out, found = [], False
     for part in qs.split('&'):
         if not part:
             continue
-        if unquote(part.partition('=')[0]).strip().lower() == flag.lower():
+        k = unquote(part.partition('=')[0]).strip().lower()
+        if flag and k == flag.lower():
             # значение уже проверено (иначе ссылку отбраковали бы) — пишем канонически
             found, part = True, f'{flag}=0'
+        elif k == 'pbk' and c.pbk:
+            part = f'pbk={c.pbk.rstrip("=")}'
         out.append(part)
-    if not found:
+    if flag and not found:
         out.append(f'{flag}=0')
+    if not out:
+        return f'{base}{sep}{frag}'
     return f"{base}?{'&'.join(out)}{sep}{frag}"
 
+def _publish_form(line: str, c: Cfg) -> str:
+    """Строка для публикации. Для vmess-JSON — std-ссылка или канонический base64 (по
+    VMESS_JSON_MODE); для остальных — та же ссылка с канонизированными параметрами."""
+    if c.j is not None:
+        return _vmess_json_to_std(c) if VMESS_JSON_MODE == 'std' else _vmess_json_canonical(c)
+    return _rewrite_query(line, c)
+
 def prepare_config(line: str):
-    """Проверка + усиление. -> (причина | '', ids | None, строка_для_публикации)."""
+    """Проверка + канонизация. -> (причина | '', ids | None, строка_для_публикации).
+    Публикуемая строка проверяется заново и обязана быть неподвижной точкой."""
     reason, c = _parse_line(line)
     if reason:
         return reason, None, line
-    pub = _with_verify_flag(line, c)
+    pub = _publish_form(line, c)
     if pub != line:
         reason, c = _parse_line(pub)
         if reason:
-            return f'после добавления флага проверки: {reason}', None, line
+            return f'после канонизации: {reason}', None, line
+        if _publish_form(pub, c) != pub:
+            return 'канонизация не сходится', None, line
     return '', _ids(c), pub
 
 def get_reject_reason(line: str) -> str:
@@ -1479,7 +1614,7 @@ def _qv(v) -> str:
     return json.dumps(_YAML_UNSAFE_RE.sub('', str(v)), ensure_ascii=False)
 
 def _clash_tls_fields(q: Q, out: dict, sni_key: str = 'servername'):
-    sni = qget(q, 'sni', 'peer', 'servername').strip()
+    sni = q.get('sni', '').strip()
     if sni:
         out[sni_key] = sni
     alpn = _norm_alpn(qget(q, 'alpn'))
@@ -1554,9 +1689,9 @@ def _vless_enc_ok(enc: str) -> bool:
 def _clash_vless(c: Cfg) -> Optional[dict]:
     q = c.q
     out = {'type': 'vless', 'uuid': c.uuid, 'udp': True, 'tls': True}
-    flow = q.get('flow', '').strip().lower()
-    if flow == 'xtls-rprx-vision':
-        out['flow'] = flow
+    flow = q.get('flow', '')
+    if flow.startswith('xtls-rprx-vision'):
+        out['flow'] = 'xtls-rprx-vision'              # Mihomo не знает суффикс -udp443
     elif flow not in ('', 'none'):
         return None                                   # неизвестный flow Mihomo не грузит
     enc = q.get('encryption', '').strip()
@@ -1572,22 +1707,28 @@ def _clash_vless(c: Cfg) -> Optional[dict]:
         out['reality-opts'] = ro
     return out if _clash_net(q, out, _CLASH_TLS_NETS) else None
 
-def _vmess_json_q(j: dict) -> Q:
-    """Поля vmess JSON -> параметры как у ссылки (для общего построения Clash)."""
+def _vmess_json_q(j: dict, server: str) -> Q:
+    """Поля vmess JSON -> параметры как у ссылки (для общего построения Clash).
+    sni — как его выводит клиент: поле sni, иначе host, иначе адрес-домен."""
     low = {str(k).lower(): ('' if v is None else str(v).strip()) for k, v in j.items()}
 
     def g(*keys):
         return next((low[k] for k in keys if low.get(k)), '')
 
     q = Q()
-    net = (g('net', 'network') or 'tcp').lower()
+    net_raw = (g('net', 'network') or 'tcp').lower()
+    net = _VMESS_NET_ALIAS.get(net_raw, net_raw)
     q['type'] = net
     if g('type').lower() == 'http':
         q['headertype'] = 'http'
     q['host'], q['path'] = g('host'), g('path')
     if net == 'grpc':
         q['servicename'] = g('path')
-    q['sni'], q['alpn'], q['fp'] = g('sni', 'sn', 'servername'), g('alpn'), g('fp', 'fingerprint')
+    sni = g('sni')
+    if not sni:
+        hh = g('host').split(',')[0].strip() if net in ('ws', 'http', 'httpupgrade', 'xhttp') else ''
+        sni = hh or ('' if _is_ip_literal(server) else server)
+    q['sni'], q['alpn'], q['fp'] = sni, g('alpn'), g('fp', 'fingerprint')
     q['scy'] = g('scy', 'security', 'cipher').lower()
     return q
 
@@ -1598,7 +1739,7 @@ def _clash_vmess(c: Cfg) -> Optional[dict]:
             return None                               # vmess+reality Mihomo не поддерживает
         scy = q.get('encryption', '').strip().lower()
     else:
-        q = _vmess_json_q(c.j)
+        q = _vmess_json_q(c.j, c.host)
         scy = q['scy']
     out = {'type': 'vmess', 'uuid': c.uuid, 'alterId': 0,
            'cipher': scy if scy in ('aes-128-gcm', 'chacha20-poly1305') else 'auto',
@@ -1619,7 +1760,7 @@ def _clash_trojan(c: Cfg) -> Optional[dict]:
 def _clash_hy2(c: Cfg) -> Optional[dict]:
     q = c.q
     out = {'type': 'hysteria2', 'password': c.password, 'udp': True,
-           'sni': qget(q, 'sni', 'peer').strip()}
+           'sni': q.get('sni', '').strip()}
     alpn = _norm_alpn(qget(q, 'alpn'))
     if alpn:
         out['alpn'] = alpn
@@ -1636,7 +1777,7 @@ def _clash_hy2(c: Cfg) -> Optional[dict]:
 def _clash_tuic(c: Cfg) -> Optional[dict]:
     q = c.q
     out = {'type': 'tuic', 'uuid': c.uuid, 'password': c.password, 'udp': True,
-           'sni': qget(q, 'sni', 'peer').strip(),
+           'sni': q.get('sni', '').strip(),
            'alpn': _norm_alpn(qget(q, 'alpn')) or ['h3']}
     cc = qget(q, 'congestion_control', 'congestioncontrol', 'cc').strip().lower()
     if cc:
@@ -1750,8 +1891,9 @@ def convert_to_clash_and_save(configs: List[str], filename: str) -> int:
         cp = uri_to_clash(uri)
         if not cp:
             continue
-        # дедупликация по тип+server:port (UDP hy2/tuic и TCP vless на одном порту — разные узлы)
-        sk = (cp['type'], cp['server'], cp['port'])
+        # дедупликация по тому же ключу узла, что и в txt (ws/grpc/tcp на одном
+        # host:port — разные узлы; один узел с разными именами — один)
+        sk = analyze_config(uri)[1][0]
         if sk in seen:
             continue
         seen.add(sk)
@@ -2050,10 +2192,9 @@ def write_health_report(health: Dict, source_stats: Dict[str, Dict]):
 
 def write_reject_reasons(reasons: Counter):
     path = os.path.join(REJECT_DIR, "reasons.md")
-    with open(path, 'w', encoding='utf-8') as f:
-        f.write("# Причины отбраковки\n\n| Причина | Кол-во |\n|---|---|\n")
-        for reason, cnt in reasons.most_common(60):
-            f.write(f"| {reason.replace('|', '/')} | {cnt} |\n")
+    out = ["# Причины отбраковки\n\n| Причина | Кол-во |\n|---|---|\n"]
+    out += [f"| {reason.replace('|', '/')} | {cnt} |\n" for reason, cnt in reasons.most_common(60)]
+    _atomic_write(path, ''.join(out))
 
 # =====================================================================
 #  ЗАГРУЗКА + ФИЛЬТРАЦИЯ
@@ -2109,39 +2250,13 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
             continue
         unique[ids[0]] = (pub, ids)
 
-    pbk_count, uuid_count, sid_count = defaultdict(int), defaultdict(int), defaultdict(int)
-    tpass_count, tuic_count, hp_count = defaultdict(int), defaultdict(int), defaultdict(int)
-    for cfg, (_, pbk, uuid, sid, tpass, tcred, hp) in unique.values():
-        if pbk:
-            pbk_count[pbk] += 1
-        if uuid:
-            uuid_count[uuid] += 1
-        if sid:
-            sid_count[sid] += 1
-        if tpass:
-            tpass_count[tpass] += 1
-        if tcred:
-            tuic_count[tcred] += 1
-        hp_count[hp] += 1
-
     final_filtered: Set[str] = set()
-    for cfg, (_, pbk, uuid, sid, tpass, tcred, hp) in unique.values():
-        limit_reason = None
-        if pbk and pbk_count[pbk] > PBK_MAX:
-            limit_reason = 'один Reality-ключ (pbk) у слишком многих узлов'
-        elif uuid and uuid_count[uuid] > UUID_MAX:
-            limit_reason = 'один UUID у слишком многих узлов'
-        elif sid and sid_count[sid] > SID_MAX:
-            limit_reason = 'один Reality sid у слишком многих узлов'
-        elif tpass and tpass_count[tpass] > TROJAN_PASS_MAX:
-            limit_reason = 'один trojan-пароль у слишком многих узлов'
-        elif tcred and tuic_count[tcred] > TUIC_CRED_MAX:
-            limit_reason = 'одни tuic-учётные данные у слишком многих узлов'
-        elif hp_count[hp] > HP_MAX:
-            limit_reason = 'слишком много узлов на одном host:port'
-        if limit_reason:
+    limit_reason = _pool_limit_checker([ids for _, ids in unique.values()])
+    for cfg, ids in unique.values():
+        why = limit_reason(ids)
+        if why:
             rejected.append(cfg)
-            reasons[limit_reason] += 1
+            reasons[why] += 1
             continue
         final_filtered.add(cfg)
 
@@ -2149,6 +2264,30 @@ def load_and_filter(source: Dict, health: Dict) -> Tuple[Set[str], List[str], Di
                  rejected=len(rejected) + sum(1 for c in parsed if len(c) > MAX_LINE_LEN),
                  duplicates=duplicates)
     return final_filtered, rejected, stats, was_base64
+
+# ids = (key, pbk, uuid, sid, trojan_pass, tuic_cred, host:port:proto) — см. _ids()
+_POOL_REASONS = (None,
+                 'один Reality-ключ (pbk) у слишком многих узлов',
+                 'один UUID у слишком многих узлов',
+                 'один Reality sid у слишком многих узлов',
+                 'один trojan-пароль у слишком многих узлов',
+                 'одни tuic-учётные данные у слишком многих узлов',
+                 'слишком много узлов на одном host:port')
+
+def _pool_limit_checker(all_ids):
+    """Лимиты «публичного пула» по множеству УНИКАЛЬНЫХ узлов. -> f(ids) = причина | ''.
+    Превышение отбрасывает всю группу: один ключ/UUID на десятках узлов — это раздача,
+    а не чей-то личный сервер."""
+    all_ids = list(all_ids)
+    limits = (None, PBK_MAX, UUID_MAX, SID_MAX, TROJAN_PASS_MAX, TUIC_CRED_MAX, HP_MAX)
+    counts = [None] + [Counter(ids[i] for ids in all_ids if ids[i]) for i in range(1, 7)]
+
+    def reason(ids) -> str:
+        for i in range(1, 7):
+            if ids[i] and counts[i][ids[i]] > limits[i]:
+                return _POOL_REASONS[i]
+        return ''
+    return reason
 
 # =====================================================================
 #  СОРТИРОВКА / ДЕДУПЛИКАЦИЯ
@@ -2178,6 +2317,22 @@ def dedupe_by_key(configs) -> List[str]:
         out.append(u)
     return out
 
+def merge_all(configs) -> Tuple[List[str], Counter]:
+    """ALL.txt: дедупликация между источниками + те же лимиты «публичного пула», что и
+    внутри источника (иначе 3 узла с одним UUID из каждого из N источников давали бы 3N).
+    -> (строки, причины отбраковки)."""
+    kept = [(u, analyze_config(u)[1]) for u in dedupe_by_key(configs)]
+    kept = [(u, ids) for u, ids in kept if ids]
+    limit_reason = _pool_limit_checker([ids for _, ids in kept])
+    out, reasons = [], Counter()
+    for u, ids in kept:
+        why = limit_reason(ids)
+        if why:
+            reasons[f'ALL: {why}'] += 1
+            continue
+        out.append(u)
+    return out, reasons
+
 # =====================================================================
 #  MAIN
 # =====================================================================
@@ -2189,7 +2344,7 @@ def _write_output(path: str, configs: List[str], as_base64: bool):
     _atomic_write(path, text)
 
 def main() -> int:
-    print("=== Фильтр прокси v6.1 (NekoBox / v2rayNG / Karing + Clash/Mihomo, hardened) ===")
+    print("=== Фильтр прокси v6.2 (NekoBox / v2rayNG / Karing + Clash/Mihomo, hardened) ===")
     try:
         problems = _selftest()
     except Exception as e:                        # noqa: BLE001 — сломанная проверка = стоп
@@ -2237,7 +2392,8 @@ def main() -> int:
                 file_counts[name] = 0
                 clash_counts[name] = 0
 
-    sorted_all = dedupe_by_key(all_filtered)
+    sorted_all, all_limit_reasons = merge_all(all_filtered)
+    all_reasons.update(all_limit_reasons)
     _write_output(os.path.join(OUTPUT_DIR, "ALL.txt"), sorted_all, False)
     file_counts["ALL"] = len(sorted_all)
     clash_counts["ALL"] = convert_to_clash_and_save(sorted_all, "ALL")
@@ -2298,6 +2454,9 @@ def _selftest(full: bool = False) -> List[str]:
     def vm_raw(text):
         return 'vmess://' + base64.b64encode(text.encode()).decode()
 
+    def vm_tail(link):
+        return link + '2'                                # мусорный хвост после паддинга
+
     def ss(method, pw, tail=''):
         ub = base64.urlsafe_b64encode(f'{method}:{pw}'.encode()).decode().rstrip('=')
         return f'ss://{ub}@{H}:8388{tail}#ss'
@@ -2332,13 +2491,23 @@ def _selftest(full: bool = False) -> List[str]:
         'vmess_json':    vm(),
         'hy2_obfs':      f'hysteria2://pw123@{H}:443?sni={H}&obfs=salamander&obfs-password=xyz#h',
         'tuic':          f'tuic://{U}:pw@{H}:443?sni={H}&alpn=h3&congestion_control=bbr#tu',
-        'ss_2022_aes':   ss('2022-blake3-aes-128-gcm', SS16),
-        'ss_2022_chacha': ss('2022-blake3-chacha20-poly1305', SS32),
-        'ss_aes_gcm':    ss('aes-256-gcm', 'Str0ngPassw0rd'),
         'xhttp_dl_null': XH(uid(9), {"xPaddingBytes": "100-1000", "downloadSettings": None, "xmux": {"maxConcurrency": "16-32"}}),
         'xhttp_dl_tls':  XH(uid(10), {"downloadSettings": {"address": "cdn.example.de", "port": 443, "network": "xhttp",
                                                            "security": "tls", "tlsSettings": {"serverName": "cdn.example.de"}}}),
+        'reality_udp443': f'vless://{uid(14)}@n14.mydomain.de:443?security=reality&sni=www.microsoft.com&fp=chrome&pbk={PBK}&type=tcp&flow=xtls-rprx-vision-udp443#u',
+        'vmess_tail':    vm_tail(vm(id=uid(15), add='n15.mydomain.de', host='n15.mydomain.de', sni='n15.mydomain.de')),
     }
+    # Shadowsocks: корректные по шифру ссылки, которые при ALLOW_SS=False обязаны отбраковываться
+    SS_LINKS = {
+        'ss_2022_aes':   ss('2022-blake3-aes-128-gcm', SS16),
+        'ss_2022_chacha': ss('2022-blake3-chacha20-poly1305', SS32),
+        'ss_aes_gcm':    ss('aes-256-gcm', 'Str0ngPassw0rd'),
+    }
+    if f.ALLOW_SS:
+        GOOD.update(SS_LINKS)
+    VMESS_JSON_LINK = GOOD['vmess_json']
+    if f.VMESS_JSON_MODE == 'reject':
+        del GOOD['vmess_json'], GOOD['vmess_tail']
 
     # Фильтр видит «TLS с проверкой сертификата», клиент — нет (или сертификат не проверяется).
     BYPASSES = {
@@ -2399,6 +2568,21 @@ def _selftest(full: bool = False) -> List[str]:
         # --- прочее
         'reality_no_pbk': f'vless://{U}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&type=tcp',
         'ss_weak':       ss('aes-256-cfb', 'pw'),
+        # --- v6.2: «обязательное» поле под синонимом фильтр видел, клиент — нет
+        'pbk_synonym':   f'vless://{U}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&publickey={PBK}&type=tcp',
+        'sni_synonym':   f'vless://{U}@{H}:443?security=tls&servername={H}&fp=chrome&alpn=h2&type=tcp',
+        'trojan_peer':   f'trojan://Xk29fLq81pZ@{H}:443?peer={H}&alpn=h2',
+        'hy2_peer':      f'hysteria2://pw123@{H}:443?peer={H}',
+        'sni_ip':        f'vless://{U}@{H}:443?security=tls&sni=1.2.3.4&fp=chrome&alpn=h2&type=tcp',
+        'flow_garbage':  f'vless://{U}@{H}:443?security=tls&{T}&flow=xtls-rprx-direct',
+        'flow_case':     f'vless://{U}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&pbk={PBK}&type=tcp&flow=XTLS-RPRX-Vision',
+        'vision_ws':     f'vless://{U}@{H}:443?security=tls&sni={H}&fp=chrome&alpn=h2&type=ws&host={H}&path=%2F&flow=xtls-rprx-vision',
+        'reality_ws':    f'vless://{U}@{H}:443?security=reality&sni=www.microsoft.com&fp=chrome&pbk={PBK}&type=ws&host={H}&path=%2F',
+        'trojan_kcp':    f'trojan://Xk29fLq81pZ@{H}:443?sni={H}&type=kcp',
+        'vmess_std_none': f'vmess://{U}@{H}:443?encryption=auto&security=none&type=ws&host={H}&path=%2F&sni={H}',
+        'vmess_std_insecure': f'vmess://{U}@{H}:443?encryption=auto&security=tls&type=ws&host={H}&path=%2F&sni={H}&allowInsecure=1',
+        'vmess_std_zero': f'vmess://{U}@{H}:443?encryption=zero&security=tls&type=ws&host={H}&path=%2F&sni={H}',
+        'vmess_ip_no_sni': vm(add='1.2.3.4', host='', net='tcp', sni=''),
     }
 
     # В v6.0 публиковалась P(raw), а проверялась P(P(raw)). В v6.1 preprocess доводится до
@@ -2411,6 +2595,8 @@ def _selftest(full: bool = False) -> List[str]:
 
     PROTO_FLAG = {'vless': 'allowInsecure', 'trojan': 'allowInsecure', 'hysteria2': 'insecure',
                   'tuic': 'allow_insecure'}
+    if f.VMESS_JSON_MODE == 'std':
+        PROTO_FLAG['vmess'] = 'allowInsecure'            # JSON-форма публикуется std-ссылкой
 
     def test_good_pass_with_verify_flag():
         for name, raw in GOOD.items():
@@ -2425,9 +2611,10 @@ def _selftest(full: bool = False) -> List[str]:
         """Так ссылку читает клиент (Go url.ParseQuery / parse_qs): ровно один security=tls|reality."""
         for name, raw in GOOD.items():
             pub = prep(raw)[1]
-            if pub.startswith('vless://'):
+            if pub.startswith('vless://') or (pub.startswith('vmess://') and '@' in pub.partition('?')[0]):
                 qs = urllib.parse.parse_qs(urllib.parse.urlsplit(pub).query, keep_blank_values=True)
                 assert qs.get('security') in (['tls'], ['reality']), name
+                assert qs.get('sni') or qs.get('security') == ['reality'], name
 
     def test_escapes_rejected_or_published_safely():
         for name, raw in ESCAPES.items():
@@ -2487,8 +2674,8 @@ def _selftest(full: bool = False) -> List[str]:
         n = f.convert_to_clash_and_save(links, 'T_NAMES')
         data = yaml.safe_load(open(os.path.join(f.CLASH_DIR, 'T_NAMES.yaml'), encoding='utf-8'))
         got = [p['name'] for p in data['proxies']]
-        keys = {(c['type'], c['server'], c['port']) for c in map(f.uri_to_clash, links) if c}
-        assert n == len(got) == len(keys), (n, len(got), len(keys))     # дедупликация тип+server:port
+        keys = {f.analyze_config(l)[1][0] for l in links if f.uri_to_clash(l)}
+        assert n == len(got) == len(keys), (n, len(got), len(keys))     # дедупликация по ключу узла
         assert len({g.lower() for g in got}) == len(got), got
         assert not ({g.lower() for g in got} & f._RESERVED_CLASH_NAMES), got
         assert data['proxy-groups'][0]['proxies'] == got
@@ -2520,8 +2707,10 @@ def _selftest(full: bool = False) -> List[str]:
         res = {urllib.parse.unquote(u.partition('#')[2]) or json.loads(base64.b64decode(u[8:]))['ps']: passes(u)
                for u in uris}
         for k, ok in res.items():
-            assert ok == k.startswith('ok-'), (k, ok)
-        assert sum(res.values()) == 5, res
+            expect = k.startswith('ok-') and (f.ALLOW_SS or k != 'ok-ss') \
+                and (f.VMESS_JSON_MODE != 'reject' or k != 'ok-vmess')
+            assert ok == expect, (k, ok)
+        assert sum(res.values()) == 5 - (not f.ALLOW_SS) - (f.VMESS_JSON_MODE == 'reject'), res
 
     def test_urlsafe_base64_subscription():
         random.seed(1)
@@ -2659,10 +2848,54 @@ def _selftest(full: bool = False) -> List[str]:
         if f.HAS_YAML:
             problems += [f'Clash: небезопасный прокси проходит фильтр: {u[:60]}'
                          for u in f.clash_to_uris(CLASH_BAD) if passes(u)]
+        if not f.ALLOW_SS:
+            problems += [f'shadowsocks проходит при ALLOW_SS=False: {n}' for n, raw in SS_LINKS.items() if passes(raw)]
+        if f.VMESS_JSON_MODE == 'reject' and passes(VMESS_JSON_LINK):
+            problems.append('vmess JSON проходит при VMESS_JSON_MODE=reject')
         return problems
 
     if not full:
         return security_problems()
+
+    def test_v62_rules():
+        # vmess JSON -> std-ссылка с теми же полями и allowInsecure=0; мусорный хвост и
+        # двойной base64 публикуются только в каноническом виде (неподвижная точка)
+        if f.VMESS_JSON_MODE == 'std':
+            pub = prep(VMESS_JSON_LINK)[1]
+            qs = qs_of(pub)
+            assert pub.startswith(f'vmess://{U}@{H}:443?'), pub
+            assert (qs['security'], qs['type'], qs['host'], qs['path'], qs['sni'], qs['encryption']) == \
+                   (['tls'], ['ws'], [H], ['/vm'], [H], ['auto']), qs
+            assert qs['allowInsecure'] == ['0'] and urllib.parse.unquote(pub.partition('#')[2]) == 'vm'
+        for raw in (vm_tail(VMESS_JSON_LINK), vm_raw(VMESS_JSON_LINK[8:])):
+            reason, pub = prep(raw)
+            if f.VMESS_JSON_MODE == 'reject':
+                assert reason, pub[:80]
+                continue
+            assert reason == '' and pub != raw and prep(pub) == ('', pub), (reason, pub[:80])
+        # pbk публикуется без паддинга; reality + udp443 проходит и в Clash даёт vision
+        pub = prep(f'vless://{uid(16)}@n16.mydomain.de:443?security=reality&sni=www.microsoft.com&fp=chrome'
+                   f'&pbk={PBK}%3D&type=tcp&flow=xtls-rprx-vision-udp443')[1]
+        assert qs_of(pub)['pbk'] == [PBK] and prep(pub) == ('', pub), pub
+        assert f.uri_to_clash(pub)['flow'] == 'xtls-rprx-vision'
+        # trojan: легаси ws=1 больше не делает ws — клиент его не понимает; type читается буквально
+        pub = prep(f'trojan://Xk29fLq81pZ@{H}:443?sni={H}&ws=1&wspath=%2Fx')[1]
+        assert f.uri_to_clash(pub).get('network') is None
+        # лимиты пула действуют и на ALL: 3 + 3 узла с одним UUID из двух «источников»
+        same = [f'vless://{U}@a{i}.mydomain.de:443?security=tls&sni=a{i}.mydomain.de&fp=chrome&alpn=h2&type=tcp#a{i}'
+                for i in range(6)]
+        merged, why = f.merge_all([prep(l)[1] for l in same])
+        assert merged == [] and sum(why.values()) == 6, (merged, why)
+        merged, why = f.merge_all([prep(l)[1] for l in same[:3]])
+        assert len(merged) == 3 and not why
+        # Clash: три транспорта на одном host:port — три разных узла (как и в txt)
+        tr = [prep(f'vless://{uid(17)}@n17.mydomain.de:443?security=tls&sni=n17.mydomain.de&fp=chrome&alpn=h2'
+                   f'&type={t}{x}#{t}')[1]
+              for t, x in (('ws', '&host=n17.mydomain.de&path=%2Fa'), ('grpc', '&serviceName=g'), ('tcp', ''))]
+        assert f.convert_to_clash_and_save(tr, 'T_TRANSPORTS') == 3
+        # shadowsocks: политика ALLOW_SS
+        for n, raw in SS_LINKS.items():
+            assert passes(raw) == f.ALLOW_SS, n
 
     def test_security_guard_clean():
         assert security_problems() == [], security_problems()
@@ -2698,7 +2931,7 @@ def _selftest(full: bool = False) -> List[str]:
              test_https_only_fetch, test_fetch_total_deadline,
              test_stale_fallback_refilters_previous_file, test_main_end_to_end,
              test_security_guard_clean, test_guard_ignores_stricter_policy,
-             test_guard_blocks_broken_filter]
+             test_guard_blocks_broken_filter, test_v62_rules]
     paths = ('OUTPUT_DIR', 'HEALTH_FILE', 'REJECT_DIR', 'CLASH_DIR', 'QR_DIR')
     saved, cwd = {k: getattr(f, k) for k in paths}, os.getcwd()
     tmp = tempfile.mkdtemp(prefix='filter-selftest-')
