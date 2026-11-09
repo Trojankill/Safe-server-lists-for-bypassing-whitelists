@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 08:47:17 UTC
+# 2026-11-09 09:01:00 UTC
 proxies:
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
     server: "161.104.89.43"
     port: 8443
@@ -10,13 +10,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ya.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
       public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
       short-id: "abc123"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
     type: "vless"
     server: "77.222.35.164"
     port: 8443
@@ -31,7 +31,7 @@ proxies:
       public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
       short-id: "abc123"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #3"
     type: "vless"
     server: "85.198.80.164"
     port: 8443
@@ -46,7 +46,7 @@ proxies:
       public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
       short-id: "abc123"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -63,90 +63,45 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🇨🇿 Czechia [*CIDR]"
+  - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
-    server: "87.242.102.102"
+    server: "194.87.190.163"
     port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "kakashechka.belka.tv"
-    client-fingerprint: "firefox"
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇩🇿 Algeria [*CIDR]"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "87.242.102.214"
+    server: "renderer-bridge-2-133.mirra.now"
     port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "poputal.belka.tv"
-    client-fingerprint: "firefox"
+    servername: "renderer-bridge-2-133.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇫🇮 Finland [*CIDR]"
-    type: "vless"
-    server: "83.171.241.244"
-    port: 25310
-    uuid: "8af1ac56-283b-4fc5-bb33-6892498a0592"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cabinet.evotor.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "TTRwt0Zvu8OWBLFTI3VQv7m8w01VAmRxtghhLIKuXXc"
-      short-id: "69ca1a9ff751056f"
-    network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR] #2"
-    type: "vless"
-    server: "141.133.184.53"
-    port: 443
-    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.7.128.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
-    type: "vless"
-    server: "141.133.184.54"
-    port: 443
-    uuid: "a7281f9b-39b7-47ab-9750-dac255326d5d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇺🇸 United States [*CIDR]"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "🇺🇸 United States | [*CIDR]"
     type: "vless"
     server: "83.171.241.153"
     port: 443
-    uuid: "bda6e235-c778-4e57-bfcd-5a9026fec8c9"
+    uuid: "c82031be-e90f-4b15-ab4f-7ccef236d3ca"
     udp: true
     tls: true
     servername: "d58daft.plp1.h1cloud.net"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
@@ -156,15 +111,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇨🇿 Czechia [*CIDR]"
-      - "🇩🇿 Algeria [*CIDR]"
-      - "🇫🇮 Finland [*CIDR]"
-      - "🇨🇿 Czechia [*CIDR] #2"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
-      - "🇺🇸 United States [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 | [*CIDR] #3"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇩🇪 Germany [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR]"
+      - "🇺🇸 United States | [*CIDR]"
 rules:
   - MATCH,PROXY
