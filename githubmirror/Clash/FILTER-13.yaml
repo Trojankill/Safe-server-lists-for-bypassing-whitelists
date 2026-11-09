@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 13:45:32 UTC
+# 2026-11-09 14:00:59 UTC
 proxies:
-  - name: "cool [white] 🌐 |#3|"
+  - name: "cool [white] 🌐 |#32|"
     type: "vless"
     server: "104.17.70.206"
     port: 8443
@@ -11,14 +11,29 @@ proxies:
     servername: "free.sahanwickramasinghe.com"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/"
       headers:
         Host: "free.sahanwickramasinghe.com"
-  - name: "cool [white] 🌐 |#30|"
+  - name: "cool [white] 🇭🇰 |#30|"
+    type: "vless"
+    server: "43.161.193.181"
+    port: 443
+    uuid: "280f4d33-69fb-4f0d-a4c3-fe0bf841009f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "nf9eFC0yVVO-peA-wmZ1EEIwAaSstK2JN3tJV0WNJQE"
+      short-id: "8c994df3c4e175a4"
+    network: "tcp"
+  - name: "cool [white] 🌐 |#8|"
     type: "trojan"
     server: "104.17.10.171"
     port: 443
@@ -32,7 +47,7 @@ proxies:
       path: "/"
       headers:
         Host: "ltf8.jueson.de5.net"
-  - name: "cool [white] 🌐 |#41|"
+  - name: "cool [white] 🌐 |#24|"
     type: "trojan"
     server: "188.114.98.0"
     port: 443
@@ -47,29 +62,21 @@ proxies:
       path: "/categories/community/"
       headers:
         Host: "ltf8.jueson.de5.net"
-  - name: "cool [white] 🌐 |#31|"
-    type: "vmess"
-    server: "104.27.0.1"
-    port: 443
-    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/ws"
-      headers:
-        Host: "vmess.lbw666.dpdns.org"
-  - name: "cool [white] 🇷🇺 |#1|"
+  - name: "cool [white] 🇷🇺 |#4|"
     type: "ss"
     server: "87.228.61.175"
     port: 1443
     cipher: "chacha20-ietf-poly1305"
     password: "tAGGzgRCi6W95UwG0qerf6"
     udp: true
-  - name: "cool [white] 🇺🇸 |#39|"
+  - name: "cool [white] 🇩🇪 |#20|"
+    type: "ss"
+    server: "135.220.178.46"
+    port: 46303
+    cipher: "chacha20-ietf-poly1305"
+    password: "zZMNTGpPl38ASlbI1EKOBJ"
+    udp: true
+  - name: "cool [white] 🇺🇸 |#51|"
     type: "ss"
     server: "177.202.64.67"
     port: 1080
@@ -80,11 +87,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "cool [white] 🌐 |#3|"
-      - "cool [white] 🌐 |#30|"
-      - "cool [white] 🌐 |#41|"
-      - "cool [white] 🌐 |#31|"
-      - "cool [white] 🇷🇺 |#1|"
-      - "cool [white] 🇺🇸 |#39|"
+      - "cool [white] 🌐 |#32|"
+      - "cool [white] 🇭🇰 |#30|"
+      - "cool [white] 🌐 |#8|"
+      - "cool [white] 🌐 |#24|"
+      - "cool [white] 🇷🇺 |#4|"
+      - "cool [white] 🇩🇪 |#20|"
+      - "cool [white] 🇺🇸 |#51|"
 rules:
   - MATCH,PROXY
