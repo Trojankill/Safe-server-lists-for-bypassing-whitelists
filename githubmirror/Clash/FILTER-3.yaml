@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 05:00:59 UTC
+# 2026-11-09 05:15:30 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #40"
+  - name: "🇳🇱 The Netherlands — #28"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,70 +18,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🇩🇪 Germany — #2"
-    type: "vless"
-    server: "5.178.85.237"
-    port: 8443
-    uuid: "2adb62d3-f5a3-44da-9db6-17e20d138c9e"
-    udp: true
-    tls: true
-    servername: "5post-gate.x5.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "qelF5ISLNY4UwIbV2PspjgWe9_8oZeVEbIbXFlkakx4"
-      short-id: "23bc2471787cce68"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇪🇪 Estonia — #7"
-    type: "vless"
-    server: "188.225.58.201"
-    port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
-    udp: true
-    tls: true
-    servername: "xtw3x.artemida.digital"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇬🇧 United Kingdom — #26"
-    type: "vless"
-    server: "188.225.58.201"
-    port: 8443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
-    udp: true
-    tls: true
-    servername: "xtw3x.artemida.digital"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇯🇵 Japan — #36"
-    type: "vless"
-    server: "194.55.239.47"
-    port: 443
-    uuid: "75d1a1e9-cc7c-000a-92c7-1357c6a37875"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "empanel.injlab.org"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "1WWCm1gHVrghowSVLWlBq_ofcJThgEYUclB1oR22bBg"
-      short-id: "a870ef67d6260fa7"
-    network: "tcp"
-  - name: "🇬🇧 United Kingdom — #29"
+  - name: "🇬🇧 United Kingdom — #22"
     type: "vless"
     server: "95.129.236.117"
     port: 443
@@ -98,7 +35,7 @@ proxies:
       path: "/edge/node8/push"
       headers:
         Host: "cdn.dash.gearmonster.org"
-  - name: "🇳🇱 The Netherlands — #50"
+  - name: "🇳🇱 The Netherlands — #39"
     type: "vless"
     server: "95.129.236.216"
     port: 443
@@ -115,16 +52,30 @@ proxies:
       path: "/stream/video/ffmpeg"
       headers:
         Host: "crm.hourtley.com"
+  - name: "🇩🇪 Germany — #2"
+    type: "vless"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/sock/relay/007f9c12e265"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #40"
+      - "🇳🇱 The Netherlands — #28"
+      - "🇬🇧 United Kingdom — #22"
+      - "🇳🇱 The Netherlands — #39"
       - "🇩🇪 Germany — #2"
-      - "🇪🇪 Estonia — #7"
-      - "🇬🇧 United Kingdom — #26"
-      - "🇯🇵 Japan — #36"
-      - "🇬🇧 United Kingdom — #29"
-      - "🇳🇱 The Netherlands — #50"
 rules:
   - MATCH,PROXY
