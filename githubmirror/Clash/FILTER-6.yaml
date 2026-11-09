@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-09 17:01:06 UTC
+# 2026-11-09 17:15:34 UTC
 proxies:
   - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
@@ -15,28 +15,10 @@ proxies:
       public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
       short-id: "a91531ad58c8611c"
     network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
-    udp: true
-    tls: true
-    servername: "lorettmay.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/blog/posts"
-      headers:
-        Host: "lorettmay.top"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇺🇸 United States [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
 rules:
   - MATCH,PROXY
