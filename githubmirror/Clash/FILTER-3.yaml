@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 01:45:41 UTC
+# 2026-11-09 02:00:56 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #50"
+  - name: "🇳🇱 The Netherlands — #41"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,22 +18,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🇷🇺 cloud.ru — #1"
-    type: "vless"
-    server: "178.248.232.105"
-    port: 55443
-    uuid: "1d7427ab-8a5d-4317-9335-2e48d50be4fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rutube.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "UoWXZIbLDIDA1opu4ekUYLNWgci5gLgghMJ07ApYTGo"
-      short-id: "228c1a2e913d1f05"
-    network: "tcp"
-  - name: "🇧🇬 Bulgaria — #2"
+  - name: "🇧🇬 Bulgaria — #1"
     type: "vless"
     server: "46.243.232.71"
     port: 444
@@ -48,7 +33,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇱🇹 Lithuania — #36"
+  - name: "🇯🇵 Japan — #26"
+    type: "vless"
+    server: "194.55.239.47"
+    port: 443
+    uuid: "75d1a1e9-cc7c-000a-92c7-1357c6a37875"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "empanel.injlab.org"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1WWCm1gHVrghowSVLWlBq_ofcJThgEYUclB1oR22bBg"
+      short-id: "a870ef67d6260fa7"
+    network: "tcp"
+  - name: "🇱🇹 Lithuania — #27"
     type: "vless"
     server: "46.243.232.71"
     port: 10018
@@ -68,9 +68,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #50"
-      - "🇷🇺 cloud.ru — #1"
-      - "🇧🇬 Bulgaria — #2"
-      - "🇱🇹 Lithuania — #36"
+      - "🇳🇱 The Netherlands — #41"
+      - "🇧🇬 Bulgaria — #1"
+      - "🇯🇵 Japan — #26"
+      - "🇱🇹 Lithuania — #27"
 rules:
   - MATCH,PROXY
