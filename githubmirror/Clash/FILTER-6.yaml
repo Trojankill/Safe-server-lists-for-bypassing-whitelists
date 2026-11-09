@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 12:45:31 UTC
+# 2026-11-09 13:00:58 UTC
 proxies:
-  - name: "🇮🇷 Iran | [*CIDR]"
+  - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,10 +18,56 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "mw-ru1.star1905.org"
+    port: 443
+    uuid: "90559189-7899-4f25-a6ba-1f9057f9e901"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "mw-ru1.star1905.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "83.171.241.153"
+    port: 443
+    uuid: "c82031be-e90f-4b15-ab4f-7ccef236d3ca"
+    udp: true
+    tls: true
+    servername: "d58daft.plp1.h1cloud.net"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
+      short-id: "a91531ad58c8611c"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR] #2"
+    type: "vless"
+    server: "185.149.144.99"
+    port: 443
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "XQDyU7s7ke73dUxqd9A8hZQ921qkI2lDvLwEYc9wiSc"
+      short-id: "60b81a326dc77709"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Iran | [*CIDR]"
+      - "🇮🇷 Iran [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇺🇸 United States [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR] #2"
 rules:
   - MATCH,PROXY
