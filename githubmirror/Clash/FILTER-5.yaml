@@ -1,9 +1,39 @@
 # clash/mihomo subscription
-# 2026-11-09 07:45:31 UTC
+# 2026-11-09 08:00:58 UTC
 proxies:
+  - name: "Greece | gr1.hat.onl | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "217.12.204.105"
+    port: 443
+    uuid: "042bec60-62d7-4148-a0da-5709ae3ee5a6"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "gr1.hat.onl"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
+      short-id: "76132b3b39704c44"
+    network: "tcp"
   - name: "Estonia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "196.196.148.67"
+    port: 25310
+    uuid: "8af1ac56-283b-4fc5-bb33-6892498a0592"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cabinet.evotor.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TTRwt0Zvu8OWBLFTI3VQv7m8w01VAmRxtghhLIKuXXc"
+      short-id: "69ca1a9ff751056f"
+    network: "tcp"
+  - name: "Russia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "83.171.241.244"
     port: 25310
     uuid: "8af1ac56-283b-4fc5-bb33-6892498a0592"
     udp: true
@@ -39,7 +69,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Greece | gr1.hat.onl | unknown | [#LSO - #LinSpisokObhod]"
       - "Estonia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | cabinet.evotor.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
