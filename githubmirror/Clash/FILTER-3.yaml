@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 01:00:57 UTC
+# 2026-11-09 01:15:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #30"
+  - name: "🇳🇱 The Netherlands — #50"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,7 +18,22 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🇧🇬 Bulgaria — #1"
+  - name: "🇷🇺 cloud.ru — #1"
+    type: "vless"
+    server: "178.248.232.105"
+    port: 55443
+    uuid: "1d7427ab-8a5d-4317-9335-2e48d50be4fc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rutube.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "UoWXZIbLDIDA1opu4ekUYLNWgci5gLgghMJ07ApYTGo"
+      short-id: "228c1a2e913d1f05"
+    network: "tcp"
+  - name: "🇧🇬 Bulgaria — #2"
     type: "vless"
     server: "46.243.232.71"
     port: 444
@@ -33,11 +48,29 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇱🇹 Lithuania — #36"
+    type: "vless"
+    server: "46.243.232.71"
+    port: 10018
+    uuid: "d9cc5c37-b53c-1131-b4e1-1b9f7fbea1b1"
+    udp: true
+    tls: true
+    servername: "6b9iw.guardora.pro"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
+      short-id: "c1a7e9b4711d5f60"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #30"
-      - "🇧🇬 Bulgaria — #1"
+      - "🇳🇱 The Netherlands — #50"
+      - "🇷🇺 cloud.ru — #1"
+      - "🇧🇬 Bulgaria — #2"
+      - "🇱🇹 Lithuania — #36"
 rules:
   - MATCH,PROXY
