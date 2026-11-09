@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-09 02:30:45 UTC
+# 2026-11-09 02:45:29 UTC
 proxies:
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
@@ -18,22 +18,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🌐 Anycast-IP | 🇩🇪 🇷🇺 [*CIDR]"
-    type: "vless"
-    server: "178.248.232.105"
-    port: 55443
-    uuid: "1d7427ab-8a5d-4317-9335-2e48d50be4fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rutube.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "UoWXZIbLDIDA1opu4ekUYLNWgci5gLgghMJ07ApYTGo"
-      short-id: "228c1a2e913d1f05"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇧🇬 [*CIDR] CDN"
+  - name: "🇧🇬 Bulgaria [*CIDR] CDN"
     type: "vless"
     server: "46.243.232.71"
     port: 444
@@ -48,6 +33,37 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "vps3.nemnogogo.com"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    udp: true
+    tls: true
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "83.171.241.153"
+    port: 443
+    uuid: "3ede439b-410f-4eae-b449-4e15064c0706"
+    udp: true
+    tls: true
+    servername: "13e1cfg.plp1.h1cloud.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cWC6AGVZ9ke_eCTWXEB-eLdf670CuoP9zP-1k8DrPxo"
+      short-id: "8ae9cc8c9447c95a"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "d5d6142b8b66"
   - name: "🇱🇻 Latvia [*CIDR]"
     type: "vless"
     server: "31.130.151.97"
@@ -62,98 +78,57 @@ proxies:
     reality-opts:
       public-key: "0GBR6DwsCQEYEa7QZHnOqbwmEMr8moms1sFU-wT-bHE"
     network: "tcp"
-  - name: "🇱🇻 Latvia [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
     type: "vless"
-    server: "78.17.98.192"
+    server: "95.129.236.117"
     port: 443
-    uuid: "4d079fbe-33ac-4a80-8441-b0e1818b286a"
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "direct.vpndoctor.top"
-    client-fingerprint: "ios"
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "QPmrizvOUCOOIvlupGnt1reR5bui3U8EZl00VHU4GRA"
-      short-id: "3f9537eb0626292b"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇩🇪 🇪🇪 [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: "🌐 Anycast-IP | 🇳🇱 🇷🇺 [*CIDR]"
     type: "vless"
-    server: "188.225.58.201"
+    server: "95.129.236.216"
     port: 443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    servername: "xtw3x.artemida.digital"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🌐 Anycast-IP | 🇬🇧 [*CIDR]"
-    type: "vless"
-    server: "188.225.58.201"
-    port: 8443
-    uuid: "5f1c2e83-d4aa-4f10-81e9-e0ccc018974c"
-    udp: true
-    tls: true
-    servername: "xtw3x.artemida.digital"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "JqmkP6Fys7jN2Fu1iDJuWKVNPhlgHfy_pj1DHFVKVhw"
-      short-id: "a1b2c3d4e5f6a7b8"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
-  - name: "🇵🇱 Poland [*CIDR]"
-    type: "vless"
-    server: "168.113.128.70"
-    port: 20103
-    uuid: "6eb642a2-f8ee-47cc-9c13-fabb0a50350d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "flatknot.net"
+    servername: "crm.hourtley.com"
     alpn:
-      - "h2"
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🇦🇹 Austria [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/stream/video/ffmpeg"
+      headers:
+        Host: "crm.hourtley.com"
+  - name: "🌐 Anycast-IP | 🇩🇪 🇷🇺 [*CIDR]"
     type: "vless"
-    server: "168.113.128.70"
-    port: 20104
-    uuid: "6eb642a2-f8ee-47cc-9c13-fabb0a50350d"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "softice.net"
+    servername: "content-iv1k.login.opendns.stream"
     alpn:
-      - "h2"
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🇵🇱 Poland [*CIDR] #2"
-    type: "vless"
-    server: "45.139.24.91"
-    port: 2083
-    uuid: "6eb642a2-f8ee-47cc-9c13-fabb0a50350d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "flatknot.net"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/sock/relay/007f9c12e265"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
   - name: "🇫🇮 Finland [*CIDR]"
     type: "vless"
     server: "83.171.241.244"
@@ -169,7 +144,22 @@ proxies:
       public-key: "TTRwt0Zvu8OWBLFTI3VQv7m8w01VAmRxtghhLIKuXXc"
       short-id: "69ca1a9ff751056f"
     network: "tcp"
-  - name: "🇦🇹 Austria [*CIDR] #2"
+  - name: "🇷🇺 Russia [*CIDR] #2"
+    type: "vless"
+    server: "vps2.nemnogogo.com"
+    port: 443
+    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
+    udp: true
+    tls: true
+    servername: "vps2.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
     server: "189.74.115.23"
     port: 443
@@ -214,16 +204,6 @@ proxies:
       public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
       short-id: "a5fe10fba46b8613"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19453
-    password: "190edece-2750-454c-b766-0570fc32deca"
-    udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
   - name: "🌐 Anycast-IP | 🇩🇪 🇳🇱 [*CIDR]"
     type: "hysteria2"
     server: "89.125.214.221"
@@ -239,20 +219,18 @@ proxy-groups:
     type: select
     proxies:
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🌐 Anycast-IP | 🇩🇪 🇷🇺 [*CIDR]"
-      - "🌐 Anycast-IP | 🇧🇬 [*CIDR] CDN"
+      - "🇧🇬 Bulgaria [*CIDR] CDN"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇺🇸 United States [*CIDR]"
       - "🇱🇻 Latvia [*CIDR]"
-      - "🇱🇻 Latvia [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇩🇪 🇪🇪 [*CIDR]"
-      - "🌐 Anycast-IP | 🇬🇧 [*CIDR]"
-      - "🇵🇱 Poland [*CIDR]"
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇵🇱 Poland [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇱 🇷🇺 [*CIDR]"
+      - "🌐 Anycast-IP | 🇩🇪 🇷🇺 [*CIDR]"
       - "🇫🇮 Finland [*CIDR]"
-      - "🇦🇹 Austria [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR]"
       - "🇸🇪 Sweden [*CIDR]"
       - "🇫🇷 France [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 [*CIDR]"
       - "🌐 Anycast-IP | 🇩🇪 🇳🇱 [*CIDR]"
 rules:
   - MATCH,PROXY
