@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 00:00:59 UTC
+# 2026-11-09 00:15:31 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #28"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -33,28 +33,11 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇱🇹 Lithuania — #20"
-    type: "vless"
-    server: "46.243.232.71"
-    port: 10018
-    uuid: "d9cc5c37-b53c-1131-b4e1-1b9f7fbea1b1"
-    udp: true
-    tls: true
-    servername: "6b9iw.guardora.pro"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "D0FqzTuVSzCF8IcFo64SFIpMsaGV47LW3el2GCCVoFY"
-      short-id: "c1a7e9b4711d5f60"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #28"
+      - "🇳🇱 The Netherlands — #30"
       - "🇧🇬 Bulgaria — #1"
-      - "🇱🇹 Lithuania — #20"
 rules:
   - MATCH,PROXY
