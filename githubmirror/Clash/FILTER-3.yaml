@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-09 05:45:31 UTC
+# 2026-11-09 06:00:57 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands — #28"
+  - name: "🇳🇱 The Netherlands — #22"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -18,64 +18,26 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "stechnostore.life"
-  - name: "🇬🇧 United Kingdom — #22"
+  - name: "🇳🇱 The Netherlands — #30"
     type: "vless"
-    server: "95.129.236.117"
+    server: "194.55.239.47"
     port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    uuid: "75d1a1e9-cc7c-000a-92c7-1357c6a37875"
     udp: true
     tls: true
-    servername: "cdn.dash.gearmonster.org"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "empanel.injlab.org"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/edge/node8/push"
-      headers:
-        Host: "cdn.dash.gearmonster.org"
-  - name: "🇳🇱 The Netherlands — #39"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
-  - name: "🇩🇪 Germany — #2"
-    type: "vless"
-    server: "95.129.236.239"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "content-iv1k.login.opendns.stream"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/sock/relay/007f9c12e265"
-      headers:
-        Host: "content-iv1k.login.opendns.stream"
+    reality-opts:
+      public-key: "1WWCm1gHVrghowSVLWlBq_ofcJThgEYUclB1oR22bBg"
+      short-id: "a870ef67d6260fa7"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands — #28"
-      - "🇬🇧 United Kingdom — #22"
-      - "🇳🇱 The Netherlands — #39"
-      - "🇩🇪 Germany — #2"
+      - "🇳🇱 The Netherlands — #22"
+      - "🇳🇱 The Netherlands — #30"
 rules:
   - MATCH,PROXY
