@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-09 16:30:50 UTC
+# 2026-11-09 16:38:41 UTC
 proxies:
   - name: "🇫🇮 [WL] Сервер 40"
     type: "vless"
@@ -210,6 +210,21 @@ proxies:
       public-key: "kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ"
       short-id: "58301280"
     network: "tcp"
+  - name: "🇦🇲 [WL] Сервер 3"
+    type: "vless"
+    server: "88.218.92.41"
+    port: 24694
+    uuid: "4ad3dbf5-2005-4d96-b56c-a0ca9905cab6"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "metrika.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "kaPztgo_2b2CKxytGWXzn6EauyNKr6Ho8xerGpSS-SQ"
+      short-id: "58301280"
+    network: "tcp"
   - name: "🇷🇺 [WL] Сервер 125"
     type: "vless"
     server: "213.226.127.71"
@@ -299,6 +314,21 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     network: "tcp"
+  - name: "🇸🇬 [WL] Сервер 9"
+    type: "vless"
+    server: "147.93.173.45"
+    port: 10444
+    uuid: "75c5f51b-d548-4eab-a26e-aa10fc3dbc7b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "video.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
   - name: "🇳🇱 [WL] Сервер 108"
     type: "vless"
     server: "213.171.12.11"
@@ -353,6 +383,22 @@ proxies:
     tls: true
     servername: "max.ru"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SCQ-mhDUvmeQzJvctQYDDSha1R_rggGFkWK_9IRuvH4"
+      short-id: "aabbccdd"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "api.v1.StreamService"
+  - name: "🌐 [WL] Сервер 61"
+    type: "vless"
+    server: "72.56.241.230"
+    port: 443
+    uuid: "88b744bb-8ac7-484e-a376-136193452a2c"
+    udp: true
+    tls: true
+    servername: "max.ru"
+    client-fingerprint: "random"
     skip-cert-verify: false
     reality-opts:
       public-key: "SCQ-mhDUvmeQzJvctQYDDSha1R_rggGFkWK_9IRuvH4"
@@ -479,28 +525,6 @@ proxies:
       public-key: "my0kaAJFk3-xpoZNZ0i-a8SsX7Y9fUP8bHsQILUK6hk"
       short-id: "18a1ed60"
     network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 73"
-    type: "vmess"
-    server: "158.160.180.165"
-    port: 24212
-    uuid: "c58c1205-b308-416f-8503-c04557abf93d"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "158.160.180.165"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 130"
-    type: "ss"
-    server: "195.133.5.107"
-    port: 18443
-    cipher: "aes-256-gcm"
-    password: "NTiHBg64fsY8u8DbGrtypD9gPGSL386p"
-    udp: true
 proxy-groups:
   - name: PROXY
     type: select
@@ -519,16 +543,19 @@ proxy-groups:
       - "🇫🇷 [WL] Сервер 30"
       - "🇩🇪 [WL] Сервер 96"
       - "🇦🇲 [WL] Сервер 2"
+      - "🇦🇲 [WL] Сервер 3"
       - "🇷🇺 [WL] Сервер 125"
       - "🇷🇺 [WL] Сервер 134"
       - "🇷🇺 [WL] Сервер 23"
       - "🇷🇸 [WL] Сервер 69"
       - "🇺🇸 [WL] Сервер 4"
       - "🇸🇬 [WL] Сервер 11"
+      - "🇸🇬 [WL] Сервер 9"
       - "🇳🇱 [WL] Сервер 108"
       - "🇳🇱 [WL] Сервер 86"
       - "🇳🇱 [WL] Сервер 26"
       - "🇷🇺 [WL] Сервер 62"
+      - "🌐 [WL] Сервер 61"
       - "🇧🇷 [WL] Сервер 103"
       - "🇫🇷 [WL] Сервер 22"
       - "🇷🇺 [WL] Сервер 88"
@@ -537,7 +564,5 @@ proxy-groups:
       - "🇷🇺 [WL] Сервер 31"
       - "🇷🇺 [WL] Сервер 126"
       - "🌐 [WL] Сервер 101"
-      - "🇷🇺 [WL] Сервер 73"
-      - "🇷🇺 [WL] Сервер 130"
 rules:
   - MATCH,PROXY

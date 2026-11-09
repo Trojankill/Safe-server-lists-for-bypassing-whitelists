@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-09 16:30:52 UTC
+# 2026-11-09 16:38:43 UTC
 proxies:
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
@@ -45,6 +45,21 @@ proxies:
       short-id: "a870ef67d6260fa7"
     network: "tcp"
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.55.239.47"
+    port: 443
+    uuid: "75d1a1e9-cc7c-0014-92c7-1357c6a37875"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "empanel.injlab.org"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1WWCm1gHVrghowSVLWlBq_ofcJThgEYUclB1oR22bBg"
+      short-id: "a870ef67d6260fa7"
+    network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "176.108.245.237"
     port: 443
@@ -133,6 +148,21 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "93ae75024604f796"
     network: "tcp"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "83.217.201.82"
+    port: 443
+    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "skvoz-dpi.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
+      short-id: "d1579a8745398e34"
+    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "89.125.214.221"
@@ -161,11 +191,13 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:

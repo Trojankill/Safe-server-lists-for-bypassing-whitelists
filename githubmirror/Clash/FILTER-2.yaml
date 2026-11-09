@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-09 16:30:50 UTC
+# 2026-11-09 16:38:41 UTC
 proxies:
   - name: "BUNKER 🖤 | Россия 🇷🇺 #166"
     type: "vless"
@@ -100,6 +100,21 @@ proxies:
     alpn:
       - "h2"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "VideoRenderer"
+  - name: "BUNKER 🖤 | Россия 🇷🇺 #62"
+    type: "vless"
+    server: "renderer-bridge-2-129.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    udp: true
+    tls: true
+    servername: "renderer-bridge-2-129.mirra.now"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -295,6 +310,21 @@ proxies:
       public-key: "QC03TEA8YdxpkQyJ8duwrqaP1dWAIlCjONzicWlWDjs"
       short-id: "b0d8f964b7ac8ac0"
     network: "tcp"
+  - name: "BUNKER 🖤 | Россия 🇷🇺 #115"
+    type: "vless"
+    server: "yt.orpheous.ru"
+    port: 443
+    uuid: "7d2bac5e-6ff9-45c9-844e-6bfc5a384a42"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yt.orpheous.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q"
+      short-id: "9e4eced6e98ed4d4"
+    network: "tcp"
   - name: "BUNKER 🖤 | Канада 🇨🇦 #173"
     type: "vless"
     server: "104.17.163.123"
@@ -434,6 +464,40 @@ proxies:
     reality-opts:
       public-key: "vZ22ThhkpXUd5-tY-v5TTrouLHjgYYmeQgqeLt7HRz0"
     network: "tcp"
+  - name: "BUNKER 🖤 | Россия 🇷🇺 #48"
+    type: "vless"
+    server: "185.229.9.135"
+    port: 443
+    uuid: "d8a47403-5dbf-4450-8640-0134719b1d86"
+    udp: true
+    tls: true
+    servername: "business.lesotorg-kirov.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/chws"
+      headers:
+        Host: "business.lesotorg-kirov.ru"
+  - name: "BUNKER 🖤 | Россия 🇷🇺 #79"
+    type: "vless"
+    server: "185.86.145.37"
+    port: 443
+    uuid: "e37ebf3b-ac32-48a8-8f56-d113967eaf29"
+    udp: true
+    tls: true
+    servername: "ara.rtkdvbr.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/amws"
+      headers:
+        Host: "ara.rtkdvbr.cc"
   - name: "BUNKER 🖤 | Нидерланды 🇳🇱 #21"
     type: "vless"
     server: "78.159.250.214"
@@ -540,7 +604,40 @@ proxies:
       path: "/notes/elm/sync-08a935fc"
       headers:
         Host: "app.elm.sanriodevgroup.org"
-  - name: "BUNKER 🖤 | Россия 🇷🇺 #44"
+  - name: "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #13"
+    type: "vmess"
+    server: "37.220.161.247"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #24"
+    type: "vmess"
+    server: "37.220.161.249"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #75"
     type: "vmess"
     server: "93.93.89.99"
     port: 443
@@ -559,72 +656,7 @@ proxies:
       path: "/api/v1/gpu-stream/socket"
       headers:
         Host: "renderer-stream-2-129.mirra.now"
-  - name: "BUNKER 🖤 | Россия 🇷🇺 #87"
-    type: "vmess"
-    server: "37.220.161.247"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "BUNKER 🖤 | Россия 🇷🇺 #104"
-    type: "vmess"
-    server: "37.220.161.249"
-    port: 443
-    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "renderer-stream-2-129.mirra.now"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/gpu-stream/socket"
-      headers:
-        Host: "renderer-stream-2-129.mirra.now"
-  - name: "BUNKER 🖤 | Канада 🇨🇦 #144"
-    type: "vmess"
-    server: "time.is"
-    port: 443
-    uuid: "b526926d-1474-4f41-985e-8b877cb840cd"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "time.is"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/"
-      headers:
-        Host: "shs111.kejixiaoqi666.store"
-  - name: "BUNKER 🖤 | Канада 🇨🇦 #200"
-    type: "vmess"
-    server: "www.shopify.com"
-    port: 443
-    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "guanwang.awsno.com"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/hls/cctv5phd.m3u8"
-      headers:
-        Host: "guanwang.awsno.com"
-  - name: "BUNKER 🖤 | Россия 🇷🇺 #43"
+  - name: "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #261"
     type: "vmess"
     server: "renderer-stream-2-129.mirra.now"
     port: 443
@@ -640,6 +672,56 @@ proxies:
       path: "/api/v1/gpu-stream/socket"
       headers:
         Host: "renderer-stream-2-129.mirra.now"
+  - name: "[OpenRay] 🌐XX-1200"
+    type: "vmess"
+    server: "renderer-stream-2-129.mirra.now"
+    port: 443
+    uuid: "27653b37-603c-4c90-b1f5-25c4d23f8932"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "renderer-stream-2-129.mirra.now"
+    alpn:
+      - "h2"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/gpu-stream/socket"
+      headers:
+        Host: "renderer-stream-2-129.mirra.now"
+  - name: "[OpenRay] 🌐XX-33"
+    type: "vmess"
+    server: "www.shopify.com"
+    port: 443
+    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "guanwang.awsno.com"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/hls/cctv5phd.m3u8"
+      headers:
+        Host: "guanwang.awsno.com"
+  - name: "🔥Join+Telegram:@Farah_VPN🟣 (6)"
+    type: "vmess"
+    server: "time.is"
+    port: 443
+    uuid: "b526926d-1474-4f41-985e-8b877cb840cd"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "time.is"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/"
+      headers:
+        Host: "shs111.kejixiaoqi666.store"
 proxy-groups:
   - name: PROXY
     type: select
@@ -651,6 +733,7 @@ proxy-groups:
       - "BUNKER 🖤 | Россия 🇷🇺 #86"
       - "BUNKER 🖤 | Россия 🇷🇺 #36"
       - "BUNKER 🖤 | Россия 🇷🇺 #66"
+      - "BUNKER 🖤 | Россия 🇷🇺 #62"
       - "BUNKER 🖤 | Нидерланды 🇳🇱 #88"
       - "BUNKER 🖤 | США 🇺🇸 #161"
       - "BUNKER 🖤 | Россия 🇷🇺 #167"
@@ -663,6 +746,7 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #239"
       - "BUNKER 🖤 | Германия 🇩🇪 #233"
       - "BUNKER 🖤 | Россия 🇷🇺 #112"
+      - "BUNKER 🖤 | Россия 🇷🇺 #115"
       - "BUNKER 🖤 | Канада 🇨🇦 #173"
       - "BUNKER 🖤 | Россия 🇷🇺 #71"
       - "BUNKER 🖤 | Россия 🇷🇺 #94"
@@ -672,6 +756,8 @@ proxy-groups:
       - "BUNKER 🖤 | Россия 🇷🇺 #27"
       - "BUNKER 🖤 | Россия 🇷🇺 #117"
       - "BUNKER 🖤 | Россия 🇷🇺 #141"
+      - "BUNKER 🖤 | Россия 🇷🇺 #48"
+      - "BUNKER 🖤 | Россия 🇷🇺 #79"
       - "BUNKER 🖤 | Нидерланды 🇳🇱 #21"
       - "BUNKER 🖤 | Россия 🇷🇺 #28"
       - "BUNKER 🖤 | Канада 🇨🇦 #160"
@@ -680,11 +766,12 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #194"
       - "BUNKER 🖤 | США 🇺🇸 #212"
       - "BUNKER 🖤 | Россия 🇷🇺 #63"
-      - "BUNKER 🖤 | Россия 🇷🇺 #44"
-      - "BUNKER 🖤 | Россия 🇷🇺 #87"
-      - "BUNKER 🖤 | Россия 🇷🇺 #104"
-      - "BUNKER 🖤 | Канада 🇨🇦 #144"
-      - "BUNKER 🖤 | Канада 🇨🇦 #200"
-      - "BUNKER 🖤 | Россия 🇷🇺 #43"
+      - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #13"
+      - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #24"
+      - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #75"
+      - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #261"
+      - "[OpenRay] 🌐XX-1200"
+      - "[OpenRay] 🌐XX-33"
+      - "🔥Join+Telegram:@Farah_VPN🟣 (6)"
 rules:
   - MATCH,PROXY
