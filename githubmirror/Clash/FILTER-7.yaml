@@ -1,0 +1,73 @@
+# clash/mihomo subscription
+# 2026-11-09 08:47:18 UTC
+proxies:
+  - name: "[KrolekVPNReborn] Russia 🇷🇺 | YouTube"
+    type: "vless"
+    server: "yoy-api.bachidze.com"
+    port: 443
+    uuid: "3bb97d46-789b-4229-88f6-9beb222a4137"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yoy-api.bachidze.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Europe 🇪🇺 | Антиглушилка"
+    type: "vless"
+    server: "87.242.95.190"
+    port: 7443
+    uuid: "68a67906-5b37-4779-a6cc-58a1655f18b4"
+    udp: true
+    tls: true
+    servername: "orbdash.fun"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "sj9jXacuSqKItqV-mBbv7O-puk3RX5stKYTSCG2y6ic"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "media.v1.Relay78bc"
+  - name: "[KrolelVPNReborn] Poland 🇵🇱 | Wi-Fi №2"
+    type: "vless"
+    server: "83.171.241.153"
+    port: 443
+    uuid: "bda6e235-c778-4e57-bfcd-5a9026fec8c9"
+    udp: true
+    tls: true
+    servername: "d58daft.plp1.h1cloud.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
+      short-id: "a91531ad58c8611c"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Germany 🇩🇪 | Игровой №6"
+    type: "hysteria2"
+    server: "185.121.179.146"
+    port: 5443
+    password: "68a67906-5b37-4779-a6cc-58a1655f18b4"
+    udp: true
+    sni: "hsale.locallynet.org"
+    skip-cert-verify: false
+  - name: "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
+    type: "hysteria2"
+    server: "13.143.189.102"
+    port: 4444
+    password: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
+    udp: true
+    sni: "pl1.nexfile.net"
+    skip-cert-verify: false
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "[KrolekVPNReborn] Russia 🇷🇺 | YouTube"
+      - "[KrolekVPNReborn] Europe 🇪🇺 | Антиглушилка"
+      - "[KrolelVPNReborn] Poland 🇵🇱 | Wi-Fi №2"
+      - "[KrolekVPNReborn] Germany 🇩🇪 | Игровой №6"
+      - "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
+rules:
+  - MATCH,PROXY
