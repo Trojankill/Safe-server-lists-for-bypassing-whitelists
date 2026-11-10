@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-10 17:30:50 UTC
+# 2026-11-10 17:45:34 UTC
 proxies:
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
@@ -14,6 +14,36 @@ proxies:
       - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
+    network: "tcp"
+  - name: "141.133.180.203:2058"
+    type: "vless"
+    server: "141.133.180.203"
+    port: 2058
+    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
+      short-id: "937255313d6ce673"
+    network: "tcp"
+  - name: "141.133.180.206:2058"
+    type: "vless"
+    server: "141.133.180.206"
+    port: 2058
+    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
+      short-id: "937255313d6ce673"
     network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -236,6 +266,8 @@ proxy-groups:
     type: select
     proxies:
       - "🏴 Неизвестный [#РКП]"
+      - "141.133.180.203:2058"
+      - "141.133.180.206:2058"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
