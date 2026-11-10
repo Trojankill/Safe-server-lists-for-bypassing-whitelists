@@ -1,6 +1,55 @@
 # clash/mihomo subscription
-# 2026-11-10 07:01:01 UTC
+# 2026-11-10 07:15:36 UTC
 proxies:
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.221.213.223"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "fr.file-obmen.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/assets/sync-6d2f4a"
+      headers:
+        Host: "fr.file-obmen.top"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "95.163.232.240"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "files.neurixai.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "files.neurixai.app"
+  - name: "🏴 Неизвестный [#РКП]"
+    type: "vless"
+    server: "45.151.101.151"
+    port: 8444
+    uuid: "03440720-a4ee-4dfe-917a-e699cedadead"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "amazon.com"
+    client-fingerprint: "random"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "XAgtlMYY1aqEH5wud540D7lPIokZOgkpHy2ch-DS0DM"
+      short-id: "3805"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.147.27.23"
@@ -46,7 +95,22 @@ proxies:
       public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
       short-id: "76132b3b39704c44"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.147.27.23"
+    port: 2087
+    uuid: "295ab2f8-7d29-4f71-a907-d8d2e74b2a26"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "uk1.hat.onl"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
+      short-id: "76132b3b39704c44"
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #2"
     type: "vless"
     server: "185.118.66.73"
     port: 443
@@ -61,7 +125,67 @@ proxies:
       public-key: "xaD7WtAxvUIk-jejeLGqRGL3BTFEjqbhVFmfax05-1k"
       short-id: "201c6c6962533519"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "407ae235-c609-4444-86c1-43896569398f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.108.245.237"
+    port: 443
+    uuid: "87c35d3a-36f1-fade-90b7-af60506efbb8"
+    udp: true
+    tls: true
+    servername: "tfusq-ru-40sb.fade.mom"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #3"
+    type: "vless"
+    server: "188.225.35.186"
+    port: 8005
+    uuid: "a88f8516-c843-4099-ac58-1875f503b1bb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "sh-pl2.baboon.digital"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xCzzkA_jU8dOnTEau0ZeZSs_sk8UO8mG0-Im1Koht2A"
+      short-id: "d295a38037c9d8cc"
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #4"
     type: "vless"
     server: "212.41.9.190"
     port: 8443
@@ -77,7 +201,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "cas-za"
-  - name: "🏴 Неизвестный [#РКП] #3"
+  - name: "🏴 Неизвестный [#РКП] #5"
+    type: "vless"
+    server: "31.129.42.14"
+    port: 2053
+    uuid: "de496cfe-2b07-441a-b5e5-658d9b2128df"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "germany.hshp.onkno.ru"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Y4pAWkxIJInwJocdDzx86X3tp0EMLpwjLr2dkWvdyF4"
+      short-id: "9026bba1283405c4"
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #6"
     type: "vless"
     server: "141.133.184.53"
     port: 443
@@ -92,6 +231,36 @@ proxies:
       public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
       short-id: "88086e66870f03e6"
     network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #7"
+    type: "vless"
+    server: "141.133.184.54"
+    port: 443
+    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "13.143.195.113.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
+    network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.67.125.188"
+    port: 443
+    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us1.serverslocal.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
+      short-id: "b5ea2877aadeb97c"
+    network: "tcp"
   - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "83.217.201.82"
@@ -105,7 +274,7 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
-      short-id: "93ae75024604f796"
+      short-id: "64c1fe36c7846400"
     network: "tcp"
   - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
     type: "vless"
@@ -120,9 +289,53 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
+      short-id: "93ae75024604f796"
+    network: "tcp"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "83.217.201.82"
+    port: 443
+    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "skvoz-dpi.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "d1579a8745398e34"
     network: "tcp"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "138.16.201.42"
+    port: 443
+    uuid: "ec1c883a-19e5-0004-8567-a7de5c7ebeb0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "lp.astralweb.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
+      short-id: "496ee75c2f91f51d"
+    network: "tcp"
+  - name: "🏴 Неизвестный [#РКП] #8"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "f6f013a3-abe6-49ad-aeb8-070fa49271c5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
     type: "hysteria2"
     server: "46.8.97.88"
     port: 443
@@ -132,18 +345,43 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇬🇧 Великобритания [#РКП]"
+    type: "hysteria2"
+    server: "94.228.172.122"
+    port: 443
+    password: "9ec5a6c1-5f9e-45ec-94f0-07fa5969745c"
+    udp: true
+    sni: "rkmsosi.vestrium.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🏴 Неизвестный [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП] #3"
+      - "🏴 Неизвестный [#РКП] #4"
+      - "🏴 Неизвестный [#РКП] #5"
+      - "🏴 Неизвестный [#РКП] #6"
+      - "🏴 Неизвестный [#РКП] #7"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🏴 Неизвестный [#РКП] #8"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
+      - "🇬🇧 Великобритания [#РКП]"
 rules:
   - MATCH,PROXY
