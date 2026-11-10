@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-10 07:30:48 UTC
+# 2026-11-10 07:45:33 UTC
 proxies:
   - name: "🇫🇷 France | 🌐 [*CIDR]"
     type: "vless"
@@ -18,35 +18,54 @@ proxies:
       path: "/assets/sync-6d2f4a"
       headers:
         Host: "fr.file-obmen.top"
-  - name: "🇸🇪 Sweden [*CIDR]"
+  - name: "🇬🇧 United Kingdom [*CIDR]"
     type: "vless"
-    server: "reg7.gorodokmedia.com"
+    server: "95.163.232.240"
     port: 443
-    uuid: "300eb7f5-1f70-4979-9230-edd0db37b9ab"
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "reg7.gorodokmedia.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "xaD7WtAxvUIk-jejeLGqRGL3BTFEjqbhVFmfax05-1k"
-      short-id: "201c6c6962533519"
-    network: "tcp"
-  - name: "🇱🇻 Latvia [*CIDR]"
-    type: "vless"
-    server: "direct.vpndoctor.top"
-    port: 443
-    uuid: "63a94dc2-8fc8-4427-b8a1-b4abe2bd051c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "direct.vpndoctor.top"
+    servername: "files.neurixai.app"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "files.neurixai.app"
+  - name: "🇬🇧 United Kingdom [*CIDR] #2"
+    type: "vless"
+    server: "files.neurixai.app"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "files.neurixai.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "files.neurixai.app"
+  - name: "🇪🇪 Estonia [*CIDR] YA"
+    type: "vless"
+    server: "158.160.190.15"
+    port: 8443
+    uuid: "50ed9601-ebd4-4ba7-a234-ffe642d351cd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "random"
+    skip-cert-verify: false
     reality-opts:
-      public-key: "QPmrizvOUCOOIvlupGnt1reR5bui3U8EZl00VHU4GRA"
-      short-id: "3f9537eb0626292b"
+      public-key: "GtR_ZuUkKAvY22-mOhrGYK0eyzliFCrZkoqFV7BfjHg"
+      short-id: "335cb6cbe00da58b"
     network: "tcp"
   - name: "🇺🇸 United States | 🌐 [*CIDR]"
     type: "vless"
@@ -78,14 +97,67 @@ proxies:
       public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
       short-id: "496ee75c2f91f51d"
     network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR] #2"
+    type: "vless"
+    server: "lp.astralweb.tech"
+    port: 443
+    uuid: "ec1c883a-19e5-0004-8567-a7de5c7ebeb0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "lp.astralweb.tech"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
+      short-id: "496ee75c2f91f51d"
+    network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR] #3"
+    type: "vless"
+    server: "lp.astralweb.tech"
+    port: 443
+    uuid: "ec1c883a-19e5-0004-8567-a7de5c7ebeb0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "lp.astralweb.tech"
+    client-fingerprint: "random"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
+      short-id: "496ee75c2f91f51d"
+    network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR] #4"
+    type: "hysteria2"
+    server: "vieee.observation.today"
+    port: 443
+    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
+    udp: true
+    sni: "vie.observation.today"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇩🇪 Germany [*CIDR] #5"
+    type: "hysteria2"
+    server: "vieee.observation.today"
+    port: 443
+    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
+    udp: true
+    sni: "vie.observation.today"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇫🇷 France | 🌐 [*CIDR]"
-      - "🇸🇪 Sweden [*CIDR]"
-      - "🇱🇻 Latvia [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] #2"
+      - "🇪🇪 Estonia [*CIDR] YA"
       - "🇺🇸 United States | 🌐 [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
+      - "🇩🇪 Germany [*CIDR] #2"
+      - "🇩🇪 Germany [*CIDR] #3"
+      - "🇩🇪 Germany [*CIDR] #4"
+      - "🇩🇪 Germany [*CIDR] #5"
 rules:
   - MATCH,PROXY
