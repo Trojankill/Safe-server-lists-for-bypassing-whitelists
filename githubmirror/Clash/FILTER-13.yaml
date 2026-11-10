@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-10 00:01:00 UTC
+# 2026-11-10 00:15:32 UTC
 proxies:
-  - name: "cool [white] 🌐 |#29|"
+  - name: "cool [white] 🌐 |#4|"
     type: "vless"
     server: "104.17.70.206"
     port: 8443
@@ -18,7 +18,7 @@ proxies:
       path: "/"
       headers:
         Host: "free.sahanwickramasinghe.com"
-  - name: "cool [white] 🌐 |#26|"
+  - name: "cool [white] 🌐 |#78|"
     type: "trojan"
     server: "104.17.10.171"
     port: 443
@@ -32,7 +32,7 @@ proxies:
       path: "/"
       headers:
         Host: "ltf8.jueson.de5.net"
-  - name: "cool [white] 🌐 |#20|"
+  - name: "cool [white] 🌐 |#25|"
     type: "trojan"
     server: "188.114.98.0"
     port: 443
@@ -49,7 +49,7 @@ proxies:
         Host: "ltf8.jueson.de5.net"
   - name: "🇺🇸 United States, Chicago | 🌐 | [BL]"
     type: "vmess"
-    server: "104.27.0.1"
+    server: "104.17.136.198"
     port: 443
     uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
     alterId: 0
@@ -64,6 +64,38 @@ proxies:
       headers:
         Host: "vmess.lbw666.dpdns.org"
   - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #2"
+    type: "vmess"
+    server: "104.21.7.133"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #3"
+    type: "vmess"
+    server: "104.27.0.1"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #4"
     type: "vmess"
     server: "104.27.0.1"
     port: 443
@@ -82,7 +114,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #3"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #5"
     type: "vmess"
     server: "172.64.229.21"
     port: 443
@@ -98,7 +130,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #4"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #6"
     type: "vmess"
     server: "172.66.0.1"
     port: 443
@@ -114,7 +146,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #5"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #7"
     type: "vmess"
     server: "172.66.203.67"
     port: 443
@@ -130,7 +162,7 @@ proxies:
       path: "/ws"
       headers:
         Host: "vmess.lbw666.dpdns.org"
-  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #6"
+  - name: "🇺🇸 United States, Chicago | 🌐 | [BL] #8"
     type: "vmess"
     server: "cf.0sm.com"
     port: 443
@@ -150,14 +182,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "cool [white] 🌐 |#29|"
-      - "cool [white] 🌐 |#26|"
-      - "cool [white] 🌐 |#20|"
+      - "cool [white] 🌐 |#4|"
+      - "cool [white] 🌐 |#78|"
+      - "cool [white] 🌐 |#25|"
       - "🇺🇸 United States, Chicago | 🌐 | [BL]"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #2"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #3"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #4"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #5"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #6"
+      - "🇺🇸 United States, Chicago | 🌐 | [BL] #7"
+      - "🇺🇸 United States, Chicago | 🌐 | [BL] #8"
 rules:
   - MATCH,PROXY
