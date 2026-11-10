@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-10 13:45:33 UTC
+# 2026-11-10 14:01:00 UTC
 proxies:
   - name: "🇺🇸 United States — #98"
     type: "vless"
@@ -15,6 +15,21 @@ proxies:
     reality-opts:
       public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
       short-id: "0990d22f"
+    network: "tcp"
+  - name: "🇷🇴 Romania — #72"
+    type: "vless"
+    server: "91.215.40.106"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "q.krevetkabs111.net"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_BEKGm4aogfkeqroLplieJ58hk4IlNHFP5cWd0oiO0M"
+      short-id: "066ca0781110293d"
     network: "tcp"
   - name: "🇬🇧 United Kingdom — #24"
     type: "vless"
@@ -48,7 +63,7 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     network: "tcp"
-  - name: "🇵🇱 Poland — #63"
+  - name: "🇵🇱 Poland — #62"
     type: "vless"
     server: "82.118.22.161"
     port: 443
@@ -116,7 +131,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "xsKg-Qi8sZNRRaNf6svIUwSw6iMdOTc6Cl82inZFM1Y"
@@ -285,7 +300,7 @@ proxies:
       public-key: "StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE"
       short-id: "19296c9f1bf9c7b1"
     network: "tcp"
-  - name: "🇷🇴 Romania — #70"
+  - name: "🇷🇴 Romania — #69"
     type: "vless"
     server: "46.28.67.55"
     port: 443
@@ -335,9 +350,10 @@ proxy-groups:
     type: select
     proxies:
       - "🇺🇸 United States — #98"
+      - "🇷🇴 Romania — #72"
       - "🇬🇧 United Kingdom — #24"
       - "🇱🇻 Latvia — #34"
-      - "🇵🇱 Poland — #63"
+      - "🇵🇱 Poland — #62"
       - "🇺🇸 United States — #78"
       - "🇸🇪 Sweden — #73"
       - "🇪🇸 Spain — #16"
@@ -353,7 +369,7 @@ proxy-groups:
       - "🇩🇪 Germany — #8"
       - "🇨🇦 Canada — #1"
       - "🇺🇸 United States — #84"
-      - "🇷🇴 Romania — #70"
+      - "🇷🇴 Romania — #69"
       - "🇮🇹 Italy — #31"
       - "🇫🇷 France — #19"
 rules:
