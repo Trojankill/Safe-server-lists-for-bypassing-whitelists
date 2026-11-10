@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-10 21:45:35 UTC
+# 2026-11-10 22:00:58 UTC
 proxies:
-  - name: "95.163.232.240:443"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "95.163.232.240"
     port: 443
@@ -18,7 +18,37 @@ proxies:
       path: "/api/generate"
       headers:
         Host: "api.neuroblur.top"
-  - name: "185.86.147.175:443"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "141.133.180.203"
+    port: 2058
+    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
+      short-id: "937255313d6ce673"
+    network: "tcp"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "141.133.180.206"
+    port: 2058
+    uuid: "4ad9f982-b56a-444a-9684-35ce51307a36"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
+      short-id: "937255313d6ce673"
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.147.175"
     port: 443
@@ -35,21 +65,7 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "176.108.245.237:443"
-    type: "vless"
-    server: "176.108.245.237"
-    port: 443
-    uuid: "87c35d3a-36f1-fade-90b7-af60506efbb8"
-    udp: true
-    tls: true
-    servername: "tfusq-ru-40sb.fade.mom"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "194.67.125.188:443"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "194.67.125.188"
     port: 443
@@ -64,7 +80,7 @@ proxies:
       public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
       short-id: "b5ea2877aadeb97c"
     network: "tcp"
-  - name: "83.217.201.82:443"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "83.217.201.82"
     port: 443
@@ -79,7 +95,7 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "64c1fe36c7846400"
     network: "tcp"
-  - name: "83.217.201.82:443 #2"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "83.217.201.82"
     port: 443
@@ -94,31 +110,16 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "93ae75024604f796"
     network: "tcp"
-  - name: "83.217.201.82:443 #3"
-    type: "vless"
-    server: "83.217.201.82"
-    port: 443
-    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "skvoz-dpi.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
-      short-id: "d1579a8745398e34"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "95.163.232.240:443"
-      - "185.86.147.175:443"
-      - "176.108.245.237:443"
-      - "194.67.125.188:443"
-      - "83.217.201.82:443"
-      - "83.217.201.82:443 #2"
-      - "83.217.201.82:443 #3"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
