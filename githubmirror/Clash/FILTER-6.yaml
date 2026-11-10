@@ -1,9 +1,26 @@
 # clash/mihomo subscription
-# 2026-11-10 14:15:34 UTC
+# 2026-11-10 14:30:50 UTC
 proxies:
   - name: "🇬🇧 United Kingdom | [*CIDR]"
     type: "vless"
     server: "95.163.232.240"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "files.neurixai.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "files.neurixai.app"
+  - name: "🇬🇧 United Kingdom [*CIDR]"
+    type: "vless"
+    server: "files.neurixai.app"
     port: 443
     uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
     udp: true
@@ -18,38 +35,6 @@ proxies:
       path: "/api/generate"
       headers:
         Host: "files.neurixai.app"
-  - name: "🇬🇧 United Kingdom | [*CIDR] #2"
-    type: "vless"
-    server: "files.neurixai.app"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "files.neurixai.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/generate"
-      headers:
-        Host: "files.neurixai.app"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "vps3.nemnogogo.com"
-    port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
-    udp: true
-    tls: true
-    servername: "vps3.nemnogogo.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "rus2.qik-server.uk"
@@ -65,85 +50,12 @@ proxies:
     client-fingerprint: "edge"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "46.161.14.13"
-    port: 443
-    uuid: "798ab01c-eb0f-4e1e-9a99-a486ca4eaaf3"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "vkuseraudio.com"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "wj4JJuI6yc1jICZFE3vGZjFP5Js4RyvaSIRKFNVSsB0"
-      short-id: "5dffebe33d1e36"
-    network: "tcp"
-  - name: "🇫🇷 France | [*CIDR]"
-    type: "vless"
-    server: "37.230.113.66"
-    port: 443
-    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "213.176.73.4.sslip.io"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
-      short-id: "a5fe10fba46b8613"
-    network: "tcp"
-  - name: "🇫🇮 Finland [*CIDR]"
-    type: "hysteria2"
-    server: "46.8.97.88"
-    port: 443
-    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
-    udp: true
-    sni: "vie.observation.today"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇫🇮 Finland [*CIDR] #2"
-    type: "hysteria2"
-    server: "46.8.97.88"
-    port: 443
-    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
-    udp: true
-    sni: "vie.observation.today"
-    skip-cert-verify: false
-  - name: "🇫🇮 Finland [*CIDR] #3"
-    type: "hysteria2"
-    server: "vieee.observation.today"
-    port: 443
-    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
-    udp: true
-    sni: "vie.observation.today"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇫🇮 Finland [*CIDR] #4"
-    type: "hysteria2"
-    server: "vieee.observation.today"
-    port: 443
-    password: "5646b5cf-9844-446f-80cf-ccdefb1ba23a"
-    udp: true
-    sni: "vie.observation.today"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇬🇧 United Kingdom | [*CIDR]"
-      - "🇬🇧 United Kingdom | [*CIDR] #2"
-      - "🇷🇺 Russia | [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
-      - "🇺🇸 United States | 🌐 | [*CIDR]"
-      - "🇫🇷 France | [*CIDR]"
-      - "🇫🇮 Finland [*CIDR]"
-      - "🇫🇮 Finland [*CIDR] #2"
-      - "🇫🇮 Finland [*CIDR] #3"
-      - "🇫🇮 Finland [*CIDR] #4"
 rules:
   - MATCH,PROXY
