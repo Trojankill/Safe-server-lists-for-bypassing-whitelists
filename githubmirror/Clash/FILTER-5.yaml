@@ -1,22 +1,244 @@
 # clash/mihomo subscription
-# 2026-11-10 17:45:32 UTC
+# 2026-11-10 18:00:58 UTC
 proxies:
-  - name: "Russia | promo-digital.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | api.neuroblur.top | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.147.27.23"
-    port: 30106
-    uuid: "17923e69-98e0-4952-a599-9c848c1b8ffe"
+    server: "95.163.232.240"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "api.neuroblur.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "api.neuroblur.top"
+  - name: "Russia | files.neurixai.app | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "95.163.232.240"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    servername: "files.neurixai.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/generate"
+      headers:
+        Host: "files.neurixai.app"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    network: "tcp"
+  - name: "The Netherlands | promo-digital.wb.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "94.183.164.92"
+    port: 443
+    uuid: "155fd9d4-e1f9-44b3-99b6-6d2c389ade88"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
     servername: "promo-digital.wb.ru"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "PfG1V1-ODHD8CegoTVg8m4G4mw5S1QiA751yWKCkhBc"
       short-id: "054602d818379876"
     network: "tcp"
-  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+  - name: "Russia | rus2.qik-server.uk | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.76.241.84"
+    port: 443
+    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rus2.qik-server.uk"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "Russia | geexit.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "407ae235-c609-4444-86c1-43896569398f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "Singapore | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "147.93.173.45"
+    port: 10444
+    uuid: "75c5f51b-d548-4eab-a26e-aa10fc3dbc7b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "video.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
+  - name: "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "78.159.245.40"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
+  - name: "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.216.182.59"
+    port: 443
+    uuid: "95d0e214-eab0-4701-93ed-fea4f1b56062"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tickets.betust.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TRaUsnzFf-AhWUuW4RQUQOBYTdM-qJdLDTTkzQNkcRw"
+      short-id: "f70764f8"
+    network: "tcp"
+  - name: "Poland | ads.x5.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.32.6.211"
+    port: 443
+    uuid: "a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a"
+    udp: true
+    tls: true
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho"
+      short-id: "2f49bccf11150ef2"
+    network: "tcp"
+  - name: "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "45.38.143.210"
+    port: 30584
+    uuid: "cebc5f19-18d9-48e6-9029-fb4b04caf393"
+    udp: true
+    tls: true
+    servername: "m.vk.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
+      short-id: "67ece882d65d0f1a"
+    network: "tcp"
+  - name: "Finland | home.asperwild.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.242.247.66"
+    port: 443
+    uuid: "cf1b08a7-55b7-4241-b80a-c59116272b43"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "home.asperwild.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DXc-l15XMaLM1zoeGdtkZd-1MymTHrnplcEHxyDvLRQ"
+      short-id: "d9dbc840ce42cd95"
+    network: "tcp"
+  - name: "Iran | www.cloudflare.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.211.57.168"
+    port: 48312
+    uuid: "f47057d5-120d-4b42-b6d6-30469aef6813"
+    udp: true
+    tls: true
+    servername: "www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "d9eM_jy8ztZrOf3DMq1m55VQSo7bnKcG1dRnO9ktJ2Y"
+      short-id: "902c315efc"
+    network: "http"
+    http-opts:
+      method: "GET"
+      path:
+        - "/"
+  - name: "Russia | geexit.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "f6f013a3-abe6-49ad-aeb8-070fa49271c5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "United States | cdn.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+    type: "trojan"
+    server: "216.152.155.50"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "cdn.nextjobopportunityandclaimyouridealrole.com"
+    skip-cert-verify: false
+  - name: "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -39,8 +261,23 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "Russia | promo-digital.wb.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+      - "Russia | api.neuroblur.top | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | files.neurixai.app | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | promo-digital.wb.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | rus2.qik-server.uk | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | geexit.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Singapore | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Germany | tickets.betust.net | TCP | [#LSO - #LinSpisokObhod]"
+      - "Poland | ads.x5.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Finland | home.asperwild.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Iran | www.cloudflare.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | geexit.atlanta-games.com | unknown | [#LSO - #LinSpisokObhod] #2"
+      - "United States | cdn.nextjobopportunityandclaimyouridealrole.com | unknown | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 1 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
