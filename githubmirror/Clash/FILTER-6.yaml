@@ -1,95 +1,52 @@
 # clash/mihomo subscription
-# 2026-11-10 23:30:47 UTC
+# 2026-11-10 23:45:31 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "vps3.nemnogogo.com"
-    port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
-    udp: true
-    tls: true
-    servername: "vps3.nemnogogo.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
-    type: "vless"
-    server: "vps3.nemnogogo.com"
-    port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
-    udp: true
-    tls: true
-    servername: "vps3.nemnogogo.com"
-    alpn:
-      - "h2"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "185.76.241.84"
+    server: "vps3.nemnogogo.com"
     port: 443
-    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rus2.qik-server.uk"
+    servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
-      - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "ios"
     skip-cert-verify: false
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
   - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
-    server: "rus2.qik-server.uk"
+    server: "vps3.nemnogogo.com"
     port: 443
-    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rus2.qik-server.uk"
+    servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR] #3"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇳🇱 The Netherlands [*CIDR] VK"
     type: "vless"
-    server: "rus2.qik-server.uk"
+    server: "bhjolq0d0l.flowersgood.top"
     port: 443
-    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rus2.qik-server.uk"
+    servername: "bhjolq0d0l.flowersgood.top"
     alpn:
-      - "h2"
       - "http/1.1"
     skip-cert-verify: false
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "141.133.187.60"
-    port: 443
-    uuid: "930fa247-a708-454d-a463-a5562cee642f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
     port: 443
@@ -105,32 +62,13 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
-  - name: "🇷🇺 Russia [*CIDR] #4"
-    type: "vless"
-    server: "vps2.nemnogogo.com"
-    port: 443
-    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
-    udp: true
-    tls: true
-    servername: "vps2.nemnogogo.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
-      - "🇷🇺 Russia [*CIDR] #3"
+      - "🇳🇱 The Netherlands [*CIDR] VK"
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
-      - "🇷🇺 Russia [*CIDR] #4"
 rules:
   - MATCH,PROXY
