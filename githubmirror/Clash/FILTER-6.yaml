@@ -1,77 +1,89 @@
 # clash/mihomo subscription
-# 2026-11-10 19:01:00 UTC
+# 2026-11-10 19:15:33 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom [*CIDR]"
-    type: "vless"
-    server: "95.163.232.240"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "files.neurixai.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/generate"
-      headers:
-        Host: "files.neurixai.app"
-  - name: "🇬🇧 United Kingdom [*CIDR] #2"
-    type: "vless"
-    server: "files.neurixai.app"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "files.neurixai.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/generate"
-      headers:
-        Host: "files.neurixai.app"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "vps3.nemnogogo.com"
+    server: "185.76.241.84"
     port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
     udp: true
     tls: true
-    servername: "vps3.nemnogogo.com"
+    flow: "xtls-rprx-vision"
+    servername: "rus2.qik-server.uk"
     alpn:
       - "h2"
-    client-fingerprint: "safari"
+      - "http/1.1"
+    client-fingerprint: "qq"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
-  - name: "🇷🇺 Russia | [*CIDR]"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
-    server: "vps2.nemnogogo.com"
+    server: "rus2.qik-server.uk"
     port: 443
-    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
+    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
     udp: true
     tls: true
-    servername: "vps2.nemnogogo.com"
+    flow: "xtls-rprx-vision"
+    servername: "rus2.qik-server.uk"
     alpn:
       - "h2"
+      - "http/1.1"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
+    network: "tcp"
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "141.133.187.55"
+    port: 443
+    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "31.76.7.128.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "vless"
+    server: "141.133.187.60"
+    port: 443
+    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "13.143.195.113.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
+    network: "tcp"
+  - name: "🇸🇪 Sweden [*CIDR]"
+    type: "vless"
+    server: "37.230.114.112"
+    port: 443
+    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "31.76.3.187.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
+      short-id: "db71028aeb67289c"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom [*CIDR]"
-      - "🇬🇧 United Kingdom [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇸🇪 Sweden [*CIDR]"
 rules:
   - MATCH,PROXY
