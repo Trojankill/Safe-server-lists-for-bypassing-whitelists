@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-10 08:15:34 UTC
+# 2026-11-10 08:30:49 UTC
 proxies:
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -156,6 +156,20 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.83.45"
+    port: 11113
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.245.237"
@@ -170,6 +184,21 @@ proxies:
     client-fingerprint: "qq"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "188.246.224.220"
+    port: 443
+    uuid: "a2800cd8-853f-4811-b89d-6a862c44896a"
+    udp: true
+    tls: true
+    servername: "resurrected.warriorofblacksun.run"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Ww_HS9_n7ob3uESSXtbU23EPM-BOJ5ZYLp-RFB0L0SY"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "xyz"
   - name: "🏴 Неизвестный [#РКП] #3"
     type: "vless"
     server: "188.225.35.186"
@@ -215,51 +244,6 @@ proxies:
     reality-opts:
       public-key: "Y4pAWkxIJInwJocdDzx86X3tp0EMLpwjLr2dkWvdyF4"
       short-id: "9026bba1283405c4"
-    network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #6"
-    type: "vless"
-    server: "141.133.184.53"
-    port: 443
-    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.7.128.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #7"
-    type: "vless"
-    server: "141.133.184.54"
-    port: 443
-    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "194.67.125.188"
-    port: 443
-    uuid: "e16df0bb-a139-4615-b33f-9b6702906bbc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "us1.serverslocal.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
-      short-id: "b5ea2877aadeb97c"
     network: "tcp"
   - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -321,7 +305,7 @@ proxies:
       public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
       short-id: "496ee75c2f91f51d"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #8"
+  - name: "🏴 Неизвестный [#РКП] #6"
     type: "vless"
     server: "185.22.234.20"
     port: 443
@@ -369,18 +353,17 @@ proxy-groups:
       - "🏴 Неизвестный [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП] #3"
       - "🏴 Неизвестный [#РКП] #4"
       - "🏴 Неизвестный [#РКП] #5"
-      - "🏴 Неизвестный [#РКП] #6"
-      - "🏴 Неизвестный [#РКП] #7"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-      - "🏴 Неизвестный [#РКП] #8"
+      - "🏴 Неизвестный [#РКП] #6"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
       - "🇬🇧 Великобритания [#РКП]"
 rules:
