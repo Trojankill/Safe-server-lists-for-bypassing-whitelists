@@ -1,6 +1,35 @@
 # clash/mihomo subscription
-# 2026-11-10 21:15:35 UTC
+# 2026-11-10 21:30:47 UTC
 proxies:
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "vps3.nemnogogo.com"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    udp: true
+    tls: true
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+    type: "vless"
+    server: "vps3.nemnogogo.com"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    udp: true
+    tls: true
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "185.76.241.84"
@@ -31,20 +60,19 @@ proxies:
     client-fingerprint: "edge"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR] #3"
     type: "vless"
-    server: "141.133.187.55"
+    server: "rus2.qik-server.uk"
     port: 443
-    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "31.76.7.128.sslip.io"
-    client-fingerprint: "firefox"
+    servername: "rus2.qik-server.uk"
+    alpn:
+      - "h2"
+      - "http/1.1"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
     network: "tcp"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
@@ -55,35 +83,54 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
       short-id: "8238d76df92c2560"
     network: "tcp"
-  - name: "🇸🇪 Sweden [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
-    server: "37.230.114.112"
+    server: "chat.gpt.prem-ai.shop"
     port: 443
-    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.3.187.sslip.io"
-    client-fingerprint: "firefox"
+    servername: "chat.gpt.prem-ai.shop"
+    alpn:
+      - "http/1.1"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
+      headers:
+        Host: "chat.gpt.prem-ai.shop"
+  - name: "🇷🇺 Russia [*CIDR] #4"
+    type: "vless"
+    server: "vps2.nemnogogo.com"
+    port: 443
+    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
+    udp: true
+    tls: true
+    servername: "vps2.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
-      - "🇨🇿 Czechia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #3"
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇸🇪 Sweden [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] #4"
 rules:
   - MATCH,PROXY
