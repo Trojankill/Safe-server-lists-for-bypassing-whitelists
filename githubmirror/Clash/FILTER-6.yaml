@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-10 16:30:51 UTC
+# 2026-11-10 16:45:39 UTC
 proxies:
-  - name: "🇬🇧 United Kingdom | [*CIDR]"
+  - name: "🇬🇧 United Kingdom [*CIDR]"
     type: "vless"
     server: "95.163.232.240"
     port: 443
@@ -11,14 +11,14 @@ proxies:
     servername: "files.neurixai.app"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/generate"
       headers:
         Host: "files.neurixai.app"
-  - name: "🇬🇧 United Kingdom [*CIDR]"
+  - name: "🇬🇧 United Kingdom [*CIDR] #2"
     type: "vless"
     server: "files.neurixai.app"
     port: 443
@@ -37,25 +37,41 @@ proxies:
         Host: "files.neurixai.app"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "rus2.qik-server.uk"
+    server: "vps3.nemnogogo.com"
     port: 443
-    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rus2.qik-server.uk"
+    servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
-      - "http/1.1"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "vps2.nemnogogo.com"
+    port: 443
+    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
+    udp: true
+    tls: true
+    servername: "vps2.nemnogogo.com"
+    alpn:
+      - "h2"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 United Kingdom | [*CIDR]"
       - "🇬🇧 United Kingdom [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
 rules:
   - MATCH,PROXY
