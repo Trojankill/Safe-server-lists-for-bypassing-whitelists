@@ -1,41 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-10 09:45:32 UTC
+# 2026-11-10 10:00:59 UTC
 proxies:
-  - name: "🇫🇷 France | 🌐 [*CIDR]"
-    type: "vless"
-    server: "185.221.213.223"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "fr.file-obmen.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/assets/sync-6d2f4a"
-      headers:
-        Host: "fr.file-obmen.top"
   - name: "🇬🇧 United Kingdom [*CIDR]"
-    type: "vless"
-    server: "95.163.232.240"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "files.neurixai.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/generate"
-      headers:
-        Host: "files.neurixai.app"
-  - name: "🇬🇧 United Kingdom [*CIDR] #2"
     type: "vless"
     server: "files.neurixai.app"
     port: 443
@@ -45,42 +11,55 @@ proxies:
     servername: "files.neurixai.app"
     alpn:
       - "http/1.1"
-    client-fingerprint: "edge"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/generate"
       headers:
         Host: "files.neurixai.app"
-  - name: "🇪🇪 Estonia [*CIDR] YA"
+  - name: "🇯🇵 Japan | 🌐 | [*CIDR]"
     type: "vless"
-    server: "158.160.190.15"
-    port: 8443
-    uuid: "50ed9601-ebd4-4ba7-a234-ffe642d351cd"
+    server: "eu90.cdn77.icu"
+    port: 20043
+    uuid: "2f094d48-7186-47ca-9e57-e977bbac3b08"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
-    client-fingerprint: "random"
+    servername: "eu64.cdn77.icu"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "GtR_ZuUkKAvY22-mOhrGYK0eyzliFCrZkoqFV7BfjHg"
-      short-id: "335cb6cbe00da58b"
+      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
+      short-id: "1ed136481e0ede74"
     network: "tcp"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
-    server: "46.161.14.13"
+    server: "rus2.qik-server.uk"
     port: 443
-    uuid: "798ab01c-eb0f-4e1e-9a99-a486ca4eaaf3"
+    uuid: "38de3363-7945-402e-9a9b-6f2f9015a44e"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "vkuseraudio.com"
-    client-fingerprint: "chrome"
+    servername: "rus2.qik-server.uk"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "wj4JJuI6yc1jICZFE3vGZjFP5Js4RyvaSIRKFNVSsB0"
-      short-id: "5dffebe33d1e36"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "407ae235-c609-4444-86c1-43896569398f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
     network: "tcp"
   - name: "🇩🇪 Germany [*CIDR]"
     type: "vless"
@@ -91,7 +70,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "lp.astralweb.tech"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
@@ -112,7 +91,7 @@ proxies:
       public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
       short-id: "496ee75c2f91f51d"
     network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR] #3"
+  - name: "🇩🇪 Germany | [*CIDR] #2"
     type: "vless"
     server: "lp.astralweb.tech"
     port: 443
@@ -121,13 +100,44 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "lp.astralweb.tech"
-    client-fingerprint: "random"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "AcJiiNBWvqUC5QBWFNWNc6ksAnd3K9s5nb55kvLsPBE"
       short-id: "496ee75c2f91f51d"
     network: "tcp"
-  - name: "🇩🇪 Germany [*CIDR] #4"
+  - name: "🌐 Anycast-IP | 🇩🇪 🇷🇺 | [*CIDR]"
+    type: "vless"
+    server: "185.22.234.20"
+    port: 443
+    uuid: "f6f013a3-abe6-49ad-aeb8-070fa49271c5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "geexit.atlanta-games.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "fb37d713-0ed3-4146-b085-a5c879a9aafa"
+    udp: true
+    tls: true
+    servername: "marshalltmp.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/shop/catalog"
+      headers:
+        Host: "marshalltmp.top"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
     type: "hysteria2"
     server: "vieee.observation.today"
     port: 443
@@ -137,7 +147,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇩🇪 Germany [*CIDR] #5"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #3"
     type: "hysteria2"
     server: "vieee.observation.today"
     port: 443
@@ -149,15 +159,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France | 🌐 [*CIDR]"
       - "🇬🇧 United Kingdom [*CIDR]"
-      - "🇬🇧 United Kingdom [*CIDR] #2"
-      - "🇪🇪 Estonia [*CIDR] YA"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
+      - "🇯🇵 Japan | 🌐 | [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🇩🇪 Germany [*CIDR]"
       - "🇩🇪 Germany [*CIDR] #2"
-      - "🇩🇪 Germany [*CIDR] #3"
-      - "🇩🇪 Germany [*CIDR] #4"
-      - "🇩🇪 Germany [*CIDR] #5"
+      - "🇩🇪 Germany | [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇩🇪 🇷🇺 | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #3"
 rules:
   - MATCH,PROXY
