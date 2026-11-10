@@ -1,38 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-10 11:01:00 UTC
+# 2026-11-10 11:15:33 UTC
 proxies:
-  - name: "[KrolelVPNReborn] Poland 🇵🇱 | Каскад 🔗"
+  - name: "[KrolekVPNReborn] Germany 🇩🇪 | Комбо"
     type: "vless"
-    server: "h9vr4viw.apruxdomain.online"
+    server: "187.7.206.49"
     port: 443
-    uuid: "155fd9d4-e1f9-44b3-99b6-6d2c389ade88"
+    uuid: "976f82d9-0e6b-40ed-9c09-cafd06c4bc98"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "bg1.hat.onl"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
-      short-id: "76132b3b39704c44"
-    network: "tcp"
-  - name: "[KrolekVPNReborn] Poland 🇵🇱 | Wi-Fi"
-    type: "vless"
-    server: "201.58.139.68"
-    port: 443
-    uuid: "55458d10-24ab-4ea6-a522-13741b546f2a"
-    udp: true
-    tls: true
-    servername: "13e1cfg.plp1.h1cloud.net"
+    servername: "de166.mech-pro.online"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "cWC6AGVZ9ke_eCTWXEB-eLdf670CuoP9zP-1k8DrPxo"
-      short-id: "8ae9cc8c9447c95a"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "d5d6142b8b66"
-  - name: "[KrolelVPNReborn] Poland 🇵🇱 | Игровой"
+      public-key: "jbiddtGRgeBvlkjbuA3aU-WPjKgEX87tOVh1mFfvOUI"
+      short-id: "16e0f049"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
     type: "hysteria2"
     server: "13.143.189.102"
     port: 4444
@@ -44,8 +28,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolelVPNReborn] Poland 🇵🇱 | Каскад 🔗"
-      - "[KrolekVPNReborn] Poland 🇵🇱 | Wi-Fi"
-      - "[KrolelVPNReborn] Poland 🇵🇱 | Игровой"
+      - "[KrolekVPNReborn] Germany 🇩🇪 | Комбо"
+      - "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
 rules:
   - MATCH,PROXY
