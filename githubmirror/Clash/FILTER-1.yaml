@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-11 02:45:35 UTC
+# 2026-11-11 03:01:00 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -138,6 +138,21 @@ proxies:
       path: "/api/de3/live"
       headers:
         Host: "cryptoventura.online"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
+    type: "vless"
+    server: "92.255.76.54"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "5.59.204.221"
@@ -333,6 +348,7 @@ proxy-groups:
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
