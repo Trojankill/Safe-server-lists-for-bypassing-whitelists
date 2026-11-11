@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-11 08:15:33 UTC
+# 2026-11-11 08:30:47 UTC
 proxies:
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
     port: 443
@@ -11,26 +11,12 @@ proxies:
     servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
-    client-fingerprint: "ios"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "vless"
-    server: "vps3.nemnogogo.com"
-    port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
-    udp: true
-    tls: true
-    servername: "vps3.nemnogogo.com"
-    alpn:
-      - "h2"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
     port: 443
@@ -40,34 +26,48 @@ proxies:
     servername: "chat.gpt.prem-ai.shop"
     alpn:
       - "http/1.1"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
-  - name: "🇷🇺 Russia [*CIDR] #3"
-    type: "vless"
-    server: "30916121.client.sushihost.su"
+  - name: "🇵🇱 Poland | 🌐 | [*CIDR]"
+    type: "trojan"
+    server: "stream.yabenzin.app"
     port: 443
-    uuid: "f807208f-27ed-465a-8736-b63732ea88c6"
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "30916121.client.sushihost.su"
-    client-fingerprint: "edge"
+    sni: "cdn12.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "Zobd5crq6DzOZQjWiR0nGzyX0QU5zLNqL4VtSqwiyUo"
-      short-id: "b0d8f964b7ac8ac0"
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
+  - name: "🇪🇪 Estonia | [*CIDR]"
+    type: "trojan"
+    server: "stream.yabenzin.app"
+    port: 443
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
+    udp: true
+    sni: "cdn6.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #3"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇵🇱 Poland | 🌐 | [*CIDR]"
+      - "🇪🇪 Estonia | [*CIDR]"
 rules:
   - MATCH,PROXY
