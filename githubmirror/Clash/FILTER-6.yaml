@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-11 19:45:35 UTC
+# 2026-11-11 20:00:57 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
     port: 443
@@ -16,7 +16,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
     server: "vps3.nemnogogo.com"
     port: 443
@@ -30,6 +30,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
+  - name: "🇳🇱 The Netherlands [*CIDR] VK"
+    type: "vless"
+    server: "bhjolq0d0l.flowersgood.top"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -50,8 +67,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇳🇱 The Netherlands [*CIDR] VK"
       - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
