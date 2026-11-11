@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-11 16:15:38 UTC
+# 2026-11-11 16:30:48 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -33,21 +33,7 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "78.159.245.40"
-    port: 8445
-    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
-    network: "tcp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "176.108.245.237"
     port: 443
@@ -61,22 +47,21 @@ proxies:
     client-fingerprint: "qq"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+  - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
-    server: "194.67.125.188"
-    port: 443
-    uuid: "930fa247-a708-454d-a463-a5562cee642f"
+    server: "5.59.204.81"
+    port: 8443
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "us1.serverslocal.ru"
-    client-fingerprint: "firefox"
+    servername: "id-6af3f40b.adhil.uk"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
-      short-id: "b5ea2877aadeb97c"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "5.59.204.244"
     port: 8455
@@ -142,10 +127,9 @@ proxy-groups:
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
