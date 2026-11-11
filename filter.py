@@ -174,7 +174,7 @@ SOURCES_CONFIG = [
     {"name": "FILTER-10", "url": "https://sub.vlessfo.ru/vlessforu/working_configs.txt"},
     {"name": "FILTER-11", "url": "https://pozor.bond/sub/ry2627uz9cp7"},
     {"name": "FILTER-12", "url": "https://pozor.bond/sub/vzal49dpeu1f"},
-    {"name": "FILTER-13", "url": "https://github.com/vessel-web/CoolSubs/raw/refs/heads/main/Cool-White.txt"},
+    {"name": "FILTER-13", "url": "https://gitverse.ru/api/repos/bikinitw22/apelsintel/raw/branch/main/alive_bs.txt"},
 ]
 
 # Убраны записи-дубли: поддомены, которые и так перекрыты родителем
