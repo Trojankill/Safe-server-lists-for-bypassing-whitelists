@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-11 00:00:59 UTC
+# 2026-11-11 00:15:44 UTC
 proxies:
+  - name: "🇷🇴 Румыния | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.215.40.106"
+    port: 443
+    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "obm.neuroblur.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_BEKGm4aogfkeqroLplieJ58hk4IlNHFP5cWd0oiO0M"
+      short-id: "066ca0781110293d"
+    network: "tcp"
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "95.163.232.240"
@@ -18,21 +33,6 @@ proxies:
       path: "/api/generate"
       headers:
         Host: "api.neuroblur.top"
-  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "72.56.11.15"
-    port: 8443
-    uuid: "18669c97-4d3e-03e9-a94e-b250e7aac408"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ya.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
-      short-id: "abc123"
-    network: "tcp"
   - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "141.133.180.203"
@@ -63,6 +63,23 @@ proxies:
       public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
       short-id: "937255313d6ce673"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.37.175"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "cryptoventura.online"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de3/live"
+      headers:
+        Host: "cryptoventura.online"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.147.175"
@@ -93,20 +110,6 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
-    network: "tcp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.245.237"
-    port: 443
-    uuid: "87c35d3a-36f1-fade-90b7-af60506efbb8"
-    udp: true
-    tls: true
-    servername: "tfusq-ru-40sb.fade.mom"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
     network: "tcp"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -183,7 +186,7 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
-      short-id: "64c1fe36c7846400"
+      short-id: "93ae75024604f796"
     network: "tcp"
   - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
     type: "vless"
@@ -198,76 +201,40 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
-      short-id: "93ae75024604f796"
+      short-id: "d1579a8745398e34"
     network: "tcp"
-  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #5"
     type: "vless"
-    server: "83.217.201.82"
-    port: 443
-    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    server: "95.167.57.129"
+    port: 7444
+    uuid: "f807208f-27ed-465a-8736-b63732ea88c6"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "skvoz-dpi.com"
+    servername: "ligastavok.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
-      short-id: "d1579a8745398e34"
+      public-key: "uxWBM2b-QHbLSKWZ_Zy29c7tcrw0pLM7AaAFTo_R6lc"
+      short-id: "298938469938"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "46.8.209.239"
-    port: 443
-    uuid: "fc4dd814-341b-444f-adab-d3340347378e"
-    udp: true
-    tls: true
-    servername: "river-9-788.rtbcdn.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "K42aHYxM9Lt1Tl4vF-OniHV5pNju-wnB_opA-hVihgs"
-      short-id: "50"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ads.x5.ru"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "95.129.236.70"
-    port: 443
-    uuid: "fc4dd814-341b-444f-adab-d3340347378e"
-    udp: true
-    tls: true
-    encryption: "mlkem768x25519plus.native.0rtt.YehIGGVEJfIW4jhNY2YFOwA2itW0KfqfCqyDNRwgB3mj6jAi4EtUuGBfIHoYFBRaOrtgeFRgAceeKeIRAgifohIHVMAk6PGGXkdLqnvP8-cacvYbS1UI1QF430nGgfeX1xDIZVuBdkgAxaeELMFcNXeMhhYqfxNyIXeWo9pNYAFKR4vK2bZzvMiHcJdRRBF2G3EVx9HNJHRXzivPSHwoBTzMI1GEZUoX5vZ1ejmmeEOpmbpiTbV1qSxysaXN6rSLyFAHUplEcihYQhYMpxFNfda1UBMsFjd2VjhDSOYoNDljJplg4acJyrQCnFeI5PKOsJM1PlB6s8G90SuWZCNVEsGAZRJAQFR431kMGqY3fWvFNMAjaYoE1tYmIoG-2DGrHMh7oxKb-arBBmg7L1QU9QxWqLBhc-l739EQjkvIT6B5V-wt67ZPywI-NDh_9HQa_9g_ApuBCYpnZKctsJlqtSGW3ekcEdxPctZMM9yOGExm5ydbQ3kze-G5eGseSAeM2OQbwdRbV6xaVjGiXRg32KsPCvMYgDEG23tAmAcP9gA7FoJXcoBpxbk0AfZ7HtkENjQ5OOmlJpmz8uZPpBrEO0M0YrKAAtAc5OdimxwSHntw24Y_N9qckrYXO5pDIDCxN8WtwOwwgRAo89Vg8PdyEZNpybOIGCKARbe00rxNvfKremyLC0UVuanCoQWltoRUdHIm_5t6oWl9tJgIWbITjIaxncRG-HjExLkzrBGZZ-w4larLq5AXrtBX2uZz5Aeg8FyHPqJqjnSDVXKdlbGW1Wsu7waEOgUd8ZmemsUfZawg6LAIHNoiJFk3xxcleRsqmGS4xjaY49wYHqVxRkVHoihAoUxOpFeo-byqjfx_DHlUq3B4B4M5Tuy64NYiWdddxYYYczlP6oBH2uEdh6aMHYmzD1q_UAIDpzJWk5J1Gcp_gDWu06ZKNBWb3PuSR4a94wG4igA5_BqINfElULFvqXwkvCq_NAuJnADQj6rEuyak5pdeILWyQ6eYFPZi-Vk52IjNotogGfRya9VW9RjF23sbMPDM4HgGq-eI-rNYEQBi_2mIVZdalgiS8RHF8BwgAB2HfoowMBWwYHk4JgLJNHl45uG_dVZLPIzNpvgj6fI97lyo7QlmO3moeUQSsBuypBty7vghI2scX3e8Lpa8Q4W73nTJUQimBydN9ZKnxrlNMcGPyleneWeaFeO7EOopGJhMgTacCaEgSFe8kPVt9gC-9rVBv5W-F3Vol0gKCgwXtVGelzpuw1YTi5c8g9FrxjNaSqHA_fjLZrIalOcrF2MMHgeRypcSe8C2PsOWctS06eiKDiysa_IVSQww8BJPULsgKnh_NuJtxWhHXlp1fZgohqYxBHxwDUeQUtwUOLZYv1ga4bU7NmlVCOK_m_ujhurBP4WmlAJtqoBBMxAhU6AkqPtxvipfhNNd42GYQBUvlcehcXFNh4atTMEHHrd1AxmTM4aWsSokZVuiV9pVRyh2f_ZMyPqml7C0R6PLibdhOYAf4dql6lm68wIJD6dqobiRI1hVVGfOaJnOY-Dow_wB35Hp7-_GdIKWCUjP5jY"
-    servername: "gateway.lk.pc-club.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/media/live/chunk.m4s"
-      headers:
-        Host: "gateway.lk.pc-club.app"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇷🇴 Румыния | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
-      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #5"
 rules:
   - MATCH,PROXY
