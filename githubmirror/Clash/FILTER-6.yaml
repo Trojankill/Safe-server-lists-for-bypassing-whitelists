@@ -1,6 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-11 01:30:44 UTC
+# 2026-11-11 01:45:30 UTC
 proxies:
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "87.242.102.102"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "kakashechka.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇩🇿 Algeria [*CIDR]"
+    type: "vless"
+    server: "87.242.102.214"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "poputal.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
@@ -30,22 +60,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇳🇱 The Netherlands [*CIDR] VK"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "bhjolq0d0l.flowersgood.top"
+    server: "cryptoventura.online"
     port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
+    servername: "cryptoventura.online"
     alpn:
       - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/service/telemetry/045d381f1166/"
+      path: "/api/de3/live"
       headers:
-        Host: "bhjolq0d0l.flowersgood.top"
+        Host: "cryptoventura.online"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -62,13 +93,30 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "trojan"
+    server: "stream.yabenzin.app"
+    port: 443
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
+    udp: true
+    sni: "cdn6.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇩🇿 Algeria [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
-      - "🇳🇱 The Netherlands [*CIDR] VK"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
 rules:
   - MATCH,PROXY
