@@ -1,6 +1,37 @@
 # clash/mihomo subscription
-# 2026-11-11 17:45:34 UTC
+# 2026-11-11 18:00:59 UTC
 proxies:
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "5.59.204.229"
+    port: 443
+    uuid: "5812be10-ba11-51cf-a0f4-ddea7ae15db0"
+    udp: true
+    tls: true
+    servername: "rutg.homelab-cdn.cloud"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU"
+      short-id: "08"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "144.31.61.147"
+    port: 443
+    uuid: "6f48e7a7-4efe-445e-8f3e-7a22dcfed514"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "NbBijWX2T4N8Azi6eJ3TUBvVzh19NHNzJlsmg9GGb04"
+      short-id: "a3a105068ab9827a"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "188.225.74.227"
@@ -125,6 +156,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
