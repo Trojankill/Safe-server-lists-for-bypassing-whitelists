@@ -1,34 +1,56 @@
 # clash/mihomo subscription
-# 2026-11-11 05:30:45 UTC
+# 2026-11-11 05:45:36 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Germany 🇩🇪 | Комбо"
+  - name: "[KrolekVPNReborn] Sweden 🇸🇪 | Ии-ассисенты"
     type: "vless"
-    server: "187.7.206.49"
+    server: "swedenafteraventura.space"
     port: 443
-    uuid: "976f82d9-0e6b-40ed-9c09-cafd06c4bc98"
+    uuid: "50a87e21-f0e2-4b53-a787-91adfe748f63"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "de166.mech-pro.online"
+    servername: "swedenafteraventura.space"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TyuIIquHoesD9YwMQJHda0YZ3Hy9Dh123dQ00iGK0QY"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Sweden 🇸🇪 | YouTube"
+    type: "vless"
+    server: "185.189.45.195"
+    port: 443
+    uuid: "dd5bed0b-ee77-481b-9f2c-250a632ddd9f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "get.jarbook.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "jbiddtGRgeBvlkjbuA3aU-WPjKgEX87tOVh1mFfvOUI"
-      short-id: "16e0f049"
+      public-key: "BIy6H-jndn24Ukyw83ML8LDB1HL8WLJmfCADEy8lzVs"
+      short-id: "c6f97313"
     network: "tcp"
-  - name: "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
-    type: "hysteria2"
-    server: "13.143.189.102"
-    port: 4444
-    password: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
+  - name: "[KrolekVPNReborn] Sweden 🇸🇪 | Игровой"
+    type: "vless"
+    server: "get.jarbook.net"
+    port: 443
+    uuid: "dd5bed0b-ee77-481b-9f2c-250a632ddd9f"
     udp: true
-    sni: "pl1.nexfile.net"
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "get.jarbook.net"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "BIy6H-jndn24Ukyw83ML8LDB1HL8WLJmfCADEy8lzVs"
+      short-id: "c6f97313"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolekVPNReborn] Germany 🇩🇪 | Комбо"
-      - "[KrolekVPNReborn] Poland 🇵🇱 | Игровой"
+      - "[KrolekVPNReborn] Sweden 🇸🇪 | Ии-ассисенты"
+      - "[KrolekVPNReborn] Sweden 🇸🇪 | YouTube"
+      - "[KrolekVPNReborn] Sweden 🇸🇪 | Игровой"
 rules:
   - MATCH,PROXY
