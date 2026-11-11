@@ -1,53 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-11 12:15:33 UTC
+# 2026-11-11 12:30:48 UTC
 proxies:
-  - name: "🏴 Неизвестный [#РКП]"
-    type: "vless"
-    server: "5.42.107.38"
-    port: 14443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    servername: "gigachat.neuroseti.info"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/generate"
-      headers:
-        Host: "gigachat.neuroseti.info"
-  - name: "🏴 Неизвестный [#РКП] #2"
-    type: "vless"
-    server: "91.215.40.106"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "obm.neuroblur.top"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_BEKGm4aogfkeqroLplieJ58hk4IlNHFP5cWd0oiO0M"
-      short-id: "066ca0781110293d"
-    network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #3"
-    type: "vless"
-    server: "91.215.40.106"
-    port: 443
-    uuid: "010be6fa-ab5f-404a-9edf-ab2db1f09f0c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "q.krevetkabs111.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_BEKGm4aogfkeqroLplieJ58hk4IlNHFP5cWd0oiO0M"
-      short-id: "066ca0781110293d"
-    network: "tcp"
   - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "141.133.180.203"
@@ -77,21 +30,6 @@ proxies:
     reality-opts:
       public-key: "lJBsn9ndieTIUBzXkJUhf6O0OE8pm29_z1fUtARwL0s"
       short-id: "937255313d6ce673"
-    network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #4"
-    type: "vless"
-    server: "176.108.241.72"
-    port: 443
-    uuid: "5159ee41-1fb8-42e9-8c09-160aa3fc3160"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-cdn.cdn-ozon.icu"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "mZjATY7nGyp_ikhe2PakXak5JWk2ORn9vl_lO2WpICs"
-      short-id: "ad0cb77acd87a7ca"
     network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -124,7 +62,7 @@ proxies:
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.245.237"
     port: 443
@@ -167,38 +105,6 @@ proxies:
     client-fingerprint: "edge"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "188.225.25.35"
-    port: 8443
-    uuid: "d933fd4d-a335-4868-9dea-d64d9da1d5d3"
-    udp: true
-    tls: true
-    servername: "ru.starkclaude.top"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
-    type: "vless"
-    server: "188.225.25.35"
-    port: 8443
-    uuid: "d933fd4d-a335-4868-9dea-d64d9da1d5d3"
-    udp: true
-    tls: true
-    servername: "ru.starkclaude.top"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
-      short-id: "4951a2313524dd8f"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "ozone"
   - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "83.217.201.82"
@@ -248,19 +154,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🏴 Неизвестный [#РКП]"
-      - "🏴 Неизвестный [#РКП] #2"
-      - "🏴 Неизвестный [#РКП] #3"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
-      - "🏴 Неизвестный [#РКП] #4"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #3"
