@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-11 12:45:34 UTC
+# 2026-11-11 13:01:01 UTC
 proxies:
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
@@ -16,7 +16,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇷🇺 Russia [*CIDR] #2"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
     port: 443
@@ -26,6 +26,7 @@ proxies:
     servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -51,7 +52,7 @@ proxy-groups:
     type: select
     proxies:
       - "🇷🇺 Russia [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
