@@ -1,59 +1,60 @@
 # clash/mihomo subscription
-# 2026-11-12 21:45:32 UTC
+# 2026-11-12 22:00:51 UTC
 proxies:
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "188.225.56.133"
+    server: "185.178.208.167"
     port: 443
-    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
     udp: true
     tls: true
-    servername: "astronovalis.wtf"
+    servername: "lorettmay.top"
     alpn:
-      - "h2"
-    client-fingerprint: "android"
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de2.v1"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/blog/posts"
+      headers:
+        Host: "lorettmay.top"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
     type: "vless"
-    server: "chat.gpt.prem-ai.shop"
+    server: "bhjolq0d0l.flowersgood.top"
     port: 443
-    uuid: "95f85937-7b95-45c4-8d69-95da6a978569"
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    servername: "chat.gpt.prem-ai.shop"
+    servername: "bhjolq0d0l.flowersgood.top"
     alpn:
       - "http/1.1"
     client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
+      path: "/service/telemetry/045d381f1166/"
       headers:
-        Host: "chat.gpt.prem-ai.shop"
-  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇪🇪 Estonia | [*CIDR] CDN"
     type: "vless"
-    server: "138.124.14.209"
-    port: 443
-    uuid: "c059d2b8-d7d6-4873-b5e8-2c5f6cd908bb"
+    server: "dwedfs.whitenw.net"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "cdn.savesafe.space"
-    client-fingerprint: "firefox"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "X5QCQAU6PhQ0ZYdMfsOD8SzK2tAcKqGbqHcGKOCkHg0"
-      short-id: "3e70d4cbb01bddfd"
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇷🇺 Russia | 🌐 [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+      - "🇪🇪 Estonia | [*CIDR] CDN"
 rules:
   - MATCH,PROXY
