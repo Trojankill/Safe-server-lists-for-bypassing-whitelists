@@ -1,57 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-12 21:15:32 UTC
+# 2026-11-12 21:30:47 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "188.225.56.133"
+    server: "5.129.193.120"
     port: 443
     uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
     udp: true
     tls: true
-    servername: "astronovalis.wtf"
+    servername: "falmero.store"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "glush.de2.v1"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+      grpc-service-name: "glush.de1.v1"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "194.67.125.188"
-    port: 443
-    uuid: "a03c34f9-3972-4df8-8e53-3df474654b7f"
+    server: "5.59.204.245"
+    port: 8455
+    uuid: "a4e5f910-23f4-470f-82a7-ed9d7be71dec"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "us1.serverslocal.ru"
-    client-fingerprint: "firefox"
+    servername: "notes.ncknms.com"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
-      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
-      short-id: "b5ea2877aadeb97c"
-    network: "tcp"
-  - name: "138.124.14.209:443"
-    type: "vless"
-    server: "138.124.14.209"
-    port: 443
-    uuid: "c059d2b8-d7d6-4873-b5e8-2c5f6cd908bb"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cdn.savesafe.space"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "X5QCQAU6PhQ0ZYdMfsOD8SzK2tAcKqGbqHcGKOCkHg0"
-      short-id: "3e70d4cbb01bddfd"
+      public-key: "d6qmF8ibk_PxtDJPzSa7LKw9VUI_mZ59DrTvmW3RaFc"
+      short-id: "10983e6c816181c2"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "138.124.14.209:443"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
