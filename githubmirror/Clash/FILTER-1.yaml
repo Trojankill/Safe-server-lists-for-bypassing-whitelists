@@ -1,7 +1,101 @@
 # clash/mihomo subscription
-# 2026-11-12 22:15:35 UTC
+# 2026-11-12 22:30:47 UTC
 proxies:
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.25.219"
+    port: 443
+    uuid: "10340f4a-e115-4b21-9768-dbb6b31f3e64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ign.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "OECEXjkKytnmX6qxzAvC9tE9QAQqNuWRBblAmbRnYWY"
+      short-id: "fe2e437f64f2da7a"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.25.35"
+    port: 443
+    uuid: "3aed81ea-0ab9-479e-83a1-e5dfa6708fda"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru.starkclaude.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
+      short-id: "4951a2313524dd8f"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.86.145.174"
+    port: 8444
+    uuid: "6fca8bc6-d365-4ae8-b2a4-4218526efde8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "nOMWYHoXc-7jjG7opszDSvmGwQk9tWkLgQ_bnLPXAnU"
+      short-id: "5e880b8b43771a4f"
+    network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.46.162"
+    port: 443
+    uuid: "7d718630-7a1a-4af8-9332-aa0610634e8a"
+    udp: true
+    tls: true
+    servername: "filnex.baby"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "lalibobi.tw.de1.Connect"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "176.53.254.217"
+    port: 443
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de6/stream"
+      headers:
+        Host: "falmero.store"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "45.12.229.194"
+    port: 443
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de1/stream"
+      headers:
+        Host: "falmero.store"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "5.129.193.120"
     port: 443
@@ -16,6 +110,51 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "185.86.145.223"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "95.167.57.129"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "31.177.111.121"
+    port: 443
+    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
+    udp: true
+    tls: true
+    servername: "100gramm.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/44fc835751aa/"
+      headers:
+        Host: "100gramm.pro"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "5.59.204.245"
@@ -31,11 +170,90 @@ proxies:
       public-key: "d6qmF8ibk_PxtDJPzSa7LKw9VUI_mZ59DrTvmW3RaFc"
       short-id: "10983e6c816181c2"
     network: "tcp"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "83.217.201.82"
+    port: 443
+    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "skvoz-dpi.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
+      short-id: "64c1fe36c7846400"
+    network: "tcp"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "83.217.201.82"
+    port: 443
+    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "skvoz-dpi.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
+      short-id: "93ae75024604f796"
+    network: "tcp"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "83.217.201.82"
+    port: 443
+    uuid: "ebd1c0d6-7ff4-4b9f-8692-237517a27a64"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "skvoz-dpi.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
+      short-id: "d1579a8745398e34"
+    network: "tcp"
+  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.9.190"
+    port: 36109
+    password: "1794613669:ead4a562-edf2-40cf-ad33-13ae98546226:w6rqI78K6gfxJcFQhWRiJ1E9algZc0n57ZAqMSmYlwA"
+    udp: true
+    sni: "hu.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "212.41.9.190"
+    port: 36118
+    password: "1794613669:ead4a562-edf2-40cf-ad33-13ae98546226:y0IFOWW-SkUMKFHghSawQeQ_c_EzBBvnnsQrHjD6llY"
+    udp: true
+    sni: "us2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
+      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
