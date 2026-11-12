@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 00:30:44 UTC
+# 2026-11-12 00:45:34 UTC
 proxies:
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
@@ -30,6 +30,40 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
+  - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "bizmodule.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "bizmodule.top"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+    type: "vless"
+    server: "bhjolq0d0l.flowersgood.top"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -46,12 +80,46 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
+  - name: "🇫🇷 France [*CIDR]"
+    type: "vless"
+    server: "141.98.191.30"
+    port: 443
+    uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "213.176.73.4.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
+      short-id: "a5fe10fba46b8613"
+    network: "tcp"
+  - name: "🇸🇪 Sweden [*CIDR]"
+    type: "vless"
+    server: "141.98.191.33"
+    port: 443
+    uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "31.76.3.187.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
+      short-id: "db71028aeb67289c"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
       - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇫🇷 France [*CIDR]"
+      - "🇸🇪 Sweden [*CIDR]"
 rules:
   - MATCH,PROXY
