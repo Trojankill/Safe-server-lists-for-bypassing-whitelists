@@ -1,57 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-12 18:01:00 UTC
+# 2026-11-12 18:15:35 UTC
 proxies:
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "89.169.3.149"
-    port: 443
-    uuid: "2e21c00d-b328-4edf-bc9f-fde9d13209f5"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "welhost.stream"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Qf9CWbOfKH2uAbdDNTe1wAP_2JMgqWny1ECjiDIT_iE"
-      short-id: "0d33c71ac8351b68"
-    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "194.113.35.240"
+    server: "188.225.56.133"
     port: 443
-    uuid: "4b5bada6-0724-4cb1-8105-04737c8a7a3e"
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "astronovalis.wtf"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de2.v1"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.67.125.188"
+    port: 443
+    uuid: "a03c34f9-3972-4df8-8e53-3df474654b7f"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.shinservice.ru"
+    servername: "us1.serverslocal.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "ZKLerhOtbZ9D1Kvfz9w9LPGhYTQmfGs98HthyAy85AQ"
-      short-id: "503131904226bcad"
-    network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "5.59.204.245"
-    port: 8455
-    uuid: "a4e5f910-23f4-470f-82a7-ed9d7be71dec"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "notes.ncknms.com"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "d6qmF8ibk_PxtDJPzSa7LKw9VUI_mZ59DrTvmW3RaFc"
-      short-id: "10983e6c816181c2"
+      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
+      short-id: "b5ea2877aadeb97c"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
