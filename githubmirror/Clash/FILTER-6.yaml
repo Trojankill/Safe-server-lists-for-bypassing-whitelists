@@ -1,6 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-12 02:45:32 UTC
+# 2026-11-12 03:01:00 UTC
 proxies:
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "87.242.102.102"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "kakashechka.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇩🇿 Algeria [*CIDR]"
+    type: "vless"
+    server: "87.242.102.214"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "poputal.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
@@ -30,40 +60,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
-    udp: true
-    tls: true
-    servername: "bizmodule.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "bizmodule.top"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
-    type: "vless"
-    server: "bhjolq0d0l.flowersgood.top"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -80,46 +76,46 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
-  - name: "🇫🇷 France [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
-    server: "141.98.191.30"
+    server: "141.98.191.36"
     port: 443
     uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "213.176.73.4.sslip.io"
+    servername: "13.143.195.113.sslip.io"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
-      short-id: "a5fe10fba46b8613"
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
     network: "tcp"
-  - name: "🇸🇪 Sweden [*CIDR]"
+  - name: "🇨🇿 Czechia [*CIDR] #2"
     type: "vless"
-    server: "141.98.191.33"
+    server: "141.98.191.37"
     port: 443
     uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "31.76.3.187.sslip.io"
+    servername: "31.76.7.128.sslip.io"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇩🇿 Algeria [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇫🇷 France [*CIDR]"
-      - "🇸🇪 Sweden [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR] #2"
 rules:
   - MATCH,PROXY

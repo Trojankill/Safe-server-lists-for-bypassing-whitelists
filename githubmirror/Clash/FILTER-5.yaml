@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 02:45:32 UTC
+# 2026-11-12 03:01:01 UTC
 proxies:
   - name: "Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -25,29 +25,12 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ads.x5.ru"
-    client-fingerprint: "edge"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     network: "tcp"
-  - name: "Russia | bizmodule.top | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
-    udp: true
-    tls: true
-    servername: "bizmodule.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "bizmodule.top"
   - name: "Russia | nguyxejonb.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.86.147.175"
@@ -65,6 +48,21 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.flowersgood.top"
+  - name: "Armenia | base.syoknew.online | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "178.160.228.139"
+    port: 443
+    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "base.syoknew.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1DFPjPAr5meUaXBdTX2WMZu9BWV39TXV5N36Ske6_A0"
+      short-id: "a7df9e0cde3e1d79"
+    network: "tcp"
   - name: "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "78.159.245.40"
@@ -78,6 +76,21 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
+  - name: "Russia | music.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "186.246.4.94"
+    port: 443
+    uuid: "dd07022f-b229-48b4-9a5b-2f52dc29119f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "music.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
     network: "tcp"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
@@ -104,9 +117,10 @@ proxy-groups:
     proxies:
       - "Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | bizmodule.top | WebSocket | [#LSO - #LinSpisokObhod]"
       - "Russia | nguyxejonb.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Armenia | base.syoknew.online | unknown | [#LSO - #LinSpisokObhod]"
       - "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "Russia | music.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
