@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 11:15:35 UTC
+# 2026-11-12 11:30:50 UTC
 proxies:
   - name: "🇺🇸 United States — #91"
     type: "vless"
@@ -320,6 +320,21 @@ proxies:
       public-key: "v4MuZIvFrTPT5GHMSaPryUAbIZlLstmsUTzmC1E-JTE"
       short-id: "0dfc23fe80778c00"
     network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.146.131.239"
+    port: 443
+    uuid: "1335fb6c-7f59-4e80-9da8-4294b2f3c4fb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "edge7.avxedge.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: "6ba85179e30d4fc2"
+    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 208"
     type: "vless"
     server: "159.89.87.21"
@@ -432,6 +447,21 @@ proxies:
     alpn:
       - "h2"
     client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "212.113.116.181"
+    port: 443
+    uuid: "1d46250c-f015-439d-a7fd-c4d9e2a4c63d"
+    udp: true
+    tls: true
+    servername: "de.oncloudvpn.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -2407,6 +2437,51 @@ proxies:
       path: "/e8ws"
       headers:
         Host: "vivozim.vyvoz-musora.cc"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "141.98.191.36"
+    port: 443
+    uuid: "a03c34f9-3972-4df8-8e53-3df474654b7f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "13.143.195.113.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
+      short-id: "8238d76df92c2560"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "141.98.191.37"
+    port: 443
+    uuid: "a03c34f9-3972-4df8-8e53-3df474654b7f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "31.76.7.128.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
+    network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.67.125.188"
+    port: 443
+    uuid: "a03c34f9-3972-4df8-8e53-3df474654b7f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us1.serverslocal.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
+      short-id: "b5ea2877aadeb97c"
+    network: "tcp"
   - name: "BUNKER 🖤 | Россия 🇷🇺 #99"
     type: "vless"
     server: "62.113.36.79"
@@ -4417,6 +4492,7 @@ proxy-groups:
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 105"
       - "🇪🇸 Spain — #20"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇺🇸 [BL] Сервер 208"
       - "🇺🇸 [BL] Сервер 209"
       - "🇺🇸 [BL] Сервер 210"
@@ -4425,6 +4501,7 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 211"
       - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
       - "🇩🇪 Германия [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Join+Telegram:@SolVPN 🇳🇱 t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 171"
       - "BUNKER 🖤 | Россия 🇷🇺 #36"
@@ -4556,6 +4633,9 @@ proxy-groups:
       - "🇫🇮 [BL] Сервер 272"
       - "🇬🇧 United Kingdom — #25"
       - "BUNKER 🖤 | Россия 🇷🇺 #81"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "BUNKER 🖤 | Россия 🇷🇺 #99"
       - "🇸🇬 [BL] Сервер 78"
       - "🌐 [BL] Сервер 60"
