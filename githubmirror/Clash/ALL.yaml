@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 15:30:49 UTC
+# 2026-11-12 15:45:35 UTC
 proxies:
   - name: "🇺🇸 United States — #91"
     type: "vless"
@@ -817,7 +817,7 @@ proxies:
       public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
       short-id: "7da3ba09a037e956"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "201.51.12.98"
     port: 443
@@ -832,7 +832,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
     server: "vps3.nemnogogo.com"
     port: 443
@@ -842,7 +842,22 @@ proxies:
     servername: "vps3.nemnogogo.com"
     alpn:
       - "h2"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇷🇺 Russia [*CIDR] #3"
+    type: "vless"
+    server: "vps3.nemnogogo.com"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    udp: true
+    tls: true
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -1953,21 +1968,6 @@ proxies:
       public-key: "TY0u8pJSV0M0yXNZfK4XinnYiG9cEZf1SKta1eIghhM"
       short-id: "0395c5b8449d10e6"
     network: "tcp"
-  - name: "🇸🇪 Sweden | [*CIDR]"
-    type: "vless"
-    server: "176.109.104.246"
-    port: 4443
-    uuid: "7ff2525f-63ef-4641-9d55-b39de536bf6c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WHualxnQefPnnpqGJTM3upQW-EwdIG-Rabo1ncjIyDA"
-      short-id: "128e900ffa036ffd"
-    network: "tcp"
   - name: "🇯🇵 Join+Telegram:@SolVPN 🇯🇵 t.me/rjsxrd"
     type: "vless"
     server: "3.114.220.22"
@@ -2088,7 +2088,7 @@ proxies:
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
-  - name: "LTE/5G TgOnly MTS Beeline MegafonYota 🇪🇺"
+  - name: "LTE/5G MTS Beeline MegafonYota 🇪🇺"
     type: "vless"
     server: "176.108.245.237"
     port: 443
@@ -2185,7 +2185,6 @@ proxies:
     servername: "chat.gpt.prem-ai.shop"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -3094,7 +3093,7 @@ proxies:
     servername: "edge-major.gruzit.my"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -3428,20 +3427,6 @@ proxies:
       public-key: "PQ8fVzaFrD3ANIzDmgE67H6FhCkQUbNymBkqe35fPjw"
       short-id: "6f903d8e630fc0aa"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇹🇷"
-    type: "vless"
-    server: "45.92.219.47"
-    port: 443
-    uuid: "ecc0e60a-f2cc-4266-8353-b228df89730a"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ty.galactichub.online"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "GBO_paFyK9FihgPMH8r_vHa4IKMkSGfvAQ2fhPK_1H4"
-    network: "tcp"
   - name: "@LexaVercelbot C-1 #137 🛰️ 🇨🇦"
     type: "vless"
     server: "185.218.17.172"
@@ -3643,6 +3628,20 @@ proxies:
       path: "/notes/elm/sync-08a935fc"
       headers:
         Host: "app.elm.sanriodevgroup.org"
+  - name: "🇨🇭 Switzerland [*CIDR]"
+    type: "trojan"
+    server: "31.76.230.224"
+    port: 443
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
+    udp: true
+    sni: "cdn8.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -4209,8 +4208,9 @@ proxy-groups:
       - "🇨🇿_捷克 t.me/rjsxrd"
       - "🇩🇪 德国 | DEU t.me/rjsxrd"
       - "🇬🇧 Великобритания 3 WEYRO LTD t.me/rjsxrd"
-      - "🇷🇺 Russia | [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] #3"
       - "🇨🇭 Switzerland — #8"
       - "🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 243"
@@ -4285,7 +4285,6 @@ proxy-groups:
       - "BUNKER 🖤 | Россия 🇷🇺 #115"
       - "@LexaVercelbot C-1 #71 🜂 🇫🇲"
       - "🇳🇱 [WL] Сервер 20"
-      - "🇸🇪 Sweden | [*CIDR]"
       - "🇯🇵 Join+Telegram:@SolVPN 🇯🇵 t.me/rjsxrd"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания t.me/rjsxrd"
       - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
@@ -4294,7 +4293,7 @@ proxy-groups:
       - "@LexaVercelbot C-1 #59 🎴 🇫🇲"
       - "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "@LexaVercelbot C-1 #58 🧭 🇫🇲"
-      - "LTE/5G TgOnly MTS Beeline MegafonYota 🇪🇺"
+      - "LTE/5G MTS Beeline MegafonYota 🇪🇺"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇬🇷 Greece — #27"
       - "BUNKER 🖤 | Россия 🇷🇺 #71"
@@ -4383,7 +4382,6 @@ proxy-groups:
       - "@LexaVercelbot C-1 #132 🝰 🇦🇪"
       - "@LexaVercelbot C-1 #131 🜂 🇦🇪"
       - "🇸🇬 [BL] Сервер 251"
-      - "Бесплатный VPN tg:VLESSFORU 🇹🇷"
       - "@LexaVercelbot C-1 #137 🛰️ 🇨🇦"
       - "🇫🇷 France — #22"
       - "🇯🇵 [BL] Сервер 250"
@@ -4399,6 +4397,7 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #194"
       - "BUNKER 🖤 | США 🇺🇸 #212"
       - "BUNKER 🖤 | Россия 🇷🇺 #63"
+      - "🇨🇭 Switzerland [*CIDR]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #13"
       - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #24"
