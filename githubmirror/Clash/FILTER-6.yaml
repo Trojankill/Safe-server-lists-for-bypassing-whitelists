@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-12 13:00:55 UTC
+# 2026-11-12 13:15:32 UTC
 proxies:
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "201.51.12.98"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
+    udp: true
+    tls: true
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
   - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
@@ -16,6 +31,38 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
+  - name: "🇮🇷 Iran | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "nguyxejonb.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.flowersgood.top"
+  - name: "🇸🇪 Sweden | [*CIDR]"
+    type: "vless"
+    server: "176.109.104.246"
+    port: 4443
+    uuid: "7ff2525f-63ef-4641-9d55-b39de536bf6c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "WHualxnQefPnnpqGJTM3upQW-EwdIG-Rabo1ncjIyDA"
+      short-id: "128e900ffa036ffd"
+    network: "tcp"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -33,7 +80,7 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
-  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+  - name: "🇳🇱 The Netherlands | 🌐 [*CIDR]"
     type: "vless"
     server: "178.250.242.229"
     port: 443
@@ -43,7 +90,7 @@ proxies:
     servername: "edge-major.gruzit.my"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -54,8 +101,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇷🇺 Russia | [*CIDR]"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇮🇷 Iran | [*CIDR] VK"
+      - "🇸🇪 Sweden | [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+      - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
