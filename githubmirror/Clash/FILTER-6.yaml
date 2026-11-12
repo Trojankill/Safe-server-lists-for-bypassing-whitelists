@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 06:45:31 UTC
+# 2026-11-12 07:00:55 UTC
 proxies:
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
@@ -30,23 +30,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "185.178.208.140"
-    port: 443
-    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
-    udp: true
-    tls: true
-    servername: "bizmodule.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "bizmodule.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -63,13 +46,30 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
+  - name: "🇳🇱 The Netherlands | 🌐 [*CIDR]"
+    type: "vless"
+    server: "178.250.242.229"
+    port: 443
+    uuid: "d8d9d99e-6622-4620-92dc-23ac2b6d30f6"
+    udp: true
+    tls: true
+    servername: "edge-major.gruzit.my"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/assets/g/c6c4a58bfc8c46fa18a6/"
+      headers:
+        Host: "edge-major.gruzit.my"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇳🇱 The Netherlands | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
