@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-12 09:00:56 UTC
+# 2026-11-12 09:15:32 UTC
 proxies:
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.146.131.239"
+    port: 443
+    uuid: "1335fb6c-7f59-4e80-9da8-4294b2f3c4fb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "edge7.avxedge.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+      short-id: "6ba85179e30d4fc2"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "212.113.116.181"
@@ -91,7 +106,7 @@ proxies:
       public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
       short-id: "76132b3b39704c44"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "188.225.74.227"
     port: 443
@@ -134,7 +149,7 @@ proxies:
     client-fingerprint: "qq"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "5.59.204.245"
     port: 8455
@@ -200,16 +215,17 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇪🇬 Египет | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
