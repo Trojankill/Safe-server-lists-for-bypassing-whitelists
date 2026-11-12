@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 16:15:31 UTC
+# 2026-11-12 16:30:48 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,6 +31,21 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.113.35.240"
+    port: 443
+    uuid: "4b5bada6-0724-4cb1-8105-04737c8a7a3e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.shinservice.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZKLerhOtbZ9D1Kvfz9w9LPGhYTQmfGs98HthyAy85AQ"
+      short-id: "503131904226bcad"
+    network: "tcp"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "5.59.204.221"
@@ -141,6 +156,7 @@ proxy-groups:
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
