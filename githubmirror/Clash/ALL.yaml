@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 20:30:50 UTC
+# 2026-11-12 20:45:35 UTC
 proxies:
   - name: "🇺🇸 United States — #89"
     type: "vless"
@@ -215,6 +215,21 @@ proxies:
     flow: "xtls-rprx-vision"
     servername: "yandex.ru"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    network: "tcp"
+  - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
@@ -2205,47 +2220,22 @@ proxies:
       public-key: "pzL-sRds-39y5dcuMOSouVqiXSzOLWV36fBr1o8bYUA"
       short-id: "c9e51a7f34"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸"
+  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "23.141.204.204"
+    server: "161.97.160.224"
     port: 443
-    uuid: "b6058894-f212-4926-9e19-f65713cca4a4"
+    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.cogentco.com"
+    servername: "passport.yandex.ru"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "uCAdS7TNPZ3CZFK7LEPTlEcb11NR0i12DXJ1O1wPwBw"
-    network: "tcp"
-  - name: "🇭🇰 Гонконг 2 HGC Global Communications Limited t.me/rjsxrd"
-    type: "vless"
-    server: "45.192.203.44"
-    port: 10976
-    uuid: "b6058894-f212-4926-9e19-f65713cca4a4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.nit.ac.jp"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "yXPPzfUp2T-BiLIGriVsi1zL7xqyWPvHDI9Fs4lgPyg"
-    network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇭🇰"
-    type: "vless"
-    server: "82.29.36.252"
-    port: 443
-    uuid: "b6058894-f212-4926-9e19-f65713cca4a4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.mtr.com.hk"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "N-fcZsehZk3eIoo3bfjCdtYXsy1luM9Iz6LscVEr33U"
+      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
+      short-id: "e6"
     network: "tcp"
   - name: "🇫🇷 [WL] Сервер 17"
     type: "vless"
@@ -3277,6 +3267,18 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇩🇪 Германия | VMESS TCP TLS"
+    type: "vmess"
+    server: "185.177.229.95"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "xmfhlpy.com"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇩🇪 [WL] Сервер 66"
     type: "vmess"
     server: "185.177.229.95"
@@ -3737,6 +3739,7 @@ proxy-groups:
       - "🇫🇷 [BL] Сервер 262"
       - "@LexaVercelbot C-1 #74 🇫🇲 🝰"
       - "🇸🇪 [WL] Сервер 1"
+      - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "@LexaVercelbot C-1 #123 🇨🇿 🪐"
       - "🇪🇸 Spain — #19"
       - "🇵🇱 AetrisVPN t.me/rjsxrd"
@@ -3869,9 +3872,7 @@ proxy-groups:
       - "🇩🇪 Germany — #10"
       - "🇧🇬 [BL] Сервер 209"
       - "@LexaVercelbot C-1 #96 🇫🇲 🪐"
-      - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
-      - "🇭🇰 Гонконг 2 HGC Global Communications Limited t.me/rjsxrd"
-      - "Бесплатный VPN tg:VLESSFORU 🇭🇰"
+      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇫🇷 [WL] Сервер 17"
       - "0509 | 🇫🇷 France | 🏳️ SNI-Yandex | VLESS | 📺 YT | TG: @YoutubeUnBlockRu t.me/rjsxrd"
       - "🇩🇪 [BL] Сервер 61"
@@ -3942,6 +3943,7 @@ proxy-groups:
       - "🇷🇺➜🇩🇪 Германия OT@Hy2UDP (WIFI/LTE) #261"
       - "[OpenRay] 🌐XX-1200"
       - "未知"
+      - "🇩🇪 Германия | VMESS TCP TLS"
       - "🇩🇪 [WL] Сервер 66"
       - "未知6"
       - "🇺🇸 机场推荐:dafei.de 美国 77"
