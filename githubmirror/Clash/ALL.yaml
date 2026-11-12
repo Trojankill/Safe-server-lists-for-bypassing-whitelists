@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 08:30:44 UTC
+# 2026-11-12 08:45:33 UTC
 proxies:
   - name: "🇺🇸 United States — #99"
     type: "vless"
@@ -3928,6 +3928,34 @@ proxies:
       path: "/notes/elm/sync-08a935fc"
       headers:
         Host: "app.elm.sanriodevgroup.org"
+  - name: "🇵🇱 Poland | 🌐 [*CIDR]"
+    type: "trojan"
+    server: "stream.yabenzin.app"
+    port: 443
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
+    udp: true
+    sni: "cdn12.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "trojan"
+    server: "stream.yabenzin.app"
+    port: 443
+    password: "duJyVGgB2y0tCFs37Y89NE1fMHXk8C5j"
+    udp: true
+    sni: "cdn6.yabenzin.app"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "TrojanGRPC"
   - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
@@ -4739,6 +4767,8 @@ proxy-groups:
       - "BUNKER 🖤 | Канада 🇨🇦 #194"
       - "BUNKER 🖤 | США 🇺🇸 #212"
       - "BUNKER 🖤 | Россия 🇷🇺 #63"
+      - "🇵🇱 Poland | 🌐 [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
       - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
       - "🇺🇸 United States, Chicago | 🌐 | [BL]"
       - "🇺🇸 United States, Chicago | 🌐 | [BL] #2"
