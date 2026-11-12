@@ -1,36 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-12 04:45:30 UTC
+# 2026-11-12 05:00:53 UTC
 proxies:
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "vless"
-    server: "87.242.102.102"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "kakashechka.belka.tv"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇩🇿 Algeria [*CIDR]"
-    type: "vless"
-    server: "87.242.102.214"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "poputal.belka.tv"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
     server: "vps3.nemnogogo.com"
@@ -60,6 +30,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "mobile.api.Event"
+  - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "bizmodule.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "bizmodule.top"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "chat.gpt.prem-ai.shop"
@@ -76,46 +63,13 @@ proxies:
       path: "/gateway/v1/ws/791f9a4d19f715c2ffaedfbaf99d88bd"
       headers:
         Host: "chat.gpt.prem-ai.shop"
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
-    type: "vless"
-    server: "141.98.191.36"
-    port: 443
-    uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "13.143.195.113.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR] #2"
-    type: "vless"
-    server: "141.98.191.37"
-    port: 443
-    uuid: "fac746c5-1a56-4b23-8dc1-8cbe81f79054"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "31.76.7.128.sslip.io"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇨🇿 Czechia [*CIDR]"
-      - "🇩🇿 Algeria [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
       - "🇷🇺 Russia [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
-      - "🇨🇿 Czechia [*CIDR] #2"
 rules:
   - MATCH,PROXY
