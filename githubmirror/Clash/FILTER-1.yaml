@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 19:15:32 UTC
+# 2026-11-12 19:30:48 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,11 +31,27 @@ proxies:
       public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
       short-id: "b5ea2877aadeb97c"
     network: "tcp"
+  - name: "138.124.14.209:443"
+    type: "vless"
+    server: "138.124.14.209"
+    port: 443
+    uuid: "c059d2b8-d7d6-4873-b5e8-2c5f6cd908bb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.savesafe.space"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "X5QCQAU6PhQ0ZYdMfsOD8SzK2tAcKqGbqHcGKOCkHg0"
+      short-id: "3e70d4cbb01bddfd"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "138.124.14.209:443"
 rules:
   - MATCH,PROXY
