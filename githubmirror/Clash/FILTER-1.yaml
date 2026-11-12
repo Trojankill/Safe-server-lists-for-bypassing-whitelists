@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-12 03:30:45 UTC
+# 2026-11-12 03:45:31 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -181,6 +181,23 @@ proxies:
       public-key: "V3uMWEfDQAPFP6o5ED8Jtk0rJBPs7IlOLf_Wh8w_jXc"
       short-id: "76132b3b39704c44"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "178.250.242.229"
+    port: 443
+    uuid: "d8d9d99e-6622-4620-92dc-23ac2b6d30f6"
+    udp: true
+    tls: true
+    servername: "edge-major.gruzit.my"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/assets/g/c6c4a58bfc8c46fa18a6/"
+      headers:
+        Host: "edge-major.gruzit.my"
 proxy-groups:
   - name: PROXY
     type: select
@@ -197,5 +214,6 @@ proxy-groups:
       - "🇪🇬 Египет | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇹🇷 Турция | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY
