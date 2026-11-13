@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 12:45:32 UTC
+# 2026-11-13 13:00:56 UTC
 proxies:
   - name: "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -48,6 +48,21 @@ proxies:
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
+    server: "186.246.9.15"
+    port: 443
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "notebook.filnex.baby"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de6.v1"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
     server: "201.24.114.248"
     port: 443
     uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
@@ -64,6 +79,20 @@ proxies:
       headers:
         Host: "silk.filnex.baby"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "37.18.15.144"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
+    network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "95.167.57.129"
     port: 8445
@@ -258,7 +287,7 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "d1579a8745398e34"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "78.159.250.83"
     port: 443
@@ -315,7 +344,9 @@ proxy-groups:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
@@ -328,7 +359,7 @@ proxy-groups:
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
