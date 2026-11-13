@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 08:00:57 UTC
+# 2026-11-13 08:15:34 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,21 @@ proxies:
       public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
       short-id: "4951a2313524dd8f"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "161.104.28.171"
+    port: 443
+    uuid: "41a382b8-6d2f-482e-abf2-954a56456e8c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us1.serverslocal.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
+      short-id: "b5ea2877aadeb97c"
+    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "95.167.57.129"
@@ -30,6 +45,23 @@ proxies:
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "185.86.145.80"
+    port: 443
+    uuid: "8eaae127-d0f6-4992-8a1a-0e230a801ed4"
+    udp: true
+    tls: true
+    servername: "tehnomarket-ekb.cc"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/account/refresh/C6Gbmvj-D5Vy"
+      headers:
+        Host: "tehnomarket-ekb.cc"
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "45.133.151.183"
@@ -44,7 +76,7 @@ proxies:
       public-key: "v_654dOT0vLCFBaGdtI8NsPV0dBhRsEj9Lkof1rVtUQ"
       short-id: "acb4c666c66fdf44"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -134,7 +166,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "94.139.250.226"
+    port: 443
+    uuid: "fa081e9f-7574-0003-8928-31aa5ac923c7"
+    udp: true
+    tls: true
+    servername: "rus8-b.sbcweb.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "45.139.27.164"
     port: 443
@@ -159,7 +207,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "212.41.9.190"
     port: 36118
@@ -169,21 +217,35 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇷🇺 Россия [#РКП] #4"
+    type: "hysteria2"
+    server: "31.177.111.213"
+    port: 443
+    password: "8eaae127-d0f6-4992-8a1a-0e230a801ed4"
+    udp: true
+    sni: "fin.dataroute.biz"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #4"
 rules:
   - MATCH,PROXY
