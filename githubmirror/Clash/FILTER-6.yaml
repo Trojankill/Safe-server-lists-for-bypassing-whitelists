@@ -1,24 +1,39 @@
 # clash/mihomo subscription
-# 2026-11-12 23:45:31 UTC
+# 2026-11-13 00:00:57 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
-    server: "185.178.208.167"
+    server: "2.26.8.173"
     port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    uuid: "53e5dd14-b6a5-44ef-964d-4cc82e4c28ca"
     udp: true
     tls: true
-    servername: "lorettmay.top"
+    servername: "instance-4.nolimited.space"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "fOvHiffZnMIbQSJXLbasJJ9cPFE7y0zm7sggbuIUDks"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/blog/posts"
+      path: "/service/telemetry/045d381f1166/"
       headers:
-        Host: "lorettmay.top"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
     server: "bhjolq0d0l.flowersgood.top"
     port: 443
@@ -35,26 +50,84 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇪🇪 Estonia | [*CIDR] CDN"
+  - name: "🇫🇮 Finland | [*CIDR]"
     type: "vless"
-    server: "dwedfs.whitenw.net"
-    port: 8445
-    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    server: "188.225.46.162"
+    port: 443
+    uuid: "7d718630-7a1a-4af8-9332-aa0610634e8a"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "android"
+    servername: "filnex.baby"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "lalibobi.tw.de1.Connect"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "5.129.193.120"
+    port: 443
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
+    type: "vless"
+    server: "31.177.111.121"
+    port: 443
+    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
+    udp: true
+    tls: true
+    servername: "100gramm.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/44fc835751aa/"
+      headers:
+        Host: "100gramm.pro"
+  - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "212.41.9.190"
+    port: 36109
+    password: "1794613669:ead4a562-edf2-40cf-ad33-13ae98546226:w6rqI78K6gfxJcFQhWRiJ1E9algZc0n57ZAqMSmYlwA"
+    udp: true
+    sni: "hu.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇺🇸 United States | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "212.41.9.190"
+    port: 36118
+    password: "1794613669:ead4a562-edf2-40cf-ad33-13ae98546226:y0IFOWW-SkUMKFHghSawQeQ_c_EzBBvnnsQrHjD6llY"
+    udp: true
+    sni: "us2.lumacache.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
-      - "🇪🇪 Estonia | [*CIDR] CDN"
+      - "🇳🇱 The Netherlands | [*CIDR] VK"
+      - "🇫🇮 Finland | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
+      - "🇭🇺 Hungary | 🌐 [*CIDR]"
+      - "🇺🇸 United States | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
