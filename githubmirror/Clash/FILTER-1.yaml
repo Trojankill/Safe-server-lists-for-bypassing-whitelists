@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 22:30:47 UTC
+# 2026-11-13 22:45:30 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -18,6 +18,21 @@ proxies:
       path: "/static/collect/9412171e8a3a/"
       headers:
         Host: "zry9ocg43w.flowersgood.top"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.147.172"
+    port: 7489
+    uuid: "2f03861a-157e-48dc-9ad6-3dddb3e7234a"
+    udp: true
+    tls: true
+    servername: "wn-de4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.147.172"
@@ -78,7 +93,7 @@ proxies:
       public-key: "DeueXD24ph6cE_WRTTaPyuGX4jNVxjvJBHjENlrzsCM"
       short-id: "42695b59d82528a4"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "72.56.252.245"
     port: 443
@@ -93,7 +108,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de6.v1"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "89.23.101.90"
     port: 443
@@ -137,6 +152,35 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "wDDyZZJfgJHB6OOrdpLgAk18P2j9tZrxgOxOB_s7Sws"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "188.225.24.192"
+    port: 443
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "portal.bokovskay.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "188.225.24.62"
+    port: 443
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "img.bokovskay.app"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇮 Финляндия [#РКП]"
     type: "vless"
@@ -202,14 +246,17 @@ proxy-groups:
     type: select
     proxies:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇸🇪 Швеция [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇫🇮 Финляндия [#РКП]"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
