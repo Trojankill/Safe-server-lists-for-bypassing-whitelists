@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 22:45:30 UTC
+# 2026-11-13 23:00:55 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -153,6 +153,67 @@ proxies:
     reality-opts:
       public-key: "wDDyZZJfgJHB6OOrdpLgAk18P2j9tZrxgOxOB_s7Sws"
     network: "tcp"
+  - name: "🇦🇱 Албания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "87.242.127.51"
+    port: 8443
+    uuid: "a8650e41-e13e-4993-b22a-3fb5f134cbf9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "87.242.127.51"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "UYNMsGRSAGFBT6IkCBDqiMgjRMUGaNvHzzJRBfUXPk4"
+      short-id: "546c821988a9d471"
+    network: "tcp"
+  - name: "🇸🇪 Швеция [#РКП] #2"
+    type: "vless"
+    server: "185.103.101.35"
+    port: 443
+    uuid: "bccf444b-f156-4cdb-80ab-4bc5da3a451c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "backupatlas.space"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "h6URglIWdEiT2aHXO6yzP4EvMhVzdMh7S9HIerFDXEA"
+      short-id: "f8a5af50c93d976e"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "94.228.173.123"
+    port: 443
+    uuid: "bccf444b-f156-4cdb-80ab-4bc5da3a451c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "silentquartz.online"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HlO6O0-N-B_PhijxlfKYt2uVHRhlu1dlSsuf5al6iSw"
+      short-id: "c64bfc3226e6e0f3"
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "94.228.173.123"
+    port: 443
+    uuid: "bccf444b-f156-4cdb-80ab-4bc5da3a451c"
+    udp: true
+    tls: true
+    servername: "silvermatrix.space"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "XbK3dHP4uN0LmQVmtvpx3E9aH8QrUja7Z5P-u4ZfBDk"
+      short-id: "c64bfc3226e6e0f3"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "188.225.24.192"
@@ -197,7 +258,7 @@ proxies:
       public-key: "NaCZ-sS4poEbFwKmD7ePAVyc5OhHxsD9nkAStjXkoWs"
       short-id: "027af64166562b09"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #3"
+  - name: "🇷🇺 Россия [#РКП] #4"
     type: "vless"
     server: "188.225.57.150"
     port: 443
@@ -211,7 +272,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #4"
+  - name: "🇷🇺 Россия [#РКП] #5"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -241,6 +302,38 @@ proxies:
       public-key: "zICjcFkqI720WzWpHXRLjSFYmcu4Hd0jk1iDEo1nUAU"
       short-id: "c27a26812e5d2208"
     network: "tcp"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.42.24.231"
+    port: 443
+    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
+    udp: true
+    tls: true
+    servername: "fr4.cyphervpn.pro"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "fr4grpc"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "87.242.95.226"
+    port: 443
+    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
+    udp: true
+    tls: true
+    servername: "kedrovyi-bereg.online"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/cart/sync/IvDzdZGhhPr-"
+      headers:
+        Host: "kedrovyi-bereg.online"
 proxy-groups:
   - name: PROXY
     type: select
@@ -255,11 +348,17 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇸🇪 Швеция [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇦🇱 Албания | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇫🇮 Финляндия [#РКП]"
-      - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
+      - "🇷🇺 Россия [#РКП] #5"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
