@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-13 18:45:30 UTC
+# 2026-11-13 19:01:06 UTC
 proxies:
-  - name: "🇨🇿 Czechia | [*CIDR]"
+  - name: "🇨🇿 Czechia [*CIDR]"
     type: "vless"
     server: "85.192.56.61"
     port: 443
@@ -10,12 +10,27 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "85.192.56.61.sslip.io"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     reality-opts:
       public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
       short-id: "88086e66870f03e6"
     network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "luminexorizon.ink"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
   - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
     type: "vless"
     server: "185.86.147.175"
@@ -35,23 +50,6 @@ proxies:
         Host: "nguyxejonb.flowersgood.top"
   - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
-    server: "185.86.147.175"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK #2"
-    type: "vless"
     server: "bhjolq0d0l.flowersgood.top"
     port: 443
     uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
@@ -67,41 +65,7 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
-    type: "vless"
-    server: "ivory.filnex.baby"
-    port: 443
-    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
-    udp: true
-    tls: true
-    servername: "ivory.filnex.baby"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/de4/stream"
-      headers:
-        Host: "ivory.filnex.baby"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
-    type: "vless"
-    server: "silk.filnex.baby"
-    port: 443
-    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
-    udp: true
-    tls: true
-    servername: "silk.filnex.baby"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/de5/stream"
-      headers:
-        Host: "silk.filnex.baby"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
     server: "ws3.falmero.store"
     port: 443
@@ -111,92 +75,55 @@ proxies:
     servername: "canvas.merlano.monster"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/de7/stream"
       headers:
         Host: "canvas.merlano.monster"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "vless"
-    server: "129.101.99.108"
+    server: "ws3.falmero.store"
     port: 443
-    uuid: "897a9c3b-3b5c-4950-8c34-fe63baf044ff"
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de1/stream"
+      headers:
+        Host: "falmero.store"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "89.169.45.219"
+    port: 2443
+    uuid: "fa937345-6d3e-4ff4-8127-1a836987a0db"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "2gis-online.ru"
+    servername: "germany.cloudhouse1.ru"
     client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "BAZQ5SCKUwaG6qlOivvqllUBZn-l5I-mo3LJ2KpOjVI"
-      short-id: "9edcdfed9be1ba24"
+      public-key: "q_MJ5Zo2vcnePWq3KY653QUPX8mNSvapLpqXU4NuPho"
+      short-id: "464db718e17e4107"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
-    type: "vless"
-    server: "100gramm.pro"
-    port: 443
-    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
-    udp: true
-    tls: true
-    servername: "100gramm.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/44fc835751aa/"
-      headers:
-        Host: "100gramm.pro"
-  - name: "🇬🇧 United Kingdom | [*CIDR]"
-    type: "vless"
-    server: "31.177.111.121"
-    port: 443
-    uuid: "90157e25-cee1-4217-921e-91f300bc1a24"
-    udp: true
-    tls: true
-    servername: "100gramm.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/44fc835751aa/"
-      headers:
-        Host: "100gramm.pro"
-  - name: "🇸🇪 Sweden | [*CIDR] YA"
-    type: "vless"
-    server: "94.139.250.226"
-    port: 443
-    uuid: "fa081e9f-7574-0003-8928-31aa5ac923c7"
-    udp: true
-    tls: true
-    servername: "rus8-b.sbcweb.net"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
-      short-id: "344f83372596eea2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇨🇿 Czechia | [*CIDR]"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
       - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands | [*CIDR] VK #2"
-      - "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇬🇧 🇷🇺 | [*CIDR]"
-      - "🇬🇧 United Kingdom | [*CIDR]"
-      - "🇸🇪 Sweden | [*CIDR] YA"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      - "🇩🇪 Germany | [*CIDR]"
 rules:
   - MATCH,PROXY
