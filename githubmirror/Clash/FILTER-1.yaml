@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 21:45:33 UTC
+# 2026-11-13 22:01:09 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -110,6 +110,34 @@ proxies:
       path: "/api/de5/stream"
       headers:
         Host: "silk.filnex.baby"
+  - name: "🇸🇪 Швеция [#РКП]"
+    type: "vless"
+    server: "150.241.75.103"
+    port: 443
+    uuid: "8f9c04c9-5c94-495e-9452-ab8b7a8af1bc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "riga.freegate.win"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "9fA6ZSGr6ZalzYDf0L_Tx1nQOZskdvLrqSN-Gzj4xEI"
+    network: "tcp"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.107.120.65"
+    port: 443
+    uuid: "8f9c04c9-5c94-495e-9452-ab8b7a8af1bc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "msk-01.freegate.win"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "wDDyZZJfgJHB6OOrdpLgAk18P2j9tZrxgOxOB_s7Sws"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "188.225.57.150"
@@ -139,6 +167,21 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "109.71.245.99"
+    port: 443
+    uuid: "f09ca6e3-c547-4f91-95f5-77f34c4282ac"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zICjcFkqI720WzWpHXRLjSFYmcu4Hd0jk1iDEo1nUAU"
+      short-id: "c27a26812e5d2208"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
@@ -150,7 +193,10 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇸🇪 Швеция [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
