@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-13 15:30:47 UTC
+# 2026-11-13 15:45:34 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "193.233.231.32"
+    port: 443
+    uuid: "15ed8f34-4d31-4ef9-810c-3858ea862c1b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.lt"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "fBCQLpALpiKvwNynMD9PRfHN8fb_SI8iCIAkte0Knlo"
+      short-id: "6b09de272cdc81f4"
+    network: "tcp"
   - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "85.192.56.61"
@@ -212,7 +227,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "94.139.250.226"
     port: 443
@@ -228,7 +243,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "94.139.250.226"
     port: 443
@@ -283,6 +298,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
@@ -297,8 +313,8 @@ proxy-groups:
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
