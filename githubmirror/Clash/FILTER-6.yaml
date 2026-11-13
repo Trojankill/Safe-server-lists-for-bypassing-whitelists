@@ -1,22 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-13 10:15:31 UTC
+# 2026-11-13 10:30:44 UTC
 proxies:
-  - name: "🇦🇹 Austria [*CIDR]"
-    type: "vless"
-    server: "api.mediaroshcha.cc"
-    port: 443
-    uuid: "122188c6-66ff-4f8d-a1b5-54280b4b106a"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "157.22.231.205"
     port: 443
@@ -33,41 +18,39 @@ proxies:
       path: "/api/de3/live"
       headers:
         Host: "cryptoventura.online"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "91.210.107.222"
+    server: "luminexorizon.ink"
     port: 443
     uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    servername: "cryptoventura.online"
+    servername: "luminexorizon.ink"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/de3/live"
-      headers:
-        Host: "cryptoventura.online"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
     type: "vless"
     server: "185.86.147.175"
     port: 443
     uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    servername: "bhjolq0d0l.flowersgood.top"
+    servername: "nguyxejonb.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/service/telemetry/045d381f1166/"
+      path: "/service/telemetry/0294da469190/"
       headers:
-        Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK #2"
+        Host: "nguyxejonb.flowersgood.top"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK #2"
     type: "vless"
     server: "bhjolq0d0l.flowersgood.top"
     port: 443
@@ -77,13 +60,47 @@ proxies:
     servername: "bhjolq0d0l.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK #3"
+    type: "vless"
+    server: "nguyxejonb.flowersgood.top"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "nguyxejonb.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.flowersgood.top"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+    type: "vless"
+    server: "ws3.falmero.store"
+    port: 443
+    uuid: "820fa845-a1eb-4a83-b613-e6714cea8a1a"
+    udp: true
+    tls: true
+    servername: "falmero.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de1/stream"
+      headers:
+        Host: "falmero.store"
   - name: "🇳🇱 The Netherlands | [*CIDR] YA"
     type: "vless"
     server: "94.139.250.226"
@@ -92,7 +109,7 @@ proxies:
     udp: true
     tls: true
     servername: "rus8-b.sbcweb.net"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
@@ -140,11 +157,12 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands | [*CIDR] VK #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK #3"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
       - "🇳🇱 The Netherlands | [*CIDR] YA"
       - "🇭🇺 Hungary | 🌐 [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
