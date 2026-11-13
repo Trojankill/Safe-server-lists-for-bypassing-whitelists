@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 00:45:32 UTC
+# 2026-11-13 01:00:54 UTC
 proxies:
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,21 @@ proxies:
       public-key: "OECEXjkKytnmX6qxzAvC9tE9QAQqNuWRBblAmbRnYWY"
       short-id: "fe2e437f64f2da7a"
     network: "tcp"
+  - name: "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "95.143.188.113"
+    port: 443
+    uuid: "367d74e7-0204-4b92-ba57-ae31344dce7f"
+    udp: true
+    tls: true
+    servername: "ar5v3uc2o9.j.cloudfront.hls.hlsnode.net"
+    alpn:
+      - "h2"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "sync.v1"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "188.225.25.35"
@@ -31,6 +46,21 @@ proxies:
       public-key: "rJ-fFNYXh7WW9LuYe1N71fh7nAEe5i09Pi5ZDSDlH1s"
       short-id: "4951a2313524dd8f"
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.46.162"
+    port: 443
+    uuid: "7d718630-7a1a-4af8-9332-aa0610634e8a"
+    udp: true
+    tls: true
+    servername: "filnex.baby"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "lalibobi.tw.de1.Connect"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "176.53.254.217"
@@ -225,7 +255,9 @@ proxy-groups:
     type: select
     proxies:
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
