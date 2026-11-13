@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 00:15:32 UTC
+# 2026-11-13 00:30:47 UTC
 proxies:
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -171,6 +171,20 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "d1579a8745398e34"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
+    type: "vless"
+    server: "78.159.250.83"
+    port: 443
+    uuid: "f656c4b9-54dc-44cc-a142-e242ce687e56"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "dualarrow.net"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "212.41.9.190"
@@ -206,6 +220,7 @@ proxy-groups:
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
 rules:
