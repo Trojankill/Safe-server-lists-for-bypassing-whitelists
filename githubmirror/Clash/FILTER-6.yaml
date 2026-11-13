@@ -1,35 +1,34 @@
 # clash/mihomo subscription
-# 2026-11-13 06:30:43 UTC
+# 2026-11-13 06:45:33 UTC
 proxies:
-  - name: "🇫🇷 France | [*CIDR]"
+  - name: "🇦🇹 Austria | [*CIDR]"
     type: "vless"
-    server: "189.74.117.29"
+    server: "api.mediaroshcha.cc"
     port: 443
     uuid: "122188c6-66ff-4f8d-a1b5-54280b4b106a"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.videodolina.cc"
+    servername: "api.mediaroshcha.cc"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇫🇷 France | [*CIDR] #2"
+  - name: "🇬🇧 United Kingdom | 🌐 | [*CIDR]"
     type: "vless"
-    server: "189.74.117.29"
-    port: 443
-    uuid: "27b9f6d7-1668-4b8a-acf1-11398febcfee"
+    server: "116.206.95.231"
+    port: 43000
+    uuid: "4a923161-156f-4914-8cac-762fb2433bfb"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.videodolina.cc"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
+      public-key: "CG0mVPuvPcfZjplA21zehlqoDpGHihJBK8K_u1zfhgQ"
+      short-id: "ee4ea980"
     network: "tcp"
   - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
@@ -48,7 +47,7 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK #2"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
     type: "vless"
     server: "bhjolq0d0l.flowersgood.top"
     port: 443
@@ -58,13 +57,30 @@ proxies:
     servername: "bhjolq0d0l.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇮🇷 Iran | [*CIDR] VK"
+    type: "vless"
+    server: "nguyxejonb.flowersgood.top"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "nguyxejonb.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "nguyxejonb.flowersgood.top"
   - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
     type: "hysteria2"
     server: "212.41.9.190"
@@ -105,10 +121,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France | [*CIDR]"
-      - "🇫🇷 France | [*CIDR] #2"
+      - "🇦🇹 Austria | [*CIDR]"
+      - "🇬🇧 United Kingdom | 🌐 | [*CIDR]"
       - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands | [*CIDR] VK #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+      - "🇮🇷 Iran | [*CIDR] VK"
       - "🇭🇺 Hungary | 🌐 [*CIDR]"
       - "🇺🇸 United States | 🌐 [*CIDR]"
       - "🇭🇺 Hungary | 🌐 [*CIDR] #2"
