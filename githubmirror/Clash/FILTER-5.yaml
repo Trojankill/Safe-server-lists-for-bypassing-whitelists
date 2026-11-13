@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-13 05:15:29 UTC
+# 2026-11-13 05:30:55 UTC
 proxies:
+  - name: "Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.163.203.170"
+    port: 443
+    uuid: "11aabba0-5fd1-4f15-8068-74c1a466cefc"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
+      short-id: "b28db60d77c50b4f"
+    network: "tcp"
   - name: "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "193.163.203.170"
@@ -16,65 +31,111 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     network: "tcp"
-  - name: "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "178.172.227.124"
-    port: 10444
-    uuid: "1af36694-b548-4b18-89a0-bc076eab4ed7"
+    server: "185.95.231.156"
+    port: 443
+    uuid: "1f8cf47a-b66a-4916-979f-26edfcf44eea"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
+      short-id: "a3a578ab"
+    network: "tcp"
+  - name: "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "87.199.205.28"
+    port: 443
+    uuid: "501a2da5-cb22-4a3f-915e-e3b821d1d62d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "vkvd754.okcdn.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
+      short-id: "ef1d3554c652a436"
+    network: "tcp"
+  - name: "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "safari"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "Finland | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "Armenia | base.syoknew.online | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "193.188.21.253"
-    port: 10444
-    uuid: "57f7772d-f5d6-4d8f-992d-5fa5e0d6da55"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "video.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "Germany | club9-92547542c194d0.rambler.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "194.135.32.20"
+    server: "178.160.228.139"
     port: 443
-    uuid: "5b2f074c-6f61-4faa-8bea-dbe8f0a90021"
+    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "club9-92547542c194d0.rambler.ru"
+    servername: "base.syoknew.online"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
-      short-id: "7869890bd66a9f3d"
+      public-key: "1DFPjPAr5meUaXBdTX2WMZu9BWV39TXV5N36Ske6_A0"
+      short-id: "a7df9e0cde3e1d79"
     network: "tcp"
-  - name: "Germany | ww3-378a6c903e42c4.rbc.ru | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Armenia | base.syoknew.online | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "194.135.32.92"
+    server: "178.160.228.139"
     port: 443
-    uuid: "5b2f074c-6f61-4faa-8bea-dbe8f0a90021"
+    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ww3-378a6c903e42c4.rbc.ru"
+    servername: "base.syoknew.online"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "CMkW1axrhEXoiJ6anMz9XEjlfqlAtEZya7L0b5ZPMyw"
-      short-id: "d6816b10d545df54"
+      public-key: "1DFPjPAr5meUaXBdTX2WMZu9BWV39TXV5N36Ske6_A0"
+      short-id: "a7df9e0cde3e1d79"
+    network: "tcp"
+  - name: "The Netherlands | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "195.123.221.39"
+    port: 18849
+    uuid: "7f3fea72-6819-4748-b734-d984891cf2ac"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rbc.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TY0u8pJSV0M0yXNZfK4XinnYiG9cEZf1SKta1eIghhM"
+      short-id: "0395c5b8449d10e6"
+    network: "tcp"
+  - name: "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.223"
+    port: 8445
+    uuid: "84a56b88-2f89-4a57-b925-74abd5b7fd87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
   - name: "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -105,19 +166,51 @@ proxies:
       public-key: "6dG1bo9e5DGPopbivweFyK1Uc_730aXqujS_f9gOfD4"
       short-id: "db01231f502fe591"
     network: "tcp"
-  - name: "Hong Kong | www.mtr.com.hk | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "Austria | user-231312.appstop.link | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "82.29.36.252"
-    port: 443
-    uuid: "b6058894-f212-4926-9e19-f65713cca4a4"
+    server: "185.104.63.62"
+    port: 8443
+    uuid: "a02525d9-d37a-4415-9aaa-5df1a89a36ec"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.mtr.com.hk"
+    servername: "user-231312.appstop.link"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "N-fcZsehZk3eIoo3bfjCdtYXsy1luM9Iz6LscVEr33U"
+      public-key: "6dG1bo9e5DGPopbivweFyK1Uc_730aXqujS_f9gOfD4"
+      short-id: "db01231f502fe591"
+    network: "tcp"
+  - name: "Russia | yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "200.165.236.84"
+    port: 443
+    uuid: "a54c6d0b-56d8-4bb8-a4af-8c5a7f0c0b34"
+    udp: true
+    tls: true
+    servername: "yandex.ru"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "WerkLBuzReJqDK23pG8dd7JPLBcu2rVhUfBR52D4um0"
+      short-id: "05c656ffd118ce13"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "api"
+  - name: "Finland | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "72.35.246.39"
+    port: 2053
+    uuid: "b6c29ae7-4748-4049-b642-b695c0d2c776"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "vk.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TSOm7XIZvGzYoCbh_lFFA9PTQJqI-JU5kKIAffGmUWg"
+      short-id: "5e39e518bfac6392"
     network: "tcp"
   - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -136,36 +229,127 @@ proxies:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     network: "tcp"
-  - name: "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Finland | home.asperwild.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "138.124.125.193"
-    port: 10444
-    uuid: "e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4"
+    server: "185.242.247.66"
+    port: 443
+    uuid: "cf1b08a7-55b7-4241-b80a-c59116272b43"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
+    servername: "home.asperwild.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
+      public-key: "DXc-l15XMaLM1zoeGdtkZd-1MymTHrnplcEHxyDvLRQ"
+      short-id: "d9dbc840ce42cd95"
     network: "tcp"
-  - name: "Sweden | tcpswed1.figurapn.ru | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "88.216.130.236"
-    port: 443
-    uuid: "fa081e9f-7574-4e18-8928-31aa5ac923c7"
+    server: "185.246.155.91"
+    port: 10103
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
     udp: true
     tls: true
-    servername: "tcpswed1.figurapn.ru"
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
-      short-id: "868419504747f6de"
+      public-key: "obQkp5VlQpnlt1hRLQ3VfHISYiiISZJyJZAMaIdjCko"
+      short-id: "6859f5b59e55aa30"
     network: "tcp"
-  - name: "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | www.apple.com | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "185.246.155.91"
+    port: 10403
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "obQkp5VlQpnlt1hRLQ3VfHISYiiISZJyJZAMaIdjCko"
+      short-id: "6859f5b59e55aa30"
+    network: "tcp"
+  - name: "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "216.152.155.189"
+    port: 443
+    uuid: "dbf3f074-3b18-43f3-b82a-debd8c879c69"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "F5BVp5XkY93lll_Ju34lOIE6A1-dx16_frY6eu9Nzzk"
+      short-id: "fecf2b55bb11bb0d"
+    network: "tcp"
+  - name: "France | edge-3b715ba41dc5.eu-cdn539.com | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "88.218.42.115"
+    port: 443
+    uuid: "e75ad2eb-6c1f-45ce-8023-f5f10875df66"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "edge-3b715ba41dc5.eu-cdn539.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM"
+      short-id: "dd908a76dbe472d4"
+    network: "tcp"
+  - name: "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "201.34.130.154"
+    port: 443
+    uuid: "fb9b439d-e5d2-4337-a781-b18a67b8127e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.ozone.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
+    network: "tcp"
+  - name: "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "201.34.130.154"
+    port: 443
+    uuid: "fb9b439d-e5d2-4337-a781-b18a67b8127e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.ozone.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
+    network: "tcp"
+  - name: "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod] #3"
+    type: "vless"
+    server: "201.34.130.154"
+    port: 443
+    uuid: "fb9b439d-e5d2-4337-a781-b18a67b8127e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.ozone.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
+    network: "tcp"
+  - name: "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -200,18 +384,30 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Belarus | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Finland | video.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | club9-92547542c194d0.rambler.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Germany | ww3-378a6c903e42c4.rbc.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
+      - "Russia | bhjolq0d0l.flowersgood.top | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Armenia | base.syoknew.online | unknown | [#LSO - #LinSpisokObhod]"
+      - "Armenia | base.syoknew.online | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | passport.yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "Austria | user-231312.appstop.link | unknown | [#LSO - #LinSpisokObhod]"
-      - "Hong Kong | www.mtr.com.hk | unknown | [#LSO - #LinSpisokObhod]"
+      - "Austria | user-231312.appstop.link | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Finland | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "United Kingdom | ads.x5.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Sweden | tcpswed1.figurapn.ru | unknown | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 0 [#LSO - #LinSpisokObhod]"
+      - "Finland | home.asperwild.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | www.apple.com | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "France | edge-3b715ba41dc5.eu-cdn539.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "Russia | st.ozone.ru | TCP | [#LSO - #LinSpisokObhod] #3"
+      - "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
       - "🇩🇪 Германия | VMESS TCP TLS"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
