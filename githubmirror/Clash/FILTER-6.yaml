@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 23:00:54 UTC
+# 2026-11-13 23:15:33 UTC
 proxies:
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
@@ -18,7 +18,37 @@ proxies:
       path: "/static/collect/9412171e8a3a/"
       headers:
         Host: "zry9ocg43w.flowersgood.top"
+  - name: "🇺🇸 United States [*CIDR] VK"
+    type: "vless"
+    server: "185.86.147.172"
+    port: 7490
+    uuid: "2f03861a-157e-48dc-9ad6-3dddb3e7234a"
+    udp: true
+    tls: true
+    servername: "wn-us4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
   - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "185.16.213.6"
+    port: 443
+    uuid: "7a6c31c0-d187-4cc3-9f54-9308916f1f43"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "internity.ru"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "R_km5hxsfjRUsnZfSOBYxB9DwShSIwYacXduHR8_9gE"
+      short-id: "dfcc5c5ac8507f95"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
     server: "185.16.213.6"
     port: 443
@@ -52,7 +82,9 @@ proxy-groups:
     type: select
     proxies:
       - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇺🇸 United States [*CIDR] VK"
       - "🇷🇺 Russia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
       - "🇨🇦 Canada | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
