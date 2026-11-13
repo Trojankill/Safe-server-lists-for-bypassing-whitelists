@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 07:00:57 UTC
+# 2026-11-13 07:15:32 UTC
 proxies:
   - name: "🇸🇪 [WL] Сервер 2"
     type: "vless"
@@ -31,22 +31,22 @@ proxies:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
     network: "tcp"
-  - name: "🇬🇧 [WL] Сервер 17"
+  - name: "🇷🇺 [WL] Сервер 85"
     type: "vless"
-    server: "193.188.21.253"
-    port: 10444
-    uuid: "57f7772d-f5d6-4d8f-992d-5fa5e0d6da55"
+    server: "vps3.nemnogogo.com"
+    port: 443
+    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "video.yandex.ru"
+    servername: "vps3.nemnogogo.com"
+    alpn:
+      - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
-      short-id: "8debcf36f1cc69ff"
-    network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 11"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "mobile.api.Event"
+  - name: "🇳🇱 [WL] Сервер 12"
     type: "vless"
     server: "213.165.39.134"
     port: 443
@@ -76,7 +76,24 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     network: "tcp"
-  - name: "🇦🇲 [WL] Сервер 75"
+  - name: "🇵🇱 [WL] Сервер 11"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "bhjolq0d0l.flowersgood.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "bhjolq0d0l.flowersgood.top"
+  - name: "🇦🇲 [WL] Сервер 73"
     type: "vless"
     server: "178.160.228.139"
     port: 443
@@ -120,7 +137,7 @@ proxies:
     reality-opts:
       public-key: "I_0JD13_bJuD6bNhTfb1PFPJUQqEVHl-YFluNwHAPD4"
     network: "tcp"
-  - name: "🇪🇪 [WL] Сервер 66"
+  - name: "🌐 [WL] Сервер 79"
     type: "vless"
     server: "cdcdfc.whitenw.net"
     port: 8445
@@ -149,6 +166,21 @@ proxies:
       public-key: "6dG1bo9e5DGPopbivweFyK1Uc_730aXqujS_f9gOfD4"
       short-id: "db01231f502fe591"
     network: "tcp"
+  - name: "🇦🇹 [WL] Сервер 44"
+    type: "vless"
+    server: "user-231312.appstop.link"
+    port: 8443
+    uuid: "a02525d9-d37a-4415-9aaa-5df1a89a36ec"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "user-231312.appstop.link"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "6dG1bo9e5DGPopbivweFyK1Uc_730aXqujS_f9gOfD4"
+      short-id: "db01231f502fe591"
+    network: "tcp"
   - name: "🇩🇪 [WL] Сервер 71"
     type: "vless"
     server: "200.165.236.84"
@@ -165,6 +197,21 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "api"
+  - name: "🇬🇧 [WL] Сервер 14"
+    type: "vless"
+    server: "213.176.92.168"
+    port: 10444
+    uuid: "ba52cc43-700d-4040-9444-29214c98e6e0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "video.yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
   - name: "🇹🇷 [WL] Сервер 23"
     type: "vless"
     server: "185.246.155.91"
@@ -210,7 +257,7 @@ proxies:
       public-key: "F5BVp5XkY93lll_Ju34lOIE6A1-dx16_frY6eu9Nzzk"
       short-id: "fecf2b55bb11bb0d"
     network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 87"
+  - name: "🇷🇺 [WL] Сервер 82"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -225,7 +272,7 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇩🇪 [WL] Сервер 60"
+  - name: "🇺🇸 [WL] Сервер 59"
     type: "vless"
     server: "88.218.42.115"
     port: 443
@@ -240,7 +287,22 @@ proxies:
       public-key: "cTHWxPgxWCY2aGTyJTLMOc9JVHdulknmGUqiolKPLgM"
       short-id: "dd908a76dbe472d4"
     network: "tcp"
-  - name: "🇵🇱 [WL] Сервер 76"
+  - name: "🇷🇺 [WL] Сервер 83"
+    type: "vless"
+    server: "ru7e2bab87cc39.eu-cdn539.com"
+    port: 443
+    uuid: "e75ad2eb-6c1f-45ce-8023-f5f10875df66"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru7e2bab87cc39.eu-cdn539.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
+      short-id: "3992cc7fb9fcbe58"
+    network: "tcp"
+  - name: "🇵🇱 [WL] Сервер 68"
     type: "vless"
     server: "195.3.223.124"
     port: 443
@@ -255,7 +317,7 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "868419504747f6de"
     network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 86"
+  - name: "🇷🇺 [WL] Сервер 81"
     type: "vless"
     server: "45.139.27.164"
     port: 443
@@ -270,7 +332,7 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "868419504747f6de"
     network: "tcp"
-  - name: "🇸🇪 [WL] Сервер 65"
+  - name: "🇸🇪 [WL] Сервер 64"
     type: "vless"
     server: "88.216.130.236"
     port: 443
@@ -284,7 +346,7 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "868419504747f6de"
     network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 15"
+  - name: "🇳🇱 [WL] Сервер 16"
     type: "vless"
     server: "201.34.130.154"
     port: 443
@@ -299,7 +361,7 @@ proxies:
       public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
       short-id: "c48282c0acf92721"
     network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 16"
+  - name: "🇳🇱 [WL] Сервер 17"
     type: "vless"
     server: "201.34.130.154"
     port: 443
@@ -314,7 +376,19 @@ proxies:
       public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
       short-id: "c48282c0acf92721"
     network: "tcp"
-  - name: "🇩🇪 [WL] Сервер 68"
+  - name: "🇩🇪 [WL] Сервер 75"
+    type: "vmess"
+    server: "185.177.229.95"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "xmfhlpy.com"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇩🇪 [WL] Сервер 74"
     type: "vmess"
     server: "185.177.229.95"
     port: 1270
@@ -332,25 +406,30 @@ proxy-groups:
     proxies:
       - "🇸🇪 [WL] Сервер 2"
       - "🇺🇸 [WL] Сервер 3"
-      - "🇬🇧 [WL] Сервер 17"
-      - "🇳🇱 [WL] Сервер 11"
+      - "🇷🇺 [WL] Сервер 85"
+      - "🇳🇱 [WL] Сервер 12"
       - "🇸🇬 [WL] Сервер 13"
-      - "🇦🇲 [WL] Сервер 75"
+      - "🇵🇱 [WL] Сервер 11"
+      - "🇦🇲 [WL] Сервер 73"
       - "🇳🇱 [WL] Сервер 18"
       - "🌐 [WL] Сервер 1"
-      - "🇪🇪 [WL] Сервер 66"
+      - "🌐 [WL] Сервер 79"
       - "🇦🇹 [WL] Сервер 43"
+      - "🇦🇹 [WL] Сервер 44"
       - "🇩🇪 [WL] Сервер 71"
+      - "🇬🇧 [WL] Сервер 14"
       - "🇹🇷 [WL] Сервер 23"
       - "🇰🇿 [WL] Сервер 24"
       - "🇺🇸 [WL] Сервер 4"
-      - "🇷🇺 [WL] Сервер 87"
-      - "🇩🇪 [WL] Сервер 60"
-      - "🇵🇱 [WL] Сервер 76"
-      - "🇷🇺 [WL] Сервер 86"
-      - "🇸🇪 [WL] Сервер 65"
-      - "🇳🇱 [WL] Сервер 15"
+      - "🇷🇺 [WL] Сервер 82"
+      - "🇺🇸 [WL] Сервер 59"
+      - "🇷🇺 [WL] Сервер 83"
+      - "🇵🇱 [WL] Сервер 68"
+      - "🇷🇺 [WL] Сервер 81"
+      - "🇸🇪 [WL] Сервер 64"
       - "🇳🇱 [WL] Сервер 16"
-      - "🇩🇪 [WL] Сервер 68"
+      - "🇳🇱 [WL] Сервер 17"
+      - "🇩🇪 [WL] Сервер 75"
+      - "🇩🇪 [WL] Сервер 74"
 rules:
   - MATCH,PROXY
