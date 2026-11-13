@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-13 05:45:40 UTC
+# 2026-11-13 06:00:59 UTC
 proxies:
   - name: "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -153,6 +153,22 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "94.139.250.226"
+    port: 443
+    uuid: "fa081e9f-7574-0002-8928-31aa5ac923c7"
+    udp: true
+    tls: true
+    servername: "rus8-b.sbcweb.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "45.139.27.164"
@@ -202,6 +218,7 @@ proxy-groups:
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #2"
       - "🇨🇭 Швейцария | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
