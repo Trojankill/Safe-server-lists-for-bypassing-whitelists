@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-13 13:00:56 UTC
+# 2026-11-13 13:15:31 UTC
 proxies:
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "85.192.56.61"
+    port: 443
+    uuid: "1b487f79-6b87-4971-863c-526bd31abd44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "85.192.56.61.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
+    network: "tcp"
   - name: "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "95.143.188.113"
@@ -45,6 +60,21 @@ proxies:
     reality-opts:
       public-key: "VbUdI9MaHFYPBJ1gmmfGyUX415RdeS2yg7ojhX43_m8"
       short-id: "b5ea2877aadeb97c"
+    network: "tcp"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "85.192.56.61"
+    port: 443
+    uuid: "41a382b8-6d2f-482e-abf2-954a56456e8c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "85.192.56.61.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
+      short-id: "88086e66870f03e6"
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -340,9 +370,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇺🇿 Узбекистан | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
