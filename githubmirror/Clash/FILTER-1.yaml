@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 12:15:34 UTC
+# 2026-11-14 12:30:48 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -167,6 +167,21 @@ proxies:
       public-key: "DeueXD24ph6cE_WRTTaPyuGX4jNVxjvJBHjENlrzsCM"
       short-id: "42695b59d82528a4"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 8443
+    uuid: "7f12420d-b0a7-48b6-aec4-4190b8027ec5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "t8aH4xSec-bs7fAAeDT-zARIJO9XbFfqlUeA65IP-TE"
+      short-id: "1b4606dfa74f3ab1"
+    network: "tcp"
   - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "91.107.120.65"
@@ -180,6 +195,21 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "wDDyZZJfgJHB6OOrdpLgAk18P2j9tZrxgOxOB_s7Sws"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
     network: "tcp"
   - name: "🇦🇱 Албания | 🔗 Каскад [#РКП] #3"
     type: "vless"
@@ -267,7 +297,7 @@ proxies:
     reality-opts:
       public-key: "37ZFWtNTZ_slVsJp0_5siKSeqz-sZSuLdYurC_cBrxw"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇷🇺 Россия [#РКП] #4"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -297,13 +327,15 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇦🇱 Албания | 🔗 Каскад [#РКП] #3"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #4"
 rules:
   - MATCH,PROXY
