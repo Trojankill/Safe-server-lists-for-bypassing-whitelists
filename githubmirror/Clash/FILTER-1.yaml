@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 17:45:33 UTC
+# 2026-11-14 18:00:56 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -111,6 +111,20 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "168.113.187.116"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "files.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
@@ -122,5 +136,6 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
