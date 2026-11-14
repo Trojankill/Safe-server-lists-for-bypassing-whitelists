@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-14 22:30:46 UTC
+# 2026-11-14 22:45:29 UTC
 proxies:
+  - name: "🇩🇪 Germany [*CIDR]"
+    type: "vless"
+    server: "31.192.106.192"
+    port: 443
+    uuid: "140a9844-d304-4ff2-aa47-c0a2a67da6f0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "node2.shakalchk.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
+      short-id: "a132a3"
+    network: "tcp"
   - name: "🇵🇱 Poland [*CIDR] VK"
     type: "vless"
     server: "185.86.145.55"
@@ -11,7 +26,7 @@ proxies:
     servername: "wn-pl4.static-s3.org"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -33,7 +48,24 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: "🇮🇷 Iran [*CIDR] #2"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇩🇪 Germany [*CIDR] #2"
     type: "vless"
     server: "31.192.106.192"
     port: 443
@@ -42,7 +74,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "node2.shakalchk.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
@@ -57,7 +89,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "birch-ledger.justext.space"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
@@ -72,119 +104,38 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "birch-ledger.justext.space"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] VK #3"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
-  - name: "🇭🇺 Hungary | 🌐 [*CIDR]"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 11443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LR_FEXsJiKJUtXcmO1UR4Oi2IMmRcaS04D05oooqn28"
-      short-id: "9edc24fc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-hu"
-  - name: "🇷🇺 Russia [*CIDR]"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 13443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "d2B_vurRVKXLrK0ib-0sTtQuI3VDdaj8ZKTXgEPwAlc"
-      short-id: "9de815e2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 14443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "rVt9_jYmjD8R-DjRQrX7uRPJ2803fRXf9quNOqfxJQM"
-      short-id: "55a57f74"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-us"
-  - name: "🇦🇹 Austria [*CIDR]"
-    type: "vless"
-    server: "189.74.115.25"
-    port: 443
-    uuid: "c2d06713-d602-4a41-9a45-8e34c2504fe2"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇵🇱 Poland [*CIDR]"
-    type: "vless"
-    server: "189.74.116.26"
-    port: 443
-    uuid: "c2d06713-d602-4a41-9a45-8e34c2504fe2"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediatropa.cc"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "vless"
-    server: "189.74.118.4"
-    port: 443
-    uuid: "c2d06713-d602-4a41-9a45-8e34c2504fe2"
-    udp: true
-    tls: true
-    servername: "cz-next.mediastvor.cc"
-    alpn:
-      - "h2"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "r7Kp4mN9tQ2v"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Germany [*CIDR]"
       - "🇵🇱 Poland [*CIDR] VK"
       - "🇮🇷 Iran [*CIDR]"
-      - "🇩🇪 Germany [*CIDR]"
+      - "🇮🇷 Iran [*CIDR] #2"
+      - "🇩🇪 Germany [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR] VK"
       - "🇷🇺 Russia [*CIDR] VK #2"
-      - "🇭🇺 Hungary | 🌐 [*CIDR]"
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇵🇱 Poland [*CIDR]"
-      - "🇨🇿 Czechia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] VK #3"
 rules:
   - MATCH,PROXY
