@@ -1,37 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-14 18:15:34 UTC
+# 2026-11-14 18:30:46 UTC
 proxies:
-  - name: "🇩🇪 Germany [*CIDR]"
-    type: "vless"
-    server: "31.192.106.192"
-    port: 443
-    uuid: "140a9844-d304-4ff2-aa47-c0a2a67da6f0"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR]"
-    type: "vless"
-    server: "2.26.8.1"
-    port: 443
-    uuid: "2db48a26-c97d-40c3-b8e2-8f04f1cfb512"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "bg.edgemedia.lol"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "t7dd2ar4QX4JaQz2FvVjE44XLT0jj7Z-0raaAQ6Y9As"
-      short-id: "f822140f54644166"
-    network: "tcp"
-  - name: "🇧🇬 Bulgaria [*CIDR] #2"
+  - name: "🇧🇬 Bulgaria | [*CIDR]"
     type: "vless"
     server: "g4.staticedge.cfd"
     port: 443
@@ -46,37 +16,23 @@ proxies:
       public-key: "t7dd2ar4QX4JaQz2FvVjE44XLT0jj7Z-0raaAQ6Y9As"
       short-id: "f822140f54644166"
     network: "tcp"
-  - name: "🇵🇱 Poland [*CIDR] VK"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "185.86.145.55"
-    port: 10470
-    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
+    server: "201.34.133.20"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    servername: "wn-pl4.static-s3.org"
+    servername: "luminexorizon.ink"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+      - "http/1.1"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "wn-adaptcloud"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "83.171.241.130"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "8a2e72t.nl20.h1clayd.shop"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA"
-      short-id: "8d0d0679f42ffd98"
-    network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
     type: "vless"
     server: "luminexorizon.ink"
     port: 443
@@ -86,26 +42,12 @@ proxies:
     servername: "luminexorizon.ink"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇮🇷 Iran | [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -122,52 +64,22 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Germany [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇳🇱 | [*CIDR] VK"
     type: "vless"
-    server: "31.192.106.192"
-    port: 443
-    uuid: "4fb48619-c29d-47f3-8c21-12bdc3286935"
+    server: "sub-edge-11-1g.xrent.cloud"
+    port: 10451
+    uuid: "568e8786-99b5-4a26-b3af-a90e86ee0223"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
-  - name: "🇦🇱 Albania [*CIDR]"
-    type: "vless"
-    server: "176.108.240.45"
-    port: 443
-    uuid: "5c3b6dd3-9fd1-4b2c-a343-5ff2e4e4f933"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "xn---26-5cd9bhfc0a8c7b8af.xn--p1ai"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
-      short-id: "43560624cceb5666"
-    network: "tcp"
-  - name: "🇦🇱 Albania [*CIDR] #2"
-    type: "vless"
-    server: "176.108.240.45"
-    port: 443
-    uuid: "6895528a-aa3e-48c4-8804-ced625e92b47"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "xn---26-5cd9bhfc0a8c7b8af.xn--p1ai"
+    servername: "onf.ru"
     client-fingerprint: "safari"
     skip-cert-verify: false
     reality-opts:
-      public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
-      short-id: "43560624cceb5666"
+      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
+      short-id: "4326"
     network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR] VK"
+  - name: "🇷🇺 Russia | [*CIDR] VK"
     type: "vless"
     server: "212.233.90.78"
     port: 443
@@ -182,22 +94,50 @@ proxies:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
-  - name: "🇫🇷 France [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR] VK #2"
     type: "vless"
-    server: "189.74.117.30"
+    server: "212.233.90.78"
     port: 443
-    uuid: "a33930ad-6235-4fe5-9636-67180fd9cc23"
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.videodolina.cc"
-    client-fingerprint: "edge"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
     network: "tcp"
-  - name: "🇫🇷 France [*CIDR] #2"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
+    type: "vless"
+    server: "196.240.125.10"
+    port: 8443
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-v1-6af86a96.vmagnum.win"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands | [*CIDR] #2"
+    type: "vless"
+    server: "196.240.125.250"
+    port: 8443
+    uuid: "97fd7807-7e2b-49da-8a0e-e40197088f97"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-v1-6af87527.vmagnum.win"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
     type: "vless"
     server: "api.videodolina.cc"
     port: 443
@@ -212,39 +152,100 @@ proxies:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇦🇱 Albania [*CIDR] #3"
+  - name: "🇭🇺 Hungary | 🌐 | [*CIDR]"
     type: "vless"
-    server: "176.108.240.45"
-    port: 443
-    uuid: "a856b568-9923-405b-b128-d28fb9d6a2a7"
+    server: "212.41.8.76"
+    port: 11443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "xn---26-5cd9bhfc0a8c7b8af.xn--p1ai"
+    servername: "s3.storage.selcloud.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
-      short-id: "43560624cceb5666"
+      public-key: "LR_FEXsJiKJUtXcmO1UR4Oi2IMmRcaS04D05oooqn28"
+      short-id: "9edc24fc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-hu"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "212.41.8.76"
+    port: 13443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "d2B_vurRVKXLrK0ib-0sTtQuI3VDdaj8ZKTXgEPwAlc"
+      short-id: "9de815e2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "212.41.8.76"
+    port: 14443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "rVt9_jYmjD8R-DjRQrX7uRPJ2803fRXf9quNOqfxJQM"
+      short-id: "55a57f74"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-us"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇱🇻 | [*CIDR]"
+    type: "vless"
+    server: "141.133.185.6"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "files.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇵🇱 | [*CIDR]"
+    type: "vless"
+    server: "159.194.210.102"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "box.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR]"
-      - "🇧🇬 Bulgaria [*CIDR] #2"
-      - "🇵🇱 Poland [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
-      - "🇩🇪 Germany [*CIDR] #2"
-      - "🇦🇱 Albania [*CIDR]"
-      - "🇦🇱 Albania [*CIDR] #2"
-      - "🇷🇺 Russia [*CIDR] VK"
-      - "🇫🇷 France [*CIDR]"
-      - "🇫🇷 France [*CIDR] #2"
-      - "🇦🇱 Albania [*CIDR] #3"
+      - "🇧🇬 Bulgaria | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+      - "🇮🇷 Iran | [*CIDR]"
+      - "🌐 Anycast-IP | 🇪🇪 🇳🇱 | [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR] VK #2"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] #2"
+      - "🇫🇷 France | [*CIDR]"
+      - "🇭🇺 Hungary | 🌐 | [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇺🇸 United States | 🌐 | [*CIDR]"
+      - "🌐 Anycast-IP | 🇪🇪 🇱🇻 | [*CIDR]"
+      - "🌐 Anycast-IP | 🇪🇪 🇵🇱 | [*CIDR]"
 rules:
   - MATCH,PROXY
