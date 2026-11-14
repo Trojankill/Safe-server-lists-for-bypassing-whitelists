@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 15:00:58 UTC
+# 2026-11-14 15:15:43 UTC
 proxies:
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -18,6 +18,37 @@ proxies:
       path: "/ws/0281a320-21e8-434f-86b7-a7c0db58c0db"
       headers:
         Host: "je8r21hqax.dev.onappjet.com"
+  - name: "🇫🇮 Финляндия [#РКП]"
+    type: "vless"
+    server: "193.233.136.153"
+    port: 35023
+    uuid: "25290612-08f9-46ef-8169-8eeb929502f1"
+    udp: true
+    tls: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FT3RWWbmvEE82tz3vtDLYOSDvg4ZBDKDaR704DKrY2U"
+      short-id: "cb1e"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "217.144.184.247"
+    port: 443
+    uuid: "2db48a26-c97d-40c3-b8e2-8f04f1cfb512"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "bg.edgemedia.lol"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "t7dd2ar4QX4JaQz2FvVjE44XLT0jj7Z-0raaAQ6Y9As"
+      short-id: "f822140f54644166"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.145.55"
@@ -235,6 +266,8 @@ proxy-groups:
     type: select
     proxies:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия [#РКП]"
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
