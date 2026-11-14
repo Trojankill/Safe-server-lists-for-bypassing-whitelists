@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 10:45:32 UTC
+# 2026-11-14 11:00:59 UTC
 proxies:
   - name: "🇺🇸 United States — #111"
     type: "vless"
@@ -839,6 +839,36 @@ proxies:
     reality-opts:
       public-key: "ZJlfiMh4ebjrTl2_kwAk_zXMAaCiwNS7yMd5XzlUgmI"
     network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.145.55"
+    port: 10470
+    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
+    udp: true
+    tls: true
+    servername: "wn-pl4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "78.159.245.177"
+    port: 59715
+    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
+    udp: true
+    tls: true
+    servername: "wn-pl4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
   - name: "BUNKER 🖤 | Россия 🇷🇺 #140"
     type: "vless"
     server: "185.86.145.37"
@@ -2446,6 +2476,48 @@ proxies:
       public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
       short-id: "8debcf36f1cc69ff"
     network: "tcp"
+  - name: "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.27.48"
+    port: 443
+    uuid: "c050cf56-3071-4604-b058-d14f17a67535"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fastly.vidtrove.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_vuP0Wathd0PL_V39nLPB1lJWO9tLRnTcyphw1HK1kM"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.34.212"
+    port: 443
+    uuid: "c050cf56-3071-4604-b058-d14f17a67535"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn-869759.wl2.bracken-static-fold.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_vuP0Wathd0PL_V39nLPB1lJWO9tLRnTcyphw1HK1kM"
+    network: "tcp"
+  - name: "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "46.243.233.249"
+    port: 2053
+    uuid: "c050cf56-3071-4604-b058-d14f17a67535"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn-3116c7.wl.clearpeak-media.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0-xSyqw-L1Kywk4O-whZDZicbLwhK-hAk92HB0JSG1s"
+    network: "tcp"
   - name: "🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd #2"
     type: "vless"
     server: "208.69.78.217"
@@ -2758,7 +2830,7 @@ proxies:
       public-key: "W_VahGtN28jS59zNCnex-Bfpz2eNVY5VveQwkHoUZgQ"
       short-id: "acb05d85369b"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "201.24.120.191"
     port: 443
@@ -4053,6 +4125,8 @@ proxy-groups:
       - "🇨🇭 Switzerland — #15"
       - "🇺🇸 [BL] Сервер 206"
       - "BUNKER 🖤 | Россия 🇷🇺 #167"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "BUNKER 🖤 | Россия 🇷🇺 #140"
       - "🇱🇻 [BL] Сервер 156"
       - "🇳🇱 Netherlands | TG: @HardVpn_robot t.me/rjsxrd"
@@ -4160,6 +4234,9 @@ proxy-groups:
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 56"
       - "🇬🇧 [WL] Сервер 50"
+      - "🇨🇭 Швейцария | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd #2"
       - "🇨🇭 CH | VLESS t.me/rjsxrd"
       - "🌐 [BL] Сервер 27"
@@ -4181,7 +4258,7 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 220"
       - "🇺🇸 [BL] Сервер 120"
       - "🇺🇸_美国 (10) t.me/rjsxrd"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #5"
       - "@LexaVercelbot C-1 #72 🇫🇲 🎴"
       - "🇺🇸 [BL] Сервер 84"
