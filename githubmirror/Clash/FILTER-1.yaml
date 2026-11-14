@@ -1,6 +1,53 @@
 # clash/mihomo subscription
-# 2026-11-14 17:15:34 UTC
+# 2026-11-14 17:30:47 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.145.223"
+    port: 10451
+    uuid: "568e8786-99b5-4a26-b3af-a90e86ee0223"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "onf.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
+      short-id: "4326"
+    network: "tcp"
+  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "212.41.8.76"
+    port: 11443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "LR_FEXsJiKJUtXcmO1UR4Oi2IMmRcaS04D05oooqn28"
+      short-id: "9edc24fc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-hu"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "212.41.8.76"
+    port: 13443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "d2B_vurRVKXLrK0ib-0sTtQuI3VDdaj8ZKTXgEPwAlc"
+      short-id: "9de815e2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "212.41.8.76"
@@ -35,7 +82,7 @@ proxies:
       path: "/media/stream/yIxNsi9wcWLc"
       headers:
         Host: "trekkontrol.pro"
-  - name: "🇷🇺 Россия [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -50,12 +97,30 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "159.194.210.102"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "box.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
