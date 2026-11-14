@@ -1,38 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-14 04:45:36 UTC
+# 2026-11-14 05:00:54 UTC
 proxies:
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "31.177.111.184"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
-    udp: true
-    tls: true
-    servername: "zry9ocg43w.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/collect/9412171e8a3a/"
-      headers:
-        Host: "zry9ocg43w.flowersgood.top"
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "217.28.222.68"
-    port: 443
-    uuid: "68773ff0-9ad3-459f-b194-eddb6a82d572"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "vagacdn.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Ti7frM2ocZ5q5Tb0_pMuqgMQscuNTscctyMpby-YVEA"
-      short-id: "7768294d3c5ad0cc"
-    network: "tcp"
   - name: "🇦🇱 Албания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.240.45"
@@ -107,7 +75,7 @@ proxies:
     reality-opts:
       public-key: "9fA6ZSGr6ZalzYDf0L_Tx1nQOZskdvLrqSN-Gzj4xEI"
     network: "tcp"
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "91.107.120.65"
     port: 443
@@ -120,35 +88,6 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "wDDyZZJfgJHB6OOrdpLgAk18P2j9tZrxgOxOB_s7Sws"
-    network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "188.225.24.192"
-    port: 443
-    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "portal.bokovskay.app"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "188.225.24.62"
-    port: 443
-    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "img.bokovskay.app"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇮 Финляндия [#РКП]"
     type: "vless"
@@ -181,7 +120,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇫🇷 Франция [#РКП] #2"
     type: "vless"
     server: "46.226.166.17"
     port: 13363
@@ -212,57 +151,70 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "185.42.24.231"
-    port: 443
-    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "5.59.204.26"
+    port: 21443
+    password: "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo"
     udp: true
-    tls: true
-    servername: "fr4.cyphervpn.pro"
+    sni: "fi1.nebulaguard.org"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "fr4grpc"
-  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "87.242.95.226"
-    port: 443
-    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
-    udp: true
-    tls: true
-    servername: "kedrovyi-bereg.online"
-    alpn:
+      - "h3"
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/cart/sync/IvDzdZGhhPr-"
+      path: "/trojan/"
       headers:
-        Host: "kedrovyi-bereg.online"
+        Host: "fi1.nebulaguard.org"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "5.59.204.26"
+    port: 51443
+    password: "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo"
+    udp: true
+    sni: "lv.nebulaguard.org"
+    alpn:
+      - "h2"
+      - "h3"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/trojan/"
+      headers:
+        Host: "lv.nebulaguard.org"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
+    type: "trojan"
+    server: "5.59.204.26"
+    port: 55443
+    password: "X00HagvwL8gQXNDAnsxsN8dv1_VdneEo"
+    udp: true
+    sni: "lv.nebulaguard.org"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇦🇱 Албания | 🔗 Каскад [#РКП]"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇸🇪 Швеция [#РКП]"
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия [#РКП]"
       - "🇫🇷 Франция [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
+      - "🇫🇷 Франция [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-      - "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
