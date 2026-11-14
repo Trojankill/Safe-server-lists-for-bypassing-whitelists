@@ -1,6 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-14 13:00:59 UTC
+# 2026-11-14 13:15:40 UTC
 proxies:
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.87.189.102"
+    port: 443
+    uuid: "0281a320-21e8-434f-86b7-a7c0db58c0db"
+    udp: true
+    tls: true
+    servername: "je8r21hqax.dev.onappjet.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws/0281a320-21e8-434f-86b7-a7c0db58c0db"
+      headers:
+        Host: "je8r21hqax.dev.onappjet.com"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.145.55"
@@ -31,6 +48,21 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "wn-adaptcloud"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "83.171.241.130"
+    port: 443
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "8a2e72t.nl20.h1clayd.shop"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA"
+      short-id: "8d0d0679f42ffd98"
+    network: "tcp"
   - name: "🇧🇪 Бельгия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "109.73.203.8"
@@ -76,6 +108,23 @@ proxies:
       public-key: "_bXTdS7SEP3arribAnbsdiC3VXRhKRVCsYI533sjsCM"
       short-id: "542a83882d6461d5"
     network: "tcp"
+  - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
   - name: "🇦🇱 Албания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.240.45"
@@ -91,7 +140,7 @@ proxies:
       public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
       short-id: "43560624cceb5666"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "37.153.70.143"
     port: 2444
@@ -283,7 +332,7 @@ proxies:
       public-key: "HyPCaHlGMjE2h7D4F6dtyFHeXDEAHIUg9fXJgADc5H0"
       short-id: "134a7678ec2a3285"
     network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "31.129.101.153"
     port: 443
@@ -316,13 +365,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇧🇪 Бельгия | 🔗 Каскад [#РКП]"
       - "🇮🇪 Ирландия | 🔗 Каскад [#РКП]"
       - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇦🇱 Албания | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇦🇱 Албания | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
@@ -335,7 +387,7 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #4"
 rules:
   - MATCH,PROXY
