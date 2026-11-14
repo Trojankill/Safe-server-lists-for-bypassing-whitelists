@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 10:30:56 UTC
+# 2026-11-14 10:45:32 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -229,6 +229,21 @@ proxies:
       public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
       short-id: "c48282c0acf92721"
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "147.45.214.143"
+    port: 443
+    uuid: "fb9b439d-e5d2-4337-a781-b18a67b8127e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.ozone.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
@@ -248,5 +263,6 @@ proxy-groups:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
