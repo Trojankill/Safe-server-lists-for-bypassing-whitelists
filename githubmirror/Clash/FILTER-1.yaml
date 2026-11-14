@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 18:45:34 UTC
+# 2026-11-14 19:00:56 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -97,6 +97,20 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "141.133.185.7"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "files.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "159.194.210.102"
@@ -111,7 +125,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "168.113.187.116"
     port: 443
@@ -135,7 +149,8 @@ proxy-groups:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
