@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 15:30:50 UTC
+# 2026-11-14 15:45:40 UTC
 proxies:
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -233,6 +233,24 @@ proxies:
       public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
       short-id: "43560624cceb5666"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "87.242.95.184"
+    port: 443
+    uuid: "cdf4bc13-31e6-4bff-962c-05fe9151c593"
+    udp: true
+    tls: true
+    servername: "trekkontrol.pro"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/media/stream/yIxNsi9wcWLc"
+      headers:
+        Host: "trekkontrol.pro"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "201.24.120.191"
@@ -296,6 +314,7 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
