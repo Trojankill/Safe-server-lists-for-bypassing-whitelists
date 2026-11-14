@@ -1,24 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-14 09:30:44 UTC
+# 2026-11-14 09:45:31 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "31.177.111.184"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
-    udp: true
-    tls: true
-    servername: "zry9ocg43w.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/static/collect/9412171e8a3a/"
-      headers:
-        Host: "zry9ocg43w.flowersgood.top"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
     type: "vless"
     server: "luminexorizon.ink"
     port: 443
@@ -33,56 +16,38 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇩🇪 [*CIDR] #2"
     type: "vless"
-    server: "31.192.106.192"
+    server: "luminexorizon.ink"
     port: 443
-    uuid: "4fb48619-c29d-47f3-8c21-12bdc3286935"
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
     client-fingerprint: "chrome"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
-  - name: "🇦🇱 Albania | [*CIDR]"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🌐 Anycast-IP | 🇩🇪 🇳🇱 [*CIDR]"
     type: "vless"
-    server: "176.108.240.45"
+    server: "luminexorizon.ink"
     port: 443
-    uuid: "6895528a-aa3e-48c4-8804-ced625e92b47"
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "xn---26-5cd9bhfc0a8c7b8af.xn--p1ai"
-    client-fingerprint: "android"
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "me0xkqd3f9UlKOavrYCOTK5J2erH1-JK_LA017XHkUU"
-      short-id: "43560624cceb5666"
-    network: "tcp"
-  - name: "🇮🇷 Iran | [*CIDR] VK"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇳🇱 The Netherlands [*CIDR] VK"
     type: "vless"
     server: "185.86.147.175"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "nguyxejonb.flowersgood.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "nguyxejonb.flowersgood.top"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
-    type: "vless"
-    server: "bhjolq0d0l.flowersgood.top"
     port: 443
     uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
@@ -90,14 +55,14 @@ proxies:
     servername: "bhjolq0d0l.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "bhjolq0d0l.flowersgood.top"
-  - name: "🇮🇷 Iran | [*CIDR] VK #2"
+  - name: "🇮🇷 Iran [*CIDR] VK"
     type: "vless"
     server: "nguyxejonb.flowersgood.top"
     port: 443
@@ -107,71 +72,21 @@ proxies:
     servername: "nguyxejonb.flowersgood.top"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "nguyxejonb.flowersgood.top"
-  - name: "🇵🇱 Poland | [*CIDR]"
-    type: "vless"
-    server: "31.76.34.142"
-    port: 443
-    uuid: "a5a8ffd9-17b9-000c-840d-bb69289f94fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "30916121.client.sushihost.su"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Zobd5crq6DzOZQjWiR0nGzyX0QU5zLNqL4VtSqwiyUo"
-      short-id: "b0d8f964b7ac8ac0"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
-    type: "vless"
-    server: "31.76.34.142"
-    port: 443
-    uuid: "a5a8ffd9-17b9-000d-840d-bb69289f94fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "30916121.client.sushihost.su"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Zobd5crq6DzOZQjWiR0nGzyX0QU5zLNqL4VtSqwiyUo"
-      short-id: "b0d8f964b7ac8ac0"
-    network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "30916121.client.sushihost.su"
-    port: 443
-    uuid: "a5a8ffd9-17b9-4052-840d-bb69289f94fc"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "30916121.client.sushihost.su"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Zobd5crq6DzOZQjWiR0nGzyX0QU5zLNqL4VtSqwiyUo"
-      short-id: "b0d8f964b7ac8ac0"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | [*CIDR]"
-      - "🇦🇱 Albania | [*CIDR]"
-      - "🇮🇷 Iran | [*CIDR] VK"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇮🇷 Iran | [*CIDR] VK #2"
-      - "🇵🇱 Poland | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
+      - "🌐 Anycast-IP | 🇩🇪 [*CIDR]"
+      - "🌐 Anycast-IP | 🇩🇪 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇩🇪 🇳🇱 [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] VK"
+      - "🇮🇷 Iran [*CIDR] VK"
 rules:
   - MATCH,PROXY
