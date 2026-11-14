@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 15:15:43 UTC
+# 2026-11-14 15:30:50 UTC
 proxies:
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -202,6 +202,22 @@ proxies:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "212.41.8.76"
+    port: 14443
+    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
+    udp: true
+    tls: true
+    servername: "s3.storage.selcloud.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "rVt9_jYmjD8R-DjRQrX7uRPJ2803fRXf9quNOqfxJQM"
+      short-id: "55a57f74"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-us"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "176.108.240.45"
@@ -232,7 +248,7 @@ proxies:
       public-key: "HyPCaHlGMjE2h7D4F6dtyFHeXDEAHIUg9fXJgADc5H0"
       short-id: "134a7678ec2a3285"
     network: "tcp"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "31.129.101.153"
     port: 443
@@ -278,9 +294,10 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
 rules:
   - MATCH,PROXY
