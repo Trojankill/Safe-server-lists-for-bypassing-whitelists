@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-14 05:45:36 UTC
+# 2026-11-14 06:00:54 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "62.109.22.46"
+    port: 443
+    uuid: "2ca33ca8-3f56-4d2a-b0ba-4cec30b9c5ba"
+    udp: true
+    tls: true
+    servername: "mscmems.fastystore.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "nl-grpc"
   - name: "🇦🇱 Албания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.108.240.45"
@@ -203,6 +219,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇦🇱 Албания | 🔗 Каскад [#РКП]"
       - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
