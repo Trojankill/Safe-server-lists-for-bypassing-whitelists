@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 01:15:33 UTC
+# 2026-11-14 01:30:45 UTC
 proxies:
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
@@ -18,73 +18,140 @@ proxies:
       path: "/static/collect/9412171e8a3a/"
       headers:
         Host: "zry9ocg43w.flowersgood.top"
-  - name: "🇺🇸 United States [*CIDR] VK"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
-    server: "185.86.147.172"
-    port: 7490
-    uuid: "2f03861a-157e-48dc-9ad6-3dddb3e7234a"
+    server: "189.74.114.68"
+    port: 443
+    uuid: "9c36e2b4-db6d-400f-9755-3046b981698b"
     udp: true
     tls: true
-    servername: "wn-us4.static-s3.org"
+    servername: "nl-next.mediastvor.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "3e99d50d5740985d"
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "189.74.118.3"
+    port: 443
+    uuid: "9c36e2b4-db6d-400f-9755-3046b981698b"
+    udp: true
+    tls: true
+    servername: "cz-next.mediastvor.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "r7Kp4mN9tQ2v"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "94.228.173.123"
+    port: 443
+    uuid: "bccf444b-f156-4cdb-80ab-4bc5da3a451c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "silentquartz.online"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HlO6O0-N-B_PhijxlfKYt2uVHRhlu1dlSsuf5al6iSw"
+      short-id: "c64bfc3226e6e0f3"
+    network: "tcp"
+  - name: "🇵🇱 Poland | 🌐 [*CIDR]"
+    type: "vless"
+    server: "94.228.173.123"
+    port: 443
+    uuid: "bccf444b-f156-4cdb-80ab-4bc5da3a451c"
+    udp: true
+    tls: true
+    servername: "silvermatrix.space"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "XbK3dHP4uN0LmQVmtvpx3E9aH8QrUja7Z5P-u4ZfBDk"
+      short-id: "c64bfc3226e6e0f3"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+    type: "vless"
+    server: "188.225.24.192"
+    port: 443
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "portal.bokovskay.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇳🇱 🇷🇺 [*CIDR]"
+    type: "vless"
+    server: "188.225.24.62"
+    port: 443
+    uuid: "c0c949fc-2ed6-4597-b680-a1a3276ebf87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "img.bokovskay.app"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "vless"
+    server: "185.42.24.231"
+    port: 443
+    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
+    udp: true
+    tls: true
+    servername: "fr4.cyphervpn.pro"
     alpn:
       - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "wn-adaptcloud"
-  - name: "🇷🇺 Russia [*CIDR]"
+      grpc-service-name: "fr4grpc"
+  - name: "🇪🇪 Estonia [*CIDR] #2"
     type: "vless"
-    server: "185.16.213.6"
+    server: "87.242.95.226"
     port: 443
-    uuid: "7a6c31c0-d187-4cc3-9f54-9308916f1f43"
+    uuid: "f5a049c3-2c0a-4056-a780-8ef2327cb6c2"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "internity.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "R_km5hxsfjRUsnZfSOBYxB9DwShSIwYacXduHR8_9gE"
-      short-id: "dfcc5c5ac8507f95"
-    network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "vless"
-    server: "185.16.213.6"
-    port: 443
-    uuid: "7a6c31c0-d187-4cc3-9f54-9308916f1f43"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "internity.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "R_km5hxsfjRUsnZfSOBYxB9DwShSIwYacXduHR8_9gE"
-      short-id: "dfcc5c5ac8507f95"
-    network: "tcp"
-  - name: "🇨🇦 Canada | 🌐 [*CIDR]"
-    type: "vless"
-    server: "188.225.57.150"
-    port: 443
-    uuid: "d8275e29-e946-4a48-bec6-4402bea6c399"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "m-vruaz-ed.mvpstr.com"
+    servername: "kedrovyi-bereg.online"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/cart/sync/IvDzdZGhhPr-"
+      headers:
+        Host: "kedrovyi-bereg.online"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇺🇸 United States [*CIDR] VK"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
-      - "🇨🇦 Canada | 🌐 [*CIDR]"
+      - "🇵🇱 Poland | 🌐 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇱 🇷🇺 [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR] #2"
 rules:
   - MATCH,PROXY
