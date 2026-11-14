@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-14 19:30:51 UTC
+# 2026-11-14 19:45:33 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,54 +31,6 @@ proxies:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
-  - name: "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 11443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LR_FEXsJiKJUtXcmO1UR4Oi2IMmRcaS04D05oooqn28"
-      short-id: "9edc24fc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-hu"
-  - name: "🇷🇺 Россия [#РКП] #2"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 13443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "d2B_vurRVKXLrK0ib-0sTtQuI3VDdaj8ZKTXgEPwAlc"
-      short-id: "9de815e2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "212.41.8.76"
-    port: 14443
-    uuid: "a628c583-24a8-4ce5-98ad-c6458abf1cc4"
-    udp: true
-    tls: true
-    servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "rVt9_jYmjD8R-DjRQrX7uRPJ2803fRXf9quNOqfxJQM"
-      short-id: "55a57f74"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-us"
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "31.129.101.153"
@@ -93,7 +45,7 @@ proxies:
     reality-opts:
       public-key: "37ZFWtNTZ_slVsJp0_5siKSeqz-sZSuLdYurC_cBrxw"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #3"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -122,17 +74,30 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "93.183.83.53"
+    port: 443
+    uuid: "fb9b439d-e5d2-4337-a781-b18a67b8127e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.ozone.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Adzk6YXb3MU4kN8PgDQjY_4GfQgMUhRy_2LOGmiFHCg"
+      short-id: "c48282c0acf92721"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇭🇺 Венгрия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
-      - "🇷🇺 Россия [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
