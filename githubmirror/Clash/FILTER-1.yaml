@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 15:45:34 UTC
+# 2026-11-15 16:00:56 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,36 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "wn-adaptcloud"
+  - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "82.148.14.100"
+    port: 52006
+    uuid: "6fb89451-b573-0064-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "mvp.dont-block-please.dad"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "82.148.14.101"
+    port: 52006
+    uuid: "6fb89451-b573-03e8-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.sdohnite.org"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.123.160.196"
@@ -126,6 +156,8 @@ proxy-groups:
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
