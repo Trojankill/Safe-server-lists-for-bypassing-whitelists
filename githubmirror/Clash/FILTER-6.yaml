@@ -1,35 +1,82 @@
 # clash/mihomo subscription
-# 2026-11-15 02:45:32 UTC
+# 2026-11-15 03:00:57 UTC
 proxies:
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "31.192.106.192"
+    server: "185.178.208.167"
     port: 443
-    uuid: "140a9844-d304-4ff2-aa47-c0a2a67da6f0"
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    servername: "lorettmay.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/blog/posts"
+      headers:
+        Host: "lorettmay.top"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "vless"
+    server: "189.74.114.100"
+    port: 443
+    uuid: "38bad45a-9611-4803-95a1-00c3c875606c"
+    udp: true
+    tls: true
+    servername: "nl-next.mediastvor.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "3e99d50d5740985d"
+  - name: "🇵🇱 Poland [*CIDR]"
+    type: "vless"
+    server: "api.mediatropa.cc"
+    port: 443
+    uuid: "38bad45a-9611-4803-95a1-00c3c875606c"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "firefox"
+    servername: "api.mediatropa.cc"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
-  - name: "🇩🇿 Algeria [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
-    server: "168.113.252.145"
+    server: "nl-next.mediastvor.cc"
     port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    uuid: "38bad45a-9611-4803-95a1-00c3c875606c"
+    udp: true
+    tls: true
+    servername: "nl-next.mediastvor.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "3e99d50d5740985d"
+  - name: "🌐 Anycast-IP | 🇱🇻 🇳🇱 [*CIDR] VK"
+    type: "vless"
+    server: "sub-edge-14-1g.whitenw.net"
+    port: 10454
+    uuid: "3e1e0b5e-554d-4513-a5e9-14649033cf19"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "tarakan.belka.tv"
-    client-fingerprint: "firefox"
+    servername: "onf.ru"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
+      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
+      short-id: "4326"
     network: "tcp"
   - name: "🇵🇱 Poland [*CIDR] VK"
     type: "vless"
@@ -95,21 +142,6 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Germany [*CIDR] #2"
-    type: "vless"
-    server: "31.192.106.192"
-    port: 443
-    uuid: "4fb48619-c29d-47f3-8c21-12bdc3286935"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
   - name: "🇷🇺 Russia [*CIDR] VK"
     type: "vless"
     server: "212.233.90.78"
@@ -159,13 +191,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany [*CIDR]"
-      - "🇩🇿 Algeria [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇵🇱 Poland [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇱🇻 🇳🇱 [*CIDR] VK"
       - "🇵🇱 Poland [*CIDR] VK"
       - "🇵🇱 Poland [*CIDR] VK #2"
       - "🇮🇷 Iran [*CIDR]"
       - "🇮🇷 Iran [*CIDR] #2"
-      - "🇩🇪 Germany [*CIDR] #2"
       - "🇷🇺 Russia [*CIDR] VK"
       - "🇷🇺 Russia [*CIDR] VK #2"
       - "🇷🇺 Russia [*CIDR] VK #3"
