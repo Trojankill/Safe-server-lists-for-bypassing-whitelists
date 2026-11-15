@@ -1,9 +1,9 @@
 # clash/mihomo subscription
-# 2026-11-15 19:30:47 UTC
+# 2026-11-15 19:45:32 UTC
 proxies:
-  - name: "@LexaVercelbot C-1 #2 🝰 🇫🇮"
+  - name: "@LexaVercelbot C-1 #2 🇫🇮 🝰"
     type: "hysteria2"
-    server: "185.22.234.28"
+    server: "188.225.79.91"
     port: 443
     password: "1035958a-8809-4719-b2a0-e7347f046dfa"
     udp: true
@@ -11,9 +11,9 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "@LexaVercelbot C-1 #7 🛰️ 🇸🇪"
+  - name: "@LexaVercelbot C-1 #7 🇸🇪 🛰️"
     type: "hysteria2"
-    server: "185.22.234.28"
+    server: "188.225.79.91"
     port: 444
     password: "1035958a-8809-4719-b2a0-e7347f046dfa"
     udp: true
@@ -21,43 +21,13 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "@LexaVercelbot C-1 #4 🪬 🇫🇮"
+  - name: "@LexaVercelbot C-1 #4 🇳🇱 🪬"
     type: "hysteria2"
-    server: "194.55.239.220"
-    port: 443
+    server: "188.225.79.91"
+    port: 445
     password: "1035958a-8809-4719-b2a0-e7347f046dfa"
     udp: true
-    sni: "r-fi-1.dokomon.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "@LexaVercelbot C-1 #9 🎴 🇸🇪"
-    type: "hysteria2"
-    server: "194.55.239.220"
-    port: 444
-    password: "1035958a-8809-4719-b2a0-e7347f046dfa"
-    udp: true
-    sni: "r-se-1.dokomon.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "@LexaVercelbot C-1 #1 🜂 🇫🇮"
-    type: "hysteria2"
-    server: "46.8.210.209"
-    port: 443
-    password: "1035958a-8809-4719-b2a0-e7347f046dfa"
-    udp: true
-    sni: "r-fi-1.dokomon.com"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "@LexaVercelbot C-1 #6 🪐 🇸🇪"
-    type: "hysteria2"
-    server: "46.8.210.209"
-    port: 444
-    password: "1035958a-8809-4719-b2a0-e7347f046dfa"
-    udp: true
-    sni: "r-se-1.dokomon.com"
+    sni: "r-nl-1.dokomon.com"
     alpn:
       - "h3"
     skip-cert-verify: false
@@ -65,11 +35,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "@LexaVercelbot C-1 #2 🝰 🇫🇮"
-      - "@LexaVercelbot C-1 #7 🛰️ 🇸🇪"
-      - "@LexaVercelbot C-1 #4 🪬 🇫🇮"
-      - "@LexaVercelbot C-1 #9 🎴 🇸🇪"
-      - "@LexaVercelbot C-1 #1 🜂 🇫🇮"
-      - "@LexaVercelbot C-1 #6 🪐 🇸🇪"
+      - "@LexaVercelbot C-1 #2 🇫🇮 🝰"
+      - "@LexaVercelbot C-1 #7 🇸🇪 🛰️"
+      - "@LexaVercelbot C-1 #4 🇳🇱 🪬"
 rules:
   - MATCH,PROXY
