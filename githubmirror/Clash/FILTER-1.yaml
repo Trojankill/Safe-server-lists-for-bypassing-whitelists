@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 22:15:36 UTC
+# 2026-11-15 22:30:47 UTC
 proxies:
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -18,6 +18,23 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "87.242.94.239"
+    port: 443
+    uuid: "533b20de-178b-4221-9979-f1e815ca8741"
+    udp: true
+    tls: true
+    servername: "clipdock.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/feed/H9eui7WsW3xS"
+      headers:
+        Host: "87.242.94.239"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.178.208.167"
@@ -82,7 +99,7 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "159.194.228.99"
     port: 443
@@ -96,15 +113,27 @@ proxies:
     reality-opts:
       public-key: "Hdbh_QHmyYaQjhD4mD5NWdir_qW2FFhJ3t3QFkU7bjc"
     network: "tcp"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19446
+    password: "6fffde27-86de-49e5-9ece-0669b6680afc"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY

@@ -1,22 +1,38 @@
 # clash/mihomo subscription
-# 2026-11-15 22:15:34 UTC
+# 2026-11-15 22:30:45 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | 🌐 [*CIDR] YA"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "84.201.159.237"
+    server: "201.34.133.20"
     port: 443
-    uuid: "36af12e2-40fe-5f85-8b01-7de182dbcc9e"
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cdn.mislii.ru"
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "chrome"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "SldmtPjMF2e1VIHIV8xtKeJegHkYrVEiweFLrtpeNCs"
-      short-id: "9d87ec0065d30fa6"
-    network: "tcp"
-  - name: "🇮🇷 Iran [*CIDR]"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+    type: "vless"
+    server: "luminexorizon.ink"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇮🇷 Iran | [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -26,69 +42,89 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
-  - name: "🇮🇷 Iran [*CIDR] #2"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "89e2dc6c-dd20-43e6-aac2-d8c482d9cc36"
-    udp: true
-    tls: true
-    servername: "uwugirl.dev"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
-  - name: "🇮🇷 Iran [*CIDR] #3"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "89e2dc6c-dd20-43e6-aac2-d8c482d9cc36"
-    udp: true
-    tls: true
-    servername: "uwugirl.dev"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
-  - name: "🇩🇪 Germany [*CIDR]"
-    type: "vless"
-    server: "d58daft.plp1.h1cloud.net"
-    port: 443
-    uuid: "c82031be-e90f-4b15-ab4f-7ccef236d3ca"
-    udp: true
-    tls: true
-    servername: "d58daft.plp1.h1cloud.net"
     client-fingerprint: "chrome"
     skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇩 Indonesia | [*CIDR]"
+    type: "vless"
+    server: "87.242.94.239"
+    port: 443
+    uuid: "533b20de-178b-4221-9979-f1e815ca8741"
+    udp: true
+    tls: true
+    servername: "clipdock.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/feed/H9eui7WsW3xS"
+      headers:
+        Host: "87.242.94.239"
+  - name: "🇮🇷 Iran | [*CIDR] #2"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "6eeb6e0e-5efd-400d-851e-60fc2bfb1eaa"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran | [*CIDR] #3"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "89e2dc6c-dd20-43e6-aac2-d8c482d9cc36"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "vless"
+    server: "188.124.54.30"
+    port: 443
+    uuid: "dcf2b1c4-f99f-4319-b917-37af1e7233c8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "12.img.avito.st"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
     reality-opts:
-      public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
-      short-id: "a91531ad58c8611c"
+      public-key: "NaKc4dzGFuXMEyK2EpqbS7EosjGDR4wNQS7fH2EnSzk"
+      short-id: "43699ddc62b52c4b"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | 🌐 [*CIDR] YA"
-      - "🇮🇷 Iran [*CIDR]"
-      - "🇮🇷 Iran [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR] #3"
-      - "🇩🇪 Germany [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      - "🇮🇷 Iran | [*CIDR]"
+      - "🇮🇩 Indonesia | [*CIDR]"
+      - "🇮🇷 Iran | [*CIDR] #2"
+      - "🇮🇷 Iran | [*CIDR] #3"
+      - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
