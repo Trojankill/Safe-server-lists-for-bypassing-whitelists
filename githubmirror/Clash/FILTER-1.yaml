@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 18:15:33 UTC
+# 2026-11-15 18:30:51 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -15,6 +15,21 @@ proxies:
     reality-opts:
       public-key: "VzcHDR57dKZ6aPF1VchAbeKfSHKt_a4pjt-eOpoAG0o"
       short-id: "893c5832052a1923"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "171.22.133.24"
+    port: 443
+    uuid: "301a34b9-4352-4094-a169-39ad7cd7622c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "171.22.133.24.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "RByCaPnWH40eXtHFQWc4EESPgYo8cK8SEWhJY_ztqAA"
+      short-id: "15a05013365bc50a"
     network: "tcp"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -108,7 +123,7 @@ proxies:
       public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
       short-id: "f8a8ee8381529673"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -123,7 +138,7 @@ proxies:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "200.165.234.47"
     port: 443
@@ -174,14 +189,15 @@ proxy-groups:
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
       - "🇷🇺 Россия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
