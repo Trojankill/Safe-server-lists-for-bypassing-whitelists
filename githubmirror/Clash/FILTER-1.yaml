@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 21:15:34 UTC
+# 2026-11-15 21:30:45 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -94,6 +94,51 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "78.159.250.28"
+    port: 8887
+    uuid: "a31b6d17-1c4a-44e3-9402-ce78f1fb7eb5"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "de1.absolute.beer"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "4Rl6vHT376UaB_11fuBK1SozJnAT2cOfvWPv_ccj-D8"
+      short-id: "9c63bcf1407f3737"
+    network: "tcp"
+  - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "78.159.250.28"
+    port: 8887
+    uuid: "a31b6d17-1c4a-44e3-9402-ce78f1fb7eb5"
+    udp: true
+    tls: true
+    servername: "g-de1.absolute.beer"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "lx.sync.v1.Relay"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "78.159.250.28"
+    port: 8888
+    uuid: "a31b6d17-1c4a-44e3-9402-ce78f1fb7eb5"
+    udp: true
+    tls: true
+    servername: "g-fr1.absolute.beer"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "lx.sync.v1.Relay"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "83.171.241.227"
@@ -123,6 +168,16 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "89.125.214.221"
+    port: 19446
+    password: "6fffde27-86de-49e5-9ece-0669b6680afc"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -133,7 +188,11 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
+      - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
