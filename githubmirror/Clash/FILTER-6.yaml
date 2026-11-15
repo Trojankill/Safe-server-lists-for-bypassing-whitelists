@@ -1,37 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-15 17:45:33 UTC
+# 2026-11-15 18:01:09 UTC
 proxies:
-  - name: "🇩🇪 Germany [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "31.192.106.192"
+    server: "201.34.133.20"
     port: 443
-    uuid: "140a9844-d304-4ff2-aa47-c0a2a67da6f0"
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
-    network: "tcp"
-  - name: "🇵🇱 Poland [*CIDR] CDN"
-    type: "vless"
-    server: "46.243.233.165"
-    port: 59715
-    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
-    udp: true
-    tls: true
-    servername: "wn-pl4.static-s3.org"
+    servername: "luminexorizon.ink"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+      - "http/1.1"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "wn-adaptcloud"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "vless"
     server: "luminexorizon.ink"
     port: 443
@@ -46,7 +32,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de3.v1"
-  - name: "🌐 Anycast-IP | 🇮🇷 [*CIDR]"
+  - name: "🇮🇷 Iran | [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -56,46 +42,122 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Germany [*CIDR] #2"
+  - name: "🇦🇪 United Arab Emirates | [*CIDR]"
     type: "vless"
-    server: "31.192.106.192"
-    port: 443
-    uuid: "4fb48619-c29d-47f3-8c21-12bdc3286935"
+    server: "82.148.14.100"
+    port: 52006
+    uuid: "6fb89451-b573-0064-b046-d45ab9a6db49"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "node2.shakalchk.ru"
+    servername: "mvp.dont-block-please.dad"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇸🇬 Singapore | [*CIDR]"
+    type: "vless"
+    server: "82.148.14.101"
+    port: 52006
+    uuid: "6fb89451-b573-03e8-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.sdohnite.org"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "bqzRxK5Nr7muCBDtExsYRK4yrxMwVPOH0_avLu27LQI"
-      short-id: "a132a3"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+  - name: "🇸🇬 Singapore | [*CIDR] #2"
     type: "vless"
-    server: "129.101.106.219"
+    server: "82.148.14.102"
+    port: 52006
+    uuid: "6fb89451-b573-03e8-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.sdohnite.org"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇷🇺 | [*CIDR] VK"
+    type: "vless"
+    server: "109.120.183.40"
+    port: 8443
+    uuid: "6fb89451-b573-0bb8-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "109.120.183.40"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
+      short-id: "f8a8ee8381529673"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "213.171.31.83"
+    port: 443
+    uuid: "77146066-6f06-0001-bced-d2b73668de07"
+    udp: true
+    tls: true
+    servername: "cffhi-ru-46sb.fade.mom"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "200.165.234.47"
     port: 443
     uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
     udp: true
     tls: true
-    servername: "canvas.merlano.monster"
+    servername: "clover.filnex.baby"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de6/stream"
+      headers:
+        Host: "clover.filnex.baby"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
+    type: "vless"
+    server: "clover.filnex.baby"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "clover.filnex.baby"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/api/de7/stream"
+      path: "/api/de6/stream"
       headers:
-        Host: "canvas.merlano.monster"
-  - name: "🌐 Anycast-IP | 🇮🇷 [*CIDR] #2"
+        Host: "clover.filnex.baby"
+  - name: "🇮🇷 Iran | [*CIDR] #2"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -112,16 +174,52 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇷🇺 Russia | [*CIDR] VK"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR] VK #2"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany [*CIDR]"
-      - "🇵🇱 Poland [*CIDR] CDN"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🌐 Anycast-IP | 🇮🇷 [*CIDR]"
-      - "🇩🇪 Germany [*CIDR] #2"
       - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #2"
+      - "🇮🇷 Iran | [*CIDR]"
+      - "🇦🇪 United Arab Emirates | [*CIDR]"
+      - "🇸🇬 Singapore | [*CIDR]"
+      - "🇸🇬 Singapore | [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇫🇮 🇷🇺 | [*CIDR] VK"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
+      - "🇮🇷 Iran | [*CIDR] #2"
+      - "🇷🇺 Russia | [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR] VK #2"
 rules:
   - MATCH,PROXY
