@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 17:00:58 UTC
+# 2026-11-15 17:15:36 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,6 +31,21 @@ proxies:
       public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
       short-id: "a5fe10fba46b8613"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "84.201.159.237"
+    port: 443
+    uuid: "36af12e2-40fe-5f85-8b01-7de182dbcc9e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mislii.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SldmtPjMF2e1VIHIV8xtKeJegHkYrVEiweFLrtpeNCs"
+      short-id: "9d87ec0065d30fa6"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "46.243.233.165"
@@ -46,7 +61,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "wn-adaptcloud"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -108,7 +123,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -155,7 +170,7 @@ proxies:
       path: "/api/de6/stream"
       headers:
         Host: "clover.filnex.baby"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -202,7 +217,7 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "159.194.228.99"
     port: 443
@@ -250,18 +265,19 @@ proxy-groups:
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
 rules:
