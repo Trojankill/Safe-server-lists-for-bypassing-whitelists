@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 23:30:52 UTC
+# 2026-11-15 23:45:31 UTC
 proxies:
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,6 +31,69 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "185.147.27.9"
+    port: 8443
+    uuid: "23886542-94e6-4d3a-bfed-bda65b503903"
+    udp: true
+    tls: true
+    servername: "cdn.byteark.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3L6i47JLGFIdDTryKbLM8K9jTFj7puhHplmzF8GX6GM"
+      short-id: "08"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "5.178.85.81"
+    port: 443
+    uuid: "244e1319-ffdf-51a8-a462-13d7c7fc52e7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "selec.homelab-cdn.cloud"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "5.178.85.81"
+    port: 8443
+    uuid: "244e1319-ffdf-51a8-a462-13d7c7fc52e7"
+    udp: true
+    tls: true
+    servername: "gazeta-business.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM"
+      short-id: "08"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "81.94.148.61"
+    port: 8443
+    uuid: "244e1319-ffdf-51a8-a462-13d7c7fc52e7"
+    udp: true
+    tls: true
+    servername: "gazeta-business.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM"
+      short-id: "08"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "ads.x5.ru"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.167"
@@ -157,7 +220,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de2.v1"
-  - name: "🇷🇺 Россия [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "178.130.53.17"
     port: 443
@@ -172,7 +235,7 @@ proxies:
       public-key: "jBxkCN655NMFq0QMhx8_IXXyWeXln6QC63XWyNnlrm0"
       short-id: "55cefaf2c6"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "87.228.56.39"
     port: 443
@@ -200,6 +263,22 @@ proxies:
     reality-opts:
       public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
       short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "37.9.4.62"
+    port: 443
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vP4XeQ-z8LYtkSz1SCAxRMAEPreaHspoXm2nt0okQVw"
+      short-id: "c7674e"
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
@@ -236,6 +315,21 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #6"
+    type: "vless"
+    server: "92.246.138.49"
+    port: 443
+    uuid: "acbd6999-af4d-43cb-9733-0c465341aa63"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "c0.awsstatic.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "eLYbRIstrYmvMH78mCoQ2a0t6ULVDFInHExnzKO-ll8"
+      short-id: "1f974ee90d8de2c9"
+    network: "tcp"
   - name: "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "188.124.54.30"
@@ -281,7 +375,7 @@ proxies:
       public-key: "NaKc4dzGFuXMEyK2EpqbS7EosjGDR4wNQS7fH2EnSzk"
       short-id: "43699ddc62b52c4b"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #3"
+  - name: "🇷🇺 Россия [#РКП] #4"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -326,6 +420,10 @@ proxy-groups:
     proxies:
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #3"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #4"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
@@ -334,15 +432,17 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
-      - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #6"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-      - "🇷🇺 Россия [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #4"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
 rules:
