@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 22:30:47 UTC
+# 2026-11-15 22:45:37 UTC
 proxies:
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -84,6 +84,51 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.124.54.30"
+    port: 26460
+    uuid: "dcf2b1c4-f99f-4319-b917-37af1e7233c8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "github.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "A4QCDy3wYj97TWce3coZVfEnfcq2uNiG9RGJc1UMJ3o"
+      short-id: "16d73aa276c14c08"
+    network: "tcp"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.124.54.30"
+    port: 26461
+    uuid: "dcf2b1c4-f99f-4319-b917-37af1e7233c8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "github.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "A4QCDy3wYj97TWce3coZVfEnfcq2uNiG9RGJc1UMJ3o"
+      short-id: "16d73aa276c14c08"
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "188.124.54.30"
+    port: 443
+    uuid: "dcf2b1c4-f99f-4319-b917-37af1e7233c8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "12.img.avito.st"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "NaKc4dzGFuXMEyK2EpqbS7EosjGDR4wNQS7fH2EnSzk"
+      short-id: "43699ddc62b52c4b"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "129.101.98.60"
@@ -99,7 +144,7 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "159.194.228.99"
     port: 443
@@ -132,8 +177,11 @@ proxy-groups:
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #3"
-      - "🇷🇺 Россия [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
