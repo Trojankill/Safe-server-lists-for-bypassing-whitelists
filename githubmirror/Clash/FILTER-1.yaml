@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 16:30:50 UTC
+# 2026-11-15 16:45:40 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,21 @@ proxies:
       public-key: "VzcHDR57dKZ6aPF1VchAbeKfSHKt_a4pjt-eOpoAG0o"
       short-id: "893c5832052a1923"
     network: "tcp"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "212.193.10.79"
+    port: 443
+    uuid: "301a34b9-4352-4094-a169-39ad7cd7622c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fr-212-193-10-79.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
+      short-id: "a5fe10fba46b8613"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "46.243.233.165"
@@ -31,6 +46,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "wn-adaptcloud"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "6eeb6e0e-5efd-400d-851e-60fc2bfb1eaa"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
   - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "82.148.14.100"
@@ -76,7 +108,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -123,7 +155,7 @@ proxies:
       path: "/api/de6/stream"
       headers:
         Host: "clover.filnex.baby"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -170,6 +202,20 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "159.194.228.99"
+    port: 443
+    uuid: "f3a227cb-8a8b-4ccb-b613-9143c4a1346c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru-nl1.fluxnode777.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Hdbh_QHmyYaQjhD4mD5NWdir_qW2FFhJ3t3QFkU7bjc"
+    network: "tcp"
   - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "178.236.242.182"
@@ -203,16 +249,19 @@ proxy-groups:
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
 rules:
