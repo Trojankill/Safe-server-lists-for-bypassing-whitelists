@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 23:15:38 UTC
+# 2026-11-15 23:30:52 UTC
 proxies:
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -65,6 +65,36 @@ proxies:
       path: "/catalog/feed/H9eui7WsW3xS"
       headers:
         Host: "87.242.94.239"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "171.22.133.24"
+    port: 443
+    uuid: "59ed8211-2293-41a5-8996-cf72fe05f4b0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "171.22.133.24.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "RByCaPnWH40eXtHFQWc4EESPgYo8cK8SEWhJY_ztqAA"
+      short-id: "15a05013365bc50a"
+    network: "tcp"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "212.193.10.79"
+    port: 443
+    uuid: "59ed8211-2293-41a5-8996-cf72fe05f4b0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fr-212-193-10-79.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
+      short-id: "a5fe10fba46b8613"
+    network: "tcp"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.178.208.167"
@@ -82,7 +112,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -97,6 +127,36 @@ proxies:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "104.171.137.39"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "notebook.filnex.baby"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de6.v1"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+    type: "vless"
+    server: "129.101.104.203"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "pebble.gerqix.online"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de2.v1"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "178.130.53.17"
@@ -143,7 +203,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "87.228.101.43"
     port: 443
@@ -176,7 +236,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+  - name: "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "188.124.54.30"
     port: 26460
@@ -268,14 +328,18 @@ proxy-groups:
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+      - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #3"
-      - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
+      - "🇫🇷 Франция | 🔗 Каскад [#РКП] #2"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #3"
