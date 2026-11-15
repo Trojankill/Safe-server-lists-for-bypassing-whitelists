@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-15 07:30:49 UTC
+# 2026-11-15 07:45:33 UTC
 proxies:
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "46.243.233.165"
+    port: 59715
+    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
+    udp: true
+    tls: true
+    servername: "wn-pl4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.167"
@@ -18,6 +33,21 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.133.151.169"
+    port: 443
+    uuid: "a88d4614-2134-404c-9479-6aba1ca9cdfd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "74b5ebt.se5.h1clayd.shop"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "YF_PHWsm2ayKInkh93yNHc5BB8QqIyZfx2ZCIY3qgiI"
+      short-id: "d50dc85d07857a88"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "129.101.98.60"
@@ -37,7 +67,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
