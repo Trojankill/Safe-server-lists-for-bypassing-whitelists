@@ -1,21 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-15 14:45:37 UTC
+# 2026-11-15 15:00:59 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "83.171.241.227"
-    port: 443
-    uuid: "16f3d526-8cf8-4af5-a86f-b023c5b52085"
-    udp: true
-    tls: true
-    servername: "3eebf4b1.plp1.h1cloud.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Rbho8R1xROOFPv5tCWDCcePuAxbzNuviUn91jR9CdQ4"
-      short-id: "6941a08bb53ea2a1"
-    network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "46.243.233.165"
     port: 59715
@@ -30,24 +16,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "wn-adaptcloud"
-  - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
-    udp: true
-    tls: true
-    servername: "uwugirl.dev"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -62,22 +31,22 @@ proxies:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "84.54.59.189"
+    server: "129.101.106.219"
     port: 443
-    uuid: "75a8cc15-fa52-4067-949f-42a89859b54f"
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "brru.catneuro.su"
+    servername: "notebook.filnex.baby"
+    alpn:
+      - "h2"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "gHgaNAyoNAFQZwJak021k3JtZBduzHOH8MdMUNzlLxI"
-      short-id: "23fe9e1e312e4a1e"
-    network: "tcp"
-  - name: "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de6.v1"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -109,20 +78,6 @@ proxies:
       public-key: "YF_PHWsm2ayKInkh93yNHc5BB8QqIyZfx2ZCIY3qgiI"
       short-id: "d50dc85d07857a88"
     network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "83.171.241.227"
-    port: 443
-    uuid: "c82031be-e90f-4b15-ab4f-7ccef236d3ca"
-    udp: true
-    tls: true
-    servername: "d58daft.plp1.h1cloud.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
-      short-id: "a91531ad58c8611c"
-    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "129.101.98.60"
@@ -137,6 +92,20 @@ proxies:
     reality-opts:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
+    network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "178.236.242.182"
+    port: 443
+    uuid: "f3a227cb-8a8b-4ccb-b613-9143c4a1346c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru-gr1.fluxnode777.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "LCpaZUEL7ZVsrmlZBqtwlexs3D3T3H5IecYB_o50th0"
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
@@ -157,14 +126,12 @@ proxy-groups:
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
-      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
