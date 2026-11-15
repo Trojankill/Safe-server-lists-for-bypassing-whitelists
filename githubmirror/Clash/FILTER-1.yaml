@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-15 16:15:35 UTC
+# 2026-11-15 16:30:50 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "201.51.28.109"
+    port: 443
+    uuid: "026cbfba-f7ea-4bde-ae5b-918e026a171b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru9s.global-cdn.org"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VzcHDR57dKZ6aPF1VchAbeKfSHKt_a4pjt-eOpoAG0o"
+      short-id: "893c5832052a1923"
+    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "46.243.233.165"
@@ -46,6 +61,21 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "82.148.14.102"
+    port: 52006
+    uuid: "6fb89451-b573-03e8-b046-d45ab9a6db49"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "st.sdohnite.org"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.123.160.196"
@@ -61,7 +91,7 @@ proxies:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "129.101.106.219"
     port: 443
@@ -76,6 +106,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de6.v1"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "200.165.234.47"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "clover.filnex.baby"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de6/stream"
+      headers:
+        Host: "clover.filnex.baby"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "185.178.208.167"
@@ -137,7 +184,7 @@ proxies:
     reality-opts:
       public-key: "LCpaZUEL7ZVsrmlZBqtwlexs3D3T3H5IecYB_o50th0"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "46.243.232.178"
     port: 443
@@ -155,15 +202,18 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
 rules:
   - MATCH,PROXY
