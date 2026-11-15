@@ -1,25 +1,57 @@
 # clash/mihomo subscription
-# 2026-11-15 08:30:45 UTC
+# 2026-11-15 08:45:31 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
+  - name: "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
     type: "vless"
-    server: "48.102.165.235"
+    server: "chmstnd21.jarvesitw.ru"
     port: 443
-    uuid: "ae46b75d-233b-42e4-a248-f29e605b0a50"
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "northline.15min.club"
+    servername: "chmstnd21.jarvesitw.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "FdQ47vfFeye-NscAycSD-dWoWrtby3OS6-KCxu9YqHM"
-      short-id: "d18f4e"
+      public-key: "2LiT1OqXbnWbNAop15NSe0OL3dK2i8EIkiY4EB_3PV8"
+      short-id: "2e9cd36a"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Wi-Fi ❄️"
+    type: "vless"
+    server: "main.jarbook.net"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "main.jarbook.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "gJoMHh97teLxW92Z_3DI8qdSulqBlb9sW6mthYPEEBk"
+      short-id: "d889ac17"
+    network: "tcp"
+  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
+    type: "vless"
+    server: "price.goonars.com"
+    port: 443
+    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "price.goonars.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "UAry1N68zKkbO0MpIqAXmxfxg1Y9rvkiBjexZErRJwY"
+      short-id: "6a30cf54"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
+      - "[KrolekVPNReborn] Finland 🇫🇮 | Wi-Fi ❄️"
       - "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
 rules:
   - MATCH,PROXY
