@@ -1,34 +1,25 @@
 # clash/mihomo subscription
-# 2026-11-15 06:01:00 UTC
+# 2026-11-15 06:15:33 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
+  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
     type: "vless"
-    server: "177.3.220.53"
+    server: "48.102.165.235"
     port: 443
-    uuid: "f8d52ece-fad4-478d-875d-df6eed3befa7"
+    uuid: "ae46b75d-233b-42e4-a248-f29e605b0a50"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "fi-b2.golangwikito.cfd"
+    servername: "northline.15min.club"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg"
-      short-id: "bdf5852d1423e694"
+      public-key: "FdQ47vfFeye-NscAycSD-dWoWrtby3OS6-KCxu9YqHM"
+      short-id: "d18f4e"
     network: "tcp"
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
-    type: "hysteria2"
-    server: "48.102.214.167"
-    port: 4444
-    password: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
-    udp: true
-    sni: "fl5.edgeport.cloud"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
       - "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
 rules:
   - MATCH,PROXY
