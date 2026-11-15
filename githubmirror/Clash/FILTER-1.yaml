@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 07:45:33 UTC
+# 2026-11-15 08:00:56 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -33,6 +33,78 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "178.248.238.133"
+    port: 10065
+    uuid: "669418a2-7a75-494f-b0c8-0df075891c88"
+    udp: true
+    tls: true
+    servername: "stream-1.kinograd.online"
+    alpn:
+      - "h2"
+      - "h3"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/live/stream?module=video-cdn"
+      headers:
+        Host: "stream-1.kinograd.online"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "81.161.98.162"
+    port: 10065
+    uuid: "669418a2-7a75-494f-b0c8-0df075891c88"
+    udp: true
+    tls: true
+    servername: "kinograd.online"
+    alpn:
+      - "h2"
+      - "h3"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/live/stream?module=video-cdn"
+      headers:
+        Host: "kinograd.online"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "81.161.98.167"
+    port: 10443
+    uuid: "669418a2-7a75-494f-b0c8-0df075891c88"
+    udp: true
+    tls: true
+    servername: "kinograd.online"
+    alpn:
+      - "h2"
+      - "h3"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/live/stream?module=video-cdn"
+      headers:
+        Host: "kinograd.online"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "84.54.59.189"
+    port: 443
+    uuid: "75a8cc15-fa52-4067-949f-42a89859b54f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "brru.catneuro.su"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "gHgaNAyoNAFQZwJak021k3JtZBduzHOH8MdMUNzlLxI"
+      short-id: "23fe9e1e312e4a1e"
+    network: "tcp"
   - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "45.133.151.169"
@@ -63,13 +135,94 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "46.243.232.178"
+    port: 443
+    uuid: "f656c4b9-54dc-44cc-a142-e242ce687e56"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "dualarrow.net"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "186.246.27.161"
+    port: 443
+    uuid: "fabdc744-740d-4074-a69b-dd81c7b50387"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru2.fixpr.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I-lsQ4W4Ya7CxeaQkgrNygO8Z-uzTiyxfjkVJNqv9FY"
+      short-id: "81eaf4b4fb3ebb53"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "5.129.248.177"
+    port: 443
+    uuid: "fabdc744-740d-4074-a69b-dd81c7b50387"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru3.fixpr.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "I-lsQ4W4Ya7CxeaQkgrNygO8Z-uzTiyxfjkVJNqv9FY"
+      short-id: "81eaf4b4fb3ebb53"
+    network: "tcp"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "188.124.55.210"
+    port: 443
+    password: "2M_WKx34D_hF4CMU6w4qmxjSwtxo4CtR"
+    udp: true
+    sni: "lt-t.fixpr.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+    type: "trojan"
+    server: "212.41.29.194"
+    port: 443
+    password: "2M_WKx34D_hF4CMU6w4qmxjSwtxo4CtR"
+    udp: true
+    sni: "se-t.fixpr.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "trojan"
+    server: "78.24.180.87"
+    port: 443
+    password: "2M_WKx34D_hF4CMU6w4qmxjSwtxo4CtR"
+    udp: true
+    sni: "nl-t.fixpr.top"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
