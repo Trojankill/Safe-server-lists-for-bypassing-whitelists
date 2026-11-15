@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-15 01:45:29 UTC
+# 2026-11-15 02:00:56 UTC
 proxies:
   - name: "Germany | je8r21hqax.dev.onappjet.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -118,7 +118,37 @@ proxies:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
     network: "tcp"
+  - name: "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "sub-edge-14-1g.whitenw.net"
+    port: 10454
+    uuid: "3e1e0b5e-554d-4513-a5e9-14649033cf19"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "onf.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
+      short-id: "4326"
+    network: "tcp"
   - name: "Russia | wn-pl4.static-s3.org | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.55"
+    port: 10470
+    uuid: "3ecbd833-40d8-4ddb-b80b-a7c4628ec7e5"
+    udp: true
+    tls: true
+    servername: "wn-pl4.static-s3.org"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "wn-adaptcloud"
+  - name: "Russia | wn-pl4.static-s3.org | GRPC | [#LSO - #LinSpisokObhod] #2"
     type: "vless"
     server: "185.86.145.55"
     port: 10470
@@ -195,21 +225,6 @@ proxies:
       public-key: "kBTMVLCNE0jjwuJF6H5-65l5Pe0QToS0Hg-9Tmaa7Sk"
       short-id: "1a2b3c4d"
     network: "tcp"
-  - name: "The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "213.165.39.134"
-    port: 443
-    uuid: "6a251a93-8eee-43b5-92ed-ecadedcfd0a8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "platform-api.max.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Gtz3xOdQdWSocdx4NNie6s-bsa9VDiG6thqanJ4h31s"
-      short-id: "6f3332a09b0ab6d1"
-    network: "tcp"
   - name: "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "95.167.57.136"
@@ -281,6 +296,8 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "passport.yandex.ru"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
@@ -288,6 +305,21 @@ proxies:
       short-id: "e6"
     network: "tcp"
   - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+    type: "vless"
+    server: "161.97.160.224"
+    port: 443
+    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
+      short-id: "e6"
+    network: "tcp"
+  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #3"
     type: "vless"
     server: "161.97.160.224"
     port: 443
@@ -334,7 +366,7 @@ proxies:
       public-key: "zICjcFkqI720WzWpHXRLjSFYmcu4Hd0jk1iDEo1nUAU"
       short-id: "c27a26812e5d2208"
     network: "tcp"
-  - name: "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 22 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -354,7 +386,7 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇩🇪 [WL] Сервер 62"
+  - name: "🇩🇪 [WL] Сервер 70"
     type: "vmess"
     server: "185.177.229.95"
     port: 1270
@@ -388,23 +420,25 @@ proxy-groups:
       - "Russia | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | RAW | [#LSO - #LinSpisokObhod]"
+      - "unknown | onf.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | wn-pl4.static-s3.org | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | wn-pl4.static-s3.org | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "India | videos.porsche.com | TCP | [#LSO - #LinSpisokObhod]"
       - "United States | files.porsche.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "The Netherlands | platform-api.max.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | vk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | rbc.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | GRPC | [#LSO - #LinSpisokObhod] #2"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
+      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod] #3"
       - "France | edge-3b715ba41dc5.eu-cdn539.com | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 22 [#LSO - #LinSpisokObhod]"
       - "🇩🇪 Германия | VMESS TCP TLS"
-      - "🇩🇪 [WL] Сервер 62"
+      - "🇩🇪 [WL] Сервер 70"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
