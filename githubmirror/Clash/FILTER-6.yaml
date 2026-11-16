@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-16 19:15:34 UTC
+# 2026-11-16 19:31:06 UTC
 proxies:
+  - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "speakpro.lol"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
   - name: "🇳🇱 The Netherlands [*CIDR] CDN"
     type: "vless"
     server: "37.18.14.177"
@@ -19,6 +35,51 @@ proxies:
       path: "/player/events/8be4cef5ec05/"
       headers:
         Host: "l2hbelfbzv.flowersgood.top"
+  - name: "🇦🇹 Austria [*CIDR]"
+    type: "vless"
+    server: "189.74.115.25"
+    port: 443
+    uuid: "239b816e-2095-46fb-a33b-1f565b6ed3ac"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇵🇱 Poland [*CIDR]"
+    type: "vless"
+    server: "189.74.116.26"
+    port: 443
+    uuid: "239b816e-2095-46fb-a33b-1f565b6ed3ac"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediatropa.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France [*CIDR]"
+    type: "vless"
+    server: "189.74.117.3"
+    port: 443
+    uuid: "239b816e-2095-46fb-a33b-1f565b6ed3ac"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "luminexorizon.ink"
@@ -73,7 +134,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "safari"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -97,7 +158,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇮🇷 Iran [*CIDR] #2"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -124,7 +185,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -141,30 +202,13 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
   - name: "🌐 Anycast-IP | 🇮🇷 [*CIDR] #5"
     type: "vless"
     server: "185.178.208.167"
@@ -182,31 +226,40 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19446
-    password: "6fffde27-86de-49e5-9ece-0669b6680afc"
+  - name: "🇳🇱 The Netherlands [*CIDR] YA"
+    type: "vless"
+    server: "92.255.58.59"
+    port: 443
+    uuid: "a30903dc-1bf0-0001-8b1b-603a3a56211c"
     udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
+    tls: true
+    servername: "api-gw-cfg.galioncc.com"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇮🇷 Iran [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR] CDN"
+      - "🇦🇹 Austria [*CIDR]"
+      - "🇵🇱 Poland [*CIDR]"
+      - "🇫🇷 France [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR] #2"
       - "🇩🇪 Germany | 🌐 [*CIDR] #3"
       - "🌐 Anycast-IP | 🇮🇷 [*CIDR]"
       - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
+      - "🇮🇷 Iran [*CIDR] #2"
       - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #3"
       - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #4"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #5"
-      - "🇨🇿 Czechia [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] YA"
 rules:
   - MATCH,PROXY

@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 19:15:37 UTC
+# 2026-11-16 19:31:07 UTC
 proxies:
   - name: "🇺🇸 United States — #124"
     type: "vless"
@@ -30,6 +30,21 @@ proxies:
     reality-opts:
       public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
       short-id: "0990d22f"
+    network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "213.171.26.214"
+    port: 80
+    uuid: "016715d0-1039-4ed9-bc92-e3fdc2ecf637"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fi.bobrkurva.shop"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
     network: "tcp"
   - name: "🇩🇪 [BL] Сервер 245"
     type: "vless"
@@ -120,21 +135,6 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     network: "tcp"
-  - name: "🇺🇸 [BL] Сервер 253"
-    type: "vless"
-    server: "89.125.175.24"
-    port: 8443
-    uuid: "052d73c9-1735-4008-b58c-e3a085dc2a37"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "uk-room07.filesnap.tech"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "48j01Jsa4o8zfmCGEFoVjn-YeALM80-DSG_-nAZUBDM"
-      short-id: "dbef98744832b751"
-    network: "tcp"
   - name: "🇵🇱 Poland — #83"
     type: "vless"
     server: "82.118.22.161"
@@ -193,7 +193,7 @@ proxies:
     reality-opts:
       public-key: "Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc"
     network: "tcp"
-  - name: "🇸🇪 Швеция 7 Tom Gewiese t.me/rjsxrd"
+  - name: "🇸🇪 Швеция 4 Tom Gewiese t.me/rjsxrd"
     type: "vless"
     server: "178.18.158.17"
     port: 43000
@@ -249,6 +249,21 @@ proxies:
     reality-opts:
       public-key: "bYW_MmB_CUHrsyoCAUKviI2LZdHf63yY2yOPXbih104"
       short-id: "9e419c0759b54d6f"
+    network: "tcp"
+  - name: "🇫🇷 Франция 1 Contabo GmbH t.me/rjsxrd"
+    type: "vless"
+    server: "213.199.57.127"
+    port: 2087
+    uuid: "0f82d566-1273-43c5-a73c-229997b3b4b0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "blog.api.www.cloudflare.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Y8U3PhV0K8jT4PBHq-rhCA4eUtOXa1CNB9waCvZbZSc"
+      short-id: "42"
     network: "tcp"
   - name: "🇫🇷 [BL] Сервер 148"
     type: "vless"
@@ -398,22 +413,7 @@ proxies:
     reality-opts:
       public-key: "ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"
     network: "tcp"
-  - name: "🇺🇸 [BL] Сервер 172"
-    type: "vless"
-    server: "5.104.74.70"
-    port: 8443
-    uuid: "176b50a0-cce0-416d-bc4c-6694271985dd"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "uk-room07.filesnap.tech"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "48j01Jsa4o8zfmCGEFoVjn-YeALM80-DSG_-nAZUBDM"
-      short-id: "dbef98744832b751"
-    network: "tcp"
-  - name: "🇮🇷 Iran | [*CIDR] t.me/rjsxrd"
+  - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -423,7 +423,6 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -459,6 +458,21 @@ proxies:
     reality-opts:
       public-key: "xPnpkXu5qfwIArlHKvJsqKJnGdGbJK1tT2GzWMyLohA"
       short-id: "9c56fddf237e8eaf"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "87.242.127.51"
+    port: 8444
+    uuid: "1b8a9f7d-e1cd-4043-991a-acd93c51dbf7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "nOMWYHoXc-7jjG7opszDSvmGwQk9tWkLgQ_bnLPXAnU"
+      short-id: "5e880b8b43771a4f"
     network: "tcp"
   - name: "LTE/5G Все операторы 🇪🇺"
     type: "vless"
@@ -595,20 +609,20 @@ proxies:
       public-key: "4RaNuv9yehmcfpdzvRxCWWzEWERWzZSIHqcgg3l35Cw"
       short-id: "e16bbf1a5bee2321"
     network: "tcp"
-  - name: "🇷🇺 AetrisVPN t.me/rjsxrd"
+  - name: "🇺🇸 [BL] Сервер 160"
     type: "vless"
-    server: "ams2.shtil.io"
-    port: 444
-    uuid: "254f28cb-d0c1-41e9-a06b-f2155213ff04"
+    server: "162.35.101.168"
+    port: 44333
+    uuid: "256eab05-abfc-4747-8671-01e92fb95192"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ams2.shtil.io"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "vhtQBb9x0bXClfNSSGals7dBBUEDZ7PuW0sllAsyzDM"
+      short-id: "a1b2c3d4"
     network: "tcp"
   - name: "🇭🇰 [BL/AI] Сервер 379"
     type: "vless"
@@ -656,7 +670,7 @@ proxies:
       public-key: "t7dd2ar4QX4JaQz2FvVjE44XLT0jj7Z-0raaAQ6Y9As"
       short-id: "f822140f54644166"
     network: "tcp"
-  - name: "🇺🇸 [BL] Сервер 254"
+  - name: "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
     type: "vless"
     server: "46.29.255.123"
     port: 59539
@@ -665,7 +679,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "cloudflare-dns.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ"
@@ -685,6 +699,36 @@ proxies:
       public-key: "TATAkA0QCSMDUaFnfE9HAFJZIJLQs5uCnTzwPa5kYEw"
       short-id: "231e5ed6"
     network: "tcp"
+  - name: "🇺🇸 [BL] Сервер 167"
+    type: "vless"
+    server: "148.135.86.162"
+    port: 10000
+    uuid: "327b1113-049e-4256-8d72-8815643dbb65"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "addons.mozilla.org"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DCbnS4mIPc1W2-wI0MGHhykwzf2nVuZvBadErSE6MxU"
+      short-id: "a1b2c3d4"
+    network: "tcp"
+  - name: "🇷🇺 Join+Telegram:@SolVPN 🇷🇺 t.me/rjsxrd"
+    type: "vless"
+    server: "201.24.121.243"
+    port: 443
+    uuid: "32b5ca9b-3f81-4031-965d-e8b074216e8d"
+    udp: true
+    tls: true
+    servername: "kk-ru24a1.testkknegr.online"
+    alpn:
+      - "h2"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vlgrpc"
   - name: "🇷🇺 [WL] Сервер 76"
     type: "vless"
     server: "201.24.121.243"
@@ -819,6 +863,20 @@ proxies:
       public-key: "680Dfvs1S9eB2k9LS_jUELdt4TKnaHXfYErBWMgOlCM"
       short-id: "879a738590e3db33"
     network: "tcp"
+  - name: "🇩🇪 Германия 67 dataforest GmbH t.me/rjsxrd"
+    type: "vless"
+    server: "143.246.41.216"
+    port: 443
+    uuid: "40ec5509-5da9-44b8-bb25-e6091ac9c6db"
+    udp: true
+    tls: true
+    servername: "bbbbbf87.de28.h1clayd.shop"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "oUXJZMF7pHArJNX759Wy_XxppSlX9GzON-8JPaPeXR0"
+      short-id: "dfa8ffe24f6f1add"
+    network: "tcp"
   - name: "🇸🇬 [BL] Сервер 17"
     type: "vless"
     server: "103.106.229.37"
@@ -905,21 +963,6 @@ proxies:
       public-key: "mcBxDHEz80gflA5BcvF_y4tJR5H9to-AvyPwCw_Ldzk"
       short-id: "002e003b5fe80639"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR] t.me/rjsxrd"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
   - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "luminexorizon.ink"
@@ -930,6 +973,7 @@ proxies:
     servername: "luminexorizon.ink"
     alpn:
       - "h2"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -944,12 +988,40 @@ proxies:
     servername: "luminexorizon.ink"
     alpn:
       - "h2"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
+    type: "vless"
+    server: "luminexorizon.ink"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de3.v1"
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd"
+    type: "vless"
+    server: "95.181.212.229"
+    port: 8444
+    uuid: "4e0322d8-b04f-493d-a269-ffebb4bc5dfa"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "sec-se.kaifarikhost.top"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "j2SFqXjpRipq3yefZOm2Exw45TxuZOZ19vYzF4CitxA"
+    network: "tcp"
+  - name: "🇮🇷 Iran [*CIDR] #2"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -1054,6 +1126,21 @@ proxies:
       public-key: "GBdkyDLfr0LIZo_94Xv8ycAKOmkjArYzwJAEMhuXX2c"
       short-id: "33acba1b"
     network: "tcp"
+  - name: "🇵🇱 Join+Telegram:@SolVPN 🇵🇱 t.me/rjsxrd"
+    type: "vless"
+    server: "20.215.66.17"
+    port: 2083
+    uuid: "52a5a29f-c162-411a-8a37-a3f11b0dc537"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "WbgtxLlo2gmTzB4Wzxgh_U7G97d4ENTS10fYIoujET4"
+      short-id: "0123456789abcdef"
+    network: "tcp"
   - name: "🇸🇪 [BL] Сервер 91"
     type: "vless"
     server: "143.246.195.46"
@@ -1069,7 +1156,7 @@ proxies:
       public-key: "453QgfqoHVVQ-M7xjfH-bUu0HXz1mdWGuR3vNoBoeCM"
       short-id: "4e1682"
     network: "tcp"
-  - name: "[1669ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd"
+  - name: "🌐 [WL] Сервер 106"
     type: "vless"
     server: "87.242.94.239"
     port: 443
@@ -1086,7 +1173,7 @@ proxies:
       path: "/catalog/feed/H9eui7WsW3xS"
       headers:
         Host: "87.242.94.239"
-  - name: "🌐 [WL] Сервер 106"
+  - name: "LTE/5G Все операторы 🇪🇺 #2"
     type: "vless"
     server: "87.242.94.239"
     port: 443
@@ -1096,7 +1183,7 @@ proxies:
     servername: "clipdock.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "safari"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -1118,22 +1205,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇺🇸 United States | TG: @HardVpn_robot t.me/rjsxrd"
-    type: "vless"
-    server: "188.114.98.0"
-    port: 443
-    uuid: "56066a03-d283-48cf-8120-eb8d810025cb"
-    udp: true
-    tls: true
-    servername: "ws137.mydosss.ccwu.cc"
-    alpn:
-      - "http/1.1"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/3b575ddc8596"
-      headers:
-        Host: "ws137.mydosss.ccwu.cc"
   - name: "🇦🇺 [BL] Сервер 233"
     type: "vless"
     server: "176.97.68.100"
@@ -1474,21 +1545,22 @@ proxies:
       public-key: "zpXR6Y36C8qUCIVk2p_j8C9KGeBk5xisLw66j3WFOls"
       short-id: "9f1fc5a631ef3126"
     network: "tcp"
-  - name: "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
+  - name: "🇳🇱 Нидерланды 30 NetCrafters OU t.me/rjsxrd"
     type: "vless"
-    server: "2.24.124.64"
-    port: 443
-    uuid: "719b9354-45e2-4718-8709-d965b64554db"
+    server: "185.156.110.35"
+    port: 777
+    uuid: "71b6bbe3-08a7-4769-9f7a-ba294e462ebc"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.cloudflare.com"
-    client-fingerprint: "chrome"
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "zpXR6Y36C8qUCIVk2p_j8C9KGeBk5xisLw66j3WFOls"
-      short-id: "9f1fc5a631ef3126"
-    network: "tcp"
+      public-key: "KxQXSYLnV2yk8j9kDcMXYddtE_3jvI_t9nqUKgZ0DC8"
+      short-id: "0279388c"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇳🇱 [BL] Сервер 184"
     type: "vless"
     server: "138.124.245.102"
@@ -1519,21 +1591,6 @@ proxies:
       public-key: "rU4-ii54LkmEWBaliTQHvi3jc0fDTlSmutVtzedMNRM"
       short-id: "6ba7b8"
     network: "tcp"
-  - name: "🇳🇱 AetrisVPN t.me/rjsxrd"
-    type: "vless"
-    server: "176.123.160.196"
-    port: 443
-    uuid: "75a8cc15-fa52-4067-949f-42a89859b54f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "brnl2.catneuro.su"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
-      short-id: "a1fd12bb855171d7"
-    network: "tcp"
   - name: "🇳🇱 [WL] Сервер 25"
     type: "vless"
     server: "176.123.160.196"
@@ -1548,6 +1605,21 @@ proxies:
     reality-opts:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
+    network: "tcp"
+  - name: "🇪🇺🕊♥️ Европа [Обход БС?] #3 t.me/rjsxrd"
+    type: "vless"
+    server: "brru.catneuro.su"
+    port: 443
+    uuid: "75a8cc15-fa52-4067-949f-42a89859b54f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "brru.catneuro.su"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "gHgaNAyoNAFQZwJak021k3JtZBduzHOH8MdMUNzlLxI"
+      short-id: "23fe9e1e312e4a1e"
     network: "tcp"
   - name: "🇬🇧 United Kingdom — #43"
     type: "vless"
@@ -1583,24 +1655,7 @@ proxies:
       path: "/stream/video/ffmpeg"
       headers:
         Host: "crm.hourtley.com"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "37.18.14.177"
     port: 443
@@ -1664,6 +1719,21 @@ proxies:
     reality-opts:
       public-key: "SAW3BGJNg72vtXHswOafte0QqaIEjM1dD1vZahkwJlk"
       short-id: "73693dea6faae051"
+    network: "tcp"
+  - name: "🇲🇩 Молдова | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.8.99.137"
+    port: 443
+    uuid: "7aedb979-05c3-472c-bc0d-8cc5adfc6819"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "bridge.phantom.direct"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "03kFFjUhcQ7m6pORomdAC04tQGW9mcT_lth6c2rIfnQ"
+      short-id: "c7d446cee055f06d"
     network: "tcp"
   - name: "🇩🇪 [BL] Сервер 176"
     type: "vless"
@@ -1752,21 +1822,71 @@ proxies:
     reality-opts:
       public-key: "mg2MoLpb8B51aZiko_nW2SBRoaudv-O6HLHx8VYP7Do"
     network: "tcp"
-  - name: "🇺🇸 [BL] Сервер 173"
+  - name: "🇩🇪 Германия 99 Hetzner Online GmbH t.me/rjsxrd"
     type: "vless"
-    server: "5.104.74.25"
-    port: 8443
-    uuid: "7ea09162-0f21-485e-b576-dcedc8b6587b"
+    server: "91.99.18.148"
+    port: 8080
+    uuid: "7e8c5916-2070-4013-864d-be767d4e2fd7"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "uk-room07.filesnap.tech"
+    servername: "tgju.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "48j01Jsa4o8zfmCGEFoVjn-YeALM80-DSG_-nAZUBDM"
-      short-id: "dbef98744832b751"
+      public-key: "WmXizpmTbo93c-OF9igidRjiO8MZcVl10wyAEB-k9wE"
+      short-id: "74ada7413ab3047a"
     network: "tcp"
+  - name: "🇺🇸 США 12 Amazon.com, Inc. t.me/rjsxrd"
+    type: "vless"
+    server: "3.144.167.194"
+    port: 443
+    uuid: "8086176e-450a-4afa-97b0-3728ba37739f"
+    udp: true
+    tls: true
+    encryption: "mlkem768x25519plus.native.0rtt.aVzsPNfKOJjmxcG9ok5slWFbXeNUf7FWMfFUaORCO34"
+    servername: "corporate.amazon.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pImGK1ICM3v2O8cbr3nuyrw1b9IHGzS25CSF-KbkW2w"
+      short-id: "73044417e9"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇩🇪 [WL] Сервер 128"
+    type: "vless"
+    server: "185.253.7.22"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "clover.filnex.baby"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de6/stream"
+      headers:
+        Host: "clover.filnex.baby"
+  - name: "🇩🇪 [WL] Сервер 107"
+    type: "vless"
+    server: "77.95.203.145"
+    port: 443
+    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    udp: true
+    tls: true
+    servername: "clover.filnex.baby"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de6/stream"
+      headers:
+        Host: "clover.filnex.baby"
   - name: "🇯🇵 [BL] Сервер 129"
     type: "vless"
     server: "103.75.118.228"
@@ -1872,9 +1992,24 @@ proxies:
     reality-opts:
       public-key: "fJwbUNPAxu-CcoWnzWrvtDkX7QMDvJwFGWzJ3lDcFC4"
     network: "tcp"
-  - name: "🇪🇪 Эстония 1 Ilia Baikov t.me/rjsxrd"
+  - name: "🇮🇹 Италия Akamai Technologies, Inc. t.me/rjsxrd"
     type: "vless"
-    server: "141.98.165.146"
+    server: "172.232.193.55"
+    port: 443
+    uuid: "878ac990-650e-402f-910b-7859c35c1f50"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇺🇸 США 11 Akamai Technologies, Inc. t.me/rjsxrd"
+    type: "vless"
+    server: "97.107.135.242"
     port: 443
     uuid: "878ac990-650e-402f-910b-7859c35c1f50"
     udp: true
@@ -1947,6 +2082,36 @@ proxies:
     reality-opts:
       public-key: "rS6r3PZQHZp31tnOmJAuCme4xJgsak_JsZ5hTPwpuiY"
       short-id: "8b8dd8a1c0c468d3"
+    network: "tcp"
+  - name: "🇧🇾 Belarus (сервер) | 🇧🇾 Belarus (выход 95.128.71.79) | @RaViraNet t.me/rjsxrd"
+    type: "vless"
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
+  - name: "🇧🇾 Belarus (сервер) | 🇧🇾 Belarus (выход 95.128.71.79) | @RaViraNet t.me/rjsxrd #2"
+    type: "vless"
+    server: "95.128.71.79"
+    port: 10444
+    uuid: "8cef7621-c6f0-486e-b51d-59c30c5b0b25"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
     network: "tcp"
   - name: "🇬🇧 [BL] Сервер 182"
     type: "vless"
@@ -2068,6 +2233,21 @@ proxies:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
+  - name: "🇷🇺 AetrisVPN t.me/rjsxrd"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
   - name: "🇺🇸 United States — #118"
     type: "vless"
     server: "47.251.108.158"
@@ -2127,6 +2307,21 @@ proxies:
     reality-opts:
       public-key: "jbiddtGRgeBvlkjbuA3aU-WPjKgEX87tOVh1mFfvOUI"
       short-id: "16e0f049"
+    network: "tcp"
+  - name: "🇩🇪 Германия 107 WEYRO LTD t.me/rjsxrd"
+    type: "vless"
+    server: "89.125.175.74"
+    port: 8443
+    uuid: "983cbacc-2e61-4f1b-a755-6c5a0a8c54c0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "uk-room05.filesnap.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
+      short-id: "7da3ba09a037e956"
     network: "tcp"
   - name: "🇺🇸 [BL] Сервер 174"
     type: "vless"
@@ -2201,6 +2396,22 @@ proxies:
       public-key: "F6C33iIbfmt1mUsuLTarIC8ygdHKMqsaGvrSQltyxUo"
       short-id: "429499c03d4cc8a0"
     network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR] YA"
+    type: "vless"
+    server: "92.255.58.59"
+    port: 443
+    uuid: "a30903dc-1bf0-0001-8b1b-603a3a56211c"
+    udp: true
+    tls: true
+    servername: "api-gw-cfg.galioncc.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "92.255.58.59"
@@ -2325,7 +2536,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇺🇸 [WL/AI] Сервер 65"
+  - name: "🇷🇺 Russia (сервер) | 🇺🇸 United States (выход 2a0f:6280:15::1:164) | @RaViraNet t.me/rjsxrd"
     type: "vless"
     server: "212.41.8.76"
     port: 14443
@@ -2333,7 +2544,7 @@ proxies:
     udp: true
     tls: true
     servername: "s3.storage.selcloud.ru"
-    client-fingerprint: "random"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "rVt9_jYmjD8R-DjRQrX7uRPJ2803fRXf9quNOqfxJQM"
@@ -2371,7 +2582,7 @@ proxies:
       public-key: "kpQWnVk3fEJXfPGFsMerUoPV_ZqUJUJFRnF1FvKyhRY"
       short-id: "7a7d19880a9ee786"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd"
+  - name: "🇩🇪 Германия 113 Tom Gewiese t.me/rjsxrd"
     type: "vless"
     server: "195.110.15.19"
     port: 43000
@@ -2386,22 +2597,7 @@ proxies:
       public-key: "KeFxVlEEuDN8alZBsrXiX9yrcY2-H7lcdzXWjtrIWy0"
       short-id: "a9c3bda4"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
-    type: "vless"
-    server: "195.110.15.19"
-    port: 43000
-    uuid: "a75b8ca1-3bbe-43fc-87f6-e153bf192f83"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "195.110.15.19"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "KeFxVlEEuDN8alZBsrXiX9yrcY2-H7lcdzXWjtrIWy0"
-      short-id: "a9c3bda4"
-    network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #2"
+  - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "81.163.22.118"
     port: 443
@@ -2417,6 +2613,20 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
+  - name: "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "31.76.251.48"
+    port: 443
+    uuid: "ab7fd792-64f8-4879-9e1a-f8e11b2104ba"
+    udp: true
+    tls: true
+    servername: "www.ya.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "dlhoLMdfvgjSVzSuT0PPhomRdNcy8_qtnky0kKflqGI"
+      short-id: "a1b2c3d4"
+    network: "tcp"
   - name: "🇩🇪 Germany — #13"
     type: "vless"
     server: "82.118.19.153"
@@ -2563,6 +2773,21 @@ proxies:
       public-key: "lJz7AGWUC-ZTEIJaU5y1GRrROWJ9J_VzQRyrYPmOygs"
       short-id: "fd2fa5e06670120b"
     network: "tcp"
+  - name: "🇧🇾 Belarus (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
+    type: "vless"
+    server: "178.172.227.228"
+    port: 10444
+    uuid: "b6e5dc56-836f-48c1-9163-b0b0b43b647d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads.x5.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo"
+      short-id: "8debcf36f1cc69ff"
+    network: "tcp"
   - name: "🇫🇮 [BL] Сервер 288"
     type: "vless"
     server: "95.216.27.15"
@@ -2653,6 +2878,51 @@ proxies:
       public-key: "7KnJYp2-sE3o35mnbSZzX3fNg-ns9n8xyNfkRSHCD3E"
       short-id: "238e23c5150f02e4"
     network: "tcp"
+  - name: "LTE/5G Все операторы 🇪🇺 #4"
+    type: "vless"
+    server: "46.243.234.65"
+    port: 12443
+    uuid: "b9abca13-8d45-43db-b0a2-4d26f85380c3"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "catalog.mimowhat.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HyJQdnrodVK1USi-VyOC_pIvy1Ploj4Kf7kpO0vopSo"
+      short-id: "78c8c6801d59cc19"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "46.243.234.65"
+    port: 12443
+    uuid: "b9abca13-8d45-43db-b0a2-4d26f85380c3"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "catalog.mimowhat.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HyJQdnrodVK1USi-VyOC_pIvy1Ploj4Kf7kpO0vopSo"
+      short-id: "78c8c6801d59cc19"
+    network: "tcp"
+  - name: "🇩🇪 [WL] Сервер 21"
+    type: "vless"
+    server: "89.169.3.149"
+    port: 443
+    uuid: "b9abca13-8d45-43db-b0a2-4d26f85380c3"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "newerson.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "TiKF_6UGMtWhgDiAGLsAtyYwyv-s3HxG6F0P9ltyf1U"
+      short-id: "8888265ef63fba6d"
+    network: "tcp"
   - name: "@LexaVercelbot C-1 #138 🇧🇾 🝰"
     type: "vless"
     server: "194.58.60.203"
@@ -2730,19 +3000,19 @@ proxies:
       public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
       short-id: "a91531ad58c8611c"
     network: "tcp"
-  - name: "🇸🇪_瑞典 t.me/rjsxrd"
+  - name: "🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd"
     type: "vless"
-    server: "d58daft.plp1.h1cloud.net"
-    port: 443
-    uuid: "bda6e235-c778-4e57-bfcd-5a9026fec8c9"
+    server: "208.69.78.217"
+    port: 2053
+    uuid: "c0dd6d59-1573-43af-8b70-1470b2632a6d"
     udp: true
     tls: true
-    servername: "d58daft.plp1.h1cloud.net"
+    servername: "www.apple.com"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "ixnCbdlT5sAVd-ilp2nG11CvnNsBCf9xPD56TlXxlR4"
-      short-id: "a91531ad58c8611c"
+      public-key: "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0"
+      short-id: "ad86e2d52ff40ebd"
     network: "tcp"
   - name: "🇩🇪 [BL/CF] Сервер 108"
     type: "vless"
@@ -3234,7 +3504,7 @@ proxies:
       public-key: "exMJ2DIglSgZ7Ly4qR83kRJs6RGzVk-qJMg7Qz-kCRs"
       short-id: "55901e05c3d5dfd3"
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #3"
+  - name: "LTE/5G Все операторы 🇪🇺 #5"
     type: "vless"
     server: "7xncdn.shardtech.pro"
     port: 443
@@ -3335,6 +3605,21 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd #2"
+    type: "vless"
+    server: "85.208.87.222"
+    port: 443
+    uuid: "e72f9cd6-9bd2-4aa4-bf99-be60d3dd4ad2"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "expressplitka.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CYbTcIOofFh-MndCO9czg_mUjmS7x7wUCvUsg4GToTk"
+      short-id: "5a531684"
     network: "tcp"
   - name: "🇪🇸 [BL] Сервер 199"
     type: "vless"
@@ -3453,21 +3738,6 @@ proxies:
       public-key: "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg"
       short-id: "a44ff7d2e80213c2"
     network: "tcp"
-  - name: "[391ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd"
-    type: "vless"
-    server: "109.71.245.99"
-    port: 443
-    uuid: "f09ca6e3-c547-4f91-95f5-77f34c4282ac"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zICjcFkqI720WzWpHXRLjSFYmcu4Hd0jk1iDEo1nUAU"
-      short-id: "c27a26812e5d2208"
-    network: "tcp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇪🇪"
     type: "vless"
     server: "141.0.187.5"
@@ -3497,21 +3767,6 @@ proxies:
     reality-opts:
       public-key: "kLCwYNBhCg68BQah9El1lNg6GQ7-7Y7xfTtIs6MiTEg"
       short-id: "d18f4e"
-    network: "tcp"
-  - name: "@LexaVercelbot C-1 #136 🇦🇹 🎴"
-    type: "vless"
-    server: "api.mediaroshcha.cc"
-    port: 443
-    uuid: "f4a3fec3-80d2-4743-81a9-3ea4443e5456"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
     network: "tcp"
   - name: "@LexaVercelbot C-1 #135 🇨🇿 🧭"
     type: "vless"
@@ -3545,6 +3800,21 @@ proxies:
       path: "/nl7ws"
       headers:
         Host: "cdn.quick-frost.ru"
+  - name: "🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd"
+    type: "vless"
+    server: "144.31.140.125"
+    port: 8443
+    uuid: "f5e70ce3-cfb4-4df1-b25c-d19bfae627c0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "twitch.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "wgyw3OxZw4HEzedNdY_eHdcVkrtT7GEeZSHfzcZ8iDo"
+      short-id: "168c15efac9df5fd"
+    network: "tcp"
   - name: "🇩🇪 [BL] Сервер 208"
     type: "vless"
     server: "144.31.140.125"
@@ -3574,20 +3844,6 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "203. VLESS | SNI: dualarrow.net | CIDR: ? | TG: @wlrustg t.me/rjsxrd"
-    type: "vless"
-    server: "78.159.250.83"
-    port: 443
-    uuid: "f656c4b9-54dc-44cc-a142-e242ce687e56"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "dualarrow.net"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "tcp"
   - name: "76. VLESS | SNI: dualarrow.net | CIDR: ? | TG: @wlrustg t.me/rjsxrd"
     type: "vless"
     server: "78.159.250.83"
@@ -3601,6 +3857,21 @@ proxies:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды 31 PLAY2GO INTERNATIONAL LIMITED t.me/rjsxrd"
+    type: "vless"
+    server: "2.27.40.46"
+    port: 443
+    uuid: "f8d52ece-fad4-478d-875d-df6eed3befa7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl-s-2-b1.pythonmakemigreat.wiki"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg"
+      short-id: "a3565610aa574a6e"
     network: "tcp"
   - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd"
     type: "vless"
@@ -3631,6 +3902,20 @@ proxies:
     reality-opts:
       public-key: "ccJ6xUaUhUxN6GEj6a1vqsQDNDTJJX1KYSURY5pJpBE"
       short-id: "eb68848e2575a1f4"
+    network: "tcp"
+  - name: "🇩🇪 Германия 108 AGX Management Consultancy - FZCO t.me/rjsxrd"
+    type: "vless"
+    server: "18.202.245.83"
+    port: 443
+    uuid: "fad6c240-14d0-47ce-9264-21c5f18689c1"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.amazon.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZODw0ijKEfbSpHjvQqTyYzsbLpnlnA3j9Io5PfmZ-Ts"
     network: "tcp"
   - name: "@LexaVercelbot C-1 #51 🇫🇲 🪐"
     type: "vless"
@@ -3707,6 +3992,32 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇺🇸 [BL] Сервер 427"
+    type: "trojan"
+    server: "167.88.61.175"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "blog.browseseniorrolesandenhanceyourcareertoday.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+  - name: "🇪🇸 [BL] Сервер 428"
+    type: "trojan"
+    server: "66.163.118.62"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "courses.discovergreatjobsandadvanceyourcareer.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+  - name: "🇺🇸 [BL] Сервер 431"
+    type: "trojan"
+    server: "66.163.127.225"
+    port: 443
+    password: "0ab6c98dae3b48e8b9c4a776b6c9c19a"
+    udp: true
+    sni: "cdn.indyourperfectremotetechjobfromthecomfortofhome.com"
+    skip-cert-verify: false
   - name: "🇫🇮 [BL] Сервер 443"
     type: "trojan"
     server: "178.17.60.97"
@@ -3727,14 +4038,13 @@ proxies:
     udp: true
     sni: "hk.catxstar.com"
     skip-cert-verify: false
-  - name: "🇭🇰_香港 (3) t.me/rjsxrd"
+  - name: "🇭🇰_香港 t.me/rjsxrd"
     type: "trojan"
-    server: "sclass-c1.catcat321.com"
-    port: 20086
+    server: "sclass-00.catcat321.com"
+    port: 20123
     password: "d9064589-74af-432a-9390-5d8a9da281bf"
     udp: true
     sni: "hk.catxstar.com"
-    client-fingerprint: "chrome"
     skip-cert-verify: false
   - name: "@LexaVercelbot C-1 #121 🇺🇸 🫧"
     type: "trojan"
@@ -3757,6 +4067,34 @@ proxies:
     udp: true
     sni: "trojan.lso"
     skip-cert-verify: false
+  - name: "未知81"
+    type: "vmess"
+    server: "cf.0sm.com"
+    port: 443
+    uuid: "0cf6d970-3f1d-4aae-a989-92a8f76ae3db"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "vmess.lbw666.dpdns.org"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/ws?ed=2048"
+      headers:
+        Host: "vmess.lbw666.dpdns.org"
+  - name: "US20"
+    type: "vmess"
+    server: "172.111.36.137"
+    port: 1270
+    uuid: "5c040f1d-45db-43bd-8d46-e4950e433735"
+    alterId: 0
+    cipher: "auto"
+    udp: true
+    tls: true
+    servername: "xmfhlpy.com"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇩🇪 [WL] Сервер 104"
     type: "vmess"
     server: "185.177.229.95"
@@ -3792,71 +4130,6 @@ proxies:
     tls: true
     servername: "guanwang.awsno.com"
     client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/hls/cctv5phd.m3u8"
-      headers:
-        Host: "guanwang.awsno.com"
-  - name: "🇺🇸 机场推荐:dafei.de 美国 55"
-    type: "vmess"
-    server: "172.64.145.93"
-    port: 443
-    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "guanwang.awsno.com"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/hls/cctv5phd.m3u8"
-      headers:
-        Host: "guanwang.awsno.com"
-  - name: "🇺🇸 机场推荐:dafei.de 美国 05"
-    type: "vmess"
-    server: "172.67.190.164"
-    port: 443
-    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "guanwang.awsno.com"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/hls/cctv5phd.m3u8"
-      headers:
-        Host: "guanwang.awsno.com"
-  - name: "🇺🇸 机场推荐:dafei.de 美国 70"
-    type: "vmess"
-    server: "188.114.99.137"
-    port: 443
-    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "guanwang.awsno.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/hls/cctv5phd.m3u8"
-      headers:
-        Host: "guanwang.awsno.com"
-  - name: "🇺🇸 机场推荐:dafei.de 美国 14"
-    type: "vmess"
-    server: "guanwang.awsno.com"
-    port: 443
-    uuid: "6a89a215-22bf-4bd7-9642-b95b2e09583a"
-    alterId: 0
-    cipher: "auto"
-    udp: true
-    tls: true
-    servername: "guanwang.awsno.com"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -4038,16 +4311,6 @@ proxies:
     password: "549766c3-fa5f-471e-8031-ffc1f8d5064f"
     udp: true
     sni: "guide.blog-forme.ru"
-    skip-cert-verify: false
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19446
-    password: "6fffde27-86de-49e5-9ece-0669b6680afc"
-    udp: true
-    sni: "mshvpn.online"
-    alpn:
-      - "h3"
     skip-cert-verify: false
   - name: "🇸🇪 [BL] Сервер 189"
     type: "hysteria2"
@@ -4238,21 +4501,22 @@ proxy-groups:
     proxies:
       - "🇺🇸 United States — #124"
       - "🇺🇸 [BL] Сервер 277"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇩🇪 [BL] Сервер 245"
       - "🇦🇱 [BL] Сервер 211"
       - "🇪🇪 [BL] Сервер 16"
       - "🇷🇸 [BL] Сервер 10"
       - "🇱🇻 Latvia — #54"
       - "🇱🇻 [BL] Сервер 38"
-      - "🇺🇸 [BL] Сервер 253"
       - "🇵🇱 Poland — #83"
       - "🇵🇱 [BL] Сервер 243"
       - "🇺🇸 United States — #103"
       - "🇺🇸 [BL] Сервер 32"
-      - "🇸🇪 Швеция 7 Tom Gewiese t.me/rjsxrd"
+      - "🇸🇪 Швеция 4 Tom Gewiese t.me/rjsxrd"
       - "🇫🇷 [BL] Сервер 202"
       - "🇩🇪 [BL] Сервер 316"
       - "🇹🇷 [BL] Сервер 313"
+      - "🇫🇷 Франция 1 Contabo GmbH t.me/rjsxrd"
       - "🇫🇷 [BL] Сервер 148"
       - "🇸🇪 Sweden — #94"
       - "🇸🇪 [BL] Сервер 27"
@@ -4263,10 +4527,10 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 206"
       - "🇺🇸 [BL] Сервер 280"
       - "🇺🇸 [BL] Сервер 33"
-      - "🇺🇸 [BL] Сервер 172"
-      - "🇮🇷 Iran | [*CIDR] t.me/rjsxrd"
+      - "🇮🇷 Iran [*CIDR]"
       - "🇺🇸 United States — #108"
       - "🇺🇸 [BL] Сервер 300"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "LTE/5G Все операторы 🇪🇺"
       - "🇺🇸 [BL] Сервер 335"
       - "🇳🇱 [BL] Сервер 5"
@@ -4276,12 +4540,14 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 214"
       - "🇺🇸 [BL] Сервер 358"
       - "🇺🇸 [BL] Сервер 216"
-      - "🇷🇺 AetrisVPN t.me/rjsxrd"
+      - "🇺🇸 [BL] Сервер 160"
       - "🇭🇰 [BL/AI] Сервер 379"
       - "🇮🇹 [BL] Сервер 348"
       - "@LexaVercelbot C-1 #125 🇧🇬 🫧"
-      - "🇺🇸 [BL] Сервер 254"
+      - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 324"
+      - "🇺🇸 [BL] Сервер 167"
+      - "🇷🇺 Join+Telegram:@SolVPN 🇷🇺 t.me/rjsxrd"
       - "🇷🇺 [WL] Сервер 76"
       - "🇳🇱 [BL] Сервер 260"
       - "🇳🇱 [BL] Сервер 259"
@@ -4291,27 +4557,29 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 168"
       - "🇦🇺 [BL] Сервер 349"
       - "🇸🇬 [BL] Сервер 244"
+      - "🇩🇪 Германия 67 dataforest GmbH t.me/rjsxrd"
       - "🇸🇬 [BL] Сервер 17"
       - "🇳🇱 [WL] Сервер 125"
       - "🇷🇺 [WL] Сервер 136"
       - "🇳🇱 [BL] Сервер 115"
       - "🇩🇪 [BL] Сервер 364"
       - "🇵🇱 [BL] Сервер 347"
-      - "🇩🇪 Germany | 🌐 | [*CIDR] t.me/rjsxrd"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd"
+      - "🇮🇷 Iran [*CIDR] #2"
       - "🇫🇮 [BL] Сервер 209"
       - "🇸🇪 [BL] Сервер 352"
       - "🇳🇱 The Netherlands — #76"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇳🇱 [BL] Сервер 28"
       - "🇱🇻 [BL] Сервер 265"
+      - "🇵🇱 Join+Telegram:@SolVPN 🇵🇱 t.me/rjsxrd"
       - "🇸🇪 [BL] Сервер 91"
-      - "[1669ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd"
       - "🌐 [WL] Сервер 106"
+      - "LTE/5G Все операторы 🇪🇺 #2"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
-      - "🇺🇸 United States | TG: @HardVpn_robot t.me/rjsxrd"
       - "🇦🇺 [BL] Сервер 233"
       - "🇦🇺 [BL] Сервер 232"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇬"
@@ -4335,25 +4603,28 @@ proxy-groups:
       - "🇸🇬 [BL/CF] Сервер 312"
       - "🇺🇸 [BL] Сервер 363"
       - "🇺🇸 United States — #102"
-      - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd"
+      - "🇳🇱 Нидерланды 30 NetCrafters OU t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 184"
       - "🇺🇸 [BL] Сервер 325"
-      - "🇳🇱 AetrisVPN t.me/rjsxrd"
       - "🇳🇱 [WL] Сервер 25"
+      - "🇪🇺🕊♥️ Европа [Обход БС?] #3 t.me/rjsxrd"
       - "🇬🇧 United Kingdom — #43"
       - "🇳🇱 The Netherlands — #78"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "@LexaVercelbot C-1 #43 🇫🇲 🛰️"
       - "@LexaVercelbot C-1 #42 🇫🇲 🪐"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
+      - "🇲🇩 Молдова | 🔗 Каскад [#РКП]"
       - "🇩🇪 [BL] Сервер 176"
       - "🇨🇭 AetrisVPN t.me/rjsxrd"
       - "🇨🇿 [BL] Сервер 36"
       - "🇮🇳 [BL] Сервер 351"
       - "🇩🇪 [BL] Сервер 301"
       - "🇳🇱 [BL] Сервер 357"
-      - "🇺🇸 [BL] Сервер 173"
+      - "🇩🇪 Германия 99 Hetzner Online GmbH t.me/rjsxrd"
+      - "🇺🇸 США 12 Amazon.com, Inc. t.me/rjsxrd"
+      - "🇩🇪 [WL] Сервер 128"
+      - "🇩🇪 [WL] Сервер 107"
       - "🇯🇵 [BL] Сервер 129"
       - "🇺🇸 Join+Telegram:@SolVPN 🇺🇸 t.me/rjsxrd #2"
       - "🇺🇸 [BL] Сервер 151"
@@ -4361,11 +4632,14 @@ proxy-groups:
       - "@LexaVercelbot C-1 #77 🇫🇲 🫧"
       - "🇨🇦 [BL] Сервер 250"
       - "🇭🇰 [BL] Сервер 274"
-      - "🇪🇪 Эстония 1 Ilia Baikov t.me/rjsxrd"
+      - "🇮🇹 Италия Akamai Technologies, Inc. t.me/rjsxrd"
+      - "🇺🇸 США 11 Akamai Technologies, Inc. t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 264"
       - "🇫🇮 [BL] Сервер 314"
       - "🇩🇪 [BL] Сервер 132"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇪"
+      - "🇧🇾 Belarus (сервер) | 🇧🇾 Belarus (выход 95.128.71.79) | @RaViraNet t.me/rjsxrd"
+      - "🇧🇾 Belarus (сервер) | 🇧🇾 Belarus (выход 95.128.71.79) | @RaViraNet t.me/rjsxrd #2"
       - "🇬🇧 [BL] Сервер 182"
       - "🇬🇷 Greece — #46"
       - "@LexaVercelbot C-1 #67 🇫🇲 🪬"
@@ -4374,15 +4648,18 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 225"
       - "🇺🇸 [BL] Сервер 224"
       - "🇷🇺 [WL] Сервер 101"
+      - "🇷🇺 AetrisVPN t.me/rjsxrd"
       - "🇺🇸 United States — #118"
       - "🇺🇸 [BL] Сервер 393"
       - "🌐 [BL] Сервер 20"
       - "🌐 [BL] Сервер 21"
+      - "🇩🇪 Германия 107 WEYRO LTD t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 174"
       - "🇬🇧 United Kingdom — #40"
       - "🇸🇬 [BL] Сервер 290"
       - "🇳🇱 [BL] Сервер 333"
       - "🇰🇷 [BL] Сервер 252"
+      - "🇳🇱 The Netherlands [*CIDR] YA"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇹🇷 Join+Telegram:@SolVPN 🇹🇷 t.me/rjsxrd"
@@ -4391,12 +4668,12 @@ proxy-groups:
       - "@LexaVercelbot C-1 #44 🇫🇲 🧭"
       - "🇭🇺 [WL/AI] Сервер 63"
       - "🇷🇺 [WL/AI] Сервер 64"
-      - "🇺🇸 [WL/AI] Сервер 65"
+      - "🇷🇺 Russia (сервер) | 🇺🇸 United States (выход 2a0f:6280:15::1:164) | @RaViraNet t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇪 #2"
       - "@LexaVercelbot C-1 #26 🇫🇲 🧭"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 t.me/rjsxrd"
-      - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #2"
-      - "LTE/5G Все операторы 🇪🇺 #2"
+      - "🇩🇪 Германия 113 Tom Gewiese t.me/rjsxrd"
+      - "LTE/5G Все операторы 🇪🇺 #3"
+      - "Poland | www.ya.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 Germany — #13"
       - "🇩🇪 [BL] Сервер 39"
       - "@LexaVercelbot C-1 #14 🇫🇲 🫧"
@@ -4407,18 +4684,22 @@ proxy-groups:
       - "🇬🇧 [BL] Сервер 287"
       - "🇰🇿 [BL] Сервер 249"
       - "🇹🇼 [BL] Сервер 272"
+      - "🇧🇾 Belarus (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
       - "🇫🇮 [BL] Сервер 288"
       - "Poland | ya.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "@LexaVercelbot C-1 #4 🇫🇲 🪬"
       - "@LexaVercelbot C-1 #12 🇫🇲 🧿"
       - "France | passport.yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 40"
+      - "LTE/5G Все операторы 🇪🇺 #4"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇩🇪 [WL] Сервер 21"
       - "@LexaVercelbot C-1 #138 🇧🇾 🝰"
       - "@LexaVercelbot C-1 #131 🇰🇿 🝰"
       - "@LexaVercelbot C-1 #9 🇫🇲 🎴"
       - "🇳🇱 [BL] Сервер 273"
       - "🇵🇱 [BL] Сервер 369"
-      - "🇸🇪_瑞典 t.me/rjsxrd"
+      - "🇨🇭 Join+Telegram:@SolVPN 🇨🇭 t.me/rjsxrd"
       - "🇩🇪 [BL/CF] Сервер 108"
       - "🌐 [BL] Сервер 24"
       - "🌐 [BL] Сервер 25"
@@ -4452,13 +4733,14 @@ proxy-groups:
       - "🇮🇹 [BL] Сервер 37"
       - "🇨🇦 [BL] Сервер 266"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
-      - "LTE/5G Все операторы 🇪🇺 #3"
+      - "LTE/5G Все операторы 🇪🇺 #5"
       - "tg:VLESSFORU 🇫🇷 ⚡"
       - "🇸🇬 [BL] Сервер 350"
       - "@LexaVercelbot C-1 #48 🇫🇲 🧿"
       - "@LexaVercelbot C-1 #63 🇫🇲 🎴"
       - "@LexaVercelbot C-1 #62 🇫🇲 🧭"
       - "@LexaVercelbot C-1 #45 🇫🇲 🎴"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd #2"
       - "🇪🇸 [BL] Сервер 199"
       - "🌐 [WL/AI] Сервер 66"
       - "🌐 [WL/AI] Сервер 67"
@@ -4467,35 +4749,36 @@ proxy-groups:
       - "🇸🇪 [BL] Сервер 328"
       - "🇹🇷 [BL] Сервер 334"
       - "🇫🇷 France — #37"
-      - "[391ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇪🇪"
       - "🇵🇱 [BL] Сервер 246"
-      - "@LexaVercelbot C-1 #136 🇦🇹 🎴"
       - "@LexaVercelbot C-1 #135 🇨🇿 🧭"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+      - "🇩🇪 Join+Telegram:@SolVPN 🇩🇪 t.me/rjsxrd"
       - "🇩🇪 [BL] Сервер 208"
       - "78. VLESS | SNI: dualarrow.net | CIDR: ? | TG: @wlrustg t.me/rjsxrd"
-      - "203. VLESS | SNI: dualarrow.net | CIDR: ? | TG: @wlrustg t.me/rjsxrd"
       - "76. VLESS | SNI: dualarrow.net | CIDR: ? | TG: @wlrustg t.me/rjsxrd"
+      - "🇳🇱 Нидерланды 31 PLAY2GO INTERNATIONAL LIMITED t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 110"
+      - "🇩🇪 Германия 108 AGX Management Consultancy - FZCO t.me/rjsxrd"
       - "@LexaVercelbot C-1 #51 🇫🇲 🪐"
       - "@LexaVercelbot C-1 #53 🇫🇲 🧭"
       - "@LexaVercelbot C-1 #52 🇫🇲 🛰️"
       - "Brazil | www.mercadolivre.com.br | TCP | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 398"
+      - "🇺🇸 [BL] Сервер 427"
+      - "🇪🇸 [BL] Сервер 428"
+      - "🇺🇸 [BL] Сервер 431"
       - "🇫🇮 [BL] Сервер 443"
       - "🇦🇪 [BL] Сервер 446"
-      - "🇭🇰_香港 (3) t.me/rjsxrd"
+      - "🇭🇰_香港 t.me/rjsxrd"
       - "@LexaVercelbot C-1 #121 🇺🇸 🫧"
       - "Подписка #LSO© Trojan: 28 [#LSO - #LinSpisokObhod]"
+      - "未知81"
+      - "US20"
       - "🇩🇪 [WL] Сервер 104"
       - "🇩🇪 [WL] Сервер 103"
       - "🇺🇸_US_美国_IPV4 (2)"
-      - "🇺🇸 机场推荐:dafei.de 美国 55"
-      - "🇺🇸 机场推荐:dafei.de 美国 05"
-      - "🇺🇸 机场推荐:dafei.de 美国 70"
-      - "🇺🇸 机场推荐:dafei.de 美国 14"
       - "@LexaVercelbot C-1 #2 🇫🇮 🝰"
       - "@LexaVercelbot C-1 #7 🇸🇪 🛰️"
       - "@LexaVercelbot C-1 #4 🇳🇱 🪬"
@@ -4515,7 +4798,6 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 127"
       - "🇳🇱 [BL] Сервер 124"
       - "🇩🇪 [BL] Сервер 170"
-      - "🇨🇿 Czechia [*CIDR]"
       - "🇸🇪 [BL] Сервер 189"
       - "@LexaVercelbot C-1 #7 🇫🇲 🛰️"
       - "@LexaVercelbot C-1 #11 🇫🇲 🝰"
