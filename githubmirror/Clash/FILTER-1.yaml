@@ -1,21 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-16 06:15:37 UTC
+# 2026-11-16 06:30:56 UTC
 proxies:
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "136.234.9.11"
-    port: 443
-    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "8a2e72t.nl20.h1clayd.shop"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA"
-      short-id: "8d0d0679f42ffd98"
-    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "171.22.133.24"
@@ -46,7 +31,7 @@ proxies:
       public-key: "k-zB-Tf6HyT7kocUU8UDvFoHxw9r-JTonmYVpe4RT3U"
       short-id: "a5fe10fba46b8613"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.123.160.196"
     port: 443
@@ -75,21 +60,6 @@ proxies:
     reality-opts:
       public-key: "e39H8hQXcwfiUnkUOmG0JkBTX5VCxaBQ3_EWEj9PZRc"
       short-id: "e938e26c4425"
-    network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "45.151.101.14"
-    port: 443
-    uuid: "acbd6999-af4d-43cb-9733-0c465341aa63"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "c0.awsstatic.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "eLYbRIstrYmvMH78mCoQ2a0t6ULVDFInHExnzKO-ll8"
-      short-id: "1f974ee90d8de2c9"
     network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
@@ -120,32 +90,15 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "159.194.228.99"
-    port: 443
-    uuid: "f3a227cb-8a8b-4ccb-b613-9143c4a1346c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-nl1.fluxnode777.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Hdbh_QHmyYaQjhD4mD5NWdir_qW2FFhJ3t3QFkU7bjc"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
