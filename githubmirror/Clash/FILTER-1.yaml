@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 19:31:07 UTC
+# 2026-11-16 19:45:38 UTC
 proxies:
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -269,6 +269,22 @@ proxies:
       path: "/nl7ws"
       headers:
         Host: "cdn.quick-frost.ru"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #7"
+    type: "trojan"
+    server: "176.12.66.200"
+    port: 443
+    password: "oFyzf-87fcBrcgOhtMjw8ArtE6LAD1n1"
+    udp: true
+    sni: "ws.universall.shop"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/en"
+      headers:
+        Host: "ws.universall.shop"
 proxy-groups:
   - name: PROXY
     type: select
@@ -290,5 +306,6 @@ proxy-groups:
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #6"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #7"
 rules:
   - MATCH,PROXY
