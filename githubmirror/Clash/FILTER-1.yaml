@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 11:30:49 UTC
+# 2026-11-16 11:45:33 UTC
 proxies:
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -188,6 +188,22 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "92.255.58.59"
+    port: 443
+    uuid: "a30903dc-1bf0-0001-8b1b-603a3a56211c"
+    udp: true
+    tls: true
+    servername: "api-gw-cfg.galioncc.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "89.169.3.149"
@@ -203,6 +219,22 @@ proxies:
       public-key: "TiKF_6UGMtWhgDiAGLsAtyYwyv-s3HxG6F0P9ltyf1U"
       short-id: "8888265ef63fba6d"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "185.125.100.85"
+    port: 13391
+    uuid: "de1971aa-9ad9-42ad-bfda-11301863402c"
+    udp: true
+    tls: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1d3wBy06ikFHZRPWh6Xj30U-iV84HRwWJ_SlWewqvDA"
+      short-id: "f63c7a903d282de4"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.125.100.85"
@@ -235,7 +267,9 @@ proxy-groups:
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇳🇱 Нидерланды [#РКП]"
       - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
