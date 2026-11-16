@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 01:15:32 UTC
+# 2026-11-16 01:30:48 UTC
 proxies:
   - name: "🇺🇸 United States — #105"
     type: "vless"
@@ -820,6 +820,21 @@ proxies:
       public-key: "4RaNuv9yehmcfpdzvRxCWWzEWERWzZSIHqcgg3l35Cw"
       short-id: "e16bbf1a5bee2321"
     network: "tcp"
+  - name: "LTE/5G MTS Beeline MegafonYota 🇪🇺 #2"
+    type: "vless"
+    server: "selec.homelab-cdn.cloud"
+    port: 443
+    uuid: "244e1319-ffdf-51a8-a462-13d7c7fc52e7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "selec.homelab-cdn.cloud"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 235"
     type: "vless"
     server: "162.35.101.168"
@@ -1565,23 +1580,6 @@ proxies:
       public-key: "453QgfqoHVVQ-M7xjfH-bUu0HXz1mdWGuR3vNoBoeCM"
       short-id: "4e1682"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "87.242.94.239"
-    port: 443
-    uuid: "533b20de-178b-4221-9979-f1e815ca8741"
-    udp: true
-    tls: true
-    servername: "clipdock.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/catalog/feed/H9eui7WsW3xS"
-      headers:
-        Host: "87.242.94.239"
   - name: "🇳🇱 [WL] Сервер 124"
     type: "vless"
     server: "87.242.94.239"
@@ -1593,6 +1591,23 @@ proxies:
     alpn:
       - "http/1.1"
     client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/catalog/feed/H9eui7WsW3xS"
+      headers:
+        Host: "87.242.94.239"
+  - name: "🇮🇩 Indonesia | [*CIDR] t.me/rjsxrd"
+    type: "vless"
+    server: "87.242.94.239"
+    port: 443
+    uuid: "533b20de-178b-4221-9979-f1e815ca8741"
+    udp: true
+    tls: true
+    servername: "clipdock.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -4419,6 +4434,21 @@ proxies:
       public-key: "k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU"
       short-id: "83f8317a948bb769"
     network: "tcp"
+  - name: "tg:VLESSFORU 🇷🇺"
+    type: "vless"
+    server: "188.124.54.30"
+    port: 443
+    uuid: "dcf2b1c4-f99f-4319-b917-37af1e7233c8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "12.img.avito.st"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "NaKc4dzGFuXMEyK2EpqbS7EosjGDR4wNQS7fH2EnSzk"
+      short-id: "43699ddc62b52c4b"
+    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия t.me/rjsxrd"
     type: "vless"
     server: "37.221.76.117"
@@ -4629,6 +4659,48 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "GBO_paFyK9FihgPMH8r_vHa4IKMkSGfvAQ2fhPK_1H4"
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "141.133.185.7"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "files.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "159.194.210.102"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "box.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "168.113.187.116"
+    port: 443
+    uuid: "ecf65acd-ea72-0002-be5f-cd23afb2722f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "files.vpvi.store"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "tcp"
   - name: "🇫🇷 France — #31"
     type: "vless"
@@ -5321,7 +5393,7 @@ proxies:
     udp: true
     sni: "lakes.blog-forme.ru"
     skip-cert-verify: false
-  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+  - name: "🇨🇿 Czechia [*CIDR]"
     type: "hysteria2"
     server: "89.125.214.221"
     port: 19446
@@ -5559,6 +5631,7 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 518"
       - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 [BL] Сервер 298"
+      - "LTE/5G MTS Beeline MegafonYota 🇪🇺 #2"
       - "🇺🇸 [BL] Сервер 235"
       - "🇹🇷 [BL] Сервер 302"
       - "🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd"
@@ -5609,8 +5682,8 @@ proxy-groups:
       - "🇱🇻 [BL] Сервер 340"
       - "[2936ms Швейцария CH 🇨🇭 @vlesstrojan] t.me/rjsxrd"
       - "🇸🇪 [BL] Сервер 81"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 [WL] Сервер 124"
+      - "🇮🇩 Indonesia | [*CIDR] t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇪"
@@ -5800,6 +5873,7 @@ proxy-groups:
       - "🇮🇹 Italy — #40"
       - "🇮🇹 [BL] Сервер 451"
       - "🇨🇦 [BL] Сервер 452"
+      - "tg:VLESSFORU 🇷🇺"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия t.me/rjsxrd"
       - "🇨🇭 [BL/AI] Сервер 500"
       - "🇨🇭 [BL/AI] Сервер 187"
@@ -5814,6 +5888,9 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 456"
       - "🇸🇪 [BL] Сервер 457"
       - "🇹🇷 [BL] Сервер 458"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
       - "🇫🇷 France — #31"
       - "🇫🇷 [BL] Сервер 250"
       - "[332ms Россия RU 🇷🇺 @vlesstrojan] t.me/rjsxrd"
@@ -5870,7 +5947,7 @@ proxy-groups:
       - "@LexaVercelbot C-1 #56 🇫🇲 🝰"
       - "@LexaVercelbot C-1 #55 🇫🇲 🜂"
       - "🇫🇮 [BL] Сервер 190"
-      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+      - "🇨🇿 Czechia [*CIDR]"
       - "🇨🇿 Чехия 4 GLOBAL CONNECTIVITY SOLUTIONS LLP t.me/rjsxrd"
       - "@LexaVercelbot C-1 #7 🇫🇲 🛰️"
       - "@LexaVercelbot C-1 #11 🇫🇲 🝰"
