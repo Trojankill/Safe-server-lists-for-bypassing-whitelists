@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 20:30:50 UTC
+# 2026-11-16 21:01:17 UTC
 proxies:
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -254,6 +254,23 @@ proxies:
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #7"
     type: "vless"
+    server: "95.129.236.26"
+    port: 443
+    uuid: "e8e197a9-c8bf-4104-add1-7ce534cdb540"
+    udp: true
+    tls: true
+    servername: "console.sowt.app"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/gateway/v1/ws/74c4d5e82a8e50ccf09fc628c17dc9be"
+      headers:
+        Host: "console.sowt.app"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #8"
+    type: "vless"
     server: "193.233.246.203"
     port: 443
     uuid: "f3a227cb-8a8b-4ccb-b613-9143c4a1346c"
@@ -284,7 +301,7 @@ proxies:
       path: "/nl7ws"
       headers:
         Host: "cdn.quick-frost.ru"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #8"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #9"
     type: "trojan"
     server: "176.12.66.200"
     port: 443
@@ -321,7 +338,8 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #7"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #8"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #9"
 rules:
   - MATCH,PROXY
