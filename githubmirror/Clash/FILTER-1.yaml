@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-16 04:01:06 UTC
+# 2026-11-16 04:15:35 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "136.234.9.11"
+    port: 443
+    uuid: "4201786b-d99b-4147-a5f0-20d47acddb81"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "8a2e72t.nl20.h1clayd.shop"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA"
+      short-id: "8d0d0679f42ffd98"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "171.22.133.24"
@@ -90,7 +105,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "159.194.228.99"
     port: 443
@@ -108,12 +123,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
