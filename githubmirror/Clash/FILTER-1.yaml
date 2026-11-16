@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-16 09:30:48 UTC
+# 2026-11-16 09:45:35 UTC
 proxies:
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "5.178.85.81"
+    port: 8443
+    uuid: "0ed9418b-e687-4c2d-8869-7e368c44887e"
+    udp: true
+    tls: true
+    servername: "gazeta-business.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DaIRouGSxxQDEv9WKRxD79b2Vt0fsw4yQOTeAmXUYCM"
+      short-id: "08"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.178.208.167"
@@ -270,6 +286,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇫🇷 Франция | 🔗 Каскад [#РКП]"
