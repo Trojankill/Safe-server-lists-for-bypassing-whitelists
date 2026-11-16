@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-16 09:01:11 UTC
+# 2026-11-16 09:15:33 UTC
 proxies:
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -236,6 +236,22 @@ proxies:
       public-key: "TiKF_6UGMtWhgDiAGLsAtyYwyv-s3HxG6F0P9ltyf1U"
       short-id: "8888265ef63fba6d"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "185.125.100.85"
+    port: 13391
+    uuid: "de1971aa-9ad9-42ad-bfda-11301863402c"
+    udp: true
+    tls: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1d3wBy06ikFHZRPWh6Xj30U-iV84HRwWJ_SlWewqvDA"
+      short-id: "f63c7a903d282de4"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "159.194.228.99"
@@ -269,6 +285,7 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇳🇱 Нидерланды [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY
