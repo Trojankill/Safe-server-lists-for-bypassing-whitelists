@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-17 16:15:36 UTC
+# 2026-11-17 16:30:52 UTC
 proxies:
   - name: "🇦🇱 Албания | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -221,6 +221,20 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "6d2f8a41c9e705b3"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "83.171.241.244"
+    port: 25267
+    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pl1-edge.bankai.party"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "tP78ugkcN9bZU6fJH3mqHJIErR8vjBwOw0ERPwCZSSM"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды [#РКП]"
     type: "vless"
     server: "193.233.208.179"
@@ -255,6 +269,7 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #6"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #7"
       - "🇷🇺 Россия [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
 rules:
   - MATCH,PROXY
