@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-17 17:45:35 UTC
+# 2026-11-17 18:01:00 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -167,6 +167,38 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "91.185.83.19"
+    port: 443
+    uuid: "c77a9a5d-c5e2-47e3-bb09-d30ded99ea87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "studio.nurmedia.org"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "bum0y3NFwyed4aQilW_Z-4FK8uE6LicnWN86TQzeM2I"
+      short-id: "87f5b392ecc83a50"
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "31.177.111.134"
+    port: 443
+    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
+    udp: true
+    tls: true
+    servername: "k6t8wxun3s.schoolbag.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/metrics/86d07ea17ea1/"
+      headers:
+        Host: "ns4pmajwas.flowersgood.top"
 proxy-groups:
   - name: PROXY
     type: select
@@ -182,5 +214,7 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY
