@@ -1,6 +1,67 @@
 # clash/mihomo subscription
-# 2026-11-17 20:01:02 UTC
+# 2026-11-17 20:15:56 UTC
 proxies:
+  - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.185.83.43"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "193.233.208.179"
+    port: 777
+    uuid: "bc36f75e-65a9-498d-8c10-76febe5f03aa"
+    udp: true
+    tls: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "POHMtYIR7gNsCrr6AOWk7a9gNJotz3G1SxTl8SgfWhk"
+      short-id: "ccdb"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "194.87.151.53"
+    port: 443
+    uuid: "df97ce68-477f-4484-94c7-79eccab7319d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rrr5.angelsleep9.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xvFNlK5i6UiiKffxh4aLRcj0zCpIN7uU9av1prJWkQY"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "195.58.34.47"
+    port: 443
+    uuid: "df97ce68-477f-4484-94c7-79eccab7319d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "you1.angelsleep9.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CfPoOg5vHukaZ_75xdkl2S1MFxTfYRonhy31GSddzCA"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "31.177.111.134"
@@ -22,6 +83,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
