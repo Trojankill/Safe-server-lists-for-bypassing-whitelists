@@ -1,7 +1,39 @@
 # clash/mihomo subscription
-# 2026-11-17 01:30:48 UTC
+# 2026-11-17 01:45:40 UTC
 proxies:
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "188.120.247.123"
+    port: 443
+    uuid: "02ac275e-7604-4f62-b8cf-5045a8227ec9"
+    udp: true
+    tls: true
+    servername: "id.vk.com"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
+  - name: "🇮🇷 Iran | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran | [*CIDR] #2"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -11,13 +43,44 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇳🇱 The Netherlands [*CIDR] CDN"
+  - name: "🇩🇿 Algeria | [*CIDR]"
+    type: "vless"
+    server: "168.113.252.145"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tarakan.belka.tv"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇨🇿 Czechia | [*CIDR]"
+    type: "vless"
+    server: "176.108.245.73"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pawuk.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands | [*CIDR] CDN"
     type: "vless"
     server: "37.18.14.177"
     port: 443
@@ -35,7 +98,102 @@ proxies:
       path: "/player/events/8be4cef5ec05/"
       headers:
         Host: "l2hbelfbzv.flowersgood.top"
-  - name: "🌐 Anycast-IP | 🇮🇷 [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
+    type: "vless"
+    server: "189.74.114.102"
+    port: 443
+    uuid: "351e6380-422d-4380-a3cb-0ff4e83be188"
+    udp: true
+    tls: true
+    servername: "nl-next.mediastvor.cc"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "3e99d50d5740985d"
+  - name: "🇬🇧 United Kingdom | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "144.48.11.146"
+    port: 43000
+    uuid: "4a923161-156f-4914-8cac-762fb2433bfb"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "144.48.11.146"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CG0mVPuvPcfZjplA21zehlqoDpGHihJBK8K_u1zfhgQ"
+      short-id: "ee4ea980"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+    type: "vless"
+    server: "104.171.139.81"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "luminexorizon.ink"
+    port: 443
+    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    udp: true
+    tls: true
+    servername: "luminexorizon.ink"
+    alpn:
+      - "h2"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
+  - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran [*CIDR] #2"
+    type: "vless"
+    server: "speakpro.lol"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran | [*CIDR] #3"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -45,14 +203,14 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "safari"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "95.129.236.216"
     port: 443
@@ -62,14 +220,14 @@ proxies:
     servername: "crm.hourtley.com"
     alpn:
       - "http/1.1"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/stream/video/ffmpeg"
       headers:
         Host: "crm.hourtley.com"
-  - name: "🇩🇪 Germany [*CIDR] CDN"
+  - name: "🇩🇪 Germany | [*CIDR] CDN"
     type: "vless"
     server: "37.18.14.177"
     port: 443
@@ -79,14 +237,14 @@ proxies:
     servername: "owj5svd907.deshevayashaurma.icu"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/static/collect/037b5c44e12a/"
       headers:
         Host: "owj5svd907.deshevayashaurma.icu"
-  - name: "🌐 Anycast-IP | 🇮🇷 [*CIDR] #2"
+  - name: "🇮🇷 Iran [*CIDR] #3"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -96,7 +254,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -118,7 +276,7 @@ proxies:
       public-key: "VB9m1gQWzJWBXa49PMVGKkI94KN0XRCpC1BSpQP7yzk"
       short-id: "0cc15b71a8a6a380"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] YA"
+  - name: "🇳🇱 The Netherlands | [*CIDR] YA"
     type: "vless"
     server: "92.255.58.59"
     port: 443
@@ -126,60 +284,66 @@ proxies:
     udp: true
     tls: true
     servername: "api-gw-cfg.galioncc.com"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "344f83372596eea2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇷🇺 Russia | [*CIDR] YA"
+    type: "vless"
+    server: "94.139.250.226"
+    port: 443
+    uuid: "a30903dc-1bf0-0001-8b1b-603a3a56211c"
+    udp: true
+    tls: true
+    servername: "net-api-ctl.galioncc.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
-      short-id: "344f83372596eea2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇳🇱 The Netherlands [*CIDR] YA #2"
+      short-id: "6d2f8a41c9e705b3"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "92.255.58.59"
+    server: "asure.win"
     port: 443
-    uuid: "a30903dc-1bf0-0001-8b1b-603a3a56211c"
+    uuid: "b9abca13-8d45-43db-b0a2-4d26f85380c3"
     udp: true
     tls: true
-    servername: "api-gw-cfg.galioncc.com"
-    client-fingerprint: "random"
+    flow: "xtls-rprx-vision"
+    servername: "asure.win"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
-      short-id: "344f83372596eea2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇳🇱 The Netherlands [*CIDR] VK"
-    type: "vless"
-    server: "185.86.145.183"
-    port: 443
-    uuid: "f5954543-f976-4045-91aa-6d0685e066f5"
-    udp: true
-    tls: true
-    servername: "cdn.quick-frost.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "cdn.quick-frost.ru"
+      public-key: "hWCFExEaWdK89gLmGDQagZd2mlwOWLTcx38DlyNeShQ"
+      short-id: "de1d5c00b48cb395"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇮🇷 Iran | [*CIDR]"
+      - "🇮🇷 Iran | [*CIDR] #2"
+      - "🇩🇿 Algeria | [*CIDR]"
+      - "🇨🇿 Czechia | [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] CDN"
+      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇬🇧 United Kingdom | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "🇮🇷 Iran [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] CDN"
-      - "🌐 Anycast-IP | 🇮🇷 [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇩🇪 Germany [*CIDR] CDN"
-      - "🌐 Anycast-IP | 🇮🇷 [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR] #2"
+      - "🇮🇷 Iran | [*CIDR] #3"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] CDN"
+      - "🇮🇷 Iran [*CIDR] #3"
       - "🇳🇱 The Netherlands | 🌐 [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR] YA"
-      - "🇳🇱 The Netherlands [*CIDR] YA #2"
-      - "🇳🇱 The Netherlands [*CIDR] VK"
+      - "🇳🇱 The Netherlands | [*CIDR] YA"
+      - "🇷🇺 Russia | [*CIDR] YA"
+      - "🇩🇪 Germany | [*CIDR]"
 rules:
   - MATCH,PROXY
