@@ -1,6 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-17 20:15:56 UTC
+# 2026-11-17 20:30:57 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "185.112.59.157"
+    port: 443
+    uuid: "03786aa4-21a5-4e7c-83d6-873aafc41217"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl-06.neverspy.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "sZXAejndrxL9cgna_fPXmbSB28y8yAJ9Ln6hRzy5TV0"
+      short-id: "86af85a72387ef02"
+    network: "tcp"
+  - name: "🇩🇪 Германия [#РКП]"
+    type: "vless"
+    server: "193.233.198.117"
+    port: 443
+    uuid: "03786aa4-21a5-4e7c-83d6-873aafc41217"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "de-03.neverspy.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zT-G11tZiOO7DFJD23MCeZC3TwaUJr6NMDHW4CLif1Y"
+      short-id: "5eebb4b74e873b14"
+    network: "tcp"
   - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "91.185.83.43"
@@ -18,7 +48,22 @@ proxies:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "pssdwynorv.newwl.pro"
-  - name: "🇳🇱 Нидерланды [#РКП]"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "168.113.187.173"
+    port: 2096
+    uuid: "a24e0b2a-7a9d-480a-96a4-b6c21ce15696"
+    udp: true
+    tls: true
+    servername: "id.vk.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
+  - name: "🇳🇱 Нидерланды [#РКП] #2"
     type: "vless"
     server: "193.233.208.179"
     port: 777
@@ -83,8 +128,11 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
+      - "🇩🇪 Германия [#РКП]"
+      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
