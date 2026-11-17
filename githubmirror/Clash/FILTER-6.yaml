@@ -1,7 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-17 19:15:33 UTC
+# 2026-11-17 19:31:04 UTC
 proxies:
-  - name: "🇮🇷 Iran | [*CIDR]"
+  - name: "🇦🇱 Albania | [*CIDR]"
+    type: "vless"
+    server: "213.171.26.51"
+    port: 23444
+    uuid: "038e6b17-84e9-4ace-8973-8ef2308ed6e1"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "yandex.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    network: "tcp"
+  - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -11,14 +26,14 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇮🇷 Iran | [*CIDR] #2"
+  - name: "🇮🇷 Iran [*CIDR] #2"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -35,7 +50,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇨🇿 Czechia | [*CIDR]"
+  - name: "🇨🇿 Czechia [*CIDR]"
     type: "vless"
     server: "45.151.101.219"
     port: 443
@@ -50,7 +65,7 @@ proxies:
       public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
       short-id: "88086e66870f03e6"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "45.151.102.155"
     port: 443
@@ -59,73 +74,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "nidel.serverslocal.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
-      short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇸🇪 Sweden | [*CIDR]"
-    type: "vless"
-    server: "45.151.102.174"
-    port: 443
-    uuid: "24e3a924-fc4b-4e3f-98a8-85d506d530f9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "swedi.serverslocal.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
-    network: "tcp"
-  - name: "🇨🇿 Czechia | [*CIDR] #2"
-    type: "vless"
-    server: "chexi.serverslocal.ru"
-    port: 443
-    uuid: "3cff116a-9beb-422d-b7d1-c5598790cd48"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "chexi.serverslocal.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR] #2"
-    type: "vless"
-    server: "nidel.serverslocal.ru"
-    port: 443
-    uuid: "3cff116a-9beb-422d-b7d1-c5598790cd48"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "nidel.serverslocal.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
       public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
       short-id: "8238d76df92c2560"
     network: "tcp"
-  - name: "🇸🇪 Sweden | [*CIDR] #2"
-    type: "vless"
-    server: "swedi.serverslocal.ru"
-    port: 443
-    uuid: "3cff116a-9beb-422d-b7d1-c5598790cd48"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "swedi.serverslocal.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
-    network: "tcp"
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇮🇷 Iran [*CIDR] #3"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -135,14 +90,14 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇮🇷 Iran [*CIDR] #2"
+  - name: "🇮🇷 Iran [*CIDR] #4"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -152,14 +107,14 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇮🇷 Iran [*CIDR] #3"
+  - name: "🇮🇷 Iran [*CIDR] #5"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -169,7 +124,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -193,7 +148,7 @@ proxies:
       path: "/api/de6/stream"
       headers:
         Host: "clover.filnex.baby"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "vless"
     server: "reedbed.filnex.baby"
     port: 443
@@ -203,14 +158,14 @@ proxies:
     servername: "reedbed.filnex.baby"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/de6/stream"
       headers:
         Host: "reedbed.filnex.baby"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
     type: "vless"
     server: "rivulet.filnex.baby"
     port: 443
@@ -220,14 +175,14 @@ proxies:
     servername: "rivulet.filnex.baby"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/api/de6/stream"
       headers:
         Host: "rivulet.filnex.baby"
-  - name: "🇮🇷 Iran | [*CIDR] #3"
+  - name: "🇮🇷 Iran [*CIDR] #6"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -244,22 +199,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇨🇿 Czechia | [*CIDR] #3"
-    type: "vless"
-    server: "45.151.101.219"
-    port: 443
-    uuid: "8aeda8e3-dd32-4071-bcbb-f793e646eb13"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "chexi.serverslocal.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "zvOXkaCzQIFA5H6_gpK2_IMDnkwBkw8nch5AODNsAiY"
-      short-id: "88086e66870f03e6"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR] #3"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
     server: "45.151.102.155"
     port: 443
@@ -273,21 +213,6 @@ proxies:
     reality-opts:
       public-key: "p0M6RumtfcATPNPUIFnFcgWy2rzk2gGVWx21sql1hV0"
       short-id: "8238d76df92c2560"
-    network: "tcp"
-  - name: "🇸🇪 Sweden | [*CIDR] #3"
-    type: "vless"
-    server: "45.151.102.174"
-    port: 443
-    uuid: "8aeda8e3-dd32-4071-bcbb-f793e646eb13"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "swedi.serverslocal.ru"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "vluPN5krskStuIe1YYoOopN766N8qK_uMsSsZGJdwCI"
-      short-id: "db71028aeb67289c"
     network: "tcp"
   - name: "🇳🇱 The Netherlands | [*CIDR] YA"
     type: "vless"
@@ -313,7 +238,7 @@ proxies:
     udp: true
     tls: true
     servername: "net-api-ctl.galioncc.com"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
@@ -327,45 +252,62 @@ proxies:
     udp: true
     tls: true
     servername: "net-api-ctl.galioncc.com"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "6d2f8a41c9e705b3"
     network: "tcp"
-  - name: "🇨🇿 Czechia [*CIDR]"
-    type: "hysteria2"
-    server: "89.125.214.221"
-    port: 19446
-    password: "6fffde27-86de-49e5-9ece-0669b6680afc"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "89.221.203.29"
+    port: 443
+    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
     udp: true
-    sni: "mshvpn.online"
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru2-r.bankai.party"
+    client-fingerprint: "ios"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "89.221.203.29"
+    port: 443
+    uuid: "a346c521-7a7f-452b-9356-a4893feb5982"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru2-r.bankai.party"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0"
+      short-id: "457fab2ac885dbe0"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Iran | [*CIDR]"
-      - "🇮🇷 Iran | [*CIDR] #2"
-      - "🇨🇿 Czechia | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR]"
-      - "🇸🇪 Sweden | [*CIDR]"
-      - "🇨🇿 Czechia | [*CIDR] #2"
-      - "🇳🇱 The Netherlands | [*CIDR] #2"
-      - "🇸🇪 Sweden | [*CIDR] #2"
+      - "🇦🇱 Albania | [*CIDR]"
       - "🇮🇷 Iran [*CIDR]"
       - "🇮🇷 Iran [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
       - "🇮🇷 Iran [*CIDR] #3"
+      - "🇮🇷 Iran [*CIDR] #4"
+      - "🇮🇷 Iran [*CIDR] #5"
       - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🇮🇷 Iran | [*CIDR] #3"
-      - "🇨🇿 Czechia | [*CIDR] #3"
-      - "🇳🇱 The Netherlands | [*CIDR] #3"
-      - "🇸🇪 Sweden | [*CIDR] #3"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
+      - "🇮🇷 Iran [*CIDR] #6"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
       - "🇳🇱 The Netherlands | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA #2"
-      - "🇨🇿 Czechia [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
 rules:
   - MATCH,PROXY
