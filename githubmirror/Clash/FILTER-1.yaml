@@ -1,6 +1,83 @@
 # clash/mihomo subscription
-# 2026-11-17 22:30:46 UTC
+# 2026-11-17 22:45:35 UTC
 proxies:
+  - name: "🇳🇱 Нидерланды [#РКП]"
+    type: "vless"
+    server: "185.112.59.157"
+    port: 443
+    uuid: "03786aa4-21a5-4e7c-83d6-873aafc41217"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl-06.neverspy.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "sZXAejndrxL9cgna_fPXmbSB28y8yAJ9Ln6hRzy5TV0"
+      short-id: "86af85a72387ef02"
+    network: "tcp"
+  - name: "🇩🇪 Германия [#РКП]"
+    type: "vless"
+    server: "193.233.198.117"
+    port: 443
+    uuid: "03786aa4-21a5-4e7c-83d6-873aafc41217"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "de-03.neverspy.tech"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zT-G11tZiOO7DFJD23MCeZC3TwaUJr6NMDHW4CLif1Y"
+      short-id: "5eebb4b74e873b14"
+    network: "tcp"
+  - name: "🇪🇸 Испания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "158.160.252.53"
+    port: 9087
+    uuid: "483c6187-3c8d-436b-8413-536c2c87b70c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.ao-esp.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5S0IjHKArxnN6ouXT78ntKOa-54ApcN6jMtLqyCqY3c"
+      short-id: "ecaba2fd"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "158.160.252.53"
+    port: 9096
+    uuid: "483c6187-3c8d-436b-8413-536c2c87b70c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "finversia.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "uWoKxXeFb0l5-mZnpGpoW9lCY4KmOeayGklp2WUNgxA"
+      short-id: "e535a583"
+    network: "tcp"
+  - name: "🇮🇷 Иран | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.185.83.43"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "185.86.145.78"
@@ -17,6 +94,21 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "168.113.187.173"
+    port: 2096
+    uuid: "a24e0b2a-7a9d-480a-96a4-b6c21ce15696"
+    udp: true
+    tls: true
+    servername: "id.vk.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "vless-grpc-reality"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "92.255.58.59"
@@ -77,22 +169,6 @@ proxies:
     reality-opts:
       public-key: "tP78ugkcN9bZU6fJH3mqHJIErR8vjBwOw0ERPwCZSSM"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды [#РКП]"
-    type: "vless"
-    server: "193.233.208.179"
-    port: 777
-    uuid: "bc36f75e-65a9-498d-8c10-76febe5f03aa"
-    udp: true
-    tls: true
-    servername: "it.nvidia.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "POHMtYIR7gNsCrr6AOWk7a9gNJotz3G1SxTl8SgfWhk"
-      short-id: "ccdb"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
   - name: "🇳🇱 Нидерланды [#РКП] #2"
     type: "vless"
     server: "193.233.208.179"
@@ -109,7 +185,66 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
+  - name: "🇳🇱 Нидерланды [#РКП] #3"
+    type: "vless"
+    server: "193.233.208.179"
+    port: 777
+    uuid: "bc36f75e-65a9-498d-8c10-76febe5f03aa"
+    udp: true
+    tls: true
+    servername: "it.nvidia.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "POHMtYIR7gNsCrr6AOWk7a9gNJotz3G1SxTl8SgfWhk"
+      short-id: "ccdb"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "188.225.79.10"
+    port: 443
+    uuid: "c55f65ef-3be3-477a-a646-94c3ccec1604"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "85RCMJFwNRqdmhejfM7cOVEK6RvB6WaaJbCYtbgBuis"
+      short-id: "1082c05da2311d1f"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "194.87.151.53"
+    port: 443
+    uuid: "df97ce68-477f-4484-94c7-79eccab7319d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rrr5.angelsleep9.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xvFNlK5i6UiiKffxh4aLRcj0zCpIN7uU9av1prJWkQY"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "vless"
+    server: "195.58.34.47"
+    port: 443
+    uuid: "df97ce68-477f-4484-94c7-79eccab7319d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "you1.angelsleep9.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CfPoOg5vHukaZ_75xdkl2S1MFxTfYRonhy31GSddzCA"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #4"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -155,14 +290,23 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇳🇱 Нидерланды [#РКП]"
+      - "🇩🇪 Германия [#РКП]"
+      - "🇪🇸 Испания | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды [#РКП]"
       - "🇳🇱 Нидерланды [#РКП] #2"
+      - "🇳🇱 Нидерланды [#РКП] #3"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #4"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
 rules:
