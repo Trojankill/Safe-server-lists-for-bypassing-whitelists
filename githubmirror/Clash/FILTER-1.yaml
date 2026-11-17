@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-17 02:00:55 UTC
+# 2026-11-17 02:15:32 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -235,6 +235,14 @@ proxies:
       public-key: "_JbW9ikiVfyugqgzc8nSqBLapmM2XyW7FSm0XEdi7HY"
       short-id: "ff71e23db9448b9d"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #3"
+    type: "trojan"
+    server: "91.240.87.108"
+    port: 443
+    password: "SYVKJ3qYJnnN0FfRDXaEVQSE8zQHn6wF"
+    udp: true
+    sni: "z40.tgnn.live"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -254,5 +262,6 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇷🇺 Россия [#РКП] #3"
 rules:
   - MATCH,PROXY
