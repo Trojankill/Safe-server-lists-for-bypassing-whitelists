@@ -1,6 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-17 07:00:59 UTC
+# 2026-11-17 07:15:36 UTC
 proxies:
+  - name: "🇫🇮 Финляндия [#РКП]"
+    type: "vless"
+    server: "185.221.196.148"
+    port: 443
+    uuid: "0f2dc4af-951f-4690-922e-07c6e8bab26a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fi-17-9q8b.wave-inside.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "RzQHCIF95NYeFAPw2t4pz4aeIDeVUTka93WetHjBiy0"
+      short-id: "e0ad5d2a3b8556cc"
+    network: "tcp"
+  - name: "🇦🇹 Австрия [#РКП]"
+    type: "vless"
+    server: "94.228.162.227"
+    port: 443
+    uuid: "0f2dc4af-951f-4690-922e-07c6e8bab26a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "at-11-d1ca.cdn-lab.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ASVlGdmTImXr_8H1ckHdeDl39NemRM6DKnEl9sadsm4"
+      short-id: "ed79dd3a38fe3260"
+    network: "tcp"
   - name: "🇹🇯 Таджикистан | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "155.212.142.219"
@@ -208,6 +238,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇮 Финляндия [#РКП]"
+      - "🇦🇹 Австрия [#РКП]"
       - "🇹🇯 Таджикистан | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП]"
       - "🇮🇷 Иран | 🔗 Каскад [#РКП] #2"
