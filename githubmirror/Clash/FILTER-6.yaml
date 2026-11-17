@@ -1,7 +1,24 @@
 # clash/mihomo subscription
-# 2026-11-17 08:00:56 UTC
+# 2026-11-17 08:15:37 UTC
 proxies:
   - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran [*CIDR] #2"
     type: "vless"
     server: "speakpro.lol"
     port: 443
@@ -17,7 +34,7 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇳🇱 The Netherlands [*CIDR] CDN"
+  - name: "🇸🇪 Sweden [*CIDR] CDN"
     type: "vless"
     server: "37.18.14.177"
     port: 443
@@ -35,11 +52,102 @@ proxies:
       path: "/player/events/8be4cef5ec05/"
       headers:
         Host: "l2hbelfbzv.flowersgood.top"
+  - name: "🇮🇷 Iran [*CIDR] #3"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "6eeb6e0e-5efd-400d-851e-60fc2bfb1eaa"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇩🇪 Germany [*CIDR] CDN"
+    type: "vless"
+    server: "37.18.14.177"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "owj5svd907.deshevayashaurma.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/collect/037b5c44e12a/"
+      headers:
+        Host: "owj5svd907.deshevayashaurma.icu"
+  - name: "🇩🇪 Germany [*CIDR] CDN #2"
+    type: "vless"
+    server: "37.18.14.177"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "owj5svd907.deshevayashaurma.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/collect/037b5c44e12a/"
+      headers:
+        Host: "owj5svd907.deshevayashaurma.icu"
+  - name: "🇩🇪 Germany [*CIDR] CDN #3"
+    type: "vless"
+    server: "owj5svd907.deshevayashaurma.icu"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "owj5svd907.deshevayashaurma.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/static/collect/037b5c44e12a/"
+      headers:
+        Host: "owj5svd907.deshevayashaurma.icu"
+  - name: "🇮🇷 Iran [*CIDR] #4"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "89e2dc6c-dd20-43e6-aac2-d8c482d9cc36"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇮🇷 Iran [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR] CDN"
+      - "🇮🇷 Iran [*CIDR] #2"
+      - "🇸🇪 Sweden [*CIDR] CDN"
+      - "🇮🇷 Iran [*CIDR] #3"
+      - "🇩🇪 Germany [*CIDR] CDN"
+      - "🇩🇪 Germany [*CIDR] CDN #2"
+      - "🇩🇪 Germany [*CIDR] CDN #3"
+      - "🇮🇷 Iran [*CIDR] #4"
 rules:
   - MATCH,PROXY
