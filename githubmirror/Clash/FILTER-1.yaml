@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 16:30:55 UTC
+# 2026-11-18 16:45:43 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -60,6 +60,35 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "6d2f8a41c9e705b3"
     network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.156.101.227"
+    port: 44367
+    uuid: "aa456b46-2f1b-4a8f-96d0-e8c3bca5b634"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "U_fHUvTy584ykX1Kj6_WyH1Yivqt3Odm3f4Ktad18ig"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП] #2"
+    type: "vless"
+    server: "46.8.197.177"
+    port: 443
+    uuid: "aa456b46-2f1b-4a8f-96d0-e8c3bca5b634"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru.florida-project.fun"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "yUsrKhsrPI0wHavNqCy0b7nb2fKyGF7GH8JneNARfmU"
+      short-id: "8f887409fa2f8a9b"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды [#РКП]"
     type: "vless"
     server: "138.124.117.97"
@@ -105,7 +134,7 @@ proxies:
       public-key: "ktZwTv4kNGwzRnqH_Bo_GMQi2yaPewgcRNdmZqnvTms"
       short-id: "e8908135e0446e51"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -145,10 +174,12 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇷🇺 Россия [#РКП]"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY

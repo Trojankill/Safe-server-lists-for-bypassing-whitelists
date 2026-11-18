@@ -1,37 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-18 16:30:54 UTC
+# 2026-11-18 16:45:42 UTC
 proxies:
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇺🇸 United States | [*CIDR]"
     type: "vless"
-    server: "147.45.99.100"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
+    server: "168.113.132.25"
+    port: 2087
+    uuid: "4cf2635f-400a-4556-bb66-645990da5fe1"
     udp: true
     tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+    servername: "youflexsite.jumpingcrab.com"
+    client-fingerprint: "android"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
+    reality-opts:
+      public-key: "Ex2L4ivp4x1KS6hrredENthbnhAfhJ81Z0HJXVAqHkU"
+      short-id: "3abd9457f2568d48"
+    network: "tcp"
   - name: "🇳🇱 The Netherlands | [*CIDR] YA"
     type: "vless"
     server: "92.255.58.59"
@@ -40,7 +24,7 @@ proxies:
     udp: true
     tls: true
     servername: "api-gw-cfg.galioncc.com"
-    client-fingerprint: "chrome"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
@@ -70,7 +54,7 @@ proxies:
     udp: true
     tls: true
     servername: "net-api-ctl.galioncc.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
@@ -80,8 +64,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇺🇸 United States | [*CIDR]"
       - "🇳🇱 The Netherlands | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA #2"

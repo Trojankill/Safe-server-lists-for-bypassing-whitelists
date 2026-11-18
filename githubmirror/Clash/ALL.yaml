@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 16:30:56 UTC
+# 2026-11-18 16:45:43 UTC
 proxies:
   - name: "🇺🇸 United States — #87"
     type: "vless"
@@ -1024,7 +1024,7 @@ proxies:
       public-key: "CG0mVPuvPcfZjplA21zehlqoDpGHihJBK8K_u1zfhgQ"
       short-id: "ee4ea980"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+  - name: "🇩🇪 [WL] Сервер 20"
     type: "vless"
     server: "147.45.99.100"
     port: 443
@@ -1035,22 +1035,6 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -2192,6 +2176,35 @@ proxies:
     reality-opts:
       public-key: "kpQWnVk3fEJXfPGFsMerUoPV_ZqUJUJFRnF1FvKyhRY"
       short-id: "7a7d19880a9ee786"
+    network: "tcp"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "194.156.101.227"
+    port: 44367
+    uuid: "aa456b46-2f1b-4a8f-96d0-e8c3bca5b634"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ya.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "U_fHUvTy584ykX1Kj6_WyH1Yivqt3Odm3f4Ktad18ig"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "46.8.197.177"
+    port: 443
+    uuid: "aa456b46-2f1b-4a8f-96d0-e8c3bca5b634"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru.florida-project.fun"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "yUsrKhsrPI0wHavNqCy0b7nb2fKyGF7GH8JneNARfmU"
+      short-id: "8f887409fa2f8a9b"
     network: "tcp"
   - name: "🇩🇪 Germany — #7"
     type: "vless"
@@ -3921,8 +3934,7 @@ proxy-groups:
       - "Iran | aparat.com | TCP | [#LSO - #LinSpisokObhod]"
       - "🇬🇧 [WL] Сервер 27"
       - "🇬🇧 [BL] Сервер 273"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 [WL] Сервер 20"
       - "🇳🇱 The Netherlands — #46"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇱🇻 [BL] Сервер 198"
@@ -3999,6 +4011,8 @@ proxy-groups:
       - "🇺🇸 [WL] Сервер 89"
       - "🇨🇿 [BL] Сервер 68"
       - "@LexaVercelbot C-1 #26 🇫🇲 🧭"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
       - "🇩🇪 Germany — #7"
       - "@LexaVercelbot C-1 #14 🇫🇲 🫧"
       - "@LexaVercelbot C-1 #83 🇫🇲 🝰"
