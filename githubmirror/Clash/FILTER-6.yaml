@@ -1,21 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-18 18:45:32 UTC
+# 2026-11-18 19:01:05 UTC
 proxies:
-  - name: "🇺🇸 United States | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "168.113.132.25"
-    port: 2087
-    uuid: "4cf2635f-400a-4556-bb66-645990da5fe1"
+    server: "ledger.filnex.baby"
+    port: 443
+    uuid: "5ef70d03-e0fc-462c-9a04-1441f604fbfb"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "youflexsite.jumpingcrab.com"
+    servername: "copperdell.merlano.monster"
+    alpn:
+      - "h2"
     client-fingerprint: "android"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "Ex2L4ivp4x1KS6hrredENthbnhAfhJ81Z0HJXVAqHkU"
-      short-id: "3abd9457f2568d48"
-    network: "tcp"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de2.v1"
   - name: "🇳🇱 The Netherlands | [*CIDR] YA"
     type: "vless"
     server: "92.255.58.59"
@@ -60,13 +60,29 @@ proxies:
       public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
       short-id: "6d2f8a41c9e705b3"
     network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "109.248.59.59"
+    port: 443
+    uuid: "de56df45-938c-4bc2-a344-8f06796e6c9c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "f431f.tornadonext.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ylQh0dHOsyfa-O-i3qFqtg_cHN0qdw27yimnKrRvHk4"
+      short-id: "30fae026"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇳🇱 The Netherlands | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA"
       - "🇷🇺 Russia | [*CIDR] YA #2"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
 rules:
   - MATCH,PROXY
