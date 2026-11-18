@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 13:01:03 UTC
+# 2026-11-18 13:15:35 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -30,6 +30,51 @@ proxies:
     reality-opts:
       public-key: "jH6fBbonaKYT-bLkpRiZCW_5BwVMSUeC_1d1bBTj_Rw"
       short-id: "a1fd12bb855171d7"
+    network: "tcp"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "159.194.214.249"
+    port: 443
+    uuid: "7effefd1-a42b-46d1-8f97-6c067d8687ce"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "russ.lakogate.org"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "uIIJxT4pvM9oHDn0Z3Poomud7wG6jEXnD5ng9jU3k1s"
+      short-id: "224013830bca27d2"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "193.160.208.169"
+    port: 443
+    uuid: "7effefd1-a42b-46d1-8f97-6c067d8687ce"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ipv6.lakogate.org"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "uIIJxT4pvM9oHDn0Z3Poomud7wG6jEXnD5ng9jU3k1s"
+      short-id: "2caf1f8bcbc871d0"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "217.150.197.9"
+    port: 443
+    uuid: "7effefd1-a42b-46d1-8f97-6c067d8687ce"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "media-134.paruscamp.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_43iswi9tdg43JzsQb-YQC11f0O9LaW7oijqRriBZQA"
+      short-id: "0815b18ad044a2b3"
     network: "tcp"
   - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -63,7 +108,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🇷🇺 Россия [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "94.139.250.226"
     port: 443
@@ -115,9 +160,12 @@ proxy-groups:
     proxies:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-      - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇫🇮 Финляндия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
 rules:
