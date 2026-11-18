@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 17:15:35 UTC
+# 2026-11-18 17:31:04 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -164,6 +164,21 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "176.108.245.115"
+    port: 443
+    uuid: "f2788ea1-92c8-468a-97a0-6c89d8981a1e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "e.mail.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zUoZY6itMFK6fVuQHj2VSEqe4T9-nUW4ZOvlMOMjhjY"
+      short-id: "79658bb84b7162e8"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "31.177.111.134"
@@ -196,6 +211,7 @@ proxy-groups:
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #3"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
 rules:
   - MATCH,PROXY
