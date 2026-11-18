@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 08:45:31 UTC
+# 2026-11-18 09:01:00 UTC
 proxies:
   - name: "🇳🇱 Нидерланды [#РКП]"
     type: "vless"
@@ -165,6 +165,21 @@ proxies:
     network: "tcp"
   - name: "🇫🇮 Финляндия [#РКП]"
     type: "vless"
+    server: "109.107.190.187"
+    port: 443
+    uuid: "b2744db0-1c64-4218-a93b-9eba0e5f811f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fi-23-q6oj.wave-inside.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "R5RwrU3RXuGT_Itg_kExV_8qWb5fXYbjJtfng4z3pWE"
+      short-id: "08da831cb4f182df"
+    network: "tcp"
+  - name: "🇫🇮 Финляндия [#РКП] #2"
+    type: "vless"
     server: "82.117.84.21"
     port: 443
     uuid: "b2744db0-1c64-4218-a93b-9eba0e5f811f"
@@ -211,6 +226,7 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #4"
       - "🇫🇮 Финляндия [#РКП]"
+      - "🇫🇮 Финляндия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
