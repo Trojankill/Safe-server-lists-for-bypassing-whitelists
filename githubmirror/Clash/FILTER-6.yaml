@@ -1,44 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-18 12:01:02 UTC
+# 2026-11-18 12:15:32 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands [*CIDR] VK"
+  - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
-    server: "r0xnfzk9ud.newwl.pro"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    server: "168.113.132.25"
+    port: 2087
+    uuid: "4cf2635f-400a-4556-bb66-645990da5fe1"
     udp: true
     tls: true
-    servername: "r0xnfzk9ud.newwl.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "safari"
+    flow: "xtls-rprx-vision"
+    servername: "youflexsite.jumpingcrab.com"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "r0xnfzk9ud.newwl.pro"
-  - name: "🇳🇱 The Netherlands [*CIDR] VK #2"
+    reality-opts:
+      public-key: "Ex2L4ivp4x1KS6hrredENthbnhAfhJ81Z0HJXVAqHkU"
+      short-id: "3abd9457f2568d48"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
-    server: "r0xnfzk9ud.newwl.pro"
+    server: "nl-next.mediastvor.cc"
     port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    uuid: "dfe231e4-e306-4a49-824c-7459e84c4fbb"
     udp: true
     tls: true
-    servername: "r0xnfzk9ud.newwl.pro"
+    servername: "nl-next.mediastvor.cc"
     alpn:
-      - "http/1.1"
+      - "h2"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/045d381f1166/"
-      headers:
-        Host: "r0xnfzk9ud.newwl.pro"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "3e99d50d5740985d"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR] VK #2"
+      - "🇺🇸 United States [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
