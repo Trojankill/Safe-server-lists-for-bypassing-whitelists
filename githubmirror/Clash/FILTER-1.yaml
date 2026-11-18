@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-18 21:15:34 UTC
+# 2026-11-18 21:30:49 UTC
 proxies:
+  - name: "🇸🇪 Швеция [#РКП]"
+    type: "vless"
+    server: "147.45.79.118"
+    port: 443
+    uuid: "17c068a5-97cb-40a2-bf60-215b749c0508"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "dataworkshop.online"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "CuulRoB6vd-5O946aZHWJNx_SBV5koLgs_ymrjKlPB8"
+      short-id: "04476a0966752cba"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "217.150.197.10"
@@ -142,6 +157,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇸🇪 Швеция [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
