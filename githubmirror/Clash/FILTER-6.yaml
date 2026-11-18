@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 05:15:33 UTC
+# 2026-11-18 05:30:49 UTC
 proxies:
   - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
@@ -34,50 +34,6 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
-  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
-    type: "vless"
-    server: "luminexorizon.ink"
-    port: 443
-    uuid: "4b50270b-5caf-4c34-b3da-17b4525604a6"
-    udp: true
-    tls: true
-    servername: "luminexorizon.ink"
-    alpn:
-      - "h2"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de3.v1"
   - name: "🇮🇷 Iran [*CIDR] #3"
     type: "vless"
     server: "185.178.208.167"
@@ -88,7 +44,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -105,7 +61,7 @@ proxies:
     servername: "uwugirl.dev"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -113,6 +69,23 @@ proxies:
       headers:
         Host: "speakpro.lol"
   - name: "🇮🇷 Iran [*CIDR] #5"
+    type: "vless"
+    server: "speakpro.lol"
+    port: 443
+    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
+    udp: true
+    tls: true
+    servername: "uwugirl.dev"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/player/collect/9c8514f9552d/"
+      headers:
+        Host: "speakpro.lol"
+  - name: "🇮🇷 Iran [*CIDR] #6"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -146,7 +119,24 @@ proxies:
       path: "/service/telemetry/045d381f1166/"
       headers:
         Host: "r0xnfzk9ud.newwl.pro"
-  - name: "🇮🇷 Iran [*CIDR] #6"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
+    type: "vless"
+    server: "r0xnfzk9ud.newwl.pro"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "r0xnfzk9ud.newwl.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/045d381f1166/"
+      headers:
+        Host: "r0xnfzk9ud.newwl.pro"
+  - name: "🇮🇷 Iran [*CIDR] #7"
     type: "vless"
     server: "185.178.208.167"
     port: 443
@@ -163,35 +153,18 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "speakpro.lol"
-  - name: "🇫🇮 Finland | 🌐 [*CIDR]"
-    type: "vless"
-    server: "168.113.187.172"
-    port: 2096
-    uuid: "a24e0b2a-7a9d-480a-96a4-b6c21ce15696"
-    udp: true
-    tls: true
-    servername: "id.vk.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless-grpc-reality"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇮🇷 Iran [*CIDR]"
       - "🇮🇷 Iran [*CIDR] #2"
-      - "🇩🇪 Germany | 🌐 [*CIDR]"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
-      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
       - "🇮🇷 Iran [*CIDR] #3"
       - "🇮🇷 Iran [*CIDR] #4"
       - "🇮🇷 Iran [*CIDR] #5"
-      - "🇳🇱 The Netherlands [*CIDR]"
       - "🇮🇷 Iran [*CIDR] #6"
-      - "🇫🇮 Finland | 🌐 [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR] #7"
 rules:
   - MATCH,PROXY
