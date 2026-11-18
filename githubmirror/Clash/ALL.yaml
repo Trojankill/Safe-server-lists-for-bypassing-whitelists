@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-18 05:01:01 UTC
+# 2026-11-18 05:15:35 UTC
 proxies:
   - name: "🇺🇸 United States — #124"
     type: "vless"
@@ -583,6 +583,19 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "89.232.164.61"
+    port: 443
+    uuid: "2bba3b63-eb4c-470b-aa58-ae9d4a1430c8"
+    udp: true
+    tls: true
+    servername: "ru-api.b00b5.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "m6US_Wo7oYwRvmXWu2_bMRST1FB_rVcPpW3TqZX5_xY"
+    network: "tcp"
   - name: "@LexaVercelbot C-1 #125 🇧🇬 🫧"
     type: "vless"
     server: "g4.staticedge.cfd"
@@ -877,6 +890,49 @@ proxies:
     reality-opts:
       public-key: "PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU"
       short-id: "1d86d17709852910"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "188.225.32.140"
+    port: 443
+    uuid: "45b1aeb0-0c02-00d0-9a04-a5ebd7061ccf"
+    udp: true
+    tls: true
+    servername: "t-ru-api.b00b5.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "m6US_Wo7oYwRvmXWu2_bMRST1FB_rVcPpW3TqZX5_xY"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "188.72.103.4"
+    port: 443
+    uuid: "45b1aeb0-0c02-00d0-9a04-a5ebd7061ccf"
+    udp: true
+    tls: true
+    servername: "test.shopglobe.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/devices/WIlAAs7x3gkd/telemetry"
+      headers:
+        Host: "test.shopglobe.org"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "87.242.95.15"
+    port: 443
+    uuid: "45b1aeb0-0c02-00d0-9a04-a5ebd7061ccf"
+    udp: true
+    tls: true
+    servername: "s-ru-api.b00b5.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "m6US_Wo7oYwRvmXWu2_bMRST1FB_rVcPpW3TqZX5_xY"
     network: "tcp"
   - name: "🇩🇪 [BL] Сервер 284"
     type: "vless"
@@ -2369,7 +2425,7 @@ proxies:
       public-key: "FdZlh9FC4ay9OGnKG6K_iNqhz1I3tWDfNZhxrDYuQl8"
       short-id: "7da3ba09a037e956"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП]"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "94.139.250.226"
     port: 443
@@ -4540,6 +4596,7 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 279"
       - "🇸🇪 [BL] Сервер 373"
       - "巴西_111810037 t.me/rjsxrd"
+      - "🇷🇺 Россия [#РКП]"
       - "@LexaVercelbot C-1 #125 🇧🇬 🫧"
       - "🇺🇸 [BL] Сервер 250"
       - "🇺🇸 [BL] Сервер 127"
@@ -4560,6 +4617,9 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 184"
       - "🇷🇺 [WL] Сервер 136"
       - "🇳🇱 [BL] Сервер 135"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 [BL] Сервер 284"
       - "🇵🇱 [BL] Сервер 365"
       - "🇵🇱 [BL] Сервер 366"
@@ -4659,7 +4719,7 @@ proxy-groups:
       - "🇻🇳 [BL] Сервер 129"
       - "🇳🇱 [BL] Сервер 201"
       - "🇬🇧 United Kingdom | TG: @HardVpn_robot t.me/rjsxrd"
-      - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇷🇺 [WL] Сервер 134"
       - "🇺🇸 [BL] Сервер 173"
