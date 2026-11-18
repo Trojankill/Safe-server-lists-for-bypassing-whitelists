@@ -1,57 +1,18 @@
 # clash/mihomo subscription
-# 2026-11-18 18:00:58 UTC
+# 2026-11-18 18:15:35 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
-    type: "vless"
-    server: "chmstnd21.jarvesitw.ru"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "chmstnd21.jarvesitw.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "2LiT1OqXbnWbNAop15NSe0OL3dK2i8EIkiY4EB_3PV8"
-      short-id: "2e9cd36a"
-    network: "tcp"
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Wi-Fi ❄️"
-    type: "vless"
-    server: "main.jarbook.net"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "main.jarbook.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "gJoMHh97teLxW92Z_3DI8qdSulqBlb9sW6mthYPEEBk"
-      short-id: "d889ac17"
-    network: "tcp"
   - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
-    type: "vless"
-    server: "price.goonars.com"
-    port: 443
-    uuid: "2232d904-8e6a-4202-8240-6efd8aec02e9"
+    type: "hysteria2"
+    server: "48.102.214.171"
+    port: 4444
+    password: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "price.goonars.com"
-    client-fingerprint: "firefox"
+    sni: "fl4.edgeport.cloud"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "UAry1N68zKkbO0MpIqAXmxfxg1Y9rvkiBjexZErRJwY"
-      short-id: "6a30cf54"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolekVPNReborn] Finland 🇫🇮 | YouTube ❄️"
-      - "[KrolekVPNReborn] Finland 🇫🇮 | Wi-Fi ❄️"
       - "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
 rules:
   - MATCH,PROXY
