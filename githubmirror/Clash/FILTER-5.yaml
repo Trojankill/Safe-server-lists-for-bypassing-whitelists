@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-18 04:15:32 UTC
+# 2026-11-18 04:30:56 UTC
 proxies:
-  - name: "The Netherlands | nl-06.neverspy.tech | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | nl-06.neverspy.tech | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.112.59.157"
     port: 443
@@ -16,9 +16,9 @@ proxies:
       public-key: "sZXAejndrxL9cgna_fPXmbSB28y8yAJ9Ln6hRzy5TV0"
       short-id: "86af85a72387ef02"
     network: "tcp"
-  - name: "Finland | yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "177.202.69.48"
+    server: "2.27.40.12"
     port: 443
     uuid: "038e6b17-84e9-4ace-8973-8ef2308ed6e1"
     udp: true
@@ -31,7 +31,7 @@ proxies:
       public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
       short-id: "6ad3c0f1e9b2478a"
     network: "tcp"
-  - name: "The Netherlands | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "The Netherlands | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "2.27.40.12"
     port: 443
@@ -91,23 +91,6 @@ proxies:
       public-key: "GCCZ1ZZjB_nj7yxqFi22bIIWWr_G6rnWUzDcssN_40o"
       short-id: "b28db60d77c50b4f"
     network: "tcp"
-  - name: "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "18b99163-5196-4ddc-85f8-8fdf5efdcd53"
-    udp: true
-    tls: true
-    servername: "uwugirl.dev"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
   - name: "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.95.231.156"
@@ -122,6 +105,20 @@ proxies:
     reality-opts:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
+    network: "tcp"
+  - name: "Denmark | api-maps.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "193.180.211.245"
+    port: 8443
+    uuid: "35dc3ea6-2cdf-4f6e-95ea-ce786ac2947a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api-maps.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
     network: "tcp"
   - name: "Finland | 8a2e72t.nl20.h1clayd.shop | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -153,21 +150,6 @@ proxies:
       public-key: "xRukBdpLBrpjscF9MQHksxhY5VsD-8w_LiR-8dW733c"
       short-id: "ba6c54703a6b7626"
     network: "tcp"
-  - name: "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "91.185.83.91"
-    port: 3443
-    uuid: "49b42507-8781-46a4-8fcc-0b404690c85d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "max.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "xRukBdpLBrpjscF9MQHksxhY5VsD-8w_LiR-8dW733c"
-      short-id: "ba6c54703a6b7626"
-    network: "tcp"
   - name: "United Kingdom | amp-api-edge.apps.apple.com | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.90.62.112"
@@ -181,38 +163,6 @@ proxies:
     reality-opts:
       public-key: "Du5pk4KuMNA1sRcSpmuoLuC0HmxDBmFljFNfUzqxKiM"
       short-id: "cd0a1986719e44c8"
-    network: "tcp"
-  - name: "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod] #2"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "4eebdec5-08eb-4772-a0e6-35fec4c91cb0"
-    udp: true
-    tls: true
-    servername: "uwugirl.dev"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "speakpro.lol"
-  - name: "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "87.199.205.28"
-    port: 443
-    uuid: "501a2da5-cb22-4a3f-915e-e3b821d1d62d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "vkvd754.okcdn.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
-      short-id: "b7cd177731793b1e"
     network: "tcp"
   - name: "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -259,54 +209,38 @@ proxies:
       public-key: "Gtz3xOdQdWSocdx4NNie6s-bsa9VDiG6thqanJ4h31s"
       short-id: "6f3332a09b0ab6d1"
     network: "tcp"
-  - name: "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod] #3"
+  - name: "Luxembourg | subgift.gcorecdn.com | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "185.178.208.167"
+    server: "92.223.84.254"
     port: 443
-    uuid: "6eeb6e0e-5efd-400d-851e-60fc2bfb1eaa"
+    uuid: "740b2630-b42d-425c-bacd-37e7e30d78f1"
     udp: true
     tls: true
-    servername: "uwugirl.dev"
+    servername: "subgift.gcorecdn.com"
     alpn:
       - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/player/collect/9c8514f9552d/"
+      path: "/t.me-SubGift"
       headers:
-        Host: "speakpro.lol"
-  - name: "Russia | i0.photo.2gis.com | TCP | [#LSO - #LinSpisokObhod]"
+        Host: "subgift.gcorecdn.com"
+  - name: "Armenia | base.syoknew.online | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "158.160.144.108"
-    port: 7443
-    uuid: "7a8f716f-37ee-4af3-84c3-67e9a1b17d08"
+    server: "178.160.228.139"
+    port: 443
+    uuid: "7af8ad56-33ce-4f3d-ad15-ef32a71d67f7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "i0.photo.2gis.com"
+    servername: "base.syoknew.online"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "JxwG7rAbNCd_C82p9K69AZDWh51fri2nm3wLHHrfyiw"
-      short-id: "7755e972daf8eec8"
+      public-key: "1DFPjPAr5meUaXBdTX2WMZu9BWV39TXV5N36Ske6_A0"
+      short-id: "a7df9e0cde3e1d79"
     network: "tcp"
-  - name: "Russia | i0.photo.2gis.com | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "31.129.42.97"
-    port: 8443
-    uuid: "7a8f716f-37ee-4af3-84c3-67e9a1b17d08"
-    udp: true
-    tls: true
-    servername: "i0.photo.2gis.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WV58fGQd270mAtuAYhep9LXoVKTI0kiF4rCRaXAumWc"
-      short-id: "16ee3a5f0387c553"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "Poland | clover.filnex.baby | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "185.253.7.22"
@@ -324,59 +258,43 @@ proxies:
       path: "/api/de6/stream"
       headers:
         Host: "clover.filnex.baby"
-  - name: "Poland | clover.filnex.baby | WebSocket | [#LSO - #LinSpisokObhod] #2"
+  - name: "Russia | emberworks.cloud | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "217.12.206.79"
+    server: "185.86.145.78"
     port: 443
-    uuid: "80a06811-f74b-4b82-ac99-7e66c2a98e1c"
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
     udp: true
     tls: true
-    servername: "clover.filnex.baby"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/de6/stream"
-      headers:
-        Host: "clover.filnex.baby"
-  - name: "Russia | id.vk.com | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "168.113.187.173"
-    port: 2096
-    uuid: "a24e0b2a-7a9d-480a-96a4-b6c21ce15696"
-    udp: true
-    tls: true
-    servername: "id.vk.com"
+    servername: "emberworks.cloud"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless-grpc-reality"
-  - name: "Russia | get.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "81.163.22.118"
-    port: 443
-    uuid: "ab698db1-25d1-4e70-838c-5a79c9cf6c12"
-    udp: true
-    tls: true
-    servername: "get.videostreamer.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r3YuHAE5GxO2URYSEJGfOmS8gB2alPns-dKg1vFp1So"
-      short-id: "a179"
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "Russia | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
     type: "vless"
-    server: "161.97.160.224"
+    server: "37.9.4.62"
     port: 443
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
+    udp: true
+    tls: true
+    servername: "360.yandex.ru"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vP4XeQ-z8LYtkSz1SCAxRMAEPreaHspoXm2nt0okQVw"
+      short-id: "c7674e"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "fodei5.birtix-vids.net"
+    port: 12358
+    uuid: "9f527e5d-1de7-41c1-b5de-014063bf4b7f"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
@@ -384,8 +302,8 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
-      short-id: "e6"
+      public-key: "6V01vmstwvGJXz2r2eHE55Fr_L1KRYhjCwk5KD6CwmE"
+      short-id: "b6f632a91065521e"
     network: "tcp"
   - name: "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
@@ -416,36 +334,6 @@ proxies:
       public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
       short-id: "67ece882d65d0f1a"
     network: "tcp"
-  - name: "Poland | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "31.76.125.19"
-    port: 8443
-    uuid: "e40b2b8e-492b-4982-aaaf-59e76c52a7fe"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "-WS9_PoYmJybZfepl6md_S2kbIWphQMMXap5MySgu3c"
-      short-id: "ae040cf4656c2be9"
-    network: "tcp"
-  - name: "Germany | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "31.77.237.165"
-    port: 443
-    uuid: "e40b2b8e-492b-4982-aaaf-59e76c52a7fe"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "dh8czg12AdXJyLQSzSNI7fNWnFCbbDnkOsRx02_eUmk"
-      short-id: "536c2528b834d390"
-    network: "tcp"
   - name: "Russia | www.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "109.71.245.99"
@@ -461,46 +349,19 @@ proxies:
       public-key: "zICjcFkqI720WzWpHXRLjSFYmcu4Hd0jk1iDEo1nUAU"
       short-id: "c27a26812e5d2208"
     network: "tcp"
-  - name: "Denmark | img04b0.static.tv-av.fun | TCP | [#LSO - #LinSpisokObhod]"
+  - name: "India | likejennie.pages.dev | WebSocket | [#LSO - #LinSpisokObhod]"
     type: "trojan"
-    server: "217.78.237.118"
-    port: 8446
-    password: "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H"
+    server: "103.111.114.87"
+    port: 443
+    password: "f426d3c9-fb43-43c0-868b-898dfa451a74"
     udp: true
-    sni: "img04b0.static.tv-av.fun"
-    alpn:
-      - "http/1.1"
+    sni: "likejennie.pages.dev"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-  - name: "Denmark | imgffbf.static.tv-av.fun | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "217.78.237.118"
-    port: 8447
-    password: "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H"
-    udp: true
-    sni: "imgffbf.static.tv-av.fun"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "Denmark | files07f6.static.tv-av.fun | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "trojan"
-    server: "217.78.237.118"
-    port: 8447
-    password: "jCpBEnDOnqJ7J36rdoJ_cYvrKK5ErK9H"
-    udp: true
-    sni: "files07f6.static.tv-av.fun"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "Подписка #LSO© Trojan: 31 [#LSO - #LinSpisokObhod]"
+    network: "ws"
+    ws-opts:
+      path: "/"
+  - name: "Подписка #LSO© Trojan: 28 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -508,7 +369,7 @@ proxies:
     udp: true
     sni: "trojan.lso"
     skip-cert-verify: false
-  - name: "🇩🇪 [WL] Сервер 100"
+  - name: "🇩🇪 [WL] Сервер 111"
     type: "vmess"
     server: "185.177.229.95"
     port: 1270
@@ -535,41 +396,32 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "The Netherlands | nl-06.neverspy.tech | unknown | [#LSO - #LinSpisokObhod]"
-      - "Finland | yandex.ru | unknown | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | nl-06.neverspy.tech | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "The Netherlands | yandex.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | yandex.ru | TCP | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod]"
       - "United States | www.apple.com | TCP | [#LSO - #LinSpisokObhod]"
+      - "Denmark | api-maps.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Finland | 8a2e72t.nl20.h1clayd.shop | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | max.ru | TCP | [#LSO - #LinSpisokObhod] #2"
       - "United Kingdom | amp-api-edge.apps.apple.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod] #2"
-      - "The Netherlands | vkvd754.okcdn.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | max.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "The Netherlands | platform-api.max.ru | RAW | [#LSO - #LinSpisokObhod]"
-      - "Russia | uwugirl.dev | WebSocket | [#LSO - #LinSpisokObhod] #3"
-      - "Russia | i0.photo.2gis.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | i0.photo.2gis.com | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Luxembourg | subgift.gcorecdn.com | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Armenia | base.syoknew.online | TCP | [#LSO - #LinSpisokObhod]"
       - "Poland | clover.filnex.baby | WebSocket | [#LSO - #LinSpisokObhod]"
-      - "Poland | clover.filnex.baby | WebSocket | [#LSO - #LinSpisokObhod] #2"
-      - "Russia | id.vk.com | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Russia | get.videostreamer.ru | GRPC | [#LSO - #LinSpisokObhod]"
-      - "France | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "Russia | emberworks.cloud | GRPC | [#LSO - #LinSpisokObhod]"
+      - "Russia | 360.yandex.ru | GRPC | [#LSO - #LinSpisokObhod]"
+      - "unknown | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Poland | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Germany | passport.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "Russia | www.yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "Denmark | img04b0.static.tv-av.fun | TCP | [#LSO - #LinSpisokObhod]"
-      - "Denmark | imgffbf.static.tv-av.fun | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Denmark | files07f6.static.tv-av.fun | GRPC | [#LSO - #LinSpisokObhod]"
-      - "Подписка #LSO© Trojan: 31 [#LSO - #LinSpisokObhod]"
-      - "🇩🇪 [WL] Сервер 100"
+      - "India | likejennie.pages.dev | WebSocket | [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 28 [#LSO - #LinSpisokObhod]"
+      - "🇩🇪 [WL] Сервер 111"
       - "Подписка #LSO© Hy2: 0 [#LSO - #LinSpisokObhod]"
 rules:
   - MATCH,PROXY
