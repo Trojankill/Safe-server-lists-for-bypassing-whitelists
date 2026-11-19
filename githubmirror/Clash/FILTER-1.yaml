@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 19:15:40 UTC
+# 2026-11-19 19:30:56 UTC
 proxies:
   - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -134,6 +134,55 @@ proxies:
     reality-opts:
       public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "87.242.94.18"
+    port: 443
+    uuid: "c84d1355-b64b-410d-8d0d-2d582cc79a29"
+    udp: true
+    tls: true
+    servername: "stremnina.io"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/account/refresh/9ibIT04vygJ_"
+      headers:
+        Host: "stremnina.io"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "217.19.122.144"
+    port: 1505
+    uuid: "cdb0d0b3-9a61-4bdc-b2be-0119e4471f54"
+    udp: true
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "37.18.14.156"
+    port: 1505
+    uuid: "cdb0d0b3-9a61-4bdc-b2be-0119e4471f54"
+    udp: true
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "129.101.98.60"
@@ -149,7 +198,7 @@ proxies:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
       short-id: "3992cc7fb9fcbe58"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "217.150.197.10"
     port: 443
@@ -262,8 +311,11 @@ proxy-groups:
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия [#РКП] #3"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
