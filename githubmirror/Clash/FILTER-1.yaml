@@ -1,21 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-19 10:15:36 UTC
+# 2026-11-19 10:30:49 UTC
 proxies:
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "185.185.143.236"
-    port: 443
-    uuid: "31e407b3-6e1e-425f-98ea-fcf8f494c6a0"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "uploads2.gifmems.com"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "0bU0HSy-IsvaEtZMh3mRsTHaVvKIFDHgc-VTRcZs1kU"
-      short-id: "94ccafb3e566c29a"
-    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.145.183"
@@ -33,51 +18,6 @@ proxies:
       path: "/nl7ws"
       headers:
         Host: "cdn.quick-frost.ru"
-  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "45.151.30.168"
-    port: 443
-    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "usa1.nfnpx.online"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LsesLwq7kI3X91a5oygEXLOyWQwEDSSHltrCppMWCH4"
-      short-id: "c47eebaddf019503"
-    network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "45.151.30.250"
-    port: 443
-    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "nl4.nfnpx.online"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "6R0TLJAkg7iU6i8cZxhTlAh4XbcjN9bTId8pC9_pYSE"
-      short-id: "deb082597de3b923"
-    network: "tcp"
-  - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "89.232.177.203"
-    port: 443
-    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ae1.nfnpx.online"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "dXE5v17-DZRQINbMF3MKScHYtw9HG6G6M8i2dvNp3g4"
-      short-id: "c913b4746db7a8e9"
-    network: "tcp"
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "194.55.239.35"
@@ -107,32 +47,28 @@ proxies:
     reality-opts:
       public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
     network: "tcp"
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+  - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
-    server: "91.185.83.19"
+    server: "129.101.98.60"
     port: 443
-    uuid: "f8c0c9f1-7985-4145-95cf-04f90a03ec76"
+    uuid: "e75ad2eb-6c1f-45ce-8023-f5f10875df66"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "studio.nurmedia.org"
-    client-fingerprint: "firefox"
+    servername: "ru7e2bab87cc39.eu-cdn539.com"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
-      public-key: "bum0y3NFwyed4aQilW_Z-4FK8uE6LicnWN86TQzeM2I"
-      short-id: "87f5b392ecc83a50"
+      public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
+      short-id: "3992cc7fb9fcbe58"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Россия [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇺🇸 США | 🔗 Каскад [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
-      - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
