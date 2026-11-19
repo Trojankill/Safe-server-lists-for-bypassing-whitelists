@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 13:45:35 UTC
+# 2026-11-19 14:01:01 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -65,34 +65,6 @@ proxies:
       path: "/api/ws"
       headers:
         Host: "api.helsolutai.company"
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "2.56.240.178"
-    port: 443
-    uuid: "8f1626ac-aafd-4cc5-ac70-b87880255b37"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-d.awx.info"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "B3HwrX-tE1Swdi1bNew_Y-NbqHE-GJ1a-pHtSwsCCDk"
-    network: "tcp"
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "45.12.72.41"
-    port: 8443
-    uuid: "8f1626ac-aafd-4cc5-ac70-b87880255b37"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-c.awx.info"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "jI_a9y5X85-hl8BpFy7pYeXLquikJLZNvS0FTIgP6gI"
-    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "94.139.255.171"
@@ -141,7 +113,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "/v1/segment/9f3c1a7be04d2856/Tun|Fetch"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #6"
+    type: "vless"
+    server: "138.16.206.147"
+    port: 9096
+    uuid: "d27e362b-326d-4dbc-b02c-bb55ddafa65b"
+    udp: true
+    tls: true
+    servername: "p2g.138-16-206-147.sslip.io"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "JASBooze12B0nAaLU2QMWkeAqXwh4GmhfPD_O9YteT0"
+      short-id: "6ba85179e30d4fc2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "inetgrpc"
+  - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -164,11 +152,10 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
-      - "🇷🇺 Россия [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🏴 Неизвестный [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #6"
+      - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
