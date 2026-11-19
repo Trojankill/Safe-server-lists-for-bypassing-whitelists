@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-19 18:30:59 UTC
+# 2026-11-19 18:45:34 UTC
 proxies:
+  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "37.18.14.246"
+    port: 1505
+    uuid: "05f6e764-adf3-4c9d-81e7-099a9ce027df"
+    udp: true
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.98.178.163"
@@ -17,6 +33,21 @@ proxies:
       short-id: "d70670223951dca4"
     network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "78.159.245.147"
+    port: 445
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "78.159.245.147"
     port: 445
@@ -103,7 +134,7 @@ proxies:
     reality-opts:
       public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП] #2"
+  - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "129.101.98.60"
     port: 443
@@ -222,14 +253,16 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
+      - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП] #2"
+      - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
