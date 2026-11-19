@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 06:30:54 UTC
+# 2026-11-19 06:45:34 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,66 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "185.185.143.236"
+    port: 443
+    uuid: "31e407b3-6e1e-425f-98ea-fcf8f494c6a0"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "uploads2.gifmems.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "0bU0HSy-IsvaEtZMh3mRsTHaVvKIFDHgc-VTRcZs1kU"
+      short-id: "94ccafb3e566c29a"
+    network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.151.30.168"
+    port: 443
+    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "usa1.nfnpx.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "LsesLwq7kI3X91a5oygEXLOyWQwEDSSHltrCppMWCH4"
+      short-id: "c47eebaddf019503"
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "45.151.30.250"
+    port: 443
+    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "nl4.nfnpx.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "6R0TLJAkg7iU6i8cZxhTlAh4XbcjN9bTId8pC9_pYSE"
+      short-id: "deb082597de3b923"
+    network: "tcp"
+  - name: "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "89.232.177.203"
+    port: 443
+    uuid: "5ce70079-5588-464e-8dd8-f5503de36de9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ae1.nfnpx.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "dXE5v17-DZRQINbMF3MKScHYtw9HG6G6M8i2dvNp3g4"
+      short-id: "c913b4746db7a8e9"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "194.58.95.65"
@@ -51,6 +111,10 @@ proxy-groups:
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП]"
 rules:
