@@ -1,22 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-19 19:30:56 UTC
+# 2026-11-19 19:45:36 UTC
 proxies:
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "37.18.14.246"
-    port: 1505
-    uuid: "05f6e764-adf3-4c9d-81e7-099a9ce027df"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.98.178.163"
@@ -151,38 +135,6 @@ proxies:
       path: "/account/refresh/9ibIT04vygJ_"
       headers:
         Host: "stremnina.io"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "217.19.122.144"
-    port: 1505
-    uuid: "cdb0d0b3-9a61-4bdc-b2be-0119e4471f54"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
-    type: "vless"
-    server: "37.18.14.156"
-    port: 1505
-    uuid: "cdb0d0b3-9a61-4bdc-b2be-0119e4471f54"
-    udp: true
-    tls: true
-    servername: "iv.kommersant.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
-      short-id: "a5bd715862513387"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "🇷🇺 Россия [#РКП] #3"
     type: "vless"
     server: "129.101.98.60"
@@ -302,7 +254,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
@@ -312,8 +263,6 @@ proxy-groups:
       - "🏴 Неизвестный [#РКП]"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #2"
-      - "🇬🇧 Великобритания | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
