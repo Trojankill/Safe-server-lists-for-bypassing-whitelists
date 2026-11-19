@@ -1,43 +1,57 @@
 # clash/mihomo subscription
-# 2026-11-19 17:01:02 UTC
+# 2026-11-19 17:15:35 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+  - name: "🇦🇹 Austria | [*CIDR]"
     type: "vless"
-    server: "185.86.145.183"
+    server: "189.74.115.27"
     port: 443
-    uuid: "38afdada-1991-466b-9dc4-3cd0ffac883d"
-    udp: true
-    tls: true
-    servername: "cdn.quick-frost.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "cdn.quick-frost.ru"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "80.66.84.151"
-    port: 443
-    uuid: "f59f02e8-9d66-48e8-afc2-2ce7972d51bd"
+    uuid: "4415c234-fb0e-473d-a6d0-a90afaad34b9"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api-7c4e.deepl-dev.com"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "android"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "189.74.106.117"
+    port: 443
+    uuid: "b5c885cc-caf8-4339-91cb-29f915182946"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.setevoypriliv.cc"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.4"
+    port: 443
+    uuid: "fa7d250b-d84e-4ad8-9404-69be893d763f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇦🇹 Austria | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
 rules:
   - MATCH,PROXY
