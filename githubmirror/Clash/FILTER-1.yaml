@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 18:15:36 UTC
+# 2026-11-19 18:30:59 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -168,6 +168,16 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "185.151.243.186"
+    port: 443
+    password: "29f90c01-02b6-0001-9249-e3558a9c73a4"
+    udp: true
+    sni: "piodr-ru-74sel.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "hysteria2"
     server: "185.151.243.186"
@@ -198,7 +208,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "84.38.189.122"
     port: 443
@@ -224,9 +234,10 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
-      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY

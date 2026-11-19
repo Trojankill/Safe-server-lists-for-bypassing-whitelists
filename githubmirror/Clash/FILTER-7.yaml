@@ -1,18 +1,85 @@
 # clash/mihomo subscription
-# 2026-11-19 18:15:33 UTC
+# 2026-11-19 18:30:57 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
-    type: "hysteria2"
-    server: "48.102.214.171"
-    port: 4444
-    password: "a35c508f-4d5d-4531-842e-6e9d43c762c0"
+  - name: "[KrolekVPNReborn] Europe 🇪🇺 | LTE/5G"
+    type: "vless"
+    server: "37.18.14.246"
+    port: 1505
+    uuid: "05f6e764-adf3-4c9d-81e7-099a9ce027df"
     udp: true
-    sni: "fl4.edgeport.cloud"
+    tls: true
+    servername: "iv.kommersant.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "5nRL3eh_pQWHdej0It-V9mOapVLSi4PgkgjG9iqhpSw"
+      short-id: "a5bd715862513387"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "[KrolekVPNReborn] Russia 🇷🇺 | LTE/5G"
+    type: "vless"
+    server: "78.159.245.147"
+    port: 445
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "[KrolekVPNReborn] Russia 🇷🇺 | Каскад🔗"
+    type: "vless"
+    server: "185.86.145.78"
+    port: 443
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
+    udp: true
+    tls: true
+    servername: "emberworks.cloud"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "[KrolekVPNReborn] Finland 🇫🇮 | Игровой"
+    type: "vless"
+    server: "185.232.204.116"
+    port: 443
+    uuid: "ab5e91ee-f600-4825-a2bc-d6471d5cee03"
+    udp: true
+    tls: true
+    servername: "food-from-finlda-here-we-go.keno.su"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Au1rmQdDRjlEJk17IfLQv5PBUEEosMWNhAlrWZj6mnY"
+      short-id: "12345678"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "[KrolekVPNReborn] Poland 🇵🇱 | Игровой №2"
+    type: "hysteria2"
+    server: "31.58.117.133"
+    port: 443
+    password: "ca60984f-b1f0-4073-bd33-4c75168f749a"
+    udp: true
+    sni: "kraw-pl-5.fantoff.online"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolekVPNReborn] Finland 🇫🇮 | Игровой ❄️"
+      - "[KrolekVPNReborn] Europe 🇪🇺 | LTE/5G"
+      - "[KrolekVPNReborn] Russia 🇷🇺 | LTE/5G"
+      - "[KrolekVPNReborn] Russia 🇷🇺 | Каскад🔗"
+      - "[KrolekVPNReborn] Finland 🇫🇮 | Игровой"
+      - "[KrolekVPNReborn] Poland 🇵🇱 | Игровой №2"
 rules:
   - MATCH,PROXY
