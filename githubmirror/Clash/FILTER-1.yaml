@@ -1,6 +1,51 @@
 # clash/mihomo subscription
-# 2026-11-19 00:45:39 UTC
+# 2026-11-19 01:01:03 UTC
 proxies:
+  - name: "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "168.113.252.145"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tarakan.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.108.245.73"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pawuk.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇨🇾 Кипр | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "176.109.103.238"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rumos.yandex-api.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "gQYbz6BaTE05ZD6sk_0lHZGsk2cXzt1cKdjVWZM_C2g"
+      short-id: "badfead2ae4dca2e"
+    network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "194.58.95.65"
@@ -65,6 +110,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+      - "🇨🇾 Кипр | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
