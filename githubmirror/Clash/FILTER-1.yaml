@@ -1,51 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-19 03:00:57 UTC
+# 2026-11-19 03:15:34 UTC
 proxies:
-  - name: "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
+  - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
-    server: "168.113.252.145"
+    server: "185.86.145.78"
     port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "tarakan.belka.tv"
+    servername: "emberworks.cloud"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.108.245.73"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "pawuk.belka.tv"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
-      short-id: "a9dc98a7dc87a7dc"
-    network: "tcp"
-  - name: "🇨🇾 Кипр | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "176.109.103.238"
-    port: 443
-    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "rumos.yandex-api.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "gQYbz6BaTE05ZD6sk_0lHZGsk2cXzt1cKdjVWZM_C2g"
-      short-id: "badfead2ae4dca2e"
-    network: "tcp"
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "194.58.95.65"
@@ -60,7 +31,7 @@ proxies:
     reality-opts:
       public-key: "SnoafrsbeHFuYj-qQsTDjBhy1eBQB7J7Q9HAZQSMgHY"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🏴 Неизвестный [#РКП] #2"
     type: "vless"
     server: "194.55.239.35"
     port: 443
@@ -76,21 +47,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "/v1/segment/9f3c1a7be04d2856/Tun|Fetch"
-  - name: "🇳🇱 Нидерланды [#РКП]"
-    type: "vless"
-    server: "138.124.117.97"
-    port: 443
-    uuid: "b2744db0-1c64-4218-a93b-9eba0e5f811f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "nl-27-1fem.wave-inside.online"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WzCuQZ88ggX-h9wws4h-V1-3qn1qOiqZKHGU0X3-9RE"
-      short-id: "209ecb08b71217f6"
-    network: "tcp"
   - name: "🇸🇪 Швеция [#РКП]"
     type: "vless"
     server: "45.141.177.35"
@@ -106,32 +62,13 @@ proxies:
       public-key: "l_NHykBJwTMsXDGO5-b9o0AMXikc_Ar_AzfcbsIhyVE"
       short-id: "73953c5b1f399a85"
     network: "tcp"
-  - name: "🇷🇺 Россия [#РКП]"
-    type: "vless"
-    server: "129.101.98.60"
-    port: 443
-    uuid: "e75ad2eb-6c1f-45ce-8023-f5f10875df66"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru7e2bab87cc39.eu-cdn539.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
-      short-id: "3992cc7fb9fcbe58"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
-      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
-      - "🇨🇾 Кипр | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
-      - "🇳🇱 Нидерланды [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🏴 Неизвестный [#РКП] #2"
       - "🇸🇪 Швеция [#РКП]"
-      - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
