@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 20:01:04 UTC
+# 2026-11-19 20:15:36 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -74,7 +74,7 @@ proxies:
       public-key: "STcaw4seabBKxzAVEYzF3jd3HsBqpsEVAxBZymSmdgI"
       short-id: "ea6377fc58a5fa15"
     network: "tcp"
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.145.78"
     port: 443
@@ -90,22 +90,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🏴 Неизвестный [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
-    server: "188.225.42.130"
-    port: 8443
-    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
+    server: "185.86.145.78"
+    port: 443
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
+    servername: "emberworks.cloud"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "pNj1rPSs9XjNpf30e8DjGbNBU1fp58CzFrxP36_D42U"
-      short-id: "b470934eb6924098"
-    network: "tcp"
-  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "87.228.32.97"
     port: 443
@@ -152,34 +153,29 @@ proxies:
     network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
     type: "vless"
-    server: "217.150.197.10"
+    server: "87.228.32.17"
     port: 443
-    uuid: "f59f02e8-9d66-48e8-afc2-2ce7972d51bd"
+    uuid: "fd90e601-a56c-42b8-aab7-aa02d26fcb04"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "community-bd.paruscamp.com"
+    servername: "app-page.betust.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "NjbnmsosFJHk-7LJei0QOWDI4f7Db2lO6rsdJ0wfHlE"
-      short-id: "9654e54cf3aaa5bb"
+      public-key: "FBHsH_imxbv7yxdVhdJL8H4Ip0Qn10dbN0tu7hNMQVM"
+      short-id: "5d990d63"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "87.242.94.45"
-    port: 8448
-    uuid: "f59f02e8-9d66-48e8-afc2-2ce7972d51bd"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "00717a40-f058-0001-bd8b-946b3d578273"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cdn175.whitenw.net"
-    client-fingerprint: "firefox"
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "D0UNiZXtNh5GpnNRWl8595qyfqNr8v9KENMnVJ3vsCM"
-      short-id: "b615d8736170f5be"
-    network: "tcp"
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "176.108.240.182"
@@ -190,7 +186,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -210,7 +206,57 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "185.151.243.186"
+    port: 443
+    password: "401db914-1fef-0001-b41a-287bd9ac13f9"
+    udp: true
+    sni: "piodr-ru-74sel.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "188.68.216.27"
+    port: 443
+    password: "49142625-3a86-0001-9a44-274a17eb89ae"
+    udp: true
+    sni: "qtuod-ru-56sel.fade.mom"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+    type: "hysteria2"
+    server: "188.68.216.27"
+    port: 443
+    password: "49b5c86a-fbfc-0001-82af-171a932d04e7"
+    udp: true
+    sni: "qtuod-ru-56sel.fade.mom"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "5760fb84-06f8-0001-890a-3d66044897ce"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
     type: "hysteria2"
     server: "185.151.243.186"
     port: 443
@@ -220,7 +266,37 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #5"
+    type: "hysteria2"
+    server: "176.108.244.162"
+    port: 443
+    password: "5de9c7b1-25f2-0001-bbaa-e4292a33a59b"
+    udp: true
+    sni: "ohyjf-ru-65sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "176.108.244.162"
+    port: 443
+    password: "6acdc33a-a25b-0001-8095-c9a252d72fd0"
+    udp: true
+    sni: "ohyjf-ru-65sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "b006650f-8771-0001-b7fa-e18fc6e80ef1"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "84.38.189.122"
     port: 443
@@ -230,7 +306,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
     type: "hysteria2"
     server: "185.151.243.186"
     port: 443
@@ -259,19 +335,27 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇷🇺 Россия [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП] #2"
       - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #5"
+      - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+      - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #3"
       - "🇧🇬 Болгария | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
