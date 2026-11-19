@@ -1,21 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-19 07:45:34 UTC
+# 2026-11-19 08:01:08 UTC
 proxies:
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "129.101.100.49"
-    port: 443
-    uuid: "25ac78e7-6d1d-4c9a-a450-c01a4871769f"
-    udp: true
-    tls: true
-    servername: "fernglade.gerqix.online"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "glush.de1.v1"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "185.185.143.236"
@@ -76,20 +61,6 @@ proxies:
       public-key: "dXE5v17-DZRQINbMF3MKScHYtw9HG6G6M8i2dvNp3g4"
       short-id: "c913b4746db7a8e9"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-    type: "vless"
-    server: "194.58.95.65"
-    port: 443
-    uuid: "955d8dc7-5e3b-40ac-b2bb-bd8aa20fc7e6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "hohol.nodexphere.net"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "SnoafrsbeHFuYj-qQsTDjBhy1eBQB7J7Q9HAZQSMgHY"
-    network: "tcp"
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "194.55.239.35"
@@ -110,12 +81,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇦🇪 ОАЭ | 🔗 Каскад [#РКП]"
-      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП]"
 rules:
   - MATCH,PROXY
