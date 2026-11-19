@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 18:01:02 UTC
+# 2026-11-19 18:15:36 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -198,6 +198,16 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "84.38.189.122"
+    port: 443
+    password: "f883afa8-2af7-0001-a896-dcc345e89da0"
+    udp: true
+    sni: "shyrc-ru-75sel.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -217,5 +227,6 @@ proxy-groups:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
+      - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
 rules:
   - MATCH,PROXY
