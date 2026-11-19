@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 12:15:37 UTC
+# 2026-11-19 12:31:04 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -47,6 +47,23 @@ proxies:
       public-key: "jI_a9y5X85-hl8BpFy7pYeXLquikJLZNvS0FTIgP6gI"
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "94.139.255.171"
+    port: 443
+    uuid: "9a235a48-d9d1-4216-ab3c-dfa6e85089bc"
+    udp: true
+    tls: true
+    servername: "tehgaz48.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/assets/chunk/tgwsqHtqi_uv"
+      headers:
+        Host: "tehgaz48.ru"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "217.150.197.10"
     port: 443
@@ -113,6 +130,7 @@ proxy-groups:
       - "🇷🇺 Россия [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
