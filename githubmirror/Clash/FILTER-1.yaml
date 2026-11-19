@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-19 04:45:32 UTC
+# 2026-11-19 05:01:10 UTC
 proxies:
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "129.101.100.49"
+    port: 443
+    uuid: "25ac78e7-6d1d-4c9a-a450-c01a4871769f"
+    udp: true
+    tls: true
+    servername: "fernglade.gerqix.online"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de1.v1"
   - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "185.86.145.78"
@@ -17,7 +32,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "194.58.95.65"
     port: 443
@@ -66,8 +81,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🏴 Неизвестный [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🏴 Неизвестный [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
       - "🏴 Неизвестный [#РКП] #2"
       - "🇸🇪 Швеция [#РКП]"
 rules:
