@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 05:30:57 UTC
+# 2026-11-19 05:45:35 UTC
 proxies:
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,22 +16,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "glush.de1.v1"
-  - name: "🏴 Неизвестный [#РКП]"
-    type: "vless"
-    server: "185.86.145.78"
-    port: 443
-    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
-    udp: true
-    tls: true
-    servername: "emberworks.cloud"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
-      short-id: "ea322b8b5b015812"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: ""
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "194.58.95.65"
@@ -46,7 +30,7 @@ proxies:
     reality-opts:
       public-key: "SnoafrsbeHFuYj-qQsTDjBhy1eBQB7J7Q9HAZQSMgHY"
     network: "tcp"
-  - name: "🏴 Неизвестный [#РКП] #2"
+  - name: "🏴 Неизвестный [#РКП]"
     type: "vless"
     server: "194.55.239.35"
     port: 443
@@ -62,29 +46,12 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "/v1/segment/9f3c1a7be04d2856/Tun|Fetch"
-  - name: "🇸🇪 Швеция [#РКП]"
-    type: "vless"
-    server: "45.141.177.35"
-    port: 443
-    uuid: "b2744db0-1c64-4218-a93b-9eba0e5f811f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "se-32-mqbb.wave-inside.online"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "l_NHykBJwTMsXDGO5-b9o0AMXikc_Ar_AzfcbsIhyVE"
-      short-id: "73953c5b1f399a85"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
-      - "🏴 Неизвестный [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
-      - "🏴 Неизвестный [#РКП] #2"
-      - "🇸🇪 Швеция [#РКП]"
+      - "🏴 Неизвестный [#РКП]"
 rules:
   - MATCH,PROXY
