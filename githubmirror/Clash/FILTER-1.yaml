@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 02:01:08 UTC
+# 2026-11-19 02:15:36 UTC
 proxies:
   - name: "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -91,6 +91,21 @@ proxies:
       public-key: "WzCuQZ88ggX-h9wws4h-V1-3qn1qOiqZKHGU0X3-9RE"
       short-id: "209ecb08b71217f6"
     network: "tcp"
+  - name: "🇸🇪 Швеция [#РКП]"
+    type: "vless"
+    server: "45.141.177.35"
+    port: 443
+    uuid: "b2744db0-1c64-4218-a93b-9eba0e5f811f"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "se-32-mqbb.wave-inside.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "l_NHykBJwTMsXDGO5-b9o0AMXikc_Ar_AzfcbsIhyVE"
+      short-id: "73953c5b1f399a85"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "129.101.98.60"
@@ -116,6 +131,7 @@ proxy-groups:
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🏴 Неизвестный [#РКП]"
       - "🇳🇱 Нидерланды [#РКП]"
+      - "🇸🇪 Швеция [#РКП]"
       - "🇷🇺 Россия [#РКП]"
 rules:
   - MATCH,PROXY
