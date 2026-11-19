@@ -1,23 +1,70 @@
 # clash/mihomo subscription
-# 2026-11-19 12:31:04 UTC
+# 2026-11-19 12:45:36 UTC
 proxies:
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
-    server: "185.86.145.183"
-    port: 443
-    uuid: "38afdada-1991-466b-9dc4-3cd0ffac883d"
+    server: "178.248.232.105"
+    port: 55443
+    uuid: "1d7427ab-8a5d-4317-9335-2e48d50be4fc"
     udp: true
     tls: true
-    servername: "cdn.quick-frost.ru"
+    flow: "xtls-rprx-vision"
+    servername: "rutube.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "UoWXZIbLDIDA1opu4ekUYLNWgci5gLgghMJ07ApYTGo"
+      short-id: "228c1a2e913d1f05"
+    network: "tcp"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "91.224.87.152"
+    port: 443
+    uuid: "4b5bada6-0724-4cb1-8105-04737c8a7a3e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.vseinstrumenti.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ZKLerhOtbZ9D1Kvfz9w9LPGhYTQmfGs98HthyAy85AQ"
+      short-id: "503131904226bcad"
+    network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "94.139.255.140"
+    port: 443
+    uuid: "4b5bada6-0724-4cb1-8105-04737c8a7a3e"
+    udp: true
+    tls: true
+    servername: "akb-omsk.store"
     alpn:
       - "http/1.1"
     client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/nl7ws"
+      path: "/catalog/feed/tLfwzt-5vYBv"
       headers:
-        Host: "cdn.quick-frost.ru"
+        Host: "akb-omsk.store"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+    type: "vless"
+    server: "95.129.232.27"
+    port: 443
+    uuid: "4b5bada6-0724-4cb1-8105-04737c8a7a3e"
+    udp: true
+    tls: true
+    servername: "api.helsolutai.company"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/ws"
+      headers:
+        Host: "api.helsolutai.company"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "2.56.240.178"
@@ -46,7 +93,7 @@ proxies:
     reality-opts:
       public-key: "jI_a9y5X85-hl8BpFy7pYeXLquikJLZNvS0FTIgP6gI"
     network: "tcp"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "94.139.255.171"
     port: 443
@@ -63,7 +110,7 @@ proxies:
       path: "/assets/chunk/tgwsqHtqi_uv"
       headers:
         Host: "tehgaz48.ru"
-  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+  - name: "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "217.150.197.10"
     port: 443
@@ -94,19 +141,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "/v1/segment/9f3c1a7be04d2856/Tun|Fetch"
-  - name: "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "87.228.32.97"
-    port: 443
-    uuid: "b73b2ee3-5bb3-44d4-808f-0891a408a9bd"
-    udp: true
-    tls: true
-    servername: "city.lostpool.org"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
-    network: "tcp"
   - name: "🇷🇺 Россия [#РКП] #2"
     type: "vless"
     server: "129.101.98.60"
@@ -116,7 +150,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "ru7e2bab87cc39.eu-cdn539.com"
-    client-fingerprint: "ios"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "lews1n_fypGexd_dMofEO4Vy1ULsFeVIFa90MMY3pm4"
@@ -126,13 +160,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "🇷🇺 Россия [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #3"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #4"
+      - "🇩🇪 Германия | 🔗 Каскад [#РКП] #5"
       - "🏴 Неизвестный [#РКП]"
-      - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
 rules:
   - MATCH,PROXY
