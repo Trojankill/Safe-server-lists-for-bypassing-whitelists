@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 16:15:48 UTC
+# 2026-11-19 16:30:51 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -31,6 +31,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "178.170.197.156"
+    port: 443
+    uuid: "429b851c-f731-4f95-9e34-793a51ad48b2"
+    udp: true
+    tls: true
+    servername: "spetsmashlo.online"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/checkout/step/W5-b9wJ6KvQG"
+      headers:
+        Host: "spetsmashlo.online"
   - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "46.243.205.32"
@@ -48,7 +65,7 @@ proxies:
       path: "/assets/chunk/uWp5sCJielmN"
       headers:
         Host: "dvorkam.online"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
     type: "vless"
     server: "188.225.37.209"
     port: 8001
@@ -61,6 +78,20 @@ proxies:
     reality-opts:
       public-key: "-BzIhjfZhgEOL6NtpyBDiFFCfdWg62x5E0IUZny5dkg"
       short-id: "3d7adb19ca8ca7d5"
+    network: "tcp"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "91.185.83.43"
+    port: 443
+    uuid: "5c16d730-e1f7-4ae6-8f8a-406bf1bb3b85"
+    udp: true
+    tls: true
+    servername: "doc.mail.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "STcaw4seabBKxzAVEYzF3jd3HsBqpsEVAxBZymSmdgI"
+      short-id: "ea6377fc58a5fa15"
     network: "tcp"
   - name: "🇩🇪 Германия | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -87,7 +118,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "hysteria2"
     server: "176.108.240.182"
     port: 443
@@ -127,7 +158,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
     type: "hysteria2"
     server: "185.151.243.186"
     port: 443
@@ -153,15 +184,17 @@ proxy-groups:
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
-      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
