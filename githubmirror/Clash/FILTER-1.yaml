@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 15:15:37 UTC
+# 2026-11-19 15:30:57 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -16,6 +16,38 @@ proxies:
       public-key: "HyPCaHlGMjE2h7D4F6dtyFHeXDEAHIUg9fXJgADc5H0"
       short-id: "134a7678ec2a3285"
     network: "tcp"
+  - name: "🇷🇺 Россия [#РКП]"
+    type: "vless"
+    server: "78.159.245.147"
+    port: 445
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "46.243.205.32"
+    port: 443
+    uuid: "429b851c-f731-4f95-9e34-793a51ad48b2"
+    udp: true
+    tls: true
+    servername: "dvorkam.online"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/assets/chunk/uWp5sCJielmN"
+      headers:
+        Host: "dvorkam.online"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "188.225.37.209"
@@ -50,6 +82,8 @@ proxy-groups:
     type: select
     proxies:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
+      - "🇷🇺 Россия [#РКП]"
+      - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
 rules:
