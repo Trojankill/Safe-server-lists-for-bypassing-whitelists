@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 22:15:38 UTC
+# 2026-11-19 22:30:58 UTC
 proxies:
   - name: "🇺🇸 United States — #109"
     type: "vless"
@@ -664,6 +664,21 @@ proxies:
     reality-opts:
       public-key: "ZJRnFU-1s1JOnO8E9uZ7b00l1fPEh63fGRbdBANFRno"
     network: "tcp"
+  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "176.98.178.163"
+    port: 443
+    uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us2.nztvpn.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Yn9rswmNTIdVx8jKgZkvQcqw61BRu_h_ZOl2blShDT4"
+      short-id: "0da7e14db353e7d0"
+    network: "tcp"
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "176.98.178.163"
@@ -679,7 +694,7 @@ proxies:
       public-key: "YfnwbpBhvSLJdR6NDF1KPzhkJYHEN5hphNEt352Vyks"
       short-id: "d70670223951dca4"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: node-nl-4.nztpro.com ┃ 🇳🇱 Нидерланды"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
     type: "vless"
     server: "176.98.178.163"
     port: 443
@@ -688,26 +703,11 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "node-nl-4.nztpro.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "YfnwbpBhvSLJdR6NDF1KPzhkJYHEN5hphNEt352Vyks"
       short-id: "d70670223951dca4"
-    network: "tcp"
-  - name: "🇰🇿 Kazakhstan | [*CIDR]"
-    type: "vless"
-    server: "89.169.2.136"
-    port: 443
-    uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "node-kz-1.nztpro.com"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "cOnDGs0VQDa-LnjQNWLb1w2jyso0EqZ0epfDCTrNrA8"
-      short-id: "274aec426d8627f2"
     network: "tcp"
   - name: "🇺🇸 [BL] Сервер 226"
     type: "vless"
@@ -918,6 +918,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-wl"
+  - name: "AetrisVPN White list ┃ ✅ SNI: foliose.merlano.monster ┃ 🇷🇺 Россия"
+    type: "vless"
+    server: "foliose.merlano.monster"
+    port: 443
+    uuid: "25ac78e7-6d1d-4c9a-a450-c01a4871769f"
+    udp: true
+    tls: true
+    servername: "foliose.merlano.monster"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de2/stream"
+      headers:
+        Host: "foliose.merlano.monster"
   - name: "🇷🇺 AetrisVPN t.me/rjsxrd"
     type: "vless"
     server: "45.152.113.249"
@@ -1109,6 +1126,23 @@ proxies:
     reality-opts:
       public-key: "R6mPqCsjZMWauci4LHw7Qp1LGKmBd-sxMXplyOn9bSQ"
     network: "tcp"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "87.242.94.18"
+    port: 443
+    uuid: "31d0f8a6-3dac-4f89-b2f1-aca50f293f70"
+    udp: true
+    tls: true
+    servername: "stremnina.io"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/account/refresh/9ibIT04vygJ_"
+      headers:
+        Host: "stremnina.io"
   - name: "🇺🇸 [BL] Сервер 150"
     type: "vless"
     server: "148.135.86.162"
@@ -1677,7 +1711,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "assets.delivery.Sync"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
     type: "vless"
     server: "188.225.58.53"
     port: 443
@@ -1692,7 +1726,7 @@ proxies:
       public-key: "4S6qXLdepEjgOeFBIbZmC-4ChOqGgM9l4vEedKw8rVk"
       short-id: "d82fb387"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
     type: "vless"
     server: "188.225.82.191"
     port: 443
@@ -1766,7 +1800,7 @@ proxies:
       public-key: "aV_BHCeZ30y4-5rpUIHaWHMYAgogLsw4AE06Rw2X4WE"
       short-id: "e202a94ad1711af2"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
     type: "vless"
     server: "87.228.32.17"
     port: 443
@@ -2928,7 +2962,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #6"
     type: "vless"
     server: "193.58.179.197"
     port: 443
@@ -2945,7 +2979,7 @@ proxies:
       path: "/checkout/step/wjZAlhnxAy9g"
       headers:
         Host: "geoplan-krd.pro"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #6"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #7"
     type: "vless"
     server: "91.215.42.205"
     port: 443
@@ -2962,7 +2996,7 @@ proxies:
       path: "/gateway/v1/ws/78c903ed62a493521f3a51df668fc042"
       headers:
         Host: "my.lk.stream-pk.online"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #7"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #8"
     type: "vless"
     server: "95.129.236.54"
     port: 443
@@ -4420,7 +4454,7 @@ proxies:
       public-key: "8wsCMM2zufCIE32RR7_Df1512OC2M6qGmahqDofzCDc"
       short-id: "73e0da0b"
     network: "tcp"
-  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #8"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #9"
     type: "vless"
     server: "87.228.32.17"
     port: 443
@@ -4645,7 +4679,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+  - name: "🇱🇹 Lithuania [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -4761,7 +4795,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -4798,6 +4832,14 @@ proxies:
     sni: "xykmh-ru-70sb.my-fade.cloud"
     alpn:
       - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
   - name: "@LexaVercelbot C-1 #56 🇫🇲 🝰"
     type: "hysteria2"
@@ -4891,7 +4933,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
     type: "hysteria2"
     server: "176.108.240.182"
     port: 443
@@ -4909,7 +4951,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] t.me/rjsxrd"
     type: "hysteria2"
     server: "185.151.243.186"
     port: 443
@@ -5025,7 +5067,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
+  - name: "🇳🇴 Norway [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -5289,9 +5331,9 @@ proxy-groups:
       - "tg:VLESSFORU 🇪🇪 ⚡"
       - "🇺🇸 [BL] Сервер 122"
       - "🇺🇸 [BL] Сервер 33"
+      - "🇺🇸 United States | 🌐 | [*CIDR]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
-      - "AetrisVPN White list ┃ ✅ SNI: node-nl-4.nztpro.com ┃ 🇳🇱 Нидерланды"
-      - "🇰🇿 Kazakhstan | [*CIDR]"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
       - "🇺🇸 [BL] Сервер 226"
       - "🇩🇪 [BL] Сервер 198"
       - "🇺🇸 United States — #98"
@@ -5306,6 +5348,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
       - "🇺🇸 [BL] Сервер 187"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия"
+      - "AetrisVPN White list ┃ ✅ SNI: foliose.merlano.monster ┃ 🇷🇺 Россия"
       - "🇷🇺 AetrisVPN t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇵🇱 t.me/rjsxrd"
       - "🇷🇺 [WL] Сервер 140"
@@ -5319,6 +5362,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: helper-test.x5.ru ┃ 🇷🇺 Россия"
       - "AetrisVPN White list ┃ ✅ SNI: www.samsung.com ┃ 🇳🇱 Нидерланды"
       - "🇺🇸 [BL] Сервер 158"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇺🇸 [BL] Сервер 150"
       - "🇷🇺 AetrisVPN t.me/rjsxrd #2"
       - "🇷🇺 [WL] Сервер 76"
@@ -5357,13 +5401,13 @@ proxy-groups:
       - "🇱🇻 [BL] Сервер 172"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
       - "🇳🇱 Нидерланды [#РКП]"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #2"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "AetrisVPN White list ┃ ✅ SNI: www.mobile.yandex.ru ┃ 🇷🇺 Россия"
       - "🇺🇸 [BL] Сервер 232"
       - "@LexaVercelbot C-1 #71 🇫🇲 🧭"
       - "@LexaVercelbot C-1 #70 🇫🇲 🛰️"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
       - "@LexaVercelbot C-1 #50 🇫🇲 🫧"
       - "🇧🇬 [BL] Сервер 34"
       - "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇯🇵 Япония"
@@ -5441,9 +5485,9 @@ proxy-groups:
       - "@LexaVercelbot C-1 #44 🇫🇲 🧭"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #5"
       - "AetrisVPN White list ┃ ✅ SNI: ligastavok.ru ┃ 🇵🇱 Польша"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #5"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #6"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #7"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #8"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
       - "Бесплатный VPN tg:VLESSFORU 🇮🇪"
       - "@LexaVercelbot C-1 #26 🇫🇲 🧭"
@@ -5540,7 +5584,7 @@ proxy-groups:
       - "@LexaVercelbot C-1 #53 🇫🇲 🧭"
       - "@LexaVercelbot C-1 #52 🇫🇲 🛰️"
       - "🇳🇱 The Netherlands — #56 [Verified RU] t.me/rjsxrd"
-      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #8"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #9"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #3"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandexcloud.net ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandexcloud.net ┃ 🇩🇪 Германия #2"
@@ -5556,7 +5600,7 @@ proxy-groups:
       - "🇺🇸 机场推荐:dafei.de 美国 06"
       - "🇺🇸 机场推荐:dafei.de 美国 27"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
-      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+      - "🇱🇹 Lithuania [*CIDR]"
       - "@LexaVercelbot C-1 #2 🇫🇮 🝰"
       - "@LexaVercelbot C-1 #7 🇸🇪 🛰️"
       - "@LexaVercelbot C-1 #4 🇳🇱 🪬"
@@ -5568,10 +5612,11 @@ proxy-groups:
       - "@LexaVercelbot C-1 #128 🇮🇹 🧭"
       - "@LexaVercelbot C-1 #156 🇩🇪 🝰"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП] #2"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
       - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
       - "@LexaVercelbot C-1 #129 🇷🇸 🎴"
       - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
       - "@LexaVercelbot C-1 #56 🇫🇲 🝰"
       - "@LexaVercelbot C-1 #55 🇫🇲 🜂"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
@@ -5582,9 +5627,9 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 126"
       - "🇩🇪 [BL] Сервер 107"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
-      - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
-      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] t.me/rjsxrd"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП] #2"
       - "🇸🇪 [BL] Сервер 113"
@@ -5597,7 +5642,7 @@ proxy-groups:
       - "🇧🇾 [BL] Сервер 114"
       - "🇺🇸 [BL] Сервер 127"
       - "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
-      - "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
+      - "🇳🇴 Norway [*CIDR]"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
       - "🇪🇪 [WL] Сервер 120"
       - "@LexaVercelbot C-1 #109 🇪🇪 🜂"

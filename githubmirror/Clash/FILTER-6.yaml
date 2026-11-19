@@ -1,39 +1,53 @@
 # clash/mihomo subscription
-# 2026-11-19 22:15:36 UTC
+# 2026-11-19 22:30:57 UTC
 proxies:
-  - name: "🇰🇿 Kazakhstan | [*CIDR]"
+  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
     type: "vless"
-    server: "89.169.2.136"
+    server: "176.98.178.163"
     port: 443
     uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "node-kz-1.nztpro.com"
-    client-fingerprint: "android"
+    servername: "us2.nztvpn.com"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "cOnDGs0VQDa-LnjQNWLb1w2jyso0EqZ0epfDCTrNrA8"
-      short-id: "274aec426d8627f2"
+      public-key: "Yn9rswmNTIdVx8jKgZkvQcqw61BRu_h_ZOl2blShDT4"
+      short-id: "0da7e14db353e7d0"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
     type: "vless"
-    server: "harbor.gerqix.online"
+    server: "176.98.178.163"
     port: 443
-    uuid: "25ac78e7-6d1d-4c9a-a450-c01a4871769f"
+    uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
     udp: true
     tls: true
-    servername: "harbor.gerqix.online"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "android"
+    flow: "xtls-rprx-vision"
+    servername: "node-nl-4.nztpro.com"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/de1/stream"
-      headers:
-        Host: "harbor.gerqix.online"
-  - name: "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
+    reality-opts:
+      public-key: "YfnwbpBhvSLJdR6NDF1KPzhkJYHEN5hphNEt352Vyks"
+      short-id: "d70670223951dca4"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.145.78"
+    port: 443
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
+    udp: true
+    tls: true
+    servername: "emberworks.cloud"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇱🇹 Lithuania [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -43,7 +57,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+  - name: "🇱🇹 Lithuania [*CIDR] #2"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -69,7 +83,7 @@ proxies:
     udp: true
     sni: "mwtjc-ru-73sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -79,7 +93,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -87,7 +101,7 @@ proxies:
     udp: true
     sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -97,15 +111,13 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇸🇪 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
     type: "hysteria2"
-    server: "185.151.243.186"
+    server: "168.113.254.183"
     port: 443
-    password: "401db914-1fef-0001-b41a-287bd9ac13f9"
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
     udp: true
-    sni: "piodr-ru-74sel.my-fade.cloud"
-    alpn:
-      - "h3"
+    sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
   - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
     type: "hysteria2"
@@ -117,7 +129,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
     type: "hysteria2"
     server: "176.108.240.182"
     port: 443
@@ -125,25 +137,7 @@ proxies:
     udp: true
     sni: "mwtjc-ru-73sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #2"
-    type: "hysteria2"
-    server: "185.151.243.186"
-    port: 443
-    password: "5c49355f-afbc-0001-9c1c-8205436bb97c"
-    udp: true
-    sni: "piodr-ru-74sel.my-fade.cloud"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #3"
-    type: "hysteria2"
-    server: "185.151.243.186"
-    port: 443
-    password: "5c49355f-afbc-0001-9c1c-8205436bb97c"
-    udp: true
-    sni: "piodr-ru-74sel.my-fade.cloud"
-    skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR] #2"
+  - name: "🇳🇴 Norway [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -153,55 +147,32 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR] #3"
+  - name: "🇳🇴 Norway [*CIDR] #2"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
     password: "b006650f-8771-0001-b7fa-e18fc6e80ef1"
     udp: true
     sni: "vcerx-ru-67sb.my-fade.cloud"
-    skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇪🇪 [*CIDR]"
-    type: "hysteria2"
-    server: "84.38.189.122"
-    port: 443
-    password: "b280a29b-a3d9-0001-8a81-198855a17d57"
-    udp: true
-    sni: "shyrc-ru-75sel.my-fade.cloud"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇪🇪 [*CIDR] #2"
-    type: "hysteria2"
-    server: "185.151.243.186"
-    port: 443
-    password: "be986553-5976-0001-9209-3050366e40d1"
-    udp: true
-    sni: "piodr-ru-74sel.my-fade.cloud"
-    alpn:
-      - "h3"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇰🇿 Kazakhstan | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
-      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+      - "🇺🇸 United States | 🌐 | [*CIDR]"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] VK"
+      - "🇱🇹 Lithuania [*CIDR]"
+      - "🇱🇹 Lithuania [*CIDR] #2"
       - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
       - "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
-      - "🌐 Anycast-IP | 🇱🇹 [*CIDR] #2"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇿 🇸🇪 [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
       - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
-      - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #3"
-      - "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR] #3"
-      - "🌐 Anycast-IP | 🇪🇪 [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
+      - "🇳🇴 Norway [*CIDR]"
+      - "🇳🇴 Norway [*CIDR] #2"
 rules:
   - MATCH,PROXY
