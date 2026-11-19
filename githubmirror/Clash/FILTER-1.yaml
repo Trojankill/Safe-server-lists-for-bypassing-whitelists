@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-19 15:45:34 UTC
+# 2026-11-19 16:01:03 UTC
 proxies:
   - name: "🇵🇱 Польша | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -77,6 +77,76 @@ proxies:
       public-key: "D0UNiZXtNh5GpnNRWl8595qyfqNr8v9KENMnVJ3vsCM"
       short-id: "b615d8736170f5be"
     network: "tcp"
+  - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "00717a40-f058-0001-bd8b-946b3d578273"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "1d1d36cd-d3d4-0001-ab0e-99c68461d513"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "hysteria2"
+    server: "185.151.243.186"
+    port: 443
+    password: "401db914-1fef-0001-b41a-287bd9ac13f9"
+    udp: true
+    sni: "piodr-ru-74sel.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "5760fb84-06f8-0001-890a-3d66044897ce"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+    type: "hysteria2"
+    server: "185.151.243.186"
+    port: 443
+    password: "5c49355f-afbc-0001-9c1c-8205436bb97c"
+    udp: true
+    sni: "piodr-ru-74sel.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "b006650f-8771-0001-b7fa-e18fc6e80ef1"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
@@ -86,5 +156,12 @@ proxy-groups:
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇩🇪 Германия | 🔗 Каскад [#РКП]"
+      - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
