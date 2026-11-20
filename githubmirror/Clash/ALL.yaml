@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-20 10:30:50 UTC
+# 2026-11-20 10:45:36 UTC
 proxies:
   - name: "🇺🇸 United States — #110"
     type: "vless"
@@ -163,21 +163,6 @@ proxies:
     reality-opts:
       public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
       short-id: "6ad3c0f1e9b2478a"
-    network: "tcp"
-  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
-    type: "vless"
-    server: "91.185.83.19"
-    port: 443
-    uuid: "049cd18c-0088-4028-aa54-269f74c95b87"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "studio.nurmedia.org"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "bum0y3NFwyed4aQilW_Z-4FK8uE6LicnWN86TQzeM2I"
-      short-id: "87f5b392ecc83a50"
     network: "tcp"
   - name: "🇵🇱 Poland — #73"
     type: "vless"
@@ -1330,6 +1315,21 @@ proxies:
     reality-opts:
       public-key: "W-9zyiOq287RtXVTZlTFbSDJ0Mx8joyBLJoA7ZE7eBw"
       short-id: "ef1d3554c652a436"
+    network: "tcp"
+  - name: "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "217.149.23.212"
+    port: 8443
+    uuid: "51313341-1f6b-4e0d-8009-1786ea29eaf8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "servlets.buzz"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "ki4gvGv6Xwm4EeszfTQiscQscWiTRXa3RowuEhMxpR4"
+      short-id: "c619"
     network: "tcp"
   - name: "🇵🇱 [BL] Сервер 249"
     type: "vless"
@@ -4299,7 +4299,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -4317,7 +4317,7 @@ proxies:
     udp: true
     sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -4371,7 +4371,7 @@ proxies:
     udp: true
     sni: "qtuod-ru-56sel.fade.mom"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇵🇱 [*CIDR] #2"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "188.68.216.27"
     port: 443
@@ -4431,7 +4431,7 @@ proxies:
     udp: true
     sni: "mwtjc-ru-73sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+  - name: "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
     type: "hysteria2"
     server: "176.108.244.162"
     port: 443
@@ -4721,7 +4721,6 @@ proxy-groups:
       - "🇳🇱 [WL] Сервер 60"
       - "🇩🇪 [BL] Сервер 191"
       - "unknown | yandex.ru | TCP | [#LSO - #LinSpisokObhod]"
-      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇵🇱 Poland — #73"
       - "🇵🇱 [BL] Сервер 154"
       - "🇺🇸 United States — #97"
@@ -4800,6 +4799,7 @@ proxy-groups:
       - "🇩🇪 Germany | TG: @HardVpn_robot t.me/rjsxrd #4"
       - "🇳🇱 The Netherlands — #57"
       - "The Netherlands | vkvd754.okcdn.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇵🇱 [BL] Сервер 249"
       - "🇯🇵 [BL] Сервер 242"
       - "🇺🇸 [BL] Сервер 209"
@@ -5007,22 +5007,22 @@ proxy-groups:
       - "🇱🇹 Lithuania [*CIDR]"
       - "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
       - "@LexaVercelbot C-1 #129 🇷🇸 🎴"
-      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
-      - "🇳🇴 Norway [*CIDR] t.me/rjsxrd"
       - "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+      - "🇳🇴 Norway [*CIDR] t.me/rjsxrd"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
       - "@LexaVercelbot C-1 #56 🇫🇲 🝰"
       - "@LexaVercelbot C-1 #55 🇫🇲 🜂"
       - "🇷🇺 [WL] Сервер 154"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП]"
       - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
-      - "🌐 Anycast-IP | 🇵🇱 [*CIDR] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
       - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
       - "🇳🇱 [BL] Сервер 90"
       - "🇳🇱 [BL] Сервер 89"
       - "🇩🇪 [BL] Сервер 118"
       - "🇫🇮 Финляндия | 🔗 Каскад [#РКП] #2"
       - "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
-      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #2"
+      - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇵🇱 Poland [*CIDR] #2"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
       - "🇱🇻 Latvia [*CIDR]"
