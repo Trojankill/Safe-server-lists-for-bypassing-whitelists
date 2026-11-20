@@ -1,6 +1,36 @@
 # clash/mihomo subscription
-# 2026-11-20 18:45:36 UTC
+# 2026-11-20 19:00:59 UTC
 proxies:
+  - name: "🇱🇻 Latvia | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "send.idkinc.net"
+    port: 443
+    uuid: "3f48cee8-2e5d-4ea4-9297-0777a79a9f06"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "latv-1.idkvpn.ru"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "HxgKgQBR0Xs-lqb0snVMzcSH2xhb90Zia8KeT1tdaVs"
+      short-id: "b3c03b6dac5f1e7f"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "147.45.97.130"
+    port: 2066
+    uuid: "4bec3709-0954-4173-ae59-3dee6cb8b961"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "google.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "kLCwYNBhCg68BQah9El1lNg6GQ7-7Y7xfTtIs6MiTEg"
+      short-id: "1b2a3f"
+    network: "tcp"
   - name: "🇫🇮 Finland | [*CIDR] VK"
     type: "vless"
     server: "83.166.237.124"
@@ -10,13 +40,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "game2.stich.my"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "h16vbQ_IBohiTlEVzz1oEZBf63peHSTbhQ3sJuQO-Vw"
       short-id: "eab3935b74dd7756"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR] #2"
     type: "vless"
     server: "188.130.209.225"
     port: 444
@@ -25,7 +55,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "vextor.win"
-    client-fingerprint: "android"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "P7F65GjTQGZju-N8CVHtlKNaWebVe_76Xt7Lm00RuH0"
@@ -47,17 +77,35 @@ proxies:
       path: "/static/telemetry/3c9aaef00005/"
       headers:
         Host: "tochkacdn.top"
-  - name: "🌐 Anycast-IP | 🇨🇿 [*CIDR]"
+  - name: "🇳🇴 Norway [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.252.11"
+    port: 443
+    password: "004ea4a8-d701-0001-b0c0-8e61a5c31a23"
+    udp: true
+    sni: "jkawq-ru-45sb.fade.mom"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
-    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
     udp: true
     sni: "xykmh-ru-70sb.my-fade.cloud"
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR] #2"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
     type: "hysteria2"
     server: "168.113.254.183"
     port: 443
@@ -65,14 +113,58 @@ proxies:
     udp: true
     sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
+  - name: "🇦🇹 Austria | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "94.183.195.183"
+    port: 8453
+    password: "8da0029e-6ff3-49cc-8b4d-120432cc6414"
+    udp: true
+    sni: "eu71.cdn77.icu"
+    skip-cert-verify: false
+  - name: "🇦🇹 Austria | 🌐 [*CIDR] #2"
+    type: "hysteria2"
+    server: "eu90.cdn77.icu"
+    port: 8453
+    password: "8da0029e-6ff3-49cc-8b4d-120432cc6414"
+    udp: true
+    sni: "eu71.cdn77.icu"
+    skip-cert-verify: false
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "hysteria2"
+    server: "95.163.2.47"
+    port: 19446
+    password: "c8c17d77-cc46-4c81-a2bf-779e75532bdc"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇬🇧 United Kingdom [*CIDR]"
+    type: "hysteria2"
+    server: "95.163.2.47"
+    port: 19450
+    password: "c8c17d77-cc46-4c81-a2bf-779e75532bdc"
+    udp: true
+    sni: "mshvpn.online"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇱🇻 Latvia | 🌐 | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
       - "🇫🇮 Finland | [*CIDR] VK"
-      - "🇷🇺 Russia | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
       - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇿 [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇿 [*CIDR] #2"
+      - "🇳🇴 Norway [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇹 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇨🇿 🇳🇴 [*CIDR]"
+      - "🇦🇹 Austria | 🌐 [*CIDR]"
+      - "🇦🇹 Austria | 🌐 [*CIDR] #2"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR]"
 rules:
   - MATCH,PROXY
