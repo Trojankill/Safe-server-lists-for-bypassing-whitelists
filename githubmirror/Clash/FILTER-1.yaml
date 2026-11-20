@@ -1,6 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-20 08:45:39 UTC
+# 2026-11-20 09:01:03 UTC
 proxies:
+  - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "91.185.83.19"
+    port: 443
+    uuid: "049cd18c-0088-4028-aa54-269f74c95b87"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "studio.nurmedia.org"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "bum0y3NFwyed4aQilW_Z-4FK8uE6LicnWN86TQzeM2I"
+      short-id: "87f5b392ecc83a50"
+    network: "tcp"
   - name: "🇷🇺 Россия [#РКП]"
     type: "vless"
     server: "78.159.245.147"
@@ -31,6 +46,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
+  - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "185.86.145.183"
+    port: 443
+    uuid: "d4dab50a-d79b-4022-a8e3-4ef661cb79d0"
+    udp: true
+    tls: true
+    servername: "for.quick-frost.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/nl7ws"
+      headers:
+        Host: "for.quick-frost.ru"
   - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
     type: "hysteria2"
     server: "168.113.254.247"
@@ -145,8 +177,10 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇷🇺 Россия [#РКП]"
       - "🇷🇺 Россия [#РКП] #2"
+      - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
