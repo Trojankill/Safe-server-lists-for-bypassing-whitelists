@@ -1,89 +1,23 @@
 # clash/mihomo subscription
-# 2026-11-20 14:01:15 UTC
+# 2026-11-20 14:15:35 UTC
 proxies:
-  - name: "🇦🇹 Austria [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
-    server: "api.mediaroshcha.cc"
+    server: "185.86.145.183"
     port: 443
-    uuid: "31d0f8a6-3dac-4f89-b2f1-aca50f293f70"
+    uuid: "d4dab50a-d79b-4022-a8e3-4ef661cb79d0"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇵🇱 Poland [*CIDR]"
-    type: "vless"
-    server: "api.mediatropa.cc"
-    port: 443
-    uuid: "31d0f8a6-3dac-4f89-b2f1-aca50f293f70"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediatropa.cc"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇳🇴 Norway | [*CIDR]"
-    type: "vless"
-    server: "130.49.172.150"
-    port: 30007
-    uuid: "c1f4f185-5786-40c9-893f-2f100b7165f2"
-    udp: true
-    tls: true
-    servername: "eu93.cdn77.icu"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
-    network: "tcp"
-  - name: "🇦🇹 Austria | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "130.49.172.150"
-    port: 30010
-    uuid: "c1f4f185-5786-40c9-893f-2f100b7165f2"
-    udp: true
-    tls: true
-    servername: "eu71.cdn77.icu"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
-    network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "tochkacdn.top"
-    port: 443
-    uuid: "ffb2c504-2c6c-49f3-b4bd-9fd3ff6ce454"
-    udp: true
-    tls: true
-    servername: "unlik.club"
+    servername: "for.quick-frost.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/static/telemetry/3c9aaef00005/"
+      path: "/nl7ws"
       headers:
-        Host: "tochkacdn.top"
-  - name: "🇱🇹 Lithuania [*CIDR]"
-    type: "hysteria2"
-    server: "168.113.254.183"
-    port: 443
-    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
-    udp: true
-    sni: "xykmh-ru-70sb.my-fade.cloud"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
+        Host: "for.quick-frost.ru"
   - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
     type: "hysteria2"
     server: "188.68.216.27"
@@ -94,7 +28,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
     type: "hysteria2"
     server: "188.68.216.27"
     port: 443
@@ -102,7 +36,7 @@ proxies:
     udp: true
     sni: "qtuod-ru-56sel.fade.mom"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
     type: "hysteria2"
     server: "188.68.216.27"
     port: 443
@@ -112,15 +46,17 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
     type: "hysteria2"
-    server: "188.68.216.27"
+    server: "176.108.244.162"
     port: 443
-    password: "49b5c86a-fbfc-0001-82af-171a932d04e7"
+    password: "5de9c7b1-25f2-0001-bbaa-e4292a33a59b"
     udp: true
-    sni: "qtuod-ru-56sel.fade.mom"
+    sni: "ohyjf-ru-65sb.my-fade.cloud"
+    alpn:
+      - "h3"
     skip-cert-verify: false
-  - name: "🇵🇱 Poland [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #2"
     type: "hysteria2"
     server: "176.108.244.162"
     port: 443
@@ -128,7 +64,7 @@ proxies:
     udp: true
     sni: "ohyjf-ru-65sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🇱🇻 Latvia [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇱🇻 [*CIDR]"
     type: "hysteria2"
     server: "176.108.244.162"
     port: 443
@@ -138,7 +74,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇱🇻 Latvia [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇱🇻 [*CIDR] #2"
     type: "hysteria2"
     server: "176.108.244.162"
     port: 443
@@ -150,18 +86,13 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇵🇱 Poland [*CIDR]"
-      - "🇳🇴 Norway | [*CIDR]"
-      - "🇦🇹 Austria | 🌐 | [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
-      - "🇱🇹 Lithuania [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR] VK"
       - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
-      - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
       - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
-      - "🇵🇱 Poland [*CIDR] #2"
-      - "🇱🇻 Latvia [*CIDR]"
-      - "🇱🇻 Latvia [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇱🇻 [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇻 [*CIDR] #2"
 rules:
   - MATCH,PROXY
