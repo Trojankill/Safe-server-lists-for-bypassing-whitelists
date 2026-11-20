@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-20 00:15:33 UTC
+# 2026-11-20 00:30:50 UTC
 proxies:
   - name: "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
     type: "vless"
@@ -123,6 +123,21 @@ proxies:
       public-key: "nOMWYHoXc-7jjG7opszDSvmGwQk9tWkLgQ_bnLPXAnU"
       short-id: "5e880b8b43771a4f"
     network: "tcp"
+  - name: "🇺🇸 США | 🔗 Каскад [#РКП] #2"
+    type: "vless"
+    server: "81.94.148.114"
+    port: 8444
+    uuid: "6fca8bc6-d365-4ae8-b2a4-4218526efde8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "nOMWYHoXc-7jjG7opszDSvmGwQk9tWkLgQ_bnLPXAnU"
+      short-id: "5e880b8b43771a4f"
+    network: "tcp"
   - name: "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
     type: "vless"
     server: "185.86.145.78"
@@ -167,6 +182,32 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "4DcpJKG3IJEXsldz6uNof1o4V3SZ1MD3r_TiDthZEzw"
+    network: "tcp"
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "130.49.172.150"
+    port: 30007
+    uuid: "c1f4f185-5786-40c9-893f-2f100b7165f2"
+    udp: true
+    tls: true
+    servername: "eu93.cdn77.icu"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
+    network: "tcp"
+  - name: "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
+    type: "vless"
+    server: "130.49.172.150"
+    port: 30010
+    uuid: "c1f4f185-5786-40c9-893f-2f100b7165f2"
+    udp: true
+    tls: true
+    servername: "eu71.cdn77.icu"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
     network: "tcp"
   - name: "🇱🇹 Литва | 🔗 Каскад [#РКП]"
     type: "hysteria2"
@@ -258,7 +299,7 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+  - name: "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
     type: "hysteria2"
     server: "168.113.254.247"
     port: 443
@@ -290,9 +331,12 @@ proxy-groups:
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #3"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП] #4"
       - "🇺🇸 США | 🔗 Каскад [#РКП]"
+      - "🇺🇸 США | 🔗 Каскад [#РКП] #2"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП]"
       - "🇸🇪 Швеция | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП]"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🇦🇹 Австрия | 🔗 Каскад [#РКП]"
       - "🇱🇹 Литва | 🔗 Каскад [#РКП]"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇧🇬 Болгария | 🔗 Каскад [#РКП]"
@@ -302,7 +346,7 @@ proxy-groups:
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #3"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП] #4"
       - "🇱🇻 Латвия | 🔗 Каскад [#РКП]"
-      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП]"
+      - "🇳🇴 Норвегия | 🔗 Каскад [#РКП] #2"
       - "🇪🇪 Эстония | 🔗 Каскад [#РКП] #2"
 rules:
   - MATCH,PROXY
