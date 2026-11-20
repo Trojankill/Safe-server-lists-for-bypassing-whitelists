@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-20 17:15:39 UTC
+# 2026-11-20 17:30:54 UTC
 proxies:
   - name: "🇺🇸 United States — #110"
     type: "vless"
@@ -4673,14 +4673,6 @@ proxies:
     udp: true
     sni: "mwtjc-ru-73sb.my-fade.cloud"
     skip-cert-verify: false
-  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
-    type: "hysteria2"
-    server: "168.113.254.183"
-    port: 443
-    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
-    udp: true
-    sni: "xykmh-ru-70sb.my-fade.cloud"
-    skip-cert-verify: false
   - name: "🇧🇬 [WL] Сервер 100"
     type: "hysteria2"
     server: "185.151.243.186"
@@ -4688,6 +4680,24 @@ proxies:
     password: "29f90c01-02b6-0001-9249-e3558a9c73a4"
     udp: true
     sni: "piodr-ru-74sel.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 [*CIDR] #2"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
     skip-cert-verify: false
   - name: "🇳🇴 [WL] Сервер 133"
     type: "hysteria2"
@@ -5474,8 +5484,9 @@ proxy-groups:
       - "🇳🇴 [WL] Сервер 130"
       - "🇵🇱 Польша | 🔗 Каскад [#РКП]"
       - "🇵🇱 [WL] Сервер 116"
-      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
       - "🇧🇬 [WL] Сервер 100"
+      - "🌐 Anycast-IP | 🇨🇿 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 [*CIDR] #2"
       - "🇳🇴 [WL] Сервер 133"
       - "@LexaVercelbot C-1 #2 🇫🇮 🝰"
       - "@LexaVercelbot C-1 #8 🇸🇪 🧭"
