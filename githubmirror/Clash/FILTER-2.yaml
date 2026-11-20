@@ -1,43 +1,178 @@
 # clash/mihomo subscription
-# 2026-11-20 00:00:59 UTC
+# 2026-11-20 00:15:32 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+  - name: "🇺🇸 United States | 🌐 | [*CIDR]"
     type: "vless"
-    server: "185.86.145.183"
+    server: "176.98.178.163"
     port: 443
-    uuid: "38afdada-1991-466b-9dc4-3cd0ffac883d"
-    udp: true
-    tls: true
-    servername: "cdn.quick-frost.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "cdn.quick-frost.ru"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "80.66.84.151"
-    port: 443
-    uuid: "f59f02e8-9d66-48e8-afc2-2ce7972d51bd"
+    uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api-7c4e.deepl-dev.com"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    servername: "us2.nztvpn.com"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "Yn9rswmNTIdVx8jKgZkvQcqw61BRu_h_ZOl2blShDT4"
+      short-id: "0da7e14db353e7d0"
     network: "tcp"
+  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "176.98.178.163"
+    port: 443
+    uuid: "1547ed3d-3bb7-4153-afdc-8eb3e9373c84"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "node-nl-4.nztpro.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "YfnwbpBhvSLJdR6NDF1KPzhkJYHEN5hphNEt352Vyks"
+      short-id: "d70670223951dca4"
+    network: "tcp"
+  - name: "🇩🇪 Germany | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.145.78"
+    port: 443
+    uuid: "88e79aa6-f431-4453-8dcc-652a0c747198"
+    udp: true
+    tls: true
+    servername: "emberworks.cloud"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "2l0y-Mp5wtklY4jS6KOee3eq2XdWiXYqOxzrOi_CeB4"
+      short-id: "ea322b8b5b015812"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: ""
+  - name: "🇱🇹 Lithuania [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "00717a40-f058-0001-bd8b-946b3d578273"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇱🇹 Lithuania [*CIDR] #2"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "00717a40-f058-0001-bd8b-946b3d578273"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "1d1d36cd-d3d4-0001-ab0e-99c68461d513"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "1d1d36cd-d3d4-0001-ab0e-99c68461d513"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "274cf8bb-ff99-0001-81b0-17273a3b7692"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
+    type: "hysteria2"
+    server: "168.113.254.183"
+    port: 443
+    password: "3098af7f-dd3e-0001-b8e5-05a194206ac0"
+    udp: true
+    sni: "xykmh-ru-70sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "5760fb84-06f8-0001-890a-3d66044897ce"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
+    type: "hysteria2"
+    server: "176.108.240.182"
+    port: 443
+    password: "5760fb84-06f8-0001-890a-3d66044897ce"
+    udp: true
+    sni: "mwtjc-ru-73sb.my-fade.cloud"
+    skip-cert-verify: false
+  - name: "🇳🇴 Norway [*CIDR]"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "b006650f-8771-0001-b7fa-e18fc6e80ef1"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇴 Norway [*CIDR] #2"
+    type: "hysteria2"
+    server: "168.113.254.247"
+    port: 443
+    password: "b006650f-8771-0001-b7fa-e18fc6e80ef1"
+    udp: true
+    sni: "vcerx-ru-67sb.my-fade.cloud"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇺🇸 United States | 🌐 | [*CIDR]"
+      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR] VK"
+      - "🇱🇹 Lithuania [*CIDR]"
+      - "🇱🇹 Lithuania [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇨🇿 🇵🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇵🇱 [*CIDR]"
+      - "🌐 Anycast-IP | 🇱🇹 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇱🇹 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇴 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇩🇪 🇫🇮 [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇿 🇩🇪 🇫🇮 [*CIDR]"
+      - "🇳🇴 Norway [*CIDR]"
+      - "🇳🇴 Norway [*CIDR] #2"
 rules:
   - MATCH,PROXY
