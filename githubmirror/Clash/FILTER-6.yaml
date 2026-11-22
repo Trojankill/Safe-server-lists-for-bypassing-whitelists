@@ -1,97 +1,35 @@
 # clash/mihomo subscription
-# 2026-11-22 21:30:49 UTC
+# 2026-11-22 21:45:33 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
-    type: "vless"
-    server: "185.86.145.183"
-    port: 443
-    uuid: "4877b146-b0c0-439b-b794-31059912167a"
-    udp: true
-    tls: true
-    servername: "for.quick-frost.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "for.quick-frost.ru"
-  - name: "🇩🇪 Germany | [*CIDR]"
-    type: "vless"
-    server: "189.74.106.79"
-    port: 443
-    uuid: "48807557-a657-4e48-be9e-6fc4d0d1f37f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.setevoypriliv.cc"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇦🇹 Austria | [*CIDR]"
+  - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
     server: "189.74.115.30"
     port: 443
-    uuid: "48807557-a657-4e48-be9e-6fc4d0d1f37f"
+    uuid: "5cb1094a-4c3f-4cef-a4f0-bc00214022ce"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
     servername: "api.mediaroshcha.cc"
-    client-fingerprint: "chrome"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇷🇺 Russia | [*CIDR] VK"
+  - name: "🇦🇹 Austria [*CIDR] #2"
     type: "vless"
-    server: "185.86.145.174"
-    port: 10457
-    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
+    server: "189.74.115.30"
+    port: 443
+    uuid: "631263fd-3e12-49ac-be1b-c26bcc36ba43"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ru.yandex-kz.top"
-    alpn:
-      - "h2"
-      - "http/1.1"
+    servername: "api.mediaroshcha.cc"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "tcp"
-  - name: "🇵🇱 Poland | 🌐 [*CIDR] VK"
-    type: "vless"
-    server: "212.233.94.48"
-    port: 80
-    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "pl.bobrkurva.shop"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇱🇹 Lithuania [*CIDR]"
-    type: "vless"
-    server: "87.242.127.238"
-    port: 24932
-    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "lt.yandex-kz.top"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
   - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
@@ -103,23 +41,51 @@ proxies:
     servername: "pssdwynorv.newwl.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "edge"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "pssdwynorv.newwl.pro"
+  - name: "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
+    type: "vless"
+    server: "129.101.99.221"
+    port: 443
+    uuid: "a0c51c22-e51f-41a0-b7f8-480bcdc24e09"
+    udp: true
+    tls: true
+    servername: "cdn.dotameridian.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "d386f93b4346"
+  - name: "🇬🇧 United Kingdom [*CIDR] VK"
+    type: "vless"
+    server: "185.86.147.77"
+    port: 10020
+    uuid: "b80e9046-5bb9-4040-bd96-b7e2f78b5c5b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "2gis.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SraiH4q6X-jSm6Ru2FHcGjhoClg6gI0b9CWjdyu0rxA"
+      short-id: "c68d384ac0fb220a"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇩🇪 Germany | [*CIDR]"
-      - "🇦🇹 Austria | [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR] VK"
-      - "🇵🇱 Poland | 🌐 [*CIDR] VK"
-      - "🇱🇹 Lithuania [*CIDR]"
+      - "🇦🇹 Austria [*CIDR]"
+      - "🇦🇹 Austria [*CIDR] #2"
       - "🇮🇷 Iran [*CIDR]"
+      - "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] VK"
 rules:
   - MATCH,PROXY
