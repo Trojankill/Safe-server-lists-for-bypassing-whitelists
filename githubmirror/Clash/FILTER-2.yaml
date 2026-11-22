@@ -1,187 +1,91 @@
 # clash/mihomo subscription
-# 2026-11-22 22:45:35 UTC
+# 2026-11-22 23:01:00 UTC
 proxies:
-  - name: "🇵🇱 Poland [*CIDR]"
+  - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
-    server: "189.74.116.28"
+    server: "189.74.115.30"
     port: 443
-    uuid: "11da4190-50d9-4d8a-9087-71fc53bd5f0d"
+    uuid: "5cb1094a-4c3f-4cef-a4f0-bc00214022ce"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.mediatropa.cc"
+    servername: "api.mediaroshcha.cc"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇫🇷 France [*CIDR]"
+  - name: "🇦🇹 Austria [*CIDR] #2"
     type: "vless"
-    server: "189.74.117.13"
+    server: "189.74.115.30"
     port: 443
-    uuid: "11da4190-50d9-4d8a-9087-71fc53bd5f0d"
+    uuid: "631263fd-3e12-49ac-be1b-c26bcc36ba43"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.videodolina.cc"
+    servername: "api.mediaroshcha.cc"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇪🇪 🇳🇱 [*CIDR] VK"
+  - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
-    server: "sub-edge-09x-1g.whitenw.net"
-    port: 10490
-    uuid: "47333d09-e84c-43b2-bb19-a244e0331b18"
+    server: "91.185.83.43"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ads.x5.ru"
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
+  - name: "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
+    type: "vless"
+    server: "129.101.99.221"
+    port: 443
+    uuid: "a0c51c22-e51f-41a0-b7f8-480bcdc24e09"
+    udp: true
+    tls: true
+    servername: "cdn.dotameridian.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "chrome"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
-      short-id: "4326"
-    network: "tcp"
-  - name: "🇺🇸 United States [*CIDR]"
-    type: "vless"
-    server: "91.185.83.95"
-    port: 443
-    uuid: "48af8541-a564-426e-a1e5-9c1a29b011d6"
-    udp: true
-    tls: true
-    servername: "st1.storage-f4a1.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "AwIcnyMwLivH2N-GBVdkRD1YWP3nsNCvIf-UPQtnpGA"
-      short-id: "565330e9ddd002c3"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇩🇪 Germany [*CIDR]"
+      grpc-service-name: "d386f93b4346"
+  - name: "🇬🇧 United Kingdom [*CIDR] VK"
     type: "vless"
-    server: "188.225.74.6"
-    port: 443
-    uuid: "6dd17e9f-5b7c-466d-a53a-7c30f5dc8338"
+    server: "185.86.147.77"
+    port: 10020
+    uuid: "b80e9046-5bb9-4040-bd96-b7e2f78b5c5b"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "nvidia.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
-      short-id: "db04ce8bdb8900f1"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇬🇧 [*CIDR]"
-    type: "vless"
-    server: "193.163.203.6"
-    port: 16012
-    uuid: "72522396-5408-4767-b134-70ca09cdfe36"
-    udp: true
-    tls: true
-    servername: "ronaldo.foxprox.uk"
+    servername: "2gis.ru"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "RS7fg9l3ALKws4NQv9jCl6l7uIG3Rq_PpXNnNCVUnSY"
-      short-id: "f0f1"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "vless"
-  - name: "🇨🇭 Switzerland [*CIDR]"
-    type: "vless"
-    server: "77.232.40.206"
-    port: 443
-    uuid: "c50eae6b-18de-4bdc-a22f-9edda40a57ed"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ch02.tunnely.space"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pPGE5Uacj1AGAB_WLOXB_UUnVBOmuJGH0vTSfmRBKzM"
-      short-id: "2e40144ddc07e8e1"
-    network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR] #2"
-    type: "vless"
-    server: "77.232.40.206"
-    port: 443
-    uuid: "c50eae6b-18de-4bdc-a22f-9edda40a57ed"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ch02.tunnely.space"
-    client-fingerprint: "random"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pPGE5Uacj1AGAB_WLOXB_UUnVBOmuJGH0vTSfmRBKzM"
-      short-id: "2e40144ddc07e8e1"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
-    type: "vless"
-    server: "109.107.189.69"
-    port: 8443
-    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "gw-721bd5.dobry.monster"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇷🇺 [*CIDR]"
-    type: "vless"
-    server: "109.107.189.69"
-    port: 8443
-    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "gw-721bd5.dobry.monster"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇷🇺 [*CIDR] #2"
-    type: "vless"
-    server: "109.107.189.69"
-    port: 8443
-    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "gw-721bd5.dobry.monster"
-    client-fingerprint: "random"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
+      public-key: "SraiH4q6X-jSm6Ru2FHcGjhoClg6gI0b9CWjdyu0rxA"
+      short-id: "c68d384ac0fb220a"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland [*CIDR]"
-      - "🇫🇷 France [*CIDR]"
-      - "🌐 Anycast-IP | 🇪🇪 🇳🇱 [*CIDR] VK"
-      - "🇺🇸 United States [*CIDR]"
-      - "🇩🇪 Germany [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇦 🇬🇧 [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
-      - "🌐 Anycast-IP | 🇷🇺 [*CIDR]"
-      - "🌐 Anycast-IP | 🇷🇺 [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR]"
+      - "🇦🇹 Austria [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR]"
+      - "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] VK"
 rules:
   - MATCH,PROXY
