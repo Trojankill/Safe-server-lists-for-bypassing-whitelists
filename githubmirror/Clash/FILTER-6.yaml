@@ -1,56 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-22 08:01:05 UTC
+# 2026-11-22 08:15:43 UTC
 proxies:
-  - name: "🇮🇷 Iran [*CIDR] CDN"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "46.243.233.194"
+    server: "201.24.124.187"
     port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    uuid: "0b6a7fe0-206b-4071-9f96-cd397d1ec01a"
     udp: true
     tls: true
-    servername: "pssdwynorv.newwl.pro"
+    servername: "tapestry.gerqix.online"
     alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
+      - "h2"
+    client-fingerprint: "edge"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "pssdwynorv.newwl.pro"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "91.185.83.43"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "pssdwynorv.newwl.pro"
-    alpn:
-      - "http/1.1"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "pssdwynorv.newwl.pro"
-  - name: "🇮🇷 Iran [*CIDR] CDN #2"
-    type: "vless"
-    server: "pssdwynorv.newwl.pro"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "pssdwynorv.newwl.pro"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/service/telemetry/0294da469190/"
-      headers:
-        Host: "pssdwynorv.newwl.pro"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "glush.de3.v1"
   - name: "🇦🇱 Albania [*CIDR]"
     type: "vless"
     server: "82.202.142.227"
@@ -60,13 +25,28 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "fontanka.ru"
-    client-fingerprint: "edge"
+    client-fingerprint: "random"
     skip-cert-verify: false
     reality-opts:
       public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
       short-id: "6ad3c0f1e9b2478a"
     network: "tcp"
-  - name: "🇨🇭 Switzerland [*CIDR]"
+  - name: "🇦🇱 Albania | [*CIDR]"
+    type: "vless"
+    server: "82.202.142.227"
+    port: 23444
+    uuid: "a9ff24d3-f308-4e72-acb9-a76062583837"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fontanka.ru"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    network: "tcp"
+  - name: "🇨🇭 Switzerland | [*CIDR]"
     type: "vless"
     server: "77.232.40.206"
     port: 443
@@ -81,7 +61,7 @@ proxies:
       public-key: "pPGE5Uacj1AGAB_WLOXB_UUnVBOmuJGH0vTSfmRBKzM"
       short-id: "2e40144ddc07e8e1"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
+  - name: "🇷🇺 Russia | [*CIDR]"
     type: "vless"
     server: "109.107.189.69"
     port: 8443
@@ -90,53 +70,102 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "gw-721bd5.dobry.monster"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
+      short-id: "0912cc7f28aa26ba"
+    network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "109.107.189.69"
+    port: 8443
+    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "gw-721bd5.dobry.monster"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
+      short-id: "0912cc7f28aa26ba"
+    network: "tcp"
+  - name: "🇦🇹 Austria | [*CIDR]"
+    type: "vless"
+    server: "189.74.115.30"
+    port: 443
+    uuid: "d718a865-0050-4bde-8083-1864a03a894c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇵🇱 Poland | [*CIDR]"
+    type: "vless"
+    server: "189.74.116.28"
+    port: 443
+    uuid: "d718a865-0050-4bde-8083-1864a03a894c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediatropa.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.13"
+    port: 443
+    uuid: "d718a865-0050-4bde-8083-1864a03a894c"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
     type: "vless"
-    server: "109.107.189.69"
-    port: 8443
-    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
+    server: "tochkacdn.top"
+    port: 443
+    uuid: "ffb2c504-2c6c-49f3-b4bd-9fd3ff6ce454"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "gw-721bd5.dobry.monster"
+    servername: "unlik.club"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR] #3"
-    type: "vless"
-    server: "109.107.189.69"
-    port: 8443
-    uuid: "cfd6ce74-f4c5-4815-bba4-2fd0fa77bf4e"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "gw-721bd5.dobry.monster"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
-      short-id: "0912cc7f28aa26ba"
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/static/telemetry/3c9aaef00005/"
+      headers:
+        Host: "tochkacdn.top"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Iran [*CIDR] CDN"
-      - "🇮🇷 Iran [*CIDR]"
-      - "🇮🇷 Iran [*CIDR] CDN #2"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
       - "🇦🇱 Albania [*CIDR]"
-      - "🇨🇭 Switzerland [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR] #3"
+      - "🇦🇱 Albania | [*CIDR]"
+      - "🇨🇭 Switzerland | [*CIDR]"
+      - "🇷🇺 Russia | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇦🇹 Austria | [*CIDR]"
+      - "🇵🇱 Poland | [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇦 🇷🇺 | [*CIDR]"
 rules:
   - MATCH,PROXY
