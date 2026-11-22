@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-22 18:30:58 UTC
+# 2026-11-22 18:45:32 UTC
 proxies:
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇮🇷 Iran | [*CIDR]"
     type: "vless"
     server: "91.185.83.43"
     port: 443
@@ -11,17 +11,49 @@ proxies:
     servername: "pssdwynorv.newwl.pro"
     alpn:
       - "http/1.1"
-    client-fingerprint: "edge"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/service/telemetry/0294da469190/"
       headers:
         Host: "pssdwynorv.newwl.pro"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "82.202.142.227"
+    port: 23444
+    uuid: "a9ff24d3-f308-4e72-acb9-a76062583837"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fontanka.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
+    type: "vless"
+    server: "82.202.142.227"
+    port: 23444
+    uuid: "a9ff24d3-f308-4e72-acb9-a76062583837"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "fontanka.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
+      short-id: "6ad3c0f1e9b2478a"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Iran [*CIDR]"
+      - "🇮🇷 Iran | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
 rules:
   - MATCH,PROXY
