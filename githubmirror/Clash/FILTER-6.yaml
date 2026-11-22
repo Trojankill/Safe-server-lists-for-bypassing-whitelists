@@ -1,36 +1,57 @@
 # clash/mihomo subscription
-# 2026-11-22 03:45:32 UTC
+# 2026-11-22 04:00:56 UTC
 proxies:
-  - name: "🇺🇸 United States [*CIDR]"
+  - name: "🇮🇷 Iran [*CIDR] CDN"
     type: "vless"
-    server: "45.155.204.12"
+    server: "46.243.233.194"
     port: 443
-    uuid: "4be99323-e032-4079-95d5-fe10cacbba63"
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "web.belka.tv"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
-      short-id: "26e2b503fada0e3a"
-    network: "tcp"
-  - name: "🇺🇸 United States [*CIDR] #2"
-    type: "vless"
-    server: "web.belka.tv"
-    port: 443
-    uuid: "7316d881-eeec-429b-94f1-07585747f7c8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "web.belka.tv"
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
-      short-id: "26e2b503fada0e3a"
-    network: "tcp"
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
+  - name: "🇮🇷 Iran [*CIDR]"
+    type: "vless"
+    server: "91.185.83.43"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
+  - name: "🇮🇷 Iran [*CIDR] CDN #2"
+    type: "vless"
+    server: "pssdwynorv.newwl.pro"
+    port: 443
+    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
+    udp: true
+    tls: true
+    servername: "pssdwynorv.newwl.pro"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/service/telemetry/0294da469190/"
+      headers:
+        Host: "pssdwynorv.newwl.pro"
   - name: "🇨🇭 Switzerland [*CIDR]"
     type: "vless"
     server: "77.232.40.206"
@@ -76,89 +97,15 @@ proxies:
       public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
       short-id: "0912cc7f28aa26ba"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR]"
-    type: "vless"
-    server: "176.108.243.24"
-    port: 443
-    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "sbmicro740.gangtype.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "QMPA4RVilYFEnDrbdj93up66oDk5I_btjil9vC7ppgc"
-      short-id: "9e5b8e221733245f"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR] #2"
-    type: "vless"
-    server: "195.209.217.67"
-    port: 443
-    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ruhsds738.gangtype.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "DHNvz0B_jGSTq2uK8Sehqo1u6Vv-fSSvk6-cRQJUKHM"
-      short-id: "8aaef249c24f2be7"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR] #3"
-    type: "vless"
-    server: "195.209.221.235"
-    port: 443
-    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ruhsds734.thebestqas.am"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Jv6OJRVpXGL8SlWq1VoCUbkeKCkG9cTzi2OHI2R9eAQ"
-      short-id: "bd1b77948ad14751"
-    network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR]"
-    type: "hysteria2"
-    server: "channelru.belka.tv"
-    port: 443
-    password: "7316d881-eeec-429b-94f1-07585747f7c8"
-    udp: true
-    sni: "channelru.belka.tv"
-    skip-cert-verify: false
-  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "ru2.streamclubz.com"
-    port: 443
-    password: "7316d881-eeec-429b-94f1-07585747f7c8"
-    udp: true
-    sni: "ru2.streamclubz.com"
-    skip-cert-verify: false
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "hysteria2"
-    server: "welcometorussia.belka.tv"
-    port: 443
-    password: "7316d881-eeec-429b-94f1-07585747f7c8"
-    udp: true
-    sni: "welcometorussia.belka.tv"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States [*CIDR]"
-      - "🇺🇸 United States [*CIDR] #2"
+      - "🇮🇷 Iran [*CIDR] CDN"
+      - "🇮🇷 Iran [*CIDR]"
+      - "🇮🇷 Iran [*CIDR] CDN #2"
       - "🇨🇭 Switzerland [*CIDR]"
       - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
       - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR]"
-      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR] #2"
-      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 [*CIDR] #3"
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇷🇺 Russia | 🌐 [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
 rules:
   - MATCH,PROXY
