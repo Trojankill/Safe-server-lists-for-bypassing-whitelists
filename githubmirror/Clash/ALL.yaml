@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-22 20:00:59 UTC
+# 2026-11-22 20:15:34 UTC
 proxies:
-  - name: "🇺🇸 United States — #147"
+  - name: "🇺🇸 United States — #132"
     type: "vless"
     server: "167.17.69.171"
     port: 443
@@ -45,7 +45,7 @@ proxies:
       public-key: "vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo"
       short-id: "2fa414c6dd1189db"
     network: "tcp"
-  - name: "🇱🇻 Latvia — #85"
+  - name: "🇱🇻 Latvia — #77"
     type: "vless"
     server: "195.123.213.28"
     port: 443
@@ -75,7 +75,7 @@ proxies:
       public-key: "dv37ircK63KvcVZwv3XJiUXvOsiP-dEsZQ3gXDdPmRs"
       short-id: "a3f7c2e1b9d4"
     network: "tcp"
-  - name: "🇺🇸 United States — #127"
+  - name: "🇺🇸 United States — #113"
     type: "vless"
     server: "47.253.226.114"
     port: 443
@@ -119,7 +119,7 @@ proxies:
       public-key: "IdqrygjwHBEMCOamBl7a504TVk6uMAtTRj0xLWcFcxY"
       short-id: "40ce08cf20c67003"
     network: "tcp"
-  - name: "🇩🇪 Germany — #34"
+  - name: "🇩🇪 Germany — #26"
     type: "vless"
     server: "188.225.36.219"
     port: 443
@@ -299,7 +299,7 @@ proxies:
       public-key: "jHtC6ayzhkd_GVNF5TIGPu9iVpqUltBAQj1dpGJHwxs"
       short-id: "55986a94e2228791"
     network: "tcp"
-  - name: "🇪🇸 Spain — #71"
+  - name: "🇪🇸 Spain — #54"
     type: "vless"
     server: "46.28.71.247"
     port: 443
@@ -461,7 +461,7 @@ proxies:
       public-key: "U7t4RFE9MSMtC-o1DoJ8pYzKMfgVpTg6ZhTTknBrVkU"
       short-id: "1f2519bb96e5589c"
     network: "tcp"
-  - name: "🇺🇸 United States — #132"
+  - name: "🇺🇸 United States — #118"
     type: "vless"
     server: "195.211.98.43"
     port: 443
@@ -736,7 +736,7 @@ proxies:
       public-key: "7o36V1H4H_34kTMpwCfJmDB1bbd21Rgbk2dM_dAonyM"
       short-id: "0bb3fbdc6cb178d4"
     network: "tcp"
-  - name: "🇨🇭 Switzerland — #19"
+  - name: "🇨🇭 Switzerland — #18"
     type: "vless"
     server: "45.90.59.15"
     port: 443
@@ -917,6 +917,23 @@ proxies:
       public-key: "MAQju7q8wIeEznBQoDXP9l4SpuAkEs8CGDKaNNpKlHI"
       short-id: "4326"
     network: "tcp"
+  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.145.183"
+    port: 443
+    uuid: "4877b146-b0c0-439b-b794-31059912167a"
+    udp: true
+    tls: true
+    servername: "for.quick-frost.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/nl7ws"
+      headers:
+        Host: "for.quick-frost.ru"
   - name: "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №7"
     type: "vless"
     server: "188.225.32.175"
@@ -1050,7 +1067,7 @@ proxies:
       public-key: "NpgXDQ6jl_HGPdHAHFeiBl5Ym7bywxmw_EYovmFjVQs"
       short-id: "c39acc8cb9481d24"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands — #107"
+  - name: "🇳🇱 The Netherlands — #99"
     type: "vless"
     server: "87.199.205.28"
     port: 443
@@ -1109,6 +1126,51 @@ proxies:
     reality-opts:
       public-key: "zb1esVBjrdlitl7Z_YkRi44kC0NXVvF5U17LAXW6fDQ"
       short-id: "825d392c67e4"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR] VK"
+    type: "vless"
+    server: "185.86.145.174"
+    port: 10457
+    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ru.yandex-kz.top"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇵🇱 Poland | 🌐 [*CIDR] VK"
+    type: "vless"
+    server: "212.233.94.48"
+    port: 80
+    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pl.bobrkurva.shop"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇱🇹 Lithuania [*CIDR]"
+    type: "vless"
+    server: "87.242.127.238"
+    port: 24932
+    uuid: "52681257-b686-4a7c-b737-0d87b02c61af"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "lt.yandex-kz.top"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
     network: "tcp"
   - name: "🇵🇱 [BL] Сервер 247"
     type: "vless"
@@ -1380,7 +1442,7 @@ proxies:
       public-key: "o7R9liafUMmCf4Sr14gLaB-gZ7mo_axffMCT176tuHw"
       short-id: "672cfc"
     network: "tcp"
-  - name: "🇩🇪 Germany — #65"
+  - name: "🇩🇪 Germany — #47"
     type: "vless"
     server: "188.225.74.6"
     port: 443
@@ -1483,7 +1545,7 @@ proxies:
     reality-opts:
       public-key: "wfp4jyEksrozyS739zqIsNXySoqeEVtaQlVmeNeLp28"
     network: "tcp"
-  - name: "🇺🇸 United States — #126"
+  - name: "🇺🇸 United States — #112"
     type: "vless"
     server: "2.24.124.64"
     port: 443
@@ -1723,7 +1785,7 @@ proxies:
       public-key: "vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ"
       short-id: "ce90a4459f024897"
     network: "tcp"
-  - name: "🇬🇷 Greece — #76"
+  - name: "🇬🇷 Greece — #60"
     type: "vless"
     server: "85.90.197.220"
     port: 443
@@ -1768,7 +1830,7 @@ proxies:
       public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
       short-id: "2c6df23e"
     network: "tcp"
-  - name: "🇺🇸 United States — #142"
+  - name: "🇺🇸 United States — #128"
     type: "vless"
     server: "47.251.108.158"
     port: 443
@@ -1777,7 +1839,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.cloudflare.com"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "SmgYcFIvvFXW3xh4gvGhIJuQsaZvWkAylcjB6TEddEs"
@@ -1963,7 +2025,7 @@ proxies:
       public-key: "nOMWYHoXc-7jjG7opszDSvmGwQk9tWkLgQ_bnLPXAnU"
       short-id: "5e880b8b43771a4f"
     network: "tcp"
-  - name: "🇺🇸 United States — #161"
+  - name: "🇩🇪 Germany — #53"
     type: "vless"
     server: "91.185.83.4"
     port: 8444
@@ -2066,7 +2128,7 @@ proxies:
       public-key: "e6RrKgiMRFZEKHn7bcpQHV_skmM-45eX6-G92U0tykY"
       short-id: "edc4c30c"
     network: "tcp"
-  - name: "🇩🇪 Germany — #23"
+  - name: "🇩🇪 Germany — #21"
     type: "vless"
     server: "188.225.78.178"
     port: 443
@@ -2076,7 +2138,7 @@ proxies:
     servername: "cadrin.wtf"
     alpn:
       - "h2"
-    client-fingerprint: "edge"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -2165,36 +2227,6 @@ proxies:
     flow: "xtls-rprx-vision"
     servername: "fontanka.ru"
     client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
-      short-id: "6ad3c0f1e9b2478a"
-    network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "82.202.142.227"
-    port: 23444
-    uuid: "a9ff24d3-f308-4e72-acb9-a76062583837"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "fontanka.ru"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
-      short-id: "6ad3c0f1e9b2478a"
-    network: "tcp"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
-    type: "vless"
-    server: "82.202.142.227"
-    port: 23444
-    uuid: "a9ff24d3-f308-4e72-acb9-a76062583837"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "fontanka.ru"
-    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "T1BWBw3lq9G1LiQ7eQSPfdNQic7bUMEbdFNJBewAwB8"
@@ -2387,7 +2419,7 @@ proxies:
       public-key: "zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI"
       short-id: "716b7eba38125f3a"
     network: "tcp"
-  - name: "🇨🇦 Canada — #15"
+  - name: "🇨🇦 Canada — #14"
     type: "vless"
     server: "209.200.246.148"
     port: 443
@@ -2431,7 +2463,7 @@ proxies:
       public-key: "DEFJSLdILrvauMpwtpvFZddadpt3rNtv03Dui2EkmRk"
       short-id: "68"
     network: "tcp"
-  - name: "🇺🇸 United States — #134"
+  - name: "🇺🇸 United States — #120"
     type: "vless"
     server: "195.123.240.65"
     port: 443
@@ -2505,7 +2537,7 @@ proxies:
       public-key: "q1EhO97gyUBlF7LiAfeAESI0O2Mg95T4yIk7keOnMEE"
       short-id: "0912cc7f28aa26ba"
     network: "tcp"
-  - name: "🇷🇴 Romania — #119"
+  - name: "🇷🇴 Romania — #103"
     type: "vless"
     server: "46.28.67.55"
     port: 443
@@ -2642,7 +2674,7 @@ proxies:
       public-key: "N9AUW2mGfGqUw2_gjAV_P1v_vkxYW0K6TtStAIu0dnU"
       short-id: "09"
     network: "tcp"
-  - name: "🇮🇹 Italy — #79"
+  - name: "🇮🇹 Italy — #74"
     type: "vless"
     server: "82.118.16.187"
     port: 443
@@ -2793,7 +2825,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇫🇷 France — #73"
+  - name: "🇫🇷 France — #57"
     type: "vless"
     server: "145.223.68.58"
     port: 443
@@ -3689,15 +3721,15 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States — #147"
+      - "🇺🇸 United States — #132"
       - "🇦🇪 [BL] Сервер 221"
       - "🇩🇪 [BL] Сервер 222"
-      - "🇱🇻 Latvia — #85"
+      - "🇱🇻 Latvia — #77"
       - "🇯🇵 [BL] Сервер 225"
-      - "🇺🇸 United States — #127"
+      - "🇺🇸 United States — #113"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #2"
-      - "🇩🇪 Germany — #34"
+      - "🇩🇪 Germany — #26"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇸🇪 Швеция"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇳🇱 Нидерланды"
       - "🇸🇬 [BL] Сервер 228"
@@ -3709,7 +3741,7 @@ proxy-groups:
       - "🇩🇪 [BL] Сервер 195"
       - "🇩🇪 [BL] Сервер 196"
       - "🇩🇪 [BL] Сервер 194"
-      - "🇪🇸 Spain — #71"
+      - "🇪🇸 Spain — #54"
       - "🇳🇱 [BL] Сервер 66"
       - "🇳🇱 Netherlands | TG: @HardVpn_robot t.me/rjsxrd"
       - "AetrisVPN White list ┃ ✅ SNI: amp-api-edge.apps.apple.com ┃ 🇺🇸 США"
@@ -3720,7 +3752,7 @@ proxy-groups:
       - "🇸🇬 [BL] Сервер 233"
       - "🇧🇪 AetrisVPN t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 100"
-      - "🇺🇸 United States — #132"
+      - "🇺🇸 United States — #118"
       - "🇺🇸 [BL] Сервер 234"
       - "🇩🇪 [BL] Сервер 67"
       - "🇺🇸 [WL] Сервер 45"
@@ -3738,7 +3770,7 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 91"
       - "🇷🇺 [WL] Сервер 78"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия"
-      - "🇨🇭 Switzerland — #19"
+      - "🇨🇭 Switzerland — #18"
       - "🇦🇺 [BL] Сервер 244"
       - "Бесплатный VPN tg:VLESSFORU 🇫🇮 t.me/rjsxrd"
       - "🇫🇮 [BL] Сервер 164"
@@ -3750,6 +3782,7 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 146"
       - "🇳🇱 [BL] Сервер 71"
       - "🌐 Anycast-IP | 🇪🇪 🇳🇱 [*CIDR] VK"
+      - "🇳🇱 The Netherlands | [*CIDR] VK"
       - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №7"
       - "🇺🇸 United States [*CIDR]"
       - "🇧🇪 AetrisVPN t.me/rjsxrd #2"
@@ -3759,10 +3792,13 @@ proxy-groups:
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
       - "AetrisVPN White list ┃ ✅ SNI: smartcaptcha.yandexcloud.net ┃ 🇩🇪 Германия"
       - "🇳🇱 [BL] Сервер 246"
-      - "🇳🇱 The Netherlands — #107"
+      - "🇳🇱 The Netherlands — #99"
       - "🇨🇿 Чехия | 🔗 Каскад [#РКП]"
       - "🇸🇪 [BL] Сервер 189"
       - "Бесплатный VPN tg:VLESSFORU 🇸🇪"
+      - "🇷🇺 Russia | [*CIDR] VK"
+      - "🇵🇱 Poland | 🌐 [*CIDR] VK"
+      - "🇱🇹 Lithuania [*CIDR]"
       - "🇵🇱 [BL] Сервер 247"
       - "🇵🇱 [BL] Сервер 248"
       - "Бесплатный VPN tg:VLESSFORU 🇱🇻"
@@ -3781,14 +3817,14 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 94"
       - "🇮🇳 [BL] Сервер 318"
       - "🇳🇱 [BL] Сервер 173"
-      - "🇩🇪 Germany — #65"
+      - "🇩🇪 Germany — #47"
       - "🇩🇪 Germany [*CIDR]"
       - "🇨🇴 [BL] Сервер 183"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇬🇧 Великобритания"
       - "🇯🇵 [BL] Сервер 273"
       - "Germany | www.cloudflare.com | TCP | [#LSO - #LinSpisokObhod]"
       - "🇳🇱 [BL] Сервер 78"
-      - "🇺🇸 United States — #126"
+      - "🇺🇸 United States — #112"
       - "🇵🇱 [BL] Сервер 268"
       - "🌐 Anycast-IP | 🇨🇦 🇬🇧 [*CIDR]"
       - "🇳🇱 [BL] Сервер 296"
@@ -3804,10 +3840,10 @@ proxy-groups:
       - "🇭🇰 [BL] Сервер 267"
       - "🇵🇱 [BL] Сервер 175"
       - "🇺🇸 [BL] Сервер 172"
-      - "🇬🇷 Greece — #76"
+      - "🇬🇷 Greece — #60"
       - "Russia | www.gosuslugi.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🌐 [WL/AI] Сервер 69"
-      - "🇺🇸 United States — #142"
+      - "🇺🇸 United States — #128"
       - "🌐 [BL/AI] Сервер 77"
       - "🌐 [BL] Сервер 79"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪"
@@ -3820,22 +3856,20 @@ proxy-groups:
       - "🇵🇱 [BL] Сервер 199"
       - "LTE/5G Все операторы 🇪🇺 #4"
       - "🇺🇸 [WL] Сервер 97"
-      - "🇺🇸 United States — #161"
+      - "🇩🇪 Germany — #53"
       - "🇸🇬 [BL] Сервер 276"
       - "🇩🇪 [BL] Сервер 177"
       - "🇩🇪 [BL] Сервер 303"
       - "🇩🇪 [BL] Сервер 292"
       - "Бесплатный VPN tg:VLESSFORU 🇵🇱 t.me/rjsxrd #2"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
-      - "🇩🇪 Germany — #23"
+      - "🇩🇪 Germany — #21"
       - "LTE/5G Все операторы 🇪🇺 #5"
       - "🇺🇸 [BL] Сервер 205"
       - "AetrisVPN White list ┃ ✅ SNI: ligastavok.ru ┃ 🇵🇱 Польша"
       - "🇩🇪 Germany | TG: @HardVpn_robot t.me/rjsxrd #2"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #4"
       - "🇳🇱 [BL] Сервер 123"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] #2"
       - "🌀 CYBERPORTAL | Extended WL | 🇺🇸 США #15 t.me/rjsxrd"
       - "🇩🇪 [BL] Сервер 203"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия"
@@ -3848,15 +3882,15 @@ proxy-groups:
       - "🇨🇭 Switzerland [*CIDR]"
       - "🇨🇭 Switzerland [*CIDR] #2"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇨🇦 Канада"
-      - "🇨🇦 Canada — #15"
+      - "🇨🇦 Canada — #14"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
       - "🇺🇸 [BL] Сервер 278"
-      - "🇺🇸 United States — #134"
+      - "🇺🇸 United States — #120"
       - "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
       - "🌐 Anycast-IP | 🇨🇦 🇷🇺 [*CIDR]"
       - "🌐 Anycast-IP | 🇷🇺 [*CIDR]"
       - "🌐 Anycast-IP | 🇷🇺 [*CIDR] #2"
-      - "🇷🇴 Romania — #119"
+      - "🇷🇴 Romania — #103"
       - "🇳🇱 [BL] Сервер 117"
       - "🇳🇱 Нидерланды | 🔗 Каскад [#РКП]"
       - "🇳🇱 [BL] Сервер 320"
@@ -3865,7 +3899,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США #2"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США #3"
       - "AetrisVPN White list ┃ ✅ SNI: account.amd.com ┃ 🇺🇸 США"
-      - "🇮🇹 Italy — #79"
+      - "🇮🇹 Italy — #74"
       - "🇪🇪 [BL] Сервер 281"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸 #2"
       - "🇵🇱 [BL] Сервер 280"
@@ -3875,7 +3909,7 @@ proxy-groups:
       - "Russia | metrics.pc-club.app | WebSocket | [#LSO - #LinSpisokObhod]"
       - "🇸🇪 [BL] Сервер 176"
       - "AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇷🇺 Россия"
-      - "🇫🇷 France — #73"
+      - "🇫🇷 France — #57"
       - "🇺🇸 [BL] Сервер 170"
       - "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
       - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #2"
