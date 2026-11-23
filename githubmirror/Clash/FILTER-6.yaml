@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-23 10:30:55 UTC
+# 2026-11-23 10:45:34 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇫🇷 France [*CIDR]"
     type: "vless"
     server: "80.78.241.198"
     port: 443
@@ -9,7 +9,7 @@ proxies:
     udp: true
     tls: true
     servername: "www.1c.ru"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     reality-opts:
       public-key: "_S2IcGmY5jdgZ3G5USJ48pg4dPpOQCCL0Ff9ZoUDwWw"
@@ -17,57 +17,23 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "domain.check.v2"
-  - name: "🇳🇱 The Netherlands | [*CIDR] VK"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "185.86.145.183"
-    port: 443
-    uuid: "0b85ab23-c394-40a3-8a46-71ae8f74cf7c"
-    udp: true
-    tls: true
-    servername: "for.quick-frost.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/nl7ws"
-      headers:
-        Host: "for.quick-frost.ru"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "95.129.236.239"
+    server: "95.129.236.216"
     port: 443
     uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    servername: "content-iv1k.login.opendns.stream"
+    servername: "crm.hourtley.com"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/sock/relay/007f9c12e265"
+      path: "/stream/video/ffmpeg"
       headers:
-        Host: "content-iv1k.login.opendns.stream"
-  - name: "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
-    type: "vless"
-    server: "31.177.111.183"
-    port: 443
-    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
-    udp: true
-    tls: true
-    servername: "e3.cdnwh.icu"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/edge/chunk/b2265efffa29/"
-      headers:
-        Host: "e3.cdnwh.icu"
+        Host: "crm.hourtley.com"
   - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
     type: "vless"
     server: "195.209.223.0"
@@ -87,10 +53,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇷 France [*CIDR]"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🇳🇱 The Netherlands | [*CIDR] VK"
-      - "🇷🇺 Russia | [*CIDR]"
-      - "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
       - "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
 rules:
   - MATCH,PROXY
