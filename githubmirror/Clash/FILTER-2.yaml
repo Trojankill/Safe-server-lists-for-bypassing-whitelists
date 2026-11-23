@@ -1,63 +1,43 @@
 # clash/mihomo subscription
-# 2026-11-23 16:45:37 UTC
+# 2026-11-23 17:01:11 UTC
 proxies:
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "138.16.204.78"
-    port: 8443
-    uuid: "cde5d3ef-7d14-07d0-a74d-ac98e39bf9ec"
+    server: "95.129.236.216"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "138.16.204.78"
-    client-fingerprint: "firefox"
+    servername: "crm.hourtley.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
-      short-id: "f8a8ee8381529673"
-    network: "tcp"
-  - name: "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+    network: "ws"
+    ws-opts:
+      path: "/stream/video/ffmpeg"
+      headers:
+        Host: "crm.hourtley.com"
+  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
     type: "vless"
-    server: "188.225.56.157"
+    server: "195.209.223.0"
     port: 443
     uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
     udp: true
     tls: true
-    servername: "cdn.quantum.vodka"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+    servername: "ruhsds735.thebestqas.am"
+    client-fingerprint: "android"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/feed/b597b53d57"
-      headers:
-        Host: "cdn.quantum.vodka"
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "hysteria2"
-    server: "193.233.248.38"
-    port: 443
-    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
-    udp: true
-    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇷🇺 Russia [*CIDR] #3"
-    type: "hysteria2"
-    server: "193.233.248.38"
-    port: 443
-    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
-    udp: true
-    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
-    skip-cert-verify: false
+    reality-opts:
+      public-key: "KYCw7cXjogBXLwakD95fS0ez_Ohp841nJv0w0ntu_FU"
+      short-id: "8b360b27c8ae3791"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia [*CIDR]"
-      - "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
-      - "🇷🇺 Russia [*CIDR] #3"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
 rules:
   - MATCH,PROXY
