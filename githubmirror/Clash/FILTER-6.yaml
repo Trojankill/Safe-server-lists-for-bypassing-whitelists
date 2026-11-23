@@ -1,39 +1,49 @@
 # clash/mihomo subscription
-# 2026-11-23 03:15:33 UTC
+# 2026-11-23 03:30:49 UTC
 proxies:
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "95.129.236.117"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "cdn.dash.gearmonster.org"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/edge/node8/push"
-      headers:
-        Host: "cdn.dash.gearmonster.org"
-  - name: "🌐 Anycast-IP | 🇬🇧 🇸🇪 | [*CIDR]"
-    type: "vless"
-    server: "188.225.46.6"
-    port: 443
-    uuid: "a077dc9a-712f-48ea-b75c-d94af64011ec"
+    server: "138.16.204.78"
+    port: 8443
+    uuid: "cde5d3ef-7d14-07d0-a74d-ac98e39bf9ec"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "spb.b2ai.top"
-    alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "edge"
+    servername: "138.16.204.78"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
+    reality-opts:
+      public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
+      short-id: "f8a8ee8381529673"
     network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+    type: "vless"
+    server: "188.225.56.157"
+    port: 443
+    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
+    udp: true
+    tls: true
+    servername: "cdn.quantum.vodka"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v1/feed/b597b53d57"
+      headers:
+        Host: "cdn.quantum.vodka"
+  - name: "🇷🇺 Russia [*CIDR] #2"
+    type: "hysteria2"
+    server: "193.233.248.38"
+    port: 443
+    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
+    udp: true
+    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇷🇺 Russia [*CIDR] #3"
     type: "hysteria2"
     server: "193.233.248.38"
     port: 443
@@ -45,8 +55,9 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🌐 Anycast-IP | 🇬🇧 🇸🇪 | [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] #3"
 rules:
   - MATCH,PROXY
