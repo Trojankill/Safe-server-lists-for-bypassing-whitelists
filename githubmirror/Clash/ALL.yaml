@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-23 20:15:36 UTC
+# 2026-11-23 20:31:00 UTC
 proxies:
   - name: "🇺🇸 United States — #145"
     type: "vless"
@@ -658,22 +658,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "🌐 Anycast-IP | 🇳🇱 🇺🇸 | [*CIDR]"
-    type: "vless"
-    server: "135.106.218.178"
-    port: 443
-    uuid: "235aff96-edbc-42e2-b67c-3295252a61df"
-    udp: true
-    tls: true
-    servername: "yandex.ru"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "hEyhCVfwVjIWoXIkG_VfqJ0DsgXbhjap5Waqwq-NqGE"
-      short-id: "cbf2ac"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "google.android.location.SyncService"
   - name: "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "77.110.104.125"
@@ -1299,36 +1283,6 @@ proxies:
     reality-opts:
       public-key: "z_EU3XzU2TmXkInPLf0GWdFEfx6ZcpVSxnS9BFJ1hGE"
     network: "tcp"
-  - name: "🇦🇹 Austria [*CIDR]"
-    type: "vless"
-    server: "189.74.115.2"
-    port: 443
-    uuid: "5ac5bde8-6334-492b-be2d-34cd23996aa8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇵🇱 Poland | [*CIDR]"
-    type: "vless"
-    server: "api.mediatropa.cc"
-    port: 443
-    uuid: "5ac5bde8-6334-492b-be2d-34cd23996aa8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediatropa.cc"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "87.242.94.112"
@@ -1757,6 +1711,57 @@ proxies:
       public-key: "pR8CV43xvSgvzSXPVLCVomjw-yZvNyqU32kietO2pEc"
       short-id: "a6115a2c"
     network: "tcp"
+  - name: "🇬🇧 United Kingdom — #74"
+    type: "vless"
+    server: "95.129.236.117"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: "LTE/5G Все операторы 🇪🇺"
+    type: "vless"
+    server: "95.129.236.117"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "95.129.236.216"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "crm.hourtley.com"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/stream/video/ffmpeg"
+      headers:
+        Host: "crm.hourtley.com"
   - name: "🇨🇭 [BL/AI] Сервер 146"
     type: "vless"
     server: "193.233.89.130"
@@ -2264,7 +2269,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺"
+  - name: "LTE/5G Все операторы 🇪🇺 #2"
     type: "vless"
     server: "188.225.36.19"
     port: 443
@@ -2279,7 +2284,7 @@ proxies:
     client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "tcp"
-  - name: "LTE/5G Все операторы 🇪🇺 #2"
+  - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "188.225.46.6"
     port: 443
@@ -2610,6 +2615,40 @@ proxies:
       public-key: "77HTpkO_F3cUfA5Trka3eSh8V18atRMLyclGqZ__8C8"
       short-id: "b73c53b18b65dd90"
     network: "tcp"
+  - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "31.177.111.183"
+    port: 443
+    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
+    udp: true
+    tls: true
+    servername: "e3.cdnwh.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/chunk/b2265efffa29/"
+      headers:
+        Host: "e3.cdnwh.icu"
+  - name: "🇺🇸 United States | [*CIDR]"
+    type: "vless"
+    server: "e3.cdnwh.icu"
+    port: 443
+    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
+    udp: true
+    tls: true
+    servername: "e3.cdnwh.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/chunk/b2265efffa29/"
+      headers:
+        Host: "e3.cdnwh.icu"
   - name: "🇹🇼 [BL] Сервер 311"
     type: "vless"
     server: "85.237.207.221"
@@ -2727,6 +2766,21 @@ proxies:
     reality-opts:
       public-key: "D_jwAtRb0diil6EAGA6BpNtCZE9FsvzjFZtcdRQggUQ"
       short-id: "4c68bb9c4f73dcb8"
+    network: "tcp"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "r1.sklserv.com"
+    port: 443
+    uuid: "b7791707-83d9-444b-9d05-f5c99e90acd4"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "r1.sklserv.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "aTldjQUFgoHnVi6w-SmcwVdvt9LFgmJA9h5mcohO22Y"
+      short-id: "94afaedf9d2440c1"
     network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #3"
     type: "vless"
@@ -4913,7 +4967,6 @@ proxy-groups:
       - "🇺🇸 [WL] Сервер 13"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США"
       - "🇺🇸 [BL] Сервер 276"
-      - "🌐 Anycast-IP | 🇳🇱 🇺🇸 | [*CIDR]"
       - "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия"
       - "🇭🇰 [BL] Сервер 277"
@@ -4956,8 +5009,6 @@ proxy-groups:
       - "🇬🇧 [BL] Сервер 294"
       - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇫🇮 Финляндия #3"
       - "🇭🇰 [BL] Сервер 83"
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇵🇱 Poland | [*CIDR]"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
       - "🇵🇱 [BL] Сервер 215"
       - "🇫🇷 [BL/AI] Сервер 317"
@@ -4987,6 +5038,9 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 346"
       - "🇪🇪 [BL] Сервер 216"
       - "AetrisVPN White list ┃ ✅ SNI: iosapps.itunes.apple.com ┃ 🇯🇵 Япония"
+      - "🇬🇧 United Kingdom — #74"
+      - "LTE/5G Все операторы 🇪🇺"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇨🇭 [BL/AI] Сервер 146"
       - "🇨🇿 [BL] Сервер 117"
       - "🇵🇱 [BL/AI] Сервер 303"
@@ -5021,8 +5075,8 @@ proxy-groups:
       - "🇩🇪 Германия 8 WEYRO LTD t.me/rjsxrd"
       - "🇬🇧 United Kingdom — #72"
       - "🇸🇪 [WL] Сервер 87"
-      - "LTE/5G Все операторы 🇪🇺"
       - "LTE/5G Все операторы 🇪🇺 #2"
+      - "LTE/5G Все операторы 🇪🇺 #3"
       - "🇸🇬 [BL] Сервер 308"
       - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №2"
       - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G"
@@ -5044,6 +5098,8 @@ proxy-groups:
       - "🇭🇰 [BL] Сервер 197"
       - "🇨🇿 [BL] Сервер 181"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇵🇱 Польша"
+      - "🇺🇸 United States [*CIDR]"
+      - "🇺🇸 United States | [*CIDR]"
       - "🇹🇼 [BL] Сервер 311"
       - "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇩🇪 Германия #2"
       - "🌀 CYBERPORTAL | White Keys #173 t.me/rjsxrd"
@@ -5052,6 +5108,7 @@ proxy-groups:
       - "tg:VLESSFORU 🇳🇱 ⚡"
       - "🇳🇱 Нидерланды 22 HOSTKEY B.V. t.me/rjsxrd"
       - "🇵🇱 [BL] Сервер 150"
+      - "🇷🇺 Russia | [*CIDR]"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #3"
       - "🇩🇪 [BL] Сервер 118"
       - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇬🇧 Великобритания"
