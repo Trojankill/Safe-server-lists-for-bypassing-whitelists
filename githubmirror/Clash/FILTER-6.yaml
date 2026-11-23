@@ -1,34 +1,52 @@
 # clash/mihomo subscription
-# 2026-11-23 01:45:32 UTC
+# 2026-11-23 02:00:56 UTC
 proxies:
-  - name: "🇺🇸 United States | [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "web.belka.tv"
+    server: "95.129.236.117"
     port: 443
-    uuid: "7316d881-eeec-429b-94f1-07585747f7c8"
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "cdn.dash.gearmonster.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/node8/push"
+      headers:
+        Host: "cdn.dash.gearmonster.org"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇸🇪 | [*CIDR]"
+    type: "vless"
+    server: "188.225.46.6"
+    port: 443
+    uuid: "a077dc9a-712f-48ea-b75c-d94af64011ec"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "web.belka.tv"
+    servername: "spb.b2ai.top"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "edge"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
-      short-id: "26e2b503fada0e3a"
     network: "tcp"
   - name: "🇷🇺 Russia [*CIDR]"
     type: "hysteria2"
-    server: "channelru.belka.tv"
+    server: "193.233.248.38"
     port: 443
-    password: "7316d881-eeec-429b-94f1-07585747f7c8"
+    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
     udp: true
-    sni: "channelru.belka.tv"
+    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
     skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🌐 Anycast-IP | 🇬🇧 🇸🇪 | [*CIDR]"
       - "🇷🇺 Russia [*CIDR]"
 rules:
   - MATCH,PROXY
