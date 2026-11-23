@@ -1,39 +1,21 @@
 # clash/mihomo subscription
-# 2026-11-23 12:01:01 UTC
+# 2026-11-23 12:15:37 UTC
 proxies:
-  - name: "🇫🇷 France [*CIDR]"
+  - name: "🇩🇪 Germany | [*CIDR]"
     type: "vless"
-    server: "80.78.241.198"
+    server: "api.setevoypriliv.cc"
     port: 443
-    uuid: "041a9eef-db50-4b47-862e-9f69dbda1f38"
+    uuid: "755a5cf7-355c-48fb-b699-01b58c64eabc"
     udp: true
     tls: true
-    servername: "www.1c.ru"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_S2IcGmY5jdgZ3G5USJ48pg4dPpOQCCL0Ff9ZoUDwWw"
-      short-id: "38749d513174bd5d"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "domain.check.v2"
-  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-    type: "vless"
-    server: "95.129.236.216"
-    port: 443
-    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
-    udp: true
-    tls: true
-    servername: "crm.hourtley.com"
-    alpn:
-      - "http/1.1"
+    flow: "xtls-rprx-vision"
+    servername: "api.setevoypriliv.cc"
     client-fingerprint: "chrome"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/video/ffmpeg"
-      headers:
-        Host: "crm.hourtley.com"
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
   - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
     type: "vless"
     server: "195.209.223.0"
@@ -53,8 +35,7 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇫🇷 France [*CIDR]"
-      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
 rules:
   - MATCH,PROXY
