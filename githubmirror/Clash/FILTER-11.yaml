@@ -1,0 +1,42 @@
+# clash/mihomo subscription
+# 2026-11-23 04:15:34 UTC
+proxies:
+  - name: "@LexaVercelbot C-1 🇫🇮 #2 🪯"
+    type: "hysteria2"
+    server: "188.225.79.91"
+    port: 443
+    password: "d2e54c95-c351-4053-8fae-e4aec3451cff"
+    udp: true
+    sni: "r-fi-1.dokomon.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "@LexaVercelbot C-1 🇸🇪 #8 🪯"
+    type: "hysteria2"
+    server: "188.225.79.91"
+    port: 444
+    password: "d2e54c95-c351-4053-8fae-e4aec3451cff"
+    udp: true
+    sni: "r-se-1.dokomon.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "@LexaVercelbot C-1 🇳🇱 #5 🪯"
+    type: "hysteria2"
+    server: "188.225.79.91"
+    port: 445
+    password: "d2e54c95-c351-4053-8fae-e4aec3451cff"
+    udp: true
+    sni: "r-nl-1.dokomon.com"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "@LexaVercelbot C-1 🇫🇮 #2 🪯"
+      - "@LexaVercelbot C-1 🇸🇪 #8 🪯"
+      - "@LexaVercelbot C-1 🇳🇱 #5 🪯"
+rules:
+  - MATCH,PROXY
