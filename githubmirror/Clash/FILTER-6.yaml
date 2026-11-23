@@ -1,6 +1,22 @@
 # clash/mihomo subscription
-# 2026-11-23 09:01:01 UTC
+# 2026-11-23 09:15:33 UTC
 proxies:
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "80.78.241.198"
+    port: 443
+    uuid: "041a9eef-db50-4b47-862e-9f69dbda1f38"
+    udp: true
+    tls: true
+    servername: "www.1c.ru"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_S2IcGmY5jdgZ3G5USJ48pg4dPpOQCCL0Ff9ZoUDwWw"
+      short-id: "38749d513174bd5d"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "domain.check.v2"
   - name: "🇳🇱 The Netherlands | [*CIDR] VK"
     type: "vless"
     server: "185.86.145.183"
@@ -11,13 +27,30 @@ proxies:
     servername: "for.quick-frost.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "android"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/nl7ws"
       headers:
         Host: "for.quick-frost.ru"
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "95.129.236.239"
+    port: 443
+    uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
+    udp: true
+    tls: true
+    servername: "content-iv1k.login.opendns.stream"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/sock/relay/007f9c12e265"
+      headers:
+        Host: "content-iv1k.login.opendns.stream"
   - name: "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
     type: "vless"
     server: "31.177.111.183"
@@ -28,131 +61,36 @@ proxies:
     servername: "e3.cdnwh.icu"
     alpn:
       - "http/1.1"
-    client-fingerprint: "chrome"
+    client-fingerprint: "safari"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/edge/chunk/b2265efffa29/"
       headers:
         Host: "e3.cdnwh.icu"
-  - name: "🇦🇹 Austria | 🌐 | [*CIDR]"
+  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
     type: "vless"
-    server: "72.56.55.45"
-    port: 30010
-    uuid: "e88e8fb9-03bf-4b5f-baa0-2209867ddc05"
+    server: "195.209.223.0"
+    port: 443
+    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
     udp: true
     tls: true
-    servername: "eu71.cdn77.icu"
-    client-fingerprint: "edge"
+    flow: "xtls-rprx-vision"
+    servername: "ruhsds735.thebestqas.am"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
+      public-key: "KYCw7cXjogBXLwakD95fS0ez_Ohp841nJv0w0ntu_FU"
+      short-id: "8b360b27c8ae3791"
     network: "tcp"
-  - name: "🇷🇺 Russia [*CIDR]"
-    type: "hysteria2"
-    server: "193.233.248.38"
-    port: 443
-    password: "54aa711f-ae15-4f3c-8706-9ff634c1d6ef"
-    udp: true
-    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇬🇧 United Kingdom [*CIDR]"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8452
-    password: "71105003-792a-410d-a9f7-67879e08d993"
-    udp: true
-    sni: "eu64.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇦🇹 Austria | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8453
-    password: "71105003-792a-410d-a9f7-67879e08d993"
-    udp: true
-    sni: "eu71.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇯🇵 Japan [*CIDR]"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8454
-    password: "71105003-792a-410d-a9f7-67879e08d993"
-    udp: true
-    sni: "as18.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇮🇹 Italy [*CIDR]"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8455
-    password: "71105003-792a-410d-a9f7-67879e08d993"
-    udp: true
-    sni: "eu36.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇬🇧 United Kingdom [*CIDR] #2"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8452
-    password: "e88e8fb9-03bf-4b5f-baa0-2209867ddc05"
-    udp: true
-    sni: "eu64.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇦🇹 Austria | 🌐 [*CIDR] #2"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8453
-    password: "e88e8fb9-03bf-4b5f-baa0-2209867ddc05"
-    udp: true
-    sni: "eu71.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇯🇵 Japan [*CIDR] #2"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8454
-    password: "e88e8fb9-03bf-4b5f-baa0-2209867ddc05"
-    udp: true
-    sni: "as18.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇮🇹 Italy [*CIDR] #2"
-    type: "hysteria2"
-    server: "94.183.195.245"
-    port: 8455
-    password: "e88e8fb9-03bf-4b5f-baa0-2209867ddc05"
-    udp: true
-    sni: "eu36.cdn77.icu"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇳🇱 The Netherlands | [*CIDR] VK"
+      - "🇷🇺 Russia | [*CIDR]"
       - "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
-      - "🇦🇹 Austria | 🌐 | [*CIDR]"
-      - "🇷🇺 Russia [*CIDR]"
-      - "🇬🇧 United Kingdom [*CIDR]"
-      - "🇦🇹 Austria | 🌐 [*CIDR]"
-      - "🇯🇵 Japan [*CIDR]"
-      - "🇮🇹 Italy [*CIDR]"
-      - "🇬🇧 United Kingdom [*CIDR] #2"
-      - "🇦🇹 Austria | 🌐 [*CIDR] #2"
-      - "🇯🇵 Japan [*CIDR] #2"
-      - "🇮🇹 Italy [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
 rules:
   - MATCH,PROXY
