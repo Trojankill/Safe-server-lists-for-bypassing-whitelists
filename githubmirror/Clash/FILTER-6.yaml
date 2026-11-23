@@ -1,43 +1,84 @@
 # clash/mihomo subscription
-# 2026-11-23 17:01:11 UTC
+# 2026-11-23 17:15:34 UTC
 proxies:
+  - name: "🇦🇹 Austria | [*CIDR]"
+    type: "vless"
+    server: "189.74.115.2"
+    port: 443
+    uuid: "5ac5bde8-6334-492b-be2d-34cd23996aa8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.15"
+    port: 443
+    uuid: "5ac5bde8-6334-492b-be2d-34cd23996aa8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR] #2"
+    type: "vless"
+    server: "189.74.117.15"
+    port: 443
+    uuid: "5d24290f-0608-47b9-bbe0-0ffcb1b0b02e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
   - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
-    server: "95.129.236.216"
+    server: "95.129.236.117"
     port: 443
     uuid: "77998cc6-8a4d-4251-b974-ebff48a84c4d"
     udp: true
     tls: true
-    servername: "crm.hourtley.com"
+    servername: "cdn.dash.gearmonster.org"
     alpn:
       - "http/1.1"
     client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/stream/video/ffmpeg"
+      path: "/edge/node8/push"
       headers:
-        Host: "crm.hourtley.com"
-  - name: "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
-    type: "vless"
-    server: "195.209.223.0"
-    port: 443
-    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
+        Host: "cdn.dash.gearmonster.org"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
+    type: "hysteria2"
+    server: "189.74.114.46"
+    port: 54183
+    password: "5d24290f-0608-47b9-bbe0-0ffcb1b0b02e"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ruhsds735.thebestqas.am"
-    client-fingerprint: "android"
+    sni: "outh.yandex-cloud.org"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "KYCw7cXjogBXLwakD95fS0ez_Ohp841nJv0w0ntu_FU"
-      short-id: "8b360b27c8ae3791"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇦🇹 Austria | [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
+      - "🇫🇷 France | [*CIDR] #2"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
-      - "🌐 Anycast-IP | 🇭🇳 🇳🇱 | [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
 rules:
   - MATCH,PROXY
