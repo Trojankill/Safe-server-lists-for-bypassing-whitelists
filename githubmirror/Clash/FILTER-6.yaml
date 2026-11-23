@@ -1,41 +1,34 @@
 # clash/mihomo subscription
-# 2026-11-23 00:15:38 UTC
+# 2026-11-23 00:30:47 UTC
 proxies:
-  - name: "🇦🇹 Austria | [*CIDR]"
+  - name: "🇺🇸 United States | [*CIDR]"
     type: "vless"
-    server: "189.74.115.30"
+    server: "web.belka.tv"
     port: 443
-    uuid: "5cb1094a-4c3f-4cef-a4f0-bc00214022ce"
+    uuid: "7316d881-eeec-429b-94f1-07585747f7c8"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "chrome"
+    servername: "web.belka.tv"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
+      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
+      short-id: "26e2b503fada0e3a"
     network: "tcp"
-  - name: "🇦🇹 Austria | [*CIDR] #2"
-    type: "vless"
-    server: "189.74.115.30"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "hysteria2"
+    server: "channelru.belka.tv"
     port: 443
-    uuid: "631263fd-3e12-49ac-be1b-c26bcc36ba43"
+    password: "7316d881-eeec-429b-94f1-07585747f7c8"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "android"
+    sni: "channelru.belka.tv"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Austria | [*CIDR]"
-      - "🇦🇹 Austria | [*CIDR] #2"
+      - "🇺🇸 United States | [*CIDR]"
+      - "🇷🇺 Russia [*CIDR]"
 rules:
   - MATCH,PROXY
