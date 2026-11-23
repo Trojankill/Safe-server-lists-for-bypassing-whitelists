@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-23 21:45:34 UTC
+# 2026-11-23 22:00:59 UTC
 proxies:
   - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
@@ -18,7 +18,7 @@ proxies:
       path: "/edge/chunk/b2265efffa29/"
       headers:
         Host: "e3.cdnwh.icu"
-  - name: "🇺🇸 United States | [*CIDR]"
+  - name: "🇺🇸 United States [*CIDR] #2"
     type: "vless"
     server: "e3.cdnwh.icu"
     port: 443
@@ -35,27 +35,11 @@ proxies:
       path: "/edge/chunk/b2265efffa29/"
       headers:
         Host: "e3.cdnwh.icu"
-  - name: "🇷🇺 Russia | [*CIDR]"
-    type: "vless"
-    server: "r1.sklserv.com"
-    port: 443
-    uuid: "b7791707-83d9-444b-9d05-f5c99e90acd4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "r1.sklserv.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "aTldjQUFgoHnVi6w-SmcwVdvt9LFgmJA9h5mcohO22Y"
-      short-id: "94afaedf9d2440c1"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇺🇸 United States [*CIDR]"
-      - "🇺🇸 United States | [*CIDR]"
-      - "🇷🇺 Russia | [*CIDR]"
+      - "🇺🇸 United States [*CIDR] #2"
 rules:
   - MATCH,PROXY
