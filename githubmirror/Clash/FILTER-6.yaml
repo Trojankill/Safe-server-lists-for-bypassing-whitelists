@@ -1,63 +1,41 @@
 # clash/mihomo subscription
-# 2026-11-23 05:31:02 UTC
+# 2026-11-23 05:45:32 UTC
 proxies:
-  - name: "🇷🇺 Russia [*CIDR]"
+  - name: "🇵🇱 Poland | [*CIDR]"
     type: "vless"
-    server: "138.16.204.78"
-    port: 8443
-    uuid: "cde5d3ef-7d14-07d0-a74d-ac98e39bf9ec"
+    server: "189.74.116.29"
+    port: 443
+    uuid: "a0c7266e-0357-423e-b696-0fe11e0fe85c"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "138.16.204.78"
-    client-fingerprint: "firefox"
+    servername: "api.mediatropa.cc"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
-      short-id: "f8a8ee8381529673"
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+  - name: "🇫🇷 France | [*CIDR]"
     type: "vless"
-    server: "188.225.56.157"
+    server: "189.74.117.14"
     port: 443
-    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
+    uuid: "a0c7266e-0357-423e-b696-0fe11e0fe85c"
     udp: true
     tls: true
-    servername: "cdn.quantum.vodka"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "android"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v1/feed/b597b53d57"
-      headers:
-        Host: "cdn.quantum.vodka"
-  - name: "🇷🇺 Russia [*CIDR] #2"
-    type: "hysteria2"
-    server: "193.233.248.38"
-    port: 443
-    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
-    udp: true
-    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
-    alpn:
-      - "h3"
-    skip-cert-verify: false
-  - name: "🇷🇺 Russia [*CIDR] #3"
-    type: "hysteria2"
-    server: "193.233.248.38"
-    port: 443
-    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
-    udp: true
-    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
-    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇷🇺 Russia [*CIDR]"
-      - "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
-      - "🇷🇺 Russia [*CIDR] #2"
-      - "🇷🇺 Russia [*CIDR] #3"
+      - "🇵🇱 Poland | [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
 rules:
   - MATCH,PROXY
