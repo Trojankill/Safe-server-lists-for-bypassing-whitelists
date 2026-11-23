@@ -1,91 +1,63 @@
 # clash/mihomo subscription
-# 2026-11-23 04:45:48 UTC
+# 2026-11-23 05:01:05 UTC
 proxies:
-  - name: "🇦🇹 Austria [*CIDR]"
+  - name: "🇷🇺 Russia [*CIDR]"
     type: "vless"
-    server: "189.74.115.30"
-    port: 443
-    uuid: "5cb1094a-4c3f-4cef-a4f0-bc00214022ce"
+    server: "138.16.204.78"
+    port: 8443
+    uuid: "cde5d3ef-7d14-07d0-a74d-ac98e39bf9ec"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
+    servername: "138.16.204.78"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
+      public-key: "vV3mxSgZ-8x3Gp373AXdMDM3FAdmLP0v5zIfI486SDI"
+      short-id: "f8a8ee8381529673"
     network: "tcp"
-  - name: "🇦🇹 Austria [*CIDR] #2"
+  - name: "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
     type: "vless"
-    server: "189.74.115.30"
+    server: "188.225.56.157"
     port: 443
-    uuid: "631263fd-3e12-49ac-be1b-c26bcc36ba43"
+    uuid: "ef5a57c7-84d5-4f86-b99c-875a16da485f"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "91.185.83.43"
-    port: 443
-    uuid: "7955bf18-35c4-412d-aabd-c0b36c793063"
-    udp: true
-    tls: true
-    servername: "pssdwynorv.newwl.pro"
+    servername: "cdn.quantum.vodka"
     alpn:
       - "http/1.1"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
-      path: "/service/telemetry/0294da469190/"
+      path: "/api/v1/feed/b597b53d57"
       headers:
-        Host: "pssdwynorv.newwl.pro"
-  - name: "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
-    type: "vless"
-    server: "129.101.99.221"
+        Host: "cdn.quantum.vodka"
+  - name: "🇷🇺 Russia [*CIDR] #2"
+    type: "hysteria2"
+    server: "193.233.248.38"
     port: 443
-    uuid: "a0c51c22-e51f-41a0-b7f8-480bcdc24e09"
+    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
     udp: true
-    tls: true
-    servername: "cdn.dotameridian.com"
+    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
     alpn:
-      - "h2"
-      - "http/1.1"
-    client-fingerprint: "chrome"
+      - "h3"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "d386f93b4346"
-  - name: "🇬🇧 United Kingdom [*CIDR] VK"
-    type: "vless"
-    server: "185.86.147.77"
-    port: 10020
-    uuid: "b80e9046-5bb9-4040-bd96-b7e2f78b5c5b"
+  - name: "🇷🇺 Russia [*CIDR] #3"
+    type: "hysteria2"
+    server: "193.233.248.38"
+    port: 443
+    password: "d283bbfe-d5cd-4576-bc1a-630a7a5ad829"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "2gis.ru"
-    client-fingerprint: "chrome"
+    sni: "replicaruntime.lucheeebezlimitnoekino.stream"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "SraiH4q6X-jSm6Ru2FHcGjhoClg6gI0b9CWjdyu0rxA"
-      short-id: "c68d384ac0fb220a"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Austria [*CIDR]"
-      - "🇦🇹 Austria [*CIDR] #2"
-      - "🇮🇷 Iran [*CIDR]"
-      - "🌐 Anycast-IP | 🇦🇹 🇬🇧 [*CIDR]"
-      - "🇬🇧 United Kingdom [*CIDR] VK"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🌐 Anycast-IP | 🇳🇱 [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] #3"
 rules:
   - MATCH,PROXY
