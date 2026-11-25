@@ -1,27 +1,72 @@
 # clash/mihomo subscription
-# 2026-11-25 19:30:56 UTC
+# 2026-11-25 19:45:35 UTC
 proxies:
-  - name: "🇮🇷 Iran [*CIDR]"
+  - name: "🇪🇪 Estonia [*CIDR]"
     type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "80b3cf20-c77c-4fb9-a69e-55c9dadd58c8"
+    server: "one.alpheratzz.org"
+    port: 8443
+    uuid: "0173d52e-8e1b-4681-831e-11529677b72f"
     udp: true
     tls: true
-    servername: "unlik.club"
+    flow: "xtls-rprx-vision"
+    servername: "api-6b04608f.adhil.uk"
     alpn:
-      - "http/1.1"
+      - "h2"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "rua.strauspro.com"
+    port: 8443
+    uuid: "8f092ef0-a7e6-03e9-b989-836aebc00ff7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ya.ru"
     client-fingerprint: "android"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "tochkacdn.top"
+    reality-opts:
+      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
+      short-id: "abc123"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇨🇦 🇳🇱 | [*CIDR]"
+    type: "vless"
+    server: "195.209.213.70"
+    port: 443
+    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ruhsds597.aidating.am"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "y3RvS7ce35rCDD85mwXc_jQZ88rQmioWXtPolyk5eCk"
+      short-id: "0b8a8ce8060f6d38"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇩🇪 🇰🇷 | [*CIDR]"
+    type: "vless"
+    server: "5.42.104.42"
+    port: 443
+    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rugermicro2.gangplatform.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "nPYLh9nRxKK0OQVQrboJyKN4Y3DViI412cbN9Tbz9AQ"
+      short-id: "53668ac88eefee81"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇮🇷 Iran [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🌐 Anycast-IP | 🇨🇦 🇳🇱 | [*CIDR]"
+      - "🌐 Anycast-IP | 🇩🇪 🇰🇷 | [*CIDR]"
 rules:
   - MATCH,PROXY
