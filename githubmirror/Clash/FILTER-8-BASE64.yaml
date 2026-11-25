@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-25 04:15:34 UTC
+# 2026-11-25 04:30:45 UTC
 proxies:
   - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды"
     type: "vless"
@@ -16,7 +16,7 @@ proxies:
       public-key: "LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo"
       short-id: "6f15101ff2cc4887"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇺🇸 США"
+  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды #2"
     type: "vless"
     server: "201.24.54.94"
     port: 8443
@@ -31,7 +31,21 @@ proxies:
       public-key: "tRrqkTpxywWqd4coyYWIbx26rdxRppFkZN1lC1IZA0k"
       short-id: "75dd7e79a7876314"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇵🇱 Польша"
+    type: "vless"
+    server: "89.163.239.238"
+    port: 2053
+    uuid: "02974d2b-518f-4f95-91cc-b145b6e4805e"
+    udp: true
+    tls: true
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "vZmTxEoOhD-VAACucx2KmzWaKlYyXdkkUUv0RzlDsgo"
+      short-id: "2fa414c6dd1189db"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇵🇱 Польша"
     type: "vless"
     server: "150.241.87.218"
     port: 443
@@ -43,6 +57,36 @@ proxies:
     skip-cert-verify: false
     reality-opts:
       public-key: "iGt12PmtbQOInMmfnbeZ2dFkANeDKiXT5H7YizIRMm0"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США"
+    type: "vless"
+    server: "201.8.80.134"
+    port: 443
+    uuid: "04fa9389-a230-4f62-bcdb-3bfe240a62b2"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc"
+  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США #2"
+    type: "vless"
+    server: "201.8.80.134"
+    port: 443
+    uuid: "04fa9389-a230-4f62-bcdb-3bfe240a62b2"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cAFMol_SqbGzF6IZSHdOS8taChr8dRe9n3RdxJp0QEQ"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
@@ -210,35 +254,6 @@ proxies:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия"
-    type: "vless"
-    server: "178.215.238.148"
-    port: 8443
-    uuid: "21c1132b-068c-46fb-880e-3268f6a30e7f"
-    udp: true
-    tls: true
-    servername: "eh.vk.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Crjd0I6hcasRXZcfNf7cs-YtJLpQ8u-t1CbwHIDAciU"
-      short-id: "478dc6"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия"
-    type: "vless"
-    server: "51.250.45.152"
-    port: 443
-    uuid: "22e456e0-6538-4fb7-9c1a-70fb50514251"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "LfhByBSbDIPB1r6_nm1GFXiVMONHu6S3p4B2DEaJHHU"
-      short-id: "8782473827bb6845"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "77.110.104.125"
@@ -255,21 +270,6 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "your-custom-path"
-  - name: "AetrisVPN White list ┃ 1️⃣ IP: 95.167.57.138 (CIDR) ┃ 🇺🇸 США"
-    type: "vless"
-    server: "95.167.57.138"
-    port: 7448
-    uuid: "2469da7a-b61b-4fbc-b160-13a00953bfce"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "edge-node05.ethervds.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "iImug6rGCJtMiCiZmHrZeYSnGQwj-uXDTd41ZZANXT4"
-      short-id: "9579a869004e61a5"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия"
     type: "vless"
     server: "46.243.234.72"
@@ -330,7 +330,7 @@ proxies:
       public-key: "tl-y_EBK2pPKhlChEPSYgKrXxrKUWomrQ8X9V8SP0xQ"
       short-id: "4acb4c423d47ae19"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #2"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия"
     type: "vless"
     server: "vsts.yandex-app.net"
     port: 8443
@@ -345,49 +345,22 @@ proxies:
       public-key: "pbLP4dV9Nx4aHWf35QFadbjOCdP_klwS9fvKSszlr3Q"
       short-id: "926b123d"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
+  - name: "AetrisVPN White list ┃ ✅ SNI: it.nvidia.com ┃ 🇵🇱 Польша"
     type: "vless"
-    server: "45.136.14.140"
-    port: 20086
-    uuid: "367e69b0-5781-45ad-83bc-94013729532d"
+    server: "81.90.17.116"
+    port: 777
+    uuid: "3716f057-f2d3-4924-8998-7a5729af7304"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.amazon.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "hfJpGSf-nFizW5PjVNk0W5ZoTc81diTMjurFm3FT9j4"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇫🇮 Финляндия"
-    type: "vless"
-    server: "45.136.14.140"
-    port: 20086
-    uuid: "367e69b0-5781-45ad-83bc-94013729532d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.amazon.com"
+    servername: "it.nvidia.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "hfJpGSf-nFizW5PjVNk0W5ZoTc81diTMjurFm3FT9j4"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇷🇺 Россия"
-    type: "vless"
-    server: "78.159.245.147"
-    port: 445
-    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
-    udp: true
-    tls: true
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "VHWmCkZwC5XE-ctv0p8BinjoIx4SWgJUIsZPrhNf6TA"
+      public-key: "gZOtLZfYWKRYVhsOy4Ks9-mxZRxRyQ3BTpSUOsKafyU"
+      short-id: "8a0cce76"
     network: "grpc"
     grpc-opts:
-      grpc-service-name: "grpc"
+      grpc-service-name: ""
   - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "185.229.9.74"
@@ -524,21 +497,7 @@ proxies:
       public-key: "PryGoq51ilG0eLUPl9i0xCvmk1xpwkyFSr_tG4GNLlU"
       short-id: "1d86d17709852910"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇬🇧 Великобритания"
-    type: "vless"
-    server: "85.189.89.172"
-    port: 20086
-    uuid: "469e41b2-ffb2-4ab3-ad4d-fd00ac69af75"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.amazon.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "n1_yHUrlljxT_VL8HX0ALz8JKAYHJb5e2sQ8tMdBp2A"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия #2"
+  - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "gr.nodesecure.ru"
     port: 443
@@ -552,35 +511,6 @@ proxies:
     reality-opts:
       public-key: "kY32I2PvI5UYqhjoZlcL0z6V6r1AV_lLZolQH78ApmU"
       short-id: "ae575a16aa1a19a9"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇷🇺 Россия #2"
-    type: "vless"
-    server: "51.250.24.245"
-    port: 4249
-    uuid: "4a6de183-2ad3-456c-b420-feeac81f6257"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
-      short-id: "6ba85179e30d4fc2"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #2"
-    type: "vless"
-    server: "193.200.229.240"
-    port: 443
-    uuid: "566f2431-4c98-484a-abaa-e29adc3b30c4"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.vk.com"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ogx2q9nA6IVvw2JHIrJoSNzu4RdMhWNu3lPuYf5MjiY"
     network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: www.mobile.yandex.ru ┃ 🇷🇺 Россия"
     type: "vless"
@@ -597,7 +527,7 @@ proxies:
       public-key: "dEHsPQQSnMJiHJKnJRbbLFKQmwIemUXQsQ1zIYbLZng"
       short-id: "f6"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия #2"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "45.136.15.212"
     port: 20086
@@ -626,22 +556,7 @@ proxies:
       public-key: "S_s3FVodJIep88KnIgT0cZLUMB2tAJHTJEn0o-J03G8"
       short-id: "283f4b51fbe39ad9"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇪🇸 Испания"
-    type: "vless"
-    server: "84.201.144.248"
-    port: 443
-    uuid: "6a1a433c-93d5-4e00-bb8b-cda23e1ee4c5"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "eh.vk.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "uHtKdqDtB0lpeS583-IqSyBX3FGNJNtUODvXgHB0Ch8"
-      short-id: "bb66146da4"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #3"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "138.124.109.158"
     port: 443
@@ -656,22 +571,22 @@ proxies:
       public-key: "cttKOS1BlF-u-mvX63PWNPJK6W_RXfx1wo8yjBEt1hI"
       short-id: "a2eb8d694a5480ff"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇺🇸 США"
+  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇺🇸 США #2"
     type: "vless"
-    server: "84.201.147.165"
-    port: 443
-    uuid: "6d5c4565-aeb8-4288-8fb1-bc12282e099b"
+    server: "185.86.145.190"
+    port: 12460
+    uuid: "6dd184c8-8c27-4eb2-95a5-85679881d99f"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.vk.com"
+    servername: "passport.yandex.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "V1jLTrMML1s6IqsOA1E4TrNa6iQKkGkUblsy72cDvX0"
-      short-id: "bd315a623a776f81"
+      public-key: "6iY9vVjXFPDfNVhmDsV5IlC0NcaPpaba83dxDEmxVzo"
+      short-id: "7d752340c0e7c473"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #4"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #3"
     type: "vless"
     server: "51.250.42.73"
     port: 8443
@@ -715,36 +630,6 @@ proxies:
       public-key: "lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk"
       short-id: "99fe1ec015fde70c"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания"
-    type: "vless"
-    server: "67.220.73.204"
-    port: 18662
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
-      short-id: "48050fab"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США #2"
-    type: "vless"
-    server: "67.220.73.204"
-    port: 18662
-    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
-      short-id: "48050fab"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇩🇪 Германия"
     type: "vless"
     server: "157.173.27.148"
@@ -760,22 +645,7 @@ proxies:
       public-key: "KP-P4zenuMuYe3UxPCjDEVmgqI4GiRZ95UbsAfmL71g"
       short-id: "970098f31b96a3e8"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇺🇸 США"
-    type: "vless"
-    server: "evolus.oblakoapp.com"
-    port: 443
-    uuid: "838de912-398a-4c0e-9228-0fd44b0d1f8b"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "travel.yandex.ru"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "KP-P4zenuMuYe3UxPCjDEVmgqI4GiRZ95UbsAfmL71g"
-      short-id: "970098f31b96a3e8"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #3"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "185.86.144.32"
     port: 443
@@ -791,20 +661,20 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #2"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США"
     type: "vless"
-    server: "37.221.76.117"
-    port: 2093
-    uuid: "8b7a8f61-74c0-491f-bbba-ea153edb1a4b"
+    server: "103.119.15.175"
+    port: 443
+    uuid: "89be587f-0e93-4c67-822e-98ad0a56c29e"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.apple.com"
+    servername: "www.amazon.com"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM"
-      short-id: "8a9725533854a7e8"
+      public-key: "vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ"
+      short-id: "ce90a4459f024897"
     network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия #2"
     type: "vless"
@@ -822,7 +692,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-wl"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #5"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #4"
     type: "vless"
     server: "beget-02.mansurchik.ru"
     port: 8443
@@ -837,7 +707,7 @@ proxies:
       public-key: "dow5lpW0pYEICZXTpnoSYZqx_5MbnWi-K8PDxnX9fkc"
       short-id: "6d9f2e7c4a8b3e1f"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #5"
     type: "vless"
     server: "88.218.248.89"
     port: 443
@@ -868,22 +738,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #7"
-    type: "vless"
-    server: "wl2.alertyagency.com"
-    port: 443
-    uuid: "a704443d-655e-4d9f-8ce6-12eeb17a9a08"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "th3X1X-WZfVfW-mctM2XQJiKQDO5iDZFKv9p3BDD7wM"
-      short-id: "8441cdf7"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #8"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
     type: "vless"
     server: "95.163.182.206"
     port: 443
@@ -913,7 +768,7 @@ proxies:
       public-key: "mza5Hn1aolSz65qu-UwvBP3oesxMe25r11o4nxvikF0"
       short-id: "93ae75024604f796"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #9"
+  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #7"
     type: "vless"
     server: "51.250.25.145"
     port: 443
@@ -952,135 +807,57 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "passport.yandex.ru"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
-      short-id: "e6"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
-    type: "vless"
-    server: "ww3.levikogjgfdd.ir"
-    port: 443
-    uuid: "b81b4d1b-7f20-48f1-82dc-d24bef898cab"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "33zaT3jHXjtynSQ0Ucw9bK92-XH2zolJmuIeZ1XyZB0"
       short-id: "e6"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #10"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #2"
     type: "vless"
-    server: "51.250.77.124"
-    port: 443
-    uuid: "b95a44a7-c684-407b-b57e-e1681d69de90"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "mLApF78WJzjM4mijtlx4NPIbSA9Hizk66AVeck51wxY"
-      short-id: "fe2f8495c476efd4"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #11"
-    type: "vless"
-    server: "144.31.166.141"
-    port: 7443
-    uuid: "c4bfda4b-0652-45a2-86ee-d627e5a2d4a5"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ZkvNs3bATpeAJORHDVkOGHqcRXHB_c4ZSHEkQeosO1o"
-      short-id: "607ceaf696"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇻🇳 Anycast"
-    type: "vless"
-    server: "52.199.42.25"
-    port: 46074
-    uuid: "c74a51bc-0e10-43e5-b6a8-9395c40f3f54"
+    server: "185.71.216.177"
+    port: 2092
+    uuid: "ca21222b-caf1-4418-b404-345ea713daa4"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.apple.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "Zpe4RNze71UGv-T9y55k31k9BtY7gS7uvRV5aA7eiWQ"
-      short-id: "367e3031"
+      public-key: "zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI"
+      short-id: "716b7eba38125f3a"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #3"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция"
     type: "vless"
-    server: "hsaia.connainho.lol"
-    port: 46074
-    uuid: "c74a51bc-0e10-43e5-b6a8-9395c40f3f54"
+    server: "37.221.76.116"
+    port: 2092
+    uuid: "ca21222b-caf1-4418-b404-345ea713daa4"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.apple.com"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Zpe4RNze71UGv-T9y55k31k9BtY7gS7uvRV5aA7eiWQ"
-      short-id: "367e3031"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇬🇧 Великобритания"
-    type: "vless"
-    server: "87.236.146.32"
-    port: 443
-    uuid: "c8d1c6d3-388f-48fc-a8f0-ed90d955d096"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.vk.com"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "nPcUKydxoRI66O3tT9O4QCZpLjOBvkGsiXG7pDX1BBw"
-      short-id: "6ba85179e30d4fc2"
+      public-key: "zeyIqmHylDrPbbtdG9BleBt0-fqKCHpZ0OZ9OY2_WUI"
+      short-id: "716b7eba38125f3a"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США #2"
+  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇬🇧 Великобритания #2"
     type: "vless"
-    server: "23.191.200.207"
+    server: "83.168.71.122"
     port: 443
-    uuid: "c8f7995a-1da3-4905-b499-d462738b57c1"
+    uuid: "cd1ac04c-3dea-450b-b57b-2aa00f357353"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "dl.google.com"
+    servername: "storage.yandex.net"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI"
+      public-key: "lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk"
+      short-id: "99fe1ec015fde70c"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇺🇸 США"
-    type: "vless"
-    server: "51.250.44.57"
-    port: 443
-    uuid: "cfe3363b-5b32-4e4e-a5fb-805fa0c91981"
-    udp: true
-    tls: true
-    servername: "api-maps.yandex.ru"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ntl-B6DVFe9ezroTPPzzWDgjw-toGDqiAS4do2oiNg4"
-      short-id: "7a72a20b90679b00"
-    network: "h2"
-    h2-opts:
-      path: "/xhttp"
   - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания"
     type: "vless"
     server: "nl1.vpnreal.ru"
@@ -1141,22 +918,7 @@ proxies:
       public-key: "iJAeFsGnmqu2tCJ4ihKgYKDLB2HSPT2S8V7XQv6rSjU"
       short-id: "c81ffb83"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #3"
-    type: "vless"
-    server: "31.76.125.19"
-    port: 8443
-    uuid: "e40b2b8e-492b-4982-aaaf-59e76c52a7fe"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "passport.yandex.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "-WS9_PoYmJybZfepl6md_S2kbIWphQMMXap5MySgu3c"
-      short-id: "ae040cf4656c2be9"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #4"
+  - name: "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "185.86.145.214"
     port: 12358
@@ -1171,35 +933,35 @@ proxies:
       public-key: "6V01vmstwvGJXz2r2eHE55Fr_L1KRYhjCwk5KD6CwmE"
       short-id: "b6f632a91065521e"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.google.com ┃ 🇫🇮 Финляндия"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #2"
     type: "vless"
-    server: "31.76.77.231"
+    server: "166.0.25.92"
     port: 443
-    uuid: "e894c08a-fecc-46f5-bf03-c95d0274c79d"
+    uuid: "ea240abb-cbff-4250-a7e2-81fead273be4"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "www.google.com"
+    servername: "www.amazon.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "sM_GJx22-fLTXSSyhHKWZGwUUlRajZLXgg7JXo8l0gs"
+      short-id: "f616956add605348"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #3"
+    type: "vless"
+    server: "166.0.25.92"
+    port: 443
+    uuid: "ea240abb-cbff-4250-a7e2-81fead273be4"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.amazon.com"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "PMtmgfkxpREXi51S_EUUi3KbYauQLjGD6c_llKRk8H4"
-      short-id: "cc85fc7134024405"
-    network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: swdist.apple.com ┃ 🇩🇪 Германия"
-    type: "vless"
-    server: "free.fugui.lol"
-    port: 51283
-    uuid: "ead3595f-4020-4e76-a3ec-c248e1a2f2f7"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "swdist.apple.com"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
-      short-id: "fa514b83"
+      public-key: "sM_GJx22-fLTXSSyhHKWZGwUUlRajZLXgg7JXo8l0gs"
+      short-id: "f616956add605348"
     network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇷🇺 Россия"
     type: "vless"
@@ -1217,6 +979,51 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
+  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #5"
+    type: "vless"
+    server: "45.198.80.230"
+    port: 443
+    uuid: "eece4171-e025-40a3-9027-e395036ff99d"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "storage.yandex.net"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg"
+      short-id: "28047c78b3f5ee2c"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия #2"
+    type: "vless"
+    server: "205.186.112.19"
+    port: 443
+    uuid: "f1a04d4c-56b3-4f93-a4ec-91a5039a48bd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.amazon.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY"
+      short-id: "cce23a6bce3bc925"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #4"
+    type: "vless"
+    server: "205.186.112.19"
+    port: 443
+    uuid: "f1a04d4c-56b3-4f93-a4ec-91a5039a48bd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.amazon.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY"
+      short-id: "cce23a6bce3bc925"
+    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
     type: "vless"
     server: "38.180.216.110"
@@ -1233,21 +1040,6 @@ proxies:
       public-key: "5d3R0LwRP61nCvkcSy7j3byPLnC7U3fucNyec4UHRyc"
       short-id: "2759"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #5"
-    type: "vless"
-    server: "45.195.110.104"
-    port: 8443
-    uuid: "f2390f38-ec10-4c25-a726-c0709b77330f"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "storage.yandex.net"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "66-fz0xjwauydj29EfFKyPHjJ2CIGaGSsJ6hsB--zAc"
-      short-id: "6ecdb111a4e57f94"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #4"
     type: "vless"
     server: "217.13.104.112"
@@ -1263,22 +1055,16 @@ proxies:
       public-key: "ZGwYjRp5RxlVpHUTPzi7pB4ZZuDU5FZEaFgBM71teiQ"
       short-id: "0669a3e6b300d069"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇨🇦 Канада"
-    type: "trojan"
-    server: "172.238.237.107"
-    port: 19973
-    password: "jDKgCAysZceRJ+IVv-t69w.p8=mB"
-    udp: true
-    sni: "www.vk.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды"
-      - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇺🇸 США"
+      - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇵🇱 Польша"
+      - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇵🇱 Польша"
       - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США"
+      - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США #2"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #2"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇸🇪 Швеция"
@@ -1290,18 +1076,13 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: yastatic.net ┃ 🇫🇮 Финляндия"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ 1️⃣ IP: 95.167.57.138 (CIDR) ┃ 🇺🇸 США"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇭🇺 Венгрия"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇬🇧 Великобритания"
       - "AetrisVPN White list ┃ ✅ SNI: helper-test.x5.ru ┃ 🇷🇺 Россия"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #2"
-      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇫🇮 Финляндия"
-      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇷🇺 Россия"
+      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия"
+      - "AetrisVPN White list ┃ ✅ SNI: it.nvidia.com ┃ 🇵🇱 Польша"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: download.amd.com ┃ 🇭🇰 Anycast"
       - "AetrisVPN White list ┃ ✅ SNI: download.amd.com ┃ 🇫🇮 Финляндия"
@@ -1311,55 +1092,42 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: amp-api-edge.apps.apple.com ┃ 🇳🇱 Нидерланды"
       - "AetrisVPN White list ┃ ✅ SNI: www.google.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇳🇱 Нидерланды"
-      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇬🇧 Великобритания"
-      - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия #2"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇷🇺 Россия #2"
-      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: www.mobile.yandex.ru ┃ 🇷🇺 Россия"
-      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇺🇸 США"
-      - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇪🇸 Испания"
+      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇺🇸 США #2"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #3"
-      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇺🇸 США"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #4"
       - "AetrisVPN White list ┃ ✅ SNI: iosapps.itunes.apple.com ┃ 🇯🇵 Япония"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇬🇧 Великобритания"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇬🇧 Великобритания"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США #2"
       - "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇺🇸 США"
-      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #3"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #4"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #5"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
       - "AetrisVPN White list ┃ ✅ SNI: ligastavok.ru ┃ 🇵🇱 Польша"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #7"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #8"
+      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇿🇦 ЮАР"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #9"
+      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #7"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #4"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #10"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #11"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇻🇳 Anycast"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #3"
-      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇬🇧 Великобритания"
-      - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США #2"
-      - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇺🇸 США"
+      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция"
+      - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇬🇧 Великобритания #2"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #2"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #3"
       - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇩🇪 Германия"
-      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #3"
-      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #4"
-      - "AetrisVPN White list ┃ ✅ SNI: www.google.com ┃ 🇫🇮 Финляндия"
-      - "AetrisVPN White list ┃ ✅ SNI: swdist.apple.com ┃ 🇩🇪 Германия"
+      - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #3"
       - "AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇷🇺 Россия"
-      - "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #5"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия #2"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇺🇸 США #4"
+      - "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #4"
-      - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇨🇦 Канада"
 rules:
   - MATCH,PROXY
