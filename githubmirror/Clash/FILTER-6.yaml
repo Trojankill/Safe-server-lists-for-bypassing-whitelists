@@ -1,21 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-25 16:45:36 UTC
+# 2026-11-25 17:01:00 UTC
 proxies:
-  - name: "🇺🇸 United States | [*CIDR]"
-    type: "vless"
-    server: "213.171.31.34"
-    port: 5001
-    uuid: "22a923a3-a631-4441-aabd-a1e8ada1ec75"
-    udp: true
-    tls: true
-    servername: "us.centermass.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "media.playback.v1.SessionGateway"
   - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
     server: "185.178.208.167"
@@ -33,27 +18,26 @@ proxies:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "tochkacdn.top"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇺🇸 | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
     type: "vless"
-    server: "195.209.209.64"
-    port: 443
-    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    server: "195.208.125.142"
+    port: 8443
+    uuid: "8f092ef0-a7e6-03e9-b989-836aebc00ff7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "ruhsds744.gangtype.com"
+    servername: "ya.ru"
     client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
-      public-key: "f8nkGMN6JDENHKvHrFYabx4JqSMSAZGS0lyc-KuagnQ"
-      short-id: "f3166ffa363ceaef"
+      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
+      short-id: "abc123"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | [*CIDR]"
       - "🇮🇷 Iran [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇦 🇺🇸 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
 rules:
   - MATCH,PROXY
