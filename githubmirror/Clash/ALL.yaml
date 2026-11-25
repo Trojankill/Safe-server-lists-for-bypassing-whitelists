@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-25 02:15:33 UTC
+# 2026-11-25 02:30:48 UTC
 proxies:
   - name: "🇺🇸 United States — #97"
     type: "vless"
@@ -296,6 +296,23 @@ proxies:
     reality-opts:
       public-key: "mpo4BIcoWiMXAQGt5a8IJ4MFkPJQyLC50dO_bXzC7z0"
     network: "tcp"
+  - name: "Romania | inlay.merlano.monster | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.247.224.206"
+    port: 443
+    uuid: "0b6a7fe0-206b-4071-9f96-cd397d1ec01a"
+    udp: true
+    tls: true
+    servername: "inlay.merlano.monster"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/de3/stream"
+      headers:
+        Host: "inlay.merlano.monster"
   - name: "🇫🇷 [BL] Сервер 457"
     type: "vless"
     server: "31.97.199.38"
@@ -1519,36 +1536,6 @@ proxies:
       public-key: "sLpIIcLEMXC-8ZGzQqoOpj4uuW2YfK-CeMlWqOY0mDg"
       short-id: "bc247d77b6b44a31"
     network: "tcp"
-  - name: "🇫🇲 @LexaVercelbot 🪼 #78"
-    type: "vless"
-    server: "yellow-4hmq5ehr3ievlnabv8l2.concept7.ru"
-    port: 443
-    uuid: "48818046-00b5-4576-bbe8-d2971fe0f844"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "player.mediavitrina.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
-      short-id: "d4735e3a265e"
-    network: "tcp"
-  - name: "🇫🇲 @LexaVercelbot 🪼 #77"
-    type: "vless"
-    server: "yellow-5hmq5ehr3ievlnabv8l2.concept7.ru"
-    port: 443
-    uuid: "48818046-00b5-4576-bbe8-d2971fe0f844"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "river-3-369.rtbcdn.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
-      short-id: "4b227777d4dd"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "gr.nodesecure.ru"
@@ -1970,21 +1957,6 @@ proxies:
       public-key: "uHtKdqDtB0lpeS583-IqSyBX3FGNJNtUODvXgHB0Ch8"
       short-id: "bb66146da4"
     network: "tcp"
-  - name: "The Netherlands | platform-api.max.ru | RAW | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "213.165.39.134"
-    port: 443
-    uuid: "6a251a93-8eee-43b5-92ed-ecadedcfd0a8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "platform-api.max.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Gtz3xOdQdWSocdx4NNie6s-bsa9VDiG6thqanJ4h31s"
-      short-id: "6f3332a09b0ab6d1"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #3"
     type: "vless"
     server: "138.124.109.158"
@@ -2014,22 +1986,6 @@ proxies:
       public-key: "3LbVuwKpQv55GngyRhvGl9KyAHIDAgvJx_VRM5mUD2Q"
       short-id: "6bdc8320"
     network: "tcp"
-  - name: "Russia | 778c5.lumariqis.com | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "92.53.74.129"
-    port: 443
-    uuid: "6d3f3ca5-bff7-4f4f-bbbc-8e648f29ace6"
-    udp: true
-    tls: true
-    servername: "778c5.lumariqis.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ax8KyOYnJhr4l_-VXcETx2gCcqSG4cMsYwLr15Pd5T4"
-      short-id: "70b34b71"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇺🇸 США"
     type: "vless"
     server: "84.201.147.165"
@@ -2178,7 +2134,7 @@ proxies:
       public-key: "lCCvbwGOEkx6IuK3eFd4RtmBi6UInWoMyt0QtfsOjwk"
       short-id: "99fe1ec015fde70c"
     network: "tcp"
-  - name: "🇵🇱 [BL] Сервер 85"
+  - name: "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "212.127.91.79"
     port: 443
@@ -2509,6 +2465,22 @@ proxies:
       public-key: "C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM"
       short-id: "8a9725533854a7e8"
     network: "tcp"
+  - name: "Poland | cdn.ozon.ru | GRPC | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "31.77.56.68"
+    port: 2052
+    uuid: "8f154051-5b60-4e04-8880-a416c133a61b"
+    udp: true
+    tls: true
+    servername: "cdn.ozon.ru"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "4UA4nr9RIIEOC6ZDK5AHkj5v0Q-e3_jNeVI5cIgPSg4"
+      short-id: "24"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "plogrpc"
   - name: "[KrolekVPNRehorn] Poland 🇵🇱 | Игровой 🎮"
     type: "vless"
     server: "31.77.56.68"
@@ -2556,21 +2528,6 @@ proxies:
       public-key: "biNcdU5mywtNw-KyPpLHindBxdEyAolT1WJ26N0b7y4"
       short-id: "94acb54627612d43"
     network: "tcp"
-  - name: "Germany | v4.clequinix.globalinetforallalwaysandneverbanyoubelieveme.com | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "109.248.17.252"
-    port: 443
-    uuid: "9000a7f3-df2a-49a8-ae56-3e7777bd32f7"
-    udp: true
-    tls: true
-    servername: "v4.clequinix.globalinetforallalwaysandneverbanyoubelieveme.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "v4-clequinix-globalinetforallalwaysandneverbanyoubelieveme-com"
   - name: "[KrolekVPNReborn] Russia 🇷🇺 | Каскад 🔗"
     type: "vless"
     server: "31.76.230.126"
@@ -2586,21 +2543,6 @@ proxies:
       public-key: "-A3f_Gm1KHTvskYtLD8s4cEQCmfWDlAWVVoIOg6DzTU"
     network: "tcp"
   - name: "🌀 CYBERPORTAL | White Keys #59 t.me/rjsxrd"
-    type: "vless"
-    server: "147.45.98.78"
-    port: 443
-    uuid: "918b1fa3-3e63-4c8d-87a4-8f635ffb7cd3"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.gosuslugi.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "C8jwxMahtF-BpgtauR6I6dVXCc0X8VM9nbFxDQ3LzF0"
-      short-id: "b4"
-    network: "tcp"
-  - name: "Russia | www.gosuslugi.ru | unknown | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "147.45.98.78"
     port: 443
@@ -2690,21 +2632,6 @@ proxies:
       public-key: "r7gK1xDtZl5wDL59Teyw--KXacW1EjOT2mm0MdwY7gM"
       short-id: "39b7084197ed8260"
     network: "tcp"
-  - name: "Finland | cdn.dom.gosuslugi.ru | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "45.14.165.62"
-    port: 11811
-    uuid: "9bd0f300-082d-4bf3-9f9a-6df689d36b2b"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "cdn.dom.gosuslugi.ru"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "lDw4rTS3T3KS11F92ZtDMJGmbdUJn_IdwpUNgZhGPko"
-      short-id: "3a"
-    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия #2"
     type: "vless"
     server: "46.243.234.143"
@@ -2721,6 +2648,36 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-wl"
+  - name: "🇫🇲 @LexaVercelbot 🪼 #25"
+    type: "vless"
+    server: "109.71.247.170"
+    port: 443
+    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rulonmicro2.gangplatform.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "VYXI4MWqWEFY_qU247otuCPPK7mMxmjFDdrKT6D1a1o"
+      short-id: "1a895886399244a0"
+    network: "tcp"
+  - name: "🇫🇲 @LexaVercelbot 🪼 #31"
+    type: "vless"
+    server: "176.123.162.82"
+    port: 443
+    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "rukzmicro1.gangplatform.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3xhvTr_v46NYSlw1yF6nWUjX6ZVHGfI0a0Wuao6lGVs"
+      short-id: "a8b3db4bfe222a8c"
+    network: "tcp"
   - name: "🇬🇧 United Kingdom — #31"
     type: "vless"
     server: "83.147.18.3"
@@ -2813,6 +2770,20 @@ proxies:
       path: "/bot-e9093ef3ee"
       headers:
         Host: "helsolutai.company"
+  - name: "🇸🇪 [WL] Сервер 51"
+    type: "vless"
+    server: "88.216.60.73"
+    port: 443
+    uuid: "a30903dc-1bf0-4be5-8b1b-603a3a56211c"
+    udp: true
+    tls: true
+    servername: "ns-api-gw.galioncc.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "a7c92e4b10d6f835"
+    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 415"
     type: "vless"
     server: "207.244.243.12"
@@ -3464,7 +3435,7 @@ proxies:
       public-key: "108ddeK8_9G_vKTA93xrC4Jfht_cyYTfciRbKiSgJiM"
       short-id: "f141f1462c2efc90"
     network: "tcp"
-  - name: "🇩🇪 [BL/AI] Сервер 191"
+  - name: "unknown | id.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
     type: "vless"
     server: "s53cc20fxv.deshevayashaurma.icu"
     port: 443
@@ -3568,20 +3539,6 @@ proxies:
       public-key: "cwWhNuekusD1iPZZ--7G891dU9PCacxyCYwsZxOApHA"
       short-id: "b2efed6d157e7bb0"
     network: "tcp"
-  - name: "Russia | ihc-to-connect.zalupa231313.shop | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "46.254.18.227"
-    port: 2443
-    uuid: "cc6742d3-3b95-461b-9095-40f97950628b"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ihc-to-connect.zalupa231313.shop"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r0KCQ9CyH3H_BXqx0S733447lfsXOooxytgflELVx1E"
-    network: "tcp"
   - name: "🇩🇪 [BL] Сервер 303"
     type: "vless"
     server: "153.52.143.118"
@@ -3626,36 +3583,6 @@ proxies:
       public-key: "StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE"
       short-id: "19296c9f1bf9c7b1"
     network: "tcp"
-  - name: "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "45.38.143.210"
-    port: 30584
-    uuid: "cebc5f19-18d9-48e6-9029-fb4b04caf393"
-    udp: true
-    tls: true
-    servername: "m.vk.com"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "2hV4TY2ygvQ7ISa5o4u_FUKXzlIhLgbsScE8M1h0m3Y"
-      short-id: "67ece882d65d0f1a"
-    network: "tcp"
-  - name: "Russia | cdn.okko.tv | GRPC | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.186.142.75"
-    port: 9443
-    uuid: "cfa56ec0-2bd0-4768-9b4b-9ef906dd6db0"
-    udp: true
-    tls: true
-    servername: "cdn.okko.tv"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "miH_ROFipWmvm-PqF1dSgN1jp7nIQZyKFhdILXXrsQI"
-      short-id: "91c91e25817ab51c"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "UpdateService"
   - name: "🇭🇰 [BL] Сервер 151"
     type: "vless"
     server: "68.64.181.197"
@@ -4045,21 +3972,6 @@ proxies:
       public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
       short-id: "fa514b83"
     network: "tcp"
-  - name: "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "185.249.155.130"
-    port: 443
-    uuid: "eaf2bca7-c78b-446f-83d7-e18c79e4cca5"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.evovpn.pro"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "ZKd5bjQ8ACciPQo_0ol7WEkUYUjGXaK9fMciQkFurF4"
-      short-id: "b4c823"
-    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 62"
     type: "vless"
     server: "150.241.87.52"
@@ -4119,6 +4031,51 @@ proxies:
       public-key: "qc2DcqT9zPPZr6ePZ7ukxACWrYhRNIBjDIjCK7veyQg"
       short-id: "a44ff7d2e80213c2"
     network: "tcp"
+  - name: "🇮🇪 [WL/AI] Сервер 77"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "ef1da56e-8117-42b4-bcd8-9094ebbdf985"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "typewriter.mail.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "8AMTGPbrxsJjdXnKnF9Q_FTBE0tQHG-nfE1CeqN7GRs"
+      short-id: "17aa0cd6"
+    network: "tcp"
+  - name: "Russia | typewriter.mail.ru | TCP | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.147.175"
+    port: 443
+    uuid: "ef1da56e-8117-42b4-bcd8-9094ebbdf985"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "typewriter.mail.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "8AMTGPbrxsJjdXnKnF9Q_FTBE0tQHG-nfE1CeqN7GRs"
+      short-id: "17aa0cd6"
+    network: "tcp"
+  - name: "🇫🇲 @LexaVercelbot 🪼 #48"
+    type: "vless"
+    server: "e64bc77nzk.schoolbag.top"
+    port: 443
+    uuid: "ef1da56e-8117-42b4-bcd8-9094ebbdf985"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "typewriter.mail.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "8AMTGPbrxsJjdXnKnF9Q_FTBE0tQHG-nfE1CeqN7GRs"
+      short-id: "17aa0cd6"
+    network: "tcp"
   - name: "🇺🇸 [BL] Сервер 423"
     type: "vless"
     server: "205.186.112.19"
@@ -4164,36 +4121,6 @@ proxies:
     reality-opts:
       public-key: "66-fz0xjwauydj29EfFKyPHjJ2CIGaGSsJ6hsB--zAc"
       short-id: "6ecdb111a4e57f94"
-    network: "tcp"
-  - name: "Hungary | down-cs.su | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "217.13.104.185"
-    port: 443
-    uuid: "f2469e6a-6d2c-4be9-a162-9685de40004d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "down-cs.su"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "v2QTubJwfdgVG_BPLuuTyU26rOIGzNN3DuCQ_rAqR3Y"
-      short-id: "d2f076a31bd9723a"
-    network: "tcp"
-  - name: "Sweden | belorussia.su | unknown | [#LSO - #LinSpisokObhod]"
-    type: "vless"
-    server: "88.216.72.133"
-    port: 443
-    uuid: "f2469e6a-6d2c-4be9-a162-9685de40004d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "belorussia.su"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "_L1qhNOmTE-C3jYjjszcTyWVXbtzBXcs7EOBUZ1_lyI"
-      short-id: "2fc859cc5bb0543b"
     network: "tcp"
   - name: "🇳🇱 [BL] Сервер 463"
     type: "vless"
@@ -4271,6 +4198,36 @@ proxies:
       - "http/1.1"
     client-fingerprint: "chrome"
     skip-cert-verify: false
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd"
+    type: "vless"
+    server: "143.246.215.19"
+    port: 443
+    uuid: "f69e272f-e0e5-4e9d-b180-5be63930cde9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us.memepn.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "868419504747f6de"
+    network: "tcp"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd #2"
+    type: "vless"
+    server: "us.memepn.com"
+    port: 443
+    uuid: "f69e272f-e0e5-4e9d-b180-5be63930cde9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "us.memepn.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "drl7nndYdfzZY1aQ0eUAWmNV0nsHig2uDnu9siy9biQ"
+      short-id: "868419504747f6de"
     network: "tcp"
   - name: "🇫🇲 @LexaVercelbot 🪼 #76"
     type: "vless"
@@ -4363,6 +4320,23 @@ proxies:
       public-key: "qljbddkyGqBkkOnPdvgw4s6HX_iyEUB2qesNM1qiFg0"
       short-id: "36f3c7"
     network: "tcp"
+  - name: "Russia | new.wytys.ru | WebSocket | [#LSO - #LinSpisokObhod]"
+    type: "vless"
+    server: "185.86.145.183"
+    port: 443
+    uuid: "fdbd2867-2081-474a-9a93-55cb0d8f9aa7"
+    udp: true
+    tls: true
+    servername: "new.wytys.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/nl7ws"
+      headers:
+        Host: "new.wytys.ru"
   - name: "🇫🇲 @LexaVercelbot 🪼 #57"
     type: "vless"
     server: "new.wytys.ru"
@@ -4470,7 +4444,7 @@ proxies:
     sni: "www.vk.com"
     client-fingerprint: "chrome"
     skip-cert-verify: false
-  - name: "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
+  - name: "Подписка #LSO© Trojan: 25 [#LSO - #LinSpisokObhod]"
     type: "trojan"
     server: "trojan.about.lso"
     port: 443
@@ -4526,7 +4500,7 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🌀 CYBERPORTAL | White Keys | 🇩🇪 Германия #149"
+  - name: "🇩🇪 [WL] Сервер 177"
     type: "vmess"
     server: "185.177.229.95"
     port: 1270
@@ -4881,6 +4855,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #2"
       - "🇳🇱 [WL/AI] Сервер 61"
+      - "Romania | inlay.merlano.monster | WebSocket | [#LSO - #LinSpisokObhod]"
       - "🇫🇷 [BL] Сервер 457"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇸🇪 Швеция"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇳🇱 Нидерланды"
@@ -4963,8 +4938,6 @@ proxy-groups:
       - "🇫🇲 @LexaVercelbot 🪼 #64"
       - "Бесплатный VPN tg:VLESSFORU 🇪🇪 t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
-      - "🇫🇲 @LexaVercelbot 🪼 #78"
-      - "🇫🇲 @LexaVercelbot 🪼 #77"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия #2"
       - "🇸🇬 [BL] Сервер 384"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇷🇺 Россия #2"
@@ -4993,10 +4966,8 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇺🇸 США"
       - "🇺🇸 [BL/AI] Сервер 434"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇪🇸 Испания"
-      - "The Netherlands | platform-api.max.ru | RAW | [#LSO - #LinSpisokObhod]"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #3"
       - "🇮🇳 [BL] Сервер 443"
-      - "Russia | 778c5.lumariqis.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇺🇸 США"
       - "🇯🇵 [BL] Сервер 409"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #4"
@@ -5007,7 +4978,7 @@ proxy-groups:
       - "🇪🇪 [BL] Сервер 465"
       - "AetrisVPN White list ┃ ✅ SNI: iosapps.itunes.apple.com ┃ 🇯🇵 Япония"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇬🇧 Великобритания"
-      - "🇵🇱 [BL] Сервер 85"
+      - "Poland | storage.yandex.net | TCP | [#LSO - #LinSpisokObhod]"
       - "🇨🇭 Switzerland | 🌐 [*CIDR] t.me/rjsxrd"
       - "🇨🇭 [BL] Сервер 156"
       - "俄罗斯联邦_112504193 t.me/rjsxrd"
@@ -5029,26 +5000,27 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #3"
       - "🇺🇸 [BL] Сервер 414"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
+      - "Poland | cdn.ozon.ru | GRPC | [#LSO - #LinSpisokObhod]"
       - "[KrolekVPNRehorn] Poland 🇵🇱 | Игровой 🎮"
       - "🇺🇸🕊♥️ США [Обход БС] #3 t.me/rjsxrd"
       - "🇬🇷 Greece — #33"
-      - "Germany | v4.clequinix.globalinetforallalwaysandneverbanyoubelieveme.com | GRPC | [#LSO - #LinSpisokObhod]"
       - "[KrolekVPNReborn] Russia 🇷🇺 | Каскад 🔗"
       - "🌀 CYBERPORTAL | White Keys #59 t.me/rjsxrd"
-      - "Russia | www.gosuslugi.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "德国_112504448 t.me/rjsxrd"
       - "🇺🇸 United States — #93"
       - "🇩🇪 [BL] Сервер 66"
       - "🌐 [BL/AI] Сервер 65"
       - "🇫🇮 [BL] Сервер 412"
-      - "Finland | cdn.dom.gosuslugi.ru | unknown | [#LSO - #LinSpisokObhod]"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия #2"
+      - "🇫🇲 @LexaVercelbot 🪼 #25"
+      - "🇫🇲 @LexaVercelbot 🪼 #31"
       - "🇬🇧 United Kingdom — #31"
       - "Бесплатный VPN tg:VLESSFORU 🇹🇷 t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇹🇷 t.me/rjsxrd #2"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #5"
       - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №2"
       - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G"
+      - "🇸🇪 [WL] Сервер 51"
       - "🇺🇸 [BL] Сервер 415"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #3"
       - "🇧🇬 [BL] Сервер 249"
@@ -5091,19 +5063,16 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇻🇳 Anycast"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия #2"
       - "🇩🇪 Germany — #23"
-      - "🇩🇪 [BL/AI] Сервер 191"
+      - "unknown | id.vk.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "🇫🇲 @LexaVercelbot 🪼 #68"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇬🇧 Великобритания"
       - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇺🇸 США #2"
       - "土耳其_112504033 t.me/rjsxrd"
       - "🇨🇦 Canada — #1"
       - "🇸🇬 [BL] Сервер 122"
-      - "Russia | ihc-to-connect.zalupa231313.shop | unknown | [#LSO - #LinSpisokObhod]"
       - "🇩🇪 [BL] Сервер 303"
       - "🇺🇸 [BL] Сервер 420"
       - "🇺🇸 United States — #85"
-      - "Latvia | m.vk.com | TCP | [#LSO - #LinSpisokObhod]"
-      - "Russia | cdn.okko.tv | GRPC | [#LSO - #LinSpisokObhod]"
       - "🇭🇰 [BL] Сервер 151"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇺🇸 США"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания"
@@ -5130,27 +5099,30 @@ proxy-groups:
       - "🇺🇸 [BL] Сервер 460"
       - "🇹🇼 Taiwan (сервер) | 🇭🇰 Hong Kong (выход 200.181.82.226) | @RaViraNet t.me/rjsxrd"
       - "AetrisVPN White list ┃ ✅ SNI: swdist.apple.com ┃ 🇩🇪 Германия"
-      - "Germany | www.evovpn.pro | unknown | [#LSO - #LinSpisokObhod]"
       - "🇺🇸 [BL] Сервер 62"
       - "🇩🇪 [WL] Сервер 90"
       - "AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇷🇺 Россия"
       - "🇫🇷 France — #28"
+      - "🇮🇪 [WL/AI] Сервер 77"
+      - "Russia | typewriter.mail.ru | TCP | [#LSO - #LinSpisokObhod]"
+      - "🇫🇲 @LexaVercelbot 🪼 #48"
       - "🇺🇸 [BL] Сервер 423"
       - "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #5"
-      - "Hungary | down-cs.su | unknown | [#LSO - #LinSpisokObhod]"
-      - "Sweden | belorussia.su | unknown | [#LSO - #LinSpisokObhod]"
       - "🇳🇱 [BL] Сервер 463"
       - "🇳🇱 [BL] Сервер 447"
       - "🌐 [BL] Сервер 63"
       - "LTE/5G TgOnly Все операторы 🇪🇺 t.me/rjsxrd"
       - "🌀 CYBERPORTAL | White Keys #554 t.me/rjsxrd"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd"
+      - "Бесплатный VPN tg:VLESSFORU 🇺🇸 t.me/rjsxrd #2"
       - "🇫🇲 @LexaVercelbot 🪼 #76"
       - "🇬🇧_英国 (6) t.me/rjsxrd"
       - "🇩🇪 [BL] Сервер 392"
       - "🇩🇪 [BL] Сервер 393"
       - "🇩🇪 [BL] Сервер 391"
       - "🇰🇿 [BL] Сервер 424"
+      - "Russia | new.wytys.ru | WebSocket | [#LSO - #LinSpisokObhod]"
       - "🇫🇲 @LexaVercelbot 🪼 #57"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #4"
       - "美国_1125044481 t.me/rjsxrd"
@@ -5160,12 +5132,12 @@ proxy-groups:
       - "🇯🇵 Join+Telegram:@SolVPN 🇯🇵 t.me/rjsxrd"
       - "Бесплатный VPN tg:VLESSFORU 🇩🇪 #4"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇨🇦 Канада"
-      - "Подписка #LSO© Trojan: 24 [#LSO - #LinSpisokObhod]"
+      - "Подписка #LSO© Trojan: 25 [#LSO - #LinSpisokObhod]"
       - "[OpenRay] 🇦🇪AE-46"
       - "🌀 CYBERPORTAL | White Keys | 🇦🇹 Австрия #204"
       - "[OpenRay] 🇫🇷FR-123"
       - "🇩🇪 [WL] Сервер 81"
-      - "🌀 CYBERPORTAL | White Keys | 🇩🇪 Германия #149"
+      - "🇩🇪 [WL] Сервер 177"
       - "🌀 CYBERPORTAL | White Keys #462"
       - "[OpenRay] 🇳🇱NL-64"
       - "[OpenRay] 🇫🇷FR-124"
