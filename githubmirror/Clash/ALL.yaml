@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-25 23:15:34 UTC
+# 2026-11-25 23:30:47 UTC
 proxies:
   - name: "🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd"
     type: "vless"
@@ -29,6 +29,21 @@ proxies:
     reality-opts:
       public-key: "ALT8hIGeZEhi0sQFbXP_ntBg8Xo-v7i0YCLrqTnBxRk"
       short-id: "0990d22f"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды"
+    type: "vless"
+    server: "154.83.159.14"
+    port: 8443
+    uuid: "0047a8bc-0025-4d45-899b-c75c669f3ede"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "storage.yandex.net"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "LT_0j3zQkaqgtJHvyaG24xz0IfmXUswVCTeC75Qsgjo"
+      short-id: "6f15101ff2cc4887"
     network: "tcp"
   - name: "🇳🇱 The Netherlands — #70"
     type: "vless"
@@ -132,21 +147,6 @@ proxies:
       public-key: "NMgy1XgCSXExOg6Tg8xG9lCWttMF6sjdpB41lZy6FWo"
       short-id: "5c256336e3b673fa"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇵🇱 Польша"
-    type: "vless"
-    server: "150.241.87.218"
-    port: 443
-    uuid: "04fa9389-a230-4f62-bcdb-3bfe240a62b2"
-    udp: true
-    tls: true
-    servername: "dl.google.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "iGt12PmtbQOInMmfnbeZ2dFkANeDKiXT5H7YizIRMm0"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
   - name: "🇯🇵 [BL] Сервер 276"
     type: "vless"
     server: "154.36.152.216"
@@ -1097,7 +1097,7 @@ proxies:
       public-key: "vmfswX2VwSAGOSd9gleiWLfZK8BVyMI7D6oMDPUjpCk"
       short-id: "f15240e5244c7ba8"
     network: "tcp"
-  - name: "🇺🇸 [BL] Сервер 211"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇺🇸 США"
     type: "vless"
     server: "209.50.50.174"
     port: 443
@@ -1106,7 +1106,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.microsoft.com"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "SetkHCEuwTCJLii9zJ4K_wz2Oe8ut4au8Czm5y_xt18"
@@ -1189,7 +1189,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇳🇱 Нидерланды"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
     type: "vless"
     server: "86.54.28.75"
     port: 443
@@ -1198,6 +1198,9 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "www.apple.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
@@ -1297,7 +1300,7 @@ proxies:
       public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
       short-id: "4b227777d4dd"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇵🇱 #2"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺"
     type: "vless"
     server: "189.74.116.41"
     port: 443
@@ -1502,7 +1505,7 @@ proxies:
       public-key: "PCm0k-SvNd00cgNuqqnbCzmwVZd5vkgX2ZLk2_qngRs"
       short-id: "b60a93"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇵🇱 #3"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
     type: "vless"
     server: "188.225.34.92.i-love-russia.online"
     port: 443
@@ -1583,6 +1586,21 @@ proxies:
       public-key: "rabtI-ymNXBUvYYRwAw8DiR-1pdP7U0WPIaCBHEkgzo"
       short-id: "77bb0d07bddbc832"
     network: "tcp"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
+    type: "vless"
+    server: "171.22.73.93"
+    port: 443
+    uuid: "65b6bc06-44c9-000e-8dc0-bdf1d688c0e6"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.f2p.onl"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
   - name: "🇨🇭 [BL] Сервер 338"
     type: "vless"
     server: "195.15.207.252"
@@ -1598,7 +1616,37 @@ proxies:
       public-key: "dqhYuWM5WUOgUYe4FmvLZS-Nb4tY9qZ7_WffpePl6lQ"
       short-id: "76d0389e457fcba0"
     network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇯🇵 Япония"
+    type: "vless"
+    server: "158.101.151.157"
+    port: 443
+    uuid: "66171cbe-0b4b-4b24-99f6-d5a822f4dc9a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "99eQkMBHqOEKororOWKFlmH8M0o9VaVpV9w1vQIxhz8"
+      short-id: "684c7531e599dec0"
+    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇩🇪 Германия"
+    type: "vless"
+    server: "158.101.151.157"
+    port: 443
+    uuid: "66171cbe-0b4b-4b24-99f6-d5a822f4dc9a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.microsoft.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "99eQkMBHqOEKororOWKFlmH8M0o9VaVpV9w1vQIxhz8"
+      short-id: "684c7531e599dec0"
+    network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇯🇵 Япония #2"
     type: "vless"
     server: "158.101.151.157"
     port: 443
@@ -1984,6 +2032,36 @@ proxies:
     reality-opts:
       public-key: "6dc3iKXilOQpA_JFrKlk5-CsFjSmOm_5p0kSQcO9qi4"
     network: "tcp"
+  - name: "🇯🇵 [BL] Сервер 33"
+    type: "vless"
+    server: "103.75.118.228"
+    port: 12683
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
+      short-id: "48050fab"
+    network: "tcp"
+  - name: "🇺🇸 [BL] Сервер 55"
+    type: "vless"
+    server: "67.220.73.204"
+    port: 18662
+    uuid: "814bd064-544d-4255-a070-5705c03f6da9"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "k2hPp0tTW0Da-HK94wYpSCLbuK44LfGqC2MSJIM1Ti0"
+      short-id: "48050fab"
+    network: "tcp"
   - name: "🇩🇪 [WL] Сервер 56"
     type: "vless"
     server: "185.247.224.206"
@@ -2173,21 +2251,6 @@ proxies:
       public-key: "vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ"
       short-id: "ce90a4459f024897"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
-    type: "vless"
-    server: "37.221.76.117"
-    port: 2093
-    uuid: "8b7a8f61-74c0-491f-bbba-ea153edb1a4b"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "www.apple.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "C_GA8wVjeLmyqLK6em5OHn4WPlsbndA-RyvyNU1aGFM"
-      short-id: "8a9725533854a7e8"
-    network: "tcp"
   - name: "🇫🇮 [BL] Сервер 368"
     type: "vless"
     server: "79.137.206.59"
@@ -2295,7 +2358,7 @@ proxies:
     reality-opts:
       public-key: "-A3f_Gm1KHTvskYtLD8s4cEQCmfWDlAWVVoIOg6DzTU"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
     type: "vless"
     server: "147.45.98.78"
     port: 443
@@ -2657,7 +2720,7 @@ proxies:
       public-key: "kpQWnVk3fEJXfPGFsMerUoPV_ZqUJUJFRnF1FvKyhRY"
       short-id: "7a7d19880a9ee786"
     network: "tcp"
-  - name: "tg:VLESSFORU top speed 🇮🇪"
+  - name: "Бесплатный VPN tg:VLESSFORU 🇮🇪"
     type: "vless"
     server: "83.141.92.168"
     port: 443
@@ -2762,21 +2825,6 @@ proxies:
       public-key: "LGj0rJ5R28CbD24VRc5nCpNg-2EMU85fmUZNdrZ6CWI"
       short-id: "bc7b676b8ed7b300"
     network: "tcp"
-  - name: "tg:VLESSFORU top ping 🇫🇮"
-    type: "vless"
-    server: "resurrected.warriorofblacksun.run"
-    port: 443
-    uuid: "b0070fb4-afc9-4f12-a49e-154b6b9c1331"
-    udp: true
-    tls: true
-    servername: "resurrected.warriorofblacksun.run"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Ww_HS9_n7ob3uESSXtbU23EPM-BOJ5ZYLp-RFB0L0SY"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "xyz"
   - name: "🇫🇲 @LexaVercelbot 🪼 #12"
     type: "vless"
     server: "it.rawivpn.com"
@@ -3123,7 +3171,7 @@ proxies:
       public-key: "108ddeK8_9G_vKTA93xrC4Jfht_cyYTfciRbKiSgJiM"
       short-id: "f141f1462c2efc90"
     network: "tcp"
-  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция t.me/rjsxrd"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция"
     type: "vless"
     server: "37.221.76.116"
     port: 2092
@@ -3314,7 +3362,7 @@ proxies:
       public-key: "iJAeFsGnmqu2tCJ4ihKgYKDLB2HSPT2S8V7XQv6rSjU"
       short-id: "c81ffb83"
     network: "tcp"
-  - name: "Бесплатный VPN tg:VLESSFORU 🇨🇭"
+  - name: "🇳🇱 [BL] Сервер 232"
     type: "vless"
     server: "45.95.232.233"
     port: 27020
@@ -3450,7 +3498,7 @@ proxies:
     network: "grpc"
     grpc-opts:
       grpc-service-name: ""
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "168.113.255.98"
     port: 9881
@@ -3458,7 +3506,7 @@ proxies:
     udp: true
     tls: true
     servername: "dl.google.com"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
@@ -3541,6 +3589,36 @@ proxies:
     reality-opts:
       public-key: "sM_GJx22-fLTXSSyhHKWZGwUUlRajZLXgg7JXo8l0gs"
       short-id: "f616956add605348"
+    network: "tcp"
+  - name: "🇹🇼 Taiwan (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
+    type: "vless"
+    server: "free.fugui.lol"
+    port: 47396
+    uuid: "ead3595f-4020-4e76-a3ec-c248e1a2f2f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "swdist.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
+      short-id: "fa514b83"
+    network: "tcp"
+  - name: "台湾_112514020 t.me/rjsxrd"
+    type: "vless"
+    server: "free.fugui.lol"
+    port: 62015
+    uuid: "ead3595f-4020-4e76-a3ec-c248e1a2f2f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "swdist.apple.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "IjWYbHNrZb3UCQxsTJyekEOA3tHq42L6Jw3O8MmLYVQ"
+      short-id: "fa514b83"
     network: "tcp"
   - name: "🇸🇪 [BL] Сервер 374"
     type: "vless"
@@ -3647,6 +3725,21 @@ proxies:
       public-key: "cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY"
       short-id: "cce23a6bce3bc925"
     network: "tcp"
+  - name: "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
+    type: "vless"
+    server: "205.186.112.19"
+    port: 443
+    uuid: "f1a04d4c-56b3-4f93-a4ec-91a5039a48bd"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "www.amazon.com"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "cwao9PnlNhUTd19WxIKAOdAjkaqVJihY0d2WOR8I2WY"
+      short-id: "cce23a6bce3bc925"
+    network: "tcp"
   - name: "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
     type: "vless"
     server: "38.180.216.110"
@@ -3712,7 +3805,7 @@ proxies:
       method: "GET"
       path:
         - "/"
-  - name: "LTE/5G TgOnly Все операторы 🇪🇺"
+  - name: "LTE/5G Все операторы 🇪🇺 #3"
     type: "vless"
     server: "78.159.250.83"
     port: 443
@@ -4037,7 +4130,7 @@ proxies:
     udp: true
     sni: "mother-earth.fyi"
     skip-cert-verify: false
-  - name: "LTE/5G Все операторы 🇪🇺 #3"
+  - name: "LTE/5G Все операторы 🇪🇺 #4"
     type: "hysteria2"
     server: "timewhite655.thebestqas.am"
     port: 443
@@ -4137,7 +4230,7 @@ proxies:
     udp: true
     sni: "r7m4.scan-cdn.com"
     skip-cert-verify: false
-  - name: "Бесплатный VPN tg:VLESSFORU 🇳🇱 #2"
+  - name: "tg:VLESSFORU top ping 🇳🇱"
     type: "hysteria2"
     server: "corp.scan-cdn.com"
     port: 443
@@ -4191,6 +4284,7 @@ proxy-groups:
     proxies:
       - "🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd"
       - "🇺🇸 United States — #117"
+      - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇳🇱 Нидерланды"
       - "🇳🇱 The Netherlands — #70"
       - "[KrolekVPNReborn] Netherlands 🇳🇱 | Комбо ⚡"
       - "LTE/5G MTS Beeline Tele2 🇪🇺"
@@ -4198,7 +4292,6 @@ proxy-groups:
       - "🇫🇲 @LexaVercelbot 🪼 #95"
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇵🇱 Польша"
       - "🇱🇻 Latvia — #47"
-      - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇵🇱 Польша"
       - "🇯🇵 [BL] Сервер 276"
       - "🇵🇱 Poland — #78"
       - "🇺🇸 United States — #96"
@@ -4263,20 +4356,20 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: travel.yandex.ru ┃ 🇷🇺 Россия #2"
       - "AetrisVPN White list ┃ ✅ SNI: amp-api-edge.apps.apple.com ┃ 🇳🇱 Нидерланды"
       - "AetrisVPN White list ┃ ✅ SNI: www.google.com ┃ 🇩🇪 Германия"
-      - "🇺🇸 [BL] Сервер 211"
+      - "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇺🇸 США"
       - "Finland | 8a2e72t.nl20.h1clayd.shop | TCP | [#LSO - #LinSpisokObhod]"
       - "🇳🇱 [BL] Сервер 106"
       - "🇳🇱 [BL] Сервер 105"
       - "AetrisVPN White list ┃ ✅ SNI: yastatic.net ┃ 🇬🇧 Великобритания"
       - "AetrisVPN White list ┃ ✅ SNI: yastatic.net ┃ 🇬🇧 Великобритания #2"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇳🇱 Нидерланды"
+      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
       - "🇳🇱 [BL] Сервер 73"
       - "🇳🇱 [BL] Сервер 80"
       - "🇫🇲 @LexaVercelbot 🪼 #64"
       - "🇪🇪 Estonia | [*CIDR] YA t.me/rjsxrd"
       - "🇫🇲 @LexaVercelbot 🪼 #78"
       - "LTE/5G Все операторы 🇪🇺"
-      - "Бесплатный VPN tg:VLESSFORU 🇵🇱 #2"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇩🇪 Германия"
       - "🇸🇬 [BL] Сервер 309"
       - "🇪🇸 [BL] Сервер 224"
@@ -4290,13 +4383,16 @@ proxy-groups:
       - "🇯🇵 [BL] Сервер 378"
       - "🇺🇸 [BL] Сервер 357"
       - "🇬🇧 [BL] Сервер 372"
-      - "Бесплатный VPN tg:VLESSFORU 🇵🇱 #3"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #2"
       - "LTE/5G Все операторы 🇪🇺 #2"
       - "🇨🇿 [BL] Сервер 358"
       - "🇫🇲 @LexaVercelbot 🪼 #53"
       - "🇧🇬 [BL] Сервер 126"
+      - "🌐 Anycast-IP | 🇪🇪 🇷🇺 | [*CIDR]"
       - "🇨🇭 [BL] Сервер 338"
+      - "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇯🇵 Япония"
       - "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇩🇪 Германия"
+      - "AetrisVPN White list ┃ ✅ SNI: www.microsoft.com ┃ 🇯🇵 Япония #2"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇺🇸 США"
       - "🇺🇸 [BL] Сервер 359"
       - "🇺🇸 [BL/AI] Сервер 360"
@@ -4322,6 +4418,8 @@ proxy-groups:
       - "英国_112514291 t.me/rjsxrd"
       - "🇮🇷 Iran [*CIDR]"
       - "🇺🇸 США 2 Unredacted Inc t.me/rjsxrd"
+      - "🇯🇵 [BL] Сервер 33"
+      - "🇺🇸 [BL] Сервер 55"
       - "🇩🇪 [WL] Сервер 56"
       - "France | lagoon.gerqix.online | WebSocket | [#LSO - #LinSpisokObhod]"
       - "未知_1125141479 t.me/rjsxrd"
@@ -4334,7 +4432,6 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 362"
       - "AetrisVPN White list ┃ ✅ SNI: www.vk.com ┃ 🇩🇪 Германия #2"
       - "🇺🇸 [BL] Сервер 344"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇩🇪 Германия"
       - "🇫🇮 [BL] Сервер 368"
       - "[420ms Испания ES 🇪🇸 @vlesstrojan] [unverified] t.me/rjsxrd"
       - "[KrolekVPNRehorn] Poland 🇵🇱 | Игровой 🎮"
@@ -4342,7 +4439,7 @@ proxy-groups:
       - "🇬🇷 Greece — #41"
       - "🇩🇪 [BL] Сервер 373"
       - "[KrolekVPNReborn] Russia 🇷🇺 | Каскад 🔗"
-      - "Бесплатный VPN tg:VLESSFORU 🇷🇺"
+      - "Бесплатный VPN tg:VLESSFORU 🇷🇺 #3"
       - "Russia | www.gosuslugi.ru | TCP | [#LSO - #LinSpisokObhod]"
       - "德国_112514446 t.me/rjsxrd"
       - "🇺🇸 United States — #111"
@@ -4366,14 +4463,13 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: ligastavok.ru ┃ 🇵🇱 Польша"
       - "🌀 CYBERPORTAL | White List Lite #43 t.me/rjsxrd"
       - "🇨🇿 [BL] Сервер 210"
-      - "tg:VLESSFORU top speed 🇮🇪"
+      - "Бесплатный VPN tg:VLESSFORU 🇮🇪"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #6"
       - "AetrisVPN White list ┃ ✅ SNI: api-maps.yandex.ru ┃ 🇩🇪 Германия #7"
       - "🇫🇲 @LexaVercelbot 🪼 #28"
       - "🇫🇲 @LexaVercelbot 🪼 #30"
       - "AetrisVPN White list ┃ ✅ SNI: storage.yandex.net ┃ 🇩🇪 Германия #4"
       - "🇳🇱 [BL] Сервер 165"
-      - "tg:VLESSFORU top ping 🇫🇮"
       - "🇫🇲 @LexaVercelbot 🪼 #12"
       - "🇨🇿 [BL] Сервер 205"
       - "🇵🇱 [BL/AI] Сервер 364"
@@ -4397,7 +4493,7 @@ proxy-groups:
       - "🌐 [BL/AI] Сервер 89"
       - "🌐 [BL] Сервер 75"
       - "🇫🇲 @LexaVercelbot 🪼 #68"
-      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция t.me/rjsxrd"
+      - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇫🇷 Франция"
       - "🇨🇦 Canada — #7"
       - "🇸🇬 [BL] Сервер 130"
       - "🇩🇪 [BL] Сервер 345"
@@ -4410,7 +4506,7 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #2"
       - "AetrisVPN White list ┃ ✅ SNI: eh.vk.com ┃ 🇬🇧 Великобритания #3"
       - "AetrisVPN White list ┃ ✅ SNI: dl.google.com ┃ 🇩🇪 Германия"
-      - "Бесплатный VPN tg:VLESSFORU 🇨🇭"
+      - "🇳🇱 [BL] Сервер 232"
       - "🇷🇴 Romania — #91"
       - "🇺🇦 [BL] Сервер 347"
       - "🇳🇱 Нидерланды 19 Akamai Technologies, Inc. t.me/rjsxrd"
@@ -4419,12 +4515,14 @@ proxy-groups:
       - "🇮🇹 Italy — #44"
       - "🇳🇱 Netherlands | TG: @HardVpn_robot t.me/rjsxrd"
       - "🇸🇦 [BL] Сервер 375"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
       - "LTE/5G MTS Beeline MegafonYota 🇪🇺 t.me/rjsxrd"
       - "🇲🇰 [BL/AI] Сервер 367"
       - "AetrisVPN White list ┃ ✅ SNI: passport.yandex.ru ┃ 🇩🇪 Германия #2"
       - "🇫🇮 [BL] Сервер 334"
       - "🇺🇸 [BL] Сервер 389"
+      - "🇹🇼 Taiwan (сервер) | 🌐 Выход не определён | @RaViraNet t.me/rjsxrd"
+      - "台湾_112514020 t.me/rjsxrd"
       - "🇸🇪 [BL] Сервер 374"
       - "AetrisVPN White list ┃ ✅ SNI: apple.com ┃ 🇷🇺 Россия"
       - "🇫🇷 France — #36"
@@ -4432,11 +4530,12 @@ proxy-groups:
       - "🇫🇮 Финляндия 4 PLAY2GO INTERNATIONAL LIMITED t.me/rjsxrd"
       - "🇫🇲 @LexaVercelbot 🪼 #48"
       - "🇺🇸 [BL] Сервер 377"
+      - "AetrisVPN White list ┃ ✅ SNI: www.amazon.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: amd.com ┃ 🇪🇪 Эстония"
       - "🇳🇱 [BL] Сервер 370"
       - "🇸🇬 [BL] Сервер 207"
       - "🇻🇳 [BL] Сервер 332"
-      - "LTE/5G TgOnly Все операторы 🇪🇺"
+      - "LTE/5G Все операторы 🇪🇺 #3"
       - "🇺🇸 США 8 ALEXHOST S.R.L. t.me/rjsxrd"
       - "🇫🇲 @LexaVercelbot 🪼 #76"
       - "🇬🇧 [BL] Сервер 351"
@@ -4465,7 +4564,7 @@ proxy-groups:
       - "🇳🇱 [BL] Сервер 117"
       - "🇺🇸 [BL] Сервер 379"
       - "Бесплатный VPN tg:VLESSFORU 🇦🇪 t.me/rjsxrd"
-      - "LTE/5G Все операторы 🇪🇺 #3"
+      - "LTE/5G Все операторы 🇪🇺 #4"
       - "🇺🇸 [BL] Сервер 376"
       - "🇧🇾 [BL] Сервер 119"
       - "🇺🇸 [BL] Сервер 384"
@@ -4477,7 +4576,7 @@ proxy-groups:
       - "🇳🇱 Нидерланды 4 FORESTSNET LTD t.me/rjsxrd"
       - "🇳🇱 [BL] Сервер 396"
       - "🇵🇱 [BL] Сервер 242"
-      - "Бесплатный VPN tg:VLESSFORU 🇳🇱 #2"
+      - "tg:VLESSFORU top ping 🇳🇱"
       - "Бесплатный VPN tg:VLESSFORU 🇺🇸"
       - "🇵🇱 Польша 8 Kochedykov Egor Aleksandrovich t.me/rjsxrd"
       - "🇭🇰 [BL] Сервер 120"
