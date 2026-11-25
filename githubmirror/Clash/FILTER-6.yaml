@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-25 18:00:59 UTC
+# 2026-11-25 18:15:43 UTC
 proxies:
   - name: "🇮🇷 Iran [*CIDR]"
     type: "vless"
@@ -11,33 +11,17 @@ proxies:
     servername: "unlik.club"
     alpn:
       - "http/1.1"
-    client-fingerprint: "ios"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
       path: "/player/collect/9c8514f9552d/"
       headers:
         Host: "tochkacdn.top"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
-    type: "vless"
-    server: "195.208.125.142"
-    port: 8443
-    uuid: "8f092ef0-a7e6-03e9-b989-836aebc00ff7"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ya.ru"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
-      short-id: "abc123"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇮🇷 Iran [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
 rules:
   - MATCH,PROXY
