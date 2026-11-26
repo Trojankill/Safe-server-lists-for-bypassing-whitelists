@@ -1,0 +1,40 @@
+# clash/mihomo subscription
+# 2026-11-26 05:01:01 UTC
+proxies:
+  - name: "🇮🇹 Italy [*CIDR]"
+    type: "vless"
+    server: "109.237.98.52"
+    port: 443
+    uuid: "878f7de7-b69a-4ed4-b7be-a96b2735b368"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "tl93mf9x71e.streamedge.best"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "fJnm6-PhJGSwHaAdJOzXkYOfCPPCWSlaZrtfm1XsqhA"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇦🇹 🇨🇿 | [*CIDR]"
+    type: "vless"
+    server: "201.34.141.91"
+    port: 443
+    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ruastriamicro2.gangplatform.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "xWszcU0a-SHH5bb-GGgV4cuZeQmLSz4JkwYr_5hvExI"
+      short-id: "b01af964fbefcc1f"
+    network: "tcp"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇮🇹 Italy [*CIDR]"
+      - "🌐 Anycast-IP | 🇦🇹 🇨🇿 | [*CIDR]"
+rules:
+  - MATCH,PROXY
