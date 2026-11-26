@@ -1,7 +1,67 @@
 # clash/mihomo subscription
-# 2026-11-26 15:45:35 UTC
+# 2026-11-26 16:01:01 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
+  - name: "🇦🇹 Austria | [*CIDR]"
+    type: "vless"
+    server: "189.74.115.7"
+    port: 443
+    uuid: "12a16e64-2660-4eb0-b982-f9d1a606ca68"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediaroshcha.cc"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇵🇱 Poland | [*CIDR]"
+    type: "vless"
+    server: "189.74.116.6"
+    port: 443
+    uuid: "12a16e64-2660-4eb0-b982-f9d1a606ca68"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.mediatropa.cc"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.20"
+    port: 443
+    uuid: "12a16e64-2660-4eb0-b982-f9d1a606ca68"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇩🇪 🇳🇱 🇷🇺 | [*CIDR]"
+    type: "vless"
+    server: "217.19.123.47"
+    port: 443
+    uuid: "48818046-00b5-4576-bbe8-d2971fe0f844"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "player.mediavitrina.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
+      short-id: "d4735e3a265e"
+    network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "yellow-4hmq5ehr3ievlnabv8l2.concept7.ru"
     port: 443
@@ -10,32 +70,36 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "player.mediavitrina.ru"
-    client-fingerprint: "edge"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
       short-id: "d4735e3a265e"
     network: "tcp"
-  - name: "🌐 Anycast-IP | 🇩🇪 🇳🇱 | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
-    server: "yellow-5hmq5ehr3ievlnabv8l2.concept7.ru"
-    port: 443
-    uuid: "48818046-00b5-4576-bbe8-d2971fe0f844"
+    server: "rua.strauspro.com"
+    port: 8443
+    uuid: "8f092ef0-a7e6-03e9-b989-836aebc00ff7"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "river-3-369.rtbcdn.ru"
-    client-fingerprint: "android"
+    servername: "ya.ru"
+    client-fingerprint: "qq"
     skip-cert-verify: false
     reality-opts:
-      public-key: "KEZ93Y9VgoirI18wIpcfS3z8I9GiaiFe-GKqGdEPMmg"
-      short-id: "4b227777d4dd"
+      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
+      short-id: "abc123"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | 🌐 | [*CIDR]"
-      - "🌐 Anycast-IP | 🇩🇪 🇳🇱 | [*CIDR]"
+      - "🇦🇹 Austria | [*CIDR]"
+      - "🇵🇱 Poland | [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
+      - "🌐 Anycast-IP | 🇩🇪 🇳🇱 🇷🇺 | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
