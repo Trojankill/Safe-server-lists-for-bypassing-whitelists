@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-26 01:15:36 UTC
+# 2026-11-26 01:30:46 UTC
 proxies:
   - name: "🇷🇺 Russian Federation | TG: @HardVpn_robot t.me/rjsxrd"
     type: "vless"
@@ -691,21 +691,6 @@ proxies:
     alpn:
       - "h2"
     client-fingerprint: "edge"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "media.playback.v1.SessionGateway"
-  - name: "🇺🇸 United States | [*CIDR]"
-    type: "vless"
-    server: "213.171.31.34"
-    port: 5001
-    uuid: "22a923a3-a631-4441-aabd-a1e8ada1ec75"
-    udp: true
-    tls: true
-    servername: "us.centermass.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "android"
     skip-cert-verify: false
     network: "grpc"
     grpc-opts:
@@ -1958,23 +1943,6 @@ proxies:
     reality-opts:
       public-key: "mg2MoLpb8B51aZiko_nW2SBRoaudv-O6HLHx8VYP7Do"
     network: "tcp"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "80b3cf20-c77c-4fb9-a69e-55c9dadd58c8"
-    udp: true
-    tls: true
-    servername: "unlik.club"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "tochkacdn.top"
   - name: "🇺🇸 США 2 Unredacted Inc t.me/rjsxrd"
     type: "vless"
     server: "87.120.252.67"
@@ -4166,7 +4134,6 @@ proxy-groups:
       - "AetrisVPN White list ┃ ✅ SNI: www.apple.com ┃ 🇺🇸 США"
       - "🇺🇸 [BL] Сервер 217"
       - "🇺🇸 United States | [*CIDR] t.me/rjsxrd"
-      - "🇺🇸 United States | [*CIDR]"
       - "AetrisVPN White list ┃ ✅ SNI: maps.apple.com ┃ 🇩🇪 Германия"
       - "AetrisVPN White list ┃ ✅ SNI: 5post-gate.x5.ru ┃ 🇩🇪 Германия"
       - "🇹🇷 Турция 2 Datacamp Limited t.me/rjsxrd"
@@ -4250,7 +4217,6 @@ proxy-groups:
       - "🇨🇿 [BL] Сервер 118"
       - "🇸🇪 AetrisVPN t.me/rjsxrd"
       - "英国_112514291 t.me/rjsxrd"
-      - "🇮🇷 Iran [*CIDR]"
       - "🇺🇸 США 2 Unredacted Inc t.me/rjsxrd"
       - "🇺🇸 [BL] Сервер 307"
       - "Romania | lagoon.gerqix.online | WebSocket | [#LSO - #LinSpisokObhod]"

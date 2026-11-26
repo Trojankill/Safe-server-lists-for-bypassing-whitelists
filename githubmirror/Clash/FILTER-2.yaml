@@ -1,59 +1,18 @@
 # clash/mihomo subscription
-# 2026-11-26 01:15:31 UTC
+# 2026-11-26 01:30:45 UTC
 proxies:
-  - name: "🇺🇸 United States | [*CIDR]"
-    type: "vless"
-    server: "213.171.31.34"
-    port: 5001
-    uuid: "22a923a3-a631-4441-aabd-a1e8ada1ec75"
-    udp: true
-    tls: true
-    servername: "us.centermass.net"
-    alpn:
-      - "h2"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "media.playback.v1.SessionGateway"
-  - name: "🇮🇷 Iran [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
+  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
+    type: "hysteria2"
+    server: "ru2.streamclubz.com"
     port: 443
-    uuid: "80b3cf20-c77c-4fb9-a69e-55c9dadd58c8"
+    password: "7316d881-eeec-429b-94f1-07585747f7c8"
     udp: true
-    tls: true
-    servername: "unlik.club"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "ios"
+    sni: "ru2.streamclubz.com"
     skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/player/collect/9c8514f9552d/"
-      headers:
-        Host: "tochkacdn.top"
-  - name: "🌐 Anycast-IP | 🇨🇦 🇺🇸 | [*CIDR]"
-    type: "vless"
-    server: "195.209.209.64"
-    port: 443
-    uuid: "9df9ee1a-0671-4c6c-93c7-65598fb946f7"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ruhsds744.gangtype.com"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "f8nkGMN6JDENHKvHrFYabx4JqSMSAZGS0lyc-KuagnQ"
-      short-id: "f3166ffa363ceaef"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | [*CIDR]"
-      - "🇮🇷 Iran [*CIDR]"
-      - "🌐 Anycast-IP | 🇨🇦 🇺🇸 | [*CIDR]"
+      - "🇷🇺 Russia | 🌐 [*CIDR]"
 rules:
   - MATCH,PROXY
