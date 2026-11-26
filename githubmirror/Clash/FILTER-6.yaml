@@ -1,0 +1,25 @@
+# clash/mihomo subscription
+# 2026-11-26 13:30:49 UTC
+proxies:
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "rua.strauspro.com"
+    port: 8443
+    uuid: "8f092ef0-a7e6-03e9-b989-836aebc00ff7"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ya.ru"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "DulhUFMYzxIsucjtPONJQMszzyi9V6bqQ9WI3GjGFAY"
+      short-id: "abc123"
+    network: "tcp"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+rules:
+  - MATCH,PROXY
