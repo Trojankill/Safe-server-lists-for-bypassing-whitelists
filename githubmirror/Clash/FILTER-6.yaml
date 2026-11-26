@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-26 08:15:36 UTC
+# 2026-11-26 08:30:48 UTC
 proxies:
   - name: "🇳🇴 Norway | [*CIDR]"
     type: "vless"
@@ -14,7 +14,7 @@ proxies:
     reality-opts:
       public-key: "EltWI8AOqkN8lMjRycweRRoFRah5hu6xiKtgBmQOdE8"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "188.225.45.237"
     port: 443
@@ -23,13 +23,45 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "wl.tw.daugava-analytics.com"
-    client-fingerprint: "android"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "YZtDA-Mz6GSlPnrhnQkSpzj8TSaGDcMjukrGI_xFg1Y"
+      short-id: "d9c79602"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
+    type: "vless"
+    server: "wl.tw.bridge.daugava-analytics.com"
+    port: 443
+    uuid: "34899740-16ab-4f8a-bc13-051cf6f62a86"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "wl.tw.daugava-analytics.com"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
       public-key: "YZtDA-Mz6GSlPnrhnQkSpzj8TSaGDcMjukrGI_xFg1Y"
       short-id: "d9c79602"
     network: "tcp"
   - name: "🇺🇸 United States | [*CIDR]"
+    type: "vless"
+    server: "x55cf8ug.devcdn.icu"
+    port: 443
+    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
+    udp: true
+    tls: true
+    servername: "x55cf8ug.devcdn.icu"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/edge/chunk/b2265efffa29/"
+      headers:
+        Host: "x55cf8ug.devcdn.icu"
+  - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -46,7 +78,7 @@ proxies:
       path: "/useraction/metrics/a01e0709c6bc/"
       headers:
         Host: "locationfree.icu"
-  - name: "🇦🇹 Austria | [*CIDR]"
+  - name: "🇦🇹 Austria [*CIDR]"
     type: "vless"
     server: "189.74.115.6"
     port: 443
@@ -61,7 +93,7 @@ proxies:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
-  - name: "🇵🇱 Poland | [*CIDR]"
+  - name: "🇵🇱 Poland [*CIDR]"
     type: "vless"
     server: "189.74.116.4"
     port: 443
@@ -76,6 +108,21 @@ proxies:
       public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
       short-id: "a8"
     network: "tcp"
+  - name: "🇫🇷 France | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.19"
+    port: 443
+    uuid: "e0f63cb5-4b2f-4a91-bb42-2c7d198787ef"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
   - name: "🇫🇮 Finland | [*CIDR]"
     type: "vless"
     server: "87.242.102.222"
@@ -85,26 +132,11 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "87.242.102.222"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "JyZzFyo8Q0xR7ikIv2eYtwRmsCxewm6PNCn3Cl5yFRI"
       short-id: "e49ed1d0772c80c4"
-    network: "tcp"
-  - name: "🇪🇪 Estonia | [*CIDR]"
-    type: "vless"
-    server: "95.174.93.249"
-    port: 12443
-    uuid: "fe256a15-9af9-4b00-85dc-d1523288d3da"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "95.174.93.249"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "I5KELk2Aw3Z-9bTrOTPwKWYoZjlQDVU0rTUd-Gtck1M"
-      short-id: "74712fc37c1992a4"
     network: "tcp"
   - name: "🇺🇸 United States | [*CIDR] #2"
     type: "vless"
@@ -115,13 +147,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "95.174.93.249"
-    client-fingerprint: "android"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
       public-key: "cUr8gHOhrZ0OsqH3HNVXOEiDytxhlBDVviX5huoPyBs"
       short-id: "4e800c6957841ca8"
     network: "tcp"
-  - name: "🇺🇸 United States [*CIDR]"
+  - name: "🇺🇸 United States | [*CIDR] #3"
     type: "trojan"
     server: "185.229.9.62"
     port: 443
@@ -131,7 +163,7 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
   - name: "🇺🇸 United States [*CIDR] #2"
     type: "trojan"
@@ -143,7 +175,7 @@ proxies:
     alpn:
       - "h2"
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
   - name: "🇬🇧 United Kingdom [*CIDR]"
     type: "hysteria2"
@@ -155,6 +187,14 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇬🇧 United Kingdom [*CIDR] #2"
+    type: "hysteria2"
+    server: "94.183.195.240"
+    port: 8452
+    password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
+    udp: true
+    sni: "eu64.cdn77.icu"
+    skip-cert-verify: false
   - name: "🇦🇹 Austria | 🌐 [*CIDR]"
     type: "hysteria2"
     server: "94.183.195.240"
@@ -165,6 +205,14 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇦🇹 Austria | 🌐 [*CIDR] #2"
+    type: "hysteria2"
+    server: "94.183.195.240"
+    port: 8453
+    password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
+    udp: true
+    sni: "eu71.cdn77.icu"
+    skip-cert-verify: false
   - name: "🇯🇵 Japan [*CIDR]"
     type: "hysteria2"
     server: "94.183.195.240"
@@ -172,8 +220,6 @@ proxies:
     password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
     udp: true
     sni: "as18.cdn77.icu"
-    alpn:
-      - "h3"
     skip-cert-verify: false
   - name: "🇮🇹 Italy [*CIDR]"
     type: "hysteria2"
@@ -182,10 +228,38 @@ proxies:
     password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
     udp: true
     sni: "eu36.cdn77.icu"
+    skip-cert-verify: false
+  - name: "🇬🇧 United Kingdom [*CIDR] #3"
+    type: "hysteria2"
+    server: "eu125.cdn77.icu"
+    port: 8452
+    password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
+    udp: true
+    sni: "eu64.cdn77.icu"
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇦🇹 Austria [*CIDR]"
+  - name: "🇦🇹 Austria | 🌐 [*CIDR] #3"
+    type: "hysteria2"
+    server: "eu125.cdn77.icu"
+    port: 8453
+    password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
+    udp: true
+    sni: "eu71.cdn77.icu"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇮🇹 Italy [*CIDR] #2"
+    type: "hysteria2"
+    server: "eu125.cdn77.icu"
+    port: 8455
+    password: "0822b3b0-4c52-47c0-aed6-be7bf6f54aba"
+    udp: true
+    sni: "eu36.cdn77.icu"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇦🇹 Austria [*CIDR] #2"
     type: "hysteria2"
     server: "186.246.13.65"
     port: 31002
@@ -194,6 +268,14 @@ proxies:
     sni: "alb.vpnvpn.best"
     alpn:
       - "h3"
+    skip-cert-verify: false
+  - name: "🇦🇹 Austria [*CIDR] #3"
+    type: "hysteria2"
+    server: "186.246.13.65"
+    port: 31002
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
     skip-cert-verify: false
   - name: "🇩🇰 Denmark [*CIDR]"
     type: "hysteria2"
@@ -205,6 +287,14 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇩🇰 Denmark [*CIDR] #2"
+    type: "hysteria2"
+    server: "186.246.13.65"
+    port: 31005
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    skip-cert-verify: false
   - name: "🇱🇻 Latvia [*CIDR]"
     type: "hysteria2"
     server: "186.246.13.65"
@@ -214,6 +304,14 @@ proxies:
     sni: "alb.vpnvpn.best"
     alpn:
       - "h3"
+    skip-cert-verify: false
+  - name: "🇱🇻 Latvia [*CIDR] #2"
+    type: "hysteria2"
+    server: "186.246.13.65"
+    port: 31010
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
     skip-cert-verify: false
   - name: "🇳🇴 Norway [*CIDR]"
     type: "hysteria2"
@@ -225,9 +323,75 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇫🇷 France [*CIDR]"
+  - name: "🇳🇴 Norway [*CIDR] #2"
     type: "hysteria2"
     server: "186.246.13.65"
+    port: 31017
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    skip-cert-verify: false
+  - name: "🇧🇬 Bulgaria [*CIDR]"
+    type: "hysteria2"
+    server: "186.246.13.65"
+    port: 443
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇧🇬 Bulgaria [*CIDR] #2"
+    type: "hysteria2"
+    server: "186.246.13.65"
+    port: 443
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    skip-cert-verify: false
+  - name: "🇦🇹 Austria [*CIDR] #4"
+    type: "hysteria2"
+    server: "assets.cdnresolve.com"
+    port: 31002
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇩🇰 Denmark [*CIDR] #3"
+    type: "hysteria2"
+    server: "assets.cdnresolve.com"
+    port: 31005
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇱🇻 Latvia [*CIDR] #3"
+    type: "hysteria2"
+    server: "assets.cdnresolve.com"
+    port: 31010
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇳🇴 Norway [*CIDR] #3"
+    type: "hysteria2"
+    server: "assets.cdnresolve.com"
+    port: 31017
+    password: "68dea054-c7af-439e-a700-0f1c92e72795"
+    udp: true
+    sni: "alb.vpnvpn.best"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇧🇬 Bulgaria [*CIDR] #3"
+    type: "hysteria2"
+    server: "assets.cdnresolve.com"
     port: 443
     password: "68dea054-c7af-439e-a700-0f1c92e72795"
     udp: true
@@ -240,23 +404,40 @@ proxy-groups:
     type: select
     proxies:
       - "🇳🇴 Norway | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
       - "🇳🇱 The Netherlands | [*CIDR]"
       - "🇺🇸 United States | [*CIDR]"
-      - "🇦🇹 Austria | [*CIDR]"
-      - "🇵🇱 Poland | [*CIDR]"
-      - "🇫🇮 Finland | [*CIDR]"
-      - "🇪🇪 Estonia | [*CIDR]"
-      - "🇺🇸 United States | [*CIDR] #2"
       - "🇺🇸 United States [*CIDR]"
+      - "🇦🇹 Austria [*CIDR]"
+      - "🇵🇱 Poland [*CIDR]"
+      - "🇫🇷 France | [*CIDR]"
+      - "🇫🇮 Finland | [*CIDR]"
+      - "🇺🇸 United States | [*CIDR] #2"
+      - "🇺🇸 United States | [*CIDR] #3"
       - "🇺🇸 United States [*CIDR] #2"
       - "🇬🇧 United Kingdom [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] #2"
       - "🇦🇹 Austria | 🌐 [*CIDR]"
+      - "🇦🇹 Austria | 🌐 [*CIDR] #2"
       - "🇯🇵 Japan [*CIDR]"
       - "🇮🇹 Italy [*CIDR]"
-      - "🇦🇹 Austria [*CIDR]"
+      - "🇬🇧 United Kingdom [*CIDR] #3"
+      - "🇦🇹 Austria | 🌐 [*CIDR] #3"
+      - "🇮🇹 Italy [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR] #3"
       - "🇩🇰 Denmark [*CIDR]"
+      - "🇩🇰 Denmark [*CIDR] #2"
       - "🇱🇻 Latvia [*CIDR]"
+      - "🇱🇻 Latvia [*CIDR] #2"
       - "🇳🇴 Norway [*CIDR]"
-      - "🇫🇷 France [*CIDR]"
+      - "🇳🇴 Norway [*CIDR] #2"
+      - "🇧🇬 Bulgaria [*CIDR]"
+      - "🇧🇬 Bulgaria [*CIDR] #2"
+      - "🇦🇹 Austria [*CIDR] #4"
+      - "🇩🇰 Denmark [*CIDR] #3"
+      - "🇱🇻 Latvia [*CIDR] #3"
+      - "🇳🇴 Norway [*CIDR] #3"
+      - "🇧🇬 Bulgaria [*CIDR] #3"
 rules:
   - MATCH,PROXY
