@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-26 10:45:35 UTC
+# 2026-11-26 11:01:02 UTC
 proxies:
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
@@ -12,44 +12,29 @@ proxies:
     servername: "api-v2-6b07048f.vmagnum.win"
     alpn:
       - "h2"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇪🇪 Estonia [*CIDR]"
-    type: "vless"
-    server: "95.174.93.249"
-    port: 12443
-    uuid: "fe256a15-9af9-4b00-85dc-d1523288d3da"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "95.174.93.249"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "I5KELk2Aw3Z-9bTrOTPwKWYoZjlQDVU0rTUd-Gtck1M"
-      short-id: "74712fc37c1992a4"
-    network: "tcp"
-  - name: "🇪🇪 Estonia | [*CIDR]"
-    type: "vless"
-    server: "95.174.93.249"
-    port: 12443
-    uuid: "fe256a15-9af9-4b00-85dc-d1523288d3da"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
     client-fingerprint: "chrome"
     skip-cert-verify: false
+    network: "tcp"
+  - name: "🇫🇮 Finland [*CIDR]"
+    type: "vless"
+    server: "87.242.102.222"
+    port: 3443
+    uuid: "fe256a15-9af9-4b00-85dc-d1523288d3da"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "87.242.102.222"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
     reality-opts:
-      public-key: "I5KELk2Aw3Z-9bTrOTPwKWYoZjlQDVU0rTUd-Gtck1M"
-      short-id: "74712fc37c1992a4"
+      public-key: "JyZzFyo8Q0xR7ikIv2eYtwRmsCxewm6PNCn3Cl5yFRI"
+      short-id: "e49ed1d0772c80c4"
     network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
       - "🇳🇱 The Netherlands [*CIDR]"
-      - "🇪🇪 Estonia [*CIDR]"
-      - "🇪🇪 Estonia | [*CIDR]"
+      - "🇫🇮 Finland [*CIDR]"
 rules:
   - MATCH,PROXY
