@@ -1,7 +1,37 @@
 # clash/mihomo subscription
-# 2026-11-27 09:45:31 UTC
+# 2026-11-27 10:00:59 UTC
 proxies:
-  - name: "🇳🇱 The Netherlands | [*CIDR]"
+  - name: "🇪🇪 Estonia [*CIDR]"
+    type: "vless"
+    server: "079b6et.ee5.h1clayd.shop"
+    port: 443
+    uuid: "73ebb72a-e2a8-44c8-a0e3-938740a4f578"
+    udp: true
+    tls: true
+    servername: "079b6et.ee5.h1clayd.shop"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U"
+      short-id: "35a329a23bb50d2b"
+    network: "tcp"
+  - name: "🇦🇱 Albania | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "185.12.127.228"
+    port: 2087
+    uuid: "81c9cfa5-7522-490b-a613-99cdd2a52d29"
+    udp: true
+    tls: true
+    servername: "press.stonebridge-atelier.vip"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "PzV1ayb6Elgyc6vn9yS08g8c6KDP1Xh-0R181Fazhio"
+      short-id: "6ab75ab2"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "cas-al"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
     type: "vless"
     server: "87.242.102.222"
     port: 443
@@ -20,6 +50,8 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 The Netherlands | [*CIDR]"
+      - "🇪🇪 Estonia [*CIDR]"
+      - "🇦🇱 Albania | 🌐 | [*CIDR]"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
 rules:
   - MATCH,PROXY
