@@ -1,37 +1,327 @@
 # clash/mihomo subscription
-# 2026-11-27 11:15:33 UTC
+# 2026-11-27 11:30:49 UTC
 proxies:
-  - name: "🇪🇪 Estonia [*CIDR]"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
-    server: "079b6et.ee5.h1clayd.shop"
+    server: "104.171.135.229"
     port: 443
-    uuid: "73ebb72a-e2a8-44c8-a0e3-938740a4f578"
+    uuid: "06ec3898-f952-52a5-8547-51ae1e6f0a62"
     udp: true
     tls: true
-    servername: "079b6et.ee5.h1clayd.shop"
+    flow: "xtls-rprx-vision"
+    servername: "absolute-disaster.org"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "mpo4BIcoWiMXAQGt5a8IJ4MFkPJQyLC50dO_bXzC7z0"
+    network: "tcp"
+  - name: "🇵🇱 Poland [*CIDR]"
+    type: "vless"
+    server: "176.98.177.15"
+    port: 9443
+    uuid: "08d03a59-891b-4017-945c-eff6870f24a8"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "sub.skycore.lol"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "uMJD9Ecu3aUygm_Zq03L7PRU_w7uvANcnEwliGZOjVo"
+      short-id: "cd7e8c81880e46a2"
+    network: "tcp"
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "176.108.245.73"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pawuk.belka.tv"
     client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
-      public-key: "NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U"
-      short-id: "35a329a23bb50d2b"
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
     network: "tcp"
-  - name: "🇦🇱 Albania | 🌐 | [*CIDR]"
+  - name: "🇨🇿 Czechia [*CIDR] #2"
     type: "vless"
-    server: "185.12.127.228"
-    port: 2087
-    uuid: "81c9cfa5-7522-490b-a613-99cdd2a52d29"
+    server: "176.108.245.73"
+    port: 443
+    uuid: "1b7ee703-fa08-4305-8469-ae3e30e61e44"
     udp: true
     tls: true
-    servername: "press.stonebridge-atelier.vip"
-    client-fingerprint: "android"
+    flow: "xtls-rprx-vision"
+    servername: "pawuk.belka.tv"
+    client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "PzV1ayb6Elgyc6vn9yS08g8c6KDP1Xh-0R181Fazhio"
-      short-id: "6ab75ab2"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-al"
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR]"
+    type: "vless"
+    server: "185.22.234.129"
+    port: 443
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "smartcdn.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/8a64b355ef0c/"
+      headers:
+        Host: "smartcdn.top"
+  - name: "🇷🇺 Russia [*CIDR] #2"
+    type: "vless"
+    server: "smartcdn.top"
+    port: 443
+    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    udp: true
+    tls: true
+    servername: "smartcdn.top"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/8a64b355ef0c/"
+      headers:
+        Host: "smartcdn.top"
+  - name: "🇩🇪 Germany [*CIDR]"
+    type: "vless"
+    server: "185.178.208.167"
+    port: 443
+    uuid: "6bd1d88f-0a26-4d21-b325-15d85120b883"
+    udp: true
+    tls: true
+    servername: "sw-api.telemetryapi.org"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/api/v2/client/session/connect"
+      headers:
+        Host: "sw-api.telemetryapi.org"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇯🇵 [*CIDR]"
+    type: "vless"
+    server: "85.8.201.186"
+    port: 443
+    uuid: "7aa77858-f235-0001-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "NO GEO [*CIDR]"
+    type: "vless"
+    server: "85.8.201.193"
+    port: 443
+    uuid: "7aa77858-f235-0001-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR]"
+    type: "vless"
+    server: "85.8.201.193"
+    port: 443
+    uuid: "7aa77858-f235-0002-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #2"
+    type: "vless"
+    server: "85.8.201.187"
+    port: 443
+    uuid: "7aa77858-f235-0003-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "safari"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #3"
+    type: "vless"
+    server: "85.8.201.186"
+    port: 443
+    uuid: "7aa77858-f235-0004-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #4"
+    type: "vless"
+    server: "85.8.201.187"
+    port: 443
+    uuid: "7aa77858-f235-0004-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇪🇪 🇫🇮 [*CIDR]"
+    type: "vless"
+    server: "85.8.201.186"
+    port: 443
+    uuid: "7aa77858-f235-000d-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇦🇪 🇺🇸 [*CIDR]"
+    type: "vless"
+    server: "85.8.201.186"
+    port: 443
+    uuid: "7aa77858-f235-44d6-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🌐 Anycast-IP | 🇦🇪 🇺🇸 [*CIDR] #2"
+    type: "vless"
+    server: "85.8.201.193"
+    port: 443
+    uuid: "7aa77858-f235-44d6-9434-7ab060848b17"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn.mornismp.ru"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "tcp"
+  - name: "🇷🇺 Russia [*CIDR] VK"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
+  - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
+    type: "vless"
+    server: "212.233.90.78"
+    port: 443
+    uuid: "9548ef84-b54d-41dc-b17c-9da21d52ba82"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "birch-ledger.justext.space"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FwPphm8xGAKY6u74WDRVrcVye3A7GdLDfJoNSDWFsFQ"
+      short-id: "2c6df23e"
+    network: "tcp"
   - name: ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+    type: "vless"
+    server: "189.74.117.20"
+    port: 443
+    uuid: "ac01dcf5-a26d-46b1-9514-0ab4088ca813"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇫🇷 France [*CIDR]"
+    type: "vless"
+    server: "189.74.117.20"
+    port: 443
+    uuid: "b1d8c4f5-0236-4480-a1bc-acd1ecf1be1b"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "api.videodolina.cc"
+    client-fingerprint: "ios"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
+      short-id: "a8"
+    network: "tcp"
+  - name: "🇱🇻 Latvia [*CIDR] VK"
+    type: "vless"
+    server: "83.166.254.97"
+    port: 11443
+    uuid: "bfce4086-02f9-4006-b579-472210753a63"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "83.166.254.97"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "gaSpyUW0U3qs3kXSR8i_cpOKfl_vM6CdsEsUfSCJ9y4"
+      short-id: "1280c0a31e883774"
+    network: "tcp"
+  - name: "🇳🇱 The Netherlands [*CIDR] #2"
     type: "vless"
     server: "87.242.102.222"
     port: 443
@@ -40,18 +330,85 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "pl.happofficial.store"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "WaU5vsybQPp-NZNXWSjUEVfbAG-hqDPipci1z1xkhiw"
       short-id: "b7d7a3622d85f30a"
     network: "tcp"
+  - name: "🇩🇪 Germany [*CIDR] #2"
+    type: "vless"
+    server: "188.225.74.51"
+    port: 443
+    uuid: "cfa7fab8-9aef-4291-b4a2-9b0fd464457a"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "max.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
+      short-id: "db04ce8bdb8900f1"
+    network: "tcp"
+  - name: "🇩🇰 Denmark [*CIDR]"
+    type: "vless"
+    server: "176.108.251.7"
+    port: 9881
+    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "qq"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+      short-id: "aabb"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🌐 Anycast-IP | 🇬🇧 🇸🇪 [*CIDR]"
+    type: "vless"
+    server: "188.225.77.71"
+    port: 443
+    uuid: "faf6b8af-e741-4ef5-b1e2-25a3f413cc8e"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "spb2.b2ai.top"
+    alpn:
+      - "h2"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia [*CIDR]"
-      - "🇦🇱 Albania | 🌐 | [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇵🇱 Poland [*CIDR]"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇨🇿 Czechia [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR]"
+      - "🇷🇺 Russia [*CIDR] #2"
+      - "🇩🇪 Germany [*CIDR]"
+      - "🌐 Anycast-IP | 🇫🇮 🇯🇵 [*CIDR]"
+      - "NO GEO [*CIDR]"
+      - "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR]"
+      - "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #2"
+      - "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #3"
+      - "🌐 Anycast-IP | 🇫🇮 🇺🇸 [*CIDR] #4"
+      - "🌐 Anycast-IP | 🇪🇪 🇫🇮 [*CIDR]"
+      - "🌐 Anycast-IP | 🇦🇪 🇺🇸 [*CIDR]"
+      - "🌐 Anycast-IP | 🇦🇪 🇺🇸 [*CIDR] #2"
+      - "🇷🇺 Russia [*CIDR] VK"
+      - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR] VK"
       - ".𖥔 ݁ ˖ִ🛸༄˖°. | [*CIDR]"
+      - "🇫🇷 France [*CIDR]"
+      - "🇱🇻 Latvia [*CIDR] VK"
+      - "🇳🇱 The Netherlands [*CIDR] #2"
+      - "🇩🇪 Germany [*CIDR] #2"
+      - "🇩🇰 Denmark [*CIDR]"
+      - "🌐 Anycast-IP | 🇬🇧 🇸🇪 [*CIDR]"
 rules:
   - MATCH,PROXY
