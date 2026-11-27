@@ -1,36 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-27 08:45:35 UTC
+# 2026-11-27 09:01:02 UTC
 proxies:
-  - name: "🇵🇱 Poland | [*CIDR]"
-    type: "vless"
-    server: "176.98.177.15"
-    port: 9443
-    uuid: "08d03a59-891b-4017-945c-eff6870f24a8"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "sub.skycore.lol"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "uMJD9Ecu3aUygm_Zq03L7PRU_w7uvANcnEwliGZOjVo"
-      short-id: "cd7e8c81880e46a2"
-    network: "tcp"
-  - name: "🇪🇪 Estonia [*CIDR]"
-    type: "vless"
-    server: "079b6et.ee5.h1clayd.shop"
-    port: 443
-    uuid: "73ebb72a-e2a8-44c8-a0e3-938740a4f578"
-    udp: true
-    tls: true
-    servername: "079b6et.ee5.h1clayd.shop"
-    client-fingerprint: "safari"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U"
-      short-id: "35a329a23bb50d2b"
-    network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
+  - name: "🇳🇱 The Netherlands | [*CIDR]"
     type: "vless"
     server: "87.242.102.222"
     port: 443
@@ -39,7 +10,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "pl.happofficial.store"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     reality-opts:
       public-key: "WaU5vsybQPp-NZNXWSjUEVfbAG-hqDPipci1z1xkhiw"
@@ -49,8 +20,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇵🇱 Poland | [*CIDR]"
-      - "🇪🇪 Estonia [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇳🇱 The Netherlands | [*CIDR]"
 rules:
   - MATCH,PROXY
