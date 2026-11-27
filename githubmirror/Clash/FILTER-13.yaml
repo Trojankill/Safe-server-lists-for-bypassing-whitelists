@@ -1,7 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-27 14:15:33 UTC
+# 2026-11-27 14:30:55 UTC
 proxies:
-  - name: "🇳🇱 [WL] Сервер 41"
+  - name: "🇳🇱 [WL] Сервер 37"
     type: "vless"
     server: "104.171.135.229"
     port: 443
@@ -15,35 +15,38 @@ proxies:
     reality-opts:
       public-key: "mpo4BIcoWiMXAQGt5a8IJ4MFkPJQyLC50dO_bXzC7z0"
     network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 20"
+  - name: "🇷🇺 [WL/AI] Сервер 79"
     type: "vless"
-    server: "201.51.11.65"
+    server: "168.113.134.200"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "0c6ac9db-bd9a-4453-9914-215b9cd67df4"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "absolute-disaster.org"
-    client-fingerprint: "chrome"
+    servername: "ru3-og.cdn.cachefleet.com"
+    client-fingerprint: "edge"
     skip-cert-verify: false
     reality-opts:
-      public-key: "GiDgVRVYrTkv1mZJeFVWkr736Iey2kqLM6L0eUbffV8"
+      public-key: "oYK2PnsAqOx2L18hRnKHkhFJLhqXd8tmz9ztKV0Q0gw"
+      short-id: "d06b21b9ae2921db"
     network: "tcp"
-  - name: "🌐 [WL] Сервер 31"
+  - name: "🇷🇺 [WL] Сервер 80"
     type: "vless"
-    server: "72.56.4.84"
+    server: "168.113.134.200"
     port: 443
-    uuid: "1e2b9c0c-4f9b-56f5-a062-1c4f2d2aa200"
+    uuid: "0c6ac9db-bd9a-4453-9914-215b9cd67df4"
     udp: true
     tls: true
-    flow: "xtls-rprx-vision"
-    servername: "absolute-disaster.org"
-    client-fingerprint: "chrome"
+    servername: "juniper-willow.cdn.cachefleet.com"
+    alpn:
+      - "h2"
+      - "http/1.1"
+    client-fingerprint: "qq"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "Im1i3eUtm7uDxUOA0rNWef9bILxsBvK_ElfejZTpQW0"
-    network: "tcp"
-  - name: "🇺🇸 [WL] Сервер 15"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "ru3-og-grpc"
+  - name: "🇺🇸 [WL] Сервер 17"
     type: "vless"
     server: "185.95.231.156"
     port: 443
@@ -58,22 +61,7 @@ proxies:
       public-key: "8eXftARun6KH38UZhuqIfPR1VF2DLS9RMBZEnF5k6To"
       short-id: "a3a578ab"
     network: "tcp"
-  - name: "🇵🇱 [WL/AI] Сервер 72"
-    type: "vless"
-    server: "188.225.34.220"
-    port: 443
-    uuid: "2a46d69e-4113-43be-92c0-c32f05cba906"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "apiv2.spliceflowtech.com"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "P31ywc--ccN2qpN0Ph6gv3JeUxshM8LtLQiYfRLokEo"
-      short-id: "91b7c3a4e6d2f058"
-    network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 11"
+  - name: "🇳🇱 [WL] Сервер 12"
     type: "vless"
     server: "188.225.35.83"
     port: 443
@@ -88,7 +76,7 @@ proxies:
       public-key: "YZtDA-Mz6GSlPnrhnQkSpzj8TSaGDcMjukrGI_xFg1Y"
       short-id: "d9c79602"
     network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 10"
+  - name: "🇳🇱 [WL] Сервер 11"
     type: "vless"
     server: "188.225.45.237"
     port: 443
@@ -103,39 +91,22 @@ proxies:
       public-key: "YZtDA-Mz6GSlPnrhnQkSpzj8TSaGDcMjukrGI_xFg1Y"
       short-id: "d9c79602"
     network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 2"
+  - name: "🌐 [WL] Сервер 73"
     type: "vless"
-    server: "smartcdn.top"
+    server: "147.45.98.78"
     port: 443
-    uuid: "37af0181-5598-4aad-a040-d926bcb65757"
+    uuid: "3b51157f-fa41-4092-b378-376b0e2d3edb"
     udp: true
     tls: true
-    servername: "smartcdn.top"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/useraction/collect/8a64b355ef0c/"
-      headers:
-        Host: "smartcdn.top"
-  - name: "🇷🇺 [WL] Сервер 34"
-    type: "vless"
-    server: "vps3.nemnogogo.com"
-    port: 443
-    uuid: "38308ff1-5aa9-494f-a25a-0f2870d56b3e"
-    udp: true
-    tls: true
-    servername: "vps3.nemnogogo.com"
-    alpn:
-      - "h2"
+    flow: "xtls-rprx-vision"
+    servername: "eh.vk.ru"
     client-fingerprint: "firefox"
     skip-cert-verify: false
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "mobile.api.Event"
-  - name: "🇳🇱 [WL] Сервер 57"
+    reality-opts:
+      public-key: "C8jwxMahtF-BpgtauR6I6dVXCc0X8VM9nbFxDQ3LzF0"
+      short-id: "b4"
+    network: "tcp"
+  - name: "🇳🇱 [WL] Сервер 30"
     type: "vless"
     server: "185.242.247.252"
     port: 443
@@ -150,7 +121,37 @@ proxies:
       public-key: "VZS639V1i-35g7VXb9EoTYL-Srm7858sxcvFAunncmA"
       short-id: "8d0d0679f42ffd98"
     network: "tcp"
-  - name: "🇨🇦 [WL] Сервер 59"
+  - name: "🇩🇪 [WL] Сервер 9"
+    type: "vless"
+    server: "188.225.62.54"
+    port: 443
+    uuid: "4c8d8b31-bb1e-4c25-a1a6-f7a21ecaf045"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "community-13b.paruscamp.com"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "UbG1bMl5ydXOlyk0kZ8mbFrQaenjoAM3wqcdWWp9TXc"
+      short-id: "c13b4e7a91d05f28"
+    network: "tcp"
+  - name: "🇩🇪 [WL] Сервер 10"
+    type: "vless"
+    server: "31.177.111.175"
+    port: 10666
+    uuid: "4c8d8b31-bb1e-4c25-a1a6-f7a21ecaf045"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "passport.yandex.ru"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "FRAR39JkMtmSLC1fsZxLehEittKBpdTlZqj0cf3k4Rc"
+      short-id: "d94d3f6d21961589"
+    network: "tcp"
+  - name: "🇨🇦 [WL] Сервер 31"
     type: "vless"
     server: "185.218.17.172"
     port: 443
@@ -165,7 +166,7 @@ proxies:
       public-key: "oTsYnjjxzyoBI2rJn0TjihgaOcNMPa9bNwHhp4RdDkg"
       short-id: "be7d0c9dda4dd4e6"
     network: "tcp"
-  - name: "🇺🇸 [WL] Сервер 50"
+  - name: "🇺🇸 [WL] Сервер 27"
     type: "vless"
     server: "185.219.7.81"
     port: 443
@@ -180,9 +181,24 @@ proxies:
       public-key: "3e_5bbwvi4fIm1FujJoRZ2IRzVyh6r3dbFDKEIURqTA"
       short-id: "3eac1511af749526"
     network: "tcp"
-  - name: "🇳🇱 [WL] Сервер 86"
+  - name: "🇷🇺 [WL/AI] Сервер 89"
     type: "vless"
-    server: "static.craveo.buzz"
+    server: "ads2.yandex-dev.online"
+    port: 443
+    uuid: "9a0b863b-d0aa-42ab-b51a-ecbdc582ba19"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "ads2.yandex-dev.online"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "IuvAXlAWBpeXehmEk0P-FIGTctUhny2H3UilbWWfJC0"
+      short-id: "122218f4c1f172e4"
+    network: "tcp"
+  - name: "🇳🇱 [WL] Сервер 28"
+    type: "vless"
+    server: "185.141.34.94"
     port: 443
     uuid: "9c69546a-e435-4037-bc63-f9e5829a8be3"
     udp: true
@@ -195,7 +211,7 @@ proxies:
       public-key: "BEjAEAl6JXlv07JdKxakyb25Z2gCfTBTsOG3JQ6L6iA"
       short-id: "48a9bac65754a80d"
     network: "tcp"
-  - name: "🇵🇱 [WL/AI] Сервер 73"
+  - name: "🇵🇱 [WL/AI] Сервер 55"
     type: "vless"
     server: "188.225.34.220"
     port: 443
@@ -225,7 +241,7 @@ proxies:
       public-key: "_3mkK8SY6YVqws73SUVPKL77tzxDVNUt4ag9J9ec-D0"
       short-id: "d05a120d3506d2cc"
     network: "tcp"
-  - name: "🇱🇻 [WL] Сервер 28"
+  - name: "🇱🇻 [WL/AI] Сервер 43"
     type: "vless"
     server: "83.166.254.97"
     port: 11443
@@ -240,7 +256,7 @@ proxies:
       public-key: "gaSpyUW0U3qs3kXSR8i_cpOKfl_vM6CdsEsUfSCJ9y4"
       short-id: "1280c0a31e883774"
     network: "tcp"
-  - name: "🇵🇱 [WL] Сервер 32"
+  - name: "🇵🇱 [WL] Сервер 21"
     type: "vless"
     server: "87.242.102.222"
     port: 443
@@ -249,13 +265,41 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "pl.happofficial.store"
-    client-fingerprint: "chrome"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "WaU5vsybQPp-NZNXWSjUEVfbAG-hqDPipci1z1xkhiw"
       short-id: "b7d7a3622d85f30a"
     network: "tcp"
-  - name: "🇸🇪 [WL] Сервер 14"
+  - name: "🇵🇱 [WL] Сервер 13"
+    type: "vless"
+    server: "95.163.232.8"
+    port: 555
+    uuid: "cfa7fab8-9aef-4291-b4a2-9b0fd464457a"
+    udp: true
+    tls: true
+    servername: "1.4.8.8"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI"
+      short-id: "db04ce8bdb8900f1"
+    network: "tcp"
+  - name: "🇩🇪 [WL/AI] Сервер 56"
+    type: "vless"
+    server: "5.42.121.154"
+    port: 443
+    uuid: "ea759639-a58c-4c46-8e0b-4cc834bf6658"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "steam-videos.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "tcp"
+  - name: "🇸🇪 [WL] Сервер 15"
     type: "vless"
     server: "188.225.77.71"
     port: 443
@@ -266,25 +310,10 @@ proxies:
     servername: "spb2.b2ai.top"
     alpn:
       - "h2"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇫🇮 [WL] Сервер 63"
-    type: "vless"
-    server: "31.207.77.142"
-    port: 443
-    uuid: "fb55d530-5931-4057-acc7-6a16053358e6"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "ru-fi.whiskeypapa.top"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pQhdLhN0XK_VXXQ_MjeZpwy-FG_jR3TprQA7xhXukXI"
-      short-id: "1d168683700ea1b5"
-    network: "tcp"
-  - name: "🇩🇪 [WL] Сервер 67"
+  - name: "🇩🇪 [WL] Сервер 50"
     type: "vmess"
     server: "185.177.229.95"
     port: 1270
@@ -296,7 +325,7 @@ proxies:
     servername: "xmfhlpy.com"
     skip-cert-verify: false
     network: "tcp"
-  - name: "🇷🇺 [WL] Сервер 83"
+  - name: "🇷🇺 [WL] Сервер 69"
     type: "hysteria2"
     server: "103.88.243.142"
     port: 11592
@@ -308,26 +337,28 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇳🇱 [WL] Сервер 41"
-      - "🇳🇱 [WL] Сервер 20"
-      - "🌐 [WL] Сервер 31"
-      - "🇺🇸 [WL] Сервер 15"
-      - "🇵🇱 [WL/AI] Сервер 72"
+      - "🇳🇱 [WL] Сервер 37"
+      - "🇷🇺 [WL/AI] Сервер 79"
+      - "🇷🇺 [WL] Сервер 80"
+      - "🇺🇸 [WL] Сервер 17"
+      - "🇳🇱 [WL] Сервер 12"
       - "🇳🇱 [WL] Сервер 11"
-      - "🇳🇱 [WL] Сервер 10"
-      - "🇷🇺 [WL] Сервер 2"
-      - "🇷🇺 [WL] Сервер 34"
-      - "🇳🇱 [WL] Сервер 57"
-      - "🇨🇦 [WL] Сервер 59"
-      - "🇺🇸 [WL] Сервер 50"
-      - "🇳🇱 [WL] Сервер 86"
-      - "🇵🇱 [WL/AI] Сервер 73"
+      - "🌐 [WL] Сервер 73"
+      - "🇳🇱 [WL] Сервер 30"
+      - "🇩🇪 [WL] Сервер 9"
+      - "🇩🇪 [WL] Сервер 10"
+      - "🇨🇦 [WL] Сервер 31"
+      - "🇺🇸 [WL] Сервер 27"
+      - "🇷🇺 [WL/AI] Сервер 89"
+      - "🇳🇱 [WL] Сервер 28"
+      - "🇵🇱 [WL/AI] Сервер 55"
       - "🇩🇪 [WL] Сервер 4"
-      - "🇱🇻 [WL] Сервер 28"
-      - "🇵🇱 [WL] Сервер 32"
-      - "🇸🇪 [WL] Сервер 14"
-      - "🇫🇮 [WL] Сервер 63"
-      - "🇩🇪 [WL] Сервер 67"
-      - "🇷🇺 [WL] Сервер 83"
+      - "🇱🇻 [WL/AI] Сервер 43"
+      - "🇵🇱 [WL] Сервер 21"
+      - "🇵🇱 [WL] Сервер 13"
+      - "🇩🇪 [WL/AI] Сервер 56"
+      - "🇸🇪 [WL] Сервер 15"
+      - "🇩🇪 [WL] Сервер 50"
+      - "🇷🇺 [WL] Сервер 69"
 rules:
   - MATCH,PROXY
