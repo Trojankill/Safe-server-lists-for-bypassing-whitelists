@@ -1,20 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-27 13:30:52 UTC
+# 2026-11-27 13:45:41 UTC
 proxies:
-  - name: "🇪🇪 Estonia [*CIDR]"
-    type: "vless"
-    server: "079b6et.ee5.h1clayd.shop"
-    port: 443
-    uuid: "73ebb72a-e2a8-44c8-a0e3-938740a4f578"
-    udp: true
-    tls: true
-    servername: "079b6et.ee5.h1clayd.shop"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U"
-      short-id: "35a329a23bb50d2b"
-    network: "tcp"
   - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "87.242.102.222"
@@ -24,17 +10,61 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "pl.happofficial.store"
-    client-fingerprint: "firefox"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "WaU5vsybQPp-NZNXWSjUEVfbAG-hqDPipci1z1xkhiw"
       short-id: "b7d7a3622d85f30a"
     network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
+    type: "vless"
+    server: "ru-bridge.funky-monkey.app"
+    port: 443
+    uuid: "ea759639-a58c-4c46-8e0b-4cc834bf6658"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "steam-videos.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
+    type: "vless"
+    server: "ru-cloudru.funky-monkey.app"
+    port: 443
+    uuid: "ea759639-a58c-4c46-8e0b-4cc834bf6658"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "steam-videos.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #3"
+    type: "vless"
+    server: "ru-tmw.funky-monkey.app"
+    port: 443
+    uuid: "ea759639-a58c-4c46-8e0b-4cc834bf6658"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "steam-videos.cc"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc"
+    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇪🇪 Estonia [*CIDR]"
       - "🇳🇱 The Netherlands [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #3"
 rules:
   - MATCH,PROXY
