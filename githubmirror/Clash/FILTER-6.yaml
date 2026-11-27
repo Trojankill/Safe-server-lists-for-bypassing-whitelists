@@ -1,85 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-27 06:30:55 UTC
+# 2026-11-27 06:45:32 UTC
 proxies:
-  - name: "🇺🇸 United States | 🌐 [*CIDR]"
-    type: "vless"
-    server: "185.12.127.227"
-    port: 12443
-    uuid: "5b345e12-abe7-43e4-98f3-0bc7d3359403"
-    udp: true
-    tls: true
-    servername: "archive.saltmarsh-photo.de"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "iOiEYVhf8MzKkR88wAJ2uBYeEUj0J6I8JF_mNl-dTgA"
-      short-id: "78237c6b"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-us"
-  - name: "🇺🇸 United States | 🌐 [*CIDR] #2"
-    type: "vless"
-    server: "185.12.127.227"
-    port: 12443
-    uuid: "5b345e12-abe7-43e4-98f3-0bc7d3359403"
-    udp: true
-    tls: true
-    servername: "archive.saltmarsh-photo.de"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "iOiEYVhf8MzKkR88wAJ2uBYeEUj0J6I8JF_mNl-dTgA"
-      short-id: "78237c6b"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "cas-us"
-  - name: "🇪🇪 Estonia | [*CIDR]"
-    type: "vless"
-    server: "079b6et.ee5.h1clayd.shop"
-    port: 443
-    uuid: "73ebb72a-e2a8-44c8-a0e3-938740a4f578"
-    udp: true
-    tls: true
-    servername: "079b6et.ee5.h1clayd.shop"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "NMS-P97L7IrYGl7mQv1j2K_EBX6G57fu6DvREZYl01U"
-      short-id: "35a329a23bb50d2b"
-    network: "tcp"
-  - name: "🇵🇱 Poland | [*CIDR]"
-    type: "vless"
-    server: "92.53.74.182"
-    port: 443
-    uuid: "7af8c5d0-ede6-40ab-9b9e-d7924f79d109"
-    udp: true
-    tls: true
-    servername: "freetato-digital.ru"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "pIvAHbj4d1ogUo7dEAvyNNVMYjP-7pUCCKN0vDJ1YxM"
-      short-id: "d9662905"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc"
-  - name: "🇳🇱 The Netherlands [*CIDR]"
-    type: "vless"
-    server: "185.178.208.167"
-    port: 443
-    uuid: "a836b591-97e2-482e-bff8-382e979a9978"
-    udp: true
-    tls: true
-    servername: "ironpeak-sport.com"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "qq"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/api/v2/delivery/watch?u=QlqYx05aCET8W_n8"
-      headers:
-        Host: "ironpeak-sport.com"
   - name: "🇱🇻 Latvia | [*CIDR] VK"
     type: "vless"
     server: "83.166.254.97"
@@ -89,13 +10,13 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "83.166.254.97"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "gaSpyUW0U3qs3kXSR8i_cpOKfl_vM6CdsEsUfSCJ9y4"
       short-id: "1280c0a31e883774"
     network: "tcp"
-  - name: "🇳🇱 The Netherlands [*CIDR] #2"
+  - name: "🇳🇱 The Netherlands [*CIDR]"
     type: "vless"
     server: "87.242.102.222"
     port: 443
@@ -104,26 +25,11 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "pl.happofficial.store"
-    client-fingerprint: "qq"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "WaU5vsybQPp-NZNXWSjUEVfbAG-hqDPipci1z1xkhiw"
       short-id: "b7d7a3622d85f30a"
-    network: "tcp"
-  - name: "🇪🇪 Estonia [*CIDR]"
-    type: "vless"
-    server: "168.113.131.162"
-    port: 4443
-    uuid: "db0eb9c9-5bb5-4a59-ba56-a33bc8e0de5d"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "168.113.131.162"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "2i0Ts_clPXJWv_gtpgo4Wsqrn10V7Y3xI1YGssvVD1w"
-      short-id: "8d31ee9fb75b3061"
     network: "tcp"
   - name: "🇸🇪 Sweden [*CIDR] VK"
     type: "hysteria2"
@@ -135,27 +41,12 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
-  - name: "🇸🇪 Sweden [*CIDR] VK #2"
-    type: "hysteria2"
-    server: "84.23.52.100"
-    port: 443
-    password: "db0eb9c9-5bb5-4a59-ba56-a33bc8e0de5d"
-    udp: true
-    sni: "84-23-52-100.sslip.io"
-    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇺🇸 United States | 🌐 [*CIDR]"
-      - "🇺🇸 United States | 🌐 [*CIDR] #2"
-      - "🇪🇪 Estonia | [*CIDR]"
-      - "🇵🇱 Poland | [*CIDR]"
-      - "🇳🇱 The Netherlands [*CIDR]"
       - "🇱🇻 Latvia | [*CIDR] VK"
-      - "🇳🇱 The Netherlands [*CIDR] #2"
-      - "🇪🇪 Estonia [*CIDR]"
+      - "🇳🇱 The Netherlands [*CIDR]"
       - "🇸🇪 Sweden [*CIDR] VK"
-      - "🇸🇪 Sweden [*CIDR] VK #2"
 rules:
   - MATCH,PROXY
