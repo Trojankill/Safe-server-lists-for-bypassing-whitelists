@@ -1,68 +1,6 @@
 # clash/mihomo subscription
-# 2026-11-27 23:15:39 UTC
+# 2026-11-27 23:30:48 UTC
 proxies:
-  - name: "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
-    type: "vless"
-    server: "mws.gamma-kvn.com"
-    port: 443
-    uuid: "6dfb3b5f-e878-48c9-8f49-b2ab0b2a6d48"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "mws.gamma-kvn.com"
-    alpn:
-      - "h2"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    network: "tcp"
-  - name: "🇪🇪 Estonia | [*CIDR]"
-    type: "vless"
-    server: "72.56.245.146"
-    port: 8881
-    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
-    udp: true
-    tls: true
-    servername: "dl.google.com"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇪🇪 Estonia | [*CIDR] #2"
-    type: "vless"
-    server: "72.56.245.146"
-    port: 8881
-    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
-    udp: true
-    tls: true
-    servername: "dl.google.com"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabb"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
-  - name: "🇪🇪 Estonia | [*CIDR] #3"
-    type: "vless"
-    server: "72.56.245.146"
-    port: 8881
-    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
-    udp: true
-    tls: true
-    servername: "dl.google.com"
-    client-fingerprint: "android"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
-      short-id: "aabbccdd"
-    network: "grpc"
-    grpc-opts:
-      grpc-service-name: "grpc-tunnel"
   - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
     server: "pyskyzoc.edgecdn.pro"
@@ -73,7 +11,7 @@ proxies:
     servername: "help.cs-on.ru"
     alpn:
       - "http/1.1"
-    client-fingerprint: "firefox"
+    client-fingerprint: "android"
     skip-cert-verify: false
     network: "ws"
     ws-opts:
@@ -84,10 +22,6 @@ proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🌐 Anycast-IP | 🇩🇪 🇬🇧 | [*CIDR]"
-      - "🇪🇪 Estonia | [*CIDR]"
-      - "🇪🇪 Estonia | [*CIDR] #2"
-      - "🇪🇪 Estonia | [*CIDR] #3"
       - "🇺🇸 United States [*CIDR]"
 rules:
   - MATCH,PROXY
