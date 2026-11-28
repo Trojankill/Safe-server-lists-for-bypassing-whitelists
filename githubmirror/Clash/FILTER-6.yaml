@@ -1,5 +1,5 @@
 # clash/mihomo subscription
-# 2026-11-28 01:30:47 UTC
+# 2026-11-28 01:45:31 UTC
 proxies:
   - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
@@ -10,7 +10,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "web.belka.tv"
-    client-fingerprint: "firefox"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
@@ -46,7 +46,7 @@ proxies:
       public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
       short-id: "26e2b503fada0e3a"
     network: "tcp"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR]"
     type: "vless"
     server: "176.108.247.233"
     port: 9881
@@ -54,14 +54,14 @@ proxies:
     udp: true
     tls: true
     servername: "dl.google.com"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+  - name: "🇩🇪 Germany | 🌐 [*CIDR] #2"
     type: "vless"
     server: "176.108.247.233"
     port: 9881
@@ -69,14 +69,14 @@ proxies:
     udp: true
     tls: true
     servername: "dl.google.com"
-    client-fingerprint: "android"
+    client-fingerprint: "chrome"
     skip-cert-verify: false
     reality-opts:
       public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
     network: "grpc"
     grpc-opts:
       grpc-service-name: "grpc-tunnel"
-  - name: "🇺🇸 United States | [*CIDR]"
+  - name: "🇺🇸 United States [*CIDR] #3"
     type: "vless"
     server: "185.178.208.140"
     port: 443
@@ -93,7 +93,7 @@ proxies:
       path: "/useraction/collect/33de51ecdc75/"
       headers:
         Host: "locationfree.icu"
-  - name: "🇺🇸 United States [*CIDR] #3"
+  - name: "🇺🇸 United States [*CIDR] #4"
     type: "vless"
     server: "pyskyzoc.edgecdn.pro"
     port: 443
@@ -117,9 +117,9 @@ proxy-groups:
       - "🇺🇸 United States [*CIDR]"
       - "🇨🇿 Czechia [*CIDR]"
       - "🇺🇸 United States [*CIDR] #2"
-      - "🇩🇪 Germany | 🌐 | [*CIDR]"
-      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
-      - "🇺🇸 United States | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR]"
+      - "🇩🇪 Germany | 🌐 [*CIDR] #2"
       - "🇺🇸 United States [*CIDR] #3"
+      - "🇺🇸 United States [*CIDR] #4"
 rules:
   - MATCH,PROXY
