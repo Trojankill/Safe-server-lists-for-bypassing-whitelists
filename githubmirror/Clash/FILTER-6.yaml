@@ -1,0 +1,60 @@
+# clash/mihomo subscription
+# 2026-11-28 08:15:33 UTC
+proxies:
+  - name: "🇷🇺 Russia | [*CIDR]"
+    type: "vless"
+    server: "168.113.128.93"
+    port: 43000
+    uuid: "93d6b020-38fe-4c36-9228-491a0ce495e1"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "1LconkdpoOKWu9Xc_RlAvEB5q2YjNP-AetYMNOVD4yU"
+      short-id: "260218e2"
+    network: "tcp"
+  - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "f4b08bf1-d9bd-4755-aa88-ba922282c608"
+    udp: true
+    tls: true
+    servername: "help.cs-on.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/33de51ecdc75/"
+      headers:
+        Host: "locationfree.icu"
+  - name: "🇺🇸 United States [*CIDR] #2"
+    type: "vless"
+    server: "pyskyzoc.edgecdn.pro"
+    port: 443
+    uuid: "f4b08bf1-d9bd-4755-aa88-ba922282c608"
+    udp: true
+    tls: true
+    servername: "help.cs-on.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/33de51ecdc75/"
+      headers:
+        Host: "locationfree.icu"
+proxy-groups:
+  - name: PROXY
+    type: select
+    proxies:
+      - "🇷🇺 Russia | [*CIDR]"
+      - "🇺🇸 United States [*CIDR]"
+      - "🇺🇸 United States [*CIDR] #2"
+rules:
+  - MATCH,PROXY
