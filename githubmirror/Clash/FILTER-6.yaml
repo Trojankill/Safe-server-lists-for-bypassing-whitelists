@@ -1,7 +1,99 @@
 # clash/mihomo subscription
-# 2026-11-28 00:15:36 UTC
+# 2026-11-28 00:30:53 UTC
 proxies:
   - name: "🇺🇸 United States [*CIDR]"
+    type: "vless"
+    server: "176.108.243.168"
+    port: 443
+    uuid: "59db3b91-48e2-405f-a9a1-7ef11c957104"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "web.belka.tv"
+    client-fingerprint: "firefox"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
+      short-id: "26e2b503fada0e3a"
+    network: "tcp"
+  - name: "🇨🇿 Czechia [*CIDR]"
+    type: "vless"
+    server: "pawuk.belka.tv"
+    port: 443
+    uuid: "59db3b91-48e2-405f-a9a1-7ef11c957104"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "pawuk.belka.tv"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "_qSbW4JL4Ffqvj25vX-6a2ul9Qlj6PBdlF0ghsf_0RQ"
+      short-id: "a9dc98a7dc87a7dc"
+    network: "tcp"
+  - name: "🇺🇸 United States [*CIDR] #2"
+    type: "vless"
+    server: "web.belka.tv"
+    port: 443
+    uuid: "59db3b91-48e2-405f-a9a1-7ef11c957104"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "web.belka.tv"
+    client-fingerprint: "edge"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "D0VJmmIifi3bUyMzYYNwEU0X28N4JK-jDAmCCf8hZEo"
+      short-id: "26e2b503fada0e3a"
+    network: "tcp"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "176.108.247.233"
+    port: 9881
+    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+    type: "vless"
+    server: "176.108.247.233"
+    port: 9881
+    uuid: "e460e7b2-a146-4468-87ed-52510b2caae6"
+    udp: true
+    tls: true
+    servername: "dl.google.com"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "Dfgu8Ey0M8Hz4gXGZAwQ3H9jLt2HByVsjAOTWiuKDB0"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-tunnel"
+  - name: "🇺🇸 United States | [*CIDR]"
+    type: "vless"
+    server: "185.178.208.140"
+    port: 443
+    uuid: "f4b08bf1-d9bd-4755-aa88-ba922282c608"
+    udp: true
+    tls: true
+    servername: "help.cs-on.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/33de51ecdc75/"
+      headers:
+        Host: "locationfree.icu"
+  - name: "🇺🇸 United States [*CIDR] #3"
     type: "vless"
     server: "pyskyzoc.edgecdn.pro"
     port: 443
@@ -23,5 +115,11 @@ proxy-groups:
     type: select
     proxies:
       - "🇺🇸 United States [*CIDR]"
+      - "🇨🇿 Czechia [*CIDR]"
+      - "🇺🇸 United States [*CIDR] #2"
+      - "🇩🇪 Germany | 🌐 | [*CIDR]"
+      - "🇩🇪 Germany | 🌐 | [*CIDR] #2"
+      - "🇺🇸 United States | [*CIDR]"
+      - "🇺🇸 United States [*CIDR] #3"
 rules:
   - MATCH,PROXY
