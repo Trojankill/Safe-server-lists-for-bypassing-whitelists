@@ -1,90 +1,34 @@
 # clash/mihomo subscription
-# 2026-11-28 13:45:34 UTC
+# 2026-11-28 14:01:04 UTC
 proxies:
-  - name: "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №2"
+  - name: "[KrolekVPNReborn] Germany 🇩🇪 | Wi-Fi 🛜"
     type: "vless"
-    server: "185.86.147.80"
-    port: 9445
-    uuid: "639b131f-d0f3-460c-aa17-423047f8a5df"
+    server: "201.4.100.9"
+    port: 443
+    uuid: "cc84e386-b814-4cc8-bef1-a0732da9a6b3"
     udp: true
     tls: true
     flow: "xtls-rprx-vision"
-    servername: "keshyou.mcufa.pro"
+    servername: "betmenvpn.store"
     client-fingerprint: "firefox"
     skip-cert-verify: false
     reality-opts:
-      public-key: "-P8DgKISSG4jnLuj6ihZDqZs1_zt-juBrhVhTylHiAo"
+      public-key: "D2vgGR7KojsxONEWfX5P-zLnM_wNuYx0eeI5s3wjcHA"
+      short-id: "29ec2393169cc890"
     network: "tcp"
-  - name: "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G"
-    type: "vless"
-    server: "178.248.236.229"
-    port: 443
-    uuid: "a71d6c6d-c95e-4ec1-a892-22e21733bf09"
+  - name: "[KrolekVPNReborn] Germany 🇩🇪 | Игровой 🎮"
+    type: "hysteria2"
+    server: "201.4.100.25"
+    port: 5443
+    password: "cc84e386-b814-4cc8-bef1-a0732da9a6b3"
     udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "144.hexdey.com"
-    client-fingerprint: "chrome"
+    sni: "betmenvpn.store"
     skip-cert-verify: false
-    reality-opts:
-      public-key: "_3mkK8SY6YVqws73SUVPKL77tzxDVNUt4ag9J9ec-D0"
-      short-id: "d05a120d3506d2cc"
-    network: "tcp"
-  - name: "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №3"
-    type: "vless"
-    server: "188.225.33.67"
-    port: 443
-    uuid: "b432a23a-acff-425c-bf69-70480cd6ed09"
-    udp: true
-    tls: true
-    servername: "e2.cdnwh.icu"
-    alpn:
-      - "http/1.1"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    network: "ws"
-    ws-opts:
-      path: "/stream/segment/3078a41dd7eb/"
-      headers:
-        Host: "e2.cdnwh.icu"
-  - name: "[KrolekVPNReborn] Czech Republic 🇨🇿 | Wi-Fi 🛜"
-    type: "vless"
-    server: "5.39.202.153"
-    port: 443
-    uuid: "c0742f77-5495-43bf-b007-88d368774d7c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "czek.oblachniy.ink"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "WU5baXUzRH9BceiYI8MPBmDMEloTFImx2vvE5uh1yjM"
-      short-id: "f19e02a2fb573c18"
-    network: "tcp"
-  - name: "[KrolekVPNReborn] Lithuania 🇱🇹 | Wi-Fi 🛜"
-    type: "vless"
-    server: "88.119.176.64"
-    port: 443
-    uuid: "c0742f77-5495-43bf-b007-88d368774d7c"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "wwrtq.lerogrenta.shop"
-    client-fingerprint: "firefox"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "I_-Mb_q3_4-ZdzrzB6SKh-Zla1kKI4M_0OMjWDYXVxg"
-      short-id: "13d8fbd7fd9e1ce8"
-    network: "tcp"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №2"
-      - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G"
-      - "[KrolekVPNReborn] Micronesia 🇫🇲 | LTE/5G №3"
-      - "[KrolekVPNReborn] Czech Republic 🇨🇿 | Wi-Fi 🛜"
-      - "[KrolekVPNReborn] Lithuania 🇱🇹 | Wi-Fi 🛜"
+      - "[KrolekVPNReborn] Germany 🇩🇪 | Wi-Fi 🛜"
+      - "[KrolekVPNReborn] Germany 🇩🇪 | Игровой 🎮"
 rules:
   - MATCH,PROXY
