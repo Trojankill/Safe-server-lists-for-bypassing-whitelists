@@ -1,6 +1,68 @@
 # clash/mihomo subscription
-# 2026-11-28 04:45:31 UTC
+# 2026-11-28 05:00:57 UTC
 proxies:
+  - name: "🇫🇮 Finland | 🌐 | [*CIDR]"
+    type: "vless"
+    server: "138.16.203.58"
+    port: 443
+    uuid: "e2b2b2bb-1f26-0001-9a7d-ca6bbcdcd4d2"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "cdn4.comp-mir.party"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "txmBYPHsg2BXg1J9-HokrNNO_sZh_Zl3N_cU46Ck5gs"
+      short-id: "0d44312db16a14db"
+    network: "tcp"
+  - name: "🇫🇮 Finland | [*CIDR]"
+    type: "vless"
+    server: "168.113.255.225"
+    port: 2443
+    uuid: "e2b2b2bb-1f26-45ab-9a7d-ca6bbcdcd4d2"
+    udp: true
+    tls: true
+    servername: "ru-cdn.cdn-ozon.icu"
+    client-fingerprint: "chrome"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3J5mYA5NziIVJi77fRsx9dZPYWzLkvaIz-cCdZQvhn8"
+      short-id: "ab90218fde328913"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-service"
+  - name: "🇫🇮 Finland | [*CIDR] #2"
+    type: "vless"
+    server: "168.113.255.225"
+    port: 2443
+    uuid: "e2b2b2bb-1f26-45ab-9a7d-ca6bbcdcd4d2"
+    udp: true
+    tls: true
+    servername: "ru-cdn.cdn-ozon.icu"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "3J5mYA5NziIVJi77fRsx9dZPYWzLkvaIz-cCdZQvhn8"
+      short-id: "ab90218fde328913"
+    network: "grpc"
+    grpc-opts:
+      grpc-service-name: "grpc-service"
+  - name: "🇩🇪 Germany | [*CIDR]"
+    type: "vless"
+    server: "176.108.242.8"
+    port: 443
+    uuid: "e2b2b2bb-1f26-45ab-9a7d-ca6bbcdcd4d2"
+    udp: true
+    tls: true
+    flow: "xtls-rprx-vision"
+    servername: "stream.comp-mir.party"
+    client-fingerprint: "android"
+    skip-cert-verify: false
+    reality-opts:
+      public-key: "txmBYPHsg2BXg1J9-HokrNNO_sZh_Zl3N_cU46Ck5gs"
+      short-id: "0d44312db16a14db"
+    network: "tcp"
   - name: "🇺🇸 United States [*CIDR]"
     type: "vless"
     server: "185.178.208.140"
@@ -18,19 +80,32 @@ proxies:
       path: "/useraction/collect/33de51ecdc75/"
       headers:
         Host: "locationfree.icu"
-  - name: "🇷🇺 Russia | 🌐 [*CIDR]"
-    type: "hysteria2"
-    server: "94.228.126.146"
+  - name: "🇺🇸 United States [*CIDR] #2"
+    type: "vless"
+    server: "pyskyzoc.edgecdn.pro"
     port: 443
-    password: "84061c08-bb5f-4b24-9026-59005d62c13a"
+    uuid: "f4b08bf1-d9bd-4755-aa88-ba922282c608"
     udp: true
-    sni: "poery.1nm.uk"
+    tls: true
+    servername: "help.cs-on.ru"
+    alpn:
+      - "http/1.1"
+    client-fingerprint: "android"
     skip-cert-verify: false
+    network: "ws"
+    ws-opts:
+      path: "/useraction/collect/33de51ecdc75/"
+      headers:
+        Host: "locationfree.icu"
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
+      - "🇫🇮 Finland | 🌐 | [*CIDR]"
+      - "🇫🇮 Finland | [*CIDR]"
+      - "🇫🇮 Finland | [*CIDR] #2"
+      - "🇩🇪 Germany | [*CIDR]"
       - "🇺🇸 United States [*CIDR]"
-      - "🇷🇺 Russia | 🌐 [*CIDR]"
+      - "🇺🇸 United States [*CIDR] #2"
 rules:
   - MATCH,PROXY
