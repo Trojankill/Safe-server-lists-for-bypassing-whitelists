@@ -1,37 +1,7 @@
 # clash/mihomo subscription
-# 2026-11-28 13:30:55 UTC
+# 2026-11-28 13:45:34 UTC
 proxies:
-  - name: "🇦🇹 Austria | [*CIDR]"
-    type: "vless"
-    server: "189.74.115.9"
-    port: 443
-    uuid: "56dec3ac-1a96-42e9-ad06-6d4219798fb3"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.mediaroshcha.cc"
-    client-fingerprint: "chrome"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇫🇷 France | [*CIDR]"
-    type: "vless"
-    server: "189.74.117.24"
-    port: 443
-    uuid: "56dec3ac-1a96-42e9-ad06-6d4219798fb3"
-    udp: true
-    tls: true
-    flow: "xtls-rprx-vision"
-    servername: "api.videodolina.cc"
-    client-fingerprint: "edge"
-    skip-cert-verify: false
-    reality-opts:
-      public-key: "r5WB5FnSCt4eeBC1FJMfkWHbzsMuabo0Rc6wuAhlZUs"
-      short-id: "a8"
-    network: "tcp"
-  - name: "🇸🇪 Sweden [*CIDR]"
+  - name: "🇸🇪 Sweden | 🌐 [*CIDR]"
     type: "vless"
     server: "89.223.17.67"
     port: 443
@@ -40,7 +10,7 @@ proxies:
     tls: true
     flow: "xtls-rprx-vision"
     servername: "nohope-67-s4.mcdeliver.ru"
-    client-fingerprint: "qq"
+    client-fingerprint: "ios"
     skip-cert-verify: false
     reality-opts:
       public-key: "Aj6Lfc0JKKROX46eHAQHlzrNpOTY9CKp7BcVj9cw8Ag"
@@ -108,17 +78,44 @@ proxies:
     alpn:
       - "h3"
     skip-cert-verify: false
+  - name: "🇵🇱 Poland | 🌐 [*CIDR] #2"
+    type: "hysteria2"
+    server: "193.233.112.221"
+    port: 443
+    password: "81f705b5-9039-4adf-8671-783095bba0e8"
+    udp: true
+    sni: "rumos1.sky-vault.top"
+    skip-cert-verify: false
+  - name: "🇵🇱 Poland | 🌐 [*CIDR] #3"
+    type: "hysteria2"
+    server: "rumos1.sky-vault.top"
+    port: 443
+    password: "81f705b5-9039-4adf-8671-783095bba0e8"
+    udp: true
+    sni: "rumos1.sky-vault.top"
+    alpn:
+      - "h3"
+    skip-cert-verify: false
+  - name: "🇵🇱 Poland | 🌐 [*CIDR] #4"
+    type: "hysteria2"
+    server: "rumos1.sky-vault.top"
+    port: 443
+    password: "81f705b5-9039-4adf-8671-783095bba0e8"
+    udp: true
+    sni: "rumos1.sky-vault.top"
+    skip-cert-verify: false
 proxy-groups:
   - name: PROXY
     type: select
     proxies:
-      - "🇦🇹 Austria | [*CIDR]"
-      - "🇫🇷 France | [*CIDR]"
-      - "🇸🇪 Sweden [*CIDR]"
+      - "🇸🇪 Sweden | 🌐 [*CIDR]"
       - "🇺🇸 United States [*CIDR]"
       - "🇺🇸 United States [*CIDR] #2"
       - "🇱🇻 Latvia | 🌐 [*CIDR]"
       - "🇱🇻 Latvia | 🌐 [*CIDR] #2"
       - "🇵🇱 Poland | 🌐 [*CIDR]"
+      - "🇵🇱 Poland | 🌐 [*CIDR] #2"
+      - "🇵🇱 Poland | 🌐 [*CIDR] #3"
+      - "🇵🇱 Poland | 🌐 [*CIDR] #4"
 rules:
   - MATCH,PROXY
